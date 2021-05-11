@@ -243,6 +243,23 @@ find_media() {
 		fi
 	done
 }
+do_mount_iso() {
+	LABEL="nutyxcd"
+#	[ ! -z $1 ] && LABEL="$1"
+	[ "$verbose" == "no" ] || printf "Looking in %s for media\n" $LABEL
+	while true
+	do
+		printf "."
+		if [ -b /dev/disk/by-label/$LABEL ]; then
+			sleep 3
+			ln -sf $(readlink -f /dev/disk/by-label/$LABEL) /dev/nutyx-cd
+			mkdir  -p /media/cdrom
+			[ "$verbose" == "no" ] || printf "mount -n /dev/nutyx-cd /media/cdrom\n"
+			mount -n /dev/nutyx.cd /media/cdrom
+			break
+		fi
+	done
+}
 do_resize_rootfs() {
 	MEM_TOTAL=`cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g"`
 	MEM_TOTAL=$((MEM_TOTAL / 1024 / 100))
@@ -399,6 +416,7 @@ if [ -n "$rootdelay" ]; then
 fi
 if [ -z $root ]; then
 	if [ ! -f ${SETUP_INIT_FILE} ]; then
+#		do_mount_iso
 		find_media
 		if [ ! -L /dev/nutyx-cd ]; then
 			[ "$verbose" == "no" ] || printf "Media not found yet, trying again in 5 sec\n"
