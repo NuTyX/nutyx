@@ -213,8 +213,7 @@ do_mount_in_ram()
 	fi 
 }
 find_media() {
-	local PI FSIZE MSIZE
-	EXPECT_LABEL="nutyxcd"
+	local PI FSIZE MSIZE LABEL
 	if [ -n "$fromiso" ]; then
 		mkdir -p /media/fromdev
 		mount -o ro ${fromdev} /media/fromdev
@@ -230,32 +229,28 @@ find_media() {
 		DEV=/dev/$(basename $SYS)
 		[ ! -b $DEV ] && continue
 		eval $(blkid $DEV|cut -d ":" -f2)
-		if [ ${LABEL} == ${EXPECT_LABEL} ]  2>/dev/null ; then
+		if [ ${ISOLABEL} == ${LABEL} ]  2>/dev/null ; then
 		    if [ -b ${DEV}1 ]; then
-				ln -sf ${DEV}1 /dev/nutyx-cd
+				ln -sf ${DEV}1 /dev/${LABEL}
 			else
-				ln -sf ${DEV} /dev/nutyx-cd
+				ln -sf ${DEV} /dev/${LABEL}
 			fi
 			mkdir  -p /media/cdrom 2>/dev/null
-			[ "$verbose" == "no" ] || printf "mount -n /dev/nutyx-cd /media/cdrom\n"
-			mount -n /dev/nutyx-cd /media/cdrom
+			[ "$verbose" == "no" ] || printf "mount -n /dev/${LABEL} /media/cdrom\n"
+			mount -n /dev/${LABEL} /media/cdrom
 			break
 		fi
 	done
 }
 do_mount_iso() {
-	LABEL="nutyxcd"
-#	[ ! -z $1 ] && LABEL="$1"
-	[ "$verbose" == "no" ] || printf "Looking in %s for media\n" $LABEL
+	[ "$verbose" == "no" ] || printf "Looking in %s for media\n" ${LABEL}
 	while true
 	do
-		printf "."
-		if [ -b /dev/disk/by-label/$LABEL ]; then
-			sleep 3
-			ln -sf $(readlink -f /dev/disk/by-label/$LABEL) /dev/nutyx-cd
+		if [ -b /dev/disk/by-label/${ISOLABEL} ]; then
+			ln -sf $(readlink -f /dev/disk/by-label/${ISOLABEL}) /dev/${ISOLABEL}
 			mkdir  -p /media/cdrom
-			[ "$verbose" == "no" ] || printf "mount -n /dev/nutyx-cd /media/cdrom\n"
-			mount -n /dev/nutyx.cd /media/cdrom
+			[ "$verbose" == "no" ] || printf "mount -n /dev/${ISOLABEL} /media/cdrom\n"
+			mount -n /dev/${ISOLABEL} /media/cdrom
 			break
 		fi
 	done
@@ -376,6 +371,7 @@ device=
 verbose="no"
 fromdev=/dev/sdb1
 fromiso=
+ISOLABEL="nutyxcd"
 
 . /lib/lsb/init-functions
 
@@ -418,7 +414,7 @@ if [ -z $root ]; then
 	if [ ! -f ${SETUP_INIT_FILE} ]; then
 #		do_mount_iso
 		find_media
-		if [ ! -L /dev/nutyx-cd ]; then
+		if [ ! -L /dev/${ISOLABEL} ]; then
 			[ "$verbose" == "no" ] || printf "Media not found yet, trying again in 5 sec\n"
 			sleep 5
 			find_media
