@@ -1635,7 +1635,9 @@ install_nutyx() {
 		VERSNAME="$(basename $i)"
 		EXT="-${VERSNAME/*-/}"
 		[ "$EXT" == "-NuTyX" ] && EXT=""
-		ln -svf kernel-${VERSNAME} ${2}/boot/kernel${EXT} &> /dev/tty2
+		mv ${2}/boot/kernel-${VERSNAME} ${2}/boot/bzImage${EXT}
+		ln -svf bzImage${EXT} ${2}/boot/kernel-${VERSNAME} &> /dev/tty2
+		ln -svf bzImage${EXT} ${2}/boot/kernel{EXT} &> /dev/tty2
 	done
 	if  [ -f ${1}/boot/grub/splash.png ]; then
 		mkdir -pv ${2}/boot/grub/ &> /dev/tty2
