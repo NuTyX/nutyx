@@ -1614,6 +1614,7 @@ install_nutyx() {
 	etc/localtime \
 	etc/network \
 	etc/mdadm.conf \
+	etc/vconsole \
 	$TEXTDOMAINFILE1 \
 	$TEXTDOMAINFILE2 \
 	$TEXTDOMAINFILE3 \
@@ -2582,7 +2583,7 @@ SETUP_LOG="setup-nutyx-log"
 CARDS="/etc/cards.conf"
 XORGKB="/etc/X11/xorg.conf.d/20-keyboard.conf"
 CONSOLE="/etc/sysconfig/console"
-VCONSOLE="/etc/vconsole.conf"
+VCONSOLE="/etc/vconsole"
 LOCALE="/etc/profile.d/i18n.sh"
 LOCALECONF="/etc/locale.conf"
 LOCALTIME="/etc/localtime"
