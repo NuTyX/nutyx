@@ -2472,8 +2472,10 @@ check_all () {
 		RV=$((RV+2))
 	fi
 	if [ ! -r ${CLOCK} ]; then
-		SETUP_CONFIG_CLOCK="yes"
-		RV=$((RV+4))
+		if [ ! -f /etc/rc.d/init.d/ntpd ]; then
+			SETUP_CONFIG_CLOCK="yes"
+			RV=$((RV+4))
+		fi
 	fi
 	if [ ! -d ${USER} ]; then
 		SETUP_CONFIG_USER="yes"
