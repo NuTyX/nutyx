@@ -1039,9 +1039,11 @@ if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    return
 fi
 
-echo "
+[ "$DEPOT" == "$MOUNT" ] || echo "
 # Default server URL
-url ${URL}
+url ${URL}" >> ${LFS}/etc/cards.conf
+
+echo "
 #
 ## For all the graphical applications and desktops
 dir ${DEPOT}/gui-extra
@@ -1232,7 +1234,7 @@ if [ ! -z "$ISO" ];then
 	DEVEL+="
 for k in \$(ls /lib/modules/)
 do
-  mkinitramfs \$k -nf
+  mkinitramfs \$k
 done
 sed -i \"s@kernel-419@\$KERNEL@g\" /sbin/setup-nutyx"
 	if [ -z $MOUNT ]; then
@@ -1245,7 +1247,7 @@ umount $DEPOT"
 	DEVEL+="
 for d in opt bin etc lib lib64 root run sbin usr var home
 do
-  rm -f /ISO/boot/\$d.squashfs
+  [ ! -d /\$d ] && continue
   mksquashfs /\$d /ISO/boot/\$d.squashfs
 done
 exit 0"
