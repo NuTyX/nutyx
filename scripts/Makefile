@@ -38,6 +38,10 @@ install: all
 	install -D -m0755 ifdown  $(SBINDIR)/ifdown
 	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
 	install -D -m0755 which $(BINDIR)/which
+	install -D -m0644 init-functions $(SERVICEDIR)/init-functions
+	install -D -m0644 init	$(SERVICEDIR)/init.in
+	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
+	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
 
 
 clean:

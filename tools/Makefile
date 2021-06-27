@@ -46,18 +46,11 @@ create-dirs:
 
 files: create-dirs
 	for FILE in halt init_single localnet modules network rc reboot \
-sendsignals setclock sysklogd template random; do \
+                sendsignals setclock sysklogd template random; do \
 		install -m 754 etc/init.d/$${FILE} \
-$(ETCDIR)/init.d/$${FILE}; \
+        $(ETCDIR)/init.d/$${FILE}; \
 	done
-	install -m 755 lib/dhcpcd $(SERVICEDIR)/dhcpcd
-	install -m 755 lib/ipv4-static $(SERVICEDIR)/ipv4-static
-	install -m 755 lib/ipv4-static-route $(SERVICEDIR)/ipv4-static-route
-	install -m 644 lib/init-functions $(SERVICEDIR)/init-functions
-	install -m 644 lib/init.in	$(SERVICEDIR)/init.in
-	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
-		lib/setup-nutyx.* lib/xdg-user-dirs.* lib/dialog.* \
-                lib/util-linux.*
+
 	for FILE in bootlog btmp lastlog wtmp; do \
 		touch $(VARDIR)/log/$${FILE}; \
 	done

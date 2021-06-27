@@ -61,31 +61,31 @@ _msgfmt() {
 	localedef -i ${1} -f UTF-8 ${1}.UTF-8
 	if [ -f /lib/services/setup-nutyx/setup-nutyx.locales.gz ];then
 		bsdtar -xf /lib/services/setup-nutyx/setup-nutyx.locales.gz \
-		-C $TD lib/setup-nutyx.${L} lib/xdg-user-dirs.${L} \
-		lib/dialog.${L} lib/util-linux.${L}
+		-C $TD po/setup-nutyx.${L} po/xdg-user-dirs.${L} \
+		po/dialog.${L} po/util-linux.${L}
 	fi
-	if [ -f $TD/lib/setup-nutyx.${L} ]; then
+	if [ -f $TD/po/setup-nutyx.${L} ]; then
 		TEXTDOMAINFILE1=$TEXTDOMAINDIR/${L}/LC_MESSAGES/setup-nutyx.mo
 		mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
-		msgfmt $TD/lib/setup-nutyx.${L} \
+		msgfmt $TD/po/setup-nutyx.${L} \
 		-o $TEXTDOMAINFILE1
 	fi
-	if [ -f $TD/lib/xdg-user-dirs.${L} ]; then
+	if [ -f $TD/po/xdg-user-dirs.${L} ]; then
 		TEXTDOMAINFILE2=$TEXTDOMAINDIR/${L}/LC_MESSAGES/xdg-user-dirs.mo
 		mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
-		msgfmt $TD/lib/xdg-user-dirs.${L} \
+		msgfmt $TD/po/xdg-user-dirs.${L} \
 		-o $TEXTDOMAINFILE2
 	fi
-	if [ -f $TD/lib/dialog.${L} ]; then
+	if [ -f $TD/po/dialog.${L} ]; then
 		TEXTDOMAINFILE3=$TEXTDOMAINDIR/${L}/LC_MESSAGES/dialog.mo
 		mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
-		msgfmt $TD/lib/dialog.${L} \
+		msgfmt $TD/po/dialog.${L} \
 		-o $TEXTDOMAINFILE3
 	fi
-	if [ -f $TD/lib/util-linux.${L} ]; then
+	if [ -f $TD/po/util-linux.${L} ]; then
 		TEXTDOMAINFILE4=$TEXTDOMAINDIR/${L}/LC_MESSAGES/util-linux.mo
 		mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
-		msgfmt $TD/lib/util-linux.${L} \
+		msgfmt $TD/po/util-linux.${L} \
 		-o $TEXTDOMAINFILE4
 	fi
 	echo "export LANG=${1}.utf-8" > ${LOCALE}
