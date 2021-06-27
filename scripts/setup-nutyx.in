@@ -64,13 +64,15 @@ _msgfmt() {
 		-C $TD
 	fi
 	for FILE in $TD/po/*
-	DN=$(basename $FILE)
-	if [ -f $FILE/${L}.po ]; then
-		DF=$TEXTDOMAINDIR/${L}/LC_MESSAGES/$DN.mo
-		mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
-		msgfmt $FILE/${L}.po \
-		-o $DF
-	fi
+	do
+		DN=$(basename $FILE)
+		if [ -f $FILE/${L}.po ]; then
+			DF=$TEXTDOMAINDIR/${L}/LC_MESSAGES/$DN.mo
+			mkdir -p $TEXTDOMAINDIR/${L}/LC_MESSAGES
+			msgfmt $FILE/${L}.po \
+			-o $DF
+		fi
+	done
 	echo "export LANG=${1}.utf-8" > ${LOCALE}
 	echo "LANG=${1}.utf-8" > ${LOCALECONF}
 	$SETUP_LOG "setup-nutyx --config-lang" "variable LANG=${1}.utf-8 saved in ${LOCALE}"
