@@ -21,7 +21,7 @@
 
 include ../Makefile.inc
 
-all: install-nutyx setup-nutyx xdm-nutyx flushmem ifup ifdown which mkinitramfs
+all: init init-functions ipv4-static ipv4-static-route install-nutyx setup-nutyx xdm-nutyx flushmem ifup ifdown which mkinitramfs
 
 %: %.in
 	sed -e "s/#VERSION#/$(VERSION)/" $< > $@
@@ -53,6 +53,9 @@ clean:
 	rm -f ifdown
 	rm -f which
 	rm -f mkinitramfs
+	rm -f init
+	rm -f ipv4-static
+	rm -f ipv4-static-route
 
 distclean: clean
 

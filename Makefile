@@ -13,8 +13,6 @@ all:
 	$(MAKE) -C $(DIRTOOLS) all
 	$(MAKE) -C $(DIRSCRIPTS) all
 	$(MAKE) -C $(DIRMAN) all
-	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
-	po/*
 
 
 install: all
@@ -22,6 +20,9 @@ install: all
 	$(MAKE) -C $(DIRTOOLS) install
 	$(MAKE) -C $(DIRSCRIPTS) install
 	$(MAKE) -C $(DIRMAN) install
+	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
+	po/*
+
 man:
 	$(MAKE) -C $(DIRMAN) man
 clean:
