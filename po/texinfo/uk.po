@@ -1,0 +1,4650 @@
+# Texinfo Ukrainian message strings.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the texinfo package.
+#
+# Myhailo Danylenko <isbear@ukrpost.net>, 2009.
+# Maxim V. Dziumanenko <dziumanenko@gmail.com>, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2015, 2016, 2017, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: texinfo 6.6.90\n"
+"Report-Msgid-Bugs-To: bug-texinfo@gnu.org\n"
+"POT-Creation-Date: 2019-09-17 18:48+0100\n"
+"PO-Revision-Date: 2019-08-20 12:39+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 19.11.70\n"
+
+#: gnulib/lib/error.c:195
+msgid "Unknown system error"
+msgstr "Невідома системна помилка"
+
+#: gnulib/lib/getopt.c:278
+#, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: параметр «%s%s» не є однозначним\n"
+
+#: gnulib/lib/getopt.c:284
+#, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: неоднозначний параметр «%s%s»; можливі варіанти:"
+
+#: gnulib/lib/getopt.c:319
+#, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: невідомий параметр «%s%s»\n"
+
+#: gnulib/lib/getopt.c:345
+#, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: додавання аргументів до параметра «%s%s» не передбачено\n"
+
+#: gnulib/lib/getopt.c:360
+#, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: до параметра «%s%s» слід додати аргумент\n"
+
+#: gnulib/lib/getopt.c:621
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: некоректний параметр — «%c»\n"
+
+#: gnulib/lib/getopt.c:636 gnulib/lib/getopt.c:682
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: до параметра слід додати аргумент — «%c»\n"
+
+#: gnulib/lib/regcomp.c:135
+msgid "Success"
+msgstr "Виконано"
+
+#: gnulib/lib/regcomp.c:138
+msgid "No match"
+msgstr "Не знайдено"
+
+#: gnulib/lib/regcomp.c:141
+msgid "Invalid regular expression"
+msgstr "Помилка у формальному виразі"
+
+#: gnulib/lib/regcomp.c:144
+msgid "Invalid collation character"
+msgstr "Некоректний символ порівняння"
+
+#: gnulib/lib/regcomp.c:147
+msgid "Invalid character class name"
+msgstr "Некоректна назва класу символів"
+
+#: gnulib/lib/regcomp.c:150
+msgid "Trailing backslash"
+msgstr "Кінцевий символ похилої риски"
+
+#: gnulib/lib/regcomp.c:153
+msgid "Invalid back reference"
+msgstr "Некоректне зворотне посилання"
+
+#: gnulib/lib/regcomp.c:156
+msgid "Unmatched [, [^, [:, [., or [="
+msgstr "Неврівноважена послідовність [, [^, [:, [. або [="
+
+#: gnulib/lib/regcomp.c:159
+msgid "Unmatched ( or \\("
+msgstr "Неврівноважена послідовність ( або \\("
+
+#: gnulib/lib/regcomp.c:162
+msgid "Unmatched \\{"
+msgstr "Неврівноважена послідовність \\{"
+
+#: gnulib/lib/regcomp.c:165
+msgid "Invalid content of \\{\\}"
+msgstr "Некоректний вміст \\{\\}"
+
+#: gnulib/lib/regcomp.c:168
+msgid "Invalid range end"
+msgstr "Некоректне завершення діапазону"
+
+#: gnulib/lib/regcomp.c:171
+msgid "Memory exhausted"
+msgstr "Вичерпано доступний об’єм пам’яті"
+
+#: gnulib/lib/regcomp.c:174
+msgid "Invalid preceding regular expression"
+msgstr "Помилка у попередньому формальному виразі"
+
+#: gnulib/lib/regcomp.c:177
+msgid "Premature end of regular expression"
+msgstr "Неочікуване завершення формального виразу"
+
+#: gnulib/lib/regcomp.c:180
+msgid "Regular expression too big"
+msgstr "Занадто об’ємний формальний вираз"
+
+#: gnulib/lib/regcomp.c:183
+msgid "Unmatched ) or \\)"
+msgstr "Неврівноважена послідовність ) або \\)"
+
+#: gnulib/lib/regcomp.c:676
+msgid "No previous regular expression"
+msgstr "Не виявлено попереднього формального виразу"
+
+#: gnulib/lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr "вичерпано пам’ять"
+
+#: info/echo-area.c:289 info/session.c:1367
+msgid "Move forward a character"
+msgstr "Перейти на символ вперед"
+
+#: info/echo-area.c:308 info/session.c:1380
+msgid "Move backward a character"
+msgstr "Перейти на символ назад"
+
+#: info/echo-area.c:334
+msgid "Move to the start of this line"
+msgstr "Перейти на початок цього рядка"
+
+#: info/echo-area.c:339
+msgid "Move to the end of this line"
+msgstr "Перейти в кінець цього рядка"
+
+#: info/echo-area.c:347 info/session.c:1395
+msgid "Move forward a word"
+msgstr "Перейти вперед на одне слово"
+
+#: info/echo-area.c:387 info/session.c:1409
+msgid "Move backward a word"
+msgstr "Перейти назад на одне слово"
+
+#: info/echo-area.c:427
+msgid "Delete the character under the cursor"
+msgstr "Вилучити символ під курсором"
+
+#: info/echo-area.c:447
+msgid "Delete the character behind the cursor"
+msgstr "Вилучити символ перед курсором"
+
+#: info/echo-area.c:474
+msgid "Cancel or quit operation"
+msgstr "Скасувати чи закінчити операцію"
+
+#: info/echo-area.c:489
+msgid "Accept (or force completion of) this line"
+msgstr "Прийняти (чи примусово доповнити) цей рядок"
+
+#: info/echo-area.c:494
+msgid "Insert next character verbatim"
+msgstr "Вставити наступний символ без обробки"
+
+#: info/echo-area.c:526
+msgid "Insert a TAB character"
+msgstr "Вставити символ табуляції"
+
+#: info/echo-area.c:578
+msgid "Transpose characters at point"
+msgstr "Поміняти місцями символи перед курсором"
+
+#: info/echo-area.c:647
+msgid "Yank back the contents of the last kill"
+msgstr "Вставити вирізане останнім"
+
+#: info/echo-area.c:654
+msgid "Kill ring is empty"
+msgstr "Нічого не вирізано"
+
+#: info/echo-area.c:667
+msgid "Yank back a previous kill"
+msgstr "Вставити попередньо вирізане"
+
+#: info/echo-area.c:700
+msgid "Kill to the end of the line"
+msgstr "Вирізати до кінця рядка"
+
+#: info/echo-area.c:713
+msgid "Kill to the beginning of the line"
+msgstr "Вирізати до початку рядка"
+
+#: info/echo-area.c:725
+msgid "Kill the word following the cursor"
+msgstr "Вирізати слово після курсора"
+
+#: info/echo-area.c:745
+msgid "Kill the word preceding the cursor"
+msgstr "Вирізати слово перед курсором"
+
+#: info/echo-area.c:977 info/echo-area.c:1036
+msgid "No completions"
+msgstr "Нема доповнень"
+
+#: info/echo-area.c:979
+msgid "Not complete"
+msgstr "Не доповнюється"
+
+#: info/echo-area.c:1029
+msgid "List possible completions"
+msgstr "Показати список можливих доповнень"
+
+#: info/echo-area.c:1040
+msgid "Sole completion"
+msgstr "Єдине доповнення"
+
+#: info/echo-area.c:1049
+#, c-format
+msgid "%d completion:\n"
+msgid_plural "%d completions:\n"
+msgstr[0] "%d доповнення:\n"
+msgstr[1] "%d доповнень:\n"
+msgstr[2] "%d доповнень:\n"
+
+#: info/echo-area.c:1166
+msgid "Insert completion"
+msgstr "Вставити доповнення"
+
+#: info/echo-area.c:1268
+msgid "Building completions..."
+msgstr "Побудова списку доповнень..."
+
+#: info/echo-area.c:1387
+msgid "Scroll the completions window"
+msgstr "Гортати вікно списку доповнень"
+
+#: info/filesys.c:88
+#, c-format
+msgid "looking for file \"%s\""
+msgstr "шукаємо файл «%s»"
+
+#: info/filesys.c:150
+#, c-format
+msgid "looking for file %s in %s"
+msgstr "шукаємо файл %s у %s"
+
+#: info/filesys.c:236 info/filesys.c:250 info/filesys.c:271
+#, c-format
+msgid "found file %s"
+msgstr "знайдено файл %s"
+
+#: info/footnotes.c:229
+msgid "Footnotes could not be displayed"
+msgstr "Не вдалося відобразити виноски"
+
+#: info/footnotes.c:249
+msgid "Show the footnotes associated with this node in another window"
+msgstr "Показувати виноски, пов’язані з цим вузлом у іншому вікні"
+
+#: info/footnotes.h:24
+msgid "---------- Footnotes ----------"
+msgstr "---------- Виноски ----------"
+
+#: info/indices.c:121 info/indices.c:877
+msgid "Finding index entries..."
+msgstr "Триває пошук пунктів покажчика..."
+
+#: info/indices.c:201
+msgid "Look up a string in the index for this file"
+msgstr "Знайти рядок у покажчику цього файла"
+
+#: info/indices.c:213
+msgid "No indices found"
+msgstr "Не знайдено покажчиків"
+
+#: info/indices.c:217
+msgid "Index entry: "
+msgstr "Пункт покажчика: "
+
+#: info/indices.c:320 info/indices.c:883
+msgid "No indices found."
+msgstr "Не знайдено покажчиків."
+
+#: info/indices.c:436
+#, c-format
+msgid "Found '%s' in %s. ('\\[next-index-match]' tries to find next.)"
+msgstr ""
+"«%s» знайдено у %s. («\\[next-index-match]» спробує знайти наступний збіг.)"
+
+#: info/indices.c:446
+msgid ""
+"Go to the next matching index item from the last '\\[index-search]' command"
+msgstr ""
+"Перейти до наступного пункту покажчика, що був знайдений останньою командою "
+"«\\[index-search]»"
+
+#: info/indices.c:457
+msgid "No previous index search string"
+msgstr "Немає попередніх рядків пошуку у покажчику"
+
+#: info/indices.c:475
+#, c-format
+msgid "No more index entries containing '%s'"
+msgstr "Більше немає пунктів покажчика, які б містили «%s»"
+
+#: info/indices.c:476
+#, c-format
+msgid "No index entries containing '%s'"
+msgstr "Немає пунктів покажчика, які б містили «%s»"
+
+#: info/indices.c:586
+#, c-format
+msgid "Scanning indices of '%s'..."
+msgstr "Перегляд покажчиків «%s»..."
+
+#: info/indices.c:646
+msgid "Grovel all known info file's indices for a string and build a menu"
+msgstr ""
+"Виконати пошук рядка у всіх відомих покажчиках файлів і побудувати меню"
+
+#: info/indices.c:654 info/indices.c:656
+msgid "Index apropos"
+msgstr "Пошук за покажчиком"
+
+#: info/indices.c:698
+#, c-format
+msgid "Index entries containing '%s':\n"
+msgstr "Записи покажчика, що містять «%s»:\n"
+
+#: info/indices.c:818
+#, c-format
+msgid ""
+"Virtual Index\n"
+"*************\n"
+"\n"
+"Index entries that match '%s':\n"
+msgstr ""
+"Віртуальний покажчик\n"
+"********************\n"
+"\n"
+"Записи покажчика, які містять «%s»:\n"
+
+#: info/indices.c:865
+msgid "List all matches of a string in the index"
+msgstr "Показати список усіх входжень рядка до покажчика"
+
+#: info/indices.c:889 info/indices.c:891
+msgid "Index topic"
+msgstr "Тема покажчика"
+
+#: info/indices.c:916
+#, c-format
+msgid "No index entries containing '%s'."
+msgstr "Немає пунктів покажчика, які б містили «%s»."
+
+#: info/indices.h:40
+#, c-format
+msgid "No available info files have '%s' in their indices"
+msgstr "Жоден доступний файл info не містить «%s» у покажчику"
+
+#: info/info-utils.c:878
+msgid "Error converting file character encoding"
+msgstr "Помилка під час спроби змінити кодування символів у файлі"
+
+#: info/info.c:277 info/session.c:2786
+#, c-format
+msgid "No menu item '%s' in node '%s'"
+msgstr "Меню вузла «%2$s» не містить пункту «%1$s»"
+
+#: info/info.c:415 info/info.c:1181
+#, c-format
+msgid "Cannot find node '%s'"
+msgstr "Не вдалося знайти вузол «%s»"
+
+#: info/info.c:437
+msgid "No program name given"
+msgstr "Не вказано назви програми"
+
+#: info/info.c:635
+#, c-format
+msgid "invalid number: %s\n"
+msgstr "некоректний номер: %s\n"
+
+#: info/info.c:815
+#, c-format
+msgid "malformed variable assignment: %s"
+msgstr "помилкове форматування у виразі визначення змінної: %s"
+
+#: info/info.c:822 info/infokey.c:558
+#, c-format
+msgid "%s: no such variable"
+msgstr "%s: немає такої змінної"
+
+#: info/info.c:828 info/infokey.c:560
+#, c-format
+msgid "value %s is not valid for variable %s"
+msgstr "значення %s є некоректним для змінної %s"
+
+#: info/info.c:840
+#, c-format
+msgid "Try --help for more information.\n"
+msgstr "Спробуйте --help, щоб отримати більше інформації.\n"
+
+#: info/info.c:859 install-info/install-info.c:2236 tp/texi2any.pl:795
+#, c-format, perl-format
+msgid ""
+"Copyright (C) %s Free Software Foundation, Inc.\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"Copyright (C) %s Free Software Foundation, Inc.\n"
+"Ліцензія GPLv3+: GNU GPL версія 3, чи новіша <http://gnu.org/licenses/gpl."
+"html>\n"
+"Це вільне програмне забезпечення: ви можете змінювати та розповсюджувати "
+"його.\n"
+"Не надається НІЯКИХ ГАРАНТІЙ у рамках, передбачених законом.\n"
+
+#: info/info.c:1035
+#, c-format
+msgid "no index entries found for '%s'\n"
+msgstr "не знайдено пунктів покажчика для «%s»\n"
+
+#: info/info.c:1089
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... [MENU-ITEM...]\n"
+"\n"
+"Read documentation in Info format.\n"
+msgstr ""
+"Використовуйте: %s [ПАРАМЕТР]... [ПУНКТ МЕНЮ...]\n"
+"\n"
+"Перегляд документації у форматі Info.\n"
+
+#: info/info.c:1095
+msgid ""
+"Frequently-used options:\n"
+"  -a, --all                    use all matching manuals\n"
+"  -k, --apropos=STRING         look up STRING in all indices of all manuals\n"
+"  -d, --directory=DIR          add DIR to INFOPATH\n"
+"  -f, --file=MANUAL            specify Info manual to visit"
+msgstr ""
+"Найчастіше вживані параметри:\n"
+"  -a, --all                    використовувати усі відповідні підручники\n"
+"  -k, --apropos=РЯДОК          шукати РЯДОК в усіх покажчиках усіх "
+"підручників\n"
+"  -d, --directory=ТЕКА         додати ТЕКУ до INFOPATH\n"
+"  -f, --file=ФАЙЛ              вказати файл Info для перегляду"
+
+#: info/info.c:1102
+msgid ""
+"  -h, --help                   display this help and exit\n"
+"      --index-search=STRING    go to node pointed by index entry STRING\n"
+"  -n, --node=NODENAME          specify nodes in first visited Info file\n"
+"  -o, --output=FILE            output selected nodes to FILE"
+msgstr ""
+"  -h, --help                   показати цю довідку і вийти\n"
+"      --index-search=РЯДОК     перейти до вузла, вказаного пунктом покажчика "
+"РЯДОК\n"
+"  -n, --node=НАЗВА             вказати вузли у першому відкритому файлі "
+"Info\n"
+"  -o, --output=ФАЙЛ            зберегти обрані вузли до ФАЙЛА"
+
+#: info/info.c:1108
+msgid "  -O, --show-options, --usage  go to command-line options node"
+msgstr ""
+"  -O, --show-options, --usage  перейти до вузла параметрів командного рядка"
+
+#: info/info.c:1112
+msgid "  -b, --speech-friendly        be friendly to speech synthesizers"
+msgstr " -b, --speech-friendly        зручний для синтезаторів мовлення вивід"
+
+#: info/info.c:1116
+msgid ""
+"      --subnodes               recursively output menu items\n"
+"  -v, --variable VAR=VALUE     assign VALUE to Info variable VAR\n"
+"      --version                display version information and exit\n"
+"  -w, --where, --location      print physical location of Info file"
+msgstr ""
+"      --subnodes               виводити пункти меню рекурсивно\n"
+"  -v, --variable VAR=ЗНАЧЕННЯ  призначити ЗНАЧЕННЯ змінній Info VAR\n"
+"      --version                показати інформацію про версію та вийти\n"
+"  -w, --where, --location      вивести фізичне розташування файлу Info"
+
+#: info/info.c:1122
+msgid ""
+"\n"
+"The first non-option argument, if present, is the menu entry to start from;\n"
+"it is searched for in all 'dir' files along INFOPATH.\n"
+"If it is not present, info merges all 'dir' files and shows the result.\n"
+"Any remaining arguments are treated as the names of menu\n"
+"items relative to the initial node visited."
+msgstr ""
+"\n"
+"Перший аргумент, що не стосується до параметрів, буде пунктом меню, з якого "
+"треба почати;\n"
+"для цього виконується пошук в усіх файлах «dir», що є у INFOPATH.\n"
+"Якщо його не вказано, info з’єднає усі файли «dir» та покаже результат.\n"
+"Будь-які залишкові аргументи вважаються назвами пунктів\n"
+"меню, відносними щодо початкового вузла."
+
+#: info/info.c:1129
+msgid ""
+"\n"
+"For a summary of key bindings, type H within Info."
+msgstr ""
+"\n"
+"Щоб отримати короткий звіт про призначення команд клавішам - натисніть H "
+"усередині Info."
+
+#: info/info.c:1132
+msgid ""
+"\n"
+"Examples:\n"
+"  info                         show top-level dir menu\n"
+"  info info-stnd               show the manual for this Info program\n"
+"  info emacs                   start at emacs node from top-level dir\n"
+"  info emacs buffers           select buffers menu entry in emacs manual\n"
+"  info emacs -n Files          start at Files node within emacs manual\n"
+"  info '(emacs)Files'          alternative way to start at Files node\n"
+"  info --show-options emacs    start at node with emacs' command line "
+"options\n"
+"  info --subnodes -o out.txt emacs\n"
+"                               dump entire emacs manual to out.txt\n"
+"  info -f ./foo.info           show file ./foo.info, not searching dir"
+msgstr ""
+"\n"
+"Приклади:\n"
+"  info                         показати меню каталогу верхнього рівня\n"
+"  info info-stnd               показати довідник для цієї програми\n"
+"  info emacs                   почати з вузла emacs, що у каталозі верхнього "
+"рівня\n"
+"  info emacs buffers           почати з вузла buffers, що всередині "
+"підручника з emacs\n"
+"  info emacs -n Files          почати з вузла Files у підручнику з emacs\n"
+"  info '(emacs)Files'          інший спосіб відкрити вузол Files\n"
+"  info --show-options emacs    почати з вузла, що описує параметри "
+"командного рядку emacs\n"
+"  info --subnodes -o out.txt emacs\n"
+"                               зберегти підручник з emacs цілком до файла "
+"out.txt\n"
+"  info -f ./foo.info           просто показати файл ./foo.info, без пошуку у "
+"каталозі"
+
+#: info/info.c:1147 install-info/install-info.c:613 tp/texi2any.pl:783
+msgid ""
+"Email bug reports to bug-texinfo@gnu.org,\n"
+"general questions and discussion to help-texinfo@gnu.org.\n"
+"Texinfo home page: http://www.gnu.org/software/texinfo/"
+msgstr ""
+"Надсилайте звіти про помилки до bug-texinfo@gnu.org,\n"
+"загальні запитання й обговорення до help-texinfo@gnu.org.\n"
+"Домашня сторінка texinfo: http://www.gnu.org/software/texinfo/"
+
+#: info/info.c:1182
+#, c-format
+msgid "Cannot find node '(%s)%s'"
+msgstr "Не вдається знайти вузол «(%s)%s»"
+
+#: info/info.c:1183
+msgid "Cannot find a window!"
+msgstr "Не вдається знайти вікно!"
+
+#: info/info.c:1184
+msgid "Point doesn't appear within this window's node!"
+msgstr "Пункт не перебуває у вузлі цього вікна!"
+
+#: info/info.c:1185
+msgid "Cannot delete the last window"
+msgstr "Неможливо вилучити єдине вікно"
+
+#: info/info.c:1186
+msgid "No menu in this node"
+msgstr "Цей вузол не має меню"
+
+#: info/info.c:1187
+msgid "No footnotes in this node"
+msgstr "Цей вузол не має виносок"
+
+#: info/info.c:1188
+msgid "No cross references in this node"
+msgstr "Цей вузол не містить перехресних посилань"
+
+#: info/info.c:1189
+#, c-format
+msgid "No '%s' pointer for this node"
+msgstr "Немає вказівника «%s» для цього вузла"
+
+#: info/info.c:1190
+#, c-format
+msgid "Unknown Info command '%c'; try '?' for help"
+msgstr "Невідома команда «%c»; спробуйте «?», щоб отримати довідку"
+
+#: info/info.c:1191
+#, c-format
+msgid "Terminal type '%s' is not smart enough to run Info"
+msgstr "Термінал «%s» недостатньо потужний для роботи Info"
+
+#: info/info.c:1192
+msgid "You are already at the last page of this node"
+msgstr "Ви вже на останній сторінці цього вузла"
+
+#: info/info.c:1193
+msgid "You are already at the first page of this node"
+msgstr "Ви вже на першій сторінці цього вузла"
+
+#: info/info.c:1194
+msgid "Only one window"
+msgstr "Є лише одне вікно"
+
+#: info/info.c:1195
+msgid "Resulting window would be too small"
+msgstr "Отримане вікно буде занадто малим"
+
+#: info/info.c:1196
+msgid "Not enough room for a help window, please delete a window"
+msgstr ""
+"Недостатньо місця для вікна довідки, будь ласка, приберіть одне з вікон"
+
+#: info/infodoc.c:38
+msgid "Basic Info command keys\n"
+msgstr "Клавіші з основними командами Info\n"
+
+#: info/infodoc.c:40
+msgid "\\%-10[quit-help]  Close this help window.\n"
+msgstr "\\%-10[quit-help]  Закрити це вікно довідки.\n"
+
+#: info/infodoc.c:41
+msgid "\\%-10[quit]  Quit Info altogether.\n"
+msgstr "\\%-10[quit]  Вийти з Info зовсім.\n"
+
+#: info/infodoc.c:42
+msgid "\\%-10[get-info-help-node]  Invoke the Info tutorial.\n"
+msgstr "\\%-10[get-info-help-node]  Запустити посібник з Info.\n"
+
+#: info/infodoc.c:44
+msgid "\\%-10[prev-line]  Move up one line.\n"
+msgstr "\\%-10[prev-line]  Перейти на рядок вище.\n"
+
+#: info/infodoc.c:45
+msgid "\\%-10[next-line]  Move down one line.\n"
+msgstr "\\%-10[next-line]  Перейти на рядок нижче.\n"
+
+#: info/infodoc.c:46
+msgid "\\%-10[scroll-backward]  Scroll backward one screenful.\n"
+msgstr "\\%-10[scroll-backward]  Гортати на один екран назад.\n"
+
+#: info/infodoc.c:47
+msgid "\\%-10[scroll-forward]  Scroll forward one screenful.\n"
+msgstr "\\%-10[scroll-forward]  Гортати на один екран вперед.\n"
+
+#: info/infodoc.c:48
+msgid "\\%-10[beginning-of-node]  Go to the beginning of this node.\n"
+msgstr "\\%-10[beginning-of-node]  Перейти на початок цього вузла.\n"
+
+#: info/infodoc.c:49
+msgid "\\%-10[end-of-node]  Go to the end of this node.\n"
+msgstr "\\%-10[end-of-node]  Перейти до кінця цього вузла.\n"
+
+#: info/infodoc.c:51
+msgid "\\%-10[move-to-next-xref]  Skip to the next hypertext link.\n"
+msgstr ""
+"\\%-10[move-to-next-xref]  Пропустити до наступного гіпертекстового "
+"посилання.\n"
+
+#: info/infodoc.c:52
+msgid ""
+"\\%-10[select-reference-this-line]  Follow the hypertext link under the "
+"cursor.\n"
+msgstr ""
+"\\%-10[select-reference-this-line]  Перейти за гіпертекстовим посиланням під "
+"курсором.\n"
+
+#: info/infodoc.c:53
+msgid "\\%-10[history-node]  Go back to the last node seen in this window.\n"
+msgstr ""
+"\\%-10[history-node]  Повернутися до останнього вузла, що переглядався у "
+"цьому вікні.\n"
+
+#: info/infodoc.c:55
+msgid "\\%-10[global-prev-node]  Go to the previous node in the document.\n"
+msgstr "\\%-10[global-prev-node]  Перейти до попереднього вузла документа.\n"
+
+#: info/infodoc.c:56
+msgid "\\%-10[global-next-node]  Go to the next node in the document.\n"
+msgstr "\\%-10[global-next-node]  Перейти до наступного вузла документа.\n"
+
+#: info/infodoc.c:57
+msgid "\\%-10[prev-node]  Go to the previous node on this level.\n"
+msgstr "\\%-10[prev-node]  Перейти до попереднього вузла на поточному рівні.\n"
+
+#: info/infodoc.c:58
+msgid "\\%-10[next-node]  Go to the next node on this level.\n"
+msgstr "\\%-10[next-node]  Перейти до наступного вузла на цьому рівні.\n"
+
+#: info/infodoc.c:59
+msgid "\\%-10[up-node]  Go up one level.\n"
+msgstr "\\%-10[up-node]  Піднятися на один рівень вверх.\n"
+
+#: info/infodoc.c:60
+msgid "\\%-10[top-node]  Go to the top node of this document.\n"
+msgstr "\\%-10[top-node]  Перейти до початкового вузла цього документа.\n"
+
+#: info/infodoc.c:61
+msgid "\\%-10[dir-node]  Go to the main 'directory' node.\n"
+msgstr "\\%-10[dir-node]  Перейти до головного вузла «каталогу».\n"
+
+#: info/infodoc.c:63
+msgid "1...9       Pick the first...ninth item in this node's menu.\n"
+msgstr "1...9       Обрати перший...дев’ятий пункт меню цього вузла.\n"
+
+#: info/infodoc.c:64
+msgid "\\%-10[last-menu-item]  Pick the last item in this node's menu.\n"
+msgstr "\\%-10[last-menu-item]  Обрати останній пункт меню цього вузла.\n"
+
+#: info/infodoc.c:65
+msgid "\\%-10[menu-item]  Pick a menu item specified by name.\n"
+msgstr "\\%-10[menu-item]  Обрати пункт меню, вказаний за назвою.\n"
+
+#: info/infodoc.c:66
+msgid "\\%-10[xref-item]  Follow a cross reference specified by name.\n"
+msgstr ""
+"\\%-10[xref-item]  Перейти за перехресним посиланням, вказаним за назвою.\n"
+
+#: info/infodoc.c:67
+msgid "\\%-10[goto-node]  Go to a node specified by name.\n"
+msgstr "\\%-10[goto-node]  Перейти до вузла, вказаного за назвою.\n"
+
+#: info/infodoc.c:69
+msgid "\\%-10[search]  Search forward for a specified string.\n"
+msgstr "\\%-10[search]  Шукати далі вказаний рядок.\n"
+
+#: info/infodoc.c:70
+msgid "\\%-10[search-previous]  Search for previous occurrence.\n"
+msgstr "\\%-10[search-previous]  Шукати попередні збіги.\n"
+
+#: info/infodoc.c:71
+msgid "\\%-10[search-next]  Search for next occurrence.\n"
+msgstr "\\%-10[search-next]  Шукати подальші збіги.\n"
+
+#: info/infodoc.c:72
+msgid ""
+"\\%-10[index-search]  Search for a specified string in the index, and\n"
+"              select the node referenced by the first entry found.\n"
+msgstr ""
+"\\%-10[index-search]  Шукати вказаний рядок у покажчику та\n"
+"              обрати вузол, на який посилатиметься перший знайдений пункт.\n"
+
+#: info/infodoc.c:74
+msgid "\\%-10[virtual-index]  Synthesize menu of matching index entries.\n"
+msgstr ""
+"\\%-10[virtual-index]  Створити меню з відповідних записів покажчика.\n"
+
+#: info/infodoc.c:76
+msgid "\\%-10[abort-key]  Cancel the current operation.\n"
+msgstr "\\%-10[abort-key]  Скасувати поточну операцію.\n"
+
+#: info/infodoc.c:195
+#, c-format
+msgid "This is GNU Info version %s.  "
+msgstr "Це GNU Info версії %s.  "
+
+#: info/infodoc.c:196
+msgid "The current search path is:\n"
+msgstr "Поточний шлях пошуку:\n"
+
+#: info/infodoc.c:201
+msgid ""
+"Commands available in Info windows:\n"
+"\n"
+msgstr ""
+"Команди, доступні у вікнах Info:\n"
+"\n"
+
+#: info/infodoc.c:204
+msgid ""
+"Commands available in the echo area:\n"
+"\n"
+msgstr ""
+"Команди, доступні у рядку повідомлень:\n"
+"\n"
+
+#: info/infodoc.c:224
+#, c-format
+msgid ""
+"The following commands can only be invoked via %s:\n"
+"\n"
+msgstr ""
+"Ці команди можуть бути запущені лише за допомогою %s:\n"
+"\n"
+
+#: info/infodoc.c:229
+msgid ""
+"The following commands cannot be invoked at all:\n"
+"\n"
+msgstr ""
+"Ці команди не можуть бути запущені взагалі:\n"
+"\n"
+
+#: info/infodoc.c:333
+msgid "Display help message"
+msgstr "Показує довідку"
+
+#: info/infodoc.c:346
+msgid "Visit Info node '(info)Help'"
+msgstr "Завітайте до вузла Info «(info)Help»"
+
+#: info/infodoc.c:450
+msgid "Print documentation for KEY"
+msgstr "Показати довідку для клавіші KEY"
+
+#: info/infodoc.c:461
+#, c-format
+msgid "Describe key: %s"
+msgstr "Опис для клавіші: %s"
+
+#: info/infodoc.c:471 info/infodoc.c:507
+#, c-format
+msgid "%s is undefined"
+msgstr "%s не призначено команди"
+
+#: info/infodoc.c:795
+msgid "Show what to type to execute a given command"
+msgstr "Показати, що треба натиснути, щоб запустити вказану команду"
+
+#: info/infodoc.c:799
+msgid "Where is command: "
+msgstr "Де є команда: "
+
+#: info/infodoc.c:821
+#, c-format
+msgid "'%s' is not on any keys"
+msgstr "«%s» не призначено жодної послідовності клавіш"
+
+#: info/infodoc.c:827
+#, c-format
+msgid "%s can only be invoked via %s"
+msgstr "%s може бути запущено лише за допомогою %s"
+
+#: info/infodoc.c:831
+#, c-format
+msgid "%s can be invoked via %s"
+msgstr "%s може бути запущено за допомогою %s"
+
+#: info/infodoc.c:836
+#, c-format
+msgid "There is no function named '%s'"
+msgstr "Немає функції з назвою «%s»"
+
+#: info/infomap.c:585
+#, c-format
+msgid "could not open init file %s"
+msgstr "не вдалося відкрити файл ініціалізації %s"
+
+#: info/infokey.c:227
+msgid "key sequence too long"
+msgstr "послідовність клавіш занадто довга"
+
+#: info/infokey.c:304
+msgid "missing key sequence"
+msgstr "відсутня послідовність клавіш"
+
+#: info/infokey.c:384
+msgid "NUL character (\\000) not permitted"
+msgstr "символ NUL (\\000) не дозволений"
+
+#: info/infokey.c:413
+#, c-format
+msgid "NUL character (^%c) not permitted"
+msgstr "символ NUL (^%c) не дозволений"
+
+#: info/infokey.c:436
+msgid "missing action name"
+msgstr "пропущено назву дії"
+
+#: info/infokey.c:454
+msgid "cannot bind key sequence to menu-digit"
+msgstr "не можна пов’язувати послідовність клавіш із цифрою меню"
+
+#: info/infokey.c:478
+#, c-format
+msgid "unknown action `%s'"
+msgstr "невідома дія `%s'"
+
+#: info/infokey.c:503
+msgid "action name too long"
+msgstr "назва дії занадто довга"
+
+#: info/infokey.c:516
+#, c-format
+msgid "extra characters following action `%s'"
+msgstr "зайві символи після дії `%s'"
+
+#: info/infokey.c:527
+msgid "missing variable name"
+msgstr "пропущено назву змінної"
+
+#: info/infokey.c:536
+msgid "missing `=' immediately after variable name"
+msgstr "пропущено знак `=' одразу після назви змінної"
+
+#: info/infokey.c:543
+msgid "variable name too long"
+msgstr "назва змінної занадто довга"
+
+#: info/infokey.c:567
+msgid "value too long"
+msgstr "значення занадто довге"
+
+#: info/infokey.c:613
+#, c-format
+msgid "\"%s\", line %u: "
+msgstr "\"%s\", рядок %u: "
+
+#: info/m-x.c:64
+msgid "Read the name of an Info command and describe it"
+msgstr "Читає назву команди Info та описує її"
+
+#: info/m-x.c:68
+msgid "Describe command: "
+msgstr "Описати команду: "
+
+#: info/m-x.c:91
+msgid "Read a command name in the echo area and execute it"
+msgstr "Читає назву команди з рядка повідомлень та запускає її"
+
+#: info/m-x.c:134
+msgid "Cannot execute an 'echo-area' command here"
+msgstr "Неможливо запустити команду «echo-area» звідси"
+
+#: info/m-x.c:148
+msgid "Set the height of the displayed window"
+msgstr "Встановити висоту показуваного вікна"
+
+#: info/m-x.c:161
+#, c-format
+msgid "Set screen height to (%d): "
+msgstr "Встановити висоту екрану (%d): "
+
+#: info/makedoc.c:139
+#, c-format
+msgid ""
+"   Source files groveled to make this file include:\n"
+"\n"
+msgstr ""
+"   Для створення цього файла було оброблено такі файли джерел даних:\n"
+"\n"
+
+#: info/makedoc.c:464
+#, c-format
+msgid "Couldn't manipulate the file %s.\n"
+msgstr "Операція над файлом %s не вдалася.\n"
+
+#. TRANSLATORS: The "\n* Menu:\n\n" part of this should not be translated, as
+#. it is part of the Info syntax.
+#: info/nodemenu.c:33
+msgid ""
+"\n"
+"* Menu:\n"
+"\n"
+"  (File)Node                        Lines   Size   Containing File\n"
+"  ----------                        -----   ----   ---------------"
+msgstr ""
+"\n"
+"* Меню:\n"
+"\n"
+"  (Файл)Вузол                       Рядків  Розмір Міститься у файлі\n"
+"  -----------                       ------  ------ -----------------"
+
+#: info/nodemenu.c:185
+msgid ""
+"Here is the menu of nodes you have recently visited.\n"
+"Select one from this menu, or use '\\[history-node]' in another window.\n"
+msgstr ""
+"Це меню вузлів, що ви нещодавно відвідували.\n"
+"Оберіть один з вузлів цього меню або використайте «\\[history-node]» у "
+"іншому вікні.\n"
+
+#: info/nodemenu.c:206
+msgid "Make a window containing a menu of all of the currently visited nodes"
+msgstr ""
+"Створити вікно, що міститиме меню з усіх вузлів, що наразі переглядаються"
+
+#: info/nodemenu.c:251
+msgid "Select a node which has been previously visited in a visible window"
+msgstr "Оберіть вузол, який ви раніше відвідували у вікні, що ви бачите"
+
+#: info/nodemenu.c:258
+msgid "Select visited node: "
+msgstr "Оберіть відвіданий вузол: "
+
+#: info/nodemenu.c:276
+#, c-format
+msgid "The reference disappeared! (%s)."
+msgstr "Посилання зникло! (%s)."
+
+#: info/pcterm.c:223
+#, c-format
+msgid "Terminal cannot be initialized: %s\n"
+msgstr "Не вдалося ініціалізувати термінал: %s\n"
+
+#: info/search.c:201
+#, c-format
+msgid "regexp error: %s"
+msgstr "помилка формального виразу: %s"
+
+#: info/session.c:59
+msgid "Show all matching files"
+msgstr "Показати усі відповідні файли"
+
+#: info/session.c:63
+msgid "No file index"
+msgstr "Немає покажчика файлів"
+
+#. TRANSLATORS: Try to keep this message (when "expanded") at most 79
+#. characters; anything after the 79th character will not actually be
+#. displayed on an 80-column terminal.
+#: info/session.c:189
+#, c-format
+msgid ""
+"Welcome to Info version %s.  Type \\[get-help-window] for help, \\[get-info-"
+"help-node] for tutorial."
+msgstr ""
+"Вітаємо у Info версії %s. \\[get-help-window] — довідка, \\[get-info-help-"
+"node] — настанови."
+
+#: info/session.c:1254
+msgid "Move down to the next line"
+msgstr "Перейти вниз на наступний рядок"
+
+#: info/session.c:1269
+msgid "Move up to the previous line"
+msgstr "Перейти вверх на попередній рядок"
+
+#: info/session.c:1285
+msgid "Move the cursor to a specific line of the window"
+msgstr "Пересунути курсор до вказаного рядка вікна"
+
+#: info/session.c:1317
+msgid "Move to the end of the line"
+msgstr "Перейти в кінець рядка"
+
+#: info/session.c:1342
+msgid "Move to the start of the line"
+msgstr "Перейти на початок рядка"
+
+#: info/session.c:1424
+msgid "Move to the start of this node"
+msgstr "Перейти до початку вузла"
+
+#: info/session.c:1431
+msgid "Move to the end of this node"
+msgstr "Перейти до кінця вузла"
+
+#: info/session.c:1522
+msgid "Scroll forward in this window"
+msgstr "Гортати вперед це вікно"
+
+#: info/session.c:1536
+msgid "Scroll backward in this window"
+msgstr "Гортати назад це вікно"
+
+#: info/session.c:1544
+msgid "Scroll forward in this window and set default window size"
+msgstr "Гортати вперед це вікно й встановити стандартний розмір вікна"
+
+#: info/session.c:1559
+msgid "Scroll backward in this window and set default window size"
+msgstr "Гортати назад це вікно й встановити стандартний розмір вікна"
+
+#: info/session.c:1565
+msgid "Scroll forward in this window staying within node"
+msgstr "Гортати вперед це вікно, не перетинаючи меж вузла"
+
+#: info/session.c:1580
+msgid "Scroll backward in this window staying within node"
+msgstr "Гортати назад це вікно, не перетинаючи меж вузла"
+
+#: info/session.c:1588
+msgid ""
+"Scroll forward in this window staying within node and set default window size"
+msgstr ""
+"Гортати вперед це вікно, не перетинаючи меж вузла й встановити стандартний "
+"розмір вікна"
+
+#: info/session.c:1615
+msgid ""
+"Scroll backward in this window staying within node and set default window "
+"size"
+msgstr ""
+"Гортати назад це вікно, не перетинаючи меж вузла й встановити стандартний "
+"розмір вікна"
+
+#: info/session.c:1621
+msgid "Scroll down by lines"
+msgstr "Прокручувати вниз по рядку"
+
+#: info/session.c:1627
+msgid "Scroll up by lines"
+msgstr "Прокручувати вверх по рядку"
+
+#: info/session.c:1639
+msgid "Scroll down by half screen size"
+msgstr "Прокручувати вниз на половину екрану"
+
+#: info/session.c:1666
+msgid "Scroll up by half screen size"
+msgstr "Прокручувати вверх на половину екрану"
+
+#: info/session.c:1672
+msgid "Scroll the other window"
+msgstr "Гортати інше вікно"
+
+#: info/session.c:1693
+msgid "Scroll the other window backward"
+msgstr "Гортати інше вікно назад"
+
+#: info/session.c:1807
+msgid "Select the next window"
+msgstr "Обрати наступне вікно"
+
+#: info/session.c:1844
+msgid "Select the previous window"
+msgstr "Обрати попереднє вікно"
+
+#: info/session.c:1888
+msgid "Split the current window"
+msgstr "Розділити поточне вікно"
+
+#: info/session.c:1933
+msgid "Delete the current window"
+msgstr "Прибрати поточне вікно"
+
+#: info/session.c:1938
+msgid "Cannot delete a permanent window"
+msgstr "Не вдається прибрати постійне вікно"
+
+#: info/session.c:1969
+msgid "Delete all other windows"
+msgstr "Прибрати усі інші вікна"
+
+#: info/session.c:2015
+msgid "Grow (or shrink) this window"
+msgstr "Збільшити (або скоротити) це вікно"
+
+#: info/session.c:2026
+msgid "Divide the available screen space among the visible windows"
+msgstr "Розділити доступний простір екрану між видимими вікнами"
+
+#: info/session.c:2033
+msgid "Toggle the state of line wrapping in the current window"
+msgstr "Перемикнути стан вертання рядків у поточному вікні"
+
+#: info/session.c:2187
+msgid "Select this menu item"
+msgstr "Обрати цей пункт меню"
+
+#: info/session.c:2217
+#, c-format
+msgid "There isn't %d item in this menu"
+msgid_plural "There aren't %d items in this menu"
+msgstr[0] "У цьому меню немає пункту %d"
+msgstr[1] "У цьому меню нема %d-го пункту"
+msgstr[2] "У цьому меню нема %d-го пункту"
+
+#: info/session.c:2226
+msgid "Select the last item in this node's menu"
+msgstr "Обрати останній пункт меню цього вузла"
+
+#: info/session.c:2332 info/session.c:2333
+#, c-format
+msgid "Menu item (%s): "
+msgstr "Пункт меню (%s): "
+
+#: info/session.c:2336
+msgid "Menu item: "
+msgstr "Пункт меню: "
+
+#: info/session.c:2343 info/session.c:2344
+#, c-format
+msgid "Follow xref (%s): "
+msgstr "Перейти за xref (%s): "
+
+#: info/session.c:2347
+msgid "Follow xref: "
+msgstr "Перейти за посиланням: "
+
+#: info/session.c:2424
+#, c-format
+msgid "The reference disappeared! (%s)"
+msgstr "Посилання зникло! (%s)"
+
+#: info/session.c:2436
+msgid "Read a menu item and select its node"
+msgstr "Прочитати пункт меню й обрати його вузол"
+
+#: info/session.c:2461
+msgid "Read a footnote or cross reference and select its node"
+msgstr "Прочитати виноску чи перехресне посилання й обрати її вузол"
+
+#: info/session.c:2484
+msgid "Move to the start of this node's menu"
+msgstr "Перейти до початку меню цього вузла"
+
+#: info/session.c:2506
+msgid "Visit as many menu items at once as possible"
+msgstr "Відкрити одночасно стільки пунктів меню, скільки вдасться"
+
+#: info/session.c:2606
+msgid "Move to the previous cross reference"
+msgstr "Перейти до попереднього перехресного посилання"
+
+#: info/session.c:2669
+msgid "Move to the next cross reference"
+msgstr "Перейти до наступного перехресного посилання"
+
+#: info/session.c:2730
+msgid "Select reference or menu item appearing on this line"
+msgstr "Обрати посилання чи пункт меню з цього рядка"
+
+#: info/session.c:2764
+#, c-format
+msgid "No menu in node '%s'"
+msgstr "Вузол «%s» не містить меню"
+
+#: info/session.c:2811
+#, c-format
+msgid "Unable to find node referenced by '%s' in '%s'"
+msgstr "Не вдається знайти вузол, на який посилається «%s» у «%s»"
+
+#: info/session.c:2867
+msgid "Read a list of menus starting from dir and follow them"
+msgstr "Прочитати список пунктів меню, починаючи від dir та перейти за ними"
+
+#: info/session.c:2869
+msgid "Follow menus: "
+msgstr "Йти за меню: "
+
+#: info/session.c:2974
+msgid "Select the Next node"
+msgstr "Обрати наступний вузол"
+
+#: info/session.c:2981
+msgid "Select the Prev node"
+msgstr "Обрати попередній вузол"
+
+#: info/session.c:2988
+msgid "Select the Up node"
+msgstr "Обрати горішній вузол"
+
+#: info/session.c:2994
+msgid "Select the last node in this file"
+msgstr "Обрати останній вузол цього файлу"
+
+#: info/session.c:3021 info/session.c:3054
+msgid "This window has no additional nodes"
+msgstr "Це вікно не має додаткових вузлів"
+
+#: info/session.c:3027
+msgid "Select the first node in this file"
+msgstr "Обрати перший вузол цього файлу"
+
+#: info/session.c:3161
+msgid "No more nodes within this document"
+msgstr "Це останній вузол цього документа"
+
+#: info/session.c:3205 info/session.c:3244
+msgid "No 'Prev' or 'Up' for this node within this document"
+msgstr ""
+"У цього вузла немає «Попереднього» чи «Горішнього» вузла у цьому документі"
+
+#: info/session.c:3257
+msgid "Move forwards or down through node structure"
+msgstr "Перейти вперед чи вниз по структурі вузлів"
+
+#: info/session.c:3274
+msgid "Move backwards or up through node structure"
+msgstr "Перейти назад чи вверх по структурі вузлів"
+
+#: info/session.c:3297
+msgid "Read a node name and select it"
+msgstr "Прочитати назву вузла й обрати його"
+
+#: info/session.c:3351 info/session.c:3355
+msgid "Goto node: "
+msgstr "Перейти до вузла: "
+
+#: info/session.c:3534
+msgid "Find the node describing program invocation"
+msgstr "Знайти вузол, що описує запуск програми"
+
+#: info/session.c:3536
+#, c-format
+msgid "Find Invocation node of [%s]: "
+msgstr "Знайти вузол запуску програми [%s]: "
+
+#: info/session.c:3581
+msgid "Read a manpage reference and select it"
+msgstr "Прочитати посилання на сторінку man та обрати її"
+
+#: info/session.c:3585
+msgid "Get Manpage: "
+msgstr "Отримати man-сторінку: "
+
+#: info/session.c:3606
+msgid "Select the node 'Top' in this file"
+msgstr "Обрати «Верхній» вузол цього файлу"
+
+#: info/session.c:3612
+msgid "Select the node '(dir)'"
+msgstr "Обрати вузол «(dir)»"
+
+#: info/session.c:3618
+msgid "Show full file name of node being displayed"
+msgstr "Показувати повну назву файла для показаного вузла"
+
+#: info/session.c:3635
+msgid "Select the most recently selected node"
+msgstr "Позначити останній з позначених вузлів"
+
+#: info/session.c:3640
+msgid "No earlier node in history"
+msgstr "У журналі немає попереднього вузла"
+
+#: info/session.c:3644
+msgid "Read the name of a file and select it"
+msgstr "Прочитати назву файлу й обрати його"
+
+#: info/session.c:3648
+msgid "Find file: "
+msgstr "Знайти файл: "
+
+#: info/session.c:3665
+#, c-format
+msgid "Cannot find '%s'"
+msgstr "Не вдалося знайти «%s»"
+
+#: info/session.c:3713
+#, c-format
+msgid "Could not create output file '%s'"
+msgstr "Не вдається створити файл виводу «%s»"
+
+#: info/session.c:3727
+#, c-format
+msgid "error writing to %s: %s"
+msgstr "помилка під час запису до %s: %s"
+
+#: info/session.c:3736
+#, c-format
+msgid "closing %s"
+msgstr "закриття %s"
+
+#: info/session.c:3785
+#, c-format
+msgid "writing node %s..."
+msgstr "записуємо вузол %s…"
+
+#: info/session.c:3831
+msgid "Pipe the contents of this node through INFO_PRINT_COMMAND"
+msgstr "Передати вміст цього вузла через канал до INFO_PRINT_COMMAND"
+
+#: info/session.c:3859
+#, c-format
+msgid "Cannot open pipe to '%s'"
+msgstr "Не вдається створити канал до «%s»"
+
+#: info/session.c:3864
+#, c-format
+msgid "printing node %s..."
+msgstr "друкуємо вузол %s…"
+
+#: info/session.c:3872
+#, c-format
+msgid "finished printing node %s"
+msgstr "завершено друк вузла %s"
+
+#: info/session.c:3904
+msgid "Toggle the usage of regular expressions in searches"
+msgstr "Перемикнути використання формальних виразів під час пошуку"
+
+#: info/session.c:3908
+msgid "Using regular expressions for searches"
+msgstr "Під час пошуку використовуватимуться формальні вирази"
+
+#: info/session.c:3909
+msgid "Using literal strings for searches"
+msgstr "Під час пошуку використовуватимуться звичайні рядки"
+
+#: info/session.c:4112
+msgid "Search continued from the end of the document"
+msgstr "Пошук продовжено з кінця документа"
+
+#: info/session.c:4117
+msgid "Search continued from the beginning of the document"
+msgstr "Пошук продовжено з початку документа"
+
+#: info/session.c:4134
+#, c-format
+msgid "Searching subfile %s ..."
+msgstr "Пошук підфайлу %s ..."
+
+#: info/session.c:4175 info/session.c:4441 info/session.c:4554
+msgid "Search failed"
+msgstr "Помилка пошуку"
+
+#: info/session.c:4192
+#, c-format
+msgid "%s%s%s [%s]: "
+msgstr "%s%s%s [%s]: "
+
+#: info/session.c:4193 info/session.c:4199
+msgid "Regexp search"
+msgstr "Пошук за формальним виразом"
+
+#: info/session.c:4193 info/session.c:4199
+msgid "Search"
+msgstr "Пошук"
+
+#: info/session.c:4194 info/session.c:4200
+msgid " case-sensitively"
+msgstr " з врахуванням регістру"
+
+#: info/session.c:4195 info/session.c:4201
+msgid " backward"
+msgstr " назад"
+
+#: info/session.c:4198
+#, c-format
+msgid "%s%s%s: "
+msgstr "%s%s%s: "
+
+#: info/session.c:4218
+msgid "Search string too short"
+msgstr "Рядок пошуку є надто коротким"
+
+#: info/session.c:4412
+#, c-format
+msgid "Going back to last match from %s"
+msgstr "Повертаємося до останнього відповідника від %s"
+
+#: info/session.c:4441 info/session.c:4554
+msgid "No more matches"
+msgstr "Це був останній результат"
+
+#: info/session.c:4581
+msgid "Search this node and subnodes for a string"
+msgstr "Шукати рядок у цьому вузлі і усіх підлеглих вузлах"
+
+#. TRANSLATORS: %s is the title of a node.
+#: info/session.c:4588
+#, c-format
+msgid "Search under %s: "
+msgstr "Пошук у %s: "
+
+#: info/session.c:4603
+msgid "Go to next match in Info sub-tree"
+msgstr "Перейти до наступного відповідника у піддереві Info"
+
+#: info/session.c:4607 info/session.c:4619
+msgid "No active search"
+msgstr "Немає активного пошуку"
+
+#: info/session.c:4615
+msgid "Go to previous match in Info sub-tree"
+msgstr "Перейти до попереднього відповідника у піддереві Info"
+
+#: info/session.c:4628
+msgid "Read a string and search for it case-sensitively"
+msgstr "Прочитати рядок та знайти його, враховуючи регістр"
+
+#: info/session.c:4633
+msgid "Read a string and search for it"
+msgstr "Прочитати рядок та знайти його"
+
+#: info/session.c:4639
+msgid "Read a string and search backward for it"
+msgstr "Прочитати рядок та знайти його у попередньому тексті"
+
+#: info/session.c:4647
+msgid "Repeat last search in the same direction"
+msgstr "Повторити попередній пошук у тому ж напрямі"
+
+#: info/session.c:4661 info/session.c:4712
+msgid "No previous search string"
+msgstr "Нема попереднього рядку пошуку"
+
+#: info/session.c:4698
+msgid "Repeat last search in the reverse direction"
+msgstr "Повторити пошук у зворотньому напрямі"
+
+#: info/session.c:4751
+msgid "Clear displayed search matches"
+msgstr "Явно показані результати пошуку"
+
+#: info/session.c:4767 info/session.c:4773
+msgid "Search interactively for a string as you type it"
+msgstr "Шукати рядок інтерактивно, поки ви його набираєте"
+
+#: info/session.c:4893
+msgid "Regexp I-search backward: "
+msgstr "I-пошук назад за формальним виразом: "
+
+#: info/session.c:4894
+msgid "I-search backward: "
+msgstr "I-пошук назад: "
+
+#: info/session.c:4896
+msgid "Regexp I-search: "
+msgstr "I-пошук за формальним виразом: "
+
+#: info/session.c:4897
+msgid "I-search: "
+msgstr "I-пошук: "
+
+#: info/session.c:4922 info/session.c:4925
+msgid "Failing "
+msgstr "Невдалий "
+
+#: info/session.c:5290
+msgid "Cancel current operation"
+msgstr "Скасувати поточну операцію"
+
+#: info/session.c:5297
+msgid "Quit"
+msgstr "Завершено"
+
+#: info/session.c:5302
+msgid "Display version of Info being run"
+msgstr "Показати версію запущеного екземпляра Info"
+
+#: info/session.c:5304
+#, c-format
+msgid "GNU Info version %s"
+msgstr "GNU Info версії %s"
+
+#: info/session.c:5309
+msgid "Redraw the display"
+msgstr "Оновити зображення"
+
+#: info/session.c:5346
+msgid "Quit using Info"
+msgstr "Вийти з Info"
+
+#: info/session.c:5362
+msgid "Run command bound to this key's lowercase variant"
+msgstr "Запустити команду, призначену цій клавіші у нижньому регістрі"
+
+#: info/session.c:5373
+#, c-format
+msgid "Unknown command (%s)"
+msgstr "Невідома команда (%s)"
+
+#: info/session.c:5376
+#, c-format
+msgid "\"%s\" is invalid"
+msgstr "невірна послідовність \"%s\""
+
+#: info/session.c:5377
+#, c-format
+msgid "'%s' is invalid"
+msgstr "«%s» є некоректним"
+
+#: info/session.c:5695
+msgid "Add this digit to the current numeric argument"
+msgstr "Додати цю цифру до поточного числового аргументу"
+
+#: info/session.c:5702
+msgid "Start (or multiply by 4) the current numeric argument"
+msgstr "Ініціювати (чи помножити на 4) поточний числовий аргумент"
+
+#: info/variables.c:67
+msgid "When \"On\", footnotes appear and disappear automatically"
+msgstr "Коли \"On\", виноски з’являються й зникають автоматично"
+
+#: info/variables.c:71
+msgid "When \"On\", creating or deleting a window resizes other windows"
+msgstr "Коли \"On\", створення чи вилучення вікна змінює розмір інших вікон"
+
+#: info/variables.c:75
+msgid "When \"On\", flash the screen instead of ringing the bell"
+msgstr "Коли \"On\", замість дзвінка буде спалах екрану"
+
+#: info/variables.c:79
+msgid "When \"On\", errors cause the bell to ring"
+msgstr "Коли \"On\", при помилці дзвенітиме дзвінок"
+
+#: info/variables.c:83
+msgid "When \"On\", Info garbage collects files which had to be uncompressed"
+msgstr "Коли \"On\", Info прибирає файли, які створюються при розтисканні"
+
+#: info/variables.c:86
+msgid "When \"On\", the portion of the matched search string is highlighted"
+msgstr "Коли \"On\", при пошуку, частина рядку, що збігається, буде підсвічена"
+
+#: info/variables.c:90
+msgid "Controls what happens when scrolling is requested at the end of a node"
+msgstr "Визначає, що відбуватиметься при прокручуванні коло кінця вузла"
+
+#: info/variables.c:95
+msgid "Same as scroll-behaviour"
+msgstr "Те ж саме, що й scroll-behaviour"
+
+#: info/variables.c:99
+msgid "The number lines to scroll when the cursor moves out of the window"
+msgstr ""
+"Кількість рядків, що треба прокручувати, коли курсор досягає границі вікна"
+
+#: info/variables.c:103
+msgid "Controls whether scroll-behavior affects cursor movement commands"
+msgstr "Визначає, чи поведінка прокрутки впливає на рух курсора"
+
+#: info/variables.c:107
+msgid "When \"On\", Info accepts and displays ISO Latin characters"
+msgstr "Коли \"On\", Info приймає й показує символи ISO Latin"
+
+#: info/variables.c:111
+msgid ""
+"What to do when a scrolling command is issued at the end of the last node"
+msgstr "Що робити при прокручуванні за кінець останнього вузла"
+
+#: info/variables.c:116
+msgid "Minimal length of a search string"
+msgstr "Мінімальна довжина рядка пошуку"
+
+#: info/variables.c:120
+msgid "Skip current window when searching"
+msgstr "Пропустити поточне вікно під час пошуку"
+
+#: info/variables.c:124
+msgid "Exclude default directories from file search path"
+msgstr "Виключити типові каталоги зі шляху пошуку файлів"
+
+#: info/variables.c:128
+msgid "Hide some Info file syntax in the text of nodes"
+msgstr "Приховати деякі синтаксичні конструкції файлів Info у тексті вузлів"
+
+#: info/variables.c:132
+msgid ""
+"Length of time in milliseconds to wait for the next byte in a sequence "
+"indicating that a key has been pressed"
+msgstr ""
+"Тривалість очікування у мілісекундах на відзначення у наступному байті "
+"послідовності натискання клавіші"
+
+#: info/variables.c:136
+msgid "Method to use to track mouse events"
+msgstr "Спосіб відстеження подій, пов’язаних із мишею"
+
+#: info/variables.c:140
+msgid "How to follow a cross-reference"
+msgstr "Спосіб переходу за перехресним посиланням"
+
+#: info/variables.c:144
+msgid "Highlight search matches"
+msgstr "Позначити результати пошуку"
+
+#: info/variables.c:148
+msgid "Styles for links"
+msgstr "Стилі для посилань"
+
+#: info/variables.c:152
+msgid "Styles for active links"
+msgstr "Стилі для активних посилань"
+
+#: info/variables.c:156
+msgid "Styles for search matches"
+msgstr "Стилі для результатів пошуку"
+
+#: info/variables.c:160
+msgid "How to print the information line at the start of a node"
+msgstr "Спосіб виведення рядка інформації на початку вузла"
+
+#: info/variables.c:221
+msgid "Explain the use of a variable"
+msgstr "Описати використання змінної"
+
+#: info/variables.c:227
+msgid "Describe variable: "
+msgstr "Описати змінну: "
+
+#: info/variables.c:247
+msgid "Set the value of an Info variable"
+msgstr "Встановити значення змінної"
+
+#: info/variables.c:254
+msgid "Set variable: "
+msgstr "Встановити змінну: "
+
+#: info/variables.c:270
+#, c-format
+msgid "Set %s to value (%d): "
+msgstr "Встановити для %s значення (%d): "
+
+#: info/variables.c:304
+#, c-format
+msgid "Set %s to value (%s): "
+msgstr "Встановити для %s значення (%s): "
+
+#: info/window.c:907
+msgid "-----Info: (), lines ----, "
+msgstr "-----Info: (), рядків ----, "
+
+#: install-info/install-info.c:289
+#, c-format
+msgid "%s: empty file"
+msgstr "%s: порожній файл"
+
+#: install-info/install-info.c:291
+#, c-format
+msgid "%s for %s"
+msgstr "%s для %s"
+
+#: install-info/install-info.c:530
+#, c-format
+msgid "\tTry `%s --help' for a complete list of options.\n"
+msgstr "\tСпробуйте `%s --help', щоб отримати повний список параметрів.\n"
+
+#: install-info/install-info.c:538
+#, c-format
+msgid "Usage: %s [OPTION]... [INFO-FILE [DIR-FILE]]\n"
+msgstr "Використання: %s [ПАРАМЕТР]... [ФАЙЛ-INFO [ФАЙЛ-DIR]]\n"
+
+#: install-info/install-info.c:540
+msgid "Add or remove entries in INFO-FILE from the Info directory DIR-FILE."
+msgstr "Додає чи вилучає пункти ФАЙЛУ-INFO з файлу каталогу Info ФАЙЛ-DIR."
+
+#: install-info/install-info.c:541
+msgid ""
+"INFO-FILE and DIR-FILE are required unless the --info-file\n"
+"or --dir-file (or --info-dir) options are given, respectively."
+msgstr ""
+"Слід визначити ФАЙЛ-INFO і ФАЙЛ-DIR, якщо не вказано параметри --info-file\n"
+"або --dir-file (або --info-dir), відповідно."
+
+#: install-info/install-info.c:545
+msgid ""
+"Options:\n"
+" --add-once          add only to first matching section, not all.\n"
+" --align=COL         start description of new entries at column COL.\n"
+" --calign=COL        format second and subsequent description lines to\n"
+"                       start at column COL."
+msgstr ""
+"Параметри:\n"
+" --add-once          додати лише до першого відповідного розділу, не до "
+"всіх.\n"
+" --align=COL         починати опис нових записів на позиції COL.\n"
+" --calign=COL        форматувати другий і наступні рядки опису так, щоб "
+"вони\n"
+"                       починалися з позиції COL."
+
+#: install-info/install-info.c:552
+msgid ""
+" --debug             report what is being done.\n"
+" --delete            delete existing entries for INFO-FILE from DIR-FILE;\n"
+"                      don't insert any new entries.\n"
+" --defsection=TEXT   like --section, but only use TEXT if no sections\n"
+"                      are present in INFO-FILE (replacing \"Miscellaneous"
+"\").\n"
+" --description=TEXT  the description of the entry is TEXT; used with\n"
+"                      the --name option to become synonymous with the\n"
+"                      --entry option.\n"
+" --dir-file=NAME     specify file name of Info directory file;\n"
+"                      equivalent to using the DIR-FILE argument.\n"
+" --dry-run           same as --test."
+msgstr ""
+" --debug             звітувати про дії, які виконуються.\n"
+" --delete            вилучити наявні записи для ФАЙЛА-INFO з ФАЙЛА-DIR;\n"
+"                      не вставляти жодних нових записів.\n"
+" --defsection=ТЕКСТ  подібне до --section, але використовується лише ТЕКСТ,\n"
+"                      якщо у ФАЙЛІ-INFO-FILE немає розділів (замінює "
+"«Інше»).\n"
+" --description=ТЕКСТ опис запису - це ТЕКСТ; у поєднанні з\n"
+"                      параметром --name стає тим же самим, що й\n"
+"                      параметр --entry.\n"
+" --dir-file=ФАЙЛ     вказати назву файлу каталогу Info;\n"
+"                      те ж саме, що використати аргумент ФАЙЛ-DIR.\n"
+" --dry-run           те ж саме, що й --test."
+
+#: install-info/install-info.c:565
+msgid ""
+" --entry=TEXT        insert TEXT as an Info directory entry,\n"
+"                      overriding any corresponding entry from DIR-FILE.\n"
+"                      TEXT is written as an Info menu item line followed\n"
+"                       by zero or more extra lines starting with "
+"whitespace.\n"
+"                      If you specify more than one entry, all are added.\n"
+"                      If you don't specify any entries, they are determined\n"
+"                       from information in the Info file itself."
+msgstr ""
+" --entry=ТЕКСТ       вставити ТЕКСТ як запис у каталозі Info,\n"
+"                      перевизначивши будь-який відповідний запису з ФАЙЛА-"
+"DIR.\n"
+"                      ТЕКСТ записується як рядок пункту меню Info, за яким\n"
+"                       ідуть нуль або більше додаткових рядків, що "
+"починаються з пропуску.\n"
+"                      Якщо ви вкажете більш ніж один запис, буде додано всі "
+"ці записи.\n"
+"                      Якщо ви не вкажете жодного запису, їх буде визначено "
+"за\n"
+"                       інформацією у файлі Info."
+
+#: install-info/install-info.c:574
+msgid ""
+" --help              display this help and exit.\n"
+" --info-dir=DIR      same as --dir-file=DIR/dir.\n"
+" --info-file=FILE    specify Info file to install in the directory;\n"
+"                      equivalent to using the INFO-FILE argument.\n"
+" --item=TEXT         same as --entry=TEXT.\n"
+" --keep-old          do not replace entries, or remove empty sections."
+msgstr ""
+" --help              показати цю довідку й вийти.\n"
+" --info-dir=ТЕКА     те ж саме, що й --dir-file=ТЕКА/dir.\n"
+" --info-file=ФАЙЛ    вказати назву файла Info для встановлення у каталог;\n"
+"                      те ж саме, що використати аргумент ФАЙЛ-INFO.\n"
+" --item=ТЕКСТ        те ж саме, що й --entry=ТЕКСТ.\n"
+" --keep-old          не заміняти записи й не вилучати порожні розділи."
+
+#: install-info/install-info.c:582
+msgid ""
+" --maxwidth, --max-width=COL  wrap description at column COL.\n"
+" --menuentry=TEXT    same as --name=TEXT.\n"
+" --name=TEXT         the name of the entry is TEXT; used with --description\n"
+"                      to become synonymous with the --entry option.\n"
+" --no-indent         do not format new entries in the DIR file.\n"
+" --quiet             suppress warnings."
+msgstr ""
+" --maxwidth, --max-width=COL  розбивати рядки опису на позиції COL.\n"
+" --menuentry=ТЕКСТ   те саме, що і --name=ТЕКСТ.\n"
+" --name=ТЕКСТ        ТЕКСТ - це назва запису; у поєднанні з --description\n"
+"                      стає тим же самим, що й параметр --entry.\n"
+" --no-indent         не форматувати нові записи у файлі каталогу.\n"
+" --quiet             не показувати попереджень."
+
+#: install-info/install-info.c:590
+msgid ""
+" --regex=R           put this file's entries in all sections that match the\n"
+"                      regular expression R (ignoring case).\n"
+" --remove            same as --delete.\n"
+" --remove-exactly    only remove if the info file name matches exactly;\n"
+"                      suffixes such as .info and .gz are not ignored.\n"
+" --section=SEC       put entries in section SEC of the directory.\n"
+"                      If you specify more than one section, all the entries\n"
+"                       are added in each of the sections.\n"
+"                      If you don't specify any sections, they are "
+"determined\n"
+"                       from information in the Info file itself;\n"
+"                       if nothing is available there, the --defsection\n"
+"                       value is used; if that is not specified, the\n"
+"                       final default is \"Miscellaneous\".\n"
+" --section R SEC     equivalent to --regex=R --section=SEC --add-once."
+msgstr ""
+" --regex=R           розмістити записи цього файлу в усіх секціях, які "
+"збігаються з\n"
+"                      формальним виразом R (регістр не враховується).\n"
+" --remove            те ж саме, що й --delete.\n"
+" --remove-exactly    вилучати, лише якщо назва файлу точно відповідає "
+"запису;\n"
+"                      суфікси на кшталт .info та .gz не ігноруються.\n"
+" --section=СЕКЦІЯ    розмістити записи у секції СЕКЦІЯ каталогу.\n"
+"                      Якщо ви вкажете більше одної секції, усі записи буде\n"
+"                       додано до кожної з секцій.\n"
+"                      Якщо ви не вкажете жодної секції, їх буде визначено\n"
+"                       за інформацією у файлі Info;\n"
+"                       якщо немає доступних елементів, використовується "
+"значення\n"
+"                       --defsection; якщо його не вказано, остаточним\n"
+"                       типовим є «Інше».\n"
+" --section R СЕКЦІЯ  те ж саме, що й --regex=R --section=СЕКЦІЯ --add-once."
+
+#: install-info/install-info.c:606
+msgid ""
+" --silent            suppress warnings.\n"
+" --test              suppress updating of DIR-FILE.\n"
+" --version           display version information and exit."
+msgstr ""
+" --silent            не показувати попереджень.\n"
+" --test              не оновлювати ФАЙЛ-DIR.\n"
+" --version           показати інформацію про версію й вийти."
+
+#: install-info/install-info.c:639
+#, c-format
+msgid ""
+"This is the file .../info/dir, which contains the\n"
+"topmost node of the Info hierarchy, called (dir)Top.\n"
+"The first time you invoke Info you start off looking at this node.\n"
+"%c\n"
+"%s\tThis is the top of the INFO tree\n"
+"\n"
+"  This (the Directory node) gives a menu of major topics.\n"
+"  Typing \"q\" exits, \"H\" lists all Info commands, \"d\" returns here,\n"
+"  \"h\" gives a primer for first-timers,\n"
+"  \"mEmacs<Return>\" visits the Emacs manual, etc.\n"
+"\n"
+"  In Emacs, you can click mouse button 2 on a menu item or cross reference\n"
+"  to select it.\n"
+"\n"
+"%s\n"
+msgstr ""
+"Це файл .../info/dir, що містить\n"
+"найвищий вузол ієрархії Info і називається (dir)Top.\n"
+"Коли ви запускаєте info, ви починаєте з перегляду цього вузла.\n"
+"%c\n"
+"%s\tЦе верхівка дерева INFO\n"
+"\n"
+"  Цей вузол (вузол Каталогу) надає меню основних тем.\n"
+"  Набравши \"q\" можна вийти, \"H\" - отримати список команд Info, \"d\" "
+"поверне вас сюди,\n"
+"  \"h\" надасть інформацію для початківців,\n"
+"  \"mEmacs<Enter>\" перейде до підручника з Emacs, і так далі.\n"
+"\n"
+"  У Emacs ви можете використовувати клік клавішею 2 миші на пункті меню чи "
+"перехресному посиланні,\n"
+"  щоб обрати його.\n"
+"\n"
+"%s\n"
+
+#: install-info/install-info.c:663
+#, c-format
+msgid "%s: could not read (%s) and could not create (%s)"
+msgstr "%s: не вдалося прочитати (%s) і не вдалося створити (%s)"
+
+#: install-info/install-info.c:1151 install-info/install-info.c:1191
+msgid "START-INFO-DIR-ENTRY without matching END-INFO-DIR-ENTRY"
+msgstr "START-INFO-DIR-ENTRY без відповідного END-INFO-DIR-ENTRY"
+
+#: install-info/install-info.c:1186
+msgid "END-INFO-DIR-ENTRY without matching START-INFO-DIR-ENTRY"
+msgstr "END-INFO-DIR-ENTRY без відповідного START-INFO-DIR-ENTRY"
+
+#: install-info/install-info.c:2061 install-info/install-info.c:2071
+#, c-format
+msgid "%s: already have dir file: %s\n"
+msgstr "%s: вже має файл каталогу: %s\n"
+
+#: install-info/install-info.c:2167
+#, c-format
+msgid "%s: Specify the Info file only once.\n"
+msgstr "%s: Вкажіть файл Info лише один раз.\n"
+
+#: install-info/install-info.c:2200
+#, c-format
+msgid "Extra regular expression specified, ignoring `%s'"
+msgstr "Пропущено зайвий формальний вираз `%s'"
+
+#: install-info/install-info.c:2212
+#, c-format
+msgid "Error in regular expression `%s': %s"
+msgstr "Помилка у формальному виразі `%s': %s"
+
+#: install-info/install-info.c:2274
+#, c-format
+msgid "excess command line argument `%s'"
+msgstr "зайвий аргумент `%s'"
+
+#: install-info/install-info.c:2278
+msgid "No input file specified; try --help for more information."
+msgstr ""
+"Не вказано вхідних файлів; спробуйте --help, щоб отримати більше інформації."
+
+#: install-info/install-info.c:2280
+msgid "No dir file specified; try --help for more information."
+msgstr ""
+"Не вказано файл каталогу; спробуйте --help, щоб отримати більше інформації."
+
+#: install-info/install-info.c:2301
+#, c-format
+msgid "Could not read %s."
+msgstr "Не вдалося прочитати %s."
+
+#: install-info/install-info.c:2448
+#, c-format
+msgid "no info dir entry in `%s'"
+msgstr "немає запису info dir у `%s'"
+
+#: install-info/install-info.c:2696
+#, c-format
+msgid "no entries found for `%s'; nothing deleted"
+msgstr "у `%s' записів не знайдено; нічого не вилучено"
+
+#: tp/DebugTexinfo/DebugTree.pm:63 tp/Texinfo/Convert/Converter.pm:796
+#: tp/Texinfo/Convert/Converter.pm:834 tp/Texinfo/Convert/Converter.pm:1109
+#: tp/Texinfo/Convert/DocBook.pm:318 tp/Texinfo/Convert/HTML.pm:6607
+#: tp/Texinfo/Convert/HTML.pm:6631 tp/Texinfo/Convert/HTML.pm:7009
+#: tp/Texinfo/Convert/HTML.pm:7068 tp/Texinfo/Convert/HTML.pm:7146
+#: tp/Texinfo/Convert/IXIN.pm:286 tp/Texinfo/Convert/Info.pm:297
+#: tp/Texinfo/Convert/TexinfoXML.pm:451
+#, perl-format
+msgid "could not open %s for writing: %s"
+msgstr "не вдалося відкрити %s для запису: %s"
+
+#: tp/Texinfo/Common.pm:887
+msgid ""
+"move your @contents command if you want the contents after the title page"
+msgstr ""
+"пересуньте команду @contents, якщо після титульної сторінки має бути текст"
+
+#: tp/Texinfo/Common.pm:890
+msgid ""
+"move your @shortcontents and @contents commands if you want the contents "
+"after the title page"
+msgstr ""
+"пересуньте команди @shortcontents і @contents, якщо після титульної сторінки "
+"має бути текст"
+
+#: tp/Texinfo/Common.pm:1149 tp/Texinfo/XS/parsetexi/end_line.c:1607
+#: tp/Texinfo/XS/parsetexi/end_line.c:1617
+#, c-format, perl-format
+msgid "%s is not a valid language code"
+msgstr "%s не є коректним кодом мови"
+
+#: tp/Texinfo/Common.pm:1154 tp/Texinfo/XS/parsetexi/end_line.c:1634
+#, c-format, perl-format
+msgid "%s is not a valid region code"
+msgstr "%s не є коректним кодом регіону"
+
+#: tp/Texinfo/Common.pm:1171
+#, perl-format
+msgid "%s is not a valid split possibility"
+msgstr "%s не є коректною можливістю поділу"
+
+#: tp/Texinfo/Common.pm:1193
+#, perl-format
+msgid "could not read %s: %s"
+msgstr "не вдалося прочитати %s: %s"
+
+#: tp/Texinfo/Common.pm:1213
+#, perl-format
+msgid "error on closing @verbatiminclude file %s: %s"
+msgstr "помилка під час закриття файла @verbatiminclude %s: %s"
+
+#: tp/Texinfo/Common.pm:1219 tp/Texinfo/ParserNonXS.pm:2971
+#, perl-format
+msgid "@%s: could not find %s"
+msgstr "@%s: не вдалося знайти %s"
+
+#: tp/Texinfo/Common.pm:2198
+#, perl-format
+msgid "could not protect hash character in @%s"
+msgstr "не вдалося екранувати символ решітки у @%s"
+
+#: tp/Texinfo/Common.pm:2580
+#, perl-format
+msgid "empty node name after expansion `%s'"
+msgstr "порожня назва вузла після розгортання «%s»"
+
+#: tp/Texinfo/Common.pm:2588
+#, perl-format
+msgid "@%s `%s' previously defined"
+msgstr "@%s «%s» визначено раніше"
+
+#: tp/Texinfo/Common.pm:2594
+#, perl-format
+msgid "here is the previous definition as @%s"
+msgstr "попереднє визначення як @%s"
+
+#: tp/Texinfo/Common.pm:2613 tp/Texinfo/ParserNonXS.pm:3258
+#: tp/Texinfo/XS/parsetexi/end_line.c:47
+#, c-format, perl-format
+msgid "empty argument in @%s"
+msgstr "порожній аргумент у @%s"
+
+#: tp/Texinfo/Convert/Converter.pm:742
+#, perl-format
+msgid "%s: output incompatible with split"
+msgstr "%s: виведені дані несумісні із поділом"
+
+#: tp/Texinfo/Convert/Converter.pm:817 tp/Texinfo/Convert/Converter.pm:850
+#: tp/Texinfo/Convert/DocBook.pm:354 tp/Texinfo/Convert/HTML.pm:7035
+#: tp/Texinfo/Convert/HTML.pm:7094 tp/Texinfo/Convert/IXIN.pm:909
+#: tp/Texinfo/Convert/Info.pm:160 tp/Texinfo/Convert/Info.pm:186
+#: tp/Texinfo/Convert/Info.pm:214 tp/Texinfo/Convert/Info.pm:277
+#: tp/Texinfo/Convert/TexinfoXML.pm:470 tp/Texinfo/ParserNonXS.pm:1813
+#, perl-format
+msgid "error on closing %s: %s"
+msgstr "помилка під час спроби закрити %s: %s"
+
+#: tp/Texinfo/Convert/Converter.pm:928
+#, perl-format
+msgid "could not create directories `%s' or `%s': %s"
+msgstr "не вдалося створити каталок «%s» або «%s»: %s"
+
+#: tp/Texinfo/Convert/Converter.pm:936
+#, perl-format
+msgid "could not create directory `%s': %s"
+msgstr "не вдалося створити каталог «%s»: %s"
+
+#: tp/Texinfo/Convert/DocBook.pm:1022
+#, perl-format
+msgid "@image file `%s' not found, using `%s'"
+msgstr "не знайдено файл @image «%s», використовуємо «%s»"
+
+#: tp/Texinfo/Convert/DocBook.pm:1142 tp/Texinfo/ParserNonXS.pm:5016
+#: tp/Texinfo/XS/parsetexi/separator.c:427
+msgid "no argument specified for @U"
+msgstr "не вказано аргументу @U"
+
+#: tp/Texinfo/Convert/HTML.pm:1752
+#, perl-format
+msgid "@image file `%s' (for HTML) not found, using `%s'"
+msgstr "не знайдено файл @image «%s» (для HTML), використовуємо «%s»"
+
+#: tp/Texinfo/Convert/HTML.pm:2421
+#, perl-format
+msgid "raw format %s is not converted"
+msgstr "формат необроблених даних %s не перетворено"
+
+#: tp/Texinfo/Convert/HTML.pm:4665
+#, perl-format
+msgid "could not open html refs config file %s: %s"
+msgstr "не вдалося відкрити файл налаштувань посилань html %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:4693
+msgid "missing type"
+msgstr "пропущено тип"
+
+#: tp/Texinfo/Convert/HTML.pm:4696
+#, perl-format
+msgid "unrecognized type: %s"
+msgstr "нерозпізнаний тип: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:4713
+#, perl-format
+msgid "error on closing html refs config file %s: %s"
+msgstr "помилка під час закриття файла налаштувань посилань html %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:5034
+msgid "string not closed in css file"
+msgstr "незавершений рядок у файлі css"
+
+#: tp/Texinfo/Convert/HTML.pm:5036
+msgid "--css-include ended in comment"
+msgstr "--css-include завершується коментарем"
+
+#: tp/Texinfo/Convert/HTML.pm:5038
+msgid "@import not finished in css file"
+msgstr "незавершений запис @import у файлі css"
+
+#: tp/Texinfo/Convert/HTML.pm:5064
+#, perl-format
+msgid "CSS file %s not found"
+msgstr "Файл CSS %s не знайдено"
+
+#: tp/Texinfo/Convert/HTML.pm:5070
+#, perl-format
+msgid "could not open --include-file %s: %s"
+msgstr "не вдалося відкрити --include-файл %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:5080
+#, perl-format
+msgid "error on closing CSS file %s: %s"
+msgstr "помилка під час спроби закрити файл CSS %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:5867 tp/Texinfo/Convert/HTML.pm:5871
+#, perl-format
+msgid "no htmlxref.cnf entry found for `%s'"
+msgstr "не знайдено запису htmlxref.cnf для «%s»"
+
+#: tp/Texinfo/Convert/HTML.pm:6602
+#, perl-format
+msgid "error on closing frame file %s: %s"
+msgstr "помилка під час спроби закрити файл фрейма %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:6626
+#, perl-format
+msgid "error on closing TOC frame file %s: %s"
+msgstr "помилка під час спроби закрити файл фрейма змісту %s: %s"
+
+#: tp/Texinfo/Convert/HTML.pm:6742
+#, perl-format
+msgid "handler %s of stage %s priority %s failed"
+msgstr "помилка обробника %s на етапі %s, пріоритетність %s"
+
+#: tp/Texinfo/Convert/HTML.pm:6943
+msgid "must specify a title with a title command or @top"
+msgstr "слід вказати заголовок за допомогою команди title або @top"
+
+#: tp/Texinfo/Convert/HTML.pm:7153
+#, perl-format
+msgid "error on closing redirection node file %s: %s"
+msgstr "помилка під час спроби закрити файл переспрямовування вузла %s: %s"
+
+#: tp/Texinfo/Convert/Info.pm:105
+msgid "document without nodes"
+msgstr "документ без вузлів"
+
+#: tp/Texinfo/Convert/Info.pm:122
+msgid "document without Top node"
+msgstr "документ без вузла Top"
+
+#: tp/Texinfo/Convert/Info.pm:170
+#, perl-format
+msgid "rename %s failed: %s"
+msgstr "спроба перейменування %s зазнала невдачі: %s"
+
+#: tp/Texinfo/Convert/Info.pm:251
+#, perl-format
+msgid "@%s output more than once: %s"
+msgstr "виведення @%s декілька разів: %s"
+
+#: tp/Texinfo/Convert/Info.pm:381
+#, perl-format
+msgid "@%s outside of any node"
+msgstr "@%s поза межами будь-якого вузла"
+
+#: tp/Texinfo/Convert/Info.pm:424
+#, perl-format
+msgid "@node name should not contain `,': %s"
+msgstr "назва @node не повинна містити «,»: %s"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1259
+#, perl-format
+msgid "Index entry in @%s with : produces invalid Info: %s"
+msgstr "Запис покажчика у @%s з : призводить до некоректного Info: %s"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1306 tp/Texinfo/ParserNonXS.pm:2398
+#: tp/Texinfo/XS/parsetexi/indices.c:324
+#, c-format, perl-format
+msgid "entry for index `%s' outside of any node"
+msgstr "пункт покажчика «%s» ззовні будь-якого вузла"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1419
+#, perl-format
+msgid "error on closing image text file %s: %s"
+msgstr "помилка під час спроби закрити файл тексту зображення %s: %s"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1424
+#, perl-format
+msgid "@image file `%s' unreadable: %s"
+msgstr "Неможливо прочитати файл @image `%s': %s"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1445
+#, perl-format
+msgid "could not find @image file `%s.txt' nor alternate text"
+msgstr "не вдалося знайти файл @image «%s.txt» або текст-замінник"
+
+#: tp/Texinfo/Convert/Plaintext.pm:1805
+msgid ""
+"@strong{Note...} produces a spurious cross-reference in Info; reword to "
+"avoid that"
+msgstr ""
+"@strong{Note...} створює хибні перехресні посилання у Info; переформулюйте, "
+"уникаючи цього"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2053
+#, perl-format
+msgid "@%s cross-reference name should not contain `:'"
+msgstr "у назві перехресного посилання @%s не повинно міститися «:»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2091
+#, perl-format
+msgid "@%s node name should not contain `%s'"
+msgstr "У назві вузла @%s не повинно міститися «%s»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2124
+#, perl-format
+msgid "@%s node name should not contain `:'"
+msgstr "у назві вузла @%s не повинно міститися «:»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2171
+#, perl-format
+msgid "`.' or `,' must follow @xref, not %s"
+msgstr "після @xref має бути «.» або «,», але не %s"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2174
+msgid "`.' or `,' must follow @xref"
+msgstr "після @xref має бути «.» або «,»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2978
+#, perl-format
+msgid "menu entry node name should not contain `%s'"
+msgstr "у назві вузла пункту меню не повинно бути «%s»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:2989
+msgid "menu entry node name should not contain `:'"
+msgstr "у назві вузла пункту меню не повинно бути «:»"
+
+#: tp/Texinfo/Convert/Plaintext.pm:3009
+msgid "menu entry name should not contain `:'"
+msgstr "у назві пункту меню не повинно бути «:»"
+
+#: tp/Texinfo/ParserNonXS.pm:762
+#, perl-format
+msgid "could not open %s: %s"
+msgstr "не вдалося відкрити %s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:983 tp/Texinfo/Structuring.pm:422
+#: tp/Texinfo/XS/parsetexi/parser.c:242
+#, c-format, perl-format
+msgid "multiple @%s"
+msgstr "декілька @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:1021 tp/Texinfo/XS/parsetexi/macro.c:181
+#, c-format, perl-format
+msgid "bad or empty @%s formal argument: %s"
+msgstr "помилковий або порожній формальний аргумент @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:1031 tp/Texinfo/XS/parsetexi/macro.c:204
+#, c-format, perl-format
+msgid "bad syntax for @%s argument: %s"
+msgstr "помилковий синтаксис аргументу @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:1038 tp/Texinfo/ParserNonXS.pm:4493
+#: tp/Texinfo/ParserNonXS.pm:4519 tp/Texinfo/ParserNonXS.pm:5325
+#: tp/Texinfo/ParserNonXS.pm:5338 tp/Texinfo/ParserNonXS.pm:5352
+#, perl-format
+msgid "%c%s requires a name"
+msgstr "%c%s вимагає вказати назву"
+
+#: tp/Texinfo/ParserNonXS.pm:1042 tp/Texinfo/ParserNonXS.pm:4496
+#: tp/Texinfo/ParserNonXS.pm:4522 tp/Texinfo/ParserNonXS.pm:5328
+#: tp/Texinfo/ParserNonXS.pm:5341 tp/Texinfo/ParserNonXS.pm:5355
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:848
+#: tp/Texinfo/XS/parsetexi/macro.c:101
+#, c-format, perl-format
+msgid "bad name for @%s"
+msgstr "помилкова назва @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:1156 tp/Texinfo/XS/parsetexi/close.c:42
+#, c-format, perl-format
+msgid "@end %s seen before @%s closing brace"
+msgstr "@end %s розташовано до кінцевої дужки @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:1160 tp/Texinfo/XS/parsetexi/close.c:47
+#, c-format, perl-format
+msgid "@%s seen before @%s closing brace"
+msgstr "@%s розташовано до кінцевої дужки @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:1165
+#, perl-format
+msgid "%c%s missing closing brace"
+msgstr "%c%s не має завершальної фігурної дужки"
+
+#: tp/Texinfo/ParserNonXS.pm:1169 tp/Texinfo/XS/parsetexi/close.c:58
+#, c-format, perl-format
+msgid "@%s missing closing delimiter sequence: %s}"
+msgstr "у @%s не вистачає кінцевої послідовності-роздільника: %s}"
+
+#: tp/Texinfo/ParserNonXS.pm:1278 tp/Texinfo/XS/parsetexi/multitable.c:73
+#, c-format, perl-format
+msgid "@itemx should not begin @%s"
+msgstr "@itemx не може починатися з @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:1344 tp/Texinfo/XS/parsetexi/multitable.c:129
+msgid "@itemx must follow @item"
+msgstr "@itemx слід використовувати після @item"
+
+#: tp/Texinfo/ParserNonXS.pm:1509 tp/Texinfo/XS/parsetexi/close.c:232
+#, c-format, perl-format
+msgid "@%s has text but no @item"
+msgstr "@%s містить текст без @item"
+
+#: tp/Texinfo/ParserNonXS.pm:1537 tp/Texinfo/XS/parsetexi/close.c:262
+#, c-format, perl-format
+msgid "`@end' expected `%s', but saw `%s'"
+msgstr "`@end' очікує `%s', натомість отримано `%s'"
+
+#: tp/Texinfo/ParserNonXS.pm:1540 tp/Texinfo/XS/parsetexi/close.c:268
+#, c-format, perl-format
+msgid "@%s seen before @end %s"
+msgstr "@%s розташовано до @end %s"
+
+#: tp/Texinfo/ParserNonXS.pm:1544
+#, perl-format
+msgid "no matching `%cend %s'"
+msgstr "не знайдено відповідного `%cend %s'"
+
+#: tp/Texinfo/ParserNonXS.pm:1568 tp/Texinfo/ParserNonXS.pm:4856
+#: tp/Texinfo/ParserNonXS.pm:5107
+#, perl-format
+msgid "misplaced %c"
+msgstr "неправильно розташоване %c"
+
+#: tp/Texinfo/ParserNonXS.pm:1669 tp/Texinfo/ParserNonXS.pm:2925
+#, perl-format
+msgid "unmatched `%c%s'"
+msgstr "«%c%s» без відповідника"
+
+#: tp/Texinfo/ParserNonXS.pm:1886 tp/Texinfo/XS/parsetexi/macro.c:351
+#, c-format, perl-format
+msgid "macro `%s' called with too many args"
+msgstr "макровизначення «%s» викликано з надмірною кількістю аргументів"
+
+#: tp/Texinfo/ParserNonXS.pm:1908 tp/Texinfo/XS/parsetexi/close.c:52
+#: tp/Texinfo/XS/parsetexi/macro.c:277
+#, c-format, perl-format
+msgid "@%s missing closing brace"
+msgstr "@%s не має завершальної фігурної дужки"
+
+#: tp/Texinfo/ParserNonXS.pm:1916 tp/Texinfo/XS/parsetexi/macro.c:367
+#, c-format, perl-format
+msgid "macro `%s' declared without argument called with an argument"
+msgstr ""
+"макровизначення «%s» оголошено без аргументу, з яким його слід викликати"
+
+#: tp/Texinfo/ParserNonXS.pm:1949 tp/Texinfo/XS/parsetexi/macro.c:430
+#, c-format, perl-format
+msgid "\\ in @%s expansion followed `%s' instead of parameter name or \\"
+msgstr "за \\ у розгортанні @%s слідує «%s» замість назви параметра або \\"
+
+#: tp/Texinfo/ParserNonXS.pm:2643 tp/Texinfo/XS/parsetexi/end_line.c:2182
+#, c-format, perl-format
+msgid "missing name for @%s"
+msgstr "не вистачає назви @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2648 tp/Texinfo/XS/parsetexi/end_line.c:2128
+#, c-format, perl-format
+msgid "missing category for @%s"
+msgstr "не вистачає категорії для @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2687 tp/Texinfo/XS/parsetexi/end_line.c:1054
+#, c-format, perl-format
+msgid "unexpected argument on @%s line: %s"
+msgstr "неочікуваний аргумент у рядку @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:2698 tp/Texinfo/XS/parsetexi/end_line.c:1066
+msgid "empty multitable"
+msgstr "порожнє середовище multitable"
+
+#: tp/Texinfo/ParserNonXS.pm:2743 tp/Texinfo/ParserNonXS.pm:5422
+#: tp/Texinfo/XS/parsetexi/end_line.c:311
+#: tp/Texinfo/XS/parsetexi/end_line.c:1134
+#, c-format, perl-format
+msgid "superfluous argument to @%s"
+msgstr "зайвий аргумент @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2749 tp/Texinfo/ParserNonXS.pm:5443
+#: tp/Texinfo/ParserNonXS.pm:5460 tp/Texinfo/XS/parsetexi/end_line.c:1147
+#, c-format, perl-format
+msgid "bad argument to @%s"
+msgstr "помилковий аргумент до @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2760
+#, perl-format
+msgid "%s requires an argument: the formatter for %citem"
+msgstr "%s потребує аргументу: форматер для %citem"
+
+#: tp/Texinfo/ParserNonXS.pm:2764 tp/Texinfo/XS/parsetexi/end_line.c:1167
+#, c-format, perl-format
+msgid "command @%s not accepting argument in brace should not be on @%s line"
+msgstr ""
+"команда @%s, що не приймає аргументів у дужках, не повинна розташовуватися у "
+"рядку @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2798 tp/Texinfo/XS/parsetexi/end_line.c:1225
+#, c-format, perl-format
+msgid "accent command `@%s' not allowed as @%s argument"
+msgstr "команду акцентування, «@%s», не можна використовувати у аргументі @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2901 tp/Texinfo/ParserNonXS.pm:3041
+#: tp/Texinfo/ParserNonXS.pm:5415 tp/Texinfo/XS/parsetexi/end_line.c:304
+#: tp/Texinfo/XS/parsetexi/end_line.c:1333
+#: tp/Texinfo/XS/parsetexi/end_line.c:1724
+#, c-format, perl-format
+msgid "@%s missing argument"
+msgstr "не вистачає аргументу @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:2915 tp/Texinfo/XS/parsetexi/end_line.c:1352
+#, c-format, perl-format
+msgid "unknown @end %s"
+msgstr "невідома команда @end %s"
+
+#: tp/Texinfo/ParserNonXS.pm:2938 tp/Texinfo/ParserNonXS.pm:3555
+#, perl-format
+msgid "superfluous argument to @%s %s: %s"
+msgstr "зайвий аргумент @%s, %s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:2944 tp/Texinfo/ParserNonXS.pm:3020
+#: tp/Texinfo/ParserNonXS.pm:5510 tp/Texinfo/ParserNonXS.pm:5555
+#: tp/Texinfo/ParserNonXS.pm:5584 tp/Texinfo/ParserNonXS.pm:5625
+#: tp/Texinfo/ParserNonXS.pm:5703 tp/Texinfo/XS/parsetexi/end_line.c:515
+#: tp/Texinfo/XS/parsetexi/end_line.c:583
+#: tp/Texinfo/XS/parsetexi/end_line.c:1662
+#, c-format, perl-format
+msgid "bad argument to @%s: %s"
+msgstr "помилковий аргумент @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:2966
+#, perl-format
+msgid "@%s: could not open %s: %s"
+msgstr "@%s: не вдалося відкрити %s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:2982 tp/Texinfo/XS/parsetexi/end_line.c:1485
+#, c-format, perl-format
+msgid "encoding `%s' is not a canonical texinfo encoding"
+msgstr "кодування «%s» не є канонічним кодуванням texinfo"
+
+#: tp/Texinfo/ParserNonXS.pm:2990 tp/Texinfo/XS/parsetexi/end_line.c:1539
+#, c-format, perl-format
+msgid "unrecognized encoding name `%s'"
+msgstr "невідома назва кодування `%s'"
+
+#: tp/Texinfo/ParserNonXS.pm:3106
+#, perl-format
+msgid "@%s after the first element"
+msgstr "@%s після першого елемента"
+
+#: tp/Texinfo/ParserNonXS.pm:3113
+#, perl-format
+msgid "@%s only meaningful on a @multitable line"
+msgstr "@%s має сенс лише у рядку @multitable"
+
+#: tp/Texinfo/ParserNonXS.pm:3149 tp/Texinfo/XS/parsetexi/end_line.c:1879
+msgid "@part should not be associated with @top"
+msgstr "@part не повинно бути пов’язано з @top"
+
+#: tp/Texinfo/ParserNonXS.pm:3160
+#, perl-format
+msgid "@node precedes @%s, but parts may not be associated with nodes"
+msgstr "@node передує @%s, але частини не можна пов’язувати з вузлами"
+
+#: tp/Texinfo/ParserNonXS.pm:3271 tp/Texinfo/XS/parsetexi/end_line.c:36
+#, c-format, perl-format
+msgid "syntax for an external node used for `%s'"
+msgstr "синтаксис для зовнішнього вузла використано для «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:3294 tp/Texinfo/XS/parsetexi/menus.c:43
+#, c-format, perl-format
+msgid "empty menu entry name in `%s'"
+msgstr "порожня назва пункту меню у «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:3302 tp/Texinfo/XS/parsetexi/menus.c:57
+msgid "empty node name in menu entry"
+msgstr "порожня назва вузла у пункті меню"
+
+#: tp/Texinfo/ParserNonXS.pm:3442 tp/Texinfo/XS/parsetexi/parser.c:979
+#, c-format, perl-format
+msgid "@%s should not appear in @%s"
+msgstr "@%s не повинно бути у @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:3549 tp/Texinfo/XS/parsetexi/parser.c:1076
+#, c-format, perl-format
+msgid "@end %s should only appear at the beginning of a line"
+msgstr "@end %s не повинно бути на початку рядка"
+
+#: tp/Texinfo/ParserNonXS.pm:3570 tp/Texinfo/XS/parsetexi/parser.c:1137
+#, c-format, perl-format
+msgid "macro `%s' previously defined"
+msgstr "макровизначення `%s' вже було визначене"
+
+#: tp/Texinfo/ParserNonXS.pm:3573 tp/Texinfo/XS/parsetexi/parser.c:1139
+#, c-format, perl-format
+msgid "here is the previous definition of `%s'"
+msgstr "попереднє визначення `%s' тут"
+
+#: tp/Texinfo/ParserNonXS.pm:3578 tp/Texinfo/XS/parsetexi/parser.c:1144
+#, c-format, perl-format
+msgid "redefining Texinfo language command: @%s"
+msgstr "перевизначення команди мови Texinfo: @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:3646
+#, perl-format
+msgid "@%s without associated character"
+msgstr "@%s без пов’язаного символу"
+
+#: tp/Texinfo/ParserNonXS.pm:3716 tp/Texinfo/XS/parsetexi/macro.c:529
+#, c-format, perl-format
+msgid ""
+"@%s defined with zero or more than one argument should be invoked with {}"
+msgstr ""
+"команду @%s, визначену без аргументів або з понад одним аргументом, слід "
+"викликати з дужками, {}"
+
+#: tp/Texinfo/ParserNonXS.pm:3741 tp/Texinfo/XS/parsetexi/macro.c:568
+#, c-format, perl-format
+msgid ""
+"macro call nested too deeply (set MAX_NESTED_MACROS to override; current "
+"value %d)"
+msgstr ""
+"виклик макровизначення вкладено надто глибоко (встановіть більше значення "
+"MAX_NESTED_MACROS; поточне значення — %d)"
+
+#: tp/Texinfo/ParserNonXS.pm:3750 tp/Texinfo/XS/parsetexi/macro.c:578
+#, c-format, perl-format
+msgid "recursive call of macro %s is not allowed; use @rmacro if needed"
+msgstr ""
+"не можна рекурсивно викликати макровизначення %s; якщо потрібно, "
+"скористайтеся @rmacro"
+
+#: tp/Texinfo/ParserNonXS.pm:3805 tp/Texinfo/XS/parsetexi/parser.c:1412
+#, c-format, perl-format
+msgid "accent command `@%s' must not be followed by whitespace"
+msgstr "після команди акцентування «@%s» має бути символ пробілу"
+
+#: tp/Texinfo/ParserNonXS.pm:3811 tp/Texinfo/XS/parsetexi/parser.c:1419
+#, c-format, perl-format
+msgid "use braces to give a command as an argument to @%s"
+msgstr "використовуйте дужки, щоб передати команду як аргумент до @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:3824 tp/Texinfo/ParserNonXS.pm:4981
+#, perl-format
+msgid "%c%s expects `i' or `j' as argument, not `%s'"
+msgstr "%c%s потрібен аргумент «i» або «j», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:3835 tp/Texinfo/XS/parsetexi/parser.c:1449
+#, c-format, perl-format
+msgid "accent command `@%s' must not be followed by new line"
+msgstr "після команди акцентування «@%s» має бути символ розриву рядка"
+
+#: tp/Texinfo/ParserNonXS.pm:3846 tp/Texinfo/XS/parsetexi/parser.c:1467
+#, c-format, perl-format
+msgid "@%s expected braces"
+msgstr "@%s потрібні дужки"
+
+#: tp/Texinfo/ParserNonXS.pm:3975 tp/Texinfo/XS/parsetexi/parser.c:1328
+#, c-format, perl-format
+msgid "unknown command `%s'"
+msgstr "невідома команда «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:4017
+#, perl-format
+msgid "undefined flag: %s"
+msgstr "невідомий прапорець: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:4021 tp/Texinfo/XS/parsetexi/parser.c:1554
+msgid "bad syntax for @value"
+msgstr "помилковий синтаксис для @value"
+
+#: tp/Texinfo/ParserNonXS.pm:4028
+#, perl-format
+msgid "%c%s is obsolete."
+msgstr "%c%s є застарілим."
+
+#: tp/Texinfo/ParserNonXS.pm:4031
+#, perl-format
+msgid "%c%s is obsolete; %s"
+msgstr "%c%s є застарілим; %s"
+
+#: tp/Texinfo/ParserNonXS.pm:4046 tp/Texinfo/XS/parsetexi/parser.c:1605
+#, c-format, perl-format
+msgid "@%s should only appear at the beginning of a line"
+msgstr "@%s не повинно бути на початку рядка"
+
+#: tp/Texinfo/ParserNonXS.pm:4087 tp/Texinfo/XS/parsetexi/handle_commands.c:97
+#, c-format, perl-format
+msgid "@%s should only appear in heading or footing"
+msgstr "@%s має бути розташовано лише у верхньому або нижньому колонтитулі"
+
+#: tp/Texinfo/ParserNonXS.pm:4112 tp/Texinfo/ParserNonXS.pm:4119
+#: tp/Texinfo/ParserNonXS.pm:4168 tp/Texinfo/XS/parsetexi/handle_commands.c:134
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:143
+#, c-format, perl-format
+msgid "@%s not meaningful inside `@%s' block"
+msgstr "@%s не має сенсу усередині блоку `%s'"
+
+#: tp/Texinfo/ParserNonXS.pm:4128 tp/Texinfo/XS/parsetexi/handle_commands.c:180
+#, c-format, perl-format
+msgid "@%s in empty multitable"
+msgstr "@%s у порожньому multitable"
+
+#: tp/Texinfo/ParserNonXS.pm:4134 tp/Texinfo/XS/parsetexi/handle_commands.c:188
+msgid "@tab before @item"
+msgstr "@tab перед @item"
+
+#: tp/Texinfo/ParserNonXS.pm:4137 tp/Texinfo/XS/parsetexi/handle_commands.c:192
+#, c-format, perl-format
+msgid "too many columns in multitable item (max %d)"
+msgstr "занадто багато стовпчиків у об’єкті multitable (максимум %d)"
+
+#: tp/Texinfo/ParserNonXS.pm:4174 tp/Texinfo/XS/parsetexi/handle_commands.c:237
+msgid "ignoring @tab outside of multitable"
+msgstr "пропускається @tab зовні multitable"
+
+#: tp/Texinfo/ParserNonXS.pm:4178 tp/Texinfo/ParserNonXS.pm:4345
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:242
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:541
+#, c-format, perl-format
+msgid "@%s outside of table or list"
+msgstr "@%s поза межами таблиці або списку"
+
+#: tp/Texinfo/ParserNonXS.pm:4244
+#, perl-format
+msgid "@%s not allowed inside `@%s' block"
+msgstr "@%s не можна використовувати всередині блоку «@%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:4357 tp/Texinfo/ParserNonXS.pm:4699
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:1085
+#, c-format, perl-format
+msgid "@%s should only appear in an index entry"
+msgstr "@%s має використовуватися лише у записі покажчика"
+
+#: tp/Texinfo/ParserNonXS.pm:4368 tp/Texinfo/XS/parsetexi/handle_commands.c:580
+msgid "no more than two levels of index subentry are allowed"
+msgstr ""
+"не можна використовувати більше ніж два рівні вкладеності для записів "
+"покажчика"
+
+#: tp/Texinfo/ParserNonXS.pm:4409 tp/Texinfo/XS/parsetexi/handle_commands.c:637
+#, c-format, perl-format
+msgid "must be after `@%s' to use `@%s'"
+msgstr "має бути розташовано після «@%s», щоб можна було користуватися «@%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:4447
+#, perl-format
+msgid "@%s not meaningful outside `@titlepage' and `@quotation' environments"
+msgstr "@%s не має сенсу поза середовищами «@titlepage» та «@quotation»"
+
+#: tp/Texinfo/ParserNonXS.pm:4451 tp/Texinfo/XS/parsetexi/handle_commands.c:694
+msgid "@dircategory after first node"
+msgstr "@dircategory після першого вузла"
+
+#: tp/Texinfo/ParserNonXS.pm:4633 tp/Texinfo/XS/parsetexi/handle_commands.c:984
+#, c-format, perl-format
+msgid "region %s inside region %s is not allowed"
+msgstr "не можна використовувати регіон %s всередині регіону %s"
+
+#: tp/Texinfo/ParserNonXS.pm:4650
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:1006
+msgid "@direntry after first node"
+msgstr "@direntry після першого вузла"
+
+#: tp/Texinfo/ParserNonXS.pm:4658
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:1011
+msgid "@menu in invalid context"
+msgstr "@menu у некоректному контексті"
+
+#: tp/Texinfo/ParserNonXS.pm:4664
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:1020
+#, c-format, perl-format
+msgid "@%s seen before first @node"
+msgstr "@%s розташовано перед першим @node"
+
+#: tp/Texinfo/ParserNonXS.pm:4667
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:1022
+msgid ""
+"perhaps your @top node should be wrapped in @ifnottex rather than @ifinfo?"
+msgstr ""
+"мабуть, ваш вузол @top повинен бути обгорнутий у @ifnottex замість @ifinfo?"
+
+#: tp/Texinfo/ParserNonXS.pm:4728
+#, perl-format
+msgid "@%s should only appear in math context"
+msgstr "@%s має використовуватися лише у контексті формул"
+
+#: tp/Texinfo/ParserNonXS.pm:4743 tp/Texinfo/XS/parsetexi/parser.c:1721
+msgid "unexpected @"
+msgstr "неочікуване @"
+
+#: tp/Texinfo/ParserNonXS.pm:4772 tp/Texinfo/XS/parsetexi/separator.c:78
+#, c-format, perl-format
+msgid "@%s is not meaningful outside `@float' environment"
+msgstr "@%s не має сенсу ззовні середовища «@float»"
+
+#: tp/Texinfo/ParserNonXS.pm:4777 tp/Texinfo/XS/parsetexi/separator.c:84
+#, c-format, perl-format
+msgid "@%s should be right below `@float'"
+msgstr "@%s має бути розташовано одразу під «@float»"
+
+#: tp/Texinfo/ParserNonXS.pm:4785 tp/Texinfo/XS/parsetexi/separator.c:92
+#, c-format, perl-format
+msgid "ignoring multiple @%s"
+msgstr "ігноруємо зайві @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:4896 tp/Texinfo/XS/parsetexi/separator.c:276
+#, c-format, perl-format
+msgid "command @%s does not accept arguments"
+msgstr "команді @%s не передаються аргументи"
+
+#: tp/Texinfo/ParserNonXS.pm:4926 tp/Texinfo/XS/parsetexi/separator.c:312
+#, c-format, perl-format
+msgid "command @%s missing a node or external manual argument"
+msgstr "у команді @%s не вистачає аргументу вузла або зовнішнього підручника"
+
+#: tp/Texinfo/ParserNonXS.pm:4945 tp/Texinfo/XS/parsetexi/separator.c:350
+#, c-format, perl-format
+msgid "in @%s empty cross reference name after expansion `%s'"
+msgstr ""
+"у @%s виявлено порожню назву перехресного посилання після розгортання «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:4956 tp/Texinfo/XS/parsetexi/separator.c:368
+#, c-format, perl-format
+msgid "in @%s empty cross reference title after expansion `%s'"
+msgstr ""
+"у @%s виявлено порожній заголовок перехресного посилання після розгортання "
+"«%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:4969 tp/Texinfo/XS/parsetexi/separator.c:383
+msgid "@image missing filename argument"
+msgstr "не вказано аргумент назви файлу для @image"
+
+#: tp/Texinfo/ParserNonXS.pm:5003 tp/Texinfo/XS/parsetexi/separator.c:413
+#, c-format, perl-format
+msgid "@%s missing first argument"
+msgstr "у @%s не вистачає першого аргументу"
+
+#: tp/Texinfo/ParserNonXS.pm:5021 tp/Texinfo/XS/parsetexi/separator.c:435
+#, c-format, perl-format
+msgid "non-hex digits in argument for @U: %s"
+msgstr "нешістнадцяткові цифри у аргументі @U: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5026 tp/Texinfo/XS/parsetexi/separator.c:440
+#, c-format, perl-format
+msgid "fewer than four hex digits in argument for @U: %s"
+msgstr "менше за 4 шістнадцяткові цифри у аргументі @U: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5043 tp/Texinfo/XS/parsetexi/separator.c:455
+#, c-format, perl-format
+msgid "argument for @U exceeds Unicode maximum 0x10FFFF: %s"
+msgstr ""
+"аргумент @U перевищує за розміром максимальний розмір для Unicode, 0x10FFFF: "
+"%s"
+
+#: tp/Texinfo/ParserNonXS.pm:5231 tp/Texinfo/XS/parsetexi/separator.c:755
+msgid "superfluous arguments for node"
+msgstr "зайві аргументи для вузла"
+
+#: tp/Texinfo/ParserNonXS.pm:5280 tp/Texinfo/XS/parsetexi/parser.c:1915
+#, c-format, perl-format
+msgid "expected @end %s"
+msgstr "мало бути @end %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5367
+#, perl-format
+msgid "@%s should only accept an @-command as argument, not `%s'"
+msgstr "@%s приймає як аргумент лише @-команди, але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5377 tp/Texinfo/XS/parsetexi/end_line.c:275
+#, c-format, perl-format
+msgid "remaining argument on @%s line: %s"
+msgstr "залишковий аргумент у рядку @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5438
+#, perl-format
+msgid "environment command %s as argument to @%s"
+msgstr "команда середовища %s як аргумент @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:5465
+#, perl-format
+msgid "empty @%s"
+msgstr "порожній запис @%s"
+
+#: tp/Texinfo/ParserNonXS.pm:5473 tp/Texinfo/XS/parsetexi/end_line.c:456
+#, c-format, perl-format
+msgid "column fraction not a number: %s"
+msgstr "частка стовпчика не є числом: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5482 tp/Texinfo/XS/parsetexi/end_line.c:478
+#, c-format, perl-format
+msgid "@sp arg must be numeric, not `%s'"
+msgstr "аргументом @sp має бути число, а не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5491 tp/Texinfo/XS/parsetexi/end_line.c:520
+#, c-format, perl-format
+msgid "reserved index name %s"
+msgstr "зарезервована назва індексу %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5517 tp/Texinfo/XS/parsetexi/end_line.c:551
+#, c-format, perl-format
+msgid "unknown source index in @%s: %s"
+msgstr "невідомий індекс джерела у @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5520 tp/Texinfo/XS/parsetexi/end_line.c:554
+#, c-format, perl-format
+msgid "unknown destination index in @%s: %s"
+msgstr "невідомий індекс призначення у @%s: %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5550 tp/Texinfo/XS/parsetexi/end_line.c:574
+#, c-format, perl-format
+msgid "@%s leads to a merging of %s in itself, ignoring"
+msgstr "@%s призведе до об’єднання %s з самим собою, ігноруємо"
+
+#: tp/Texinfo/ParserNonXS.pm:5563 tp/Texinfo/XS/parsetexi/end_line.c:599
+#, c-format, perl-format
+msgid "unknown index `%s' in @printindex"
+msgstr "невідомий індекс «%s» у @printindex"
+
+#: tp/Texinfo/ParserNonXS.pm:5569 tp/Texinfo/XS/parsetexi/end_line.c:608
+#, c-format, perl-format
+msgid "printing an index `%s' merged in another one, `%s'"
+msgstr "друкуємо покажчик «%s» об’єднаний з іншим, «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5577 tp/Texinfo/XS/parsetexi/end_line.c:613
+#, c-format, perl-format
+msgid "printindex before document beginning: @printindex %s"
+msgstr "printindex до початку документа: @printindex %s"
+
+#: tp/Texinfo/ParserNonXS.pm:5593 tp/Texinfo/XS/parsetexi/end_line.c:634
+#, c-format, perl-format
+msgid "@%s arg must be `top' or `bottom', not `%s'"
+msgstr "аргументом @%s має бути «top» або «bottom», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5601
+#, perl-format
+msgid "Only @%s 10 or 11 is supported, not `%s'"
+msgstr "Підтримуються лише @%s 10 чи 11, а не `%s'"
+
+#: tp/Texinfo/ParserNonXS.pm:5609
+#, perl-format
+msgid "@%s arg must be `separate' or `end', not `%s'"
+msgstr "аргументом @%s має бути «separate» або «end», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5617
+#, perl-format
+msgid "@%s arg must be `on', `off' or `odd', not `%s'"
+msgstr "аргументом @%s має бути «on», «off» або «odd», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5635 tp/Texinfo/ParserNonXS.pm:5640
+#: tp/Texinfo/XS/parsetexi/end_line.c:690
+#, c-format, perl-format
+msgid "@paragraphindent arg must be numeric/`none'/`asis', not `%s'"
+msgstr ""
+"аргументом @paragraphindent має бути число, «none» або «asis», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5648
+#, perl-format
+msgid "@firstparagraphindent arg must be `none' or `insert', not `%s'"
+msgstr ""
+"аргументом @firstparagraphindent має бути «none» або «insert», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5658 tp/Texinfo/XS/parsetexi/end_line.c:711
+#, c-format, perl-format
+msgid "@exampleindent arg must be numeric/`asis', not `%s'"
+msgstr "аргументом @exampleindent має бути число або «asis», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5670 tp/Texinfo/XS/parsetexi/end_line.c:726
+#, c-format, perl-format
+msgid "expected @%s on or off, not `%s'"
+msgstr "@%s мало бути on або off, але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5679 tp/Texinfo/XS/parsetexi/end_line.c:746
+#, c-format, perl-format
+msgid "@kbdinputstyle arg must be `code'/`example'/`distinct', not `%s'"
+msgstr ""
+"аргументом @kbdinputstyle має бути «code»/«example»/«distinct», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5687 tp/Texinfo/XS/parsetexi/end_line.c:758
+#, c-format, perl-format
+msgid "@allowcodebreaks arg must be `true' or `false', not `%s'"
+msgstr "аргументом @allowcodebreaks має бути «true» або «false», але не «%s»"
+
+#: tp/Texinfo/ParserNonXS.pm:5695 tp/Texinfo/XS/parsetexi/end_line.c:770
+#, c-format, perl-format
+msgid "@urefbreakstyle arg must be `after'/`before'/`none', not `%s'"
+msgstr ""
+"аргументом @urefbreakstyle має бути «after»/«before»/«none», але не «%s»"
+
+#: tp/Texinfo/Structuring.pm:175
+#, perl-format
+msgid "raising the section level of @%s which is too low"
+msgstr "піднімаємо рівень розділу @%s; зараз рівень є надто низьким"
+
+#: tp/Texinfo/Structuring.pm:207
+#, perl-format
+msgid "no chapter-level command before @%s"
+msgstr "немає команди рівня глави перед @%s"
+
+#: tp/Texinfo/Structuring.pm:212
+#, perl-format
+msgid "lowering the section level of @%s appearing after a lower element"
+msgstr "знижуємо рівень розділу @%s, який вкладено у розділ нижчого рівня"
+
+#: tp/Texinfo/Structuring.pm:301
+#, perl-format
+msgid "no sectioning command associated with @%s"
+msgstr "з @%s не пов’язано жодної команди структурування розділів"
+
+#: tp/Texinfo/Structuring.pm:329
+#, perl-format
+msgid "@%s not empty"
+msgstr "@%s не є порожнім"
+
+#: tp/Texinfo/Structuring.pm:386 tp/Texinfo/Structuring.pm:1160
+#, perl-format
+msgid "@%s reference to nonexistent node `%s'"
+msgstr "@%s посилається на відсутній вузол «%s»"
+
+#: tp/Texinfo/Structuring.pm:393
+#, perl-format
+msgid "@%s entry node name `%s' different from %s name `%s'"
+msgstr "назва вузла запису @%s, «%s», відрізняється від назви %s, «%s»"
+
+#: tp/Texinfo/Structuring.pm:498
+#, perl-format
+msgid "unreferenced node `%s'"
+msgstr "вузол, на який нема посилань `%s'"
+
+#: tp/Texinfo/Structuring.pm:549
+#, perl-format
+msgid "node `%s' is %s for `%s' in sectioning but not in menu"
+msgstr "вузол «%s» є вузлом %s для «%s» у структурі розділів, але не у меню"
+
+#: tp/Texinfo/Structuring.pm:558
+#, perl-format
+msgid "node %s `%s' in menu `%s' and in sectioning `%s' differ"
+msgstr ""
+"виявлено відмінності у записах вузла %s «%s» у меню «%s» і у структурі "
+"розділів «%s»"
+
+#: tp/Texinfo/Structuring.pm:576
+#, perl-format
+msgid "node `%s' is %s for `%s' in menu but not in sectioning"
+msgstr "вузол «%s» є вузлом %s для «%s» у меню, але не у структурі розділів"
+
+#: tp/Texinfo/Structuring.pm:614
+#, perl-format
+msgid "%s pointer `%s' (for node `%s') different from %s name `%s'"
+msgstr "вказівник %s, «%s», (для вузла «%s») відрізняється від назви %s, «%s»"
+
+#: tp/Texinfo/Structuring.pm:627
+#, perl-format
+msgid "%s reference to nonexistent `%s'"
+msgstr "%s посилається на відсутній «%s»"
+
+#: tp/Texinfo/Structuring.pm:648
+#, perl-format
+msgid "node `%s' lacks menu item for `%s' despite being its Up target"
+msgstr "вузол `%s' не має пункту меню для `%s', хоча й є його горішнім вузлом"
+
+#: tp/Texinfo/Structuring.pm:656
+#, perl-format
+msgid "for `%s', up in menu `%s' and up `%s' don't match"
+msgstr "для «%s», вгору меню «%s» і вгору «%s» відрізняються один від одного"
+
+#: tp/Texinfo/Structuring.pm:1170
+#, perl-format
+msgid "@%s to `%s', different from %s name `%s'"
+msgstr "@%s до «%s», відрізняється від назви %s, «%s»"
+
+#: tp/Texinfo/Structuring.pm:1456
+#, perl-format
+msgid "empty index key in @%s"
+msgstr "порожній ключ індексу у @%s"
+
+#: tp/init/chm.pm:223 tp/init/chm.pm:279 tp/init/chm.pm:349
+#, perl-format
+msgid "chm.pm: could not open %s for writing: %s\n"
+msgstr "chm.pm: не вдалося відкрити %s для запису: %s\n"
+
+#: tp/init/chm.pm:269 tp/init/chm.pm:339 tp/init/chm.pm:400
+#, perl-format
+msgid "chm.pm: error on closing %s: %s"
+msgstr "chm.pm: помилка під час спроби закрити %s: %s"
+
+#: tp/init/latex2html.pm:197
+#, perl-format
+msgid "l2h: could not open latex file %s for writing: %s"
+msgstr "l2h: не вдалося відкрити файл latex %s для запису даних: %s"
+
+#: tp/init/latex2html.pm:343
+msgid "l2h: L2H_TMP directory contains a dot"
+msgstr "l2h: назва каталогу L2H_TMP містить крапку"
+
+#: tp/init/latex2html.pm:348
+msgid "l2h: current directory contains a dot"
+msgstr "l2h: назва поточного каталогу містить крапку"
+
+#: tp/init/latex2html.pm:376
+#, perl-format
+msgid "l2h: command did not succeed: %s"
+msgstr "l2h: не вдалося успішно виконати команду: %s"
+
+#: tp/init/latex2html.pm:424
+#, perl-format
+msgid "l2h: image has invalid extension: %s"
+msgstr "l2h: суфікс назви файла зображення є некоректним: %s"
+
+#: tp/init/latex2html.pm:440
+#, perl-format
+msgid "l2h: rename %s as %s failed: %s"
+msgstr "l2h: спроба перейменування %s на %s завершилася невдало: %s"
+
+#: tp/init/latex2html.pm:462
+#, perl-format
+msgid "l2h: could not open %s: %s"
+msgstr "l2h: не вдалося відкрити %s: %s"
+
+#: tp/init/latex2html.pm:495
+#, perl-format
+msgid "latex2html.pm: end of @%s item %d not found"
+msgstr "latex2html.pm: не знайдено завершення запису @%s з номером %d"
+
+#: tp/init/latex2html.pm:506
+#, perl-format
+msgid ""
+"latex2html.pm: processing produced %d items in HTML; expected %d, the number "
+"of items found in the document"
+msgstr ""
+"latex2html.pm: обробляємо створені %d записів у HTML; мало бути %d, "
+"кількість записів, знайдених у документі"
+
+#: tp/init/latex2html.pm:536
+#, perl-format
+msgid "l2h: could not determine the fragment %d for @%s"
+msgstr "l2h: не вдалося визначити фрагмент %d для @%s"
+
+#: tp/init/latex2html.pm:562
+#, perl-format
+msgid ""
+"l2h: could not extract the fragment %d for @%s with output counter %d from "
+"HTML"
+msgstr ""
+"l2h: не вдалося видобути фрагмент %d для @%s з лічильником виведення %d з "
+"HTML"
+
+#: tp/init/latex2html.pm:623
+#, perl-format
+msgid "l2h: could not load %s: %s"
+msgstr "l2h: не вдалося завантажити %s: %s"
+
+#: tp/init/latex2html.pm:636
+#, perl-format
+msgid "l2h: could not open %s for writing: %s"
+msgstr "l2h: не вдалося відкрити %s для запису даних: %s"
+
+#: tp/init/tex4ht.pm:125 tp/init/tex4ht.pm:270
+#, perl-format
+msgid "tex4ht.pm: could not open %s: %s"
+msgstr "tex4ht.pm: не вдалося відкрити %s: %s"
+
+#: tp/init/tex4ht.pm:222
+#, perl-format
+msgid "tex4ht.pm: chdir %s failed: %s"
+msgstr "tex4ht.pm: помилка під час спроби змінити каталог на %s: %s"
+
+#: tp/init/tex4ht.pm:235
+#, perl-format
+msgid "tex4ht.pm: unable to return to initial directory: %s"
+msgstr "tex4ht.pm: не вдалося повернутися до початкового каталогу: %s"
+
+#: tp/init/tex4ht.pm:247
+#, perl-format
+msgid "tex4ht.pm: output file missing: %s"
+msgstr "tex4ht.pm: не вказано файла для виведення даних: %s"
+
+#: tp/init/tex4ht.pm:263
+#, perl-format
+msgid "tex4ht.pm: command failed: %s"
+msgstr "tex4ht.pm: помилка команди: %s"
+
+#: tp/init/tex4ht.pm:297
+#, perl-format
+msgid "tex4ht.pm: end of @%s item %d not found"
+msgstr "tex4ht.pm: не знайдено завершення запису @%s з номером %d"
+
+#: tp/init/tex4ht.pm:304
+#, perl-format
+msgid ""
+"tex4ht.pm: processing produced %d items in HTML; expected %d, the number of "
+"items found in the document for @%s"
+msgstr ""
+"tex4ht.pm: обробляємо створені %d записів у HTML; мало бути %d, кількість "
+"записів, знайдених у документі для @%s"
+
+#: tp/init/tex4ht.pm:324
+#, perl-format
+msgid "tex4ht.pm: output has no HTML item for @%s %s"
+msgstr "tex4ht.pm: у виведених даних немає запису HTML для @%s %s"
+
+#: tp/init/tex4ht.pm:339
+#, perl-format
+msgid ""
+"tex4ht.pm: processing retrieved %d items in HTML; expected %d, the number of "
+"items found in the document for @%s"
+msgstr ""
+"tex4ht.pm: обробляємо отримані %d записів у HTML; мало бути %d, кількість "
+"записів, знайдених у документі для @%s"
+
+#: tp/texi2any.pl:348
+#, perl-format
+msgid "error loading %s: %s\n"
+msgstr "помилка під час спроби завантаження %s: %s\n"
+
+#: tp/texi2any.pl:361
+#, perl-format
+msgid "%s: unknown variable %s"
+msgstr "%s: невідома змінна %s"
+
+#: tp/texi2any.pl:377
+#, perl-format
+msgid "%s: unknown variable %s\n"
+msgstr "%s: невідома змінна %s\n"
+
+#: tp/texi2any.pl:413
+#, perl-format
+msgid "could not read init file %s"
+msgstr "не вдалося прочитати файл ініціалізації %s"
+
+#: tp/texi2any.pl:569
+#, perl-format
+msgid "ignoring unrecognized TEXINFO_OUTPUT_FORMAT value `%s'\n"
+msgstr "пропускаємо невідоме значення TEXINFO_OUTPUT_FORMAT «%s».\n"
+
+#: tp/texi2any.pl:652
+#, perl-format
+msgid "Usage: %s [OPTION]... TEXINFO-FILE...\n"
+msgstr "Usage: %s [ПАРАМЕТР]... ФАЙЛ-TEXINFO...\n"
+
+#: tp/texi2any.pl:655
+msgid ""
+"Translate Texinfo source documentation to various other formats, by default\n"
+"Info files suitable for reading online with Emacs or standalone GNU Info.\n"
+"\n"
+"This program is commonly installed as both `makeinfo' and `texi2any';\n"
+"the behavior is identical, and does not depend on the installed name.\n"
+msgstr ""
+"Перетворює вихідну документацію Texinfo у різноманітні інші формати, "
+"зазвичай,\n"
+"у файли Info, що можна читати за допомогою Emacs чи GNU Info.\n"
+"\n"
+"У межах пакунка цієї програми типово встановлюються одразу «makeinfo» і "
+"«texi2any»;\n"
+"поведінка цих компонентів є однаковою і не залежить від назви програми.\n"
+
+#: tp/texi2any.pl:661
+#, perl-format
+msgid ""
+"General options:\n"
+"      --document-language=STR locale to use in translating Texinfo keywords\n"
+"                                for the output document (default C).\n"
+"      --error-limit=NUM       quit after NUM errors (default %d).\n"
+"      --force                 preserve output even if errors.\n"
+"      --help                  display this help and exit.\n"
+"      --no-validate           suppress node cross-reference validation.\n"
+"      --no-warn               suppress warnings (but not errors).\n"
+"      --conf-dir=DIR          search also for initialization files in DIR.\n"
+"      --init-file=FILE        load FILE to modify the default behavior.\n"
+"  -c, --set-customization-variable VAR=VAL  set customization variable VAR \n"
+"                                to value VAL.\n"
+"  -v, --verbose               explain what is being done.\n"
+"      --version               display version information and exit.\n"
+msgstr ""
+"Загальні параметри:\n"
+"      --document-language=РЯДОК локаль для перекладу ключових слів Texinfo\n"
+"                                у документі-результаті (типовою є C).\n"
+"      --error-limit=ЧИСЛО     вийти після ЧИСЛА помилок (зазвичай %d).\n"
+"      --force                 продовжувати вивід навіть якщо трапляються "
+"помилки.\n"
+"      --help                  показати цю довідку й вийти.\n"
+"      --no-validate           не перевіряти перехресні посилання вузлів.\n"
+"      --no-warn               не показувати попередження (але не помилки).\n"
+"      --conf-dir=КАТАЛОГ      шукати файли ініціалізації і у каталозі "
+"КАТАЛОГ.\n"
+"      --init-file=ФАЙЛ        завантажити ФАЙЛ для внесення змін до типової "
+"поведінки.\n"
+"  -c, --set-customization-variable VAR=VAL  встановити значення VAL для "
+"змінної\n"
+"                                 налаштовування VAR.\n"
+"  -v, --verbose               описувати, що буде робитися.\n"
+"      --version               показати інформацію про версію й вийти.\n"
+
+#: tp/texi2any.pl:677
+msgid ""
+"Output format selection (default is to produce Info):\n"
+"      --docbook               output Docbook XML rather than Info.\n"
+"      --html                  output HTML rather than Info.\n"
+"      --plaintext             output plain text rather than Info.\n"
+"      --xml                   output Texinfo XML rather than Info.\n"
+"      --dvi, --dvipdf, --ps, --pdf  call texi2dvi to generate given output,\n"
+"                                after checking validity of TEXINFO-FILE.\n"
+msgstr ""
+"Вибір формату виводу (якщо не вказано, буде Info):\n"
+"      --docbook               виводити як Docbook XML, а не як Info.\n"
+"      --html                  виводити як HTML, а не як Info.\n"
+"      --plaintext             виводити як звичайний текст, а не як Info.\n"
+"      --xml                   виводити як Texinfo XML, а не як Info.\n"
+"      --dvi, --dvipdf, --ps, --pdf  викликати texi2dvi для створення "
+"вказаного формату\n"
+"                                після перевірки коректності файла ФАЙЛ-"
+"TEXINFO.\n"
+
+#: tp/texi2any.pl:685
+msgid ""
+"General output options:\n"
+"  -E, --macro-expand=FILE     output macro-expanded source to FILE,\n"
+"                                ignoring any @setfilename.\n"
+"      --no-headers            suppress node separators, Node: lines, and "
+"menus\n"
+"                                from Info output (thus producing plain "
+"text)\n"
+"                                or from HTML (thus producing shorter "
+"output).\n"
+"                                Also, if producing Info, write to\n"
+"                                standard output by default.\n"
+"      --no-split              suppress any splitting of the output;\n"
+"                                generate only one output file.\n"
+"      --[no-]number-sections  output chapter and sectioning numbers;\n"
+"                                default is on.\n"
+"  -o, --output=DEST           output to DEST.\n"
+"                                With split output, create DEST as a "
+"directory\n"
+"                                 and put the output files there.\n"
+"                                With non-split output, if DEST is already\n"
+"                                 a directory or ends with a /,\n"
+"                                 put the output file there.\n"
+"                                Otherwise, DEST names the output file.\n"
+msgstr ""
+"Загальні параметри виводу:\n"
+"  -E, --macro-expand=ФАЙЛ     записати вихідний код після розкриття "
+"макровизначень\n"
+"                                до ФАЙЛА, ігноруючи будь-які @setfilename.\n"
+"      --no-headers            не генерувати роздільників, рядків Node: та "
+"меню\n"
+"                                у виводі Info (таким чином виводячи простий "
+"текст)\n"
+"                                та у виводі HTML (таким чином виводячи "
+"коротший результат)\n"
+"                                також, зазвичай виводити у стандартний "
+"вивід.\n"
+"      --no-split              не розбивати вивід у Info та HTML,\n"
+"                                створити лише один файл виводу.\n"
+"      --number-sections       виводити номери глав та розділів, типово "
+"увімкнено.\n"
+"  -o, --output=ПРИЗНАЧЕННЯ    виводити до ПРИЗНАЧЕННЯ.\n"
+"                                Якщо виведення відбувається з розбиттям, "
+"буде\n"
+"                                 створено каталог ПРИЗНАЧЕННЯ для виведення "
+"даних до нього.\n"
+"                                Якщо виведення відбувається без розбиття і "
+"ПРИЗНАЧЕННЯ\n"
+"                                 є назвою каталогу або завершується на /,\n"
+"                                 виведений файл буде збережено у "
+"відповідному каталозі.\n"
+"                                У інших випадках, ПРИЗНАЧЕННЯ визначає назву "
+"файла-результату.\n"
+
+#: tp/texi2any.pl:705
+#, perl-format
+msgid ""
+"Options for Info and plain text:\n"
+"      --disable-encoding      do not output accented and special characters\n"
+"                                in Info output based on @documentencoding.\n"
+"      --enable-encoding       override --disable-encoding (default).\n"
+"      --fill-column=NUM       break Info lines at NUM characters (default "
+"%d).\n"
+"      --footnote-style=STYLE  output footnotes in Info according to STYLE:\n"
+"                                `separate' to put them in their own node;\n"
+"                                `end' to put them at the end of the node, "
+"in\n"
+"                                which they are defined (this is the "
+"default).\n"
+"      --paragraph-indent=VAL  indent Info paragraphs by VAL spaces (default "
+"%d).\n"
+"                                If VAL is `none', do not indent; if VAL is\n"
+"                                `asis', preserve existing indentation.\n"
+"      --split-size=NUM        split Info files at size NUM (default %d).\n"
+msgstr ""
+"Параметри для Info та звичайного тексту:\n"
+"      --disable-encoding      не виводити спеціальні та акцентовані символи\n"
+"                                при виводі Info на основі "
+"@documentencoding.\n"
+"      --enable-encoding       скасувати --disable-encoding (типово).\n"
+"      --fill-column=ЧИСЛО     переносити рядки Info на ЧИСЛО символі (типово "
+"%d).\n"
+"      --footnote-style=СТИЛЬ  виводити виноски у Info відповідно до СТИЛЮ:\n"
+"                                «separate» - розмістити в окремому вузлі;\n"
+"                                «end» - розмістити в кінці вузла, де\n"
+"                                їх визначено (типово)\n"
+"      --paragraph-indent=ЗНАЧЕННЯ  робити відступ для параграфів Info на "
+"ЗНАЧЕННЯ пропусків (типово %d).\n"
+"                                Якщо ЗНАЧЕННЯ «none» - не робити відступу; "
+"якщо ЗНАЧЕННЯ\n"
+"                                «asis» - зберігати наявний відступ.\n"
+"      --split-size=ЧИСЛО      розбивати файли Info, якщо їхній розмір "
+"перевищує ЧИСЛО (типово %d).\n"
+
+#: tp/texi2any.pl:722
+msgid ""
+"Options for HTML:\n"
+"      --css-include=FILE      include FILE in HTML <style> output;\n"
+"                                read stdin if FILE is -.\n"
+"      --css-ref=URL           generate CSS reference to URL.\n"
+"      --internal-links=FILE   produce list of internal links in FILE.\n"
+"      --split=SPLIT           split at SPLIT, where SPLIT may be `chapter',\n"
+"                                `section' or `node'.\n"
+"      --transliterate-file-names  use file names in ASCII transliteration.\n"
+"      --node-files            produce redirection files for nodes and \n"
+"                                anchors; default is set only if split.\n"
+msgstr ""
+"Параметри для HTML:\n"
+"      --css-include=ФАЙЛ      додати ФАЙЛ до виводу у HTML <style>;\n"
+"                                читає стандартний ввід, якщо вказано -.\n"
+"      --css-ref=URL           додати посилання на файл CSS.\n"
+"      --internal-links=ФАЙЛ   записати список внутрішніх посилань до ФАЙЛУ.\n"
+"      --split=ЧАСТИНА         ділити на частини, де ЧАСТИНОЮ може бути "
+"«chapter»,\n"
+"                                «section» або «node».\n"
+"      --transliterate-file-names\n"
+"                              транслітеровувати у ASCII назви файлів.\n"
+"      --node-files            створювати файли переспрямовувань для вузлів і "
+"прив’язок;\n"
+"                                типово встановлюється лише для поділених "
+"документів.\n"
+
+#: tp/texi2any.pl:733
+msgid ""
+"Options for XML and Docbook:\n"
+"      --output-indent=VAL     does nothing, retained for compatibility.\n"
+msgstr ""
+"Параметри для XML і Docbook:\n"
+"      --output-indent=VAL     нічого не робити, збережено для зворотної "
+"сумісності.\n"
+
+#: tp/texi2any.pl:736
+msgid ""
+"Options for DVI/PS/PDF:\n"
+"      --Xopt=OPT              pass OPT to texi2dvi; can be repeated.\n"
+msgstr ""
+"Параметри DVI/PS/PDF:\n"
+"      --Xopt=ПАРАМЕТР         передати ПАРАМЕТР texi2dvi; можна "
+"використовувати декілька разів.\n"
+
+#: tp/texi2any.pl:739
+msgid ""
+"Input file options:\n"
+"      --commands-in-node-names  does nothing, retained for compatibility.\n"
+"  -D VAR                        define the variable VAR, as with @set.\n"
+"  -D 'VAR VAL'                  define VAR to VAL (one shell argument).\n"
+"  -I DIR                        append DIR to the @include search path.\n"
+"  -P DIR                        prepend DIR to the @include search path.\n"
+"  -U VAR                        undefine the variable VAR, as with @clear.\n"
+msgstr ""
+"Параметри вхідного файла:\n"
+"      --commands-in-node-names  нічого не робити, збережено для зворотної "
+"сумісності.\n"
+"  -D ЗМІННА                     визначити змінну ЗМІННА, те ж саме, що "
+"@set.\n"
+"  -D 'VAR VAL'                  визначити для змінної VAR значення VAL (один "
+"аргумент оболонки).\n"
+"  -I ТЕКА                       додати ТЕКУ до кінця шляху пошуку @include.\n"
+"  -P ТЕКА                       додати ТЕКУ на початку шляху пошуку "
+"@include.\n"
+"  -U ЗМІННА                     скинути значення ЗМІННОЇ, те ж саме, що "
+"@clear.\n"
+
+#: tp/texi2any.pl:747
+msgid ""
+"Conditional processing in input:\n"
+"  --ifdocbook       process @ifdocbook and @docbook even if\n"
+"                      not generating Docbook.\n"
+"  --ifhtml          process @ifhtml and @html even if not generating HTML.\n"
+"  --ifinfo          process @ifinfo even if not generating Info.\n"
+"  --ifplaintext     process @ifplaintext even if not generating plain text.\n"
+"  --iftex           process @iftex and @tex.\n"
+"  --ifxml           process @ifxml and @xml.\n"
+"  --no-ifdocbook    do not process @ifdocbook and @docbook text.\n"
+"  --no-ifhtml       do not process @ifhtml and @html text.\n"
+"  --no-ifinfo       do not process @ifinfo text.\n"
+"  --no-ifplaintext  do not process @ifplaintext text.\n"
+"  --no-iftex        do not process @iftex and @tex text.\n"
+"  --no-ifxml        do not process @ifxml and @xml text.\n"
+"\n"
+"  Also, for the --no-ifFORMAT options, do process @ifnotFORMAT text.\n"
+msgstr ""
+"Обробка умовних конструкцій у вхідних даних:\n"
+"  --ifdocbook       обробляти @ifdocbook та @docbook навіть якщо\n"
+"                      створюємо не Docbook.\n"
+"  --ifhtml          обробляти @ifhtml та @html навіть якщо створюємо не "
+"HTML.\n"
+"  --ifinfo          обробляти @ifinfo навіть якщо створюємо не Info.\n"
+"  --ifplaintext     обробляти @ifplaintext навіть якщо створюємо не текст.\n"
+"  --iftex           обробляти @iftex та @tex.\n"
+"  --ifxml           обробляти @ifxml та @xml.\n"
+"  --no-ifdocbook    не обробляти текст усередині @ifdocbook та @docbook.\n"
+"  --no-ifhtml       не обробляти текст усередині @ifhtml та @html.\n"
+"  --no-ifinfo       не обробляти текст усередині @ifinfo.\n"
+"  --no-ifplaintext  не обробляти текст усередині @ifplaintext.\n"
+"  --no-iftex        не обробляти текст усередині @iftex та @tex.\n"
+"  --no-ifxml        не обробляти текст усередині @ifxml та @xml.\n"
+"\n"
+"  Параметри --no-ifФОРМАТ також вмикають обробку тексту у @ifnotФОРМАТ.\n"
+
+#: tp/texi2any.pl:764
+msgid ""
+"  The defaults for the @if... conditionals depend on the output format:\n"
+"  if generating Docbook, --ifdocbook is on and the others are off;\n"
+"  if generating HTML, --ifhtml is on and the others are off;\n"
+"  if generating Info, --ifinfo is on and the others are off;\n"
+"  if generating plain text, --ifplaintext is on and the others are off;\n"
+"  if generating XML, --ifxml is on and the others are off.\n"
+msgstr ""
+"  Типові параметри умовних конструкцій @if... залежать від формату виводу:\n"
+"  якщо створюємо Docbook, --ifdocbook увімкнено, а інші вимкнено;\n"
+"  якщо створюємо HTML - --ifhtml ввімкнено, а інші вимкнено;\n"
+"  якщо створюємо Info - --ifinfo ввімкнено, а інші вимкнено;\n"
+"  якщо створюємо простий текст - --ifplaintext ввімкнено, а інші вимкнено;\n"
+"  якщо створюємо XML - --ifxml ввімкнено, а інші вимкнено.\n"
+
+#: tp/texi2any.pl:771
+msgid ""
+"Examples:\n"
+"  makeinfo foo.texi                      write Info to foo's @setfilename\n"
+"  makeinfo --html foo.texi               write HTML to @setfilename\n"
+"  makeinfo --xml foo.texi                write Texinfo XML to @setfilename\n"
+"  makeinfo --docbook foo.texi            write Docbook XML to @setfilename\n"
+"  makeinfo --plaintext foo.texi          write plain text to standard "
+"output\n"
+"  makeinfo --pdf foo.texi                write PDF using texi2dvi\n"
+"\n"
+"  makeinfo --html --no-headers foo.texi  write html without node lines, "
+"menus\n"
+"  makeinfo --number-sections foo.texi    write Info with numbered sections\n"
+"  makeinfo --no-split foo.texi           write one Info file however big\n"
+msgstr ""
+"Приклади:\n"
+"  makeinfo foo.texi                      записати Info до @setfilename з "
+"foo\n"
+"  makeinfo --html foo.texi               записати HTML до @setfilename\n"
+"  makeinfo --xml foo.texi                записати Texinfo XML до "
+"@setfilename\n"
+"  makeinfo --docbook foo.texi            записати Docbook XML до "
+"@setfilename\n"
+"  makeinfo --plaintext foo.texi          записати до стандартного виведення "
+"даних звичайний текст\n"
+"  makeinfo --pdf foo.texi                записати PDF за допомогою texi2dvi\n"
+"\n"
+"  makeinfo --html --no-headers foo.texi  записати html без рядків вузлів та "
+"меню\n"
+"  makeinfo --number-sections foo.texi    записати Info з пронумерованими "
+"секціями\n"
+"  makeinfo --no-split foo.texi           записати все в один файл Info (він "
+"буде великим)\n"
+
+#: tp/texi2any.pl:818
+#, perl-format
+msgid "%s: --footnote-style arg must be `separate' or `end', not `%s'.\n"
+msgstr ""
+"%s: аргумент до --footnote-style має бути `separate' чи `end', а не `%s'.\n"
+
+#: tp/texi2any.pl:913
+#, perl-format
+msgid "%s: --paragraph-indent arg must be numeric/`none'/`asis', not `%s'.\n"
+msgstr ""
+"%s: аргумент до --paragraph-indent має бути числом, `none' чи `asis', а не `"
+"%s'.\n"
+
+#: tp/texi2any.pl:990
+#, perl-format
+msgid "%s: when generating %s, only one input FILE may be specified with -o\n"
+msgstr ""
+"%s: створення %s, за допомогою -o можна вказувати лише один файл вхідних "
+"даних\n"
+
+#: tp/texi2any.pl:994
+msgid "--Xopt option without printed output"
+msgstr "використано параметр --Xopt без визначення друкованого виведення"
+
+#: tp/texi2any.pl:1010
+#, perl-format
+msgid "unknown tree transformation %s"
+msgstr "невідоме перетворення ієрархії %s"
+
+#: tp/texi2any.pl:1017
+#, perl-format
+msgid "ignoring splitting for format %s"
+msgstr "ігноруємо поділ для формату %s"
+
+#: tp/texi2any.pl:1076
+#, perl-format
+msgid "%s: missing file argument.\n"
+msgstr "%s: не вказано аргумент назви файлу.\n"
+
+#: tp/texi2any.pl:1077
+#, perl-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Спробуйте `%s --help', щоб отримати більше інформації.\n"
+
+#: tp/texi2any.pl:1144
+msgid "fill_gaps_in_sectioning transformation return no result. No section?"
+msgstr ""
+"Перетворення fill_gaps_in_sectioning не дало ніяких результатів. Немає "
+"розділу?"
+
+#: tp/texi2any.pl:1166
+#, perl-format
+msgid "error on closing macro expand file %s: %s\n"
+msgstr ""
+"помилка під час спроби закрити файл розгортання макровизначень %s: %s\n"
+
+#: tp/texi2any.pl:1172
+#, perl-format
+msgid "could not open %s for writing: %s\n"
+msgstr "не вдалося відкрити %s для запису: %s\n"
+
+#: tp/texi2any.pl:1197
+msgid ""
+"insert_nodes_for_sectioning_commands transformation return no result. No "
+"section?"
+msgstr ""
+"Перетворення insert_nodes_for_sectioning_commands не дало ніяких "
+"результатів. Немає розділу?"
+
+#: tp/texi2any.pl:1265 tp/texi2any.pl:1341
+#, perl-format
+msgid "%s: error on closing %s: %s\n"
+msgstr "%s: помилка під час спроби закрити %s: %s\n"
+
+#: tp/texi2any.pl:1288 tp/texi2any.pl:1322
+#, perl-format
+msgid "%s: error on closing internal links file %s: %s\n"
+msgstr "%s: помилка під час спроби закрити файл внутрішніх посилань %s: %s\n"
+
+#: tp/texi2any.pl:1294 tp/texi2any.pl:1328
+#, perl-format
+msgid "%s: could not open %s for writing: %s\n"
+msgstr "%s: не вдалося відкрити %s для запису даних: %s\n"
+
+#: tp/Texinfo/XS/parsetexi/close.c:274
+#, c-format
+msgid "no matching `@end %s'"
+msgstr "не знайдено відповідного «@end %s»"
+
+#: tp/Texinfo/XS/parsetexi/close.c:312 tp/Texinfo/XS/parsetexi/separator.c:193
+msgid "misplaced {"
+msgstr "неправильно розташована {"
+
+#: tp/Texinfo/XS/parsetexi/close.c:415
+#, c-format
+msgid "unmatched `@end %s'"
+msgstr "«@end %s» без відповідника"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:191
+msgid "@set requires a name"
+msgstr "%set потребує визначення назви"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:194
+msgid "bad name for @set"
+msgstr "помилкова назва у @set"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:218
+msgid "@clear requires a name"
+msgstr "%clear потребує визначення назви"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:221
+msgid "bad name for @clear"
+msgstr "помилкова назва у @clear"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:240
+msgid "@unmacro requires a name"
+msgstr "%unmacro потребує визначення назви"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:243
+msgid "bad name for @unmacro"
+msgstr "помилкова назва у @unmacro"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:262
+#, c-format
+msgid "@clickstyle should only accept an @-command as argument, not `%s'"
+msgstr "@clickstyle приймає як аргумент лише @-команди, але не «%s»"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:355
+#, c-format
+msgid "environment command %s as argument to @alias"
+msgstr "команда середовища %s як аргумент @alias"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:373
+msgid "bad argument to @alias"
+msgstr "помилковий аргумент до @alias"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:424
+msgid "bad argument to @definfoenclose"
+msgstr "помилковий аргумент до @definfoenclose"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:436
+msgid "empty @columnfractions"
+msgstr "порожнє @columnfractions"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:594
+#, c-format
+msgid "bad argument to @printindex: %s"
+msgstr "помилковий аргумент @printindex: %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:646
+#, c-format
+msgid "Only @fonttextsize 10 or 11 is supported, not `%s'"
+msgstr "Передбачено підтримку лише @fonttextsize 10 чи 11, але не «%s»"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:657
+#, c-format
+msgid "@footnotestyle arg must be `separate' or `end', not `%s'"
+msgstr ""
+"аргументом до @footnotestyle має бути «separate» чи «end», але не «%s»."
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:669
+#, c-format
+msgid "@setchapternewpage arg must be `on', `off' or `odd', not `%s'"
+msgstr ""
+"аргументом @setchapternewpage має бути «on», «off» або «odd», але не «%s»"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:680
+#, c-format
+msgid "bad argument to @need: %s"
+msgstr "помилковий аргумент @need: %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:701
+#, c-format
+msgid "@firstparagraph arg must be `none' or `insert', not `%s'"
+msgstr "аргументом @firstparagraph має бути «none» або «insert», але не «%s»"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:783
+#, c-format
+msgid "bad argument to @headings: %s"
+msgstr "помилковий аргумент @headings: %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1158
+#, c-format
+msgid "%s requires an argument: the formatter for @item"
+msgstr "%s потребує аргументу: засіб форматування для @item"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1379
+msgid "unmatched `@end'"
+msgstr "«@end» без відповідника"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1399
+#: tp/Texinfo/XS/parsetexi/parser.c:1109
+#, c-format
+msgid "superfluous argument to @end %s: %s"
+msgstr "зайвий аргумент @end, %s: %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1409
+#, c-format
+msgid "bad argument to @end: %s"
+msgstr "помилковий аргумент @end: %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1426
+#, c-format
+msgid "@include: could not find %s"
+msgstr "@include: не вдалося знайти %s"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1434
+#, c-format
+msgid "@include: could not open %s:"
+msgstr "@include: не вдалося відкрити %s:"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1815
+msgid "@setfilename after the first element"
+msgstr "@setfilename після першого елемента"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1825
+msgid "@columnfractions only meaningful on a @multitable line"
+msgstr "@columnfractions має сенс лише у рядку @multitable"
+
+#: tp/Texinfo/XS/parsetexi/end_line.c:1892
+msgid "@node precedes @part, but parts may not be associated with nodes"
+msgstr "@node передує @part, але частини не можна пов’язувати з вузлами"
+
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:154
+#, c-format
+msgid "@%s not meaningful inside @%s block"
+msgstr "@%s не має сенсу усередині блоку %s"
+
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:363
+#, c-format
+msgid "@%s not allowed inside `@copying' block"
+msgstr "@%s не можна використовувати всередині блоку «@copying»"
+
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:565
+msgid "@subentry should only occur in an index entry"
+msgstr "@subentry має використовуватися лише у записі покажчика"
+
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:690
+msgid ""
+"@author not meaningful outside `@titlepage' and `@quotation' environments"
+msgstr "@author не має сенсу поза середовищами «@titlepage» та «@quotation»"
+
+#: tp/Texinfo/XS/parsetexi/handle_commands.c:804
+#: tp/Texinfo/XS/parsetexi/macro.c:107
+#, c-format
+msgid "@%s requires a name"
+msgstr "@%s вимагає вказати назву"
+
+#: tp/Texinfo/XS/parsetexi/macro.c:159
+#, c-format
+msgid "bad or empty @%s formal argument: "
+msgstr "помилковий або порожній формальний аргумент @%s: "
+
+#: tp/Texinfo/XS/parsetexi/parser.c:1436
+#, c-format
+msgid "@dotless expects `i' or `j' as argument, not `%c'"
+msgstr "@dotless потрібен аргумент «i» або «j», але не «%c»"
+
+#: tp/Texinfo/XS/parsetexi/parser.c:1523
+#, c-format
+msgid "undefined flag: %.*s"
+msgstr "невідомий прапорець: %.*s"
+
+#: tp/Texinfo/XS/parsetexi/parser.c:1578
+#, c-format
+msgid "@%s is obsolete."
+msgstr "@%s є застарілим."
+
+#: tp/Texinfo/XS/parsetexi/parser.c:1580
+#, c-format
+msgid "@%s is obsolete; %s"
+msgstr "@%s є застарілим; %s"
+
+#: tp/Texinfo/XS/parsetexi/parser.c:1705
+msgid "@\\ should only appear in math context"
+msgstr "@\\ має використовуватися лише у контексті формул"
+
+#: tp/Texinfo/XS/parsetexi/separator.c:53
+msgid "@verb without associated character"
+msgstr "@verb без пов’язаного символу"
+
+#: tp/Texinfo/XS/parsetexi/separator.c:396
+#, c-format
+msgid "@dotless expects `i' or `j' as argument, not `%s'"
+msgstr "@dotless потрібен аргумент «i» або «j», але не «%s»"
+
+#: tp/Texinfo/XS/parsetexi/separator.c:545
+msgid "misplaced }"
+msgstr "неправильно розташована }"
+
+#~ msgid "no node to be renamed"
+#~ msgstr "немає вузла для перейменування"
+
+#~ msgid "nodes without a new name at the end of file"
+#~ msgstr "вузли без нової назви наприкінці файла"
+
+#~ msgid "using a renamed nodes file (`%s') is deprecated"
+#~ msgstr ""
+#~ "використання файла перейменованих вузлів («%s») вважається застарілим"
+
+#~ msgid "old name for `%s' is a node of the document"
+#~ msgstr "старою назвою для «%s» є вузол документа"
+
+#~ msgid "file empty for renamed node `%s'"
+#~ msgstr "файл перейменованого вузла «%s» є порожнім"
+
+#~ msgid "target node (new name for `%s') not in document: %s"
+#~ msgstr ""
+#~ "вузол призначення (нова назва для «%s») перебуває за межами документа: %s"
+
+#~ msgid "error on closing renamed node redirection file %s: %s"
+#~ msgstr ""
+#~ "помилка під час спроби закриття файла переспрямування перейменованого "
+#~ "вузла, %s: %s"
+
+#~ msgid "empty node name"
+#~ msgstr "порожня назва вузла"
+
+#~ msgid "can't open %s: %s"
+#~ msgstr "не вдалося відкрити %s: %s"
+
+#~ msgid "debugging output diverted to \"%s\""
+#~ msgstr "діагностичні дані спрямовано до «%s»"
+
+#~ msgid "recursion is always allowed"
+#~ msgstr "рекурсію дозволено завжди"
+
+#~ msgid "arguments are quoted by default"
+#~ msgstr "типово, аргументи подаються у лапках"
+
+#~ msgid "Obsolete variable %s\n"
+#~ msgstr "Застаріла змінна %s\n"
+
+#~ msgid "%s: obsolete variable %s\n"
+#~ msgstr "%s: застаріла змінна %s\n"
+
+#~ msgid "obsolete variable %s\n"
+#~ msgstr "застаріла змінна %s\n"
+
+#~ msgid ""
+#~ "  -R, --raw-escapes            output \"raw\" ANSI escapes (default).\n"
+#~ "      --no-raw-escapes         output escapes as literal text.\n"
+#~ "      --restore=FILE           read initial keystrokes from FILE.\n"
+#~ "  -O, --show-options, --usage  go to command-line options node."
+#~ msgstr ""
+#~ "  -R, --raw-escapes            виводити керівні коди ANSI як є (зазвичай "
+#~ "ввімкнено)\n"
+#~ "      --no-raw-escapes         виводити керівні коди як текст.\n"
+#~ "      --restore=ФАЙЛ           прочитати початкові команди з ФАЙЛА.\n"
+#~ "  -O, --show-options, --usage  перейти до вузла параметрів командного "
+#~ "рядку."
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: додавання аргументів до параметра «--%s» не передбачено\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: невідомий параметр «--%s»\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: параметр «-W %s» не є однозначним\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: додавання аргументів до параметра «-W %s» не передбачено\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: до параметра «-W %s» слід додати аргумент\n"
+
+#~ msgid "Undefined command: %s"
+#~ msgstr "Невідома команда: %s"
+
+#~ msgid "readline: Out of virtual memory!\n"
+#~ msgstr "readline: Не вистачає віртуальної пам’яті!\n"
+
+#~ msgid "@%s should only appear at beginning or end of document"
+#~ msgstr "@%s слід розташовувати лише на початку або наприкінці документа"
+
+#~ msgid "-%s---Info: %s, %ld lines --%s--"
+#~ msgstr "-%s---Info: %s, %ld рядків --%s--"
+
+#~ msgid "-%s---Info: (%s)%s, %ld lines --%s--"
+#~ msgstr "-%s---Info: (%s)%s, %ld рядків --%s--"
+
+#~ msgid "No file given for node '%s'."
+#~ msgstr "Для вузла «%s» не вказано файла."
+
+#~ msgid "argument for @U exceeds size of integer: %s"
+#~ msgstr "аргумент @U перевищує за розміром розмір цілого числа: %s"
+
+#~ msgid "--*** Tags out of Date ***"
+#~ msgstr "--*** Теґи застаріли ***"
+
+#~ msgid " Subfile: %s"
+#~ msgstr " Під-файл: %s"
+
+#~ msgid "%s: unrecognized option `%s'\n"
+#~ msgstr "%s: невідомий параметр «%s»\n"
+
+#~ msgid "%s is not a Texinfo index file\n"
+#~ msgstr "%s не є файлом покажчика Texinfo\n"
+
+#~ msgid "%s:%d: Bad key %s in record\n"
+#~ msgstr "%s:%d: помилковий ключ %s у записі\n"
+
+#~ msgid "%s:%d: Bad entry; expected three fields, not %d\n"
+#~ msgstr "%s:%d: помилковий запис; мало бути три поля, а не %d\n"
+
+#~ msgid "%s:%d: Bad entry; expected %s at column %d\n"
+#~ msgstr "%s:%d: помилковий запис; мало бути %s у позиції %d\n"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Usage: %s [OPTION]... FILE...\n"
+#~ msgstr "Користування: %s [ПАРАМЕТР]... ФАЙЛ-TEXINFO...\n"
+
+#~ msgid "Generate a sorted index for each TeX output FILE."
+#~ msgstr "Генерує упорядкований покажчик для кожного файлу виводу TeX."
+
+#~ msgid "Usually FILE... is specified as `foo.??' for a document `foo.texi'."
+#~ msgstr "Зазвичай, ФАЙЛ... вказується як `foo.??' для документу `foo.texi'."
+
+#~ msgid "Options:"
+#~ msgstr "Параметри:"
+
+#~ msgid " -h, --help   display this help and exit"
+#~ msgstr " -h, --help     вивести довідку і завершити роботу"
+
+#~ msgid " --version    display version information and exit"
+#~ msgstr " --version    показати дані щодо версії і завершити роботу"
+
+#~ msgid " --           end option processing"
+#~ msgstr " --           кінець оброблюваних параметрів"
+
+#~ msgid ""
+#~ "\n"
+#~ "Email bug reports to bug-texinfo@gnu.org,\n"
+#~ "general questions and discussion to help-texinfo@gnu.org.\n"
+#~ "Texinfo home page: http://www.gnu.org/software/texinfo/"
+#~ msgstr ""
+#~ "\n"
+#~ "Надсилайте звіти про помилки на адресу bug-texinfo@gnu.org,\n"
+#~ "загальні питання та обговорення - на адресу help-texinfo@gnu.org.\n"
+#~ "Домашня сторінка texinfo: http://www.gnu.org/software/texinfo/"
+
+#~ msgid "Insert this character"
+#~ msgstr "Вставити цей символ"
+
+#~ msgid "No index entries."
+#~ msgstr "Немає пунктів покажчика."
+
+#~ msgid "CAN'T SEE THIS"
+#~ msgstr "ЦЬОГО НЕ ВИДНО"
+
+#~ msgid ""
+#~ "\n"
+#~ "* Menu: Nodes whose indices contain `%s':\n"
+#~ msgstr ""
+#~ "\n"
+#~ "* Меню: Вузли, покажчик яких містить `%s':\n"
+
+#~ msgid "No index"
+#~ msgstr "Немає покажчика"
+
+#~ msgid "Index for `%s'"
+#~ msgstr "Покажчик для «%s»"
+
+#~ msgid "File names matching `%s'"
+#~ msgstr "Назви файлів, що відповідають «%s»"
+
+#~ msgid ""
+#~ "Basic Commands in Info Windows\n"
+#~ "******************************\n"
+#~ msgstr ""
+#~ "Основні команди у вікнах Info\n"
+#~ "*****************************\n"
+
+#~ msgid "  %-10s  Quit this help.\n"
+#~ msgstr "  %-10s  Закрити цю довідку.\n"
+
+#~ msgid "  %-10s  Quit Info altogether.\n"
+#~ msgstr "  %-10s  Вийти з Info зовсім.\n"
+
+#~ msgid "  %-10s  Invoke the Info tutorial.\n"
+#~ msgstr "  %-10s  Запустити посібник з Info.\n"
+
+#~ msgid "  %-10s  Move to the `next' node of this node.\n"
+#~ msgstr "  %-10s  Перейти до `наступного' по відношенню до цього вузла.\n"
+
+#~ msgid "  %-10s  Move to the `previous' node of this node.\n"
+#~ msgstr "  %-10s  Перейти до `попереднього' по відношенню до цього вузла.\n"
+
+#~ msgid "  %-10s  Move `up' from this node.\n"
+#~ msgstr "  %-10s  Перейти `вверх' від цього вузла.\n"
+
+#~ msgid ""
+#~ "  %-10s  Pick menu item specified by name.\n"
+#~ "              Picking a menu item causes another node to be selected.\n"
+#~ msgstr ""
+#~ "  %-10s  Обрати пункт меню, вказаний за назвою.\n"
+#~ "              Вибір пункту меню призведе до вибору іншого вузла.\n"
+
+#~ msgid "  %-10s  Follow a cross reference.  Reads name of reference.\n"
+#~ msgstr ""
+#~ "  %-10s  Перейти за перехресним посиланням.  Читає назву посилання.\n"
+
+#~ msgid "  %-10s  Move to the last node seen in this window.\n"
+#~ msgstr ""
+#~ "  %-10s  Перейти до останнього вузла, що переглядався у цьому вікні.\n"
+
+#~ msgid "  %-10s  Skip to next hypertext link within this node.\n"
+#~ msgstr ""
+#~ "  %-10s  Пропустити до наступного гіпертекстового посилання у цьому "
+#~ "вузлі.\n"
+
+#~ msgid "  %-10s  Follow the hypertext link under cursor.\n"
+#~ msgstr "  %-10s  Перейти за гіпертекстовим посиланням під курсором.\n"
+
+#~ msgid "  %-10s  Move to the `directory' node.  Equivalent to `g (DIR)'.\n"
+#~ msgstr "  %-10s  Перейти до вузла `каталогу'.  Те ж саме, що й `g (DIR)'.\n"
+
+#~ msgid "  %-10s  Move to the Top node.  Equivalent to `g Top'.\n"
+#~ msgstr "  %-10s  Перейти до горішнього вузла.  Те й саме, що й `g Top'.\n"
+
+#~ msgid ""
+#~ "Moving within a node:\n"
+#~ "---------------------\n"
+#~ msgstr ""
+#~ "Переміщення усередині вузла:\n"
+#~ "----------------------------\n"
+
+#~ msgid "  %-10s  Scroll forward a page.\n"
+#~ msgstr "  %-10s  Прокрутити на сторінку вперед.\n"
+
+#~ msgid "  %-10s  Scroll backward a page.\n"
+#~ msgstr "  %-10s  Прокрутити на сторінку назад.\n"
+
+#~ msgid "  %-10s  Go to the beginning of this node.\n"
+#~ msgstr "  %-10s  Перейти на початок вузла.\n"
+
+#~ msgid "  %-10s  Go to the end of this node.\n"
+#~ msgstr "  %-10s  Перейти до кінця вузла.\n"
+
+#~ msgid "  %-10s  Scroll forward 1 line.\n"
+#~ msgstr "  %-10s  Прокрутити вперед на один рядок.\n"
+
+#~ msgid "  %-10s  Scroll backward 1 line.\n"
+#~ msgstr "  %-10s  Прокрутити назад на один рядок.\n"
+
+#~ msgid ""
+#~ "Other commands:\n"
+#~ "---------------\n"
+#~ msgstr ""
+#~ "Інші команди:\n"
+#~ "-------------\n"
+
+#~ msgid "  %-10s  Pick first...ninth item in node's menu.\n"
+#~ msgstr "  %-10s  Обрати перший...дев’ятий пункт меню вузла.\n"
+
+#~ msgid "  %-10s  Pick last item in node's menu.\n"
+#~ msgstr "  %-10s  Обрати останній пункт меню вузла.\n"
+
+#~ msgid ""
+#~ "  %-10s  Search for a specified string in the index entries of this Info\n"
+#~ "              file, and select the node referenced by the first entry "
+#~ "found.\n"
+#~ msgstr ""
+#~ "  %-10s  Шукати вказаний серед у пунктів покажчика цього файла\n"
+#~ "              Info, та обрати вузол, на який посилається перший знайдений "
+#~ "пункт.\n"
+
+#~ msgid ""
+#~ "  %-10s  Move to node specified by name.\n"
+#~ "              You may include a filename as well, as in "
+#~ "(FILENAME)NODENAME.\n"
+#~ msgstr ""
+#~ "  %-10s  Перейти до вузла, вказаного за назвою.\n"
+#~ "              Ви можете вказати також й назву файла у вигляді "
+#~ "(ФАЙЛ)ВУЗОЛ.\n"
+
+#~ msgid ""
+#~ "  %-10s  Search forward for a specified string,\n"
+#~ "              and select the node in which the next occurrence is found.\n"
+#~ msgstr ""
+#~ "  %-10s  Шукати далі вказаний рядок,\n"
+#~ "              та обрати вузол, де буде перший збіг.\n"
+
+#~ msgid ""
+#~ "  %-10s  Search backward for a specified string,\n"
+#~ "              and select the node in which the next occurrence is found.\n"
+#~ msgstr ""
+#~ "  %-10s  Шукати у попередньому тексті вказаний рядок,\n"
+#~ "              та обрати вузол, де буде перший збіг.\n"
+
+#~ msgid "ESC %s is undefined."
+#~ msgstr "ESC %s не призначено жодної команди."
+
+#~ msgid "%s is defined to %s."
+#~ msgstr "%s призначено %s."
+
+#~ msgid ""
+#~ "Selecting other nodes:\n"
+#~ "----------------------\n"
+#~ msgstr ""
+#~ "Вибір інших вузлів:\n"
+#~ "-------------------\n"
+
+#~ msgid "incorrect number of arguments"
+#~ msgstr "невірна кількість аргументів"
+
+#~ msgid "cannot open input file `%s'"
+#~ msgstr "не вдається відкрити вхідний файл `%s'"
+
+#~ msgid "cannot create output file `%s'"
+#~ msgstr "не вдається створити файл виводу `%s'"
+
+#~ msgid "error writing to `%s'"
+#~ msgstr "помилка запису до `%s'"
+
+#~ msgid "error closing output file `%s'"
+#~ msgstr "помилка закриття файлу виводу `%s'"
+
+#~ msgid "section too long"
+#~ msgstr "секція занадто довга"
+
+#~ msgid ""
+#~ "Usage: %s [OPTION]... [INPUT-FILE]\n"
+#~ "\n"
+#~ "Compile infokey source file to infokey file.  Reads INPUT-FILE (default\n"
+#~ "$HOME/.infokey) and writes compiled key file to (by default) $HOME/."
+#~ "info.\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  --output FILE        output to FILE instead of $HOME/.info\n"
+#~ "  --help               display this help and exit.\n"
+#~ "  --version            display version information and exit.\n"
+#~ msgstr ""
+#~ "Використовуйте: %s [ПАРАМЕТР]... [ВХІДНИЙ ФАЙЛ]\n"
+#~ "\n"
+#~ "Компілює файл вихідного коду infokey у файл infokey.  Читає ВХІДНИЙ ФАЙЛ "
+#~ "(якщо\n"
+#~ "не вказано - $HOME/.infokey) та записує згенерований файл клавіш до "
+#~ "$HOME/.info (зазвичай).\n"
+#~ "\n"
+#~ "Параметри:\n"
+#~ "  --output ФАЙЛ        записати до ФАЙЛ, замість $HOME/.info\n"
+#~ "  --help               показати цю довідку та вийти.\n"
+#~ "  --version            показати інформацію про версію та вийти\n"
+
+#~ msgid "Ignoring invalid infokey file `%s' - too small"
+#~ msgstr "Пропущено неправильний файл infokey `%s' - занадто маленький"
+
+#~ msgid "Ignoring invalid infokey file `%s' - too big"
+#~ msgstr "Пропущено неправильний файл infokey `%s' - занадто великий"
+
+#~ msgid "Error reading infokey file `%s' - short read"
+#~ msgstr "Помилка читання файлу infokey `%s' - прочитано недостатньо даних"
+
+#~ msgid ""
+#~ "Invalid infokey file `%s' (bad magic numbers) -- run infokey to update it"
+#~ msgstr ""
+#~ "Неправильний файл infokey `%s' (невірні магічні номери) -- запустіть "
+#~ "infokey, щоб оновити його"
+
+#~ msgid "Your infokey file `%s' is out of date -- run infokey to update it"
+#~ msgstr ""
+#~ "Ваш файл infokey `%s' застарів -- запустіть infokey, щоб оновити його"
+
+#~ msgid ""
+#~ "Invalid infokey file `%s' (bad section length) -- run infokey to update it"
+#~ msgstr ""
+#~ "Неправильний файл infokey `%s' (невірна довжина секції) -- запустіть "
+#~ "infokey, щоб оновити його"
+
+#~ msgid ""
+#~ "Invalid infokey file `%s' (bad section code) -- run infokey to update it"
+#~ msgstr ""
+#~ "Неправильний файл infokey `%s' (невірний код секції) -- запустіть "
+#~ "infokey, щоб оновити його"
+
+#~ msgid "Bad data in infokey file -- some key bindings ignored"
+#~ msgstr ""
+#~ "Невірні дані у файлі infokey -- деякі призначення клавіш буде пропущено"
+
+#~ msgid "Bad data in infokey file -- some var settings ignored"
+#~ msgstr ""
+#~ "Невірні дані у файлі infokey -- встановлення деяких змінних буде пропущено"
+
+#~ msgid "Next"
+#~ msgstr "Наступний"
+
+#~ msgid "No `Prev' for this node."
+#~ msgstr "У цього вузла нема `Попереднього' вузла."
+
+#~ msgid "Kill node (%s): "
+#~ msgstr "Вбити вузол (%s): "
+
+#~ msgid "Cannot kill node `%s'"
+#~ msgstr "Не вдалося вбити вузол «%s»"
+
+#~ msgid "Cannot kill the last node"
+#~ msgstr "Не можна вбивати останній вузол"
+
+#~ msgid "Kill this node"
+#~ msgstr "Вбити цей вузол"
+
+#~ msgid "writing file %s"
+#~ msgstr "записуємо файл %s"
+
+#~ msgid "closing file %s"
+#~ msgstr "закриваємо файл %s"
+
+#~ msgid "Internally used by \\[universal-argument]"
+#~ msgstr "Використовується \\[universal-argument] внутрішньо"
+
+#~ msgid "Usage: makeinfo [OPTION]... TEXINFO-FILE...\n"
+#~ msgstr "Користування: makeinfo [ПАРАМЕТР]... ФАЙЛ-TEXINFO...\n"
+
+#~ msgid "  or:  texi2any [OPTION]... TEXINFO-FILE...\n"
+#~ msgstr "  або texi2any [ПАРАМЕТР]... ФАЙЛ-TEXINFO...\n"
+
+#~ msgid "send output to FILE"
+#~ msgstr "спрямувати вивід до ФАЙЛУ"
+
+#~ msgid "failure reopening %s"
+#~ msgstr "помилка повторного відкриття %s"
+
+#~ msgid "No page number in %s"
+#~ msgstr "Нема номеру сторінки у %s"
+
+#~ msgid "entry %s follows an entry with a secondary name"
+#~ msgstr "пункт %s йде за пунктом, що має вторинну назву"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: неправильний параметр -- %c\n"
+
+#~ msgid "One completion:\n"
+#~ msgstr "Одне доповнення:\n"
+
+#~ msgid "more "
+#~ msgstr "більше "
+
+#~ msgid "Done."
+#~ msgstr "Зроблено."
+
+#~ msgid "%s: warning: "
+#~ msgstr "%s: попередження: "
+
+#~ msgid "ferror on stdout\n"
+#~ msgstr "ferrror на stdout\n"
+
+#~ msgid "fflush error on stdout\n"
+#~ msgstr "помилка fflush на stdout\n"
+
+#~ msgid "arguments to @%s ignored"
+#~ msgstr "аргументи @%s ігноруються"
+
+#~ msgid "January"
+#~ msgstr "Січень"
+
+#~ msgid "February"
+#~ msgstr "Лютий"
+
+#~ msgid "March"
+#~ msgstr "Березень"
+
+#~ msgid "April"
+#~ msgstr "Квітень"
+
+#~ msgid "May"
+#~ msgstr "Травень"
+
+#~ msgid "June"
+#~ msgstr "Червень"
+
+#~ msgid "July"
+#~ msgstr "Липень"
+
+#~ msgid "August"
+#~ msgstr "Серпень"
+
+#~ msgid "September"
+#~ msgstr "Вересень"
+
+#~ msgid "October"
+#~ msgstr "Жовтень"
+
+#~ msgid "November"
+#~ msgstr "Листопад"
+
+#~ msgid "December"
+#~ msgstr "Грудень"
+
+#~ msgid "@sc argument all uppercase, thus no effect"
+#~ msgstr "аргумент до @sc весь у великому регістрі, отож ніякого ефекту"
+
+#~ msgid "`{' expected, but saw `%c'"
+#~ msgstr "очікувалося `{', натомість отримано `%c'"
+
+#~ msgid "end of file inside verb block"
+#~ msgstr "файл закінчився всередині блоку verb"
+
+#~ msgid "`}' expected, but saw `%c'"
+#~ msgstr "очікувалося `}', натомість отримано `%c'"
+
+#~ msgid "@sp requires a positive numeric argument, not `%s'"
+#~ msgstr "@sp потребує позитивний числовий аргумент, а не `%s'"
+
+#~ msgid "Bad argument to %c%s"
+#~ msgstr "Неправильний аргумент до %c%s"
+
+#~ msgid "asis"
+#~ msgstr "asis"
+
+#~ msgid "none"
+#~ msgstr "none"
+
+#~ msgid "insert"
+#~ msgstr "insert"
+
+#~ msgid "Missing `}' in @def arg"
+#~ msgstr "Серед аргументів @def пропущено `}'"
+
+#~ msgid "%s: getwd: %s, %s\n"
+#~ msgstr "%s: getwd: %s, %s\n"
+
+#~ msgid "`%s' omitted before output filename"
+#~ msgstr "пропущено `%s' перед назвою файлу виводу"
+
+#~ msgid "`%s' omitted since writing to stdout"
+#~ msgstr "пропущено `%s', бо запис йде у стандартний вивід"
+
+#~ msgid "Output buffer not empty."
+#~ msgstr "Буфер виводу не є порожнім."
+
+#~ msgid "Requested float type `%s' not previously used"
+#~ msgstr "Запитаний тип float `%s' не використовувався до цього"
+
+#~ msgid "See "
+#~ msgstr "Див. "
+
+#~ msgid "`%c%s' needs an argument `{...}', not just `%s'"
+#~ msgstr "`%c%s' потребує аргумент у вигляді `{...}', а не просто `%s'"
+
+#~ msgid "No closing brace for footnote `%s'"
+#~ msgstr "Нема заключної дужки для виноски `%s'"
+
+#~ msgid "Footnote defined without parent node"
+#~ msgstr "Визначення виноски без вузла, до якого вона відноситься"
+
+#~ msgid "Footnotes"
+#~ msgstr "Виноски"
+
+#~ msgid "[unexpected] no html tag to pop"
+#~ msgstr "[unexpected] немає теґу html для виштовхування"
+
+#~ msgid "[unexpected] invalid node name: `%s'"
+#~ msgstr "[unexpected] недопустима назва вузла: `%s'"
+
+#~ msgid "Info cannot handle `:' in index entry `%s'"
+#~ msgstr "Info не може обробляти `:' у пункті покажчику `%s'"
+
+#~ msgid "Index `%s' already exists"
+#~ msgstr "Покажчик `%s' вже існує"
+
+#~ msgid "Unknown index `%s' and/or `%s' in @synindex"
+#~ msgstr "Невідомий покажчик `%s' та/чи `%s' у @synindex"
+
+#~ msgid "(line )"
+#~ msgstr "(рядок )"
+
+#~ msgid "(line %*d)"
+#~ msgstr "(рядок %*d)"
+
+#~ msgid "@item not allowed in argument to @itemize"
+#~ msgstr "у аргументах до @itemize не дозволене @item"
+
+#~ msgid "Broken-Type in insertion_type_pname"
+#~ msgstr "Broken-Type у insertion_type_pname"
+
+#~ msgid "Enumeration stack overflow"
+#~ msgstr "Переповнення стеку нумерування"
+
+#~ msgid "lettering overflow, restarting at %c"
+#~ msgstr "переповнення літерування, починаємо знов з %c"
+
+#~ msgid "%cfloat environments cannot be nested"
+#~ msgstr "оточення %cfloat не можуть бути вкладеними"
+
+#~ msgid "%s requires letter or digit"
+#~ msgstr "%s потребує літеру чи цифру"
+
+#~ msgid "end of file inside verbatim block"
+#~ msgstr "файл закінчився усередині блоку verbatim"
+
+#~ msgid "@detailmenu seen before first node, creating `Top' node"
+#~ msgstr ""
+#~ "знайдено @detailmenu перед першим вузлом, створюється горішній вузол `Top'"
+
+#~ msgid "`%c%s' needs something after it"
+#~ msgstr "`%c%s' потребує щоб за ним щось було"
+
+#~ msgid "Bad argument `%s' to `@%s', using `%s'"
+#~ msgstr "Неправильний аргумент `%s' до `@%s', береться `%s'"
+
+#~ msgid "@itemx not meaningful inside `%s' block"
+#~ msgstr "@itemx не має сенсу усередині блоку `%s'"
+
+#~ msgid "%c%s found outside of an insertion block"
+#~ msgstr "знайдено %c%s ззовні блоку вставки"
+
+#~ msgid "no default territory known for language `%s'"
+#~ msgstr "для мови `%s' нема стандартної території"
+
+#~ msgid "sorry, encoding `%s' not supported"
+#~ msgstr "вибачте, кодування `%s' не підтримується"
+
+#~ msgid "%c%s expects a single character `i' or `j' as argument"
+#~ msgstr "%c%s очікує як аргумент одні літеру  - `i' чи `j'"
+
+#~ msgid "%cend macro not found"
+#~ msgstr "не знайдено %cend macro"
+
+#~ msgid "@allow-recursion is deprecated; please use @rmacro instead"
+#~ msgstr ""
+#~ "@allow-recursion є застарілим; будь ласка, використовуйте замість нього "
+#~ "@rmacro"
+
+#~ msgid "mismatched @end %s with @%s"
+#~ msgstr "невідповідний @end %s до @%s"
+
+#~ msgid "Too many errors!  Gave up.\n"
+#~ msgstr "Занадто багато помилок!  Перервано.\n"
+
+#~ msgid "%s:%d: warning: "
+#~ msgstr "%s:%d: попередження: "
+
+#~ msgid ""
+#~ "Options for XML and Docbook:\n"
+#~ "      --output-indent=VAL     indent XML elements by VAL spaces (default "
+#~ "%d).\n"
+#~ "                                If VAL is 0, ignorable whitespace is "
+#~ "dropped.\n"
+#~ msgstr ""
+#~ "Параметри для XML та Docbook:\n"
+#~ "      --output-indent=ЗНАЧЕННЯ  робити відступ для елементів XML на "
+#~ "ЗНАЧЕННЯ пропусків (типово %d).\n"
+#~ "                                Якщо ЗНАЧЕННЯ 0, усі нехтовні пробіли "
+#~ "будуть пропущені.\n"
+
+#~ msgid "%s: could not open macro expansion output `%s'"
+#~ msgstr "%s: не вдається відкрити вивід для розкриття макровизначень `%s'"
+
+#~ msgid "%s: ignoring second macro expansion output `%s'.\n"
+#~ msgstr "%s: пропущено другий вивід для розкриття макровизначень `%s'.\n"
+
+#~ msgid "%s: could not open internal links output `%s'"
+#~ msgstr "%s: не вдається відкрити вивід для запису посилань в документі `%s'"
+
+#~ msgid "Multiline command %c%s used improperly"
+#~ msgstr "Неправильне використання багаторядкової команди %c%s"
+
+#~ msgid "No `%s' found in `%s'"
+#~ msgstr "`%s' не знайдено у `%s'"
+
+#~ msgid ""
+#~ "%s: Skipping macro expansion to stdout as Info output is going there.\n"
+#~ msgstr ""
+#~ "%s: Розкриття макровизначень не виводиться у стандартний вивід, бо сюди "
+#~ "буде виведено Info.\n"
+
+#~ msgid ""
+#~ "%s: Removing macro output file `%s' due to errors; use --force to "
+#~ "preserve.\n"
+#~ msgstr ""
+#~ "%s: Вилучення файлу розкриття макровизначень `%s' з-за помилок; "
+#~ "застосуйте --force, щоб зберегти його.\n"
+
+#~ msgid ""
+#~ "%s: Removing output file `%s' due to errors; use --force to preserve.\n"
+#~ msgstr ""
+#~ "%s: Вилучення файлу виводу `%s' з-за помилок; застосуйте --force, щоб "
+#~ "зберегти його.\n"
+
+#~ msgid ""
+#~ "%s: Removing internal links output file `%s' due to errors; use --force "
+#~ "to preserve.\n"
+#~ msgstr ""
+#~ "%s: Вилучення файлу з посиланнями у документі `%s' з-за помилок; "
+#~ "застосуйте --force, щоб зберегти його.\n"
+
+#~ msgid "NO_NAME!"
+#~ msgstr "НЕМА_НАЗВИ!"
+
+#~ msgid "No such file `%s'"
+#~ msgstr "Нема такого файлу `%s'"
+
+#~ msgid "@image file `%s' (for text) unreadable: %s"
+#~ msgstr "файл @image `%s' (для тексту) неможливо прочитати: %s"
+
+#~ msgid "{No value for `%s'}"
+#~ msgstr "{Не вказане значення для `%s'}"
+
+#~ msgid "Reached eof before matching @end %s"
+#~ msgstr "Не знайдено відповідного @end %s - кінець файлу"
+
+#~ msgid "`%.40s...' is too long for expansion; not expanded"
+#~ msgstr "`%.40s...' занадто довге для розкриття; не розкриватиметься"
+
+#~ msgid "Missing } in @multitable template"
+#~ msgstr "Пропущено } у шаблоні @multitable"
+
+#~ msgid "ignoring stray text `%s' after @multitable"
+#~ msgstr "пропускається текст `%s', загублений після @multitable"
+
+#~ msgid "[unexpected] cannot select column #%d in multitable"
+#~ msgstr "[unexpected] не вдається обрати стовпчик №%d з multitable"
+
+#~ msgid "** Multicolumn output from last row:\n"
+#~ msgstr "** Вивід у декілька стовпчиків з останнього рядка:\n"
+
+#~ msgid "* column #%d: output = %s\n"
+#~ msgstr "* стовпчик №%d: вивід = %s\n"
+
+#~ msgid "Node `%s' previously defined at line %d"
+#~ msgstr "Вузол `%s' вже визначено рядком %d"
+
+#~ msgid "Formatting node %s...\n"
+#~ msgstr "Форматування вузла %s...\n"
+
+#~ msgid "Node `%s' requires a sectioning command (e.g., %c%s)"
+#~ msgstr "Вузол `%s' потребує команду розбиття на секції (напр., %c%s)"
+
+#~ msgid "Anchor `%s' and node `%s' map to the same file name"
+#~ msgstr "Зв’язок `%s' та вузол `%s' посилаються на один файл"
+
+#~ msgid "This @anchor command ignored; references to it will not work"
+#~ msgstr ""
+#~ "Цю команду @anchor буде пропущено; посилання на неї не працюватимуть"
+
+#~ msgid "Rename this anchor or use the `--no-split' option"
+#~ msgstr "Перейменуйте цей зв’язок чи використайте параметр `--no-split'"
+
+#~ msgid "Unexpected string at end of split-HTML file `%s'"
+#~ msgstr "Несподіваний рядок в кінці HTML-файлу з розбиттям `%s'"
+
+#~ msgid "Anchors `%s' and `%s' map to the same file name"
+#~ msgstr "Зв’язки `%s' та `%s' посилаються на один файл"
+
+#~ msgid "@anchor command ignored; references to it will not work"
+#~ msgstr "Пропущено команду @anchor; посилання на неї не працюватимуть"
+
+#~ msgid ""
+#~ "Next field of node `%s' not pointed to (perhaps incorrect sectioning?)"
+#~ msgstr ""
+#~ "Поле Next вузла `%s' не вказує на (мабуть, з-за неправильного "
+#~ "секціювання?)"
+
+#~ msgid "This node (%s) has the bad Prev"
+#~ msgstr "Цей вузол (%s) має неправильне поле Prev"
+
+#~ msgid "Prev field of node `%s' not pointed to"
+#~ msgstr "Поле Prev вузла `%s' не вказує на"
+
+#~ msgid "This node (%s) has the bad Next"
+#~ msgstr "Цей вузол (%s) має неправильне поле Next"
+
+#~ msgid "`%s' has no Up field (perhaps incorrect sectioning?)"
+#~ msgstr "`%s' не має поля Up (мабуть, з-за неправильного секціювання?)"
+
+#~ msgid "Appendix %c"
+#~ msgstr "Додаток %c"
+
+#~ msgid "Internal error (search_sectioning) `%s'!"
+#~ msgstr "Внутрішня помилка (search_sectioning) `%s'!"
+
+#~ msgid "Internal error (search_sectioning) \"%s\"!"
+#~ msgstr "Внутрішня помилка (search_sectioning) \"%s\"!"
+
+#~ msgid "%c%s is obsolete; use %c%s instead"
+#~ msgstr "%c%s є застарілою; використовуйте %c%s замість"
+
+#~ msgid "Node with %ctop as a section already exists"
+#~ msgstr "Вузол з секцією %ctop вже існує"
+
+#~ msgid "Here is the %ctop node"
+#~ msgstr "Вузол %ctop знаходиться тут"
+
+#~ msgid "%ctop used before %cnode, defaulting to %s"
+#~ msgstr "%ctop використано перед %cnode, повертаємося до типового %s"
+
+#~ msgid ""
+#~ "@headitem as the last item of @multitable produces invalid Docbook "
+#~ "documents"
+#~ msgstr ""
+#~ "@headitem, як останній об’єкт @multitable призводить до неправильних "
+#~ "документів Docbook"
+
+#, fuzzy
+#~ msgid "of"
+#~ msgstr "of"
+
+#, fuzzy
+#~ msgid "on"
+#~ msgstr "on"
+
+#~ msgid "First argument to cross-reference may not be empty"
+#~ msgstr "Перший аргумент перехресного посилання не може бути порожнім"
+
+#~ msgid "Empty file name for HTML cross reference in `%s'"
+#~ msgstr "Порожня назва файлу для перехресного посилання HTML у `%s'"
+
+#~ msgid "End of file reached while looking for `.' or `,'"
+#~ msgstr "У пошуках `.' чи `,' досягнуто кінця файла"
+
+#~ msgid "for cross-references in parentheses, use @pxref"
+#~ msgstr "щоб отримати перехресне посилання у дужках, використовуйте @pxref"
+
+#~ msgid "First argument to @inforef may not be empty"
+#~ msgstr "Перший аргумент до @inforef не може бути порожнім"
