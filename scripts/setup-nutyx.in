@@ -1935,28 +1935,6 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		echo "
-submenu \"NuTyX RuNyX \" {
- submenu \" NuTyX RuNyX Quiet Mode \" {
-  submenu \"  NuTyX RuNyX Quiet LTS version \" {
-  linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
-  submenu \"  NuTyX RuNyX Quiet Latest version \" {
-   linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-   #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
- }
-  submenu \" NuTyX RuNyX Verbose Mode \" {
-   submenu \"  NuTyX RuNyX Verbose LTS version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-   }
-   submenu \"  NuTyX RuNyX Verbose Latest version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd
-   }
-  }
- }
 submenu \"NuTyX SysV \" {
  submenu \" NuTyX SysV Quiet Mode \" {
   submenu \"  NuTyX SysV Quiet LTS version \" {
@@ -1979,6 +1957,28 @@ submenu \"NuTyX SysV \" {
   }
  }
 }
+submenu \"NuTyX RuNyX \" {
+ submenu \" NuTyX RuNyX Quiet Mode \" {
+  submenu \"  NuTyX RuNyX Quiet LTS version \" {
+  linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
+  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
+  }
+  submenu \"  NuTyX RuNyX Quiet Latest version \" {
+   linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
+   #  initrd /${GRUB_DESTINATION_DIR}initrd
+  }
+ }
+  submenu \" NuTyX RuNyX Verbose Mode \" {
+   submenu \"  NuTyX RuNyX Verbose LTS version \" {
+    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro
+    #  initrd /${GRUB_DESTINATION_DIR}initrd-419
+   }
+   submenu \"  NuTyX RuNyX Verbose Latest version \" {
+    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro
+    #  initrd /${GRUB_DESTINATION_DIR}initrd
+   }
+  }
+ }
 submenu \"NuTyX SystemD \" {
  submenu \" NuTyX SystemD Quiet Mode \" {
   submenu \"  NuTyX SystemD Quiet LTS version \" {
