@@ -2389,10 +2389,10 @@ parse_options() {
 					setup_language
 					;;
 				-ul|--update-lang)
-					if [ -f $LOCALE ];then
-						source $LOCALE
-						_msgfmt ${LANG%.*}
-					fi
+					[ -f $LOCALE ] || exit 0
+					source $LOCALE
+					_msgfmt ${LANG%.*}
+					exit 0
 					;;
 				-ck|--config-keymap)
 					check_root
