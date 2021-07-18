@@ -1,0 +1,1083 @@
+# Dutch translations for man-db.
+# Copyright (C) 2009 Colin Watson (msgids)
+# This file is distributed under the same license as the man-db package.
+#
+# Benno Schulenberg <benno@vertaalt.nl>, 2007, 2008.
+# Erwin Poeze <erwin.poeze@gmail.com>, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: man-db-2.5.7-pre1\n"
+"Report-Msgid-Bugs-To: Colin Watson <cjwatson@debian.org>\n"
+"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"PO-Revision-Date: 2009-11-16 08:36+0100\n"
+"Last-Translator: Erwin Poeze <erwin.poeze@gmail.com>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: lib/security.c:79
+#, c-format
+msgid "can't set effective uid"
+msgstr "kan de effectieve UID niet instellen"
+
+#: lib/security.c:118
+#, c-format
+msgid "the setuid man user \"%s\" does not exist"
+msgstr "de SETUID-gebruiker '%s' bestaat niet"
+
+#: lib/xregcomp.c:47
+#, c-format
+msgid "fatal: regex `%s': %s"
+msgstr "fatale fout: reguliere expressie '%s': %s"
+
+#: libdb/db_delete.c:105
+#, c-format
+msgid "multi key %s does not exist"
+msgstr "multisleutel %s bestaat niet"
+
+#: libdb/db_lookup.c:75
+#, c-format
+msgid "can't lock index cache %s"
+msgstr "kan index-cache %s niet vergrendelen"
+
+#: libdb/db_lookup.c:82
+#, c-format
+msgid "index cache %s corrupt"
+msgstr "index-cache %s is beschadigd"
+
+#: libdb/db_lookup.c:88
+#, c-format
+msgid "cannot replace key %s"
+msgstr "kan sleutel %s niet vervangen"
+
+#: libdb/db_lookup.c:183 libdb/db_lookup.c:194
+#, fuzzy, c-format
+msgid "only %d field in content"
+msgid_plural "only %d fields in content"
+msgstr[0] "slechts %d velden in de inhoud"
+msgstr[1] "slechts %d velden in de inhoud"
+
+#: libdb/db_lookup.c:358
+#, c-format
+msgid "bad fetch on multi key %s"
+msgstr "onjuiste treffer voor multisleutel %s"
+
+#: libdb/db_lookup.c:443 src/whatis.c:737
+#, c-format
+msgid "Database %s corrupted; rebuild with mandb --create"
+msgstr "Database %s is beschadigd; maak deze opnieuw aan met 'mandb --create'"
+
+#: libdb/db_ver.c:53
+#, c-format
+msgid "warning: %s has no version identifier\n"
+msgstr "waarschuwing: %s heeft geen versie-indicatie\n"
+
+#: libdb/db_ver.c:57
+#, c-format
+msgid "warning: %s is version %s, expecting %s\n"
+msgstr "waarschuwing: %s heeft versie %s, terwijl %s verwacht wordt\n"
+
+#: libdb/db_ver.c:79
+#, c-format
+msgid "fatal: unable to insert version identifier into %s"
+msgstr "fatale fout: kan geen versie-indicatie invoegen in %s"
+
+#: src/accessdb.c:59
+msgid "[MAN DATABASE]"
+msgstr "[MAN-GEGEVENSBANK]"
+
+#: src/accessdb.c:60
+#, c-format
+msgid "The man database defaults to %s%s."
+msgstr "De standaard man-database is %s%s."
+
+#: src/accessdb.c:63 src/catman.c:100 src/globbing_test.c:58
+#: src/lexgrog_test.c:73 src/man.c:268 src/man-recode.c:111
+#: src/manconv_main.c:95 src/mandb.c:114 src/manpath.c:65 src/whatis.c:126
+#: src/zsoelim_main.c:68
+msgid "emit debugging messages"
+msgstr "debug-uitvoer produceren"
+
+#: src/accessdb.c:137
+#, c-format
+msgid "can't open %s for reading"
+msgstr "kan %s niet openen om te lezen"
+
+#: src/catman.c:97
+msgid "[SECTION...]"
+msgstr "[SECTIE...]"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "PATH"
+msgstr "PAD"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "set search path for manual pages to PATH"
+msgstr "pad waarin naar man-pagina's gezocht moet worden"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+msgid "FILE"
+msgstr "BESTAND"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+msgid "use this user configuration file"
+msgstr "te gebruiken configuratiebestand"
+
+#: src/catman.c:195
+#, c-format
+msgid "man command failed with exit status %d"
+msgstr "'man' is mislukt met afsluitwaarde %d"
+
+#: src/catman.c:235
+#, c-format
+msgid "cannot read database %s"
+msgstr "kan database %s niet lezen"
+
+#: src/catman.c:278
+#, c-format
+msgid "NULL content for key: %s"
+msgstr "NULL-inhoud voor sleutel %s"
+
+#: src/catman.c:294
+#, c-format
+msgid ""
+"\n"
+"Updating cat files for section %s of man hierarchy %s\n"
+msgstr ""
+"\n"
+"Bijwerken van cat-bestanden voor sectie %s van man-hiërachie %s\n"
+
+#: src/catman.c:348
+#, c-format
+msgid "cannot write within %s"
+msgstr "kan in %s niet schrijven"
+
+#: src/catman.c:423
+#, c-format
+msgid "unable to update %s"
+msgstr "kan %s niet bijwerken"
+
+#: src/check_mandirs.c:100
+#, c-format
+msgid "warning: %s/man%s/%s.%s*: competing extensions"
+msgstr "waarschuwing: botsende subsecties in %s/man%s/%s.%s*"
+
+#: src/check_mandirs.c:126 src/check_mandirs.c:626
+#, c-format
+msgid "can't update index cache %s"
+msgstr "kan index-cache %s niet bijwerken"
+
+#: src/check_mandirs.c:254
+#, c-format
+msgid "warning: %s: bad symlink or ROFF `.so' request"
+msgstr ""
+"waarschuwing: %s: onjuiste symbolische koppeling of onjuist roff-'.so'-"
+"verzoek"
+
+#: src/check_mandirs.c:310
+#, c-format
+msgid "warning: %s: ignoring empty file"
+msgstr "waarschuwing: %s: leeg bestand wordt genegeerd"
+
+#: src/check_mandirs.c:314 src/straycats.c:262
+#, c-format
+msgid "warning: %s: whatis parse for %s(%s) failed"
+msgstr "waarschuwing: %s: ontleden van %s(%s) voor 'whatis' is mislukt"
+
+#: src/check_mandirs.c:341 src/check_mandirs.c:511 src/mandb.c:875
+#: src/straycats.c:84 src/straycats.c:289 src/ult_src.c:81
+#, c-format
+msgid "can't search directory %s"
+msgstr "kan map %s niet doorzoeken"
+
+#: src/check_mandirs.c:390 src/man.c:1716
+#, c-format
+msgid "can't chown %s"
+msgstr "kan eigenaar van %s niet wijzigen"
+
+#: src/check_mandirs.c:412 src/check_mandirs.c:435
+#, c-format
+msgid "warning: cannot create catdir %s"
+msgstr "waarschuwing: kan cat-map %s niet aanmaken"
+
+#: src/check_mandirs.c:467 src/man.c:1728 src/mandb.c:232
+#, c-format
+msgid "can't chmod %s"
+msgstr "kan de toegangsrechten van %s niet wijzigen"
+
+#: src/check_mandirs.c:516
+#, c-format
+msgid "can't change to directory %s"
+msgstr "kan niet naar map %s gaan"
+
+#: src/check_mandirs.c:566
+#, c-format
+msgid "can't create index cache %s"
+msgstr "kan index-cache %s niet aanmaken"
+
+#: src/check_mandirs.c:591
+#, c-format
+msgid "Updating index cache for path `%s/%s'. Wait..."
+msgstr "Bijwerken van index-cache voor pad '%s/%s'.  Even geduld..."
+
+#: src/check_mandirs.c:653 src/check_mandirs.c:714
+msgid "done.\n"
+msgstr "voltooid.\n"
+
+#: src/check_mandirs.c:977
+#, c-format
+msgid "Purging old database entries in %s...\n"
+msgstr "Verwijderen van oude databaseitems uit %s...\n"
+
+#: src/descriptions_store.c:51
+#, c-format
+msgid "warning: failed to store entry for %s(%s)"
+msgstr "waarschuwing: opslaan van item voor %s(%s) is mislukt"
+
+#: src/filenames.c:48 src/straycats.c:122 src/straycats.c:142
+#, c-format
+msgid "warning: %s: ignoring bogus filename"
+msgstr "waarschuwing: %s: onjuiste bestandsnaam wordt genegeerd"
+
+#: src/globbing_test.c:55
+msgid "PATH SECTION NAME"
+msgstr "PAD SECTIE NAAM"
+
+#: src/globbing_test.c:59 src/man.c:292
+msgid "EXTENSION"
+msgstr "SUBSECTIE"
+
+#: src/globbing_test.c:59 src/man.c:293
+msgid "limit search to extension type EXTENSION"
+msgstr "het zoeken beperken tot deze subsectie"
+
+#: src/globbing_test.c:60 src/man.c:294
+msgid "look for pages case-insensitively (default)"
+msgstr "hoofdletterongevoelig naar pagina's zoeken"
+
+#: src/globbing_test.c:61 src/man.c:295
+msgid "look for pages case-sensitively"
+msgstr "hoofdlettergevoelig naar pagina's zoeken"
+
+#: src/globbing_test.c:62
+msgid "interpret page name as a regex"
+msgstr "paginanaam als reguliere expressies begrijpen"
+
+#: src/globbing_test.c:63
+msgid "the page name contains wildcards"
+msgstr "de paginanaam bevat jokertekens"
+
+#: src/lexgrog.l:706
+#, fuzzy, c-format
+msgid "warning: whatis for %s exceeds %d byte, truncating."
+msgid_plural "warning: whatis for %s exceeds %d bytes, truncating."
+msgstr[0] "waarschuwing: de 'whatis' voor %s is meer dan %d bytes -- afgekapt"
+msgstr[1] "waarschuwing: de 'whatis' voor %s is meer dan %d bytes -- afgekapt"
+
+#: src/lexgrog.l:859 src/man.c:2297 src/man.c:2382 src/man.c:2480
+#: src/man-recode.c:176 src/man-recode.c:201 src/manconv_main.c:158
+#: src/straycats.c:204 src/ult_src.c:320 src/ult_src.c:333 src/zsoelim.l:517
+#, c-format
+msgid "can't open %s"
+msgstr "kan %s niet openen"
+
+#: src/lexgrog_test.c:69 src/zsoelim_main.c:65
+msgid "FILE..."
+msgstr "BESTAND..."
+
+#: src/lexgrog_test.c:70
+msgid "The defaults are --man and --whatis."
+msgstr "Standaard zijn de opties '--man' en '--whatis'."
+
+#: src/lexgrog_test.c:74
+msgid "parse as man page"
+msgstr "argumenten begrijpen als 'man'-pagina's"
+
+#: src/lexgrog_test.c:75
+msgid "parse as cat page"
+msgstr "argumenten begrijpen als 'cat'-pagina's"
+
+#: src/lexgrog_test.c:76
+msgid "show whatis information"
+msgstr "'whatis'-informatie tonen"
+
+#: src/lexgrog_test.c:77
+msgid "show guessed series of preprocessing filters"
+msgstr "de gegokte reeks voorbewerkingsfilters tonen"
+
+#: src/lexgrog_test.c:78 src/man.c:284 src/man.c:309
+msgid "ENCODING"
+msgstr "CODERING"
+
+#: src/lexgrog_test.c:78 src/man.c:309
+msgid "use selected output encoding"
+msgstr "uitvoer in deze codering produceren"
+
+#: src/lexgrog_test.c:122 src/man.c:540 src/man.c:549
+#, c-format
+msgid "%s: incompatible options"
+msgstr "%s: opties gaan niet samen"
+
+#: src/man.c:160 src/man-recode.c:234
+#, c-format
+msgid "command exited with status %d: %s"
+msgstr "opdracht eindigde met afsluitwaarde %d: %s"
+
+#: src/man.c:251
+msgid "[SECTION] PAGE..."
+msgstr "[SECTIE] PAGINA..."
+
+#: src/man.c:269
+msgid "reset all options to their default values"
+msgstr "alle opties op hun standaardwaarden terugzetten"
+
+#: src/man.c:270
+msgid "WARNINGS"
+msgstr "WAARSCHUWINGEN"
+
+#: src/man.c:271
+msgid "enable warnings from groff"
+msgstr "(deze) waarschuwingen van 'groff' doorgeven"
+
+#: src/man.c:273
+msgid "Main modes of operation:"
+msgstr "Werkingsmodus:"
+
+#: src/man.c:274
+msgid "equivalent to whatis"
+msgstr "als 'whatis' fungeren"
+
+#: src/man.c:275
+msgid "equivalent to apropos"
+msgstr "als 'apropos' fungeren"
+
+#: src/man.c:276
+msgid "search for text in all pages"
+msgstr "zoek de tekst in alle pagina's"
+
+#: src/man.c:277
+msgid "print physical location of man page(s)"
+msgstr "de locatie van man-pagina's tonen"
+
+#: src/man.c:280
+msgid "print physical location of cat file(s)"
+msgstr "de locatie van cat-pagina's tonen"
+
+#: src/man.c:282
+msgid "interpret PAGE argument(s) as local filename(s)"
+msgstr "paginanaam als lokale bestandsnaam begrijpen"
+
+#: src/man.c:283
+msgid "used by catman to reformat out of date cat pages"
+msgstr "(gebruikt door 'catman' bij heropmaken)"
+
+#: src/man.c:284
+msgid "output source page encoded in ENCODING"
+msgstr "brontekst uitvoeren omgezet naar deze codering"
+
+#: src/man.c:286
+msgid "Finding manual pages:"
+msgstr "Gevonden man-pagina's:"
+
+#: src/man.c:287 src/whatis.c:137
+msgid "LOCALE"
+msgstr "TAALCODE"
+
+#: src/man.c:287
+msgid "define the locale for this particular man search"
+msgstr "te gebruiken taalregio voor deze zoekopdracht"
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "SYSTEM"
+msgstr "SYSTEEMNAAM"
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "use manual pages from other systems"
+msgstr "man-pagina's van deze andere Unix-systemen tonen"
+
+#: src/man.c:290 src/whatis.c:133
+msgid "LIST"
+msgstr "SECTIES"
+
+#: src/man.c:290
+msgid "use colon separated section list"
+msgstr "te doorzoeken secties (scheiden met dubbele punten)"
+
+#: src/man.c:296
+msgid "show all pages matching regex"
+msgstr "alle pagina's tonen die voldoen aan de reguliere expressie"
+
+#: src/man.c:297
+msgid "show all pages matching wildcard"
+msgstr "alle pagina's tonen die voldoen aan het jokerteken"
+
+#: src/man.c:298
+msgid "make --regex and --wildcard match page names only, not descriptions"
+msgstr ""
+"laat --regex en --wildcard alleen paginanamen weergeven, geen beschrijvingen"
+
+#: src/man.c:300
+msgid "find all matching manual pages"
+msgstr "alle passende pagina's vinden, niet alleen eerste"
+
+#: src/man.c:301
+msgid "force a cache consistency check"
+msgstr "een cache-consistentiecontrole afdwingen"
+
+#: src/man.c:303
+msgid "don't try subpages, e.g. 'man foo bar' => 'man foo-bar'"
+msgstr "probeer geen subpagina's, b.v. 'man foo bar' => 'man foo-bar'"
+
+#: src/man.c:305
+msgid "Controlling formatted output:"
+msgstr "Uitvoerbesturing:"
+
+#: src/man.c:306
+msgid "PAGER"
+msgstr "PROGRAMMA"
+
+#: src/man.c:306
+msgid "use program PAGER to display output"
+msgstr "dit programma gebruiken om de uitvoer te tonen"
+
+#: src/man.c:307 src/man.c:316
+msgid "STRING"
+msgstr "TEKENREEKS"
+
+#: src/man.c:307
+msgid "provide the `less' pager with a prompt"
+msgstr "deze tekens als prompt van 'less' gebruiken"
+
+#: src/man.c:308
+msgid "display ASCII translation of certain latin1 chars"
+msgstr "een ASCII-versie van sommige Latin1-tekens tonen"
+
+#: src/man.c:311
+msgid "turn off hyphenation"
+msgstr "woordafbreken uitschakelen"
+
+#: src/man.c:314
+msgid "turn off justification"
+msgstr "uitvullen uitschakelen"
+
+#: src/man.c:316
+msgid ""
+"STRING indicates which preprocessors to run:\n"
+"e - [n]eqn, p - pic, t - tbl,\n"
+"g - grap, r - refer, v - vgrind"
+msgstr ""
+"uit te voeren voorverwerkingsprogramma's:\n"
+"  e - [n]eqn   p - pic     t - tbl\n"
+"  g - grap     r - refer   v - vgrind"
+
+#: src/man.c:320
+#, c-format
+msgid "use %s to format pages"
+msgstr "'%s' gebruiken om pagina's op te maken"
+
+#: src/man.c:321
+msgid "DEVICE"
+msgstr "APPARAAT"
+
+#: src/man.c:322
+#, c-format
+msgid "use %s with selected device"
+msgstr "'%s' gebruiken met dit apparaat"
+
+#: src/man.c:323
+msgid "BROWSER"
+msgstr "PROGRAMMA"
+
+#: src/man.c:324
+#, c-format
+msgid "use %s or BROWSER to display HTML output"
+msgstr "'%s' of PROGRAMMA gebruiken voor HTML-uitvoer"
+
+#: src/man.c:325
+msgid "RESOLUTION"
+msgstr "RESOLUTIE"
+
+#: src/man.c:327
+msgid ""
+"use groff and display through gxditview (X11):\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+msgstr ""
+"'groff' gebruiken en uitvoer tonen via 'gxditview';\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+
+#: src/man.c:329
+msgid "use groff and force it to produce ditroff"
+msgstr "'groff' gebruiken en \"ditroff\" laten produceren"
+
+#: src/man.c:599 src/man.c:736
+#, c-format
+msgid "No manual entry for %s\n"
+msgstr "Er is geen pagina over %s\n"
+
+#: src/man.c:601
+#, c-format
+msgid "(Alternatively, what manual page do you want from section %s?)\n"
+msgstr "(Of anders: welke man-pagina wilt u zien uit sectie %s?)\n"
+
+#: src/man.c:605
+msgid "What manual page do you want?\n"
+msgstr "Welke man-pagina wilt u zien?\n"
+
+#: src/man.c:606
+msgid "For example, try 'man man'.\n"
+msgstr ""
+
+#: src/man.c:733
+#, c-format
+msgid "No manual entry for %s in section %s\n"
+msgstr "Er is geen pagina over %s in sectie %s\n"
+
+#: src/man.c:742
+#, c-format
+msgid "See '%s' for help when manual pages are not available.\n"
+msgstr "Zie '%s' voor hulp als man-pagina's niet beschikbaar zijn.\n"
+
+#: src/man.c:1349
+#, c-format
+msgid "ignoring unknown preprocessor `%c'"
+msgstr "onbekende preprocessor '%c' wordt genegeerd"
+
+#: src/man.c:1739 src/man-recode.c:243 src/mandb.c:223
+#, c-format
+msgid "can't rename %s to %s"
+msgstr "kan %s niet hernoemen naar %s"
+
+#: src/man.c:1756
+#, c-format
+msgid "can't set times on %s"
+msgstr "kan tijdsstempels van %s niet zetten"
+
+#: src/man.c:1765 src/man.c:1802
+#, c-format
+msgid "can't unlink %s"
+msgstr "kan %s niet verwijderen"
+
+#: src/man.c:1832
+#, c-format
+msgid "can't create temporary cat for %s"
+msgstr "kan geen tijdelijk cat-bestand aanmaken voor %s"
+
+#: src/man.c:1942
+#, c-format
+msgid "can't create temporary directory"
+msgstr "kan geen tijdelijk map aanmaken"
+
+#: src/man.c:1953 src/man-recode.c:209
+#, c-format
+msgid "can't open temporary file %s"
+msgstr "kan tijdelijk bestand %s niet openen"
+
+#: src/man.c:1983 src/man.c:2012
+#, c-format
+msgid "can't remove directory %s"
+msgstr "kan map %s niet verwijderen"
+
+#: src/man.c:2141
+#, c-format
+msgid "--Man-- next: %s [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]\n"
+msgstr ""
+"--Man-- volgende: %s [ Enter=zien | Ctrl-D=overslaan | Ctrl-C=afsluiten ]\n"
+
+#: src/man.c:2425
+#, c-format
+msgid ""
+"\n"
+"cannot write to %s in catman mode"
+msgstr ""
+"\n"
+"kan niet naar %s schrijven in 'catman'-modus"
+
+#: src/man.c:2505
+#, c-format
+msgid "Can't convert %s to cat name"
+msgstr "Kan %s niet omzetten naar een cat-naam"
+
+#: src/man.c:3230
+#, c-format
+msgid "%s: relying on whatis refs is deprecated\n"
+msgstr "%s: vertrouwen op 'whatis'-referenties wordt ontraden\n"
+
+#: src/man.c:3373 src/man.c:4231
+#, c-format
+msgid "mandb command failed with exit status %d"
+msgstr "'mandb' is mislukt met afsluitwaarde %d"
+
+#: src/man.c:3575
+#, c-format
+msgid "internal error: candidate type %d out of range"
+msgstr "**interne fout**: kandidaattype %d valt buiten bereik"
+
+#: src/man.c:4174
+msgid " Manual page "
+msgstr " Handleidingspagina "
+
+#: src/man-recode.c:103
+msgid "-t CODE {--suffix SUFFIX | --in-place} FILENAME..."
+msgstr ""
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "CODE"
+msgstr "CODERING"
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "encoding for output"
+msgstr "codering van de uitvoer"
+
+#: src/man-recode.c:108
+msgid "SUFFIX"
+msgstr ""
+
+#: src/man-recode.c:108
+msgid "suffix to append to output file name"
+msgstr ""
+
+#: src/man-recode.c:110
+msgid "overwrite input files in place"
+msgstr ""
+
+#: src/man-recode.c:112 src/manconv_main.c:96 src/manpath.c:66
+msgid "produce fewer warnings"
+msgstr "minder waarschuwingen produceren"
+
+#: src/man-recode.c:148 src/manconv_main.c:131
+#, c-format
+msgid "must specify an output encoding"
+msgstr "specificatie van een uitvoercodering ontbreekt"
+
+#: src/man-recode.c:152
+#, c-format
+msgid "must use either --suffix or --in-place"
+msgstr ""
+
+#: src/man-recode.c:156
+#, c-format
+msgid "--suffix and --in-place are mutually exclusive"
+msgstr ""
+
+#: src/man-recode.c:249 src/mandb.c:216
+#, c-format
+msgid "can't remove %s"
+msgstr "kan %s niet verwijderen"
+
+#: src/manconv.c:235 src/manconv.c:256 src/manconv.c:336 src/manconv.c:366
+#, c-format
+msgid "can't write to standard output"
+msgstr "kan niet naar standaarduitvoer schrijven"
+
+#: src/manconv.c:282
+msgid "iconv: incomplete character at end of buffer"
+msgstr "iconv: onvolledig teken aan eind van buffer"
+
+#: src/manconv_main.c:89
+#, fuzzy
+msgid "[-f CODE[:...]] -t CODE [FILENAME]"
+msgstr "-f CODERING[:...] -t CODERING [BESTANDSNAAM]"
+
+#: src/manconv_main.c:92
+msgid "CODE[:...]"
+msgstr "CODERING[:...]"
+
+#: src/manconv_main.c:93
+msgid "possible encodings of original text"
+msgstr "mogelijke codering(en) van originele tekst"
+
+#: src/mandb.c:111
+msgid "[MANPATH]"
+msgstr "[MANPAD]"
+
+#: src/mandb.c:115
+msgid "work quietly, except for 'bogus' warning"
+msgstr "minder waarschuwingen produceren"
+
+#: src/mandb.c:116
+msgid "don't look for or add stray cats to the dbs"
+msgstr "losse cat-bestanden niet aan database toevoegen"
+
+#: src/mandb.c:117
+msgid "don't purge obsolete entries from the dbs"
+msgstr "verouderde items niet uit database verwijderen"
+
+#: src/mandb.c:118
+msgid "produce user databases only"
+msgstr "alleen gebruikersdatabase produceren"
+
+#: src/mandb.c:119
+msgid "create dbs from scratch, rather than updating"
+msgstr "database niet bijwerken maar opnieuw aanmaken"
+
+#: src/mandb.c:120
+msgid "check manual pages for correctness"
+msgstr "de man-pagina's op correctheid controleren"
+
+#: src/mandb.c:121
+msgid "FILENAME"
+msgstr "BESTAND"
+
+#: src/mandb.c:121
+msgid "update just the entry for this filename"
+msgstr "alleen het item voor dit bestand bijwerken"
+
+#: src/mandb.c:280
+#, c-format
+msgid "can't write to %s"
+msgstr "kan niet naar %s schrijven"
+
+#: src/mandb.c:285
+#, c-format
+msgid "can't read from %s"
+msgstr "kan niet uit %s lezen"
+
+#: src/mandb.c:457
+#, c-format
+msgid "Processing manual pages under %s...\n"
+msgstr "Verwerken van pagina's onder %s...\n"
+
+#: src/mandb.c:666 src/mandb.c:692
+#, fuzzy, c-format
+msgid "Removing obsolete cat directory %s...\n"
+msgstr "Zoeken naar losse cat-bestanden onder %s...\n"
+
+#: src/mandb.c:842
+#, c-format
+msgid "warning: no MANDB_MAP directives in %s, using your manpath"
+msgstr ""
+"waarschuwing: geen 'MANDB_MAP'-opdrachten in %s; uw man-pad wordt gebruikt"
+
+#: src/mandb.c:912
+#, fuzzy, c-format
+msgid "%d man subdirectory contained newer manual pages.\n"
+msgid_plural "%d man subdirectories contained newer manual pages.\n"
+msgstr[0] ""
+"%d man-mappen bevatten nieuwere pagina's,\n"
+"%d man-pagina's werden toegevoegd.\n"
+msgstr[1] ""
+"%d man-mappen bevatten nieuwere pagina's,\n"
+"%d man-pagina's werden toegevoegd.\n"
+
+#: src/mandb.c:917
+#, fuzzy, c-format
+msgid "%d manual page was added.\n"
+msgid_plural "%d manual pages were added.\n"
+msgstr[0] " Handleidingspagina "
+msgstr[1] " Handleidingspagina "
+
+#: src/mandb.c:921
+#, fuzzy, c-format
+msgid "%d stray cat was added.\n"
+msgid_plural "%d stray cats were added.\n"
+msgstr[0] "%d losse cat-bestanden werden toegevoegd.\n"
+msgstr[1] "%d losse cat-bestanden werden toegevoegd.\n"
+
+#: src/mandb.c:926
+#, fuzzy, c-format
+msgid "%d old database entry was purged.\n"
+msgid_plural "%d old database entries were purged.\n"
+msgstr[0] "%d verouderde databaseitems werden verwijderd.\n"
+msgstr[1] "%d verouderde databaseitems werden verwijderd.\n"
+
+#: src/mandb.c:944
+#, c-format
+msgid "No databases created."
+msgstr "Geen databases aangemaakt."
+
+#: src/manp.c:319
+#, c-format
+msgid "can't make sense of the manpath configuration file %s"
+msgstr "de inhoud van man-pad-configuratiebestand %s is onbegrijpelijk"
+
+#: src/manp.c:325
+#, c-format
+msgid "warning: %s"
+msgstr "waarschuwing: %s"
+
+#: src/manp.c:331
+#, c-format
+msgid "warning: %s isn't a directory"
+msgstr "waarschuwing: %s is geen map"
+
+#: src/manp.c:662
+#, c-format
+msgid "warning: $PATH not set"
+msgstr "waarschuwing: $PATH is niet ingesteld"
+
+#: src/manp.c:669
+#, c-format
+msgid "warning: empty $PATH"
+msgstr "waarschuwing: $PATH is leeg"
+
+#: src/manp.c:697
+#, c-format
+msgid "warning: $MANPATH set, prepending %s"
+msgstr "waarschuwing: $MANPATH is ingesteld -- %s wordt voorgevoegd"
+
+#: src/manp.c:708
+#, c-format
+msgid "warning: $MANPATH set, appending %s"
+msgstr "waarschuwing: $MANPATH is ingesteld -- %s wordt achtergevoegd"
+
+#: src/manp.c:720
+#, c-format
+msgid "warning: $MANPATH set, inserting %s"
+msgstr "waarschuwing: $MANPATH is ingesteld -- %s wordt ingevoegd"
+
+#: src/manp.c:734
+#, c-format
+msgid "warning: $MANPATH set, ignoring %s"
+msgstr "waarschuwing: $MANPATH is ingesteld -- %s wordt genegeerd"
+
+#: src/manp.c:796
+#, c-format
+msgid "can't parse directory list `%s'"
+msgstr "kan mappenlijst '%s' niet ontleden"
+
+#: src/manp.c:851
+#, c-format
+msgid "can't open the manpath configuration file %s"
+msgstr "kan man-pad-configuratiebestand %s niet openen"
+
+#: src/manp.c:888
+#, c-format
+msgid "warning: mandatory directory %s doesn't exist"
+msgstr "waarschuwing: vereiste map %s bestaat niet"
+
+#: src/manp.c:1177
+#, c-format
+msgid "can't determine current directory"
+msgstr "kan huidige map niet bepalen"
+
+#: src/manp.c:1358
+#, c-format
+msgid "warning: %s does not begin with %s"
+msgstr "waarschuwing: %s begint niet met %s"
+
+#: src/manpath.c:63
+msgid "show relative catpaths"
+msgstr "de relatieve cat-paden weergeven"
+
+#: src/manpath.c:64
+msgid "show the entire global manpath"
+msgstr "het volledige globale man-pad weergeven"
+
+#: src/manpath.c:126
+#, c-format
+msgid "warning: no global manpaths set in config file %s"
+msgstr ""
+"waarschuwing: geen algemeen man-pad ingesteld in configuratiebestand %s"
+
+#: src/straycats.c:232 src/ult_src.c:125
+#, c-format
+msgid "warning: %s is a dangling symlink"
+msgstr "waarschuwing: %s is een doelloze symbolische koppeling"
+
+#: src/straycats.c:235 src/ult_src.c:128 src/ult_src.c:262
+#, c-format
+msgid "can't resolve %s"
+msgstr "kan %s niet herleiden"
+
+#: src/straycats.c:294
+#, c-format
+msgid "Checking for stray cats under %s...\n"
+msgstr "Zoeken naar losse cat-bestanden onder %s...\n"
+
+#: src/straycats.c:334
+#, c-format
+msgid "warning: can't update index cache %s"
+msgstr "waarschuwing: kan index-cache %s niet bijwerken"
+
+#: src/ult_src.c:300
+#, c-format
+msgid "%s is self referencing"
+msgstr "%s refereert aan zichzelf"
+
+#: src/whatis.c:122
+msgid "KEYWORD..."
+msgstr "SLEUTELWOORD..."
+
+#: src/whatis.c:123
+msgid "The --regex option is enabled by default."
+msgstr "De optie '--regex' is standaard."
+
+#: src/whatis.c:127
+msgid "print verbose warning messages"
+msgstr "breedsprakige waarschuwingen produceren"
+
+#: src/whatis.c:128
+msgid "interpret each keyword as a regex"
+msgstr "sleutelwoorden als reguliere expressies begrijpen"
+
+#: src/whatis.c:129
+msgid "search each keyword for exact match"
+msgstr "sleutelwoorden moeten exact overeenkomen"
+
+#: src/whatis.c:130
+msgid "the keyword(s) contain wildcards"
+msgstr "de sleutelwoorden bevatten jokertekens"
+
+#: src/whatis.c:131
+msgid "require all keywords to match"
+msgstr "alle sleutelwoorden moeten gevonden worden"
+
+#: src/whatis.c:132
+msgid "do not trim output to terminal width"
+msgstr "de uitvoer niet aan de terminalbreedte aanpassen"
+
+#: src/whatis.c:133
+#, fuzzy
+msgid "search only these sections (colon-separated)"
+msgstr "alleen in deze sectie zoeken"
+
+#: src/whatis.c:137
+msgid "define the locale for this search"
+msgstr "te gebruiken taalregio voor deze zoekopdracht"
+
+#: src/whatis.c:234
+#, c-format
+msgid "%s what?\n"
+msgstr "%s wat?\n"
+
+#: src/whatis.c:410 src/whatis.c:428
+#, c-format
+msgid "warning: %s contains a pointer loop"
+msgstr "waarschuwing: %s bevat een pointer-lus"
+
+#: src/whatis.c:422 src/whatis.c:430
+msgid "(unknown subject)"
+msgstr "(onderwerp onbekend)"
+
+#: src/whatis.c:861
+#, c-format
+msgid "%s: nothing appropriate.\n"
+msgstr "%s: niets gevonden.\n"
+
+#: src/zsoelim.l:180
+#, c-format
+msgid "%s:%d: .so requests nested too deeply or are recursive"
+msgstr "%s:%d: '.so'-verzoeken zijn te diep genest of recursief"
+
+#: src/zsoelim.l:195
+#, c-format
+msgid "%s:%d: warning: failed .so request"
+msgstr "%s:%d: waarschuwing: '.so'-verzoek is mislukt"
+
+#: src/zsoelim.l:217
+#, c-format
+msgid "%s:%d: warning: newline in .so request, ignoring"
+msgstr "%s:%d: waarschuwing: regeleindeteken in '.so'-verzoek -- genegeerd"
+
+#: src/zsoelim.l:277
+#, c-format
+msgid "%s:%d: warning: malformed .lf request, ignoring"
+msgstr "%s:%d: waarschuwing: onjuist '.lf'-verzoek -- genegeerd"
+
+#: src/zsoelim.l:287
+#, c-format
+msgid "%s:%d: warning: newline in .lf request, ignoring"
+msgstr "%s:%d: waarschuwing: regeleindeteken in '.lf'-verzoek -- genegeerd"
+
+#: src/zsoelim.l:327
+#, c-format
+msgid "%s:%d: unterminated quote in roff request"
+msgstr "%s:%d: onafgesloten aanhaling in 'roff'-verzoek"
+
+#: src/zsoelim_main.c:69
+msgid "compatibility switch (ignored)"
+msgstr "compatibiliteitsoptie (genegeerd)"
+
+#~ msgid "must specify an input encoding"
+#~ msgstr "specificatie van een invoercodering ontbreekt"
+
+#~ msgid "manpath list too long"
+#~ msgstr "man-pad-lijst is te lang"
+
+#, fuzzy
+#~ msgid "can't restore previous working directory"
+#~ msgstr "kan geen tijdelijk map aanmaken"
+
+#~ msgid "can't chdir to %s"
+#~ msgstr "kan niet naar map %s gaan"
+
+#~ msgid "can't fork"
+#~ msgstr "kan geen nieuw proces starten"
+
+#~ msgid "fork failed"
+#~ msgstr "starten van nieuw proces is mislukt"
+
+#~ msgid "can't get man command's exit status"
+#~ msgstr "kan afsluitwaarde van 'man' niet bepalen"
+
+#~ msgid "unable to reset cursor position in %s"
+#~ msgstr "kan cursorpositie niet herstellen in %s"
+
+#~ msgid "badly formed configuration directive: '%s'"
+#~ msgstr "syntaxfout in configuratieopdracht: '%s'"
+
+#~ msgid "can't install SIGCHLD handler"
+#~ msgstr "kan geen SIGCHLD-verwerker instellen"
+
+#~ msgid "waitpid failed"
+#~ msgstr "waitpid() is mislukt"
+
+#~ msgid "%s: %s (core dumped)"
+#~ msgstr "%s: %s (geheugendump gemaakt)"
+
+#~ msgid "%s: %s"
+#~ msgstr "%s: %s"
+
+#~ msgid "can't execute %s"
+#~ msgstr "kan %s niet uitvoeren"
+
+#~ msgid "pipeline input not open"
+#~ msgstr "pijpinvoer is niet open"
+
+#~ msgid "pipeline output not open"
+#~ msgstr "pijpuitvoer is niet open"
+
+#~ msgid "pipe failed"
+#~ msgstr "aanmaken van pijp is mislukt"
+
+#~ msgid "dup2 failed"
+#~ msgstr "dup2() is mislukt"
+
+#~ msgid "close failed"
+#~ msgstr "sluiten is mislukt"
+
+#~ msgid "closing pipeline input stream failed"
+#~ msgstr "sluiten van pijpinvoerstroom is mislukt"
+
+#~ msgid "closing pipeline input failed"
+#~ msgstr "sluiten van pijpinvoer is mislukt"
+
+#~ msgid "closing pipeline output stream failed"
+#~ msgstr "sluiten van pijpuitvoerstroom is mislukt"
+
+#~ msgid "closing pipeline output failed"
+#~ msgstr "sluiten van pijpuitvoer is mislukt"
+
+#~ msgid "SECTION"
+#~ msgstr "SECTIE"
+
+#~ msgid "can't get passwd structure for uid 0"
+#~ msgstr "Kan geen gegevens verkrijgen over UID 0 -- getpwuid() is mislukt"
+
+#~ msgid "cannot insert unused key %s"
+#~ msgstr "kan ongebruikte sleutel %s niet invoegen"
+
+#~ msgid "can't create index cache directory %s"
+#~ msgstr "kan index-cache-map %s niet aanmaken"
+
+#~ msgid "Don't know which program should I run being >%s<\n"
+#~ msgstr "Weet niet welk programma te starten wanneer aangeroepen als '%s'.\n"
+
+#~ msgid "%s: Failed su to user %s\n"
+#~ msgstr "%s: 'su' naar gebruiker %s is mislukt\n"

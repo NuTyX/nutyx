@@ -1,0 +1,989 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018 Colin Watson (msgids)
+# This file is distributed under the same license as the man-db package.
+# pan93412 <pan93412@gmai.com>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: man-db 2.9.0-pre1\n"
+"Report-Msgid-Bugs-To: Colin Watson <cjwatson@debian.org>\n"
+"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"PO-Revision-Date: 2019-10-01 20:48+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: lib/security.c:79
+#, c-format
+msgid "can't set effective uid"
+msgstr "無法設定有效的 UID"
+
+#: lib/security.c:118
+#, c-format
+msgid "the setuid man user \"%s\" does not exist"
+msgstr "此 setuid man 使用者「%s」不存在"
+
+#: lib/xregcomp.c:47
+#, c-format
+msgid "fatal: regex `%s': %s"
+msgstr "嚴重錯誤：正規表達式「%s」：%s"
+
+#: libdb/db_delete.c:105
+#, c-format
+msgid "multi key %s does not exist"
+msgstr "多重按鍵 %s 不存在"
+
+#: libdb/db_lookup.c:75
+#, c-format
+msgid "can't lock index cache %s"
+msgstr "無法鎖定索引快取 %s"
+
+#: libdb/db_lookup.c:82
+#, c-format
+msgid "index cache %s corrupt"
+msgstr "索引快取 %s 失敗"
+
+#: libdb/db_lookup.c:88
+#, c-format
+msgid "cannot replace key %s"
+msgstr "無法替換按鍵 %s"
+
+#: libdb/db_lookup.c:183 libdb/db_lookup.c:194
+#, c-format
+msgid "only %d field in content"
+msgid_plural "only %d fields in content"
+msgstr[0] "內容中只有 %d 個欄位"
+
+#: libdb/db_lookup.c:358
+#, c-format
+msgid "bad fetch on multi key %s"
+msgstr "多重按鍵 %s 上失敗的提取"
+
+#: libdb/db_lookup.c:443 src/whatis.c:737
+#, c-format
+msgid "Database %s corrupted; rebuild with mandb --create"
+msgstr "資料庫 %s 損壞；透過 mandb --create 重建"
+
+#: libdb/db_ver.c:53
+#, c-format
+msgid "warning: %s has no version identifier\n"
+msgstr "警告：%s 沒有版本識別碼\n"
+
+#: libdb/db_ver.c:57
+#, c-format
+msgid "warning: %s is version %s, expecting %s\n"
+msgstr "警告：%s 為版本 %s，預期為 %s\n"
+
+#: libdb/db_ver.c:79
+#, c-format
+msgid "fatal: unable to insert version identifier into %s"
+msgstr "嚴重錯誤：無法插入版本識別碼至 %s"
+
+#: src/accessdb.c:59
+msgid "[MAN DATABASE]"
+msgstr "[MAN 資料庫]"
+
+#: src/accessdb.c:60
+#, c-format
+msgid "The man database defaults to %s%s."
+msgstr "man 資料庫預設值至 %s%s。"
+
+#: src/accessdb.c:63 src/catman.c:100 src/globbing_test.c:58
+#: src/lexgrog_test.c:73 src/man.c:268 src/man-recode.c:111
+#: src/manconv_main.c:95 src/mandb.c:114 src/manpath.c:65 src/whatis.c:126
+#: src/zsoelim_main.c:68
+msgid "emit debugging messages"
+msgstr "發出偵錯訊息"
+
+#: src/accessdb.c:137
+#, c-format
+msgid "can't open %s for reading"
+msgstr "無法讀取 %s"
+
+#: src/catman.c:97
+msgid "[SECTION...]"
+msgstr "[章節…]"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "PATH"
+msgstr "位置"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "set search path for manual pages to PATH"
+msgstr "設定手冊頁面的搜尋路徑至 PATH"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+msgid "FILE"
+msgstr "檔案"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+msgid "use this user configuration file"
+msgstr "使用這個使用者設定檔"
+
+#: src/catman.c:195
+#, c-format
+msgid "man command failed with exit status %d"
+msgstr "man 指令錯誤，離開代碼 %d"
+
+#: src/catman.c:235
+#, c-format
+msgid "cannot read database %s"
+msgstr "無法讀取資料庫 %s"
+
+#: src/catman.c:278
+#, c-format
+msgid "NULL content for key: %s"
+msgstr "金鑰的空內容：%s"
+
+#: src/catman.c:294
+#, c-format
+msgid ""
+"\n"
+"Updating cat files for section %s of man hierarchy %s\n"
+msgstr ""
+"\n"
+"更新 man 層次結構 %2$s 的第 %1$s 部份的 cat 檔案\n"
+
+#: src/catman.c:348
+#, c-format
+msgid "cannot write within %s"
+msgstr "無法在 %s 中寫入"
+
+#: src/catman.c:423
+#, c-format
+msgid "unable to update %s"
+msgstr "無法更新 %s"
+
+#: src/check_mandirs.c:100
+#, c-format
+msgid "warning: %s/man%s/%s.%s*: competing extensions"
+msgstr "警告：%s/man%s/%s.%s*：競爭擴展 (competing extensions)"
+
+#: src/check_mandirs.c:126 src/check_mandirs.c:626
+#, c-format
+msgid "can't update index cache %s"
+msgstr "無法更新索引快取 %s"
+
+#: src/check_mandirs.c:254
+#, c-format
+msgid "warning: %s: bad symlink or ROFF `.so' request"
+msgstr "警告：%s：損壞的符號連結或 ROFF `.so' 請求"
+
+#: src/check_mandirs.c:310
+#, c-format
+msgid "warning: %s: ignoring empty file"
+msgstr "警告：%s：忽略空檔案"
+
+#: src/check_mandirs.c:314 src/straycats.c:262
+#, c-format
+msgid "warning: %s: whatis parse for %s(%s) failed"
+msgstr "警告：%s：為 %s(%s) 的 whatis 解析失敗"
+
+#: src/check_mandirs.c:341 src/check_mandirs.c:511 src/mandb.c:875
+#: src/straycats.c:84 src/straycats.c:289 src/ult_src.c:81
+#, c-format
+msgid "can't search directory %s"
+msgstr "無法搜尋路徑 %s"
+
+#: src/check_mandirs.c:390 src/man.c:1716
+#, c-format
+msgid "can't chown %s"
+msgstr "無法 chown %s"
+
+#: src/check_mandirs.c:412 src/check_mandirs.c:435
+#, c-format
+msgid "warning: cannot create catdir %s"
+msgstr "警告：無法建立 catdir %s"
+
+#: src/check_mandirs.c:467 src/man.c:1728 src/mandb.c:232
+#, c-format
+msgid "can't chmod %s"
+msgstr "無法 chmod %s"
+
+#: src/check_mandirs.c:516
+#, c-format
+msgid "can't change to directory %s"
+msgstr "無法切換至目錄 %s"
+
+#: src/check_mandirs.c:566
+#, c-format
+msgid "can't create index cache %s"
+msgstr "無法建立索引快取 %s"
+
+#: src/check_mandirs.c:591
+#, c-format
+msgid "Updating index cache for path `%s/%s'. Wait..."
+msgstr "正在為路徑「%s/%s」更新索引快取。請等待…"
+
+#: src/check_mandirs.c:653 src/check_mandirs.c:714
+msgid "done.\n"
+msgstr "完成。\n"
+
+#: src/check_mandirs.c:977
+#, c-format
+msgid "Purging old database entries in %s...\n"
+msgstr "正在清除 %s 中的舊資料庫項目…\n"
+
+#: src/descriptions_store.c:51
+#, c-format
+msgid "warning: failed to store entry for %s(%s)"
+msgstr "警告：無法為 %s(%s) 儲存項目"
+
+#: src/filenames.c:48 src/straycats.c:122 src/straycats.c:142
+#, c-format
+msgid "warning: %s: ignoring bogus filename"
+msgstr "警告：%s：忽略假檔案名稱"
+
+#: src/globbing_test.c:55
+msgid "PATH SECTION NAME"
+msgstr "路徑部份名稱"
+
+#: src/globbing_test.c:59 src/man.c:292
+msgid "EXTENSION"
+msgstr "EXTENSION"
+
+#: src/globbing_test.c:59 src/man.c:293
+msgid "limit search to extension type EXTENSION"
+msgstr "限制搜尋擴充元件類型 EXTENSION"
+
+#: src/globbing_test.c:60 src/man.c:294
+msgid "look for pages case-insensitively (default)"
+msgstr "不區分大小寫搜尋頁面（預設）"
+
+#: src/globbing_test.c:61 src/man.c:295
+msgid "look for pages case-sensitively"
+msgstr "區分大小寫搜尋頁面"
+
+#: src/globbing_test.c:62
+msgid "interpret page name as a regex"
+msgstr "將頁面名稱解釋為正規表達式"
+
+#: src/globbing_test.c:63
+msgid "the page name contains wildcards"
+msgstr "頁面名稱包含 Wildcard"
+
+#: src/lexgrog.l:706
+#, c-format
+msgid "warning: whatis for %s exceeds %d byte, truncating."
+msgid_plural "warning: whatis for %s exceeds %d bytes, truncating."
+msgstr[0] "警告：為 %s 的 whatis 超出 %d 位元組，正在截斷。"
+
+#: src/lexgrog.l:859 src/man.c:2297 src/man.c:2382 src/man.c:2480
+#: src/man-recode.c:176 src/man-recode.c:201 src/manconv_main.c:158
+#: src/straycats.c:204 src/ult_src.c:320 src/ult_src.c:333 src/zsoelim.l:517
+#, c-format
+msgid "can't open %s"
+msgstr "無法開啟 %s"
+
+#: src/lexgrog_test.c:69 src/zsoelim_main.c:65
+msgid "FILE..."
+msgstr "檔案…"
+
+#: src/lexgrog_test.c:70
+msgid "The defaults are --man and --whatis."
+msgstr "預設值為 --man 與 --whatis。"
+
+#: src/lexgrog_test.c:74
+msgid "parse as man page"
+msgstr "解析為 man 頁面"
+
+#: src/lexgrog_test.c:75
+msgid "parse as cat page"
+msgstr "解析為 cat 頁面"
+
+#: src/lexgrog_test.c:76
+msgid "show whatis information"
+msgstr "顯示 whatis 資訊"
+
+#: src/lexgrog_test.c:77
+msgid "show guessed series of preprocessing filters"
+msgstr "顯示猜測的一系列預先處理篩選器"
+
+#: src/lexgrog_test.c:78 src/man.c:284 src/man.c:309
+msgid "ENCODING"
+msgstr "編碼中"
+
+#: src/lexgrog_test.c:78 src/man.c:309
+msgid "use selected output encoding"
+msgstr "使用選擇的輸出編碼"
+
+#: src/lexgrog_test.c:122 src/man.c:540 src/man.c:549
+#, c-format
+msgid "%s: incompatible options"
+msgstr "%s：不相容選項"
+
+#: src/man.c:160 src/man-recode.c:234
+#, c-format
+msgid "command exited with status %d: %s"
+msgstr "指令離開，回傳代碼 %d：%s"
+
+#: src/man.c:251
+msgid "[SECTION] PAGE..."
+msgstr "[章節] 頁面…"
+
+#: src/man.c:269
+msgid "reset all options to their default values"
+msgstr "重設所有設定至他們的預設值"
+
+#: src/man.c:270
+msgid "WARNINGS"
+msgstr "警告"
+
+#: src/man.c:271
+msgid "enable warnings from groff"
+msgstr "啟用來自 groff 的警告"
+
+#: src/man.c:273
+msgid "Main modes of operation:"
+msgstr "動作主要模式："
+
+#: src/man.c:274
+msgid "equivalent to whatis"
+msgstr "相當於 whatis"
+
+#: src/man.c:275
+msgid "equivalent to apropos"
+msgstr "相當於 apropos"
+
+#: src/man.c:276
+msgid "search for text in all pages"
+msgstr "在所有頁面中搜尋文字"
+
+#: src/man.c:277
+msgid "print physical location of man page(s)"
+msgstr "顯示 man 頁面的物理位置"
+
+#: src/man.c:280
+msgid "print physical location of cat file(s)"
+msgstr "顯示 cat 檔案的物理位置"
+
+#: src/man.c:282
+msgid "interpret PAGE argument(s) as local filename(s)"
+msgstr "解譯 PAGE 參數為本機檔案名稱"
+
+#: src/man.c:283
+msgid "used by catman to reformat out of date cat pages"
+msgstr "catman 使用其重新格式化過期的 cat 頁面"
+
+#: src/man.c:284
+msgid "output source page encoded in ENCODING"
+msgstr "在 ENCODING 中編碼輸出原始頁面"
+
+#: src/man.c:286
+msgid "Finding manual pages:"
+msgstr "正在搜尋手冊頁面："
+
+#: src/man.c:287 src/whatis.c:137
+msgid "LOCALE"
+msgstr "語系"
+
+#: src/man.c:287
+msgid "define the locale for this particular man search"
+msgstr "為此特定的 man 搜尋定義語言"
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "SYSTEM"
+msgstr "系統"
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "use manual pages from other systems"
+msgstr "從系統系統使用手冊頁面"
+
+#: src/man.c:290 src/whatis.c:133
+msgid "LIST"
+msgstr "列表"
+
+#: src/man.c:290
+msgid "use colon separated section list"
+msgstr "使用冒號分隔的部分列表"
+
+#: src/man.c:296
+msgid "show all pages matching regex"
+msgstr "顯示所有符合 regex 的頁面"
+
+#: src/man.c:297
+msgid "show all pages matching wildcard"
+msgstr "顯示所有符合 wildcard 的頁面"
+
+#: src/man.c:298
+msgid "make --regex and --wildcard match page names only, not descriptions"
+msgstr "令 --regex 和 --wildcard 只符合頁面名稱，而不包含介紹。"
+
+#: src/man.c:300
+msgid "find all matching manual pages"
+msgstr "搜尋所有符合的手冊頁面"
+
+#: src/man.c:301
+msgid "force a cache consistency check"
+msgstr "強制快取一致性檢查"
+
+#: src/man.c:303
+msgid "don't try subpages, e.g. 'man foo bar' => 'man foo-bar'"
+msgstr "不要嘗試子頁面，例如「man foo bar」=>「man foo-bar」"
+
+#: src/man.c:305
+msgid "Controlling formatted output:"
+msgstr "控制格式化輸出："
+
+#: src/man.c:306
+msgid "PAGER"
+msgstr "PAGER"
+
+#: src/man.c:306
+msgid "use program PAGER to display output"
+msgstr "使用 PAGER 程式顯示輸出"
+
+#: src/man.c:307 src/man.c:316
+msgid "STRING"
+msgstr "字串"
+
+#: src/man.c:307
+msgid "provide the `less' pager with a prompt"
+msgstr "提供「較少的」pager 提示。"
+
+#: src/man.c:308
+msgid "display ASCII translation of certain latin1 chars"
+msgstr "顯示某些 latin1 字元的 ASCII 轉換"
+
+#: src/man.c:311
+msgid "turn off hyphenation"
+msgstr "關閉斷字"
+
+#: src/man.c:314
+msgid "turn off justification"
+msgstr "關閉理由 (justification)"
+
+#: src/man.c:316
+msgid ""
+"STRING indicates which preprocessors to run:\n"
+"e - [n]eqn, p - pic, t - tbl,\n"
+"g - grap, r - refer, v - vgrind"
+msgstr ""
+"STRING 指示要執行哪些預先處理器：\n"
+"e - [n]eqn, p - pic, t - tbl,\n"
+"g - grap, r - refer, v - vgrind"
+
+#: src/man.c:320
+#, c-format
+msgid "use %s to format pages"
+msgstr "使用 %s 格式化頁面"
+
+#: src/man.c:321
+msgid "DEVICE"
+msgstr "裝置"
+
+#: src/man.c:322
+#, c-format
+msgid "use %s with selected device"
+msgstr "透過選取的裝置使用 %s"
+
+#: src/man.c:323
+msgid "BROWSER"
+msgstr "瀏覽器"
+
+#: src/man.c:324
+#, c-format
+msgid "use %s or BROWSER to display HTML output"
+msgstr "使用 %s 或瀏覽器顯示 HTML 輸出"
+
+#: src/man.c:325
+msgid "RESOLUTION"
+msgstr "解析度"
+
+#: src/man.c:327
+msgid ""
+"use groff and display through gxditview (X11):\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+msgstr ""
+"透過 gxditview (X11) 使用 groff 和顯示：\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+
+#: src/man.c:329
+msgid "use groff and force it to produce ditroff"
+msgstr "使用 groff 並強制其產生 ditroff"
+
+#: src/man.c:599 src/man.c:736
+#, c-format
+msgid "No manual entry for %s\n"
+msgstr "沒有 %s 的手冊項目\n"
+
+#: src/man.c:601
+#, c-format
+msgid "(Alternatively, what manual page do you want from section %s?)\n"
+msgstr "（或者，您想從第 %s 章節中選擇哪個手冊頁面？）\n"
+
+#: src/man.c:605
+msgid "What manual page do you want?\n"
+msgstr "你想要什麼手冊？\n"
+
+#: src/man.c:606
+msgid "For example, try 'man man'.\n"
+msgstr "例如：執行「man man」。\n"
+
+#: src/man.c:733
+#, c-format
+msgid "No manual entry for %s in section %s\n"
+msgstr "%2$s 部份中沒有 %1$s 的手冊項目\n"
+
+#: src/man.c:742
+#, c-format
+msgid "See '%s' for help when manual pages are not available.\n"
+msgstr "當說明書不可用時，查看「%s」取得說明。\n"
+
+#: src/man.c:1349
+#, c-format
+msgid "ignoring unknown preprocessor `%c'"
+msgstr "忽略未知的預處理機「%c」"
+
+#: src/man.c:1739 src/man-recode.c:243 src/mandb.c:223
+#, c-format
+msgid "can't rename %s to %s"
+msgstr "無法重新命名 %s 至 %s"
+
+#: src/man.c:1756
+#, c-format
+msgid "can't set times on %s"
+msgstr "無法在 %s 上設定時間"
+
+#: src/man.c:1765 src/man.c:1802
+#, c-format
+msgid "can't unlink %s"
+msgstr "無法解除連結 %s"
+
+#: src/man.c:1832
+#, c-format
+msgid "can't create temporary cat for %s"
+msgstr "無法為 %s 建立暫存 cat"
+
+#: src/man.c:1942
+#, c-format
+msgid "can't create temporary directory"
+msgstr "無法建立暫存目錄"
+
+#: src/man.c:1953 src/man-recode.c:209
+#, c-format
+msgid "can't open temporary file %s"
+msgstr "無法開啟暫存檔案 %s"
+
+#: src/man.c:1983 src/man.c:2012
+#, c-format
+msgid "can't remove directory %s"
+msgstr "無法移除目錄 %s"
+
+#: src/man.c:2141
+#, c-format
+msgid "--Man-- next: %s [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]\n"
+msgstr "--Man-- 下一個：%s [ 顯示 (return) | 跳過 (Ctrl-D) | 離開 (Ctrl-C) ]\n"
+
+#: src/man.c:2425
+#, c-format
+msgid ""
+"\n"
+"cannot write to %s in catman mode"
+msgstr ""
+"\n"
+"無法在 catman 模式寫至 %s"
+
+#: src/man.c:2505
+#, c-format
+msgid "Can't convert %s to cat name"
+msgstr "無法轉換 %s 至 cat 名稱"
+
+#: src/man.c:3230
+#, c-format
+msgid "%s: relying on whatis refs is deprecated\n"
+msgstr "%s：依靠 whatis 的參考已經放棄\n"
+
+#: src/man.c:3373 src/man.c:4231
+#, c-format
+msgid "mandb command failed with exit status %d"
+msgstr "mandb 指令執行失敗，回傳代碼 %d"
+
+#: src/man.c:3575
+#, c-format
+msgid "internal error: candidate type %d out of range"
+msgstr "內部錯誤：候選類型 %d 超出範圍"
+
+#: src/man.c:4174
+msgid " Manual page "
+msgstr " 手冊頁面 "
+
+#: src/man-recode.c:103
+msgid "-t CODE {--suffix SUFFIX | --in-place} FILENAME..."
+msgstr "-t CODE {--suffix 後綴 | --in-place} 檔名..."
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "CODE"
+msgstr "CODE"
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "encoding for output"
+msgstr "輸出編碼"
+
+#: src/man-recode.c:108
+msgid "SUFFIX"
+msgstr "後綴"
+
+#: src/man-recode.c:108
+msgid "suffix to append to output file name"
+msgstr "要加到輸出檔名尾端的後綴"
+
+#: src/man-recode.c:110
+msgid "overwrite input files in place"
+msgstr "一次覆寫輸入檔案"
+
+#: src/man-recode.c:112 src/manconv_main.c:96 src/manpath.c:66
+msgid "produce fewer warnings"
+msgstr "產生較少的警告"
+
+#: src/man-recode.c:148 src/manconv_main.c:131
+#, c-format
+msgid "must specify an output encoding"
+msgstr "需要指定輸出編碼"
+
+#: src/man-recode.c:152
+#, c-format
+msgid "must use either --suffix or --in-place"
+msgstr "--suffix 或 --in-place 必須任選其一"
+
+#: src/man-recode.c:156
+#, c-format
+msgid "--suffix and --in-place are mutually exclusive"
+msgstr "--suffix 和 --in-place 互斥"
+
+#: src/man-recode.c:249 src/mandb.c:216
+#, c-format
+msgid "can't remove %s"
+msgstr "無法移除 %s"
+
+#: src/manconv.c:235 src/manconv.c:256 src/manconv.c:336 src/manconv.c:366
+#, c-format
+msgid "can't write to standard output"
+msgstr "無法寫至標準輸出"
+
+#: src/manconv.c:282
+msgid "iconv: incomplete character at end of buffer"
+msgstr "iconv：在緩衝區尾端含有不完全的符號"
+
+#: src/manconv_main.c:89
+msgid "[-f CODE[:...]] -t CODE [FILENAME]"
+msgstr "[-f CODE[:...]] -t CODE [檔名]"
+
+#: src/manconv_main.c:92
+msgid "CODE[:...]"
+msgstr "CODE[:...]"
+
+#: src/manconv_main.c:93
+msgid "possible encodings of original text"
+msgstr "原始文字的可能編碼方式"
+
+#: src/mandb.c:111
+msgid "[MANPATH]"
+msgstr "[MANPATH]"
+
+#: src/mandb.c:115
+msgid "work quietly, except for 'bogus' warning"
+msgstr "安靜的執行，除了「bogus」警告"
+
+#: src/mandb.c:116
+msgid "don't look for or add stray cats to the dbs"
+msgstr "不要尋找或增加 stray cats 至資料庫"
+
+#: src/mandb.c:117
+msgid "don't purge obsolete entries from the dbs"
+msgstr "不要從資料庫清除過期的項目"
+
+#: src/mandb.c:118
+msgid "produce user databases only"
+msgstr "只產生使用者資料庫"
+
+#: src/mandb.c:119
+msgid "create dbs from scratch, rather than updating"
+msgstr "從頭建立資料庫，而不是升級。"
+
+#: src/mandb.c:120
+msgid "check manual pages for correctness"
+msgstr "檢查手冊頁面的正確性"
+
+#: src/mandb.c:121
+msgid "FILENAME"
+msgstr "檔案名稱"
+
+#: src/mandb.c:121
+msgid "update just the entry for this filename"
+msgstr "只更新此檔案名稱的項目"
+
+#: src/mandb.c:280
+#, c-format
+msgid "can't write to %s"
+msgstr "無法寫至 %s"
+
+#: src/mandb.c:285
+#, c-format
+msgid "can't read from %s"
+msgstr "無法從 %s 讀取"
+
+#: src/mandb.c:457
+#, c-format
+msgid "Processing manual pages under %s...\n"
+msgstr "正在 %s 底下處理手冊頁面…\n"
+
+#: src/mandb.c:666 src/mandb.c:692
+#, c-format
+msgid "Removing obsolete cat directory %s...\n"
+msgstr "移除過時的 cat 路徑 %s…\n"
+
+#: src/mandb.c:842
+#, c-format
+msgid "warning: no MANDB_MAP directives in %s, using your manpath"
+msgstr "警告：%s 中沒有 MANDB_MAP 指令，使用您的 manpath"
+
+#: src/mandb.c:912
+#, c-format
+msgid "%d man subdirectory contained newer manual pages.\n"
+msgid_plural "%d man subdirectories contained newer manual pages.\n"
+msgstr[0] "%d 個 man 子目錄包含了較新的手冊頁面\n"
+
+#: src/mandb.c:917
+#, c-format
+msgid "%d manual page was added.\n"
+msgid_plural "%d manual pages were added.\n"
+msgstr[0] "加入了 %d 個手冊頁面\n"
+
+#: src/mandb.c:921
+#, c-format
+msgid "%d stray cat was added.\n"
+msgid_plural "%d stray cats were added.\n"
+msgstr[0] "加入了 %d 個 stray cat\n"
+
+#: src/mandb.c:926
+#, c-format
+msgid "%d old database entry was purged.\n"
+msgid_plural "%d old database entries were purged.\n"
+msgstr[0] "清除了 %d 個舊資料庫項目。\n"
+
+#: src/mandb.c:944
+#, c-format
+msgid "No databases created."
+msgstr "沒有建立的資料庫"
+
+#: src/manp.c:319
+#, c-format
+msgid "can't make sense of the manpath configuration file %s"
+msgstr "無法合理化 manpath 設定檔 %s"
+
+#: src/manp.c:325
+#, c-format
+msgid "warning: %s"
+msgstr "警告：%s"
+
+#: src/manp.c:331
+#, c-format
+msgid "warning: %s isn't a directory"
+msgstr "警告：%s 不是目錄"
+
+#: src/manp.c:662
+#, c-format
+msgid "warning: $PATH not set"
+msgstr "警告：未設定 $PATH"
+
+#: src/manp.c:669
+#, c-format
+msgid "warning: empty $PATH"
+msgstr "警告：空 $PATH"
+
+#: src/manp.c:697
+#, c-format
+msgid "warning: $MANPATH set, prepending %s"
+msgstr "警告：已設定 $MANPATH，正在前面加上 %s"
+
+#: src/manp.c:708
+#, c-format
+msgid "warning: $MANPATH set, appending %s"
+msgstr "警告：已設定 $MANPATH，正在增加 %s"
+
+#: src/manp.c:720
+#, c-format
+msgid "warning: $MANPATH set, inserting %s"
+msgstr "警告：已設定 $MANPATH，正在插入 %s"
+
+#: src/manp.c:734
+#, c-format
+msgid "warning: $MANPATH set, ignoring %s"
+msgstr "警告：已設定 $MANPATH，正在忽略 %s"
+
+#: src/manp.c:796
+#, c-format
+msgid "can't parse directory list `%s'"
+msgstr "無法解析目錄列表「%s」"
+
+#: src/manp.c:851
+#, c-format
+msgid "can't open the manpath configuration file %s"
+msgstr "無法開啟 manpath 設定檔 %s"
+
+#: src/manp.c:888
+#, c-format
+msgid "warning: mandatory directory %s doesn't exist"
+msgstr "警告：強制性目錄 %s 不存在"
+
+#: src/manp.c:1177
+#, c-format
+msgid "can't determine current directory"
+msgstr "無法確定目前的目錄"
+
+#: src/manp.c:1358
+#, c-format
+msgid "warning: %s does not begin with %s"
+msgstr "警告：%s 未以 %s 開頭"
+
+#: src/manpath.c:63
+msgid "show relative catpaths"
+msgstr "顯示相對的 catpath"
+
+#: src/manpath.c:64
+msgid "show the entire global manpath"
+msgstr "顯示整個全域 manpath"
+
+#: src/manpath.c:126
+#, c-format
+msgid "warning: no global manpaths set in config file %s"
+msgstr "警告：沒有在設定檔 %s 設定全域 manpath"
+
+#: src/straycats.c:232 src/ult_src.c:125
+#, c-format
+msgid "warning: %s is a dangling symlink"
+msgstr "警告：%s 為懸掛的符號連結"
+
+#: src/straycats.c:235 src/ult_src.c:128 src/ult_src.c:262
+#, c-format
+msgid "can't resolve %s"
+msgstr "無法解析 %s"
+
+#: src/straycats.c:294
+#, c-format
+msgid "Checking for stray cats under %s...\n"
+msgstr "正在 %s 底下檢查 stray cats ...\n"
+
+#: src/straycats.c:334
+#, c-format
+msgid "warning: can't update index cache %s"
+msgstr "警告：無法更新索引快取 %s"
+
+#: src/ult_src.c:300
+#, c-format
+msgid "%s is self referencing"
+msgstr "%s 為自我參考"
+
+#: src/whatis.c:122
+msgid "KEYWORD..."
+msgstr "關鍵字…"
+
+#: src/whatis.c:123
+msgid "The --regex option is enabled by default."
+msgstr "預設值啟用了 --regex 選項"
+
+#: src/whatis.c:127
+msgid "print verbose warning messages"
+msgstr "顯示詳細的警告訊息"
+
+#: src/whatis.c:128
+msgid "interpret each keyword as a regex"
+msgstr "將每個關鍵字解釋為正規表達式"
+
+#: src/whatis.c:129
+msgid "search each keyword for exact match"
+msgstr "精確搜尋每個關鍵字"
+
+#: src/whatis.c:130
+msgid "the keyword(s) contain wildcards"
+msgstr "此關鍵字包含 Wildcard"
+
+#: src/whatis.c:131
+msgid "require all keywords to match"
+msgstr "需要符合所有關鍵字"
+
+#: src/whatis.c:132
+msgid "do not trim output to terminal width"
+msgstr "不依終端器寬度裁切輸出"
+
+#: src/whatis.c:133
+msgid "search only these sections (colon-separated)"
+msgstr "只搜尋這些部份（以冒號分隔）"
+
+#: src/whatis.c:137
+msgid "define the locale for this search"
+msgstr "為這個搜尋定義語言"
+
+#: src/whatis.c:234
+#, c-format
+msgid "%s what?\n"
+msgstr "%s 什麼？\n"
+
+#: src/whatis.c:410 src/whatis.c:428
+#, c-format
+msgid "warning: %s contains a pointer loop"
+msgstr "警告：%s 包含了遞迴指標"
+
+#: src/whatis.c:422 src/whatis.c:430
+msgid "(unknown subject)"
+msgstr "（未知主旨）"
+
+#: src/whatis.c:861
+#, c-format
+msgid "%s: nothing appropriate.\n"
+msgstr "%s：什麼都不適合。\n"
+
+#: src/zsoelim.l:180
+#, c-format
+msgid "%s:%d: .so requests nested too deeply or are recursive"
+msgstr "%s:%d：.so 請求巢狀過深或遞迴"
+
+#: src/zsoelim.l:195
+#, c-format
+msgid "%s:%d: warning: failed .so request"
+msgstr "%s:%d：警告：失敗的 .so 請求"
+
+#: src/zsoelim.l:217
+#, c-format
+msgid "%s:%d: warning: newline in .so request, ignoring"
+msgstr "%s:%d：警告：換行符號在 .so 請求中，正在忽略"
+
+#: src/zsoelim.l:277
+#, c-format
+msgid "%s:%d: warning: malformed .lf request, ignoring"
+msgstr "%s:%d：警告：.If 請求格式錯誤，正在忽略"
+
+#: src/zsoelim.l:287
+#, c-format
+msgid "%s:%d: warning: newline in .lf request, ignoring"
+msgstr "%s:%d：警告：換行符號在 .If 請求中，正在忽略"
+
+#: src/zsoelim.l:327
+#, c-format
+msgid "%s:%d: unterminated quote in roff request"
+msgstr "%s:%d：roff 請求中未終止的引用"
+
+#: src/zsoelim_main.c:69
+msgid "compatibility switch (ignored)"
+msgstr "相容性開關（已忽略）"
+
+#~ msgid "can't restore previous working directory"
+#~ msgstr "無法恢復先前的工作目錄"
+
+#~ msgid "can't chdir to %s"
+#~ msgstr "無法切換目錄至 %s"
+
+#~ msgid "must specify an input encoding"
+#~ msgstr "需要指定輸入編碼"
+
+#~ msgid "manpath list too long"
+#~ msgstr "manpath 列表太長"

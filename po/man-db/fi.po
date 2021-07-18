@@ -1,0 +1,1050 @@
+# Finnish translation of man-db.
+# Copyright © 2015 Colin Watson (msgids)
+# This file is distributed under the same license as the man-db package.
+# Lauri Nurmi <lanurmi@iki.fi>, 2003, 2004, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: man-db 2.7.0-pre1\n"
+"Report-Msgid-Bugs-To: Colin Watson <cjwatson@debian.org>\n"
+"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"PO-Revision-Date: 2015-07-28 21:52+0300\n"
+"Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
+"Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.3\n"
+
+#: lib/security.c:79
+#, c-format
+msgid "can't set effective uid"
+msgstr "voimassaolevaa UID:ta ei voi asettaa"
+
+#: lib/security.c:118
+#, c-format
+msgid "the setuid man user \"%s\" does not exist"
+msgstr ""
+
+#: lib/xregcomp.c:47
+#, c-format
+msgid "fatal: regex `%s': %s"
+msgstr ""
+
+#: libdb/db_delete.c:105
+#, c-format
+msgid "multi key %s does not exist"
+msgstr ""
+
+#: libdb/db_lookup.c:75
+#, c-format
+msgid "can't lock index cache %s"
+msgstr ""
+
+#: libdb/db_lookup.c:82
+#, c-format
+msgid "index cache %s corrupt"
+msgstr ""
+
+#: libdb/db_lookup.c:88
+#, c-format
+msgid "cannot replace key %s"
+msgstr ""
+
+#: libdb/db_lookup.c:183 libdb/db_lookup.c:194
+#, c-format
+msgid "only %d field in content"
+msgid_plural "only %d fields in content"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libdb/db_lookup.c:358
+#, c-format
+msgid "bad fetch on multi key %s"
+msgstr ""
+
+#: libdb/db_lookup.c:443 src/whatis.c:737
+#, c-format
+msgid "Database %s corrupted; rebuild with mandb --create"
+msgstr ""
+"Tietokanta %s on turmeltunut; luo se uudelleen komennolla mandb --create"
+
+#: libdb/db_ver.c:53
+#, c-format
+msgid "warning: %s has no version identifier\n"
+msgstr ""
+
+#: libdb/db_ver.c:57
+#, c-format
+msgid "warning: %s is version %s, expecting %s\n"
+msgstr ""
+
+#: libdb/db_ver.c:79
+#, c-format
+msgid "fatal: unable to insert version identifier into %s"
+msgstr ""
+
+#: src/accessdb.c:59
+msgid "[MAN DATABASE]"
+msgstr ""
+
+#: src/accessdb.c:60
+#, c-format
+msgid "The man database defaults to %s%s."
+msgstr ""
+
+#: src/accessdb.c:63 src/catman.c:100 src/globbing_test.c:58
+#: src/lexgrog_test.c:73 src/man.c:268 src/man-recode.c:111
+#: src/manconv_main.c:95 src/mandb.c:114 src/manpath.c:65 src/whatis.c:126
+#: src/zsoelim_main.c:68
+msgid "emit debugging messages"
+msgstr ""
+
+#: src/accessdb.c:137
+#, c-format
+msgid "can't open %s for reading"
+msgstr ""
+
+#: src/catman.c:97
+msgid "[SECTION...]"
+msgstr "[OSIO...]"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "PATH"
+msgstr "POLKU"
+
+#: src/catman.c:101 src/man.c:289 src/whatis.c:136
+msgid "set search path for manual pages to PATH"
+msgstr "aseta opastesivujen hakupoluksi POLKU"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+msgid "FILE"
+msgstr "TIEDOSTO"
+
+#: src/catman.c:102 src/man.c:267 src/mandb.c:122 src/manpath.c:67
+#: src/whatis.c:138
+#, fuzzy
+msgid "use this user configuration file"
+msgstr "opastepolkujen asetustiedostoa %s ei voi avata"
+
+#: src/catman.c:195
+#, c-format
+msgid "man command failed with exit status %d"
+msgstr ""
+
+#: src/catman.c:235
+#, c-format
+msgid "cannot read database %s"
+msgstr "tietokantaa %s ei voi lukea"
+
+#: src/catman.c:278
+#, c-format
+msgid "NULL content for key: %s"
+msgstr ""
+
+#: src/catman.c:294
+#, c-format
+msgid ""
+"\n"
+"Updating cat files for section %s of man hierarchy %s\n"
+msgstr ""
+
+#: src/catman.c:348
+#, c-format
+msgid "cannot write within %s"
+msgstr ""
+
+#: src/catman.c:423
+#, c-format
+msgid "unable to update %s"
+msgstr ""
+
+#: src/check_mandirs.c:100
+#, c-format
+msgid "warning: %s/man%s/%s.%s*: competing extensions"
+msgstr ""
+
+#: src/check_mandirs.c:126 src/check_mandirs.c:626
+#, c-format
+msgid "can't update index cache %s"
+msgstr ""
+
+#: src/check_mandirs.c:254
+#, c-format
+msgid "warning: %s: bad symlink or ROFF `.so' request"
+msgstr ""
+
+#: src/check_mandirs.c:310
+#, c-format
+msgid "warning: %s: ignoring empty file"
+msgstr "varoitus: %s: ei huomioida tyhjää tiedostoa"
+
+#: src/check_mandirs.c:314 src/straycats.c:262
+#, c-format
+msgid "warning: %s: whatis parse for %s(%s) failed"
+msgstr ""
+
+#: src/check_mandirs.c:341 src/check_mandirs.c:511 src/mandb.c:875
+#: src/straycats.c:84 src/straycats.c:289 src/ult_src.c:81
+#, c-format
+msgid "can't search directory %s"
+msgstr ""
+
+#: src/check_mandirs.c:390 src/man.c:1716
+#, c-format
+msgid "can't chown %s"
+msgstr ""
+
+#: src/check_mandirs.c:412 src/check_mandirs.c:435
+#, c-format
+msgid "warning: cannot create catdir %s"
+msgstr ""
+
+#: src/check_mandirs.c:467 src/man.c:1728 src/mandb.c:232
+#, c-format
+msgid "can't chmod %s"
+msgstr ""
+
+#: src/check_mandirs.c:516
+#, c-format
+msgid "can't change to directory %s"
+msgstr ""
+
+#: src/check_mandirs.c:566
+#, c-format
+msgid "can't create index cache %s"
+msgstr ""
+
+#: src/check_mandirs.c:591
+#, c-format
+msgid "Updating index cache for path `%s/%s'. Wait..."
+msgstr ""
+
+#: src/check_mandirs.c:653 src/check_mandirs.c:714
+msgid "done.\n"
+msgstr "valmis.\n"
+
+#: src/check_mandirs.c:977
+#, c-format
+msgid "Purging old database entries in %s...\n"
+msgstr ""
+
+#: src/descriptions_store.c:51
+#, c-format
+msgid "warning: failed to store entry for %s(%s)"
+msgstr ""
+
+#: src/filenames.c:48 src/straycats.c:122 src/straycats.c:142
+#, c-format
+msgid "warning: %s: ignoring bogus filename"
+msgstr ""
+
+#: src/globbing_test.c:55
+msgid "PATH SECTION NAME"
+msgstr ""
+
+#: src/globbing_test.c:59 src/man.c:292
+msgid "EXTENSION"
+msgstr ""
+
+#: src/globbing_test.c:59 src/man.c:293
+msgid "limit search to extension type EXTENSION"
+msgstr ""
+
+#: src/globbing_test.c:60 src/man.c:294
+msgid "look for pages case-insensitively (default)"
+msgstr ""
+
+#: src/globbing_test.c:61 src/man.c:295
+msgid "look for pages case-sensitively"
+msgstr ""
+
+#: src/globbing_test.c:62
+msgid "interpret page name as a regex"
+msgstr ""
+
+#: src/globbing_test.c:63
+msgid "the page name contains wildcards"
+msgstr "sivun nimi sisältää jokerimerkkejä"
+
+#: src/lexgrog.l:706
+#, c-format
+msgid "warning: whatis for %s exceeds %d byte, truncating."
+msgid_plural "warning: whatis for %s exceeds %d bytes, truncating."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/lexgrog.l:859 src/man.c:2297 src/man.c:2382 src/man.c:2480
+#: src/man-recode.c:176 src/man-recode.c:201 src/manconv_main.c:158
+#: src/straycats.c:204 src/ult_src.c:320 src/ult_src.c:333 src/zsoelim.l:517
+#, c-format
+msgid "can't open %s"
+msgstr ""
+
+#: src/lexgrog_test.c:69 src/zsoelim_main.c:65
+msgid "FILE..."
+msgstr "TIEDOSTO..."
+
+#: src/lexgrog_test.c:70
+msgid "The defaults are --man and --whatis."
+msgstr ""
+
+#: src/lexgrog_test.c:74
+msgid "parse as man page"
+msgstr "jäsennä man-sivuna"
+
+#: src/lexgrog_test.c:75
+msgid "parse as cat page"
+msgstr "jäsennä cat-sivuna"
+
+#: src/lexgrog_test.c:76
+msgid "show whatis information"
+msgstr "näytä whatis-tiedot"
+
+#: src/lexgrog_test.c:77
+msgid "show guessed series of preprocessing filters"
+msgstr "näytä arvattu sarja esikäsittelysuotimia"
+
+#: src/lexgrog_test.c:78 src/man.c:284 src/man.c:309
+msgid "ENCODING"
+msgstr "MERKISTÖ"
+
+#: src/lexgrog_test.c:78 src/man.c:309
+msgid "use selected output encoding"
+msgstr "käytä valittua tulosteen merkistöä"
+
+#: src/lexgrog_test.c:122 src/man.c:540 src/man.c:549
+#, fuzzy, c-format
+msgid "%s: incompatible options"
+msgstr ": epäyhteensopivat valitsimet"
+
+#: src/man.c:160 src/man-recode.c:234
+#, c-format
+msgid "command exited with status %d: %s"
+msgstr ""
+
+#: src/man.c:251
+msgid "[SECTION] PAGE..."
+msgstr "[OSIO] SIVU..."
+
+#: src/man.c:269
+msgid "reset all options to their default values"
+msgstr "palauta kaikki valitsimet oletusarvoihinsa"
+
+#: src/man.c:270
+msgid "WARNINGS"
+msgstr "VAROITUKSET"
+
+#: src/man.c:271
+msgid "enable warnings from groff"
+msgstr ""
+
+#: src/man.c:273
+msgid "Main modes of operation:"
+msgstr "Päätoimintatilat:"
+
+#: src/man.c:274
+msgid "equivalent to whatis"
+msgstr "whatis-vastine"
+
+#: src/man.c:275
+msgid "equivalent to apropos"
+msgstr "apropos-vastine"
+
+#: src/man.c:276
+msgid "search for text in all pages"
+msgstr "etsi tekstiä kaikilta sivuilta"
+
+#: src/man.c:277
+msgid "print physical location of man page(s)"
+msgstr "näytä opastesivu(je)n fyysinen sijainti"
+
+#: src/man.c:280
+msgid "print physical location of cat file(s)"
+msgstr "näytä cat-sivu(je)n fyysinen sijainti"
+
+#: src/man.c:282
+msgid "interpret PAGE argument(s) as local filename(s)"
+msgstr "tulkitse SIVU-argumentti paikallisena tiedostonimenä"
+
+#: src/man.c:283
+msgid "used by catman to reformat out of date cat pages"
+msgstr ""
+
+#: src/man.c:284
+msgid "output source page encoded in ENCODING"
+msgstr ""
+
+#: src/man.c:286
+#, fuzzy
+msgid "Finding manual pages:"
+msgstr " Opastesivu "
+
+#: src/man.c:287 src/whatis.c:137
+msgid "LOCALE"
+msgstr ""
+
+#: src/man.c:287
+msgid "define the locale for this particular man search"
+msgstr ""
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "SYSTEM"
+msgstr "JÄRJESTELMÄ"
+
+#: src/man.c:288 src/manpath.c:68 src/whatis.c:135
+msgid "use manual pages from other systems"
+msgstr ""
+
+#: src/man.c:290 src/whatis.c:133
+msgid "LIST"
+msgstr ""
+
+#: src/man.c:290
+msgid "use colon separated section list"
+msgstr ""
+
+#: src/man.c:296
+msgid "show all pages matching regex"
+msgstr ""
+
+#: src/man.c:297
+msgid "show all pages matching wildcard"
+msgstr ""
+
+#: src/man.c:298
+msgid "make --regex and --wildcard match page names only, not descriptions"
+msgstr ""
+
+#: src/man.c:300
+msgid "find all matching manual pages"
+msgstr ""
+
+#: src/man.c:301
+msgid "force a cache consistency check"
+msgstr ""
+
+#: src/man.c:303
+msgid "don't try subpages, e.g. 'man foo bar' => 'man foo-bar'"
+msgstr ""
+
+#: src/man.c:305
+msgid "Controlling formatted output:"
+msgstr "Muotoillun tulosteen hallinta:"
+
+#: src/man.c:306
+msgid "PAGER"
+msgstr ""
+
+#: src/man.c:306
+msgid "use program PAGER to display output"
+msgstr ""
+
+#: src/man.c:307 src/man.c:316
+msgid "STRING"
+msgstr "MERKKIJONO"
+
+#: src/man.c:307
+msgid "provide the `less' pager with a prompt"
+msgstr ""
+
+#: src/man.c:308
+msgid "display ASCII translation of certain latin1 chars"
+msgstr ""
+
+#: src/man.c:311
+msgid "turn off hyphenation"
+msgstr ""
+
+#: src/man.c:314
+msgid "turn off justification"
+msgstr ""
+
+#: src/man.c:316
+msgid ""
+"STRING indicates which preprocessors to run:\n"
+"e - [n]eqn, p - pic, t - tbl,\n"
+"g - grap, r - refer, v - vgrind"
+msgstr ""
+
+#: src/man.c:320
+#, c-format
+msgid "use %s to format pages"
+msgstr ""
+
+#: src/man.c:321
+msgid "DEVICE"
+msgstr "LAITE"
+
+#: src/man.c:322
+#, c-format
+msgid "use %s with selected device"
+msgstr ""
+
+#: src/man.c:323
+msgid "BROWSER"
+msgstr "SELAIN"
+
+#: src/man.c:324
+#, c-format
+msgid "use %s or BROWSER to display HTML output"
+msgstr ""
+
+#: src/man.c:325
+msgid "RESOLUTION"
+msgstr "RESOLUUTIO"
+
+#: src/man.c:327
+msgid ""
+"use groff and display through gxditview (X11):\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+msgstr ""
+
+#: src/man.c:329
+msgid "use groff and force it to produce ditroff"
+msgstr ""
+
+#: src/man.c:599 src/man.c:736
+#, fuzzy, c-format
+msgid "No manual entry for %s\n"
+msgstr "Sovellukselle %s ei ole opastesivua"
+
+#: src/man.c:601
+#, fuzzy, c-format
+msgid "(Alternatively, what manual page do you want from section %s?)\n"
+msgstr "Minkä opastesivun haluat osiosta %s?\n"
+
+#: src/man.c:605
+msgid "What manual page do you want?\n"
+msgstr "Minkä opastesivun haluat?\n"
+
+#: src/man.c:606
+msgid "For example, try 'man man'.\n"
+msgstr ""
+
+#: src/man.c:733
+#, fuzzy, c-format
+msgid "No manual entry for %s in section %s\n"
+msgstr "Sovellukselle %s ei ole opastesivua"
+
+#: src/man.c:742
+#, c-format
+msgid "See '%s' for help when manual pages are not available.\n"
+msgstr ""
+
+#: src/man.c:1349
+#, c-format
+msgid "ignoring unknown preprocessor `%c'"
+msgstr "ei huomioida tuntematonta esikäsittelintä \"%c\""
+
+#: src/man.c:1739 src/man-recode.c:243 src/mandb.c:223
+#, c-format
+msgid "can't rename %s to %s"
+msgstr ""
+
+#: src/man.c:1756
+#, c-format
+msgid "can't set times on %s"
+msgstr ""
+
+#: src/man.c:1765 src/man.c:1802
+#, c-format
+msgid "can't unlink %s"
+msgstr ""
+
+#: src/man.c:1832
+#, fuzzy, c-format
+msgid "can't create temporary cat for %s"
+msgstr "varoitus: väliaikaistiedostoa %s ei voi luoda"
+
+#: src/man.c:1942
+#, fuzzy, c-format
+msgid "can't create temporary directory"
+msgstr "nykyistä hakemistoa ei voi määrittää"
+
+#: src/man.c:1953 src/man-recode.c:209
+#, fuzzy, c-format
+msgid "can't open temporary file %s"
+msgstr "opastepolkujen asetustiedostoa %s ei voi avata"
+
+#: src/man.c:1983 src/man.c:2012
+#, c-format
+msgid "can't remove directory %s"
+msgstr ""
+
+#: src/man.c:2141
+#, c-format
+msgid "--Man-- next: %s [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]\n"
+msgstr ""
+
+#: src/man.c:2425
+#, c-format
+msgid ""
+"\n"
+"cannot write to %s in catman mode"
+msgstr ""
+
+#: src/man.c:2505
+#, c-format
+msgid "Can't convert %s to cat name"
+msgstr ""
+
+#: src/man.c:3230
+#, c-format
+msgid "%s: relying on whatis refs is deprecated\n"
+msgstr ""
+
+#: src/man.c:3373 src/man.c:4231
+#, c-format
+msgid "mandb command failed with exit status %d"
+msgstr "mandb-komento epäonnistui paluuarvolla %d"
+
+#: src/man.c:3575
+#, c-format
+msgid "internal error: candidate type %d out of range"
+msgstr ""
+
+#: src/man.c:4174
+msgid " Manual page "
+msgstr " Opastesivu "
+
+#: src/man-recode.c:103
+msgid "-t CODE {--suffix SUFFIX | --in-place} FILENAME..."
+msgstr ""
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "CODE"
+msgstr ""
+
+#: src/man-recode.c:106 src/manconv_main.c:94
+msgid "encoding for output"
+msgstr "tulosteen merkistö"
+
+#: src/man-recode.c:108
+msgid "SUFFIX"
+msgstr ""
+
+#: src/man-recode.c:108
+msgid "suffix to append to output file name"
+msgstr ""
+
+#: src/man-recode.c:110
+msgid "overwrite input files in place"
+msgstr ""
+
+#: src/man-recode.c:112 src/manconv_main.c:96 src/manpath.c:66
+msgid "produce fewer warnings"
+msgstr "tuota vähemmän varoituksia"
+
+#: src/man-recode.c:148 src/manconv_main.c:131
+#, c-format
+msgid "must specify an output encoding"
+msgstr "tulosteen merkistö on annettava"
+
+#: src/man-recode.c:152
+#, c-format
+msgid "must use either --suffix or --in-place"
+msgstr ""
+
+#: src/man-recode.c:156
+#, c-format
+msgid "--suffix and --in-place are mutually exclusive"
+msgstr ""
+
+#: src/man-recode.c:249 src/mandb.c:216
+#, c-format
+msgid "can't remove %s"
+msgstr "tiedostoa %s ei voi poistaa"
+
+#: src/manconv.c:235 src/manconv.c:256 src/manconv.c:336 src/manconv.c:366
+#, fuzzy, c-format
+msgid "can't write to standard output"
+msgstr "tiedostoon %s ei voi kirjoittaa"
+
+#: src/manconv.c:282
+msgid "iconv: incomplete character at end of buffer"
+msgstr "iconv: epätäydellinen merkki puskurin lopussa"
+
+#: src/manconv_main.c:89
+msgid "[-f CODE[:...]] -t CODE [FILENAME]"
+msgstr ""
+
+#: src/manconv_main.c:92
+msgid "CODE[:...]"
+msgstr ""
+
+#: src/manconv_main.c:93
+msgid "possible encodings of original text"
+msgstr "alkuperäisen tekstin mahdolliset merkistöt"
+
+#: src/mandb.c:111
+msgid "[MANPATH]"
+msgstr ""
+
+#: src/mandb.c:115
+msgid "work quietly, except for 'bogus' warning"
+msgstr ""
+
+#: src/mandb.c:116
+msgid "don't look for or add stray cats to the dbs"
+msgstr ""
+
+#: src/mandb.c:117
+msgid "don't purge obsolete entries from the dbs"
+msgstr ""
+
+#: src/mandb.c:118
+msgid "produce user databases only"
+msgstr ""
+
+#: src/mandb.c:119
+msgid "create dbs from scratch, rather than updating"
+msgstr ""
+
+#: src/mandb.c:120
+msgid "check manual pages for correctness"
+msgstr ""
+
+#: src/mandb.c:121
+msgid "FILENAME"
+msgstr "TIEDOSTONIMI"
+
+#: src/mandb.c:121
+msgid "update just the entry for this filename"
+msgstr ""
+
+#: src/mandb.c:280
+#, c-format
+msgid "can't write to %s"
+msgstr "tiedostoon %s ei voi kirjoittaa"
+
+#: src/mandb.c:285
+#, c-format
+msgid "can't read from %s"
+msgstr "tiedostosta %s ei voi lukea"
+
+#: src/mandb.c:457
+#, c-format
+msgid "Processing manual pages under %s...\n"
+msgstr "Käsitellään opastesivuja hakemistossa %s...\n"
+
+#: src/mandb.c:666 src/mandb.c:692
+#, c-format
+msgid "Removing obsolete cat directory %s...\n"
+msgstr "Poistetaan vanhentunut cat-hakemisto %s...\n"
+
+#: src/mandb.c:842
+#, c-format
+msgid "warning: no MANDB_MAP directives in %s, using your manpath"
+msgstr ""
+
+#: src/mandb.c:912
+#, c-format
+msgid "%d man subdirectory contained newer manual pages.\n"
+msgid_plural "%d man subdirectories contained newer manual pages.\n"
+msgstr[0] "%d man-alihakemisto sisälsi uudempia opastesivuja.\n"
+msgstr[1] "%d man-alihakemistoa sisälsi uudempia opastesivuja.\n"
+
+#: src/mandb.c:917
+#, fuzzy, c-format
+msgid "%d manual page was added.\n"
+msgid_plural "%d manual pages were added.\n"
+msgstr[0] " Opastesivu "
+msgstr[1] " Opastesivu "
+
+#: src/mandb.c:921
+#, fuzzy, c-format
+msgid "%d stray cat was added.\n"
+msgid_plural "%d stray cats were added.\n"
+msgstr[0] "%d jotain .. ööö.. kulkukissaa lisättiin.\n"
+msgstr[1] "%d jotain .. ööö.. kulkukissaa lisättiin.\n"
+
+#: src/mandb.c:926
+#, fuzzy, c-format
+msgid "%d old database entry was purged.\n"
+msgid_plural "%d old database entries were purged.\n"
+msgstr[0] "%d vanhaa tietokantamerkintää poistettiin.\n"
+msgstr[1] "%d vanhaa tietokantamerkintää poistettiin.\n"
+
+#: src/mandb.c:944
+#, c-format
+msgid "No databases created."
+msgstr "Tietokantoja ei luotu."
+
+#: src/manp.c:319
+#, c-format
+msgid "can't make sense of the manpath configuration file %s"
+msgstr ""
+
+#: src/manp.c:325
+#, c-format
+msgid "warning: %s"
+msgstr "varoitus: %s"
+
+#: src/manp.c:331
+#, c-format
+msgid "warning: %s isn't a directory"
+msgstr "varoitus: %s ei ole hakemisto"
+
+#: src/manp.c:662
+#, c-format
+msgid "warning: $PATH not set"
+msgstr "varoitus: polkumuuttujaa $PATH ei ole asetettu"
+
+#: src/manp.c:669
+#, c-format
+msgid "warning: empty $PATH"
+msgstr "varoitus: tyhjä polkumuuttuja $PATH"
+
+#: src/manp.c:697
+#, c-format
+msgid "warning: $MANPATH set, prepending %s"
+msgstr ""
+
+#: src/manp.c:708
+#, c-format
+msgid "warning: $MANPATH set, appending %s"
+msgstr "varoitus: $MANPATH asetettu, lisätään loppuun %s"
+
+#: src/manp.c:720
+#, c-format
+msgid "warning: $MANPATH set, inserting %s"
+msgstr ""
+
+#: src/manp.c:734
+#, c-format
+msgid "warning: $MANPATH set, ignoring %s"
+msgstr ""
+
+#: src/manp.c:796
+#, c-format
+msgid "can't parse directory list `%s'"
+msgstr ""
+
+#: src/manp.c:851
+#, c-format
+msgid "can't open the manpath configuration file %s"
+msgstr "opastepolkujen asetustiedostoa %s ei voi avata"
+
+#: src/manp.c:888
+#, c-format
+msgid "warning: mandatory directory %s doesn't exist"
+msgstr "varoitus: välttämätön hakemisto %s ei ole olemassa"
+
+#: src/manp.c:1177
+#, c-format
+msgid "can't determine current directory"
+msgstr "nykyistä hakemistoa ei voi määrittää"
+
+#: src/manp.c:1358
+#, c-format
+msgid "warning: %s does not begin with %s"
+msgstr "varoitus: %s ei ala merkkijonolla %s"
+
+#: src/manpath.c:63
+msgid "show relative catpaths"
+msgstr ""
+
+#: src/manpath.c:64
+msgid "show the entire global manpath"
+msgstr ""
+
+#: src/manpath.c:126
+#, c-format
+msgid "warning: no global manpaths set in config file %s"
+msgstr ""
+"varoitus: asetustiedostossa %s ei ole asetettu järjestelmänlaajuisia "
+"opastepolkuja"
+
+#: src/straycats.c:232 src/ult_src.c:125
+#, c-format
+msgid "warning: %s is a dangling symlink"
+msgstr "varoitus: %s on rikkinäinen symlinkki"
+
+#: src/straycats.c:235 src/ult_src.c:128 src/ult_src.c:262
+#, c-format
+msgid "can't resolve %s"
+msgstr ""
+
+#: src/straycats.c:294
+#, c-format
+msgid "Checking for stray cats under %s...\n"
+msgstr ""
+
+#: src/straycats.c:334
+#, c-format
+msgid "warning: can't update index cache %s"
+msgstr ""
+
+#: src/ult_src.c:300
+#, c-format
+msgid "%s is self referencing"
+msgstr "%s viittaa itseensä"
+
+#: src/whatis.c:122
+msgid "KEYWORD..."
+msgstr "AVAINSANA..."
+
+#: src/whatis.c:123
+msgid "The --regex option is enabled by default."
+msgstr ""
+
+#: src/whatis.c:127
+msgid "print verbose warning messages"
+msgstr ""
+
+#: src/whatis.c:128
+msgid "interpret each keyword as a regex"
+msgstr ""
+
+#: src/whatis.c:129
+msgid "search each keyword for exact match"
+msgstr ""
+
+#: src/whatis.c:130
+msgid "the keyword(s) contain wildcards"
+msgstr "avainsana(t) sisältävät jokerimerkkejä"
+
+#: src/whatis.c:131
+msgid "require all keywords to match"
+msgstr ""
+
+#: src/whatis.c:132
+msgid "do not trim output to terminal width"
+msgstr "älä katkaise tulostetta päätteen leveyteen"
+
+#: src/whatis.c:133
+msgid "search only these sections (colon-separated)"
+msgstr ""
+
+#: src/whatis.c:137
+msgid "define the locale for this search"
+msgstr ""
+
+#: src/whatis.c:234
+#, c-format
+msgid "%s what?\n"
+msgstr "%s mikä?\n"
+
+#: src/whatis.c:410 src/whatis.c:428
+#, c-format
+msgid "warning: %s contains a pointer loop"
+msgstr "varoitus: %s sisältää osoitinsilmukan"
+
+#: src/whatis.c:422 src/whatis.c:430
+msgid "(unknown subject)"
+msgstr "(tuntematon aihe)"
+
+#: src/whatis.c:861
+#, c-format
+msgid "%s: nothing appropriate.\n"
+msgstr "%s: ei mitään sopivaa.\n"
+
+#: src/zsoelim.l:180
+#, c-format
+msgid "%s:%d: .so requests nested too deeply or are recursive"
+msgstr ""
+
+#: src/zsoelim.l:195
+#, c-format
+msgid "%s:%d: warning: failed .so request"
+msgstr ""
+
+#: src/zsoelim.l:217
+#, c-format
+msgid "%s:%d: warning: newline in .so request, ignoring"
+msgstr ""
+
+#: src/zsoelim.l:277
+#, c-format
+msgid "%s:%d: warning: malformed .lf request, ignoring"
+msgstr ""
+
+#: src/zsoelim.l:287
+#, c-format
+msgid "%s:%d: warning: newline in .lf request, ignoring"
+msgstr ""
+
+#: src/zsoelim.l:327
+#, c-format
+msgid "%s:%d: unterminated quote in roff request"
+msgstr ""
+
+#: src/zsoelim_main.c:69
+msgid "compatibility switch (ignored)"
+msgstr "yhteensopivuusvalitsin (jätetään huomiotta)"
+
+#~ msgid "must specify an input encoding"
+#~ msgstr "syötteen merkistö on annettava"
+
+#~ msgid "manpath list too long"
+#~ msgstr "opastepolkujen luettelo on liian pitkä"
+
+#, fuzzy
+#~ msgid "can't restore previous working directory"
+#~ msgstr "nykyistä hakemistoa ei voi määrittää"
+
+# Kannattaako näihin jättää alkuperäinen funktion nimi vai yrittää selittää
+# mitä oikeasti tarkoitetaan? "haarauttaminen epäonnistui"
+#~ msgid "fork failed"
+#~ msgstr "fork epäonnistui"
+
+#~ msgid "dup2 failed"
+#~ msgstr "dup2 epäonnistui"
+
+#~ msgid "close failed"
+#~ msgstr "close epäonnistui"
+
+#~ msgid "%s: %s%s"
+#~ msgstr "%s: %s%s"
+
+#~ msgid "waitpid failed"
+#~ msgstr "waitpid epäonnistui"
+
+#~ msgid "usage: %s [-hV] [man_database]\n"
+#~ msgstr "käyttö: %s [-hV] [opastetietokanta]\n"
+
+#~ msgid "usage: %s [-dhV] [-C file] [-M manpath] [section] ...\n"
+#~ msgstr "käyttö: %s [-dhV] [-C tiedosto] [-M opastepolku] [osio]...\n"
+
+#~ msgid "usage: %s [-mcwfhV] file ...\n"
+#~ msgstr "käyttö: %s [-mcwfhV] tiedosto ...\n"
+
+#~ msgid "-m -c: incompatible options"
+#~ msgstr "-m -c: epäyhteensopivat valitsimet"
+
+#~ msgid "error trying to read from stdin"
+#~ msgstr "virhe yritettäessä lukea vakiosyötteestä"
+
+#~ msgid "error writing to temporary file %s"
+#~ msgstr "virhe kirjoitettaessa väliaikaistiedostoon %s"
+
+#~ msgid "Reformatting %s, please wait...\n"
+#~ msgstr "Uudelleenmuotoillaan sivu %s, odota...\n"
+
+#~ msgid "usage: %s [-dqspuct|-h|-V] [-C file] [-f filename] [manpath]\n"
+#~ msgstr ""
+#~ "käyttö: %s [-dqspuct|-h|-V] [-C tiedosto] [-f tiedostonimi] "
+#~ "[opastepolku]\n"
+
+#~ msgid "usage: %s [[-gcdq] [-C file] [-m system]] | [-V] | [-h]\n"
+#~ msgstr "käyttö: %s [[-gcdq] [-C tiedosto] [-m järjestelmä]] | [-V] | [-h]\n"
+
+#~ msgid "%s, version %s, %s\n"
+#~ msgstr "%s, versio %s, %s\n"
+
+#~ msgid ""
+#~ "usage: %s [-dhV] [-r|-w|-e] [-m systems] [-M manpath] [-C file] "
+#~ "keyword ...\n"
+#~ msgstr ""
+#~ "käyttö: %s [-dhV] [-r|-w|-e] [-m järjestelmät] [-M opastepolku] [-C "
+#~ "tiedosto] avainsana ...\n"
+
+#~ msgid ""
+#~ "usage: %s [-dhV] [-r|-w] [-m systems] [-M manpath] [-C file] keyword ...\n"
+#~ msgstr ""
+#~ "käyttö: %s [-dhV] [-r|-w] [-m järjestelmät] [-M opastepolku] [-C "
+#~ "tiedosto] avainsana ...\n"
