@@ -2326,6 +2326,7 @@ print_help() {
 	echo "   -sl,   --show-locale   $(gettext "Show the timezone and time adjustment")"
 	echo "   -sa,   --show-all      $(gettext "Show all configurations")"
 	echo "   -cl,   --config-lang   $(gettext "Configure the language")"
+	echo "   -ul,   --update-lang   $(gettext "Configure the language")"
 	echo "   -ck,   --config-keymap $(gettext "Configure the keyboard")"
 	echo "   -cn,   --config-net    $(gettext "Configure the network")"
 	echo "   -cw,   --config-wireless $(gettext "Configure the wireless access point")"
@@ -2387,8 +2388,11 @@ parse_options() {
 					check_root
 					setup_language
 					;;
-				-sl|--show-locale)
-					echo "show locale"
+				-ul|--update-lang)
+					if [ -f $LOCALE ];then
+						source $LOCALE
+						_msgfmt ${LANG%.*}
+					fi
 					;;
 				-ck|--config-keymap)
 					check_root
