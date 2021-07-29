@@ -422,7 +422,7 @@ if [ -z $root ]; then
 	fi
 	do_resize_rootfs
 	do_mount_in_ram
-
+	echo "0" > /proc/sys/vm/swappiness
 	#
 	# If still not find the setup-nutyx file then it's time to giveup
 	#
