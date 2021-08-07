@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  Copyright (c) 2014 - 2018 by NuTyX team (http://nutyx.org)
+#  Copyright (c) 2014 - 2021 by NuTyX team (http://nutyx.org)
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -126,18 +126,12 @@ fi
 }
 check_group_exist()
 {
-	for i in `cat /etc/group|cut -d ":" -f1`
-	do
-		[ "${1}" == "${i}" ] && return 1
-	done
+	(getent group "${1}" > /dev/null) && return 1
 	return 0
 }
 check_user_exist()
 {
-	for i in `cat /etc/passwd|cut -d ":" -f1`
-	do
-		[ "${1}" == "${i}" ] && return 1
-	done
+	(getent passwd "${1}" > /dev/null) && return 1
 	return 0
 }
 check_user_valid()
@@ -176,11 +170,13 @@ setup_update()
 	--yesno "$(gettext "Would you like to enable automatic update") ?" 0 0
 	case $? in
 		0)
-			sed -i "s@^#[ -\t ]*setup-nutyx[ ]*stop@\t setup-nutyx stop@" \
+			sed -i "/setup-nutyx stop/d" \
+			/etc/rc.d/init.d/init_single
+			sed -i "/do_stop_sysklogd/i \\\tsetup-nutyx stop" \
 			/etc/rc.d/init.d/init_single
 			$SETUP_LOG "setup-nutyx --config-update" "activated";;
 		*)
-			sed -i "s@[ -\t]*setup-nutyx[ ]*stop@#\t setup-nutyx stop@" \
+			sed -i "/setup-nutyx stop/d" \
 			/etc/rc.d/init.d/init_single
 			$SETUP_LOG "setup-nutyx --config-update" "deactivated";;
 	esac
@@ -2413,7 +2409,7 @@ parse_options() {
 					;;
 				-cU|--config-update)
 					check_root
-#					setup_update
+					setup_update
 					;;
 				-cu|--create-user)
 					check_root
@@ -2540,12 +2536,7 @@ main () {
 		evaluate_retval
 	fi
 	if [ "$SETUP_UPGRADE" == "yes" ]; then
-		if [ "`cards upgrade --size 2> /dev/null`" != "0" ];then
-			cards upgrade
-		else
-			log_info_msg "System is up to date ..."
-			evaluate_retval
-		fi
+		upgrade-nutyx
 	fi
 	cleanup
 }
