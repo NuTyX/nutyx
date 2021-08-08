@@ -74,10 +74,10 @@ download_ready()
 main()
 {
 	if [ $UID -eq 0 ]; then
-		check_user_exist ||	create_cards_user
+		check_user_exist || create_cards_user
 		check_conf_exist || generate_conf
 		[ -f ${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_DEPOT}/${UPGRADE_READY} ] || return 0
-		cards upgrade --conf=${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_CARDS_CONF}
+		cards upgrade --no-sync --conf=${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_CARDS_CONF} && \
 		rm  -f ${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_DEPOT}/${UPGRADE_READY}
 		exit 0
 	fi
