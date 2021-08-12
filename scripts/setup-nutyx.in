@@ -164,23 +164,6 @@ check_user_valid()
 	fi
 	return 0
 }
-setup_update()
-{
-	dialog --title "  $(gettext "Configure automatic update")  "\
-	--yesno "$(gettext "Would you like to enable automatic update") ?" 0 0
-	case $? in
-		0)
-			sed -i "/setup-nutyx stop/d" \
-			/etc/rc.d/init.d/init_single
-			sed -i "/do_stop_sysklogd/i \\\tsetup-nutyx stop" \
-			/etc/rc.d/init.d/init_single
-			$SETUP_LOG "setup-nutyx --config-update" "activated";;
-		*)
-			sed -i "/setup-nutyx stop/d" \
-			/etc/rc.d/init.d/init_single
-			$SETUP_LOG "setup-nutyx --config-update" "deactivated";;
-	esac
-}
 setup_password()
 {
 	local PASSWORD CONFIRM_PASSWORD RESULT
@@ -298,7 +281,6 @@ setup_user()
 				$SETUP_LOG "setup-nutyx --create-user" "${DESCRIPTION} -G $USER_GROUPS -m ${NAME}"
 			fi
 			setup_password
-#			setup_update
 		fi
 		SETUP_CONFIG_USER="no"
 	fi
@@ -2326,7 +2308,6 @@ print_help() {
 	echo "   -ck,   --config-keymap $(gettext "Configure the keyboard")"
 	echo "   -cn,   --config-net    $(gettext "Configure the network")"
 	echo "   -cw,   --config-wireless $(gettext "Configure the wireless access point")"
-	echo "   -cU,   --config-update $(gettext "Configure automatic update")"
 	echo "   -cc,   --config-clock  $(gettext "Date and time settings")"
 	echo "   -cu,   --create-user   $(gettext "Add a user to the system")"
 	echo "   -ca,   --config-all    $(gettext "Configure the system")"
@@ -2406,10 +2387,6 @@ parse_options() {
 				-cc|--config-clock)
 					check_root
 					setup_clock
-					;;
-				-cU|--config-update)
-					check_root
-					setup_update
 					;;
 				-cu|--create-user)
 					check_root
