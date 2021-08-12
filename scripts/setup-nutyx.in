@@ -2536,7 +2536,7 @@ main () {
 		evaluate_retval
 	fi
 	if [ "$SETUP_UPGRADE" == "yes" ]; then
-		upgrade-nutyx
+		$(which upgrade-nutyx)
 	fi
 	cleanup
 }
