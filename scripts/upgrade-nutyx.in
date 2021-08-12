@@ -58,6 +58,15 @@ base ${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_DEPOT}/base" > \
 ${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_CARDS_CONF}
 	chown -R ${UPGRADE_USER}:${UPGRADE_USER} ${UPGRADE_HOME}/${UPGRADE_USER}
 }
+generate_fcron()
+{
+	[ -d /var/spool/fcron ] || return 0
+	echo "%midhourly 57-37 /sbin/upgrade-nutyx" > \
+	/var/spool/fcron/${UPGRADE_USER}.orig && \
+	chown fcron:fcron /var/spool/fcron/${UPGRADE_USER}.orig && \
+	chmod 640 /var/spool/fcron/${UPGRADE_USER}.orig && \
+	${FCRONTAB_COMMAND} -z -u ${UPGRADE_USER}
+}
 download_only()
 {
 	check_conf_exist || generate_conf
@@ -73,6 +82,10 @@ download_ready()
 }
 main()
 {
+	if [ -z ${FCRONTAB_COMMAND} ];then
+		echo "Please install 'fcron' package first !!!"
+		exit 1
+	fi
 	if [ $UID -eq 0 ]; then
 		check_user_exist || create_cards_user
 		check_conf_exist || generate_conf
@@ -85,6 +98,7 @@ main()
 		download_only
 		[ $(cards upgrade -c --conf=${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_CARDS_CONF}) == "yes" ] && \
 		touch ${UPGRADE_HOME}/${UPGRADE_USER}${UPGRADE_DEPOT}/${UPGRADE_READY}
+		chown -R ${UPGRADE_USER}:${UPGRADE_USER} ${UPGRADE_HOME}/${UPGRADE_USER}
 		exit 0
 	fi
 	echo "Cannot run this script with $USER account"
@@ -98,5 +112,5 @@ UPGRADE_CARDS_CONF=/pkg/cards.conf
 UPGRADE_DEPOT=/pkg/depot
 UPGRADE_READY=.ready
 UPGRADE_UID="96"
-
+FCRONTAB_COMMAND="$(which fcrontab)"
 main "$@"
