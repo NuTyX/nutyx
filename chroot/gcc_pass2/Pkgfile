@@ -1,4 +1,4 @@
-version=11.1.0
+version=11.2.0
 source=(http://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz \
 http://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz \
 http://www.multiprecision.org/mpc/download/mpc-1.2.1.tar.gz \
@@ -9,7 +9,7 @@ build()
 cd  gcc-$version
 
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  `dirname $($LFS_TARGET-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+  `dirname $($NTC_TARGET-gcc -print-libgcc-file-name)`/include-fixed/limits.h
 
 
 for file in gcc/config/{linux,i386/linux{,64}}.h
@@ -40,10 +40,10 @@ mv -v ../mpc-1.2.1 mpc
 mkdir -v build
 cd build
 
-CC=$LFS_TARGET-gcc                                   \
-CXX=$LFS_TARGET-g++                                  \
-AR=$LFS_TARGET-ar                                    \
-RANLIB=$LFS_TARGET-ranlib                            \
+CC=$NTC_TARGET-gcc                                   \
+CXX=$NTC_TARGET-g++                                  \
+AR=$NTC_TARGET-ar                                    \
+RANLIB=$NTC_TARGET-ranlib                            \
 ../configure                                         \
     --prefix=/tools                                  \
     --with-local-prefix=/tools                       \
@@ -66,8 +66,8 @@ cc dummy.c
 readelf -l a.out | grep ': /tools'
 
 rm -v dummy.c a.out
-mkdir -p $LFS/usr/lib
-ln -sv /tools/lib/libgcc_s.so{,.1} $LFS/usr/lib
-ln -sv /tools/lib/libstdc++.so{,.6} $LFS/usr/lib
-sed 's/tools/usr/' /tools/lib/libstdc++.la > $LFS/usr/lib/libstdc++.la
+mkdir -p $NTC/usr/lib
+ln -sv /tools/lib/libgcc_s.so{,.1} $NTC/usr/lib
+ln -sv /tools/lib/libstdc++.so{,.6} $NTC/usr/lib
+sed 's/tools/usr/' /tools/lib/libstdc++.la > $NTC/usr/lib/libstdc++.la
 }

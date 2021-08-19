@@ -1,4 +1,4 @@
-version=11.1.0
+version=11.2.0
 source=(http://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz \
 http://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz \
 http://www.multiprecision.org/mpc/download/mpc-1.2.1.tar.gz \
@@ -35,10 +35,10 @@ mkdir -v build
 cd build
 
 ../configure         \
-    --target=$LFS_TARGET       \
+    --target=$NTC_TARGET       \
     --prefix=/tools            \
     --with-glibc-version=2.11  \
-    --with-sysroot=$LFS        \
+    --with-sysroot=$NTC        \
     --with-newlib              \
     --without-headers          \
     --with-local-prefix=/tools \

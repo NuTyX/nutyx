@@ -1,4 +1,4 @@
-version=11.1.0
+version=11.2.0
 source=(http://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz)
 
 build()
@@ -8,12 +8,12 @@ mkdir -pv build
 cd build
 
 ../libstdc++-v3/configure           \
-    --host=$LFS_TARGET              \
+    --host=$NTC_TARGET              \
     --prefix=/tools                 \
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TARGET/include/c++/$version
+    --with-gxx-include-dir=/tools/$NTC_TARGET/include/c++/$version
 make
 make install
 }

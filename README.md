@@ -11,13 +11,13 @@ This processus is only valid for a normal NuTyX GNU/Linux
 
 ## In case you already launch the process once and interrupt it:
 
-you have to remove the LFS user from the nutyx base and restart from the
+you have to remove the ntc user from the nutyx base and restart from the
 begining
 
 ```
-userdel lfs
-rm -r /home/lfs
-rm -r /mnt/lfs
+userdel ntc
+rm -r /home/ntc
+rm -r /mnt/ntc
 ```
 
 
@@ -28,60 +28,60 @@ cards install cards.devel git
 ```
 
 
-# Time to build the toolchain
-## Create the LFS configuration variable
+# Time to build the NuTyX Toolchain
+## Create the NTC configuration variable
 ```
-export LFS=/mnt/lfs
+export NTC=/mnt/ntc
 ```
 
 ## Create the folders
 ```
-mkdir -pv $LFS/{sources,tools}
+sudo mkdir -pv $NTC/{sources,tools}
 ```
 
 ## Add the needed links
 ```
-ln -svf $LFS/tools /
-ln -svf $LFS/sources /
+sudo ln -svf $NTC/tools /
+sudo ln -svf $NTC/sources /
 ```
 
-## Create the LFS user
+## Create the ntc user
 ```
-groupadd lfs
-useradd -s /bin/bash -g lfs -m -k /dev/null lfs
-passwd lfs
-chown -v lfs $LFS/{tools,sources}
-chmod -v a+wt $LFS/sources
-chown -v lfs $LFS
+sudo groupadd ntc
+sudo useradd -s /bin/bash -g ntc -m -k /dev/null ntc
+sudo passwd ntc
+sudo chown -v ntc $NTC/{tools,sources}
+sudo chmod -v a+wt $NTC/sources
+sudo chown -v ntc $NTC
 ```
 
 ## Adjust the working environment:
-### the /home/lfs/.bash
+### the /home/ntc/.bash
 
 ```
-cat > /home/lfs/.bash_profile << "EOF"
+cat > /home/ntc/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
 ```
-### and the /home/lfs/.bashrc file
+### and the /home/ntc/.bashrc file
 
 ```
 echo "set +h
 umask 022
-LFS=$LFS
+NTC=$NTC
 LC_ALL=POSIX
-LFS_TARGET=$(uname -m)-nutyx-linux-gnu
-PATH=/home/lfs/bin:/tools/bin:/bin:/usr/bin
-export LFS LC_ALL LFS_TARGET PATH" > /home/lfs/.bashrc
+NTC_TARGET=$(uname -m)-nutyx-linux-gnu
+PATH=/home/ntc/bin:/tools/bin:/bin:/usr/bin
+export NTC LC_ALL NTC_TARGET PATH" > /home/ntc/.bashrc
 ```
 
-## Now go in the LFS user
+## Now go in the NTC user
 
 ```
-su - lfs
+su - ntc
 ```
 
-## You are now in the LFS user, time to clone this git project
+## You are now in the ntc user, time to clone this git project
 ```
 git clone https://github.com/nutyx/nutyx development
 ```
@@ -106,8 +106,8 @@ pass
 
 ## When you see following message (about 30 minutes later or more ...):
 ```
-=======> Building '/home/lfs/development/chroot/cards/Pkgfile' succeeded.
-/home/lfs/development/chroot
+=======> Building '/home/ntc/development/chroot/cards/Pkgfile' succeeded.
+/home/ntc/development/chroot
 ```
 it means you successfully build the toolchain.
 

@@ -12,5 +12,5 @@ make
 cp -v perl cpan/podlators/scripts/pod2man /tools/bin
 mkdir -pv /tools/lib/perl5/$version
 cp -Rv lib/* /tools/lib/perl5/$version
-ln -s /tools/bin/perl $LFS/usr/bin
+ln -s /tools/bin/perl $NTC/usr/bin
 }

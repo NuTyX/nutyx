@@ -8,9 +8,9 @@ make
 make install
 for i in cat echo pwd stty
 do
-	ln -s /tools/bin/$i $LFS/bin/$i
+	ln -s /tools/bin/$i $NTC/bin/$i
 done
 
-mkdir -p $LFS/usr/bin
-ln -s /tools/bin/env $LFS/usr/bin/env
+mkdir -p $NTC/usr/bin
+ln -s /tools/bin/env $NTC/usr/bin/env
 }
