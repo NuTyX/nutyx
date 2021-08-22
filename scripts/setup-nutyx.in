@@ -2250,7 +2250,7 @@ setup_esp() {
 	local FORMAT
 	check_esp
 	if [ ! -z $EFI_SYS_PART ]; then
-		FORMAT=`print_file_system $EFI_SYS_PART`
+		FORMAT="$(print_file_system $EFI_SYS_PART)"
 		if [ "$FORMAT" != "vfat" ]; then
 			dialog --title " $(gettext "Launch the format process ?") " \
 			--colors --yesno "$(gettext "The partition") \Zb\Z1${EFI_SYS_PART}\Zn \
@@ -2266,7 +2266,7 @@ $(gettext "Are you sure you want to continue ?")" 7 60
 					break;;
 			esac
 		fi
-		FORMAT=`print_file_system $EFI_SYS_PART`
+		FORMAT="$(print_file_system $EFI_SYS_PART)"
 		if [ "$FORMAT" == "vfat" ]; then
 			$SETUP_LOG "setup-nutyx" "EFI partition $EFI_SYS_PART added in /etc/fstab"
 			echo "$EFI_SYS_PART /boot/efi     vfat       defaults            0     0" >> /etc/fstab
@@ -2521,7 +2521,7 @@ main () {
 #
 # VARIABLES
 readonly COMMAND="$0"
-readonly SETUP_ARCH="`uname -m`"
+readonly SETUP_ARCH="$(uname -m)"
 readonly VERSION="#VERSION#"
 
 DIALOG_OK=0
