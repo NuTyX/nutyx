@@ -104,6 +104,7 @@ fi
 [ ! -z $MOUNT ] && umount ${LFS}/${DEPOT}
 
 umount ${LFS}/run
+umount ${LFS}/dev/shm
 umount ${LFS}/dev/pts
 umount ${LFS}/dev
 umount ${LFS}/proc
@@ -128,6 +129,8 @@ mount -t devpts devpts ${LFS}/dev/pts
 mount -t proc proc ${LFS}/proc
 mount -t sysfs sysfs ${LFS}/sys
 mount -t tmpfs tmpfs ${LFS}/run
+mount -t tmpfs tmpfs ${LFS}/dev/shm
+
 if [ -h ${LFS}/dev/shm ]; then
    mkdir -p ${LFS}/$(readlink ${LFS}/dev/shm)
 fi
