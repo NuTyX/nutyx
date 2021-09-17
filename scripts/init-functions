@@ -1630,6 +1630,12 @@ do_stop_network()
       ;;
    esac
 }
+do_restart_network()
+{
+	do_stop_network
+	sleep 1
+	do_start_network
+}
 ################################################################################
 # do_start_sysklogd()                                                          #
 #                                                                              #
@@ -1682,17 +1688,17 @@ do_stop_sysklogd()
 }
 do_status_sysklogd()
 {
-	statusproc SYSLOGDCMD
-	statusproc KLOGDCMD
+	statusproc $SYSLOGDCMD
+	statusproc $KLOGDCMD
 }
-do_reload_syslogs()
+do_reload_sysklogd()
 {
 	log_info_msg "Reloading system log daemon config file..."
 	pid=`pidofproc syslogd`
 	kill -HUP "${pid}"
 	evaluate_retval
 }
-do_cleanup_syslogs()
+do_cleanup_sysklogd()
 {
 	log_info_msg "Cleanup logs..."
 	for file in sys daemon kern mail auth user boot cron
@@ -1707,6 +1713,12 @@ do_cleanup_syslogs()
 	/var/log/wtmp.old
 	touch /var/log/wtmp
 	evaluate_retval
+}
+do_restart_sysklogd()
+{
+		do_stop_sysklogd
+		sleep 1
+		do_start_sysklogd
 }
 ################################################################################
 # do_stop_send_signals()                                                       #
@@ -1739,6 +1751,46 @@ do_stop_sendsignals()
 		log_failure_msg
 	fi
 }
+########################################################################
+# do_stop_halt()                                                       #
+#                                                                      #
+# Description : Halt the system                                        #
+########################################################################
+do_stop_halt()
+{
+	halt -d -f -i -p
+}
+########################################################################
+# do_stop_reboot                                                       #
+#                                                                      #
+# Description : Reboot the system                                      #
+########################################################################
+do_stop_reboot()
+{
+	log_info_msg "Restarting system..."
+	reboot -d -f -i
+}
+########################################################################
+# Begin random
+#
+# Description : Seed /dev/urandom
+########################################################################
+do_start_random()
+{
+	log_info_msg "Initializing kernel random number generator..."
+	if [ -f /var/tmp/random-seed ]; then
+		/bin/cat /var/tmp/random-seed >/dev/urandom
+	fi
+
+	/bin/dd if=/dev/urandom of=/var/tmp/random-seed count=1 &>/dev/null
+	evaluate_retval
+}
+do_stop_random()
+{
+	log_info_msg "Saving random seed..."
+	/bin/dd if=/dev/urandom of=/var/tmp/random-seed count=1 &>/dev/null
+	evaluate_retval
+}
 ################################################################################
 # print_file_system()                                                          #
 #                                                                              #
@@ -1763,4 +1815,25 @@ print_file_system() {
     echo $FS
   fi
 }
+
+########################################################################
+# main                                                                 #
+#                                                                      #
+# Purpose: Substitute the base command and passed argument to          #
+# the corresponding function if it exist                               #
+########################################################################
+[ "$(type -t do_${1}_$(basename ${0}))" == "function" ] && do_${1}_$(basename ${0})
+if [ $# -lt 1 ];then
+	for O in start stop restart status reload cleanup
+	do
+		if [ "$(type -t do_${O}_$(basename ${0}))" == "function" ]; then
+			if [ -z "$OPTIONS" ];then
+				OPTIONS="$O"
+				continue
+			fi
+			OPTIONS+="|$O"
+		fi
+	done
+	[ ! -z "$OPTIONS" ] && echo "Usage: ${0} {$OPTIONS}"
+fi
 # End /lib/services/init-functions

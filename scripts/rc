@@ -196,10 +196,10 @@ do
 
    case ${runlevel} in
       0|6)
-         run ${i} stop
+         run $(dirname ${i})/$(readlink ${i}) stop
          ;;
       *)
-         run ${i} start
+         run $(dirname ${i})/$(readlink ${i}) start
          ;;
    esac
 
