@@ -1030,6 +1030,7 @@ FONT="LatGrkCyr-8x16"
 UNICODE="1"
 LOGLEVEL=1
 EOF
+	mkdir -p $(dirname ${XORGKB})
 	cat > ${XORGKB} << "EOF"
 Section "InputClass"
   Identifier "Generic Keyboard"
@@ -1176,40 +1177,70 @@ $SETUP_LOG "setup-nutyx --config-keymap" "KEYMAP=${REPLY}.map saved in ${CONSOLE
 loadkeys ${REPLY}.map > /dev/null 2>&1
 case $REPLY in
 	us)
-		echo '  Option "XkbLayout" "us"' >> ${XORGKB};;
+		echo '  Option "XkbLayout" "us"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="us"' > ${WAYLKB};;
 	be-latin1|wangbe*)
-		echo '  Option "XkbLayout" "be"' >> ${XORGKB};;
-	bg*) echo '  Option XkbLayout "bg"' >> ${XORGKB};;
-	cf) echo '  Option "XkbLayout" "cf"' >> ${XORGKB};;
-	cz*) echo '  Option "XkbLayout" "cz"' >> ${XORGKB};;
+		echo '  Option "XkbLayout" "be"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="be"' > ${WAYLKB};;
+	bg*) echo '  Option XkbLayout "bg"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="bg"' > ${WAYLKB};;
+	cf) echo '  Option "XkbLayout" "cf"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="cf"' > ${WAYLKB};;
+	cz*) echo '  Option "XkbLayout" "cz"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="cz"' > ${WAYLKB};;
 	fr|fr-*|azerty)
-		echo '  Option "XkbLayout" "fr"' >> ${XORGKB};;
-	fr_CH*) echo '  Option "XkbLayout" "ch(fr)"' >> ${XORGKB};;
-	de_CH*) echo '  Option "XkbLayout" "ch"' >> ${XORGKB};;
-	de-*) echo '  Option "XkbLayout" "de"' >> ${XORGKB};;
+		echo '  Option "XkbLayout" "fr"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="fr"' > ${WAYLKB};;
+	fr_CH*) echo '  Option "XkbLayout" "ch(fr)"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="ch(fr)"' > ${WAYLKB};;
+	de_CH*) echo '  Option "XkbLayout" "ch"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="ch"' > ${WAYLKB};;
+	de-*) echo '  Option "XkbLayout" "de"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="de"' > ${WAYLKB};;
 	dk|dk-latin1)
-		echo '  Option "XkbLayout" "dk"' >> ${XORGKB};;
-	es|es-*) echo '  Option "XkbLayout" "es"' >> ${XORGKB};;
+		echo '  Option "XkbLayout" "dk"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="dk"' > ${WAYLKB};;
+	es|es-*) echo '  Option "XkbLayout" "es"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="es"' > ${WAYLKB};;
 	hu|hu101)
-		echo '  Option "XkbLayout" "hu"' >> ${XORGKB};;
-	gr) echo '  Option "XkbLayout" "gr"' >> ${XORGKB};;
-	nl|nl2) echo '  Option "XkbLayout" "nl"' >> ${XORGKB};;
-	it*) echo '  Option "XkbLayout" "it"' >> ${XORGKB};;
-	lu*) echo '  Option "XkbLayout" "lu"' >> ${XORGKB};;
-	pt*) echo '  Option "XkbLayout" "pt"' >> ${XORGKB};;
-	no*) echo '  Option "XkbLayout" "no"' >> ${XORGKB};;
-	se*) echo '  Option "XkbLayout" "sv"' >> ${XORGKB};;
-	fi*) echo '  Option "XkbLayout" "fi"' >> ${XORGKB};;
-	ga*) echo '  Option "XkbLayout" "ga"' >> ${XORGKB};;
-	el*) echo '  Option "XkbLayout" "el"' >> ${XORGKB};;
-	pl*) echo '  Option "XkbLayout" "pl"' >> ${XORGKB};;
-	ro_*) echo '  Option "XkbLayout" "ro"' >> ${XORGKB};;
-	ru*) echo '  Option "XkbLayout" "ru"' >> ${XORGKB};;
-	sr*) echo '  Option "XkbLayout" "sr"' >> ${XORGKB};;
-	slo*) echo '  Option "XkbLayout" "sk"' >> ${XORGKB};;
-	cro*) echo '  Option "XkbLayout" "hr"' >> ${XORGKB};;
-	tr*) echo '  Option "XkbLayout" "tr"' >> ${XORGKB};;
-	uk) echo ' Option "XkbLayout" "uk"' >> ${XORGKB};;
+		echo '  Option "XkbLayout" "hu"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="hu"' > ${WAYLKB};;
+	gr) echo '  Option "XkbLayout" "gr"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="gr"' > ${WAYLKB};;
+	nl|nl2) echo '  Option "XkbLayout" "nl"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="nl"' > ${WAYLKB};;
+	it*) echo '  Option "XkbLayout" "it"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="it"' > ${WAYLKB};;
+	lu*) echo '  Option "XkbLayout" "lu"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="lu"' > ${WAYLKB};;
+	pt*) echo '  Option "XkbLayout" "pt"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="pt"' > ${WAYLKB};;
+	no*) echo '  Option "XkbLayout" "no"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="no"' > ${WAYLKB};;
+	se*) echo '  Option "XkbLayout" "sv"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="sv"' > ${WAYLKB};;
+	fi*) echo '  Option "XkbLayout" "fi"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="fi"' > ${WAYLKB};;
+	ga*) echo '  Option "XkbLayout" "ga"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="ga"' > ${WAYLKB};;
+	el*) echo '  Option "XkbLayout" "el"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="el"' > ${WAYLKB};;
+	pl*) echo '  Option "XkbLayout" "pl"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="pl"' > ${WAYLKB};;
+	ro_*) echo '  Option "XkbLayout" "ro"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="ro"' > ${WAYLKB};;
+	ru*) echo '  Option "XkbLayout" "ru"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="ru"' > ${WAYLKB};;
+	sr*) echo '  Option "XkbLayout" "sr"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="sr"' > ${WAYLKB};;
+	slo*) echo '  Option "XkbLayout" "sk"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="sk"' > ${WAYLKB};;
+	cro*) echo '  Option "XkbLayout" "hr"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="hr"' > ${WAYLKB};;
+	tr*) echo '  Option "XkbLayout" "tr"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="tr"' > ${WAYLKB};;
+	uk) echo ' Option "XkbLayout" "uk"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="uk"' > ${WAYLKB};;
 esac
 echo "EndSection" >> ${XORGKB}
 $SETUP_LOG "setup-nutyx --config-keymap" "${XORGKB} adjusted"
@@ -2539,6 +2570,7 @@ fi
 SETUP_LOG="setup-nutyx-log"
 CARDS="/etc/cards.conf"
 XORGKB="/etc/X11/xorg.conf.d/20-keyboard.conf"
+WAYLKB="/etc/profile.d/keyboard.sh"
 CONSOLE="/etc/sysconfig/console"
 VCONSOLE="/etc/vconsole.conf"
 LOCALE="/etc/profile.d/i18n.sh"
