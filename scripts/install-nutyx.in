@@ -1189,6 +1189,7 @@ simple-scan gnome-weather gnome-chess balsa"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox dmenu"
 [ -z "$JWM" ] && JWM="lxdm jwm"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
+[ -z "$LXQT" ] && LXQT="sddm lxqt"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome"
@@ -1227,12 +1228,13 @@ if [ ! -z $ISO ]; then
 		OPENBOX) CORE+="$STRICT $BASE $CLI $GUI ${GUI_EXTRA} $XORG $OPENBOX";;
 		JWM) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $JWM";;
 		LXDE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
+		LXQT) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXQT";;
 		XFCE4) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
 		MATE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
 		GNOME) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
-gui_extra, openbox, jwm, lxde, xfce4, mate, gnome, kde5" && exit 1;;
+gui_extra, openbox, jwm, lxde, lxqt, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1566,6 +1568,7 @@ GNOME_EXTRA: ${GNOME_EXTRA}
 KDE5_EXTRA : ${KDE5_EXTRA}
 JWM        : $JWM
 LXDE       : $LXDE
+LXQT       : $LXQT
 XFCE4      : $XFCE4
 MATE       : $MATE
 GNOME      : $GNOME
