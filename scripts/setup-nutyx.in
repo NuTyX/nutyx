@@ -1966,28 +1966,6 @@ submenu \"NuTyX SysV \" {
   }
  }
 }
-submenu \"NuTyX RuNyX \" {
- submenu \" NuTyX RuNyX Quiet Mode \" {
-  submenu \"  NuTyX RuNyX Quiet LTS version \" {
-  linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
-  submenu \"  NuTyX RuNyX Quiet Latest version \" {
-   linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-   #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
- }
-  submenu \" NuTyX RuNyX Verbose Mode \" {
-   submenu \"  NuTyX RuNyX Verbose LTS version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-   }
-   submenu \"  NuTyX RuNyX Verbose Latest version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd
-   }
-  }
- }
 submenu \"NuTyX SystemD \" {
  submenu \" NuTyX SystemD Quiet Mode \" {
   submenu \"  NuTyX SystemD Quiet LTS version \" {
@@ -2009,7 +1987,29 @@ submenu \"NuTyX SystemD \" {
   #  initrd /${GRUB_DESTINATION_DIR}initrd
   }
  }
-}" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
+}
+submenu \"NuTyX RuNyX (Experimental)\" {
+ submenu \" NuTyX RuNyX Quiet Mode \" {
+  submenu \"  NuTyX RuNyX Quiet LTS version \" {
+  linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
+  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
+  }
+  submenu \"  NuTyX RuNyX Quiet Latest version \" {
+   linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
+   #  initrd /${GRUB_DESTINATION_DIR}initrd
+  }
+ }
+  submenu \" NuTyX RuNyX Verbose Mode \" {
+   submenu \"  NuTyX RuNyX Verbose LTS version \" {
+    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro
+    #  initrd /${GRUB_DESTINATION_DIR}initrd-419
+   }
+   submenu \"  NuTyX RuNyX Verbose Latest version \" {
+    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro
+    #  initrd /${GRUB_DESTINATION_DIR}initrd
+   }
+  }
+ }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 	else
 		#
 		# NuTyX is not yet installed
