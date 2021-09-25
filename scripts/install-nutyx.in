@@ -1190,6 +1190,7 @@ simple-scan gnome-weather gnome-chess balsa"
 [ -z "$JWM" ] && JWM="lxdm jwm"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
 [ -z "$LXQT" ] && LXQT="sddm lxqt"
+[ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lxdm enlightenment"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome"
@@ -1230,11 +1231,12 @@ if [ ! -z $ISO ]; then
 		LXDE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
 		LXQT) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXQT";;
 		XFCE4) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
+		ENLIGHTENMENT) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $ENLIGHTENMENT";;
 		MATE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
 		GNOME) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
-gui_extra, openbox, jwm, lxde, lxqt, xfce4, mate, gnome, kde5" && exit 1;;
+gui_extra, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1545,34 +1547,35 @@ show_variables() {
 echo "
 List of variables: 
 
-LFS        : $LFS
-URL        : $URL
-VERSION    : $VERSION
-KERNEL     : $KERNEL
-DEPOT      : $DEPOT
-MOUNT      : $MOUNT
-SHELL      : $SHELL
-DEPOT_BASE : $DEPOT_BASE
-CHROOT     : $CHROOT
-CORE       : $CORE
-DEVEL      : $DEVEL
-ISO        : $ISO"
-[ -z "$ISO" ] || echo "STRICT     : $STRICT
-MINI       : $MINI
-BASE       : $BASE
-CLI        : $CLI
-GUI        : $GUI
-GUI_EXTRA  : $GUI_EXTRA
-XORG       : $XORG
-GNOME_EXTRA: ${GNOME_EXTRA}
-KDE5_EXTRA : ${KDE5_EXTRA}
-JWM        : $JWM
-LXDE       : $LXDE
-LXQT       : $LXQT
-XFCE4      : $XFCE4
-MATE       : $MATE
-GNOME      : $GNOME
-KDE5       : $KDE5
+LFS          : $LFS
+URL          : $URL
+VERSION      : $VERSION
+KERNEL       : $KERNEL
+DEPOT        : $DEPOT
+MOUNT        : $MOUNT
+SHELL        : $SHELL
+DEPOT_BASE   : $DEPOT_BASE
+CHROOT       : $CHROOT
+CORE         : $CORE
+DEVEL        : $DEVEL
+ISO          : $ISO"
+[ -z "$ISO" ] || echo "STRICT       : $STRICT
+MINI         : $MINI
+BASE         : $BASE
+CLI          : $CLI
+GUI          : $GUI
+GUI_EXTRA    : $GUI_EXTRA
+XORG         : $XORG
+GNOME_EXTRA  : ${GNOME_EXTRA}
+KDE5_EXTRA   : ${KDE5_EXTRA}
+JWM          : $JWM
+LXDE         : $LXDE
+LXQT         : $LXQT
+ENLIGHTENMENT: $ENLIGHTENMENT
+XFCE4        : $XFCE4
+MATE         : $MATE
+GNOME        : $GNOME
+KDE5         : $KDE5
 ISO Filename $LFS/NuTyX_${ARCH}-$VERSION_NUTYX-$ISO.iso"
 }
 print_help() {
