@@ -1635,8 +1635,12 @@ local FILE MD5SUM VERSION_KERNEL LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
 SCRIPTDIR
 
 LABEL="nutyxcd"
-GRUB_EFI_ARCH="x86_64"
-GRUB_EFI_IMG="bootx64.efi"
+
+[ "$(uname -m)" == "x86_64" ] &&  GRUB_EFI_ARCH="x86_64"
+[ "$(uname -m)" == "i686" ] &&  GRUB_EFI_ARCH="i386"
+[ "$(uname -m)" == "x86_64" ] && GRUB_EFI_IMG="bootx64.efi"
+[ "$(uname -m)" == "i686" ] && GRUB_EFI_IMG="bootia32.efi"
+
 ISODIR=$LFS/ISO
 SCRIPTDIR=$(pwd -P)
 
