@@ -1854,7 +1854,9 @@ setup_grub() {
 	mount $PARTITION $TMP/boot_partition
 
 	if [ "${1}" == "efi" ];then
-		TARGET="--target=x86_64-efi"
+		[ "$(uname -m)" == "x86_64" ] && TARGET="--target=x86_64-efi"
+		[ "$(uname -m)" == "i686" ] && TARGET="--target=i386-efi"
+
 		OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
 		SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
 		mount -t efivarfs efivarfs /sys/firmware/efi/efivars
