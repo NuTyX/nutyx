@@ -1742,7 +1742,7 @@ setup_install() {
 		[ ! -z $EFI_SYS_PART ] && FORMAT=`print_file_system $EFI_SYS_PART`
 		if [ "$FORMAT" == "vfat" ];then
 			dialog --title " $(gettext "Choose your favorite Boot Manager") " \
-				--menu "$(gettext "Grub, Efibootmgr or nothing"): $result" 15 60 3 \
+				--menu "$(gettext "Grub, Efibootmgr or nothing"): $result" 15 70 3 \
 				"Grub" "$(gettext "Advanced Linux Kernel boot manager")" \
 				"Efibootmgr" "$(gettext "Classic boot tool")" \
 				"Nothing" "$(gettext "To use the one used on other distro")" 2>$TMP/boot_choice
