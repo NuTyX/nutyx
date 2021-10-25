@@ -1392,6 +1392,7 @@ check_available_disk() {
 			DISK=$DISK_LIST
 			DISK=`echo $DISK|sed  "s/ //"`
 			echo "$DISK_LIST" > $TMP/disk
+			CHECK_SINGLE_DISK="yes"
 		fi
 		CHECK_HD_OK="yes"
 	fi
@@ -1403,6 +1404,30 @@ check_available_partition() {
 	if [ "$CHECK_HD_OK" == "no" ]; then
 		check_available_disk
 		 [ "$CHECK_HD_OK" == "no" ] && return
+	fi
+	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
+	if [ -z "$PARTITION_LIST" ];then
+		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
+			# Auto-partitionning
+			if [ -d "$EFIVARS" ];then
+				echo "label: gpt" >> $TMP/PARTITIONNING
+			else
+				echo "label: dos" >> $TMP/PARTITIONNING
+			fi
+			echo "device: $DISK" >> $TMP/PARTITIONNING
+			if [ -d "$EFIVARS" ];then
+				echo "
+${DISK}1 size=100M,type=uefi
+${DISK}2 size=4G,type=swap
+${DISK}3 type=linux" >> $TMP/PARTITIONNING
+			else
+				echo "
+${DISK}1 size=4G,type=swap
+${DISK}2 type=linux" >> $TMP/PARTITIONNING
+			fi
+			CHECK_PART_OK="yes"
+			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="new"
+		fi
 	fi
 	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
 	if [ -z "$PARTITION_LIST" ];then
@@ -2597,6 +2622,7 @@ SETUP_CONFIG_WIFI="no"
 CHECK_HD_OK="no"
 CHECK_PART_OK="no"
 CHECK_SINGLE_PARTITION="no"
+CHECK_SINGLE_DISK="no"
 
 SETUP_LXDM_CONFFILE="/etc/lxdm/lxdm.conf"
 
