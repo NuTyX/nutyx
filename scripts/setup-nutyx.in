@@ -1565,7 +1565,7 @@ setup_format() {
 		1|255)
 			break;;
 	esac
-	FORMAT=`print_file_system $PARTITION`
+	FORMAT="$(print_file_system $PARTITION)"
 }
 erase_nutyx() {
 	local DIR REAL
@@ -1732,7 +1732,7 @@ setup_install() {
 		mkfs.ext4 -F $PARTITION > /dev/tty2 || error "mkfs.ext4 $PARTITION"
 		$SETUP_LOG "setup-nutyx" "mkfs.ext4 -F $PARTITION"
 	fi
-	FORMAT=`print_file_system $PARTITION`
+	FORMAT="$(print_file_system $PARTITION)"
 	echo "FORMAT=$FORMAT" > /dev/tty2
 	if [ "$FORMAT" == "no" ]; then
 		setup_format
@@ -1754,6 +1754,14 @@ setup_install() {
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
 	echo "$PARTITION" > $TMP/boot
+	if [ "$CHECK_PART_OK" == "new" ]; then
+		if [ ! -d "$EFIVARS" ];then
+			setup_grub
+		else
+			setup_grub "efi" "$MF"
+		fi
+		return
+	fi
 	if [ ! -d "$EFIVARS" ];then
 		dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
 		--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
@@ -1764,7 +1772,7 @@ setup_install() {
 		esac
 	else
 		FORMAT="no"
-		[ ! -z $EFI_SYS_PART ] && FORMAT=`print_file_system $EFI_SYS_PART`
+		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
 		if [ "$FORMAT" == "vfat" ];then
 			dialog --title " $(gettext "Choose your favorite Boot Manager") " \
 				--menu "$(gettext "Grub, Efibootmgr or nothing"): $result" 15 70 3 \
@@ -1865,15 +1873,18 @@ setup_grub() {
 		select_partition "$(gettext "Configure the boot of the PC")"
 		[ "$PARTITION" == "no" ] && return
 	fi
-	FORMAT=$(print_file_system $PARTITION)
+	FORMAT="$(print_file_system $PARTITION)"
 	if [ "$FORMAT" == "no" ]; then
 		setup_format
 		[ "$FORMAT" == "no" ] && return
 	fi
-	# We saved the current MBR if no yet saved
-	# if not efi mode
-	[ "${1}" == "efi" ] || \
-	dd if=$DISK of=$TMP/MBR bs=512 count=1 2>/dev/null
+
+	# If not a new table of partition
+	#  IF not efi mode we saved the current MBR if no yet saved
+	if [ "$CHECK_PART_OK" != "new" ]; then
+		[ "${1}" == "efi" ] || \
+		dd if=$DISK of=$TMP/MBR bs=512 count=1 2>/dev/null
+	fi
 	# Copy all the necessary files
 	mkdir $TMP/boot_partition
 	mount $PARTITION $TMP/boot_partition
@@ -1904,9 +1915,11 @@ setup_grub() {
 			--msgbox " $(gettext "You already have a copy of the original MBR, I will not make a backup of it") " \
 			6 50
 		else
-			cp $TMP/MBR $GRUB_CONFIG_DIR/MBR.original
-			dialog --title " $(gettext "Good to know") " \
-			--msgbox " $(gettext "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need") " 10 60
+			if [ -f $TMP/MBR ]; then
+				cp $TMP/MBR $GRUB_CONFIG_DIR/MBR.original
+				dialog --title " $(gettext "Good to know") " \
+				--msgbox " $(gettext "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need") " 10 60
+			fi
 		fi
 	fi
 	if [ ! -f $GRUB_CONFIG_DIR/$GRUB_CONFIG_FILE ]; then
@@ -1952,8 +1965,8 @@ BOOT_FS=${BOOT_FS}
 NuTyX_FS=${NuTyX_FS}
 PATH=$PATH" >> ${GRUB_LOG_FILE}
 		env >> ${GRUB_LOG_FILE}
-		# Restore MBR
-		dd if=$TMP/MBR of=$DISK bs=512 count=1 > 2/dev/null
+		# Restore MBR if exist
+		[ -f $TMP/MBR ] && dd if=$TMP/MBR of=$DISK bs=512 count=1 > 2/dev/null
 		dialog --title " $(gettext "Something went wrong probably the file system is not supported") " \
 		--msgbox "`cat ${GRUB_LOG_FILE}`" 30 70
 		if [ "${1}" == "efi" ]; then
