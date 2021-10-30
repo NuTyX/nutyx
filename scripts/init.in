@@ -256,8 +256,8 @@ do_mount_iso() {
 	done
 }
 do_resize_rootfs() {
-	MEM_TOTAL=`cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g"`
-	MEM_TOTAL=$((MEM_TOTAL / 1024 / 100))
+	MEM_TOTAL="$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")"
+	MEM_TOTAL="$((MEM_TOTAL / 1024 / 100))"
 	[ $MEM_TOTAL -gt 15 ] && ROOTFS_QUOTA=60
 	[ $MEM_TOTAL -gt 35 ] && ROOTFS_QUOTA=75
 	[ $MEM_TOTAL -gt 75 ] && ROOTFS_QUOTA=80
