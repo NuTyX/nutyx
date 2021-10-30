@@ -1172,7 +1172,7 @@ fi
 [ -z "$BASE" ] && BASE="efibootmgr linux-firmware systemd runyx \
 wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service dosfstools make-ca xdg-user-dirs \
-sound-theme-freedesktop ntp ntp.service nano"
+sound-theme-freedesktop ntp ntp.service nano neofetch"
 [ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet"
 [ -z "$XORG" ] && XORG="xorg-xinit xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xf86-video-ati \
@@ -1181,7 +1181,7 @@ xorg-xf86-video-nouveau xorg-xf86-video-vesa \
 xorg-xrandr xorg-setxkbmap"
 
 [ -z "$GUI_EXTRA" ] && GUI_EXTRA="firefox thunderbird gparted leafpad \
-scrot vlc telegram"
+scrot vlc telegram-desktop"
 [ -z "$KDE5_EXTRA" ] && KDE5_EXTRA="kdenlive k3b"
 [ -z "$GNOME_EXTRA" ] && GNOME_EXTRA="epiphany seahorse-nautilus evolution \
 simple-scan gnome-weather gnome-chess balsa"
