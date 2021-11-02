@@ -1400,7 +1400,7 @@ check_available_disk() {
 }
 check_available_partition() {
 	unset PARTITION_LIST
-	local PARTITION_FULL_LIST
+	local PARTITION_FULL_LIST MEM_TOTAL SWAP
 	if [ "$CHECK_HD_OK" == "no" ]; then
 		check_available_disk
 		 [ "$CHECK_HD_OK" == "no" ] && return
@@ -1409,6 +1409,12 @@ check_available_partition() {
 	if [ -z "$PARTITION_LIST" ];then
 		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
 			# Auto-partitionning
+			MEM_TOTAL="$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")"
+			MEM_TOTAL="$((MEM_TOTAL / 1024 / 100))"
+			[ $MEM_TOTAL -gt 4 ] && SWAP="1G"
+			[ $MEM_TOTAL -gt 9 ] && SWAP="2G"
+			[ $MEM_TOTAL -gt 15 ] && SWAP="4G"
+
 			if [ -d "$EFIVARS" ];then
 				echo "label: gpt" >> $TMP/PARTITIONNING
 			else
@@ -1418,11 +1424,11 @@ check_available_partition() {
 			if [ -d "$EFIVARS" ];then
 				echo "
 ${DISK}1: size=100M,type=uefi
-${DISK}2: size=4G,type=swap
+${DISK}2: size=$SWAP,type=swap
 ${DISK}3: type=linux" >> $TMP/PARTITIONNING
 			else
 				echo "
-${DISK}1: size=4G,type=swap
+${DISK}1: size=$SWAP,type=swap
 ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
