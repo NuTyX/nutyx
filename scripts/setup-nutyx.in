@@ -1412,7 +1412,7 @@ check_available_partition() {
 			MEM_TOTAL="$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")"
 			MEM_TOTAL="$((MEM_TOTAL / 1024 / 100))"
 			[ $MEM_TOTAL -gt 4 ] && SWAP="1G"
-			[ $MEM_TOTAL -gt 9 ] && SWAP="2G"
+			[ $MEM_TOTAL -gt 8 ] && SWAP="2G"
 			[ $MEM_TOTAL -gt 15 ] && SWAP="4G"
 
 			if [ -d "$EFIVARS" ];then
