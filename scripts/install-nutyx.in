@@ -1755,7 +1755,9 @@ do
 	[ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
 done
 
-grub-mkimage -c iso/grub-early.cfg -o iso/EFI/${GRUB_EFI_IMG} \
+mkdir -p iso/efiboot/EFI/boot EFI/boot
+
+grub-mkimage -c iso/grub-early.cfg -o EFI/boot/${GRUB_EFI_IMG} \
 	-O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
 	search search_fs_file || error "grub-mkimage"
 
@@ -1765,10 +1767,10 @@ modprobe loop
 dd if=/dev/zero of=iso/efiboot.img count=4096
 
 mkdosfs -n "NUTYXEFI" iso/efiboot.img || error "mkdosfs"
-mkdir -p iso/efiboot
+
 mount -o loop iso/efiboot.img iso/efiboot || error "mount efiboot.img"
-mkdir -p iso/efiboot/EFI/boot
-cp       iso/EFI/${GRUB_EFI_IMG} iso/efiboot/EFI/boot
+
+cp       EFI/boot/${GRUB_EFI_IMG} iso/efiboot/EFI/boot
 
 umount iso/efiboot
 

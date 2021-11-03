@@ -1396,7 +1396,7 @@ check_available_disk() {
 		fi
 		CHECK_HD_OK="yes"
 	fi
-	echo "DISK_LIST=$DISK_LIST" > /dev/tty2
+	echo "DISK_LIST=$DISK_LIST (1399)" > /dev/tty2
 }
 check_available_partition() {
 	unset PARTITION_LIST
@@ -1406,7 +1406,10 @@ check_available_partition() {
 		 [ "$CHECK_HD_OK" == "no" ] && return
 	fi
 	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
-	if [ -z "$PARTITION_LIST" ];then
+	if [ ! -z "$PARTITION_LIST" ];then
+		CHECK_PART_OK="yes"
+		echo"CHECK_PART_OK=$CHECK_PART_OK (1411)" > /dev/tty2
+	else
 		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
 			# Auto-partitionning
 			MEM_TOTAL="$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")"
@@ -1416,6 +1419,7 @@ check_available_partition() {
 			[ $MEM_TOTAL -gt 15 ] && SWAP="4G"
 
 			if [ -d "$EFIVARS" ];then
+				EFI_SYS_PART="{DISK}1"
 				echo "label: gpt" >> $TMP/PARTITIONNING
 			else
 				echo "label: dos" >> $TMP/PARTITIONNING
@@ -1432,6 +1436,7 @@ ${DISK}1: size=$SWAP,type=swap
 ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
+			echo"CHECK_PART_OK=$CHECK_PART_OK (1439)" > /dev/tty2
 			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="no"
 		fi
 	fi
@@ -1441,36 +1446,38 @@ ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 		--title " $(gettext "No partition available") " \
 		--msgbox " $(gettext "Please create/modify yours partitions") " 0 0
 		CHECK_PART_OK="new"
+		echo"CHECK_PART_OK=$CHECK_PART_OK (1449)" > /dev/tty2
 		setup_partition
 	else
-		echo "PARTITION_LIST=$PARTITION_LIST" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1452)" > /dev/tty2
 		[ -d "$EFIVARS" ] && check_esp
 		check_swap
 		for i in ${SWAP_LIST}
 		do
-			echo "SWAP_PARTITION=$i" > /dev/tty2
+			echo "SWAP_PARTITION=$i (1457)" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$i@@"`
 		done
-		echo "PARTITION_LIST=$PARTITION_LIST" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1460)" > /dev/tty2
 		if [ ! -z "$EFI_SYS_PART" ]; then
-			echo "EFI_SYS_PART=$EFI_SYS_PART" > /dev/tty2
+			echo "EFI_SYS_PART=$EFI_SYS_PART (1462)" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$EFI_SYS_PART@@"`
 		fi
-		echo "PARTITION_LIST=$PARTITION_LIST" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1465)" > /dev/tty2
 		if [ ! -z "$PARTITION_LIST" ]; then
 			# Only one partition ?
 			if [ `echo $PARTITION_LIST|wc -w` -eq 1 ];then
 				# Only one disk
 				if [ `echo $DISK_LIST|wc -w` -eq 1 ]; then
 					PARTITION=`echo $PARTITION_LIST|sed 's/ //g'`
-					echo "PARTITION=$PARTITION" > /dev/tty2
+					echo "PARTITION=$PARTITION (1472)" > /dev/tty2
 					CHECK_SINGLE_PARTITION="yes"
-					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION"  > /dev/tty2
+					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1474)"  > /dev/tty2
 				fi
 			fi
 		fi
 		[ "$CHECK_PART_OK" == "new" ] || CHECK_PART_OK="yes"
-		echo "PARTITION_LIST=$PARTITION_LIST" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1479)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1480)" > /dev/tty2
 	fi
 }
 setup_help() {
@@ -1609,17 +1616,17 @@ install_nutyx() {
 	(for i in *squashfs
 	do
 		DIR=$(echo $i|cut -d "." -f1)
-		rm -rfv ${2}/${DIR} &> /dev/tty2
-		unsquashfs -f -n -d ${2}/${DIR} ${i} &> /dev/tty2
+		rm -rf ${2}/${DIR} &> /dev/tty2
+		unsquashfs -f -n -d ${2}/${DIR} ${i} &> /dev/tty3
 		REAL=$(calc $N/$MAX *100)
 		PCT=${REAL%.*}
 		echo "$PCT"
 		N=$((N+1))
 	done
 	echo "92"
-	rm -rfv ${2}/boot &> /dev/tty2
-	chmod -v 750 ${2}/root &> /dev/tty2
-	mkdir -v ${2}/boot &> /dev/tty2
+	rm -rfv ${2}/boot &> /dev/tty3
+	chmod -v 750 ${2}/root &> /dev/tty3
+	mkdir -v ${2}/boot &> /dev/tty3
 	echo "$PARTITION   /    $FORMAT  defaults     0    0" >> /etc/fstab
 	if [ -d "$EFIVARS" ]; then
 		mkdir -p ${2}/boot/efi
@@ -1645,38 +1652,38 @@ install_nutyx() {
 	do
 		if [ -f /$FILE ] || [ -d /$FILE ] || [ -L /$FILE ];then
 			mkdir -p $(dirname ${2}/$FILE)
-			cp -av /$FILE  ${2}/$FILE &> /dev/tty2
+			cp -av /$FILE  ${2}/$FILE &> /dev/tty3
 		fi
 	done
 	if [ -f /etc/locale/locale-archive ]; then
-		rm -fv ${2}/usr/lib/locale &> /dev/tty2
-		cp -av /etc/locale ${2}/usr/lib/ &> /dev/tty2
+		rm -fv ${2}/usr/lib/locale &> /dev/tty3
+		cp -av /etc/locale ${2}/usr/lib/ &> /dev/tty3
 	fi
 	# Kernels
-	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty2
+	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
 	for i in /lib/modules/*
 	do
 		VERSNAME="$(basename $i)"
 		EXT="-${VERSNAME/*-/}"
 		[ "$EXT" == "-NuTyX" ] && EXT=""
 		mv ${2}/boot/kernel-${VERSNAME} ${2}/boot/bzImage${EXT}
-		ln -svf bzImage${EXT} ${2}/boot/kernel-${VERSNAME} &> /dev/tty2
-		ln -svf bzImage${EXT} ${2}/boot/kernel${EXT} &> /dev/tty2
+		ln -svf bzImage${EXT} ${2}/boot/kernel-${VERSNAME} &> /dev/tty3
+		ln -svf bzImage${EXT} ${2}/boot/kernel${EXT} &> /dev/tty3
 	done
 	if  [ -f ${1}/boot/grub/splash.png ]; then
-		mkdir -pv ${2}/boot/grub/ &> /dev/tty2
-		cp -v ${1}/boot/grub/splash.png ${2}/boot/grub/ &> /dev/tty2
+		mkdir -pv ${2}/boot/grub/ &> /dev/tty3
+		cp -v ${1}/boot/grub/splash.png ${2}/boot/grub/ &> /dev/tty3
 	fi
 	if [ -f ${1}/boot/grub/fonts/unicode.pf2 ]; then
-		mkdir -pv ${2}/boot/grub/fonts &> /dev/tty2
-		cp -v ${1}/boot/grub/fonts/unicode.pf2 ${2}/boot/grub/fonts &> /dev/tty2
+		mkdir -pv ${2}/boot/grub/fonts &> /dev/tty3
+		cp -v ${1}/boot/grub/fonts/unicode.pf2 ${2}/boot/grub/fonts &> /dev/tty3
 	fi
 	for DIR in proc sys dev srv mnt tmp
 	do
-		[ ! -d ${2}/$DIR ] &&	mkdir -v ${2}/$DIR &> /dev/tty2
+		[ ! -d ${2}/$DIR ] &&	mkdir -v ${2}/$DIR &> /dev/tty3
 	done
-	[ -a ${2}/dev/console ] || mknod -m 640 ${2}/dev/console c 5 1 &> /dev/tty2
-	[ -a ${2}/dev/null ] || mknod -m 664 ${2}/dev/null    c 1 3 &> /dev/tty2
+	[ -a ${2}/dev/console ] || mknod -m 640 ${2}/dev/console c 5 1 &> /dev/tty3
+	[ -a ${2}/dev/null ] || mknod -m 664 ${2}/dev/null    c 1 3 &> /dev/tty3
 	chmod -v 1777 ${2}/tmp &> /dev/tty2
 	echo "100") |
 	dialog --title "$(gettext "Install NuTyX")" --gauge "$(gettext "Please wait") ..." 6 50
@@ -1696,14 +1703,14 @@ setup_erase() {
 		check_available_partition
 		[ "$CHECK_PART_OK" == "no" ] && return
 	fi
-	echo "PARTITION=$PARTITION" > /dev/tty2
-	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION" > /dev/tty2
+	echo "PARTITION=$PARTITION (1706)" > /dev/tty2
+	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1707)" > /dev/tty2
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Erase") NuTyX"
 		[ "$PARTITION" == "no" ] && return
 	fi
-	echo "PARTITION=$PARTITION" > /dev/tty2
+	echo "PARTITION=$PARTITION (1713)" > /dev/tty2
 	SETUP_INSTALL="no"
 	MF=/mnt/hd
 	mkdir -p $MF
@@ -1726,20 +1733,25 @@ setup_install() {
     check_available_partition
     [ "$CHECK_PART_OK" == "no" ] && return
   fi
-	echo "PARTITION=$PARTITION" > /dev/tty2
-	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION" > /dev/tty2
+	echo "PARTITION=$PARTITION (1736)" > /dev/tty2
+	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1737)" > /dev/tty2
+	echo "CHECK_PART_OK=$CHECK_PART_OK (1738)" > /dev/tty2
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Install NuTyX")"
 		[ "$PARTITION" == "no" ] && return
 	fi
-	echo "PARTITION=$PARTITION" > /dev/tty2
+	echo "PARTITION=$PARTITION (1744)" > /dev/tty2
 	if [ "$CHECK_PART_OK" == "new" ]; then
 		mkfs.ext4 -F $PARTITION > /dev/tty2 || error "mkfs.ext4 $PARTITION"
 		$SETUP_LOG "setup-nutyx" "mkfs.ext4 -F $PARTITION"
+		if [ -d "$EFIVARS" ]; then
+			mkfs.vfat  $EFI_SYS_PART > /dev/tty2 || error "mkfs.vfat $EFI_SYS_PART"
+			$SETUP_LOG "setup-nutyx" "mkfs.vfat $EFI_SYS_PART"
+		fi
 	fi
 	FORMAT="$(print_file_system $PARTITION)"
-	echo "FORMAT=$FORMAT" > /dev/tty2
+	echo "FORMAT $PARTITION=$FORMAT (1754)" > /dev/tty2
 	if [ "$FORMAT" == "no" ]; then
 		setup_format
 		[ "$FORMAT" == "no" ] && return
@@ -1760,12 +1772,9 @@ setup_install() {
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
 	echo "$PARTITION" > $TMP/boot
+	echo "CHECK_PART_OK=$CHECK_PART_OK (1775)" > /dev/tty2
 	if [ "$CHECK_PART_OK" == "new" ]; then
-		if [ ! -d "$EFIVARS" ];then
-			setup_grub
-		else
-			setup_grub "efi" "$MF"
-		fi
+		setup_grub
 		return
 	fi
 	if [ ! -d "$EFIVARS" ];then
@@ -1779,6 +1788,8 @@ setup_install() {
 	else
 		FORMAT="no"
 		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
+		echo "EFI_SYS_PART=$EFI_SYS_PART (1791)" > /dev/tty2
+		echo "$EFI_SYS_PART FORMAT=$FORMAT (1792)" > /dev/tty2
 		if [ "$FORMAT" == "vfat" ];then
 			dialog --title " $(gettext "Choose your favorite Boot Manager") " \
 				--menu "$(gettext "Grub, Efibootmgr or nothing"): $result" 15 70 3 \
@@ -1791,7 +1802,7 @@ setup_install() {
 				0|2)
 					case $boot_choice in
 						Grub)
-							setup_grub "efi" "$MF";;
+							setup_grub;;
 						Efibootmgr)
 							setup_efibootmgr "/media/cdrom" "$MF";;
 						Nothing)
@@ -1888,23 +1899,23 @@ setup_grub() {
 	# If not a new table of partition
 	#  IF not efi mode we saved the current MBR if no yet saved
 	if [ "$CHECK_PART_OK" != "new" ]; then
-		[ "${1}" == "efi" ] || \
+		[ -d "$EFIVARS" ] || \
 		dd if=$DISK of=$TMP/MBR bs=512 count=1 2>/dev/null
 	fi
 	# Copy all the necessary files
 	mkdir $TMP/boot_partition
 	mount $PARTITION $TMP/boot_partition
 
-	if [ "${1}" == "efi" ];then
+	if [ -d "$EFIVARS" ];then
 		[ "$(uname -m)" == "x86_64" ] && TARGET="--target=x86_64-efi"
 		[ "$(uname -m)" == "i686" ] && TARGET="--target=i386-efi"
 
 		OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
 		SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
-		mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-		mkdir -p $TMP/boot_partition/boot/efi
-		mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi
-		mkdir -p $TMP/boot_partition/boot/efi/EFI/
+		mount -t efivarfs efivarfs /sys/firmware/efi/efivars  || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
+		mkdir -p $TMP/boot_partition/boot/efi || error "mkdir -p $TMP/boot_partition/boot/efi"
+		mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || error "mount $EFI_SYS_PART"
+		mkdir -p $TMP/boot_partition/boot/efi/EFI/ || error "mkdir -p $TMP/boot_partition/boot/efi/EFI"
 		rm -f $TMP/boot_partition/boot/efi/EFI/BOOT/$SPNR/* 2>/dev/null
 	fi
 
@@ -1915,7 +1926,7 @@ setup_grub() {
 	fi
 	GRUB_CONFIG_DIR="$TMP/boot_partition/${GRUB_DESTINATION_DIR}grub"
 	mkdir $GRUB_CONFIG_DIR 2> /dev/null
-	if [ "${1}" != "efi" ];then
+	if [ ! -d "$EFIVARS" ];then
 		if [ -f $GRUB_CONFIG_DIR/MBR.original ]; then
 			dialog --title " !!! Oups !!!! " \
 			--msgbox " $(gettext "You already have a copy of the original MBR, I will not make a backup of it") " \
@@ -1975,9 +1986,7 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		[ -f $TMP/MBR ] && dd if=$TMP/MBR of=$DISK bs=512 count=1 > 2/dev/null
 		dialog --title " $(gettext "Something went wrong probably the file system is not supported") " \
 		--msgbox "`cat ${GRUB_LOG_FILE}`" 30 70
-		if [ "${1}" == "efi" ]; then
-			umount "$EFI_SYS_PART"
-		fi
+		[ -d "$EFIVARS" ] && umount "$EFI_SYS_PART"
 		umount $TMP/boot_partition
 		umount /mnt/hd 2>/dev/null
 		error "Sorry, I cannot install GRUB" # die now
@@ -2126,7 +2135,7 @@ EOF
 		fi
 		MBR_ok
 	fi
-	[ "${1}" == "efi" ] && umount "$EFI_SYS_PART"
+	[ -d "$EFIVARS" ] && umount "$EFI_SYS_PART"
 	umount $PARTITION
 }
 setup_reboot() {
@@ -2252,7 +2261,7 @@ setup_initrd() {
 				fi
 				;;
 			"$(gettext "Install")")
-				echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION" > /dev/tty2
+				echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (2256)" > /dev/tty2
 				[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 				setup_install
 				;;
@@ -2316,7 +2325,7 @@ check_esp() {
 		--msgbox "    $(gettext "GPT partition table not found")" 6 60
 	else
 		EFI_SYS_PART="`(LANGUAGE=C fdisk ${FIRST_DISK} -l -o device,type|grep EFI|cut -d " " -f1)`"
-
+		echo "EFI_SYS_PART=$EFI_SYS_PART (2326)" > /dev/tty2
 		if [ -z "${EFI_SYS_PART}" ];then
 			dialog --title "   Hmmmm   " \
 			--msgbox "    $(gettext "EFI partition not found")" 6 60
@@ -2326,6 +2335,7 @@ check_esp() {
 setup_esp() {
 	local FORMAT
 	check_esp
+	echo "EFI_SYS_PART: $EFI_SYS_PART (2336)" > /dev/tty2
 	if [ ! -z $EFI_SYS_PART ]; then
 		FORMAT="$(print_file_system $EFI_SYS_PART)"
 		if [ "$FORMAT" != "vfat" ]; then
@@ -2336,7 +2346,7 @@ $(gettext "Are you sure you want to continue ?")" 7 60
 			retval2=$?
 			case $retval2 in
 				0)
-					/usr/bin/mkfs.vfat $EFI_SYS_PART
+					mkfs.vfat $EFI_SYS_PART
 					$SETUP_LOG "setup-nutyx" "EFI partition $EFI_SYS_PART formatted in vfat"
 					;;
 				1|255)
