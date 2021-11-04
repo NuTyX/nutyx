@@ -1,5 +1,13 @@
 ## NuTyX
 
+Also available in the following languages
+
+[🇫🇷 French](/docs/translations/french.md)
+| [🇩🇪 Deutsh](/docs/translations/deutsh.md)
+| [🇹🇷 Turke](/docs/translations/turke.md)
+
+---
+
 [NuTyX](http://www.nutyx.org) is a GNU/Linux distribution for multiple 
 architectures inspired by the online documentation
 [Linux From Scratch (LFS)](http://www.linuxfromscratch.org).
