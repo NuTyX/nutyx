@@ -1,4 +1,4 @@
-**FRANÇAIS** [NuTyX](http://www.nutyx.org) est une distribution GNU/Linux pour 
+[NuTyX](http://www.nutyx.org) est une distribution GNU/Linux pour 
 systèmes basés sur diverses architectures. Sa construction est inspirée de la 
 documentation en ligne disponible sur 
 [Linux From Scratch (LFS)](http://www.linuxfromscratch.org).

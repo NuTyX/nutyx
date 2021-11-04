@@ -1,4 +1,4 @@
-**DEUTSCH** [NuTyX](http://www.nutyx.org) ist eine GNU/Linux-Distribution für 
+[NuTyX](http://www.nutyx.org) ist eine GNU/Linux-Distribution für 
 diverse Architekturen basierend auf der Online-Dokumentation 
 [Linux From Scratch (LFS)](http://www.linuxfromscratch.org).
 

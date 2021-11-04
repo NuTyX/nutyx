@@ -1,4 +1,4 @@
-**TÜRKÇE** [NuTyX](http://www.nutyx.org) işletim sistemi çoğul mimari desteği 
+[NuTyX](http://www.nutyx.org) işletim sistemi çoğul mimari desteği 
 sağlayan [Linux From Scratch (LFS)](http://www.linuxfromscratch.org) 
 belgelerini baz alan bir GNU/Linux dağıtımıdır. 
 
