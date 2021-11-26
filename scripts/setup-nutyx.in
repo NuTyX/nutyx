@@ -1408,7 +1408,7 @@ check_available_partition() {
 	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
 	if [ ! -z "$PARTITION_LIST" ];then
 		CHECK_PART_OK="yes"
-		echo"CHECK_PART_OK=$CHECK_PART_OK (1411)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1411)" > /dev/tty2
 	else
 		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
 			# Auto-partitionning
@@ -1436,7 +1436,7 @@ ${DISK}1: size=$SWAP,type=swap
 ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
-			echo"CHECK_PART_OK=$CHECK_PART_OK (1439)" > /dev/tty2
+			echo "CHECK_PART_OK=$CHECK_PART_OK (1439)" > /dev/tty2
 			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="no"
 		fi
 	fi
@@ -1446,7 +1446,7 @@ ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 		--title " $(gettext "No partition available") " \
 		--msgbox " $(gettext "Please create/modify yours partitions") " 0 0
 		CHECK_PART_OK="new"
-		echo"CHECK_PART_OK=$CHECK_PART_OK (1449)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1449)" > /dev/tty2
 		setup_partition
 	else
 		echo "PARTITION_LIST=$PARTITION_LIST (1452)" > /dev/tty2
