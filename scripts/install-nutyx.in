@@ -1122,7 +1122,7 @@ local FILE
 
 [ ! -f "$(which xorriso)" ] && error "You need to install 'libisoburn'"
 [ ! -f "$(which isohybrid)" ] && error "You need to install 'syslinux'"
-[ ! -f "$(which mkdosfs)" ] && error "You need to install 'dosfstools'"
+[ ! -f "$(which fatlabel)" ] && error "You need to install 'dosfstools'"
 for FILE in libutil.c32 libcom32.c32 ldlinux.c32 vesamenu.c32 isolinux.bin
 do
 	[ ! -f /usr/lib/syslinux/$FILE ] && \
