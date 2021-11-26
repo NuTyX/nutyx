@@ -1755,7 +1755,7 @@ do
 	[ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
 done
 
-mkdir -p iso/efiboot/EFI/boot EFI/boot
+mkdir -p iso/efiboot EFI/boot
 
 grub-mkimage -c iso/grub-early.cfg -o EFI/boot/${GRUB_EFI_IMG} \
 	-O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
@@ -1770,6 +1770,7 @@ mkdosfs -n "NUTYXEFI" iso/efiboot.img || error "mkdosfs"
 
 mount -o loop iso/efiboot.img iso/efiboot || error "mount efiboot.img"
 
+mkdir -p iso/efiboot/EFI/boot
 cp       EFI/boot/${GRUB_EFI_IMG} iso/efiboot/EFI/boot
 
 umount iso/efiboot
