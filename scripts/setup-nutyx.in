@@ -213,75 +213,76 @@ setup_user()
 	while [ "$RESULT" == "user" ];
 	do
 		exec 3>&1
-		RESULT=`dialog --title "  $(gettext "Add a user to the system")  " \
-		--inputbox  "$(gettext "Name of the user"):" 8 60 user 2>&1 1>&3`
-		RESULT="`echo "$RESULT"|sed "s/ //g"`"
+		RESULT="$(dialog --title "  $(gettext "Add a user to the system")  " \
+		--inputbox  "$(gettext "Name of the user"):" 8 60 user 2>&1 1>&3)"
+
+		RESULT="$(echo "$RESULT"|sed "s/ //g")"
 		[ "$RESULT" == "" ] && RESULT="user"
-	done
-	NAME=$RESULT
-	if [ "$NAME" == "root" ]; then
-		rm -d /home
-		setup_password
-	else
-		if [ "$RESULT" != "user" ] &&  [ "$RESULT" != "" ];then
-			RESULT="Description"
-			while [ "$RESULT" == "Description" ];
-			do
-				exec 3>&1
-				RESULT=`dialog --title "  $(gettext "Add a description for the user")  " \
-				--inputbox  "$(gettext "Name or Description of the user"):" 8 60 "Description" 2>&1 1>&3`
-				[ "`echo "$RESULT"|sed "s/ //g"`" == "" ] && RESULT="Description"
-				[ "$RESULT" == "" ] && RESULT="Description"
-			done
-			DESCRIPTION=$RESULT
+		NAME=$RESULT
+		if [ "$NAME" == "root" ]; then
+			rm -d /home
+			setup_password
+		else
+			if [ "$RESULT" != "user" ] &&  [ "$RESULT" != "" ];then
+				RESULT=""
+				while [ "$RESULT" == "" ];
+				do
+					exec 3>&1
+					RESULT="$(dialog --title "  $(gettext "Add a description for the user")  " \
+					--inputbox  "$(gettext "Name or Description of the user"):" 8 60 "$(echo $NAME|sed 's/\b\(.\)/\u\1/')" 2>&1 1>&3)"
+
+					[ "$(echo "$RESULT"|sed "s/ //g")" == "" ] && RESULT="$(echo $NAME|sed 's/\b\(.\)/\u\1/')"
+					[ "$RESULT" == "" ] && RESULT="$(echo $NAME|sed 's/\b\(.\)/\u\1/')"
+
+				done
+				DESCRIPTION=$RESULT
+			fi
 		fi
 		check_user_valid $NAME $DESCRIPTION
 		ret=$?
-		while [ $ret -ne 0 ]; do
-			setup_user
-		done
-	
-		for GROUP in ${DEFAULT_GROUPS};
-		do
-			check_group_exist $GROUP
-			if [ $? -eq 0 ]; then
-				continue
-			fi
-			if [ -z "$USER_GROUPS" ]; then
-				USER_GROUPS="$GROUP"
-			else
-				USER_GROUPS="$USER_GROUPS,$GROUP"
-			fi
-		done
+		[ $ret -ne 0 ] && RESULT="user"
+	done
 
-		unset RESULT
+	for GROUP in ${DEFAULT_GROUPS};
+	do
+		check_group_exist $GROUP
+		if [ $? -eq 0 ]; then
+			continue
+		fi
+		if [ -z "$USER_GROUPS" ]; then
+			USER_GROUPS="$GROUP"
+		else
+			USER_GROUPS="$USER_GROUPS,$GROUP"
+		fi
+	done
 
+	unset RESULT
+
+	if [ -d /home/"${NAME}" ];then
+		RESULT="$(/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -M "${NAME}" 2>&1)"
+	else
+		RESULT="$(/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -m "${NAME}" 2>&1)"
+	fi
+	if [ ! -z "$RESULT" ]; then
+		dialog --msgbox "$RESULT" 6 120
+		exec 3>&1
+		dialog --yesno "$(gettext "Do you want to try again") ?" 5 40
+		case $? in
+			0)
+				setup_user;;
+			*)
+				SETUP_CONFIG_USER="yes"
+				rm -d /home;;
+		esac
+	else
 		if [ -d /home/"${NAME}" ];then
-			RESULT=`/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -M "${NAME}" 2>&1`
+			chown -R ${NAME}:${NAME} /home/${NAME}
+			$SETUP_LOG "setup-nutyx --create-user" "chown -R ${NAME}:${NAME} /home/${NAME}"
+			$SETUP_LOG "setup-nutyx --create-user" "${DESCRIPTION} -G $USER_GROUPS -M ${NAME}"
 		else
-			RESULT=`/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -m "${NAME}" 2>&1`
+			$SETUP_LOG "setup-nutyx --create-user" "${DESCRIPTION} -G $USER_GROUPS -m ${NAME}"
 		fi
-		if [ ! -z "$RESULT" ]; then
-			dialog --msgbox "$RESULT" 6 120
-			exec 3>&1
-			dialog --yesno "$(gettext "Do you want to try again") ?" 5 40
-			case $? in
-				0)
-					setup_user;;
-				*)
-					SETUP_CONFIG_USER="yes"
-					rm -d /home;;
-			esac
-		else
-			if [ -d /home/"${NAME}" ];then
-				chown -R ${NAME}:${NAME} /home/${NAME}
-				$SETUP_LOG "setup-nutyx --create-user" "chown -R ${NAME}:${NAME} /home/${NAME}"
-				$SETUP_LOG "setup-nutyx --create-user" "${DESCRIPTION} -G $USER_GROUPS -M ${NAME}"
-			else
-				$SETUP_LOG "setup-nutyx --create-user" "${DESCRIPTION} -G $USER_GROUPS -m ${NAME}"
-			fi
-			setup_password
-		fi
+		setup_password
 		SETUP_CONFIG_USER="no"
 	fi
 }
