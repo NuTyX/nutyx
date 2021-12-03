@@ -431,6 +431,23 @@ NETWORK_MANAGER="$(which NetworkManager)"
 if [ ! -z $NETWORK_MANAGER ]; then
   SETUP_CONFIG_NETWORK="no"
   rm -f $TMP/NAME
+  if [ ! -f /etc/sysconfig/network ]; then
+	cat > /etc/sysconfig/network << "EOF"
+#
+# Network manager (wicd/networkmanager/cli/<empty>)
+# If empty it will choose automatically
+MANAGER=''
+#
+# Wait or not for network
+NETWORKWAIT='no'
+#
+# init delay for initialisation of Networkmanager
+LINKDELAY='15'
+#
+# init delay to wait after initialisation of Networkmanager
+NETWORKDELAY='0'
+EOF
+fi
   return 0
 fi
 network_card_found
@@ -477,8 +494,9 @@ DHCP=yes
 [DHCP]
 UseDomains=true
 " > ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-  if [ -f /lib/systemd/system/dhcpcd@.service ]; then
-		systemctl enable dhcpcd@${NETWORK_CARD}
+	if [ -f /lib/systemd/system/dhcpcd@.service ]; then
+		ln -s /lib/systemd/system/dhcpcd@.service \
+		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
 	fi
 	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
 else
@@ -566,14 +584,39 @@ Name=${NETWORK_CARD}
 fi
 if [ ! -f /etc/sysconfig/network ]; then
 	cat > /etc/sysconfig/network << "EOF"
-MANAGER=''              # Network manager (wicd/networkmanager/cli/nothing)
-NETWORKWAIT='no'        # Wait or not for network
-LINKDELAY='15'          # init delay for initialisation of Networkmanager
-NETWORKDELAY='0'        # init delay to wait after initialisation of Networkmanager
+#
+# Network manager (wicd/networkmanager/cli/<empty>)
+# If empty it will choose automatically
+MANAGER=''
+#
+# Wait or not for network
+NETWORKWAIT='no'
+#
+# init delay for initialisation of Networkmanager
+LINKDELAY='15'
+#
+# init delay to wait after initialisation of Networkmanager
+NETWORKDELAY='0'
 EOF
 fi
 
 [ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
+
+mkdir -p /etc/systemd/system/multi-user.target.wants
+mkdir -p /etc/systemd/system/sockets.target.wants
+mkdir -p /etc/systemd/system/network-online.target.wants
+
+ln -s /lib/systemd/system/systemd-networkd.service \
+/etc/systemd/system/dbus-org.freedesktop.network1.service
+
+ln -s /lib/systemd/system/systemd-networkd.service \
+/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
+
+ln -s /lib/systemd/system/systemd-networkd.service \
+/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
+
+ln -s /lib/systemd/system/systemd-networkd.service \
+/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
 
 if [ "$SETUP_INITRD" == "yes" ]; then
 	/etc/rc.d/init.d/network start
@@ -1644,7 +1687,12 @@ install_nutyx() {
 	etc/network \
 	etc/mdadm.conf \
 	etc/vconsole.conf \
-	usr/share/locale
+	usr/share/locale \
+	etc/systemd/system/multi-user.target.wants \
+	etc/systemd/system/sockets.target.wants \
+	etc/systemd/system/dbus-org.freedesktop.network1.service \
+	etc/systemd/system/network-online.target.wants
+
 	do
 		if [ -f /$FILE ] || [ -d /$FILE ] || [ -L /$FILE ];then
 			mkdir -p $(dirname ${2}/$FILE)
@@ -2545,11 +2593,6 @@ top_loop() {
 		if [ ! -d /media/cdrom/boot ]; then
 			dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
 				--msgbox "    $(gettext "You can remove the ISO media now.")" 6 60
-		fi
-		if [ -d "$EFIVARS" ]; then
-			setup_help_efi
-		else
-			setup_help
 		fi
 		while [ "$SETUP_INSTALL" = "no" ];do
 				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
