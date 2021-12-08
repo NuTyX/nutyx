@@ -1503,6 +1503,7 @@ else
 	[ -z $MOUNT ] && echo "cards sync" >> \
 	$LFS/$SETUP_FILE
 	echo "cards install -n $CORE $DEVEL
+which genfstab > /dev/null && genfstab >> etc/fstab
 exit" >> $LFS/$SETUP_FILE
 fi
 chmod 177 $LFS/$SETUP_FILE
