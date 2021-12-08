@@ -156,7 +156,7 @@ do_mount_in_ram()
 	# RO folders: Only bigger directories are going to be mounted and overlayed
 	OVL=/boot/ovl
 	ROOTFS_OK="yes"
-	for DIR in mnt usr lib opt
+	for DIR in usr lib opt
 	do
 		if [ -f $SQFS/$DIR.squashfs ];then
 			OVLU=$OVL/$DIR-u
@@ -411,6 +411,7 @@ if [ -n "$rootdelay" ]; then
 	sleep "$rootdelay"
 fi
 if [ -z $root ]; then
+	mkdir -p /mnt/hd
 	if [ ! -f ${SETUP_INIT_FILE} ]; then
 #		do_mount_iso
 		find_media
