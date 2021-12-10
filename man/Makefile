@@ -1,7 +1,7 @@
 #
 #  nutyx
 #
-#  Copyright (c) 2016 by NuTyX team (http://nutyx.org)
+#  Copyright (c) 2016 - 2021 by NuTyX team (http://nutyx.org)
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 
 include ../Makefile.inc
 
-MANPAGES = nutyx.1 ifup.8
+MANPAGES = nutyx.1 ifup.8 genfstab.8
 
 all: man mantxt
 
@@ -48,6 +48,7 @@ mantxt: man $(MANPAGES:=.txt)
 install: all
 	install -D -m0644 nutyx.1 $(MANDIR)/man1/nutyx.1
 	install -D -m0644 ifup.8 $(MANDIR)/man8/ifup.8
+	install -D -m0644 genfstab.8 $(MANDIR)/man8/genfstab.8
 
 clean:
 	rm -f $(MANPAGES)
