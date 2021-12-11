@@ -222,6 +222,8 @@ setup_user()
 		if [ "$NAME" == "root" ]; then
 			rm -d /home
 			setup_password
+			SETUP_CONFIG_USER="no"
+			return
 		else
 			if [ "$RESULT" != "user" ] &&  [ "$RESULT" != "" ];then
 				RESULT=""

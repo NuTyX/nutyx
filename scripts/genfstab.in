@@ -32,7 +32,7 @@ find_tag() {
 
 print_mnt() {
     # Print fstab entry
-    printf '%-23s %-15s %-15s %-15s %s %s\n\n' "$@"
+    printf '%-23s %-15s %-15s %-15s %s %s\n' "$@"
 }
 
 _readlinkf() {
@@ -163,14 +163,21 @@ while read -r fs dir type options _; do
     print_mnt "$fs" "${dir:-/}" "$type" "$options" "${dump:=0}" "$pass"
 done < /proc/mounts
 
-# Now print out mounted swaps. I am really not quite sure how swaps work as I
-# don't personally use them. If you have a better approach to this, please let
-# me know.
-while read -r file _; do
-    [ -f "/$file" ] || continue
-    [ "$root" ] && {
-        case "$file" in "$root/"*) ;; *) continue; esac
-        file=/${file#$root}
-    }
-    print_mnt "$file" none swap sw 0 0
-done < /proc/swaps
+# Trying swaps devices
+{
+  # skip header
+  read
+
+  while read -r device type _ _ prio; do
+    options=defaults
+
+    (( prio >= 0)) && options+=,pri=$prio
+
+    if [ "$type" ==  "file" ]; then
+      printf '%-20s' "${device#${LFS%/}}"
+    else
+      printf '%-20s' $device
+    fi
+    printf '\t%-10s\t%-10s\t%-10s\t0 0\n\n' 'none' 'swap' "$options"
+  done
+} < /proc/swaps

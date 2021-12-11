@@ -99,9 +99,11 @@ print_error_msg() {
 unmountall() {
 if [ -d "$DEPOT_CD/depot" ]; then
 	umount ${LFS}/${DEPOT}
-	umount  $(cat /tmp/depot)
+	umount $(cat /tmp/depot)
 fi
 [ ! -z $MOUNT ] && umount ${LFS}/${DEPOT}
+[ -d /sys/firmware/efi/efivars ] && \
+umount ${LFS}/sys/firmware/efi/efivars
 
 umount ${LFS}/run
 umount ${LFS}/dev/shm
@@ -138,6 +140,8 @@ if [ ! -L ${LFS}/bin/sh ];then
   ln -sv ../sbin/busybox ${LFS}/bin/bash
   ln -sv bash ${LFS}/bin/sh
 fi
+[ -d /sys/firmware/efi/efivars ] && \
+mount -t efivarfs efivarfs ${LFS}/sys/firmware/efi/efivars
 }
 enter_chroot() {
 echo "
