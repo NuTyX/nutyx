@@ -1097,6 +1097,15 @@ DISTRIB_CODENAME=\"${CODE_NAME}\"
 DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
+generate_osr() {
+echo "NAME=\"NuTyX\"
+VERSION=\"$VERSION\"
+id=nutyx
+PRETTY_NAME=\"NuTyX GNU/Linux\"
+VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/etc/os-release
+}
+
+
 install_resolv_conf() {
 [ -f /etc/resolv.conf ] && cp /etc/resolv.conf ${LFS}/etc
 }
@@ -1225,20 +1234,20 @@ if [ ! -z $ISO ]; then
 	case ${ISO} in
 		STRICT) CORE+="$STRICT";;
 		MINI) CORE+="$STRICT $MINI";;
-		BASE) CORE+="$STRICT $BASE";;
-		CLI) CORE+="$STRICT $BASE $CLI";;
-		GUI) CORE+="STRICT $BASE $CLI $GUI";;
-		XORG) CORE+="$STRICT $BASE $CLI $GUI $XORG";;
-		GUI_EXTRA) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA}";;
-		OPENBOX) CORE+="$STRICT $BASE $CLI $GUI ${GUI_EXTRA} $XORG $OPENBOX";;
-		JWM) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $JWM";;
-		LXDE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
-		LXQT) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXQT";;
-		XFCE4) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
-		ENLIGHTENMENT) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $ENLIGHTENMENT";;
-		MATE) CORE+="$STRICT $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
-		GNOME) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
-		KDE5) CORE+="$STRICT $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
+		BASE) CORE+="$STRICT $MINI $BASE";;
+		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
+		GUI) CORE+="STRICT $MINI $BASE $CLI $GUI";;
+		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
+		GUI_EXTRA) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA}";;
+		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI ${GUI_EXTRA} $XORG $OPENBOX";;
+		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $JWM";;
+		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
+		LXQT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXQT";;
+		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
+		ENLIGHTENMENT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $ENLIGHTENMENT";;
+		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
+		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
+		KDE5) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
 gui_extra, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
@@ -1546,6 +1555,7 @@ install_configuration_files() {
 	generate_rc_site
 	generate_etc_bashrc
 	generate_lsb
+	generate_osr
 	generate_nutyx_version
 }
 show_variables() {

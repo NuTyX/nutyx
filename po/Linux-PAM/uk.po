@@ -4,15 +4,15 @@
 #
 # Translators:
 # Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2006
-# Yuri Chornoivan <yurchor@ukr.net>, 2010,2012, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2010,2012, 2020, 2021.
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2016. #zanata
-# Yuri Chornoivan <yurchor@ukr.net>, 2016. #zanata, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2016. #zanata, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Linux-PAM\n"
 "Report-Msgid-Bugs-To: https://github.com/linux-pam/linux-pam/issues\n"
-"POT-Creation-Date: 2020-11-25 16:57+0000\n"
-"PO-Revision-Date: 2020-05-02 09:40+0000\n"
+"POT-Creation-Date: 2021-07-20 20:00+0000\n"
+"PO-Revision-Date: 2021-07-22 00:28+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/linux-"
 "pam/master/uk/>\n"
@@ -22,10 +22,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.0.1\n"
+"X-Generator: Weblate 4.7.2\n"
 
-#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:178
-#: modules/pam_userdb/pam_userdb.c:55
+#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:181
+#: modules/pam_userdb/pam_userdb.c:53
 msgid "Password: "
 msgstr "Пароль: "
 
@@ -218,22 +218,22 @@ msgstr "...Вибачте, ваш час закінчився!\n"
 msgid "erroneous conversation (%d)\n"
 msgstr "помилкова розмова (%d)\n"
 
-#: modules/pam_exec/pam_exec.c:275
+#: modules/pam_exec/pam_exec.c:279
 #, c-format
 msgid "%s failed: exit code %d"
 msgstr "Помилка %s: коди виходу %d"
 
-#: modules/pam_exec/pam_exec.c:284
+#: modules/pam_exec/pam_exec.c:289
 #, c-format
 msgid "%s failed: caught signal %d%s"
 msgstr "Помилка %s: отримано сигнал %d%s"
 
-#: modules/pam_exec/pam_exec.c:293
+#: modules/pam_exec/pam_exec.c:299
 #, c-format
 msgid "%s failed: unknown status 0x%x"
 msgstr "Помилка %s: невідомий стан 0x%x"
 
-#: modules/pam_faillock/main.c:104
+#: modules/pam_faillock/main.c:103
 #, c-format
 msgid ""
 "Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset]\n"
@@ -246,7 +246,17 @@ msgstr ""
 msgid "The account is locked due to %u failed logins."
 msgstr "Обліковий запис заблоковано через %u помилок під час спроби входу."
 
-#: modules/pam_faillock/pam_faillock.c:623
+#: modules/pam_faillock/pam_faillock.c:627
+#: modules/pam_faillock/pam_faillock.c:633
+#, c-format
+msgid "(%d minute left to unlock)"
+msgid_plural "(%d minutes left to unlock)"
+msgstr[0] "(лишилося %d хвилина до розблокування)"
+msgstr[1] "(лишилося %d хвилини до розблокування)"
+msgstr[2] "(лишилося %d хвилин до розблокування)"
+
+#. TRANSLATORS: only used if dngettext is not supported.
+#: modules/pam_faillock/pam_faillock.c:636
 #, c-format
 msgid "(%d minutes left to unlock)"
 msgstr "(лишилося %d хвилин до розблокування)"
@@ -307,7 +317,7 @@ msgstr ""
 "Після останнього успішного входу було виконано %d спроби входу, які "
 "завершилися помилками."
 
-#: modules/pam_limits/pam_limits.c:1115
+#: modules/pam_limits/pam_limits.c:1164
 #, c-format
 msgid "There were too many logins for '%s'."
 msgstr "Забагато входів в для «%s»."
@@ -348,12 +358,12 @@ msgstr "У теці %s є старі поштові повідомлення."
 msgid "You have mail in folder %s."
 msgstr "У теці %s є поштові повідомлення."
 
-#: modules/pam_mkhomedir/pam_mkhomedir.c:107
+#: modules/pam_mkhomedir/pam_mkhomedir.c:123
 #, c-format
 msgid "Creating directory '%s'."
 msgstr "Створення каталогу «%s»."
 
-#: modules/pam_mkhomedir/pam_mkhomedir.c:174
+#: modules/pam_mkhomedir/pam_mkhomedir.c:206
 #, c-format
 msgid "Unable to create and initialize directory '%s'."
 msgstr "Не вдалося створити і ініціалізувати каталог «%s»."
@@ -398,12 +408,12 @@ msgstr "Цей контекст безпеки є некоректним."
 msgid "A valid context for %s could not be obtained."
 msgstr "Не вдалося отримати коректний контекст для %s."
 
-#: modules/pam_selinux/pam_selinux.c:629
+#: modules/pam_selinux/pam_selinux.c:640
 #, c-format
 msgid "Security context %s has been assigned."
 msgstr "Призначено контекст безпеки %s."
 
-#: modules/pam_selinux/pam_selinux.c:645
+#: modules/pam_selinux/pam_selinux.c:656
 #, c-format
 msgid "Key creation context %s has been assigned."
 msgstr "Призначено контекст створення ключів %s."
@@ -423,7 +433,7 @@ msgstr "помилка pam_set_item()\n"
 msgid "login: failure forking: %m"
 msgstr "вхід: помилка розгалуження: %m"
 
-#: modules/pam_timestamp/pam_timestamp.c:354
+#: modules/pam_timestamp/pam_timestamp.c:361
 #, c-format
 msgid "Access has been granted (last access was %ld seconds ago)."
 msgstr "Надано доступ (остання спроба доступу сталася %ld секунд тому)."
@@ -522,11 +532,9 @@ msgstr "Ви слід ще трохи зачекати, щоб змінити в
 #~ msgid "contains the user name in some form"
 #~ msgstr "містить ім’я користувача з форми"
 
-#, c-format
 #~ msgid "BAD PASSWORD: %s"
 #~ msgstr "ПОГАНИЙ ПАРОЛЬ: %s"
 
-#, c-format
 #~ msgid "The account is temporarily locked (%ld seconds left)."
 #~ msgstr "Обліковий запис тимчасово заблоковано (ще на %ld секунд)."
 
@@ -542,31 +550,25 @@ msgstr "Ви слід ще трохи зачекати, щоб змінити в
 #~ msgid "Unknown error"
 #~ msgstr "Невідома помилка"
 
-#, c-format
 #~ msgid "%s: Bad number given to --reset=\n"
 #~ msgstr "%s: вказано помилкове число --reset=\n"
 
-#, c-format
 #~ msgid "%s: Unrecognised option %s\n"
 #~ msgstr "%s: нерозпізнано параметр %s\n"
 
-#, c-format
 #~ msgid ""
 #~ "%s: [--file rooted-filename] [--user username] [--reset[=n]] [--quiet]\n"
 #~ msgstr ""
 #~ "%s: [--file назва-файла-користувача-root] [--user ім'я користувача] [--"
 #~ "reset[=n]] [--quiet]\n"
 
-#, c-format
 #~ msgid "%s: Can't reset all users to non-zero\n"
 #~ msgstr ""
 #~ "%s: не вдається відновити ненульове значення для всіх користувачів\n"
 
-#, c-format
 #~ msgid "Login           Failures Latest failure     From\n"
 #~ msgstr "Користувач      Помилок  Остання помилка    З\n"
 
-#, c-format
 #~ msgid ""
 #~ "%s: [-f rooted-filename] [--file rooted-filename]\n"
 #~ "   [-u username] [--user username]\n"

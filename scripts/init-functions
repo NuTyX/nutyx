@@ -1496,9 +1496,6 @@ if [ "${MANAGER}" == "" ]; then
   if [ -f /usr/sbin/NetworkManager ]; then
      MANAGER="networkmanager"
   fi
-  if [ -f /usr/bin/wicd ]; then
-     MANAGER="wicd"
-  fi
 fi
 
 }
@@ -1523,38 +1520,6 @@ do_start_network()
             evaluate_retval
          else
             echo "the package networkmanager seems not to be install"
-            echo "check the ${NETWORKCONFIG_FILE} file"
-         fi
-      ;;
-      wicd)
-         if [ -f /usr/bin/wicd ]; then
-            if [ -e $WICD_PIDFILE ]; then
-               echo "Wicd appears to already be running"
-               echo "If this is NOT the case, then remove"
-               echo "$WICD_PIDFILE, check the ${NETWORKCONFIG_FILE} file"
-               echo "and try again"
-            else
-               log_info_msg "Starting the wicd Daemon..."
-               start_daemon /usr/bin/wicd 1>/dev/null
-               evaluate_retval
-               if grep -v ^# /etc/fstab | grep _netdev > /dev/null; then
-                    while ! grep "nameserver" /etc/resolv.conf ;
-                        do
-                            if [ $NETWORKDELAY -gt 0 ]; then
-                               sleep 1
-                               echo -n .
-                               let NETWORKDELAY=$NETWORKDELAY-1
-                               if [ $NETWORKDELAY -lt 1 ]; then
-                                   log_failure_msg2 "Time out"
-                                   exit 1
-                               fi
-                            fi
-                        done
-                        log_success_msg2 "Network successfully configured..."
-               fi
-            fi
-         else
-            echo "the package wicd seems not to be install"
             echo "check the ${NETWORKCONFIG_FILE} file"
          fi
       ;;
@@ -1590,17 +1555,6 @@ do_stop_network()
             evaluate_retval
          else
             echo "the package networkmanager seems not to be install"
-            echo "check the ${NETWORKCONFIG_FILE} file"
-         fi
-      ;;
-      wicd)
-         if [ -e $WICD_PIDFILE ]; then
-            log_info_msg "Stopping the wicd Daemon..."
-            wicd-cli -xyz 1>/dev/null
-            kill $(cat $WICD_PIDFILE)
-            evaluate_retval
-         else
-            echo "wicd appears not to be running..."
             echo "check the ${NETWORKCONFIG_FILE} file"
          fi
       ;;

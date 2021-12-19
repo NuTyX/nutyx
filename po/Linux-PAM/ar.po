@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Linux-PAM\n"
 "Report-Msgid-Bugs-To: https://github.com/linux-pam/linux-pam/issues\n"
-"POT-Creation-Date: 2020-11-25 16:57+0000\n"
+"POT-Creation-Date: 2021-07-20 20:00+0000\n"
 "PO-Revision-Date: 2020-07-05 10:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Arabic <https://translate.fedoraproject.org/projects/linux-"
@@ -22,8 +22,8 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 4.1.1\n"
 
-#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:178
-#: modules/pam_userdb/pam_userdb.c:55
+#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:181
+#: modules/pam_userdb/pam_userdb.c:53
 msgid "Password: "
 msgstr "كلمة السر: "
 
@@ -218,22 +218,22 @@ msgstr "...عذرًا، انتهى الوقت!\n"
 msgid "erroneous conversation (%d)\n"
 msgstr "محادثة خاطئة (%d)\n"
 
-#: modules/pam_exec/pam_exec.c:275
+#: modules/pam_exec/pam_exec.c:279
 #, c-format
 msgid "%s failed: exit code %d"
 msgstr ""
 
-#: modules/pam_exec/pam_exec.c:284
+#: modules/pam_exec/pam_exec.c:289
 #, c-format
 msgid "%s failed: caught signal %d%s"
 msgstr ""
 
-#: modules/pam_exec/pam_exec.c:293
+#: modules/pam_exec/pam_exec.c:299
 #, c-format
 msgid "%s failed: unknown status 0x%x"
 msgstr ""
 
-#: modules/pam_faillock/main.c:104
+#: modules/pam_faillock/main.c:103
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset]\n"
@@ -245,7 +245,20 @@ msgstr ""
 msgid "The account is locked due to %u failed logins."
 msgstr ""
 
-#: modules/pam_faillock/pam_faillock.c:623
+#: modules/pam_faillock/pam_faillock.c:627
+#: modules/pam_faillock/pam_faillock.c:633
+#, c-format
+msgid "(%d minute left to unlock)"
+msgid_plural "(%d minutes left to unlock)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. TRANSLATORS: only used if dngettext is not supported.
+#: modules/pam_faillock/pam_faillock.c:636
 #, c-format
 msgid "(%d minutes left to unlock)"
 msgstr ""
@@ -301,7 +314,7 @@ msgstr[5] ""
 msgid "There were %d failed login attempts since the last successful login."
 msgstr ""
 
-#: modules/pam_limits/pam_limits.c:1115
+#: modules/pam_limits/pam_limits.c:1164
 #, fuzzy, c-format
 msgid "There were too many logins for '%s'."
 msgstr "مرات تسجيل دخول كثيرة جدًا لـ '%s'."
@@ -343,12 +356,12 @@ msgstr "لديك بريد قديم في مجلد %s."
 msgid "You have mail in folder %s."
 msgstr "لديك بريد في مجلد %s."
 
-#: modules/pam_mkhomedir/pam_mkhomedir.c:107
+#: modules/pam_mkhomedir/pam_mkhomedir.c:123
 #, c-format
 msgid "Creating directory '%s'."
 msgstr ""
 
-#: modules/pam_mkhomedir/pam_mkhomedir.c:174
+#: modules/pam_mkhomedir/pam_mkhomedir.c:206
 #, c-format
 msgid "Unable to create and initialize directory '%s'."
 msgstr ""
@@ -395,12 +408,12 @@ msgstr "لا يصلح كسياق أمان"
 msgid "A valid context for %s could not be obtained."
 msgstr ""
 
-#: modules/pam_selinux/pam_selinux.c:629
+#: modules/pam_selinux/pam_selinux.c:640
 #, fuzzy, c-format
 msgid "Security context %s has been assigned."
 msgstr "تم تخصيص سياق الأمان %s"
 
-#: modules/pam_selinux/pam_selinux.c:645
+#: modules/pam_selinux/pam_selinux.c:656
 #, fuzzy, c-format
 msgid "Key creation context %s has been assigned."
 msgstr "تم تخصيص سياق الأمان %s"
@@ -420,7 +433,7 @@ msgstr "فشل pam_set_item()\n"
 msgid "login: failure forking: %m"
 msgstr "تسجيل الدخول: فشل تشعيب: %m"
 
-#: modules/pam_timestamp/pam_timestamp.c:354
+#: modules/pam_timestamp/pam_timestamp.c:361
 #, c-format
 msgid "Access has been granted (last access was %ld seconds ago)."
 msgstr ""
@@ -511,7 +524,6 @@ msgstr "يجب الانتظار فترة أطول لتغيير كلمة السر
 #~ msgid "is rotated"
 #~ msgstr "كلمة مرور ملتفة"
 
-#, c-format
 #~ msgid "BAD PASSWORD: %s"
 #~ msgstr "كلمة سر سيئة: %s"
 
@@ -527,20 +539,16 @@ msgstr "يجب الانتظار فترة أطول لتغيير كلمة السر
 #~ msgid "Unknown error"
 #~ msgstr "خطأ غير معروف"
 
-#, c-format
 #~ msgid "%s: Bad number given to --reset=\n"
 #~ msgstr "%s:  تم إعطاء رقم خطأ لـ ‎--reset=‎\n"
 
-#, c-format
 #~ msgid "%s: Unrecognised option %s\n"
 #~ msgstr "%s:  خيار غير معروف %s\n"
 
-#, c-format
 #~ msgid ""
 #~ "%s: [--file rooted-filename] [--user username] [--reset[=n]] [--quiet]\n"
 #~ msgstr ""
 #~ "%s: [--file rooted-filename] [--user username] [--reset[=n]] [--quiet]\n"
 
-#, c-format
 #~ msgid "%s: Can't reset all users to non-zero\n"
 #~ msgstr "%s:  لا يمكن إعادة تعيين كافة المستخدمين إلى رقم غير الصفر\n"

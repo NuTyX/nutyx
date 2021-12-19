@@ -429,14 +429,13 @@ setup_net()
 
 NETWORK_MANAGER="$(which NetworkManager)"
 [ -z $NETWORK_MANAGER ] && NETWORK_MANAGER="$(which connmand)"
-[ -z $NETWORK_MANAGER ] && NETWORK_MANAGER="$(which wicd)"
 if [ ! -z $NETWORK_MANAGER ]; then
   SETUP_CONFIG_NETWORK="no"
   rm -f $TMP/NAME
   if [ ! -f /etc/sysconfig/network ]; then
 	cat > /etc/sysconfig/network << "EOF"
 #
-# Network manager (wicd/networkmanager/cli/<empty>)
+# Network manager (networkmanager/cli/<empty>)
 # If empty it will choose automatically
 MANAGER=''
 #
@@ -587,7 +586,7 @@ fi
 if [ ! -f /etc/sysconfig/network ]; then
 	cat > /etc/sysconfig/network << "EOF"
 #
-# Network manager (wicd/networkmanager/cli/<empty>)
+# Network manager (networkmanager/cli/<empty>)
 # If empty it will choose automatically
 MANAGER=''
 #
