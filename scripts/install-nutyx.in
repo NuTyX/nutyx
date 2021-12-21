@@ -1254,10 +1254,16 @@ gui_extra, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" &&
 fi
 if [ ! -z "$ISO" ];then
 	DEVEL+="
+
+mkdir -p /ISO/boot
+
 for k in \$(ls /lib/modules/)
 do
   mkinitramfs \$k
+  cp -v /boot/kernel-\$k /ISO/boot/
+  cp -v /boot/initrd-\$k /ISO/boot/
 done
+
 sed -i \"s@kernel-419@\$KERNEL@g\" /sbin/setup-nutyx"
 	if [ -z $MOUNT ]; then
 		DEVEL+="
