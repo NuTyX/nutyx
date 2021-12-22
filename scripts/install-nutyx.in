@@ -1254,14 +1254,9 @@ gui_extra, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" &&
 fi
 if [ ! -z "$ISO" ];then
 	DEVEL+="
-
-mkdir -p /ISO/boot
-
 for k in \$(ls /lib/modules/)
 do
   mkinitramfs \$k
-  cp -v /boot/kernel-\$k /ISO/boot/
-  cp -v /boot/initrd-\$k /ISO/boot/
 done
 
 sed -i \"s@kernel-419@\$KERNEL@g\" /sbin/setup-nutyx"
@@ -1273,11 +1268,6 @@ cards purge"
 umount $DEPOT"
 	fi
 	DEVEL+="
-for d in opt bin etc lib lib64 root run sbin usr var home
-do
-  [ ! -d /\$d ] && continue
-  mksquashfs /\$d /ISO/boot/\$d.squashfs
-done
 exit 0"
 fi
 
@@ -1389,7 +1379,8 @@ mkdir -p ${LFS}/var/run/lock
 
 mknod -m 600 ${LFS}/dev/console c 5 1
 mknod -m 666 ${LFS}/dev/null c 1 3
-if [ ! -z "$ISO" ]; then
+}
+make_iso_directories() {
 	mkdir -p ${LFS}/ISO/{boot,iso,isolinux}
 	cat > $TMP/install.cfg << "EOF"
 default install
@@ -1479,7 +1470,6 @@ menu tabmsgrow 18
 menu tabmsg Press ENTER to boot or TAB to edit a menu entry
 
 EOF
-fi
 }
 download_pkgadd() {
 	PKGADD="$(which pkgadd)"
@@ -1651,6 +1641,14 @@ parse_options() {
 		shift
 	done
 }
+generate_squashfs() {
+cd $LFS
+for d in opt bin etc lib lib64 root run sbin usr var home
+do
+  [ ! -d $d ] && continue
+  mksquashfs $d ISO/boot/$d.squashfs
+done
+}
 generate_iso() {
 local FILE MD5SUM VERSION_KERNEL LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
 SCRIPTDIR
@@ -1663,9 +1661,30 @@ LABEL="nutyxcd"
 [ "$(uname -m)" == "i686" ] && GRUB_EFI_IMG="bootia32.efi"
 
 ISODIR=$LFS/ISO
+mkdir -p $ISODIR
+
 SCRIPTDIR=$(pwd -P)
 
-VERSION_KERNEL="$(basename $LFS/lib/modules/*-NuTyX*)"
+cd $LFS
+
+if [ -z $KERNEL ];then
+  VERSION_KERNEL="$(basename lib/modules/*)"
+  cp -v boot/bzImage ISO/boot/kernel-${VERSION_KERNEL}
+  cp -v boot/initrd-${VERSION_KERNEL} ISO/boot/
+else
+  for VERSION_KERNEL in $(ls lib/modules/)
+  do
+    MK="${VERSION_KERNEL/NuTyX/kernel}"
+    MK="${MK/$KERNEL/}"
+    [ -z "$(echo $MK| cut -d "-" -f2)" ] && \
+    break
+  done
+  cp -v boot/$KERNEL ISO/boot/kernel-$VERSION_KERNEL
+  cp -v boot/initrd-$VERSION_KERNEL ISO/boot/initrd-$VERSION_KERNEL
+fi
+
+
+
 ISO="NuTyX_${ARCH}-$VERSION_NUTYX-$ISO"
 cd ${ISODIR} || error "cd ${ISODIR}"
 
@@ -1832,7 +1851,11 @@ main() {
 	install_configuration_files
 	install_resolv_conf
 	generate_setupfile
-	[ -z "$ISO" ] || generate_iso
+	if [ ! -z "$ISO" ]; then
+	  make_iso_directories
+	  generate_squashfs
+	  generate_iso
+	fi
 	successfull_installation
 	end
 
