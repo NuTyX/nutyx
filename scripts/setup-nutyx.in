@@ -1822,7 +1822,24 @@ setup_install() {
 		setup_grub
 		return
 	fi
-	if [ ! -d "$EFIVARS" ];then
+	if [ -d "$EFIVARS" ];then
+		FORMAT="no"
+		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
+		echo "EFI_SYS_PART=$EFI_SYS_PART (1791)" > /dev/tty2
+		echo "$EFI_SYS_PART FORMAT=$FORMAT (1792)" > /dev/tty2
+		if [ "$FORMAT" == "vfat" ];then
+			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
+			--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
+			retval=$?
+			case $retval in
+				0)
+					setup_grub;;
+			esac
+		else
+			dialog --title "   Oups !!!  " \
+			--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
+		fi
+	else
 		dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
 		--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
 		retval=$?
@@ -1830,38 +1847,6 @@ setup_install() {
 			0)
 				setup_grub;;
 		esac
-	else
-		FORMAT="no"
-		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
-		echo "EFI_SYS_PART=$EFI_SYS_PART (1791)" > /dev/tty2
-		echo "$EFI_SYS_PART FORMAT=$FORMAT (1792)" > /dev/tty2
-		if [ "$FORMAT" == "vfat" ];then
-			dialog --title " $(gettext "Choose your favorite Boot Manager") " \
-				--menu "$(gettext "Grub, Efibootmgr or nothing"): $result" 15 70 3 \
-				"Grub" "$(gettext "Advanced Linux Kernel boot manager")" \
-				"Efibootmgr" "$(gettext "Classic boot tool")" \
-				"Nothing" "$(gettext "To use the one used on other distro")" 2>$TMP/boot_choice
-		        retval=$?
-		        boot_choice=`cat $TMP/boot_choice`
-	        	case $retval in
-				0|2)
-					case $boot_choice in
-						Grub)
-							setup_grub;;
-						Efibootmgr)
-							setup_efibootmgr "/media/cdrom" "$MF";;
-						Nothing)
-							continue;;
-					esac
-				;;
-				1|2544)
-					break
-				;;
-			esac
-		else
-			dialog --title "   Oups !!!  " \
-			--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
-		fi
 	fi
 }
 setup_efibootmgr() {
