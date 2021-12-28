@@ -182,10 +182,14 @@ setup_password()
 		--insecure "$@" \
 		--passwordbox "$(gettext "Confirm the new password"):" 8 60 2>&1 1>&3`
 
-		if [ "$PASSWORD" == "$CONFIRM_PASSWORD" ]; then
-			RESULT="true"
-		else
-			dialog --msgbox "$(gettext "Passwords are differents, please try again")" 5 60
+    if [ "$PASSWORD" == "" ] || [ "$CONFIRM_PASSWORD" == "" ]; then
+			dialog --msgbox "$(gettext "Password is empty, please try again")" 5 60
+    else
+			if [ "$PASSWORD" == "$CONFIRM_PASSWORD" ]; then
+				RESULT="true"
+			else
+				dialog --msgbox "$(gettext "Passwords are differents, please try again")" 5 60
+			fi
 		fi
 	done
 
@@ -1705,16 +1709,13 @@ install_nutyx() {
 		cp -av /etc/locale ${2}/usr/lib/ &> /dev/tty3
 	fi
 	# Kernels
-	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
-	for i in /lib/modules/*
-	do
-		VERSNAME="$(basename $i)"
-		EXT="-${VERSNAME/*-/}"
-		[ "$EXT" == "-NuTyX" ] && EXT=""
-		mv ${2}/boot/kernel-${VERSNAME} ${2}/boot/bzImage${EXT}
-		ln -svf bzImage${EXT} ${2}/boot/kernel-${VERSNAME} &> /dev/tty3
-		ln -svf bzImage${EXT} ${2}/boot/kernel${EXT} &> /dev/tty3
-	done
+	cp -av ${1}/boot/bzImage ${2}/boot/ &> /dev/tty3
+	cp -av ${1}/boot/initrd-* ${2}/boot/initrd &> /dev/tty3
+
+
+	ln -svf bzImage ${2}/boot/kernel-stable &> /dev/tty3
+	ln -svf bzImage ${2}/boot/kernel &> /dev/tty3
+
 	if  [ -f ${1}/boot/grub/splash.png ]; then
 		mkdir -pv ${2}/boot/grub/ &> /dev/tty3
 		cp -v ${1}/boot/grub/splash.png ${2}/boot/grub/ &> /dev/tty3
@@ -2029,72 +2030,14 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		echo "
-submenu \"NuTyX SysV \" {
- submenu \" NuTyX SysV Quiet Mode \" {
-  submenu \"  NuTyX SysV Quiet Latest version \" {
+menuentry \"NuTyX SysV Quiet Mode\" {
    linux /${GRUB_DESTINATION_DIR}kernel root=${NuTyX_PART} ro quiet verbose=no
    #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
-  submenu \"  NuTyX SysV Quiet LTS version \" {
-   linux /${GRUB_DESTINATION_DIR}kernel-419 root=${NuTyX_PART} ro quiet verbose=no
-   #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
- }
- submenu \" NuTyX SysV Verbose Mode \" {
-  submenu \"  NuTyX SysV Verbose Latest version \" {
+}
+menuentry \"NuTyX SysV Verbose Mode \" {
    linux /${GRUB_DESTINATION_DIR}kernel root=${NuTyX_PART} ro
    #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
-  submenu \"  NuTyX SysV Verbose LTS version \" {
-   linux /${GRUB_DESTINATION_DIR}kernel-419 root=${NuTyX_PART} ro
-   #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
- }
-}
-submenu \"NuTyX SystemD \" {
- submenu \" NuTyX SystemD Quiet Mode \" {
-  submenu \"  NuTyX SystemD Quiet Latest version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/systemd-init root=${NuTyX_PART} ro quiet verbose=no
-  #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
-  submenu \"  NuTyX SystemD Quiet LTS version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/systemd-init root=${NuTyX_PART} ro quiet verbose=no
-  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
- }
- submenu \" NuTyX SystemD Verbose Mode \" {
-  submenu \"  NuTyX SystemD Verbose Latest version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/systemd-init root=${NuTyX_PART} ro
-  #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
-  submenu \"  NuTyX SystemD Verbose LTS version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/systemd-init root=${NuTyX_PART} ro
-  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
- }
-}
-submenu \"NuTyX RuNyX (Experimental)\" {
- submenu \" NuTyX RuNyX Quiet Mode \" {
-  submenu \"  NuTyX RuNyX Quiet Latest version \" {
-   linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-   #  initrd /${GRUB_DESTINATION_DIR}initrd
-  }
-  submenu \"  NuTyX RuNyX Quiet LTS version \" {
-  linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro quiet verbose=no
-  #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-  }
- }
-  submenu \" NuTyX RuNyX Verbose Mode \" {
-   submenu \"  NuTyX RuNyX Verbose Latest version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd
-   }
-   submenu \"  NuTyX RuNyX Verbose LTS version \" {
-    linux /${GRUB_DESTINATION_DIR}kernel-419 init=/sbin/runit-init root=${NuTyX_PART} ro
-    #  initrd /${GRUB_DESTINATION_DIR}initrd-419
-   }
-  }
- }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
+}" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 	else
 		#
 		# NuTyX is not yet installed
@@ -2131,29 +2074,29 @@ submenu \"NuTyX RuNyX (Experimental)\" {
 #
 #menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-419 root=/dev/sdb3 ro
+#   linux /boot/kernel init=/sbin/init root=/dev/sdb3 ro
 #}
 #
 # The same one with systemd:
 #
 #menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-419 init=/sbin/systemd-init root=/dev/sdb3 ro
+#   linux /boot/kernel init=/sbin/systemd-init root=/dev/sdb3 ro
 #}
 #
 # The same one with RuNyX (Experimental):
 #
 #menuentry  "Harddisk number 2 and partition number 3" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-419 init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
+#   linux /boot/kernel init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
 #}
 #
 # An other one with initrd and rootdelay (to use with USB stick for ex)
 #
 #menuentry  "Harddisk number 2 and partition number 1 with initrd" {
 #   set root=(hd1,1)
-#   linux /boot/kernel-419 init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
-#   initrd /boot/initrd-419
+#   linux /boot/kernel init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
+#   initrd /boot/initrd
 #}
 #
 EOF
