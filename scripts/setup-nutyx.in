@@ -1943,7 +1943,7 @@ setup_grub() {
 
 		OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
 		SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
-		mount -t efivarfs efivarfs /sys/firmware/efi/efivars  || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
+		mountpoint /sys/firmware/efi/efivars > /dev/tty2 || mount -t efivarfs efivarfs /sys/firmware/efi/efivars || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
 		mkdir -p $TMP/boot_partition/boot/efi || error "mkdir -p $TMP/boot_partition/boot/efi"
 		mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || error "mount $EFI_SYS_PART"
 		mkdir -p $TMP/boot_partition/boot/efi/EFI/ || error "mkdir -p $TMP/boot_partition/boot/efi/EFI"
