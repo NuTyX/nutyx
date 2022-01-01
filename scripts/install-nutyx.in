@@ -933,9 +933,6 @@ cat > ${LFS}/etc/$FILE << "EOF"
 # Exemple de montage nfs
 # 192.168.254.254:/home/thierry /home/thierry nfs rw,vers=3,_netdev,rsize=8192,wsize=8192 0 0
 EOF
-[ -d /sys/firmware/efi/efivars ] && \
-echo "efivarfs      /sys/firmware/efi/efivars    efivarfs    rw,nosuid,nodev,noexec,noatime 0    0" \
->> ${LFS}/etc/$FILE
 }
 generate_bashrc() {
 local FILE

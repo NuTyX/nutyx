@@ -181,3 +181,5 @@ done < /proc/mounts
     printf '\t%-10s\t%-10s\t%-10s\t0 0\n\n' 'none' 'swap' "$options"
   done
 } < /proc/swaps
+[ -d /sys/firmware/efi/efivars ] && \
+echo "efivarfs      /sys/firmware/efi/efivars    efivarfs    rw,nosuid,nodev,noexec,noatime 0    0"
