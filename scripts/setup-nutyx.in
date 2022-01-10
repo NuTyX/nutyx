@@ -1655,17 +1655,12 @@ install_nutyx() {
 	if [ -d ${2}/home ];then
 		mv ${2}/{home,.home}
 	fi
-	MAX=`ls *squashfs|wc -l`
-	N=0
+
 	(for i in *squashfs
 	do
 		DIR=$(echo $i|cut -d "." -f1)
 		rm -rf ${2}/${DIR} &> /dev/tty2
-		unsquashfs -f -n -d ${2}/${DIR} ${i} &> /dev/tty3
-		REAL=$(calc $N/$MAX *100)
-		PCT=${REAL%.*}
-		echo "$PCT"
-		N=$((N+1))
+		unsquashfs -q -f -d ${2}/${DIR} ${i}
 	done
 	echo "92"
 	rm -rfv ${2}/boot &> /dev/tty3
