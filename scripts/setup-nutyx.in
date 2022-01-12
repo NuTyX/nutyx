@@ -1664,7 +1664,7 @@ install_nutyx() {
 
     echo "1"
 
-	/sbin/unsquashfs-nutyx -q -f -d ${2} NuTyX.squashfs) |
+	/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
 	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
 
 	rm -rfv ${2}/boot &> /dev/tty3
