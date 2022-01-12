@@ -1216,7 +1216,7 @@ simple-scan gnome-weather gnome-chess balsa"
 if [ "$KERNEL" != "none"  ]; then
 	[ -z $ISO ] || KERNEL=""
 	CORE="acl attr bash coreutils readline \
-expat ncurses lzo gmp flex file gzip mpc mpfr \
+expat ncurses gmp flex file gzip mpc mpfr \
 grep sed findutils binutils \
 inetutils diffutils shadow \
 bc less libcap util-linux \
@@ -1227,7 +1227,7 @@ psmisc sudo tzdata \
 iproute2 iana-etc \
 groff man-db \
 cards.man nutyx.man \
-dialog cpio squashfs \
+dialog cpio \
 lsb-release grub eudev \
 sysklogd sysvinit $KERNEL "
 fi
@@ -1643,12 +1643,14 @@ parse_options() {
 	done
 }
 generate_squashfs() {
+local DIRS
 cd $LFS
 for d in opt bin etc lib lib64 root run sbin usr var home
 do
   [ ! -d $d ] && continue
-  mksquashfs $d ISO/boot/$d.squashfs
+  DIRS+="$d "
 done
+mksquashfs $DIRS ISO/boot/NuTyX.squashfs
 }
 generate_iso() {
 local FILE MD5SUM VERSION_KERNEL LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
@@ -1670,8 +1672,8 @@ cd $LFS
 
 VERSION_KERNEL="$(basename lib/modules/*)"
 
-cp -v boot/bzImage ISO/boot/bzImage
-cp -v boot/initrd-${VERSION_KERNEL} ISO/boot/initrd
+cp -va boot ISO/
+ln -sv initrd-${VERSION_KERNEL} ISO/boot/initrd
 
 cd ${ISODIR} || error "cd ${ISODIR}"
 
@@ -1683,10 +1685,12 @@ done
 sed "s|#VERSION_NUTYX#|${VERSION_NUTYX} $ISO|" \
 	$TMP/menu.cfg \
 	> isolinux/menu.cfg
-cp $TMP/live.cfg \
-	isolinux/live.cfg
-cp $TMP/install.cfg \
-	isolinux/install.cfg
+sed "s|boot/initrd|boot/initrd-${VERSION_KERNEL}|" \
+    $TMP/live.cfg \
+	> isolinux/live.cfg
+sed "s|boot/initrd|boot/initrd-${VERSION_KERNEL}|" \
+    $TMP/install.cfg \
+	> isolinux/install.cfg
 
 # efi stufs
 rm -rf iso

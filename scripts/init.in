@@ -116,6 +116,90 @@ fi
    fi
 }
 
+do_mount_in_ram_2()
+{
+	# squasfs files are in /media/cdrom/boot on the initrd
+	SQFS="/media/cdrom/boot"
+	mkdir -p /NuTyX
+	mkdir -p /boot
+	ROOTFS_OK="yes"
+	if [ "$toram" == "yes" ]; then
+		# How much RAM for rootfs:
+		MEM_TOTAL=$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")
+		MEM_AVAIL=$(cat /proc/meminfo|grep MemAvail|sed "s/[^[:digit:]]*//g")
+		MEM_USED=$((MEM_TOTAL - MEM_AVAIL))
+		ROOTFS_TOTAL=$((MEM_TOTAL * ROOTFS_QUOTA / 100))
+		ROOTFS_AVAIL=$((ROOTFS_TOTAL - MEM_USED))
+		MAX_ROOTFS_SIZE=$((ROOTFS_AVAIL * 90 / 100 ))
+		SQFS_SIZE=$(ls -s $SQFS/NuTyX.squashfs| cut -d " " -f1)
+		if [ $SQFS_SIZE -gt $((ROOTFS_AVAIL * 90 / 100 )) ];then
+			# Not enough RAM
+			[ "$verbose" == "no" ] || echo "mount -o loop -t squashfs $SQFS/NuTyX.squashfs /NuTyX"
+			mount -o loop -t squashfs $SQFS/NuTyX.squashfs /NuTyX
+			ROOTFS_OK="no"
+		else
+			# enough RAM
+			[ "$verbose" == "no" ] || echo "cp $SQFS /"
+			cp -a $SQFS  /
+			mkdir -p /boot/grub/fonts
+			cp $SQFS/grub/fonts/unicode.pf2 /boot/grub/fonts/unicode.pf2
+			cp $SQFS/grub/splash.png /boot/grub/splash.png
+			if [ ! -d /media/cdrom/`uname -m` ]; then
+				umount /media/cdrom
+				eject $DEV > /dev/null 2>&1
+			fi
+			[ "$verbose" == "no" ] || echo "mount -o loop -t squashfs /root_sqfs/NuTyX.squashfs /NuTyX"
+			mount -o loop -t squashfs /boot/NuTyX.squashfs /NuTyX || problem
+		fi
+	else
+		[ "$verbose" == "no" ] || echo "mount -o loop -t squashfs $SQFS/NuTyX.squashfs /NuTyX"
+		mount -o loop -t squashfs $SQFS/NuTyX.squashfs /NuTyX
+		ROOTFS_OK="no"
+	fi
+
+
+	# NuTyX readonly directories in /NuTyX ready to be mounted
+
+	# RW folders: This are tiny size and part of them already exist so
+	# Lets copy them, won't restrict to much the memory
+	for DIR in var run etc sbin bin home
+	do
+		if [ -d /NuTyX/$DIR ];then
+			[ "$verbose" == "no" ] || echo "cp -a /NuTyX/$DIR /"
+			cp -a /NuTyX/$DIR / > /dev/null 2>&1
+		fi
+	done
+
+	# root is not copied but created "from scratch"
+	[ "$verbose" == "no" ] || echo "mkdir -p /root"
+	mkdir -p /root
+	[ "$verbose" == "no" ] || echo "chmod 750 /root"
+	chmod 750 /root
+	[ "$verbose" == "no" ] || echo "cp /etc/skel/.bash* /root"
+	cp /etc/skel/.bash* /root
+
+	# RO folders: Only bigger directories are going to be
+	# bind mounted and overlayed
+	OVL=/boot/ovl
+	ROOTFS_OK="yes"
+	for DIR in usr lib opt
+	do
+		if [ -d /NuTyX/$DIR ];then
+			OVLU=$OVL/$DIR-u
+			OVLW=$OVL/$DIR-w
+			mkdir -p /$DIR
+			mkdir -p $OVLU
+			mkdir -p $OVLW
+			[ "$verbose" == "no" ] || echo "mount -o bind /NuTyX/$DIR /$DIR"
+			mount -o bind /NuTyX/$DIR /$DIR || problem
+			# Overlay
+			[ "$verbose" == "no" ] || echo "mount -n -t overlay -o lowerdir=/$DIR,upperdir=$OVLU,workdir=$OVLW /$DIR"
+			mount -n -t overlay overlay -o lowerdir=/$DIR,upperdir=$OVLU,workdir=$OVLW /$DIR
+			[ "$verbose" == "no" ] || sleep 5
+		fi
+	done
+
+}
 do_mount_in_ram()
 {
 	# squasfs files are in /media/cdrom/boot on the initrd
@@ -422,7 +506,7 @@ if [ -z $root ]; then
 		fi
 	fi
 	do_resize_rootfs
-	do_mount_in_ram
+	do_mount_in_ram_2
 	echo "0" > /proc/sys/vm/swappiness
 	#
 	# If still not find the setup-nutyx file then it's time to giveup

@@ -1,8 +1,8 @@
 include Makefile.inc
 
 DIRMAN = man
-
 DIRSCRIPTS = scripts
+DIRSRC = src
 
 .PHONY: all
 
@@ -10,12 +10,14 @@ DIRSCRIPTS = scripts
 all:
 	$(MAKE) -C $(DIRSCRIPTS) all
 	$(MAKE) -C $(DIRMAN) all
-
+	$(MAKE) -C $(DIRSRC) all
 
 install: all
 
 	$(MAKE) -C $(DIRSCRIPTS) install
 	$(MAKE) -C $(DIRMAN) install
+	$(MAKE) -C $(DIRSRC) install
+
 	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
 	po/*
 
@@ -25,6 +27,8 @@ clean:
 
 	$(MAKE) -C $(DIRSCRIPTS) clean
 	$(MAKE) -C $(DIRMAN) clean
+	$(MAKE) -C $(DIRSRC) clean
+
 
 dist: distclean
 

@@ -611,16 +611,16 @@ mkdir -p /etc/systemd/system/multi-user.target.wants
 mkdir -p /etc/systemd/system/sockets.target.wants
 mkdir -p /etc/systemd/system/network-online.target.wants
 
-ln -s /lib/systemd/system/systemd-networkd.service \
+ln -sf /lib/systemd/system/systemd-networkd.service \
 /etc/systemd/system/dbus-org.freedesktop.network1.service
 
-ln -s /lib/systemd/system/systemd-networkd.service \
+ln -sf /lib/systemd/system/systemd-networkd.service \
 /etc/systemd/system/multi-user.target.wants/systemd-networkd.service
 
-ln -s /lib/systemd/system/systemd-networkd.service \
+ln -sf /lib/systemd/system/systemd-networkd.service \
 /etc/systemd/system/sockets.target.wants/systemd-networkd.socket
 
-ln -s /lib/systemd/system/systemd-networkd.service \
+ln -sf /lib/systemd/system/systemd-networkd.service \
 /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
 
 if [ "$SETUP_INITRD" == "yes" ]; then
@@ -1648,6 +1648,7 @@ erase_nutyx() {
 install_nutyx() {
 	local DIR REAL FILE VERSNAME EXT
 	setup_swap
+	touch /var/log/install.log
 
 	[ -d "$EFIVARS" ] && setup_esp
 
@@ -1656,13 +1657,16 @@ install_nutyx() {
 		mv ${2}/{home,.home}
 	fi
 
-	(for i in *squashfs
+	(for DIR in opt bin etc lib lib64 root run sbin usr var
 	do
-		DIR=$(echo $i|cut -d "." -f1)
-		rm -rf ${2}/${DIR} &> /dev/tty2
-		unsquashfs -q -f -d ${2}/${DIR} ${i}
+		[ -d ${2}/$DIR ] && rm -rf ${2}/$DIR &> /dev/tty2
 	done
-	echo "92"
+
+    echo "1"
+
+	/sbin/unsquashfs-nutyx -q -f -d ${2} NuTyX.squashfs) |
+	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
+
 	rm -rfv ${2}/boot &> /dev/tty3
 	chmod -v 750 ${2}/root &> /dev/tty3
 	mkdir -v ${2}/boot &> /dev/tty3
@@ -1705,7 +1709,9 @@ install_nutyx() {
 	fi
 	# Kernels
 	cp -av ${1}/boot/bzImage ${2}/boot/ &> /dev/tty3
-	cp -av ${1}/boot/initrd-* ${2}/boot/initrd &> /dev/tty3
+	#TODO
+	# find a more elegant solution
+	# cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
 
 	ln -svf bzImage ${2}/boot/kernel-stable &> /dev/tty3
@@ -1726,8 +1732,7 @@ install_nutyx() {
 	[ -a ${2}/dev/console ] || mknod -m 640 ${2}/dev/console c 5 1 &> /dev/tty3
 	[ -a ${2}/dev/null ] || mknod -m 664 ${2}/dev/null    c 1 3 &> /dev/tty3
 	chmod -v 1777 ${2}/tmp &> /dev/tty2
-	echo "100") |
-	dialog --title "$(gettext "Install NuTyX")" --gauge "$(gettext "Please wait") ..." 6 50
+
 	$SETUP_LOG "setup-nutyx" "Install NuTyX on ${PARTITION} done"
 	if [ -f /var/log/install.log ]; then
 		cp -a /var/log/install.log  ${2}/var/log/install.log
