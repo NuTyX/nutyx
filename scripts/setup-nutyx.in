@@ -1850,32 +1850,6 @@ setup_install() {
 		esac
 	fi
 }
-setup_efibootmgr() {
-	local SPNR OPTIONS
-	mount $PARTITION ${2}
-	OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
-	SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
-	mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-	mkdir -p ${2}/boot/efi
-	mount "$EFI_SYS_PART" ${2}/boot/efi
-	mkdir -p ${2}/boot/efi/EFI/BOOT/$SPNR
-	rm ${2}/boot/efi/EFI/BOOT/$SPNR/* 2>/dev/null
-	for i in /lib/modules/*
-	do
-		j=$(basename $i)
-		ke=-$(echo $j|cut -d "-" -f3)
-		[ ${#ke} == 1 ] && ke=""
-		mv ${2}/boot/kernel-$j \
-		${2}/boot/efi/EFI/BOOT/$SPNR/kernel$ke.efi
-		ln -sf efi/EFI/BOOT/$SPNR/kernel$ke.efi ${2}/boot/kernel-$j
-		ln -sf efi/EFI/BOOT/$SPNR/kernel$ke.efi ${2}/boot/kernel$ke
-		efibootmgr -c -L "NuTyX Linux kernel$ke Quiet on $PARTITION" -d "$DISK" -l "\EFI\BOOT\\$SPNR\kernel$ke.efi" -u "root=$PARTITION $OPTIONS" || \
-		dialog --title "   Oups !!!  " \
-		--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
-	done
-	umount "$EFI_SYS_PART"
-	umount $PARTITION
-}
 MBR_ok() {
 	local retval
 	retval=""
@@ -2348,6 +2322,8 @@ do
 	$SETUP_LOG "setup-nutyx" "swap partition $i added in /etc/fstab"
 	echo "$i swap     swap       pri=1             0     0" >> /etc/fstab
 	[ $(print_file_system $i) == "swap" ] || mkswap $i 2>1 > /dev/null
+	swapon $i 2> /dev/tty2
+
 done
 }
 config_all() {
