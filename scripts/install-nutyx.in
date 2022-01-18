@@ -1200,7 +1200,7 @@ scrot vlc telegram-desktop"
 [ -z "$KDE5_EXTRA" ] && KDE5_EXTRA="kdenlive k3b"
 [ -z "$GNOME_EXTRA" ] && GNOME_EXTRA="epiphany seahorse-nautilus evolution \
 simple-scan gnome-weather gnome-chess balsa"
-
+[ -z "$CDE" ] && CDE="cde"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox dmenu"
 [ -z "$JWM" ] && JWM="lxdm jwm"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
@@ -1242,6 +1242,7 @@ if [ ! -z $ISO ]; then
 		GUI) CORE+="STRICT $MINI $BASE $CLI $GUI";;
 		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
 		GUI_EXTRA) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA}";;
+		CDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $CDE";;
 		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI ${GUI_EXTRA} $XORG $OPENBOX";;
 		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $JWM";;
 		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
@@ -1252,7 +1253,7 @@ if [ ! -z $ISO ]; then
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
-gui_extra, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" && exit 1;;
+gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1580,6 +1581,7 @@ GUI_EXTRA    : $GUI_EXTRA
 XORG         : $XORG
 GNOME_EXTRA  : ${GNOME_EXTRA}
 KDE5_EXTRA   : ${KDE5_EXTRA}
+CDE          : $CDE
 JWM          : $JWM
 LXDE         : $LXDE
 LXQT         : $LXQT
