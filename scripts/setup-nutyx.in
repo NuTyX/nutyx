@@ -2321,7 +2321,7 @@ do
 	$SETUP_LOG "setup-nutyx" "swap partition $i added in /etc/fstab"
 	echo "$i swap     swap       pri=1             0     0" >> /etc/fstab
 	[ $(print_file_system $i) == "swap" ] || mkswap $i 2>1 > /dev/null
-	swapon $i 2> /dev/tty2
+	/usr/sbin/swapon -v  $i &> /dev/tty2
 
 done
 }
