@@ -57,7 +57,6 @@ _msgfmt() {
 	L=`echo ${1}|cut -d "_" -f1`
 	C=`echo ${1}|cut -d "_" -f2`
 	echo "group ${L}" >> ${CARDS}
-	localedef --delete-from-archive de_CH.utf8
 	localedef -i ${1} -f UTF-8 ${1}.UTF-8
 	if [ -f /lib/services/setup-nutyx/setup-nutyx.locales.gz ];then
 		bsdtar -xf /lib/services/setup-nutyx/setup-nutyx.locales.gz \
