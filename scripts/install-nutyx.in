@@ -1098,11 +1098,13 @@ DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
+mkdir -p ${LFS}/usr/lib
 echo "NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
 id=nutyx
 PRETTY_NAME=\"NuTyX GNU/Linux\"
-VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/etc/os-release
+VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
+ln -svf ../usr/lib/os-release ${LFS}/etc/os-release
 }
 
 
