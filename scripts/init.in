@@ -116,7 +116,7 @@ fi
    fi
 }
 
-do_mount_in_ram_2()
+do_mount_in_ram()
 {
 	# squasfs files are in /media/cdrom/boot on the initrd
 	SQFS="/media/cdrom/boot"
@@ -199,102 +199,6 @@ do_mount_in_ram_2()
 		fi
 	done
 
-}
-do_mount_in_ram()
-{
-	# squasfs files are in /media/cdrom/boot on the initrd
-	SQFS="/media/cdrom/boot"
-	mkdir -p /boot
-	# RW folders: This are tiny size and part of them already exist so
-	# Lets copy them, won't restrict to much the memory
-	for DIR in var run etc sbin bin home
-	do
-		if [ -f $SQFS/$DIR.squashfs ];then
-			mkdir /DIR
-			[ "$verbose" == "no" ] || echo "mount -o loop -t squashfs $SQFS/$DIR.squashfs /DIR"
-			mount -o loop -t squashfs $SQFS/$DIR.squashfs /DIR || problem
-			mkdir -p /$DIR
-			cp -a /DIR/* /$DIR/ > /dev/null 2>&1
-			umount /DIR
-			rm -r /DIR
-			# In case we have enough RAM /media/cdrom/ will be unmounted
-			[ "$verbose" == "no" ] || echo "cp $SQFS/$DIR.squashfs /boot/$DIR.squashfs"
-			cp $SQFS/$DIR.squashfs /boot/
-		fi
-	done
-
-	# root is not copied but created "from scratch"
-	#
-	mkdir -p /root
-	chmod 750 /root
-	cp /etc/skel/.bash* /root
-	if [ -f $SQFS/root.squashfs ]; then
-		[ "$verbose" == "no" ] || echo "cp $SQFS/root.squashfs /boot/root.squashfs"
-		cp $SQFS/root.squashfs /boot/
-	fi
-	# lib64
-	if [ -f $SQFS/lib64.squashfs ];then
-		[ "$verbose" == "no" ] || echo "cp $SQFS/lib64.squashfs /boot/lib64.squashfs"
-		cp $SQFS/lib64.squashfs /boot/
-	fi
-	# RO folders: Only bigger directories are going to be mounted and overlayed
-	OVL=/boot/ovl
-	ROOTFS_OK="yes"
-	for DIR in usr lib opt
-	do
-		if [ -f $SQFS/$DIR.squashfs ];then
-			OVLU=$OVL/$DIR-u
-			OVLW=$OVL/$DIR-w
-			mkdir -p /$DIR
-			mkdir -p $OVLU
-			mkdir -p $OVLW
-			if [ "$toram" == "yes" ]; then
-				# How much RAM for rootfs:
-				MEM_TOTAL=$(cat /proc/meminfo|grep MemTotal|sed "s/[^[:digit:]]*//g")
-				MEM_AVAIL=$(cat /proc/meminfo|grep MemAvail|sed "s/[^[:digit:]]*//g")
-				MEM_USED=$((MEM_TOTAL - MEM_AVAIL))
-				ROOTFS_TOTAL=$((MEM_TOTAL * ROOTFS_QUOTA / 100))
-				ROOTFS_AVAIL=$((ROOTFS_TOTAL - MEM_USED))
-				MAX_ROOTFS_SIZE=$((ROOTFS_AVAIL * 90 / 100 ))
-				SQFS_SIZE=$(ls -s $SQFS/$DIR.squashfs| cut -d " " -f1)
-				# We going to keep 10 % as reserve (calculation rounding issue etc)
-				if [ $SQFS_SIZE -gt $((ROOTFS_AVAIL * 90 / 100 )) ];then
-					# Not enough RAM
-					[ "$verbose" == "no" ] || printf "mount -o loop -t squashfs %s/%s.squashfs /%s\n" $SQFS/$DIR.squashfs /$DIR
-					[ "$verbose" == "no" ] || printf "not enough space in RAM\n"
-					mount -o loop -t squashfs $SQFS/$DIR.squashfs /$DIR || problem
-					[ "$verbose" == "no" ] || sleep 5
-					ROOTFS_OK="no"
-				else
-					# Still enough RAM
-					[ "$verbose" == "no" ] || printf "still enough RAM, cp  %s /boot\n" $SQFS/$DIR.squashfs
-					cp $SQFS/$DIR.squashfs /boot/
-					mount -o loop -t squashfs /boot/$DIR.squashfs /$DIR || problem
-					[ "$verbose" == "no" ] || sleep 5
-				fi
-			else
-				[ "$verbose" == "no" ] || printf "mount -o loop -t squashfs %s/%s.squashfs /%s\n" $SQFS/$DIR.squashfs /$DIR
-				[ "$verbose" == "no" ] || printf "not in RAM\n"
-				mount -o loop -t squashfs $SQFS/$DIR.squashfs /$DIR || problem
-				[ "$verbose" == "no" ] || sleep 5
-				ROOTFS_OK="no"
-			fi
-			# Overlay
-			[ "$verbose" == "no" ] || echo "mount -n -t overlay -o lowerdir=/$DIR,upperdir=$OVLU,workdir=$OVLW /$DIR"
-			mount -n -t overlay overlay -o lowerdir=/$DIR,upperdir=$OVLU,workdir=$OVLW /$DIR
-			[ "$verbose" == "no" ] || sleep 5
-		fi
-	done
-	if [ "$ROOTFS_OK" == "yes" ]; then
-		cp /media/cdrom/boot/kernel* /boot/
-		mkdir -p /boot/grub/fonts
-		cp /media/cdrom/boot/grub/fonts/unicode.pf2 /boot/grub/fonts/unicode.pf2
-		cp /media/cdrom/boot/grub/splash.png /boot/grub/splash.png
-		if [ ! -d /media/cdrom/`uname -m` ]; then
-			umount /media/cdrom
-			eject $DEV > /dev/null 2>&1
-		fi
-	fi 
 }
 find_media() {
 	local PI FSIZE MSIZE LABEL
@@ -506,7 +410,7 @@ if [ -z $root ]; then
 		fi
 	fi
 	do_resize_rootfs
-	do_mount_in_ram_2
+	do_mount_in_ram
 	echo "0" > /proc/sys/vm/swappiness
 	#
 	# If still not find the setup-nutyx file then it's time to giveup
