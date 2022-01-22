@@ -546,7 +546,9 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 # 		<major> and <minor> are the major and minor numbers used for
 #     the device.
 ########################################################################
-
+/dev/net      dir 755  root root
+/dev/net/tun  dev 666  root root char 10 200
+/tmp          dir 1777 root root
 # End /etc/sysconfig/createfiles
 EOF
 }
