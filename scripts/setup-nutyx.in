@@ -1081,8 +1081,8 @@ EOF
 	mkdir -p $(dirname ${XORGKB})
 	cat > ${XORGKB} << "EOF"
 Section "InputClass"
-  Identifier "Generic Keyboard"
-  MatchIsKeyboard "yes"
+  Identifier "system-keyboard"
+  MatchIsKeyboard "on"
 EOF
 while [ true ]; do
 dialog  \
@@ -2569,7 +2569,7 @@ fi
 
 SETUP_LOG="setup-nutyx-log"
 CARDS="/etc/cards.conf"
-XORGKB="/etc/X11/xorg.conf.d/20-keyboard.conf"
+XORGKB="/etc/X11/xorg.conf.d/00-keyboard.conf"
 WAYLKB="/etc/profile.d/keyboard.sh"
 CONSOLE="/etc/sysconfig/console"
 VCONSOLE="/etc/vconsole.conf"
