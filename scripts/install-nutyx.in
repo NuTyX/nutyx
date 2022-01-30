@@ -1199,7 +1199,7 @@ xorg-xf86-video-fbdev xorg-xf86-video-intel \
 xorg-xf86-video-nouveau xorg-xf86-video-vesa \
 xorg-xrandr xorg-setxkbmap"
 
-[ -z "$GUI_EXTRA" ] && GUI_EXTRA="firefox thunderbird gparted leafpad \
+[ -z "$GUI_EXTRA" ] && GUI_EXTRA="firefox thunderbird gparted \
 scrot vlc telegram-desktop"
 [ -z "$KDE5_EXTRA" ] && KDE5_EXTRA="kdenlive k3b"
 [ -z "$GNOME_EXTRA" ] && GNOME_EXTRA="epiphany seahorse-nautilus evolution \
@@ -1611,6 +1611,20 @@ options
 }
 
 parse_options() {
+	while [ "${INSTALL_COMMAND}" ];do
+		case ${INSTALL_COMMAND} in
+			"chroot-nutyx")
+				check_root
+				setup_chroot
+				mount_depot
+				enter_chroot
+				unmountall
+				exit 0;;
+			*)
+				break;;
+		esac
+	done
+
 	while [ "$1" ]; do
 		case $1 in
 			-h|--help)

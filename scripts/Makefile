@@ -31,6 +31,7 @@ all: init init-functions ipv4-static ipv4-static-route install-nutyx setup-nutyx
 
 install: all
 	install -D -m0755 install-nutyx $(SBINDIR)/install-nutyx
+	ln -sf            install-nutyx $(SBINDIR)/chroot-nutyx
 	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
 	install -D -m0755 genfstab $(SBINDIR)/genfstab
 	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
