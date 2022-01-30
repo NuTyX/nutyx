@@ -1192,12 +1192,13 @@ fi
 wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service dosfstools make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
-[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet dejavu-ttf xcursor-dmz"
-[ -z "$XORG" ] && XORG="xorg-xinit xorg-xf86-input-synaptics \
+[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet dejavu-ttf xcursor-dmz \
+ttf-croscore ttf-carlito"
+[ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xf86-video-ati \
 xorg-xf86-video-fbdev xorg-xf86-video-intel \
 xorg-xf86-video-nouveau xorg-xf86-video-vesa \
-xorg-xrandr xorg-setxkbmap"
+xorg-xrandr xorg-setxkbmap gnome-themes-extra"
 
 [ -z "$GUI_EXTRA" ] && GUI_EXTRA="firefox thunderbird gparted \
 scrot vlc telegram-desktop"
@@ -1208,12 +1209,12 @@ simple-scan gnome-weather gnome-chess balsa"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox dmenu"
 [ -z "$JWM" ] && JWM="lxdm jwm"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
-[ -z "$LXQT" ] && LXQT="sddm lxqt"
+[ -z "$LXQT" ] && LXQT="breeze-gtk sddm lxqt"
 [ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lxdm enlightenment"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome"
-[ -z "$KDE5" ] && KDE5="kde5"
+[ -z "$KDE5" ] && KDE5="adwaita-qt kde5"
 
 [ "$KERNEL" = "NONE" ] && KERNEL="none"
 
