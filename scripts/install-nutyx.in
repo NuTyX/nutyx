@@ -501,6 +501,7 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 # DISPLAY_MANAGER=/usr/bin/lightdm
 # DISPLAY_MANAGER=/usr/sbin/gdm
 # DISPLAY_MANAGER=/usr/bin/sddm
+# DISPLAY_MANAGER="/usr/dt/bin/dtlogin -daemon"
 
 # Options to pass to the display manager:
 DM_OPTIONS=""
@@ -1029,6 +1030,65 @@ EOF
 cp -v ${LFS}/etc/skel/$FILE \
 ${LFS}/root
 }
+generate_gtkrc() {
+local FILE
+FILE=".gtkrc-2.0"
+[ -f ${LFS}/etc/skel/$FILE ] && return
+[ ! -d ${LFS}/etc/skel ] && mkdir -pv ${LFS}/etc/skel
+if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
+   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
+   ${LFS}/etc/skel/$FILE
+   return
+fi
+cat > ${LFS}/etc/skel/$FILE << "EOF"
+gtk-theme-name="Adwaita"
+gtk-icon-theme-name="Adwaita"
+gtk-font-name="DejaVu Sans 10"
+gtk-cursor-theme-name="DMZ-Black"
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+EOF
+}
+generate_settings_ini(){
+local FILE
+FILE="settings.ini"
+[ -f ${LFS}/etc/skel/.config/gtk-3.0/$FILE ] && return
+[ ! -d ${LFS}/etc/skel/.config/gtk-3.0 ] \
+&& mkdir -pv ${LFS}/etc/skel/.config/gtk-3.0
+
+if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
+   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
+   ${LFS}/etc/skel/.config/gtk-3.0/$FILE
+   return
+fi
+cat > ${LFS}/etc/skel/.config/gtk-3.0/$FILE << "EOF"
+[Settings]
+gtk-theme-name=Adwaita
+gtk-icon-theme-name=Adwaita
+gtk-font-name=DejaVu Sans 10
+gtk-cursor-theme-name=DMZ-Black
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_BOTH
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintslight
+gtk-xft-rgba=rgb
+EOF
+}
 generate_pkgmk_conf() {
 local FILE
 FILE="pkgmk.conf"
@@ -1266,6 +1326,7 @@ if [ ! -z "$ISO" ];then
 for k in \$(ls /lib/modules/)
 do
   mkinitramfs \$k
+  mv boot/initrd-\$k boot/initrd-stable
 done"
 	if [ -z $MOUNT ]; then
 		DEVEL+="
@@ -1388,96 +1449,6 @@ mkdir -p ${LFS}/var/run/lock
 mknod -m 600 ${LFS}/dev/console c 5 1
 mknod -m 666 ${LFS}/dev/null c 1 3
 }
-make_iso_directories() {
-	mkdir -p ${LFS}/ISO/{boot,iso,isolinux}
-	cat > $TMP/install.cfg << "EOF"
-default install
-label install
- menu label ^Install
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro quiet
-
-label install-debug
- menu label install-^Debug
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro rootdelay=8 testiso
-
-label install-toram
- menu label Install copied to ^RAM
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro quiet toram
-
-label install-debug-toram
- menu label install-Debug copied to RA^M
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro rootdelay=8 testiso toram
-
-EOF
-	cat > ${LFS}/ISO/isolinux/isolinux.cfg << "EOF"
-path
-include menu.cfg
-default vesamenu.c32
-prompt 0
-timeout 100
-
-EOF
-	cat > $TMP/live.cfg << "EOF"
-label live
- menu label ^Live
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro quiet live
-
-label live-debug
- menu label li^ve-Debug
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro rootdelay=8 testiso live
-
-label live-toram
- menu label live copied to ^RAM
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro quiet live toram
-
-label live-debug-toram
- menu label live-Debug copied to ^RAM
- kernel /boot/bzImage
- append initrd=/boot/initrd vga=788 ro rootdelay=8 testiso live toram
-
-EOF
-	cat > $TMP/menu.cfg << "EOF"
-menu hshift 7
-menu width 80
-
-menu title NuTyX #VERSION_NUTYX#
-include stdmenu.cfg
-include install.cfg
-include live.cfg
-
-menu end
-
-EOF
-cat > ${LFS}/ISO/isolinux/stdmenu.cfg << "EOF"
-menu background ../boot/grub/splash.png
-menu color title	* #FFFFFFFF *
-menu color border	* #00000000 #00000000 none
-menu color sel		* #ffffffff #76a1d0ff *
-menu color hotsel	1;7;37;40 #ffffffff #76a1d0ff *
-menu color tabmsg	* #ffffffff #00000000 *
-menu color help		37;40 #ffdddd00 #00000000 none
-# XXX When adjusting vshift, take care that rows is set to a small
-# enough value so any possible menu will fit on the screen,
-# rather than falling off the bottom.
-menu vshift 8
-menu rows 12
-# The help line must be at least one line from the bottom.
-menu helpmsgrow 14
-# The command line must be at least one line from the help line.
-menu cmdlinerow 16
-menu timeoutrow 16
-menu tabmsgrow 18
-menu tabmsg Press ENTER to boot or TAB to edit a menu entry
-
-EOF
-}
 download_pkgadd() {
 	PKGADD="$(which pkgadd)"
 	if [ "$PKGADD" != "" ];then
@@ -1542,6 +1513,8 @@ install_configuration_files() {
 	generate_group
 	generate_bash_profile
 	generate_bashrc
+	generate_gtkrc
+	generate_settings_ini
 	generate_hosts
 	generate_inputrc
 	generate_shells
@@ -1666,6 +1639,7 @@ parse_options() {
 generate_squashfs() {
 local DIRS
 cd $LFS
+mkdir -p ISO/boot
 for d in opt bin etc lib lib64 root run sbin usr var home
 do
   [ ! -d $d ] && continue
@@ -1685,7 +1659,7 @@ LABEL="nutyxcd"
 [ "$(uname -m)" == "i686" ] && GRUB_EFI_IMG="bootia32.efi"
 
 ISODIR=$LFS/ISO
-mkdir -p $ISODIR
+mkdir -p $ISODIR/{iso,isolinux}
 
 SCRIPTDIR=$(pwd -P)
 
@@ -1694,7 +1668,6 @@ cd $LFS
 VERSION_KERNEL="$(basename lib/modules/*)"
 
 cp -va boot ISO/
-ln -sv initrd-${VERSION_KERNEL} ISO/boot/initrd
 
 cd ${ISODIR} || error "cd ${ISODIR}"
 
@@ -1703,15 +1676,95 @@ do
 	cp /usr/lib/syslinux/$FILE isolinux/
 done
 
-sed "s|#VERSION_NUTYX#|${VERSION_NUTYX} $ISO|" \
-	$TMP/menu.cfg \
-	> isolinux/menu.cfg
-sed "s|boot/initrd|boot/initrd-${VERSION_KERNEL}|" \
-    $TMP/live.cfg \
-	> isolinux/live.cfg
-sed "s|boot/initrd|boot/initrd-${VERSION_KERNEL}|" \
-    $TMP/install.cfg \
-	> isolinux/install.cfg
+	echo "
+menu hshift 7
+menu width 80
+
+menu title NuTyX ${VERSION_NUTYX} $ISO
+include stdmenu.cfg
+include install.cfg
+include live.cfg
+
+menu end
+
+" > isolinux/menu.cfg
+
+	cat > isolinux/stdmenu.cfg << "EOF"
+menu background ../boot/grub/splash.png
+menu color title	* #FFFFFFFF *
+menu color border	* #00000000 #00000000 none
+menu color sel		* #ffffffff #76a1d0ff *
+menu color hotsel	1;7;37;40 #ffffffff #76a1d0ff *
+menu color tabmsg	* #ffffffff #00000000 *
+menu color help		37;40 #ffdddd00 #00000000 none
+# XXX When adjusting vshift, take care that rows is set to a small
+# enough value so any possible menu will fit on the screen,
+# rather than falling off the bottom.
+menu vshift 8
+menu rows 12
+# The help line must be at least one line from the bottom.
+menu helpmsgrow 14
+# The command line must be at least one line from the help line.
+menu cmdlinerow 16
+menu timeoutrow 16
+menu tabmsgrow 18
+menu tabmsg Press ENTER to boot or TAB to edit a menu entry
+
+EOF
+	cat > isolinux/live.cfg << "EOF"
+label live
+ menu label ^Live
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro quiet live
+
+label live-debug
+ menu label li^ve-Debug
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso live
+
+label live-toram
+ menu label live copied to ^RAM
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro quiet live toram
+
+label live-debug-toram
+ menu label live-Debug copied to ^RAM
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso live toram
+
+EOF
+
+	cat > isolinux/install.cfg << "EOF"
+default install
+label install
+ menu label ^Install
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro quiet
+
+label install-debug
+ menu label install-^Debug
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso
+
+label install-toram
+ menu label Install copied to ^RAM
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro quiet toram
+
+label install-debug-toram
+ menu label install-Debug copied to RA^M
+ kernel /boot/kernel-stable
+ append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso toram
+
+EOF
+	cat > isolinux/isolinux.cfg << "EOF"
+path
+include menu.cfg
+default vesamenu.c32
+prompt 0
+timeout 100
+
+EOF
 
 # efi stufs
 rm -rf iso
@@ -1760,43 +1813,43 @@ fi
 
 menuentry \"$VERSION_NUTYX $ISO (UEFI) normal\" {
 
-    linux /boot/bzImage ro quiet
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro quiet
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) debug\" {
     set background_color=black
-    linux /boot/bzImage ro testiso rootdelay=8
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro testiso rootdelay=8
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) copied to RAM\" {
 
-    linux /boot/bzImage ro quiet toram
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro quiet toram
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) debug copied to RAM\" {
     set background_color=black
-    linux /boot/bzImage ro testiso rootdelay=8 toram
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro testiso rootdelay=8 toram
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) installable live\" {
-    linux /boot/bzImage ro quiet rootdelay=5 live
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro quiet rootdelay=5 live
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) debug live\" {
-    linux /boot/bzImage ro testiso rootdelay=8 live
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro testiso rootdelay=8 live
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) installable live copied to RAM\" {
-    linux /boot/bzImage ro quiet rootdelay=5 live toram
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro quiet rootdelay=5 live toram
+    initrd /boot/initrd-stable
 }
 menuentry \"$VERSION_NUTYX $ISO (UEFI) debug live copied to RAM\" {
-    linux /boot/bzImage ro testiso rootdelay=8 live toram
-    initrd /boot/initrd
+    linux /boot/kernel-stable ro testiso rootdelay=8 live toram
+    initrd /boot/initrd-stable
 }" > boot/grub/grub.cfg
 
 
-for FILE in kernel initrd
+for FILE in kernel-stable initrd-stable
 do
 	[ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
 done
@@ -1857,11 +1910,11 @@ main() {
 	install_resolv_conf
 	generate_setupfile
 	if [ ! -z "$ISO" ]; then
-	  make_iso_directories
-	  generate_squashfs
-	  generate_iso
+		generate_squashfs
+		generate_iso
+	else
+		successfull_installation
 	fi
-	successfull_installation
 	end
 
 }
