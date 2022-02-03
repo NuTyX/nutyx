@@ -1071,7 +1071,7 @@ SETUP_CONFIG_LANGUAGE="no"
 }
 setup_keymap ()
 {
-echo 'FONT="LatGrkCyr-8x16"' > \
+echo 'FONT=LatGrkCyr-8x16' > \
   ${VCONSOLE}
 	cat > ${CONSOLE} << "EOF"
 FONT="LatGrkCyr-8x16"
@@ -1218,8 +1218,9 @@ rm -f $TMP/locale.check
 break
 done
 sed -i "/KEYMAP/d" ${CONSOLE}
+sed -i "/KEYMAP/d" ${VCONSOLE}
 echo "KEYMAP=${REPLY}.map" >> ${CONSOLE}
-echo "KEYMAP=${REPLY}.map" >> ${VCONSOLE}
+echo "KEYMAP=${REPLY}" >> ${VCONSOLE}
 
 $SETUP_LOG "setup-nutyx --config-keymap" "KEYMAP=${REPLY}.map saved in ${CONSOLE}"
 loadkeys ${REPLY}.map > /dev/null 2>&1
