@@ -1266,7 +1266,7 @@ scrot vlc telegram-desktop"
 [ -z "$GNOME_EXTRA" ] && GNOME_EXTRA="epiphany seahorse-nautilus evolution \
 simple-scan gnome-weather gnome-chess balsa"
 [ -z "$CDE" ] && CDE="cde"
-[ -z "$OPENBOX" ] && OPENBOX="lxdm openbox dmenu"
+[ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
 [ -z "$JWM" ] && JWM="lxdm jwm"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
 [ -z "$LXQT" ] && LXQT="breeze-gtk sddm lxqt"
@@ -1560,6 +1560,7 @@ XORG         : $XORG
 GNOME_EXTRA  : ${GNOME_EXTRA}
 KDE5_EXTRA   : ${KDE5_EXTRA}
 CDE          : $CDE
+OPENBOX      : $OPENBOX
 JWM          : $JWM
 LXDE         : $LXDE
 LXQT         : $LXQT
