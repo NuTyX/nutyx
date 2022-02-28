@@ -1250,9 +1250,9 @@ fi
 [ -z "$MINI" ] && MINI="dhcpcd"
 [ -z "$BASE" ] && BASE="efibootmgr linux-firmware systemd \
 wireless-tools wpa-supplicant"
-[ -z "$CLI" ] && CLI="gpm gpm.service dosfstools make-ca xdg-user-dirs \
+[ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
-[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet dejavu-ttf xcursor-dmz \
+[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
 ttf-croscore ttf-carlito"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xf86-video-ati \
