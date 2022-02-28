@@ -1424,6 +1424,7 @@ select_partition() {
 	fi
 }
 check_available_disk() {
+	echo "Entering check_available_disk()" > /dev/tty2
 	unset DISK_LIST
 	local DISK_FULL_LIST
 	DISK_FULL_LIST=`lsblk -p -n -d -o NAME -e 1,3,7,11`
@@ -1446,10 +1447,13 @@ check_available_disk() {
 		fi
 		CHECK_HD_OK="yes"
 	fi
-	echo "DISK_LIST=$DISK_LIST (1399)" > /dev/tty2
+	echo "DISK_LIST=$DISK_LIST (1450)" > /dev/tty2
 }
 check_available_partition() {
+	echo "Entering check_available_partition()" > /dev/tty2
 	unset PARTITION_LIST
+	unset PARTITION
+	unset CHECK_SINGLE_PARTITION
 	local PARTITION_FULL_LIST MEM_TOTAL SWAP
 	if [ "$CHECK_HD_OK" == "no" ]; then
 		check_available_disk
@@ -1458,7 +1462,7 @@ check_available_partition() {
 	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
 	if [ ! -z "$PARTITION_LIST" ];then
 		CHECK_PART_OK="yes"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1411)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1465)" > /dev/tty2
 	else
 		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
 			# Auto-partitionning
@@ -1486,7 +1490,7 @@ ${DISK}1: size=$SWAP,type=swap
 ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
-			echo "CHECK_PART_OK=$CHECK_PART_OK (1439)" > /dev/tty2
+			echo "CHECK_PART_OK=$CHECK_PART_OK (1493)" > /dev/tty2
 			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="no"
 		fi
 	fi
@@ -1496,38 +1500,44 @@ ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 		--title " $(gettext "No partition available") " \
 		--msgbox " $(gettext "Please create/modify yours partitions") " 0 0
 		CHECK_PART_OK="new"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1449)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1503)" > /dev/tty2
 		setup_partition
 	else
-		echo "PARTITION_LIST=$PARTITION_LIST (1452)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1506)" > /dev/tty2
 		[ -d "$EFIVARS" ] && check_esp
 		check_swap
 		for i in ${SWAP_LIST}
 		do
-			echo "SWAP_PARTITION=$i (1457)" > /dev/tty2
+			echo "SWAP_PARTITION=$i (1511)" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$i@@"`
 		done
-		echo "PARTITION_LIST=$PARTITION_LIST (1460)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1514)" > /dev/tty2
 		if [ ! -z "$EFI_SYS_PART" ]; then
-			echo "EFI_SYS_PART=$EFI_SYS_PART (1462)" > /dev/tty2
+			echo "EFI_SYS_PART=$EFI_SYS_PART (1516)" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$EFI_SYS_PART@@"`
 		fi
-		echo "PARTITION_LIST=$PARTITION_LIST (1465)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1519)" > /dev/tty2
 		if [ ! -z "$PARTITION_LIST" ]; then
 			# Only one partition ?
 			if [ `echo $PARTITION_LIST|wc -w` -eq 1 ];then
 				# Only one disk
 				if [ `echo $DISK_LIST|wc -w` -eq 1 ]; then
 					PARTITION=`echo $PARTITION_LIST|sed 's/ //g'`
-					echo "PARTITION=$PARTITION (1472)" > /dev/tty2
+					echo "PARTITION=$PARTITION (1526)" > /dev/tty2
 					CHECK_SINGLE_PARTITION="yes"
-					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1474)"  > /dev/tty2
+					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1524)"  > /dev/tty2
+				else
+					CHECK_SINGLE_PARTITION="no"
+					unset PARTITION
 				fi
+			else
+				CHECK_SINGLE_PARTITION="no"
+				unset PARTITION
 			fi
 		fi
 		[ "$CHECK_PART_OK" == "new" ] || CHECK_PART_OK="yes"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1479)" > /dev/tty2
-		echo "PARTITION_LIST=$PARTITION_LIST (1480)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (1539)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (1540)" > /dev/tty2
 	fi
 }
 setup_help() {
@@ -1563,6 +1573,7 @@ $(gettext "Thank you for installing NuTyX") \
 
 }	
 setup_partition() {
+	echo "Entering setup_partition()" >> /dev/tty2
 	unset DISK_LIST
 	unset PARTITION_LIST
 	unset DISK
@@ -1767,18 +1778,17 @@ setup_erase() {
 	umount $PARTITION
 }
 setup_install() {
+	echo "Entering setup_install()" > /dev/tty2
 	local MF retval
 	retval=""
   if [ "$CHECK_HD_OK" == "no" ]; then
     check_available_disk
     [ "$CHECK_HD_OK" == "no" ] && return
   fi
-  if [ "$CHECK_PART_OK" == "no" ]; then
     check_available_partition
     [ "$CHECK_PART_OK" == "no" ] && return
-  fi
 	echo "PARTITION=$PARTITION (1736)" > /dev/tty2
-	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1737)" > /dev/tty2
+	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1779)" > /dev/tty2
 	echo "CHECK_PART_OK=$CHECK_PART_OK (1738)" > /dev/tty2
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 	if [ -z $PARTITION ]; then
@@ -1796,6 +1806,10 @@ setup_install() {
 	fi
 	FORMAT="$(print_file_system $PARTITION)"
 	echo "FORMAT $PARTITION=$FORMAT (1754)" > /dev/tty2
+	if [ "$FORMAT" == "ntfs" ]; then
+		setup_partition
+		[ "$FORMAT" == "ntfs" ] && return
+	fi
 	if [ "$FORMAT" == "no" ]; then
 		setup_format
 		[ "$FORMAT" == "no" ] && return
