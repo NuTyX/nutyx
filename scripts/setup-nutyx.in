@@ -1717,11 +1717,11 @@ install_nutyx() {
 		rm -fv ${2}/usr/lib/locale &> /dev/tty3
 		cp -av /etc/locale ${2}/usr/lib/ &> /dev/tty3
 	fi
-	# Kernels
+	# Kernel and initrd
 	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
-	#TODO
-	# find a more elegant solution
-	# cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
+
+
+	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
 
 	if  [ -f ${1}/boot/grub/splash.png ]; then
@@ -2026,12 +2026,12 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		echo "
 menuentry \"NuTyX SysV Quiet Mode\" {
-   linux /${GRUB_DESTINATION_DIR}kernel root=${NuTyX_PART} ro quiet verbose=no
-   #  initrd /${GRUB_DESTINATION_DIR}initrd
+   linux /${GRUB_DESTINATION_DIR}kernel-stable root=${NuTyX_PART} ro quiet verbose=no
+   initrd /${GRUB_DESTINATION_DIR}initrd-stable
 }
 menuentry \"NuTyX SysV Verbose Mode \" {
-   linux /${GRUB_DESTINATION_DIR}kernel root=${NuTyX_PART} ro
-   #  initrd /${GRUB_DESTINATION_DIR}initrd
+   linux /${GRUB_DESTINATION_DIR}kernel-stable root=${NuTyX_PART} ro
+   initrd /${GRUB_DESTINATION_DIR}initrd-stable
 }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 	else
 		#
@@ -2069,29 +2069,29 @@ menuentry \"NuTyX SysV Verbose Mode \" {
 #
 #menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
 #   set root=(hd1,3)
-#   linux /boot/kernel init=/sbin/init root=/dev/sdb3 ro
+#   linux /boot/kernel-stable init=/sbin/init root=/dev/sdb3 ro
 #}
 #
 # The same one with systemd:
 #
 #menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
 #   set root=(hd1,3)
-#   linux /boot/kernel init=/sbin/systemd-init root=/dev/sdb3 ro
+#   linux /boot/kernel-stable init=/sbin/systemd-init root=/dev/sdb3 ro
 #}
 #
 # The same one with RuNyX (Experimental):
 #
 #menuentry  "Harddisk number 2 and partition number 3" {
 #   set root=(hd1,3)
-#   linux /boot/kernel init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
+#   linux /boot/kernel-stable init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
 #}
 #
 # An other one with initrd and rootdelay (to use with USB stick for ex)
 #
 #menuentry  "Harddisk number 2 and partition number 1 with initrd" {
 #   set root=(hd1,1)
-#   linux /boot/kernel init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
-#   initrd /boot/initrd
+#   linux /boot/kernel-stable init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
+#   initrd /boot/initrd-stable
 #}
 #
 EOF
