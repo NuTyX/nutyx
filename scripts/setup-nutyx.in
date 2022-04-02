@@ -1899,8 +1899,8 @@ setup_grub() {
 	GRUB_DESTINATION_DIR=""
 	GRUB_LOG_FILE=$TMP/grub.log
 
-	[ "$CHECK_HD_OK" == "no" ] || check_available_disk
-	[ "$CHECK_HD_OK" == "no" ] || return
+	[ "$CHECK_HD_OK" == "no" ] && check_available_disk
+	[ "$CHECK_HD_OK" == "no" ] && return
 
 	[ "$CHECK_PART_OK" == "no" ] && check_available_partition
 	[ "$CHECK_PART_OK" == "no" ] && return
