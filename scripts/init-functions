@@ -976,6 +976,13 @@ do_mount_virtualfs()
 
         # Link /dev/shm /run/shm
         ln -sfn /dev/shm /run/shm
+
+        # Link /proc/self/fd* /dev/std*
+        ln -sv /proc/self/fd /dev/fd
+        ln -sv /proc/self/fd/0 /dev/stdin
+        ln -sv /proc/self/fd/1 /dev/stdout
+        ln -sv /proc/self/fd/2 /dev/stderr
+
 	(exit ${failed})
 	evaluate_retval
 }
