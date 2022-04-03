@@ -978,7 +978,7 @@ do_mount_virtualfs()
         ln -sfn /dev/shm /run/shm
 
         # Link /proc/self/fd* /dev/std*
-        ln -sf /proc/self/fd /dev/fd
+        ln -sf /proc/self/fd /dev
         ln -sf /proc/self/fd/0 /dev/stdin
         ln -sf /proc/self/fd/1 /dev/stdout
         ln -sf /proc/self/fd/2 /dev/stderr
