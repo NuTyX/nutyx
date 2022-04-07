@@ -1449,8 +1449,8 @@ check_available_disk() {
 		fi
 		CHECK_HD_OK="yes"
 	fi
-	echo "CHECK_HD_OK=$CHECK_HD_OK (1451)
-DISK_LIST=$DISK_LIST (1452)" > /dev/tty2
+	echo "CHECK_HD_OK=$CHECK_HD_OK (${LINENO})
+DISK_LIST=$DISK_LIST (${LINENO})" > /dev/tty2
 }
 check_available_partition() {
 	echo "Entering check_available_partition()" > /dev/tty2
@@ -1462,7 +1462,7 @@ check_available_partition() {
 	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
 	if [ ! -z "$PARTITION_LIST" ];then
 		CHECK_PART_OK="yes"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1465)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	else
 		if [ "$CHECK_SINGLE_DISK" == "yes" ];then
 			# Auto-partitionning
@@ -1490,7 +1490,7 @@ ${DISK}1: size=$SWAP,type=swap
 ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
-			echo "CHECK_PART_OK=$CHECK_PART_OK (1493)" > /dev/tty2
+			echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="no"
 		fi
 	fi
@@ -1500,32 +1500,32 @@ ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 		--title " $(gettext "No partition available") " \
 		--msgbox " $(gettext "Please create/modify yours partitions") " 0 0
 		CHECK_PART_OK="new"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1503)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 		setup_partition
 	else
-		echo "PARTITION_LIST=$PARTITION_LIST (1506)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 		[ -d "$EFIVARS" ] && check_esp
 		check_swap
 		for i in ${SWAP_LIST}
 		do
-			echo "SWAP_PARTITION=$i (1511)" > /dev/tty2
+			echo "SWAP_PARTITION=$i (${LINENO})" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$i@@"`
 		done
-		echo "PARTITION_LIST=$PARTITION_LIST (1514)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 		if [ ! -z "$EFI_SYS_PART" ]; then
-			echo "EFI_SYS_PART=$EFI_SYS_PART (1516)" > /dev/tty2
+			echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
 			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$EFI_SYS_PART@@"`
 		fi
-		echo "PARTITION_LIST=$PARTITION_LIST (1519)" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 		if [ ! -z "$PARTITION_LIST" ]; then
 			# Only one partition ?
 			if [ `echo $PARTITION_LIST|wc -w` -eq 1 ];then
 				# Only one disk
 				if [ `echo $DISK_LIST|wc -w` -eq 1 ]; then
 					PARTITION=`echo $PARTITION_LIST|sed 's/ //g'`
-					echo "PARTITION=$PARTITION (1526)" > /dev/tty2
+					echo "PARTITION=$PARTITION (${LINENO})" > /dev/tty2
 					CHECK_SINGLE_PARTITION="yes"
-					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1524)"  > /dev/tty2
+					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})"  > /dev/tty2
 				else
 					CHECK_SINGLE_PARTITION="no"
 					unset PARTITION
@@ -1536,8 +1536,8 @@ ${DISK}2: type=linux" >> $TMP/PARTITIONNING
 			fi
 		fi
 		[ "$CHECK_PART_OK" == "new" ] || CHECK_PART_OK="yes"
-		echo "CHECK_PART_OK=$CHECK_PART_OK (1539)" > /dev/tty2
-		echo "PARTITION_LIST=$PARTITION_LIST (1540)" > /dev/tty2
+		echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
+		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 	fi
 }
 setup_help() {
@@ -1756,7 +1756,7 @@ setup_erase() {
 	[ "$CHECK_PART_OK" == "no" ] && return
 
 	echo "PARTITION=$PARTITION (1706)" > /dev/tty2
-	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1707)" > /dev/tty2
+	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})" > /dev/tty2
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Erase") NuTyX"
@@ -1783,20 +1783,20 @@ setup_install() {
 	local MF retval
 	retval=""
 
-	echo "PARTITION=$PARTITION (1787)
-CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1788)
-CHECK_PART_OK=$CHECK_PART_OK (1789)
-CHECK_HD_OK=$CHECK_HD_OK (1790)
-PARTITION=$PARTITION (1791)" > /dev/tty2
+	echo "PARTITION=$PARTITION (${LINENO})
+CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})
+CHECK_PART_OK=$CHECK_PART_OK (${LINENO})
+CHECK_HD_OK=$CHECK_HD_OK (${LINENO})
+PARTITION=$PARTITION (${LINENO})" > /dev/tty2
 
 	[ "$CHECK_PART_OK" == "no" ] && check_available_partition
 	[ "$CHECK_PART_OK" == "no" ] && return
 
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 
-	echo "PARTITION=$PARTITION (1796)
-CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (1797)
-CHECK_PART_OK=$CHECK_PART_OK (1798)" > /dev/tty2
+	echo "PARTITION=$PARTITION (${LINENO})
+CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})
+CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Install NuTyX")"
@@ -1815,7 +1815,7 @@ CHECK_PART_OK=$CHECK_PART_OK (1798)" > /dev/tty2
 		fi
 	fi
 	FORMAT="$(print_file_system $PARTITION)"
-	echo "FORMAT $PARTITION=$FORMAT (1816)" > /dev/tty2
+	echo "FORMAT $PARTITION=$FORMAT (${LINENO})" > /dev/tty2
 	if [ "$FORMAT" == "ntfs" ]; then
 		setup_partition
 		return
@@ -1840,7 +1840,7 @@ CHECK_PART_OK=$CHECK_PART_OK (1798)" > /dev/tty2
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
 	echo "$PARTITION" > $TMP/boot
-	echo "CHECK_PART_OK=$CHECK_PART_OK (1836)" > /dev/tty2
+	echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	if [ "$CHECK_PART_OK" == "new" ]; then
 		setup_grub
 		return
@@ -1848,8 +1848,8 @@ CHECK_PART_OK=$CHECK_PART_OK (1798)" > /dev/tty2
 	if [ -d "$EFIVARS" ];then
 		FORMAT="no"
 		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
-		echo "EFI_SYS_PART=$EFI_SYS_PART (1843)" > /dev/tty2
-		echo "$EFI_SYS_PART FORMAT=$FORMAT (1844)" > /dev/tty2
+		echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
+		echo "$EFI_SYS_PART FORMAT=$FORMAT (${LINENO})" > /dev/tty2
 		if [ "$FORMAT" == "vfat" ];then
 			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
 			--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
@@ -2242,19 +2242,22 @@ setup_initrd() {
 
 }
 check_esp() {
-	local FORMAT FIRST_DISK
+	local FORMAT
 	unset EFI_SYS_PART
-	FIRST_DISK=`for i in $DISK_LIST;do echo $i;break;done`
-	for VAR in `blkid $FIRST_DISK -o export`
+	for i in $DISK_LIST
 	do
-		local $VAR
+		for VAR in $(blkid $i -o export)
+		do
+			local $VAR
+		done
+		EFI_SYS_PART="`(LANGUAGE=C fdisk $i -l -o device,type|grep EFI|cut -d " " -f1)`"
+		[ "$PTTYPE" == "gpt" ] && break
 	done
 	if [ "$PTTYPE" != "gpt" ]; then
 		dialog --title "   Hmmmm   " \
 		--msgbox "    $(gettext "GPT partition table not found")" 6 60
 	else
-		EFI_SYS_PART="`(LANGUAGE=C fdisk ${FIRST_DISK} -l -o device,type|grep EFI|cut -d " " -f1)`"
-		echo "EFI_SYS_PART=$EFI_SYS_PART (2326)" > /dev/tty2
+		echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
 		if [ -z "${EFI_SYS_PART}" ];then
 			dialog --title "   Hmmmm   " \
 			--msgbox "    $(gettext "EFI partition not found")" 6 60
@@ -2264,7 +2267,7 @@ check_esp() {
 setup_esp() {
 	local FORMAT
 	check_esp
-	echo "EFI_SYS_PART: $EFI_SYS_PART (2336)" > /dev/tty2
+	echo "EFI_SYS_PART: $EFI_SYS_PART (${LINENO})" > /dev/tty2
 	if [ ! -z $EFI_SYS_PART ]; then
 		FORMAT="$(print_file_system $EFI_SYS_PART)"
 		if [ "$FORMAT" != "vfat" ]; then
