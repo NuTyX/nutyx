@@ -143,16 +143,7 @@ else
 	copyFirmwares
 fi
 
-
-usrbinfiles="cut groups"
-binfiles="sh cat clear date grep cp dd hostname killall ls mkdir \
-mknod more mount mountpoint chmod \
-umount stty sed sleep ln rm uname ip"
-
-usrsbinfiles="blkid switch_root losetup"
-if [ -z $BUSYBOX ]; then
-		sbinfiles="udevd udevadm"
-fi
+sbinfiles="udevd udevadm"
 
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
@@ -307,31 +298,28 @@ for f in $usrbinfiles; do
 	fi
 done
 # Install more binaries
-if [ -z $BUSYBOX ]; then
 
-	for f in $usrsbinfiles; do
-		ldd /usr/sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-		copy $f usr/sbin
-	done
+for f in $usrsbinfiles; do
+	ldd /usr/sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
+	copy $f usr/sbin
+done
 
-	for f in $binfiles ; do
-		ldd /bin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-		copy $f bin
-	done
+for f in $binfiles ; do
+	ldd /bin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
+	copy $f bin
+done
 
-	for f in $sbinfiles ; do
-		ldd /sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-		copy $f sbin
-	done
+for f in $sbinfiles ; do
+	ldd /sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
+	copy $f sbin
+done
 
-	if [ -x /bin/kmod ] ; then
-		ln -s kmod $WDIR/bin/lsmod
-		ln -s kmod $WDIR/bin/insmod
-		ln -s kmod $WDIR/bin/modprobe
-		ln -s kmod $WDIR/bin/depmod
-	fi
+if [ -x /bin/kmod ] ; then
+	ln -s kmod $WDIR/bin/lsmod
+	ln -s kmod $WDIR/bin/insmod
+	ln -s kmod $WDIR/bin/modprobe
+	ln -s kmod $WDIR/bin/depmod
 fi
-
 
 # Install libraries
 sort $unsorted | uniq | while read library ; do

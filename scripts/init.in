@@ -454,11 +454,8 @@ if [ -z $root ]; then
 
 else
 	[ "$verbose" == "no" ] || printf "Start udev...\n"
-	if [ -L /sbin/mdev ]; then
-		/sbin/mdev -s
-	else
-		do_start_udev
-	fi
+	do_start_udev
+
 	[ "$verbose" == "no" ] || printf "Start lvm ...\n"
 	do_start_lvm
 fi
@@ -468,7 +465,7 @@ do_mount_root
 
 if [ ! -z $root ]; then
   [ "$verbose" == "no" ] || printf "Stop udev ...\n"
-  [ -L /sbin/mdev ] || do_stop_udev
+  do_stop_udev
 fi
 
 cd /.root
