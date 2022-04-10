@@ -20,7 +20,7 @@ done
 
 find /lib/modules/$KERNEL_VERSION/kernel/{crypto,fs,lib} \
      /lib/modules/$KERNEL_VERSION/kernel/drivers/{scsi,message,pcmcia,virtio} \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/{md,ata,block,firewire}  \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/{md,ata,block,firewire,mmc}  \
      /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/{host,storage}  \
      -type f 2> /dev/null | $CPIO --make-directories -p --quiet $WDIR 2> /dev/null
 
