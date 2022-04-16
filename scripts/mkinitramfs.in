@@ -1,31 +1,33 @@
+#!/bin/bash
 # This file based in part on the mkinitrafms script for the LFS LiveCD
 # written by Alexander E. Patrakov and Jeremy Huntwork.
 # adapted by Thierry Nuttens for NuTyX
 
 copyModules() {
-for i in dm-mod md-mod ehci-pci \
-xhci-pci xhci-hcd vfat fat xfs reiserfs btrfs ext2 \
-nls_cp437 ehci-hcd uhci-hcd uas nls_iso8859-1 \
-usbcore usb-common usb-storage loop sr_mod \
-cdrom squashfs isofs overlay mmc_core \
-rtsx_pci rtsx_pci_sdmmc rtsx_pci_ms mmc_block \
-ssb lpc_ich shpcp sdhci-acpi sdhci-pltfm \
-sdhci sdhci-pci failover net_failover \
-serio i8042 libps2 atkbd \
-virtio virtio_blk virtio_pci virtio_net virtio_ring
-do
-	find /lib/modules/$KERNEL_VERSION -type f -name $i* 2> /dev/null | \
-	$CPIO --make-directories -p --quiet $WDIR 2> /dev/null
-done
+local MODULES
+MODULES="/lib/modules/$KERNEL_VERSION/kernel/crypto \
+     /lib/modules/$KERNEL_VERSION/kernel/fs \
+     /lib/modules/$KERNEL_VERSION/kernel/lib \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/scsi\
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/message \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/pcmcia \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/virtio \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/md
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/ata
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/block
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/firewire
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/mmc
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/cdrom  \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/host \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/storage \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/core \
+     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/common"
 
-find /lib/modules/$KERNEL_VERSION/kernel/{crypto,fs,lib} \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/{scsi,message,pcmcia,virtio} \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/{md,ata,block,firewire,mmc}  \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/{host,storage}  \
-     -type f 2> /dev/null | $CPIO --make-directories -p --quiet $WDIR 2> /dev/null
+printf "Copying $(find $MODULES -type f | wc -l) modules...\n"
+find $MODULES -type f 2> /dev/null | $CPIO --make-directories -p  $WDIR 2> /dev/null
 
 mkdir -p $WDIR/lib/modules/$KERNEL_VERSION
-for i in builtin order symbols
+for i in builtin order
 do
    cp /lib/modules/$KERNEL_VERSION/modules.$i \
    $WDIR/lib/modules/$KERNEL_VERSION
@@ -103,6 +105,7 @@ do
 done
 for DIR in rules.d hwdb.d
 do
+   mkdir -p $WDIR/lib/udev/$DIR
    mkdir -p $WDIR/etc/udev/$DIR
 done
 touch $WDIR/etc/modprobe.d/modprobe.conf
@@ -137,11 +140,7 @@ if [ -n "$KERNEL_VERSION" ] && [ ! -d "/lib/modules/$1" ] ; then
   exit 1
 fi
 
-if [ "${2}" == "-nf" ] ||  [ "${2}" == "--no-firmwares" ];then
-	printf "No firmware copied, it's for an ISO.\n"
-else
-	copyFirmwares
-fi
+copyFirmwares
 
 sbinfiles="udevd udevadm"
 
@@ -252,17 +251,15 @@ mkdir -p $WDIR/usr/share/terminfo/l
 cp /usr/share/terminfo/l/linux \
  $WDIR/usr/share/terminfo/l/
 
-# Install the udev configuration files if needed
-
-if [ -z $BUSYBOX ];then
-	[ -f /etc/udev/udev.conf ] && cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
-	for file in $(find /etc/udev/rules.d/ -type f) ; do
-		cp $file $WDIR/etc/udev/rules.d
-	done
-	for file in $(find /etc/udev/hwdb.d/ -type f) ; do
-		cp $file $WDIR/etc/udev/hwdb.d
-	done
-	cat > $WDIR/etc/udev/rules.d/55-lfs.rules << "EOF"
+# Install the udev configuration files
+[ -f /etc/udev/udev.conf ] && cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
+for file in $(find /lib/udev/rules.d/ -type f) ; do
+	cp $file $WDIR/lib/udev/rules.d
+done
+for file in $(find /lib/udev/hwdb.d/ -type f) ; do
+	cp $file $WDIR/lib/udev/hwdb.d
+done
+cat > $WDIR/etc/udev/rules.d/55-lfs.rules << "EOF"
 # /etc/udev/rules.d/55-lfs.rules: Rule definitions for LFS.
 
 # Core kernel devices
@@ -278,7 +275,7 @@ KERNEL=="isdn[0-9]*",       GROUP="dialout"
 KERNEL=="isdnctrl[0-9]*",   GROUP="dialout"
 KERNEL=="dcbri[0-9]*",      GROUP="dialout"
 EOF
-fi
+
 
 # Clock setting
 [ -f /etc/sysconfig/clock ] && cp /etc/sysconfig/clock $WDIR/etc/sysconfig
