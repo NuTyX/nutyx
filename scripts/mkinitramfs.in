@@ -38,6 +38,8 @@ depmod -b $WDIR $KERNEL_VERSION
 
 copyFirmwares()
 {
+  cp -a /lib/firmware/amd-ucode \
+  $WDIR/lib/firmware > /dev/null 2>&1
   cp -a /lib/firmware/rtlwifi \
   $WDIR/lib/firmware > /dev/null 2>&1
   cp -a /lib/firmware/ath6k \
