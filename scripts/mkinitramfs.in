@@ -349,6 +349,33 @@ rm -f /boot/$INITRAMFS_FILE
 
 ( cd $WDIR ; find . | $CPIO -o -H newc --quiet | gzip -9 ) > $INITRAMFS_FILE
 
+#
+# https://www.kernel.org/doc/Documentation/x86/microcode.txt
+# Prepare early loading of microcode if available
+#
+if ls /lib/firmware/intel-ucode/* >/dev/null 2>&1 ||
+   ls /lib/firmware/amd-ucode/*   >/dev/null 2>&1; then
+
+# first empty WDIR to reuse it
+  rm -r $WDIR/*
+
+  DSTDIR=$WDIR/kernel/x86/microcode
+  mkdir -p $DSTDIR
+
+  if [ -d /lib/firmware/amd-ucode ]; then
+    cat /lib/firmware/amd-ucode/microcode_amd*.bin > $DSTDIR/AuthenticAMD.bin
+  fi
+
+  if [ -d /lib/firmware/intel-ucode ]; then
+    cat /lib/firmware/intel-ucode/* > $DSTDIR/GenuineIntel.bin
+  fi
+
+  ( cd $WDIR; find . | cpio -o -H newc --quiet ) > microcode.img
+  cat microcode.img $INITRAMFS_FILE > tmpfile
+  mv tmpfile $INITRAMFS_FILE
+  rm microcode.img
+fi
+
 # Remove the temporary direc
 rm -rf $WDIR $unsorted
 mv $INITRAMFS_FILE /boot/$INITRAMFS_FILE
