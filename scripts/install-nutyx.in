@@ -227,7 +227,8 @@ error() {
 end() {
 	if [ "$ERREUR" == "yes" ]; then
 		if [ ! -f $TMP/depot ]; then
-			umount ${LFS}/${DEPOT} || rm -r ${LFS}/${DEPOT}
+			mountpoint ${LFS}/${DEPOT} > /dev/null && umount ${LFS}/${DEPOT}
+
 			boot_mesg "Cleaning up temporary files.."
 			boot_mesg "Please correct and start again"
 		fi
@@ -1239,8 +1240,6 @@ unset CR
 
 [ -z "$URL" ] && URL="http://downloads.nutyx.org"
 
-[ -z "$MOUNT" ] || VERSION="$(basename $MOUNT)"
-
 [ -z "$VERSION" ] && VERSION="rolling"
 if [ "$VERSION" == "development" ]; then
 	CODE_NAME="$(date +%Y%m%d)"
@@ -1422,7 +1421,10 @@ STRING_LENGTH="0"   # the length of the current message
 mount_depot() {
 if [ ! -z $MOUNT ]; then
 	mkdir -p $LFS/$DEPOT
-	mount --bind $MOUNT  $LFS/$DEPOT \
+	[ -d $MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} ] \
+		|| error "$MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} not exist"
+
+	mount --bind $MOUNT/$ARCH/$VERSION  $LFS/$DEPOT \
 		|| error "cannot mount $MOUNT on $LFS/$DEPOT"
 fi
 }
@@ -1537,6 +1539,7 @@ List of variables:
 
 LFS          : $LFS
 URL          : $URL
+ARCH         : $ARCH
 VERSION      : $VERSION
 KERNEL       : $KERNEL
 DEPOT        : $DEPOT
@@ -1571,7 +1574,7 @@ ISO Filename : $ISO_FILE"
 }
 print_help() {
 	echo "
-usage: $(sename ${INSTALL_COMMAND}) [options]
+usage: $(basename ${INSTALL_COMMAND}) [options]
 options
 
   -ec,  --enter-chroot    will enter in the chroot if exist
