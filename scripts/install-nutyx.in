@@ -66,24 +66,6 @@ echo_failure() {
 	${ECHO} -e "${NORMAL}"
 	boot_mesg_flush
 }
-print_error_msg() {
-	echo_failure
-	ERREUR="yes"
-	# $i is inherited by the rc script
-	boot_mesg -n " FAILURE:\n\n You should not read this error.\n\n" ${FAILURE}
-	boot_mesg -n " It means something went wrong with the installation"
-	boot_mesg -n " of ${i} "
-	boot_mesg_flush
-	boot_mesg -n " Thanks to inform us"
-	boot_mesg -n " via the website http://www.nutyx.org."
-	boot_mesg " Thanks again for your collaboration.\n"
-	boot_mesg_flush
-	boot_mesg -n "Press Enter to continue..." ${INFO}
-	boot_mesg "" ${NORMAL}
-	read ENTER
-	end
-	exit 1
-}
 #***********************************************************************
 # Function - unmountall
 #
@@ -209,7 +191,7 @@ install_pkg() {
 		# Installing the package
 		$TMP/$PKGADD -r $LFS -i \
 		$LFS/$DEPOT/${BASE_COLLECTION}/${1}/$PackageFileName \
-			|| print_error_msg
+			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
 		echo_ok
 	else
@@ -1415,8 +1397,7 @@ WARNING="\\033[1;33m"        # Warnings are yellow
 FAILURE="\\033[1;31m"        # Failures are red
 INFO="\\033[1;36m"           # Information is light cyan
 BRACKET="\\033[1;34m"        # Brackets are blue
-
-STRING_LENGTH="0"   # the length of the current message
+STRING_LENGTH="0"            # the length of the current message
 }
 mount_depot() {
 if [ ! -z $MOUNT ]; then
@@ -1479,7 +1460,7 @@ download_pkgadd() {
 			download_pkg cards
 			echo "Extraction of cards ..."
 			bsdtar -xf $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName} \
-				|| print_error_msg
+				|| error "Cannot extract $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName}"
 			echo_ok
 		fi
 	fi
