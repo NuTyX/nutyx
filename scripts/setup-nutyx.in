@@ -1481,7 +1481,7 @@ check_available_partition() {
 			echo "device: $DISK" >> $TMP/PARTITIONNING
 			if [ -d "$EFIVARS" ];then
 				echo "
-${DISK}1: size=100M,type=uefi
+${DISK}1: size=50M,type=uefi
 ${DISK}2: size=$SWAP,type=swap
 ${DISK}3: type=linux" >> $TMP/PARTITIONNING
 			else
