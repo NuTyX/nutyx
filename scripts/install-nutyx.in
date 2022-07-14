@@ -967,7 +967,7 @@ alias l='ls -alh'
 alias duh='du -h --max-depth=1'
 alias dfh='df -h'
 alias pkgfind='cards list | grep -i'
-
+alias paste-nutyx='curl -F '\''f:1=<-'\'' ix.io'
 # End ~/.bashrc
 EOF
 [ -f ${LFS}/root/$FILE ] && return
