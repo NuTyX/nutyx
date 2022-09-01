@@ -90,10 +90,9 @@ exit 1
 }
 network_card_found() {
 local NIC
-NIC=`ls /sys/class/net`
-if [  `echo $NIC|wc -w` -gt 1 ];then
+NIC=$(ls /sys/class/net)
+if [ $(echo $NIC|wc -w) -gt 1 ];then
 	retval=""
-	touch $TMP/result
 	while [ true ]; do
 		echo  -n "--backtitle \" $(gettext "Network card") \" \
 		--title \" $(gettext "Select the card") \" \
@@ -101,26 +100,36 @@ if [  `echo $NIC|wc -w` -gt 1 ];then
 		for i in $NIC
 		do
 			[ "$i" == "lo" ] && continue
+			# If only one entry, just use it
+			if [ $(echo $NIC|wc -w) -eq 2 ]; then
+				echo "$i" > $TMP/result
+				break
+			fi
 			echo -n \""$i"\"\  \"`/sbin/udevadm info /sys/class/net/$i|grep ID_MODEL_FROM_DATABASE|cut -d "=" -f2`\" " off "
-			done >> $TMP/list
-			dialog --file $TMP/list 2>$TMP/result
-			retval=$?
-			result=$(cat $TMP/result)
-			case $retval in
-				0)
-					if [ "$result" != "" ]; then
-						break
-					fi;;
-				1|255)
-					if [ "$result" != "" ]; then
-						break
-					fi;;
-			esac
+		done >> $TMP/list
+		if [ -f $TMP/result ]; then
+			break
+		fi
+		dialog --file $TMP/list 2>$TMP/result
+		retval=$?
+		result=$(cat $TMP/result)
+		case $retval in
+			0)
+				if [ "$result" != "" ]; then
+					break
+				fi;;
+			1|255)
+				if [ "$result" != "" ]; then
+					break
+				fi;;
+		esac
 	done
-	NETWORK_CARD=`cat $TMP/result|sed 's/"//g'`
-	$SETUP_LOG "setup-nutyx --config-net" "Network card found: $NETWORK_CARD"
-	rm -f $TMP/result
-	rm -f $TMP/list
+	if [ -f $TMP/result ]; then
+		NETWORK_CARD=$(cat $TMP/result|sed 's/"//g')
+		$SETUP_LOG "setup-nutyx --config-net" "Network card found: $NETWORK_CARD"
+		rm -f $TMP/result
+		rm -f $TMP/list
+	fi
 fi
 }
 check_group_exist()
@@ -451,14 +460,21 @@ LINKDELAY='15'
 # init delay to wait after initialisation of Networkmanager
 NETWORKDELAY='0'
 EOF
-fi
+	fi
   return 0
 fi
 network_card_found
+if [ -z ${NETWORK_CARD} ]; then
+	dialog --no-cancel \
+	--title " $(gettext "No Network Adapter available") " \
+	--msgbox " $(gettext "Please add a Network Adapter") " 0 0
+	SETUP_CONFIG_NETWORK="no"
+	return 0
+fi
 SYSTEMD_NETWORK_DIR=/etc/systemd/network/
 mkdir -p ${SYSTEMD_NETWORK_DIR}
 retval=""
-if [ !  -z "${DHCPCD}" ]; then
+if [ ! -z "${DHCPCD}" ]; then
   while [ "$retval" == "" ]; do
 	dialog  \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
