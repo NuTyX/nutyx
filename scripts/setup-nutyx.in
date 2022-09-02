@@ -56,7 +56,7 @@ _msgfmt() {
 	TD=$(mktemp -d)
 	L=`echo ${1}|cut -d "_" -f1`
 	C=`echo ${1}|cut -d "_" -f2`
-	echo "group ${L}" >> ${CARDS}
+	grep "group ${L}" ${CARDS} > /dev/null || echo "group ${L}" >> ${CARDS}
 	localedef -i ${1} -f UTF-8 ${1}.UTF-8
 	if [ -f /lib/services/setup-nutyx/setup-nutyx.locales.gz ];then
 		bsdtar -xf /lib/services/setup-nutyx/setup-nutyx.locales.gz \
@@ -326,7 +326,7 @@ if [ "$DEVTYPE" = "wlan" ]; then
 	case $retval in
 		0)
 			if [ "$result" != "" ]; then
-				ESSID=`cat $TMP/result`
+				ESSID="$(cat $TMP/result)"
 				echo -n "--title \" $1 \" \
 				--colors \
 				--passwordbox \" $(gettext "Enter the password of") (PASSPHRASE): \Zb\Z4$ESSID\Zn \" 0 0" > $TMP/passwd
@@ -431,7 +431,7 @@ setup_net()
 	--title " $(gettext "Name of your machine") " \
 	--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
 
-	if [ "`cat $TMP/NAME`" == "" ]; then
+	if [ "$(cat $TMP/NAME)" == "" ]; then
 		interrupt
 	else
 		HOSTNAME=$(tail -n 1 $TMP/NAME)
@@ -482,7 +482,7 @@ if [ ! -z "${DHCPCD}" ]; then
 	0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
 	"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
 	retval=$?
-	result=`cat $TMP/result`
+	result=$(cat $TMP/result)
 	case $retval in
 		0)
 			if [ "$result" == "" ]; then
@@ -493,7 +493,7 @@ if [ ! -z "${DHCPCD}" ]; then
     esac
   done
 fi
-if [ "`cat $TMP/result`" == "$(gettext "Auto")" ];then
+if [ "$(cat $TMP/result)" == "$(gettext "Auto")" ];then
 	cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
 ONBOOT="yes"
 SERVICE="dhcpcd"
@@ -524,7 +524,7 @@ else
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox " $(gettext "Enter an IP address") : " 10 60 "192.168.1.5" 2> $TMP/IP
 
-	if [ "`cat $TMP/IP`" == "" ]; then
+	if [ "$(cat $TMP/IP)" == "" ]; then
 		interrupt
 	else
 		 IP=$(tail -n 1 $TMP/IP)
@@ -533,7 +533,7 @@ else
 	dialog --title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox " $(gettext "Enter a broadcast address"),\
 	$(gettext "in most cases the current value can be used"): " 10 60 ${BC_TEMP} 2> $TMP/BC
-	if [ "`cat $TMP/BC`" == "" ]; then
+	if [ "$(cat $TMP/BC)" == "" ]; then
 		interrupt
 	else
 		BROADCAST=$(tail -n 1 $TMP/BC)
@@ -542,7 +542,7 @@ else
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox "$(gettext "Enter the subnet mask"),\
 	$(gettext "in most cases the current value can be used"): " 10 60 "255.255.255.0" 2> $TMP/NM
-	if [ "`cat $TMP/NM`" == "" ]; then
+	if [ "$(cat $TMP/NM)" == "" ]; then
 		interrupt
 	else
 		PREFIX=$(tail -n 1 $TMP/NM)
@@ -765,7 +765,7 @@ dialog   \
 if [ ! $? = 0 ]; then
   break
 fi
-REPLY=`cat $TMP/language.check`
+REPLY=$(cat $TMP/language.check)
 break
 done
 sed -i "/group/d" /etc/cards.conf
@@ -1229,7 +1229,7 @@ dialog  \
 if [ ! $? = 0 ]; then
   break
 fi
-REPLY=`cat $TMP/locale.check`
+REPLY=$(cat $TMP/locale.check)
 rm -f $TMP/locale.check
 break
 done
@@ -1394,7 +1394,7 @@ select_disk() {
 		`for DISK in $DISK_LIST; do  lsblk -p -n -d -o NAME,SIZE $DISK; done` \
 		2> $TMP/disk
 		retval=$?
-		result=`cat $TMP/disk`
+		result=$(cat $TMP/disk)
 	done
 	case $retval in
 		0)
@@ -1422,7 +1422,7 @@ select_partition() {
 		0 0 0 \
 		`for PARTITION in ${PARTITION_LIST}; do lsblk -d -p -n -o NAME,SIZE $PARTITION; done`  2>$TMP/part
 		retval=$?
-		result=`cat $TMP/part`
+		result=$(cat $TMP/part)
 		case $retval in
 			0)
 				if [ "$result" == "" ]; then
@@ -1445,10 +1445,10 @@ check_available_disk() {
 	CHECK_HD_OK="no"
 	unset DISK_LIST
 	local DISK_FULL_LIST
-	DISK_FULL_LIST=`lsblk -p -n -d -o NAME -e 1,3,7,11`
+	DISK_FULL_LIST=$(lsblk -p -n -d -o NAME -e 1,3,7,11)
 	for i in $DISK_FULL_LIST; do
-		[ "`lsblk -p -n -d -o LABEL $i`" == "nutyxcd" ] && continue
-		[ "`echo $i|grep fd[0-9]*`" == "$i" ] && continue
+		[ "$(lsblk -p -n -d -o LABEL $i)" == "nutyxcd" ] && continue
+		[ "$(echo $i|grep fd[0-9]*)" == "$i" ] && continue
 		DISK_LIST="$DISK_LIST $i"
 	done
 	if [ -z "$DISK_LIST" ]; then
@@ -1457,16 +1457,16 @@ check_available_disk() {
 		--msgbox " $(gettext "Please stop the PC and install a harddisk") " 6 60
 	else
 		# Only one disk ?
-		if [ `echo $DISK_LIST|wc -w` -eq 1 ]; then
+		if [ $(echo $DISK_LIST|wc -w) -eq 1 ]; then
 			DISK=$DISK_LIST
-			DISK=`echo $DISK|sed  "s/ //"`
+			DISK=$(echo $DISK|sed  "s/ //")
 			echo "$DISK_LIST" > $TMP/disk
 			CHECK_SINGLE_DISK="yes"
 		fi
 		CHECK_HD_OK="yes"
 	fi
 	echo "CHECK_HD_OK=$CHECK_HD_OK (${LINENO})
-DISK_LIST=$DISK_LIST (${LINENO})" > /dev/tty2
+	DISK_LIST=$DISK_LIST (${LINENO})" > /dev/tty2
 }
 check_available_partition() {
 	echo "Entering check_available_partition()" > /dev/tty2
@@ -1489,21 +1489,30 @@ check_available_partition() {
 			[ $MEM_TOTAL -gt 15 ] && SWAP="4G"
 
 			if [ -d "$EFIVARS" ];then
-				EFI_SYS_PART="{DISK}1"
-				echo "label: gpt" >> $TMP/PARTITIONNING
-			else
-				echo "label: dos" >> $TMP/PARTITIONNING
-			fi
-			echo "device: $DISK" >> $TMP/PARTITIONNING
-			if [ -d "$EFIVARS" ];then
-				echo "
+				echo "label: gpt" > $TMP/PARTITIONNING
+				if [[ "$DISK" =~ .*"nvme".* ]]; then
+					DISK=${DISK/p*/}
+					EFI_SYS_PART="{DISK}p1"
+					echo "device: $DISK
+
+${DISK}p1: size=50M,type=uefi
+${DISK}p2: size=$SWAP,type=swap
+${DISK}p3: type=linux" >> $TMP/PARTITIONNING
+
+				else
+					EFI_SYS_PART="{DISK}1"
+					echo "device: $DISK
+
 ${DISK}1: size=50M,type=uefi
 ${DISK}2: size=$SWAP,type=swap
 ${DISK}3: type=linux" >> $TMP/PARTITIONNING
+				fi
 			else
-				echo "
+				echo "label: dos
+device: $DISK
+
 ${DISK}1: size=$SWAP,type=swap
-${DISK}2: type=linux" >> $TMP/PARTITIONNING
+${DISK}2: type=linux" > $TMP/PARTITIONNING
 			fi
 			CHECK_PART_OK="new"
 			echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
@@ -2037,7 +2046,7 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		#
 		# The $TMP/boot file contains the NuTyX partition
 		#
-		NuTyX_PART="`cat $TMP/boot`"
+		NuTyX_PART="$(cat $TMP/boot)"
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		echo "
@@ -2152,7 +2161,7 @@ setup_advanced_initrd() {
 		"$(gettext "Main")" "$(gettext "Main Menu")" \
 		2>$TMP/choix
 	retval=$?
-	choice=`cat $TMP/choix`
+	choice=$(cat $TMP/choix)
 	case $retval in
 	0|2)
 		case $choice in
@@ -2229,7 +2238,7 @@ setup_initrd() {
 	"$(gettext "Advanced")" "$(gettext "Advanced Menu")" \
 	2>$TMP/choix
 	retval=$?
-	choice=`cat $TMP/choix`
+	choice=$(cat $TMP/choix)
 	case $retval in
 	0|2)
 		case $choice in
