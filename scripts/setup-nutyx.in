@@ -1702,7 +1702,6 @@ install_nutyx() {
 	/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
 	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
 
-	rm -rfv ${2}/boot &> /dev/tty3
 	chmod -v 750 ${2}/root &> /dev/tty3
 	mkdir -v ${2}/boot &> /dev/tty3
 	echo "$PARTITION   /    $FORMAT  defaults     0    0" >> /etc/fstab
@@ -1865,57 +1864,6 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
 	echo "$PARTITION" > $TMP/boot
-	echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
-	if [ "$CHECK_PART_OK" == "new" ]; then
-		setup_grub
-		return
-	fi
-	if [ -d "$EFIVARS" ];then
-		FORMAT="no"
-		[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
-		echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
-		echo "$EFI_SYS_PART FORMAT=$FORMAT (${LINENO})" > /dev/tty2
-		if [ "$FORMAT" == "vfat" ];then
-			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
-			--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
-			retval=$?
-			case $retval in
-				0)
-					setup_grub;;
-			esac
-		else
-			dialog --title "   Oups !!!  " \
-			--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
-		fi
-	else
-		dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
-		--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
-		retval=$?
-		case $retval in
-			0)
-				setup_grub;;
-		esac
-	fi
-}
-MBR_ok() {
-	local retval
-	retval=""
-	dialog --title "   $(gettext "Everything OK, do you want to modify") $GRUB_CONFIG_FILE ?   " \
-	--colors \
-	--yesno " $(gettext "A new") $GRUB_CONFIG_FILE $(gettext "has been created"), \
-$(gettext "it has been adapted to launch the Maintenance system of NuTyX"), \
-$(gettext "if you choose") $(gettext "Yes"), \
-$(gettext "an simplify VI editor will allow you to modify it").\n\n \
-	\Zb\Z4i\Zn  $(gettext "Enter the edit mode") \n\
-	\Zb\Z4Esc\Zn $(gettext "Exit the edit mode") \n\
-	\Zb\Z4:q!\Zn $(gettext "Cancel the modifications and exit VI")\n\
-	\Zb\Z4:x\Zn  $(gettext "Save and exit VI")\n" 0 0
-	retval=$?
-	case $retval in
-		0|2)
-			setup_keymap
-			vi $GRUB_CONFIG_DIR/$GRUB_CONFIG_FILE;;
-	esac
 }
 setup_grub() {
 	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE SPNR OPTIONS TARGET
@@ -1946,28 +1894,86 @@ setup_grub() {
 		setup_format
 		[ "$FORMAT" == "no" ] && return
 	fi
-
-	# If not a new table of partition
-	#  IF not efi mode we saved the current MBR if no yet saved
-	if [ "$CHECK_PART_OK" != "new" ]; then
-		[ -d "$EFIVARS" ] || \
-		dd if=$DISK of=$TMP/MBR bs=512 count=1 2>/dev/null
+	if [ $SETUP_INSTALL == "no" ];then
+		[ -d "$EFIVARS" ] && setup_esp
 	fi
-	# Copy all the necessary files
+
+	echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
+	if [ "$CHECK_PART_OK" == "new" ]; then
+		if [ -d "$EFIVARS" ]; then
+			[ "$(uname -m)" == "x86_64" ] && TARGET="--target=x86_64-efi"
+			[ "$(uname -m)" == "i686" ] && TARGET="--target=i386-efi"
+		fi
+	else
+		if [ -d "$EFIVARS" ]; then
+			FORMAT="no"
+			[ ! -z $EFI_SYS_PART ] && FORMAT="$(print_file_system $EFI_SYS_PART)"
+			echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
+			echo "$EFI_SYS_PART FORMAT=$FORMAT (${LINENO})" > /dev/tty2
+			if [ "$FORMAT" != "vfat" ];then
+				dialog --title "   Oups !!!  " \
+				--msgbox "    $(gettext "Partition ESP not formatted ...")" 6 60
+				return 0
+			fi
+			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
+			--colors --radiolist  "$(gettext "Configure the boot of the PC") ? "  0 0 0 \
+			"$(gettext "x86_64-efi")" "$(gettext "grub efi 64 bits")" "on" \
+			"$(gettext "i386-efi")" "$(gettext "grub efi 32 bits")"  "off" \
+			"$(gettext "skip")" "$(gettext "No Grub")" "off" \
+			2>$TMP/choix
+			retval=$?
+			choice=$(cat $TMP/choix)
+			case $retval in
+				0|2)
+					case $choice in
+						"$(gettext "x86_64-efi")")
+							TARGET="--target=x86_64-efi"
+							;;
+						"$(gettext "i386-efi")")
+							TARGET="--target=i386-efi"
+							;;
+						"$(gettext "skip")")
+							dialog --title "   Oups !!!  " \
+							--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
+							return 0
+							;;
+					esac
+					;;
+				1)
+					echo "1"
+					;;
+				255)
+					echo "255"
+					;;
+			esac
+		else
+			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
+			--yesno "$(gettext "Configure the boot of the PC") ? " 0 0
+			retval=$?
+			case $retval in
+				1|255)
+					dialog --title "   Oups !!!  " \
+					--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
+					return 0
+					;;
+			esac
+			# If not a new table of partition AND
+			# Not efi mode we saved the current MBR if no yet saved
+			dd if=$DISK of=$TMP/MBR bs=512 count=1 2>/dev/null
+		fi
+	fi
+
 	mkdir $TMP/boot_partition
 	mount $PARTITION $TMP/boot_partition
 
-	if [ -d "$EFIVARS" ];then
-		[ "$(uname -m)" == "x86_64" ] && TARGET="--target=x86_64-efi"
-		[ "$(uname -m)" == "i686" ] && TARGET="--target=i386-efi"
-
-		OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
-		SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
-		mountpoint /sys/firmware/efi/efivars > /dev/tty2 || mount -t efivarfs efivarfs /sys/firmware/efi/efivars || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
-		mkdir -p $TMP/boot_partition/boot/efi || error "mkdir -p $TMP/boot_partition/boot/efi"
-		mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || error "mount $EFI_SYS_PART"
-		mkdir -p $TMP/boot_partition/boot/efi/EFI/ || error "mkdir -p $TMP/boot_partition/boot/efi/EFI"
-		rm -f $TMP/boot_partition/boot/efi/EFI/BOOT/$SPNR/* 2>/dev/null
+	if [ -d "$EFIVARS" ]; then
+			OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
+			SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
+			mountpoint /sys/firmware/efi/efivars > /dev/tty2 || mount -t efivarfs efivarfs /sys/firmware/efi/efivars || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
+			mkdir -p $TMP/boot_partition/boot/efi || error "mkdir -p $TMP/boot_partition/boot/efi"
+			mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || error "mount $EFI_SYS_PART"
+			mkdir -p $TMP/boot_partition/boot/efi/EFI/ || error "mkdir -p $TMP/boot_partition/boot/efi/EFI"
+			rm -f $TMP/boot_partition/boot/efi/EFI/BOOT/$SPNR/* 2>/dev/null
 	fi
 
 	echo "$PARTITION" > $TMP/boot_part
@@ -2131,6 +2137,26 @@ EOF
 	[ -d "$EFIVARS" ] && umount "$EFI_SYS_PART"
 	umount $PARTITION
 }
+MBR_ok() {
+	local retval
+	retval=""
+	dialog --title "   $(gettext "Everything OK, do you want to modify") $GRUB_CONFIG_FILE ?   " \
+	--colors \
+	--yesno " $(gettext "A new") $GRUB_CONFIG_FILE $(gettext "has been created"), \
+$(gettext "it has been adapted to launch the Maintenance system of NuTyX"), \
+$(gettext "if you choose") $(gettext "Yes"), \
+$(gettext "an simplify VI editor will allow you to modify it").\n\n \
+	\Zb\Z4i\Zn  $(gettext "Enter the edit mode") \n\
+	\Zb\Z4Esc\Zn $(gettext "Exit the edit mode") \n\
+	\Zb\Z4:q!\Zn $(gettext "Cancel the modifications and exit VI")\n\
+	\Zb\Z4:x\Zn  $(gettext "Save and exit VI")\n" 0 0
+	retval=$?
+	case $retval in
+		0|2)
+			setup_keymap
+			vi $GRUB_CONFIG_DIR/$GRUB_CONFIG_FILE;;
+	esac
+}
 setup_reboot() {
 	cd /
 	if [ -d /media/cdrom/${SETUP_ARCH} ]; then
@@ -2254,6 +2280,7 @@ setup_initrd() {
 				;;
 			"$(gettext "Install")")
 				setup_install
+				setup_grub
 				;;
 		esac
 		;;
