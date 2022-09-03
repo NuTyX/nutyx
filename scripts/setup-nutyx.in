@@ -54,8 +54,8 @@ _zoneinfo(){
 _msgfmt() {
 	local L C TD DN DF FILE
 	TD=$(mktemp -d)
-	L=`echo ${1}|cut -d "_" -f1`
-	C=`echo ${1}|cut -d "_" -f2`
+	L=$(echo ${1}|cut -d "_" -f1)
+	C=$(echo ${1}|cut -d "_" -f2)
 	grep "group ${L}" ${CARDS} > /dev/null || echo "group ${L}" >> ${CARDS}
 	localedef -i ${1} -f UTF-8 ${1}.UTF-8
 	if [ -f /lib/services/setup-nutyx/setup-nutyx.locales.gz ];then
@@ -105,7 +105,7 @@ if [ $(echo $NIC|wc -w) -gt 1 ];then
 				echo "$i" > $TMP/result
 				break
 			fi
-			echo -n \""$i"\"\  \"`/sbin/udevadm info /sys/class/net/$i|grep ID_MODEL_FROM_DATABASE|cut -d "=" -f2`\" " off "
+			echo -n \""$i"\"\  \"$(/sbin/udevadm info /sys/class/net/$i|grep ID_MODEL_FROM_DATABASE|cut -d "=" -f2)\" " off "
 		done >> $TMP/list
 		if [ -f $TMP/result ]; then
 			break
@@ -155,7 +155,7 @@ check_user_valid()
 
 	local desc_test name_test
 
-	name_test=`echo -n "${1}" | sed 's@^[a-z][a-z0-9]*$@@g'`
+	name_test=$(echo -n "${1}" | sed 's@^[a-z][a-z0-9]*$@@g')
 	if [ "$name_test" != "" ]; then
 		dialog --msgbox "$(gettext "The name you enter is invalid")" 5 60
 		return 1
@@ -165,7 +165,7 @@ check_user_valid()
 		dialog --msgbox "$(gettext "The name you enter is already register on the system")" 6 60
 		return 2
 	fi
-	desc_test=`echo "${2}" | sed 's@^[[:alnum:]! -.,~_@;%<>?]*$@@ig'`
+	desc_test=$(echo "${2}" | sed 's@^[[:alnum:]! -.,~_@;%<>?]*$@@ig')
 	if [ "$desc_test" != "" ]; then
 		dialog --msgbox "$(gettext "The description you enter is invalid")" 5 60
 		return 3
@@ -183,12 +183,12 @@ setup_password()
 	while [ "$RESULT" == "false" ];
 	do
 		exec 3>&1
-		PASSWORD=`dialog --title "  $(gettext "Password") " \
+		PASSWORD=$(dialog --title "  $(gettext "Password") " \
 		--insecure "$@" \
-		--passwordbox "  $(gettext "Enter a new password"):" 8 60  2>&1 1>&3`
-		CONFIRM_PASSWORD=`dialog --title "  $(gettext "Password") " \
+		--passwordbox "  $(gettext "Enter a new password"):" 8 60  2>&1 1>&3)
+		CONFIRM_PASSWORD=$(dialog --title "  $(gettext "Password") " \
 		--insecure "$@" \
-		--passwordbox "$(gettext "Confirm the new password"):" 8 60 2>&1 1>&3`
+		--passwordbox "$(gettext "Confirm the new password"):" 8 60 2>&1 1>&3)
 
     if [ "$PASSWORD" == "" ] || [ "$CONFIRM_PASSWORD" == "" ]; then
 			dialog --msgbox "$(gettext "Password is empty, please try again")" 5 60
@@ -304,16 +304,16 @@ choose_available_ESSID() {
 OLD_IFS=$IFS
 IFS="
 "
-[ -z $"WIFI_NETWORK_CARD" ] && WIFI_NETWORK_CARD=`cat $TMP/result|sed 's/"//g'`
+[ -z $"WIFI_NETWORK_CARD" ] && WIFI_NETWORK_CARD=$(cat $TMP/result|sed 's/"//g')
 
-DEVTYPE=`/sbin/udevadm info /sys/class/net/$WIFI_NETWORK_CARD | grep DEVTYPE | cut -d"=" -f2`
+DEVTYPE=$(/sbin/udevadm info /sys/class/net/$WIFI_NETWORK_CARD | grep DEVTYPE | cut -d"=" -f2)
 if [ "$DEVTYPE" = "wlan" ]; then
 	echo -n "--backtitle \" $(gettext "Networks") \" \
 	--title \" $1 \" \
 	--colors \
 	--radiolist \" $(gettext "Choose the name of the wireless access point") (ESSID) \" 0 0 0 " > $TMP/networks
 
-	NETWORKS=`iwlist $WIFI_NETWORK_CARD scanning 2>/dev/null | grep "ESSID:" | cut -d":" -f2 | grep -v "\\x00"`
+	NETWORKS=$(iwlist $WIFI_NETWORK_CARD scanning 2>/dev/null | grep "ESSID:" | cut -d":" -f2 | grep -v "\\x00")
 	[ -z "$NETWORKS" ] && return
 	for i in $NETWORKS; do
 		[ $i == "\"\"" ] && continue
@@ -1315,7 +1315,7 @@ SETUP_CONFIG_KEYBOARD="no"
 
 setup_clock() {
 	local TABDATE GOODDATE
-	HWCLOCK=`LANG=C.utf-8 hwclock -r`
+	HWCLOCK=$(LANG=C.utf-8 hwclock -r)
 	dialog --title "   $(gettext "Coordinated Universal Time or Local Time ?")  " \
 	--yesno "$(gettext "The hardware clock is set to"):\n\n $HWCLOCK. \n\n$(gettext "Do you want to use this time as Coordinated Universal Time ?") \n\
 $(gettext "so that the summer/winter time is changed automatically" ) " 0 0
@@ -1347,8 +1347,8 @@ LOCAL" >> $ADJTIME
 
 	exec 3>&1
 	DESC=" $(gettext "Use the arrows keys to change the values") "
-	USERDATE=`dialog --title " $(gettext "Please enter the date") " \
-	--calendar "$DESC" 0 0 2>&1 1>&3`
+	USERDATE=$(dialog --title " $(gettext "Please enter the date") " \
+	--calendar "$DESC" 0 0 2>&1 1>&3)
 	code=$?
 	exec 3>&-
 	case $code in
@@ -1364,8 +1364,8 @@ LOCAL" >> $ADJTIME
 			break;;
 	esac
 	exec 3>&1
-	USERTIME=`dialog --title " $(gettext "Please enter the time") " \
-	--timebox  "$DESC" 0 0 2>&1 1>&3`
+	USERTIME=$(dialog --title " $(gettext "Please enter the time") " \
+	--timebox  "$DESC" 0 0 2>&1 1>&3)
 	code=$?
 	exec 3>&-
 	case $code in
@@ -1391,7 +1391,7 @@ select_disk() {
 		--menu \
 		"  $(gettext "Choose the disk you want to use for this operation")  " \
 		0 0 0  \
-		`for DISK in $DISK_LIST; do  lsblk -p -n -d -o NAME,SIZE $DISK; done` \
+		$(for DISK in $DISK_LIST; do  lsblk -p -n -d -o NAME,SIZE $DISK; done) \
 		2> $TMP/disk
 		retval=$?
 		result=$(cat $TMP/disk)
@@ -1404,8 +1404,8 @@ select_disk() {
 		1|255)
 			break;;
 	esac
-	DISK=`cat $TMP/disk|sed 's/"//g'|sed 's/ //g'`
-	DISK=`echo $DISK|sed  "s/ //"`
+	DISK=$(cat $TMP/disk|sed 's/"//g'|sed 's/ //g')
+	DISK=$(echo $DISK|sed  "s/ //")
 	if [ -z $DISK ]; then
 		DISK="no"
 	fi
@@ -1420,7 +1420,7 @@ select_partition() {
 		--title " ${1} " \
 		--menu " $(gettext "Choose the partition you want to use for this operation") " \
 		0 0 0 \
-		`for PARTITION in ${PARTITION_LIST}; do lsblk -d -p -n -o NAME,SIZE $PARTITION; done`  2>$TMP/part
+		$(for PARTITION in ${PARTITION_LIST}; do lsblk -d -p -n -o NAME,SIZE $PARTITION; done)  2>$TMP/part
 		retval=$?
 		result=$(cat $TMP/part)
 		case $retval in
@@ -1432,7 +1432,7 @@ select_partition() {
 				break;;
 		esac
 	done
-	PARTITION=`cat $TMP/part|sed 's/"//g'|sed 's/ //g'`
+	PARTITION=$(cat $TMP/part|sed 's/"//g'|sed 's/ //g')
 	if [ -z $PARTITION ];then
 		dialog --no-cancel \
 		--title " $(gettext "No partition available") " \
@@ -1475,7 +1475,7 @@ check_available_partition() {
 	unset CHECK_SINGLE_PARTITION
 	local PARTITION_FULL_LIST MEM_TOTAL SWAP
 
-	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
+	PARTITION_LIST=$(for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done)
 	if [ ! -z "$PARTITION_LIST" ];then
 		CHECK_PART_OK="yes"
 		echo "CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
@@ -1519,7 +1519,7 @@ ${DISK}2: type=linux" > $TMP/PARTITIONNING
 			sfdisk ${DISK} < $TMP/PARTITIONNING > /dev/tty2 || CHECK_PART_OK="no"
 		fi
 	fi
-	PARTITION_LIST=`for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done`
+	PARTITION_LIST=$(for i in $DISK_LIST; do lsblk -p -l -n -o NAME $i| tail -n +2; done)
 	if [ -z "$PARTITION_LIST" ];then
 		dialog --no-cancel \
 		--title " $(gettext "No partition available") " \
@@ -1534,20 +1534,20 @@ ${DISK}2: type=linux" > $TMP/PARTITIONNING
 		for i in ${SWAP_LIST}
 		do
 			echo "SWAP_PARTITION=$i (${LINENO})" > /dev/tty2
-			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$i@@"`
+			PARTITION_LIST=$(echo ${PARTITION_LIST}| sed "s@$i@@")
 		done
 		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 		if [ ! -z "$EFI_SYS_PART" ]; then
 			echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
-			PARTITION_LIST=`echo ${PARTITION_LIST}| sed "s@$EFI_SYS_PART@@"`
+			PARTITION_LIST=$(echo ${PARTITION_LIST}| sed "s@$EFI_SYS_PART@@")
 		fi
 		echo "PARTITION_LIST=$PARTITION_LIST (${LINENO})" > /dev/tty2
 		if [ ! -z "$PARTITION_LIST" ]; then
 			# Only one partition ?
-			if [ `echo $PARTITION_LIST|wc -w` -eq 1 ];then
+			if [ $(echo $PARTITION_LIST|wc -w) -eq 1 ];then
 				# Only one disk
-				if [ `echo $DISK_LIST|wc -w` -eq 1 ]; then
-					PARTITION=`echo $PARTITION_LIST|sed 's/ //g'`
+				if [ $(echo $DISK_LIST|wc -w) -eq 1 ]; then
+					PARTITION=$(echo $PARTITION_LIST|sed 's/ //g')
 					echo "PARTITION=$PARTITION (${LINENO})" > /dev/tty2
 					CHECK_SINGLE_PARTITION="yes"
 					echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})"  > /dev/tty2
@@ -1616,7 +1616,7 @@ setup_partition() {
 	"cfdisk" "$(gettext "Basic partitioning tool")" \
 	"fdisk" "$(gettext "Advanced partitioning tool")" 2>$TMP/choix
 	retval=$?
-	choice=`cat $TMP/choix`
+	choice=$(cat $TMP/choix)
 	rm -f $TMP/choix
 	case $retval in
 		0|2)
@@ -1665,14 +1665,14 @@ erase_nutyx() {
 	if [ -d ${2}/home ];then
 		mv ${2}/{home,.home}
 	fi
-	MAX=`ls *squashfs|wc -l`
+	MAX=$(ls *squashfs|wc -l)
 	N=0
 	(for i in *squashfs
 	do
-		DIR=`echo $i|cut -d "." -f1`
+		DIR=$(echo $i|cut -d "." -f1)
 		[ "$DIR" == "root" ] && continue
 		[ ! -z $DIR ] && rm -rf ${2}/${DIR}
-		REAL=`calc $N/$MAX *100`
+		REAL=$(calc $N/$MAX *100)
 		PCT=${REAL%.*}
 		echo "$PCT"
 		N=$((N+1))
@@ -1917,9 +1917,9 @@ setup_grub() {
 			fi
 			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
 			--colors --radiolist  "$(gettext "Configure the boot of the PC") ? "  0 0 0 \
-			"$(gettext "x86_64-efi")" "$(gettext "grub efi 64 bits")" "on" \
-			"$(gettext "i386-efi")" "$(gettext "grub efi 32 bits")"  "off" \
-			"$(gettext "skip")" "$(gettext "No Grub")" "off" \
+			"$(gettext "x86_64-efi")" "$(gettext "GRUB EFI 64 bits")" "on" \
+			"$(gettext "i386-efi")" "$(gettext "GRUB EFI 32 bits")"  "off" \
+			"$(gettext "skip")" "$(gettext "No GRUB")" "off" \
 			2>$TMP/choix
 			retval=$?
 			choice=$(cat $TMP/choix)
@@ -1933,8 +1933,6 @@ setup_grub() {
 							TARGET="--target=i386-efi"
 							;;
 						"$(gettext "skip")")
-							dialog --title "   Oups !!!  " \
-							--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
 							return 0
 							;;
 					esac
@@ -2029,7 +2027,7 @@ EOF
 	BOOT_FS="$(print_file_system $PARTITION)"
 	LANG=C /sbin/grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} ${DISK} > ${GRUB_LOG_FILE} 2>&1
 	if ! (grep finished ${GRUB_LOG_FILE} > /dev/null); then
-		echo "/sbin/grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} [`echo $DISK`]" >> ${GRUB_LOG_FILE}
+		echo "/sbin/grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} [$(echo $DISK)]" >> ${GRUB_LOG_FILE}
 		mount >> ${GRUB_LOG_FILE}
 		echo "DISK=${DISK}
 GRUB_DESTINATION_DIR=${GRUB_DESTINATION_DIR}
@@ -2042,7 +2040,7 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		# Restore MBR if exist
 		[ -f $TMP/MBR ] && dd if=$TMP/MBR of=$DISK bs=512 count=1 > 2/dev/null
 		dialog --title " $(gettext "Something went wrong probably the file system is not supported") " \
-		--msgbox "`cat ${GRUB_LOG_FILE}`" 30 70
+		--msgbox "$(cat ${GRUB_LOG_FILE})" 30 70
 		[ -d "$EFIVARS" ] && umount "$EFI_SYS_PART"
 		umount $TMP/boot_partition
 		umount /mnt/hd 2>/dev/null
@@ -2215,11 +2213,7 @@ setup_advanced_initrd() {
 			"$(gettext "Boot")")
 				echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION" > /dev/tty2
 				[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
-				if [ -d "$EFIVARS" ]; then
-					setup_grub "efi"
-				else
-					setup_grub
-				fi
+				setup_grub
 				;;
 			"$(gettext "Keyboard")")
 				setup_keymap
@@ -2302,7 +2296,7 @@ check_esp() {
 		do
 			local $VAR
 		done
-		EFI_SYS_PART="`(LANGUAGE=C fdisk $i -l -o device,type|grep EFI|cut -d " " -f1)`"
+		EFI_SYS_PART="$(LANGUAGE=C fdisk $i -l -o device,type|grep EFI|cut -d " " -f1)"
 		[ "$PTTYPE" == "gpt" ] && break
 	done
 	if [ "$PTTYPE" != "gpt" ]; then
@@ -2346,7 +2340,7 @@ $(gettext "Are you sure you want to continue ?")" 7 60
 }
 check_swap() {
 	unset SWAP_LIST
-	SWAP_LIST="`(LANGUAGE=C fdisk -l -o device,type|grep swap|cut -d " " -f1)`"
+	SWAP_LIST="$(LANGUAGE=C fdisk -l -o device,type|grep swap|cut -d " " -f1)"
 	if [ -z "${SWAP_LIST}" ];then
 		dialog --title "   Hmmmm   " \
 	--msgbox "    $(gettext "Swap partition not found")" 6 60
@@ -2366,7 +2360,7 @@ config_all() {
 	echo "config the system"
 }
 print_help() {
-	echo "usage: `basename $COMMAND` [options]"
+	echo "usage: $(basename $COMMAND) [options]"
 	echo "options"
 	echo ""
 	echo "   start,                 $(gettext "Start the service")"
@@ -2469,7 +2463,7 @@ parse_options() {
 					echo "config all"
 					;;
 				-v|--version)
-					echo "`basename ${COMMAND}` $VERSION"
+					echo "$(basename ${COMMAND}) $VERSION"
 					exit 0
 					;;
 				-h|--help)
@@ -2477,7 +2471,7 @@ parse_options() {
 					exit 0
 					;;
 				*)
-					echo "`basename ${COMMAND}`: invalid option $1"
+					echo "$(basename ${COMMAND}): invalid option $1"
 					exit 1
 					;;
 			esac
@@ -2602,7 +2596,7 @@ IWCONFIG="$(which iwconfig)"
 DHCPCD="$(which dhcpcd)"
 
 if [ ! -z "$IWCONFIG" ];then
-	WIFI_NETWORK_CARD="`$IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1`"
+	WIFI_NETWORK_CARD="$($IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1)"
 fi
 
 SETUP_LOG="setup-nutyx-log"
