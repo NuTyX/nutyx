@@ -1027,7 +1027,7 @@ do_load_modules()
    # Continue with next if there's no modules file or there are no
    # valid entries
    [ -r $FILE ] || continue
-   egrep -qv '^($|#)' $FILE || continue
+   grep -E -qv '^($|#)' $FILE || continue
    log_info_msg "Loading modules:"
    break
   done
@@ -1035,7 +1035,7 @@ do_load_modules()
     do
      [ ! -f $FILE ] && continue
      [ -r $FILE ] || continue
-     egrep -qv '^($|#)' $FILE || continue
+     grep -E -qv '^($|#)' $FILE || continue
 
 
      while read module args; do
@@ -1335,7 +1335,7 @@ do_start_cleanfs()
   (return ${failed})
   evaluate_retval
 
-  if egrep -qv '^(#|$)' /etc/sysconfig/createfiles 2>/dev/null; then
+  if grep -E -qv '^(#|$)' /etc/sysconfig/createfiles 2>/dev/null; then
     log_info_msg "Creating files and directories... "
     create_files      # Always returns 0
     evaluate_retval
