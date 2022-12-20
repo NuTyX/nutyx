@@ -438,6 +438,10 @@ setup_net()
 		echo $HOSTNAME > /etc/hostname
 	fi
   hostname $HOSTNAME
+	echo "# Begin /etc/hosts
+127.0.0.1 localhost.localdomain localhost $HOSTNAME
+# End /etc/hosts
+" > /etc/hosts
 
 NETWORK_MANAGER="$(which NetworkManager)"
 [ -z $NETWORK_MANAGER ] && NETWORK_MANAGER="$(which connmand)"
@@ -1716,6 +1720,7 @@ install_nutyx() {
 	etc/sysconfig/network \
 	etc/sysconfig/clock \
 	etc/hostname \
+	etc/hosts \
 	etc/locale.conf \
 	etc/adjtime \
 	etc/cards.conf \
