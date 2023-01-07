@@ -75,16 +75,12 @@ In addition to the latest stable kernel, all LTS kernels are available.
 Each LTS kernel is a separate package. The version of the packages kernel-414, kernel-419, kernel-54, kernel-510, kernel-515
 and kernel-61 never changes, only upstream patches are applied. They are available throughout the life of these.
 Once reached the end of life, cards inform the user during the installation/update.
-A tutorial explains how to proceed to change kernel.s
+A tutorial explains how to proceed to change kernel.
 
 Busybox commands are available in the /sbin system folders as a fallback system.
 They are available as a last resort if the complete order is missing.
 
 As on LFS, the two init systems sysV and systemd are offered but unlike LFS.
-
-Spiky uses the NuTyX in systemd mode for his personal use and for updating his packages.
-I almost exclusively use NuTyX in sysV mode on my desktop and server machines.
-
 The two coexist without worries on the NuTyX.
 
 Some modifications are necessary in the source code of systemd but nothing too serious.
@@ -93,6 +89,9 @@ Thanks to the concept of automatically generated subpackages that I will explain
 only the systemd library is necessary for NuTyX to work in sysV mode.
 The systemd.lib package is always part of a NuTyX base system.
 This poses no problem with the operation of sysV
+
+Spiky uses the NuTyX in systemd mode for his personal use and for updating his packages.
+I almost exclusively use NuTyX in sysV mode on my desktop and server machines.
 
  
 Lxdm, lightdm, xdm, slim, gdm, sddm or dtlogin are available as session manager choices.
@@ -115,7 +114,7 @@ The subpackages are classified by group:
 
 
 The nutyx package exists, it contains the folder structure of a linux system.
-The package also contains two very useful scripts:
+It also contains two very useful scripts:
 
 - setup-nutyx for configuring:
 
@@ -189,12 +188,14 @@ The original concepts of CARDS:
 
 The collections are interdependent but independent of each other.
 It is quite possible to choose some of the collections available in binary and to create your own collections at the same time.
-Only the basic collection is really essential.
+Only the base collection is really essential.
 The other collections are free to use.
 A hierarchy nevertheless exists: The "gui" collection depends on the collection of the "cli" collection which itself depends on the "base" collection.
-At the same time, the cli-extra collection depends on the "cli" collection which depends on... and the "gui-extra" collection will depend on the "gui" collection which depends on...
+At the same time, the cli-extra collection depends on the "cli" collection which depends on...
+and the "gui-extra" collection will depend on the "gui" collection which depends on...
 
-The mybld script is sufficient for binary package management. It has some very handy options for the packager. 
+The mybld script is sufficient for binary package management.
+It has some very handy options for the packager. 
 For example, the command: mybld 5.18.2 5.18.3 will compile all packages whose version is 5.18.2 to version 5.18.3 and
 this in the correct order of collections AND packages.
 Once the build is complete, the user can accept the commits and cards will update the recipe git automatically.
@@ -202,9 +203,11 @@ Updating firefox for example is as simple as: mybld firefox 108.0.2
 
 CARDS being a fork of the CRUX Pkgutils package manager,
 it seemed logical to me to keep as many existing functionalities as possible.
+
 A NuTyX recipe is therefore logically similar to that of CRUX with many additions:
 Packager, contributors, categories, groups, locales, package set, aliases, runtime dependencies,
 circular dependencies, compilation dependencies.
+
 Predefined functions for compiling similar packages like xorg, kde, python.
 Inspired this time by ArchLinux, the prepare() and package() functions are also available.
 Other functions specific to the standard groups available are also provided if the predefined functions are insufficient:
@@ -253,7 +256,7 @@ And finally, what really makes the difference with other package managers,
 CARDS is also used as the rendering engine of the nutyx.org site.
 The site is powered by CARDS.
 The reason is very simple, the main function of the site is the search for NuTyX packages.
-It is not possible to log in to the nutyx.org site.
+It is not possible to login on the nutyx.org site.
 
 Last point, no cookies are installed when visiting the site www.nutyx.org.
 
@@ -263,7 +266,7 @@ This is a recurring topic on NuTyX.
 There is no graphical installer and therefore installing NuTyX is scary from the first screen.
 If a new user has never installed an operating system other than Windows ® or Apple ®,
 he will naturally be shocked by NuTyX.
-It's very ugly and probably won't work...$
+It's very ugly and probably won't work...
 
 Despite this, in the list of installation possibilities there is indeed a completely automatic installation
 i.e. partitioning, formatting and boot installation will be done without any user intervention.
@@ -283,7 +286,8 @@ The organization is very simple.
 We are three people on the project.
 
 Spiky, whom I salute very warmly, is exclusively responsible for updating packages on the “testing” version.
-It is very responsive, and takes full advantage of the simplicity of mybld.
+He is very responsive, and takes full advantage of the simplicity of mybld.
+
 Guth, whom I also salute very warmly, is a very discreet but very important person.
 He is responsible for the proper functioning of the master repository server.
 In 16 years, I don't remember having had a break.
@@ -313,8 +317,7 @@ And the cycle begins again.
 
 7. Statistics and acknowledgments
 
-I could, if I wanted to, obtain statistics on the number of pages visited on the site of
-tuxfamily.org at:
+I could, if I wanted to, obtain statistics on the number of pages visited on the site of tuxfamily.org at:
 https://stats.tuxfamily.org/nutyx.org
 
 To know the number of downloads of ISOs, you have to go to the site https://sourgeforge.net/projects/nutyx/files.
@@ -337,21 +340,24 @@ The site being written in ... C++...
   Let me introduce myself, I,m Spiky.
 I was a long time LFS/BLFS user, I was also looking for a package manager for my LFS.
 
-  I looked at Pacman, Apt, Rpm, I then stummble across Nutyx knowing Thierry Nuttens (Tnut) from LFS.
-I installed Nutyx and found it work just as I liked fast installation and a small installed size even with Gnome.
-I would remove nutyx and reinstall it Using the install-script which i found, just what I wanted (My now prefered way to install).
+  I looked at Pacman, Apt, Rpm, I then stummble across NuTyX knowing Thierry Nuttens (Tnut) from LFS.
+I installed NuTyX and found it work just as I liked fast installation and a small installed size even with Gnome.
+I would remove NuTyX and reinstall it Using the install-script which i found, just what I wanted (My now prefered way to install).
 
-  I carried on using Nutyx alongside LFS, I was looking to implement Cards into my LFS system and go my own way,
+  I carried on using NuTyX alongside LFS, I was looking to implement CARDS into my LFS system and go my own way,
  but i just didn't have the required knowledge and I was also enjoying the community, 
 You could speak to the creator which is almost impossible with other distro's, and it is still like this today
-a new user can interact with the team and not be belittled. Help is always availble.
+a new user can interact with the team and not be belittled.
+Help is always availble.
 
-  Cards has grown since i started using it, there are many additions to it, Create an ISO, even create a Customized ISO as you wish to have it, with your choice of packages.
+  CARDS has grown since i started using it, there are many additions to it,
+Create an ISO, even create a Customized ISO as you wish to have it, with your choice of packages.
 This I find usefull for installation on other machines.
 
   There is also a script to create a qemu vm and start it, which again is 1 of my favorites.
 
-  I joined the Team and started working alongside Thierry Nuttens helping to update packages, My main worry was breaking things but Tnut gave me confidence that nothing would go wrong,
+  I joined the Team and started working alongside Thierry Nuttens helping to update packages.
+My main worry was breaking things but Tnut gave me confidence that nothing would go wrong,
 ha ha proved him wrong sometimes, But the mybld scipt just makes things build and work.
 
   All in all this distro seems to have everything combind into it.
