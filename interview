@@ -8,19 +8,19 @@ Mon ami Spiky est devenu mon bras droit depuis plus de 3 ans.s
 1. Philosophie de NuTyX
 
 J'utilise NuTyX ou Linux si vous préférez parce que je pense que c'est un système d'exploitation qui répond à mes attentes.
-Même si ces dernières années, Linux est de plus en plus complexe, il reste pour moi un outil formidable pour.
+Même si ces dernières années, Linux est de plus en plus complexe, il reste pour moi un outil formidable.
 Je suis de nature à toujours vouloir comprendre le fonctionnement interne de ce que j’assemble.
 NuTyX n’échappe pas à cette règle.
 
 Quand j’ai commencé la découverte de ce système d’explication, il y a maintenant plus de 17 ans
 (c’est finalement pas si loin que cela).
-
 Je ne comprenais pas grand-chose au monde du « libre ».
 J’ai eu l’occasion de tester plusieurs distributions différentes, même si il n’y en avait pas autant qu’aujourd’hui.
 D’ailleurs Ubuntu faisait ses débuts…
 Ce qui m’intéressait le plus, c’était d’avoir un système performant, fiable et avec une maintenance simple.
 
 2. L’influence de LFS/BLFS
+
 Ma vision de Linux a radicalement changé lorsque j’ai découvert le projet LFS.
 Un projet où (quasiment) tout est expliqué.
 De la construction d’un système chrooté à la construction de la chaîne d’outils de compilation pour finalement
@@ -31,7 +31,7 @@ Chose impossible à obtenir avec un OS « fermé ».
 
 Finalement après plusieurs compilations de la LFS, je me suis penché sur le problème de la gestions de tous ces fichiers installés sur mon disque dur… .
 Il faut en garder une trace, un historique.
-Comment mettre à jour  et comment savoir quelle est la version de tel ou tel utilitaire
+Comment mettre à jour et comment savoir quelle est la version de tel ou tel utilitaire
 sans avoir à connaître la commande spécifique à chacune des ces applications.
 
 Je suis alors tombé sur le projet CRUX qui proposait exactement le gestionnaire de paquets qui me fallait.
@@ -73,27 +73,26 @@ depuis la ram ou depuis l’ISO montée, et enfin un script  permet d’installe
 
 En plus du dernier kernel stable, tous les kernel LTS sont disponibles.
 Chaque kernel LTS est un paquet distinct. La version des paquets kernel-414, kernel-419, kernel-54, kernel-510, kernel-515
-et kernel-61 ne change jamais, seul les patchs upstream sont appliqués. Ils sont disponible toute la durée de vie de ceux-ci.
+et kernel-61 ne change jamais, seul les patchs upstream sont appliqués.
+Ils sont disponible toute la durée de vie de ceux-ci.
 Une fois arrivé en fin de vie, cards informe l'utilisateur lors de l'installation/mise à jour.
-Un tutoriel explique comment procéder pour changer de kernel.s
+Un tutoriel explique comment procéder pour changer de kernel.
 
-Les commandes de busybox sont disponibled dans les dossiers  système /sbin  comme système de repli.
-Elles sont disponibles en dernier recours si la commande commande complète viendrait à manquer.
+Les commandes de busybox sont disponible dans les dossiers  système /sbin  comme système de repli.
+Elles sont disponibles en dernier recours si la commande complète viendrait à manquer.
 
-Comme sur LFS, les deux systèmes d’init sysV et systemd sont proposés mais contrairement à LFS.
+Comme sur LFS, les deux systèmes d’init sysV et systemd sont proposés mais contrairement à LFS,
+ils cohabitent sans soucis sur la NuTyX.
 
 Spiky utilise la NuTyX en mode systemd pour son usage personnel et pour la mise à jour de ses paquets.
 J'utilise quasi exclusivement NuTyX en mode sysV sur mes machines bureaux et serveurs.
-
-Les deux cohabitent sans soucis sur la NuTyX.
 
 Quelques modifications sont necessaire dans le code source de systemd mais rien de bien méchant.
 Tous les paquets utilisant systemd sont compilés avec l'option systemd.
 Grace au concept des sous-paquets générés automatiquent que j'expliquerai plus loin,
 seule la librairie de systemd est necessaire pour le fonctionnement de NuTyX en mode sysV.
 Le paquet systemd.lib fait toujours parti d'un système de base NuTyX.
-Cela ne pose aucun problème quand au fonctionnement de sysV
-
+Cela ne pose aucun problème quand au fonctionnement de sysV.
  
 Lxdm, lightdm, xdm, slim, gdm, sddm ou dtlogin sont disponibles comme choix de gestionnaire de sessions.
 
@@ -114,8 +113,8 @@ Les sous-paquets sont classés par groupe :
 - service : les paquets de service
 
 
-Le paquet nutyx existe, il contient contient la structure des dossiers d'un système linux.
-Le paquet contient également deux scripts très utiles:
+Le paquet nutyx existe, il contient la structure des dossiers d'un système linux.
+Il contient également deux scripts très utiles:
 
 - setup-nutyx pour la configuration de:
 
@@ -143,8 +142,8 @@ NuTyX se décline en deux versions ou branches 
 
 Une version «rolling» semi-figée:
 
-Les mise à jour des paquets finaux comme les navigateurs, lecteurs vidéo, audio et autres ainsi que les mise à jour de sécurité
-sont également faites de manière continue.
+Les mise à jour des paquets finaux comme les navigateurs, lecteurs vidéo,
+audio et autres ainsi que les mise à jour de sécurité sont également faites de manière continue.
 Les mises à jour sur la version rolling sont uniquement fait par moi-même.
 
 Il n’est plus nécessaire de réinstaller la distribution à chaque nouvelle version.
@@ -168,7 +167,7 @@ Grâce au C++, le développement de cards est très simple (pendant très longte
 Aucun outil de dévelopement complexe n’est necessaire.
 
 Ce gestionnaire de paquets est rapide … très rapide.
-Une installation avec les bons arguments prends dure 11 secondes.
+Une installation avec les bons arguments prends 11 secondes.
 Dans l’exemple ci-dessus, une copie du dépôt se trouve dans le dossier local /srv/www:
 
 
@@ -190,8 +189,10 @@ Les collections sont interdépendantes mais indépendantes les une des autres.
 Il est tout à fait possible de choisir une partie des collections disponibles en binaires et de se créer par la même occasion ses propres collections.
 Seule la collection de base est vraiment indispensable.
 Les autres collections sont libre d’utilisation.
-Une hierarchie néanmoins existe : La collection «gui» dépend de la collection de la collection «cli» qui elle-même dépend de la collection «base».
-Parallèlement la collection cli-extra dépend de la collection «cli» qui dépende de... et la collection «gui-extra» dépendra de la collection «gui» qui elle dépend de…
+Une hierarchie néanmoins existe:
+La collection «gui» dépend de la collection de la collection «cli» qui elle-même dépend de la collection «base».
+Parallèlement la collection cli-extra dépend de la collection «cli» qui dépende de...
+et la collection «gui-extra» dépendra de la collection «gui» qui elle dépend de ...
 
 Le script mybld suffit pour la gestion des paquets binaires.
 Il dispose de quelques options très pratiques pour l’empaqueteur.
@@ -206,11 +207,12 @@ Une recette de NuTyX est donc logiquement ressemblante à celle de CRUX avec de 
 Empaqueteur, contributeurs, catégories, groupes, locales, jeu de paquets, alias, dépendances de fonctionnement,
 dépendances circulaires, dépendances de compilation.
 Des fonctions prédéfinies pour la compilation de paquets similaires comme xorg, kde, python.
+
 Inspiré cette fois de ArchLinux, les fonctions prepare(), package() sont également disponible.
 D’autres fonctions spécifiques au groupes standards disponible sont également prévues si les fonctions prédéfinis sont insuffisantes:
 devel(), doc(), service(), lib() et man()
 
-Comme expliqué plus haut, cards gérent automatiquement la séparation des paquets de base et les sous-paquets
+Comme expliqué plus haut, CARDS gérent automatiquement la séparation des paquets de base et les sous-paquets
 (devel, doc, service, lib, man et toutes les locales définies).
 
 L’utilisateur ne dois pas se préocupé des locales de ses paquets puisque tous les paquets sont founis avec les sous-paquets de locales.
@@ -258,12 +260,13 @@ Il n’est pas possibible de se loguer sur le site nutyx.org.
 Dernier point, aucun coockies n’est installé lors de la visite du site www.nutyx.org.
 
 5. Publique cible de NuTyX
-C’est un sujet  qui récurrent sur NuTyX.
+
+C’est un sujet récurrent sur NuTyX.
 
 Il n’existe pas d’installateur graphique et donc l’installation de NuTyX effraie dès le premier écran.
 Si un nouvel utilisateur n’a jamais installé un système d’exploitation autre que Windows ® ou Apple ®,
 il sera naturellement choqué par NuTyX.
-C’est très moche et sans doute que cela ne fonctionnera pas…$
+C’est très moche et sans doute que cela ne fonctionnera pas…
 
 Malgré cela, dans la liste des possibilitées d’installations il y a bel et bien une installation complètement automatique
 c'est à dire que le partitionnement, le formatage et l’installation de l’amorçage sera faite sans aucuneintervention de l’utilisateur.
@@ -322,14 +325,15 @@ J'avoue que je n'y prete pas beaucoup d'attention.
 
 Je crois que c'est un projet très spécifiques avec des attentes spécifiques qui répondent d'abord à mes besoins.
 
-Je suis conscient qu'aujourd'hui le niveau d'exigeance d'un OS est devenu très élevé. Il est très difficile
-pour moi de répondre à toutes ces exigences.
+Je suis conscient qu'aujourd'hui le niveau d'exigeance d'un OS est devenu très élevé.
+Il est très difficile pour moi de répondre à toutes ces exigences.
 
 Je tiens encore à remercier chaleureusement Spiky pour son engagement sans failles dans le projet.
-C'est une personne très prècieuse qui m'aide tous les jours dans l'avancement de ce projet magnifique.
+C'est une personne très précieuse qui m'aide tous les jours dans l'avancement de ce projet magnifique.
 
 Une énorme merci également à l'équipe de Tuxfamily pour le support logistique du site nutyx.org et des forums
 forum.nutyx et forums.nutyx.org.
+
 Un grand merci spécialement à Sylvain qui aura permit l'intégration du site et l'accès des forum.
 Le site étant écrit en ... C++...
 
