@@ -1,0 +1,336 @@
+D'abord je veux remercier Linux Magazine de m'avoir donner la chance de pouvoir réaliser cet interview.
+
+0. Présentation
+
+Je m'appelle Thierry Nuttens et vais vous présenter le projet NuTyX que je maintiens maintenant depuis plus de 16 ans.
+Mon ami Spiky est devenu mon bras droit depuis plus de 3 ans.s
+
+1. Philosophie de NuTyX
+
+J'utilise NuTyX ou Linux si vous préférez parce que je pense que c'est un système d'exploitation qui répond à mes attentes.
+Même si ces dernières années, Linux est de plus en plus complexe, il reste pour moi un outil formidable pour.
+Je suis de nature à toujours vouloir comprendre le fonctionnement interne de ce que j’assemble.
+NuTyX n’échappe pas à cette règle.
+
+Quand j’ai commencé la découverte de ce système d’explication, il y a maintenant plus de 17 ans
+(c’est finalement pas si loin que cela).
+
+Je ne comprenais pas grand-chose au monde du « libre ».
+J’ai eu l’occasion de tester plusieurs distributions différentes, même si il n’y en avait pas autant qu’aujourd’hui.
+D’ailleurs Ubuntu faisait ses débuts…
+Ce qui m’intéressait le plus, c’était d’avoir un système performant, fiable et avec une maintenance simple.
+
+2. L’influence de LFS/BLFS
+Ma vision de Linux a radicalement changé lorsque j’ai découvert le projet LFS.
+Un projet où (quasiment) tout est expliqué.
+De la construction d’un système chrooté à la construction de la chaîne d’outils de compilation pour finalement
+obtenir un système d’exploitation fonctionnel construit soi-même.
+
+Encore aujourd’hui, j’apprends toujours de ce projet.. maintenance simple et TRANSPARENTE.
+Chose impossible à obtenir avec un OS « fermé ».
+
+Finalement après plusieurs compilations de la LFS, je me suis penché sur le problème de la gestions de tous ces fichiers installés sur mon disque dur… .
+Il faut en garder une trace, un historique.
+Comment mettre à jour  et comment savoir quelle est la version de tel ou tel utilitaire
+sans avoir à connaître la commande spécifique à chacune des ces applications.
+
+Je suis alors tombé sur le projet CRUX qui proposait exactement le gestionnaire de paquets qui me fallait.
+
+Ce petit utilitaire en ligne de commande proposait la Création, l’Ajout, la Suppression et quelques informations basiques des fichiers installés, j’étais comblé…
+Presque
+
+Non seulement les commandes étaient simples, elles étaient rapides et cerise sur le gâteau,
+les commandes étaient compilée de façon statique ce qui permettait d’installer les paquets compilés et archivés sous forme de fichiers tar
+dans un dossier de destination en utilisant quasi n’importe quel autre distribution.
+
+NuTyX était créé
+
+Il me restait un problème pas des moindres.
+
+L’utilitaire de CRUX ne proposait ni le téléchargement ni la gestion des dépendances de façon simple à l’image des ses outils de base.
+On peut dire que NuTyX a traîné cet inconvénient pendant près de 6 ans.
+Les différentes tentatives n’ont jamais vraiment été concluantes.
+
+J’ai donc décidé de créer mon propre gestionnaire de paquets.
+Les sources de pkgutils (le gestionnaire de CRUX) étant évidement disponibles,
+j’ai alors commencé à « forker » l’utilitaire de CRUX.
+
+CARDS était créé.
+
+Nous somme deux personnes actives sur NuTyX pour assurer la mise à jour continue des paquets proposés.
+C'est notre occupation principale.
+
+Le nombre de paquets sur NuTyX approche les 2000.
+Si on rajoute les sous-paquets générés automatiquement, on atteind les 4500 paquets.
+
+3. NuTyX n’est plus une Linux From Scratch
+
+On commence par son installation, aujourd’hui il est possible d’installer NuTyX de nombreuses façons.
+Pour les  débutants, plusieurs ISO (LXDE, XFCE, MATE, KDE, GNOME, CINNAMON prêtes à installer.
+
+Chaque ISO permet une installation automatique, semi-manuel en mode directe ou en mode live,
+depuis la ram ou depuis l’ISO montée, et enfin un script  permet d’installer la distribution en mode manuel.
+
+En plus du dernier kernel stable, tous les kernel LTS sont disponibles.
+Chaque kernel LTS est un paquet distinct. La version des paquets kernel-414, kernel-419, kernel-54, kernel-510, kernel-515
+et kernel-61 ne change jamais, seul les patchs upstream sont appliqués. Ils sont disponible toute la durée de vie de ceux-ci.
+Une fois arrivé en fin de vie, cards informe l'utilisateur lors de l'installation/mise à jour.
+Un tutoriel explique comment procéder pour changer de kernel.s
+
+Les commandes de busybox sont disponibled dans les dossiers  système /sbin  comme système de repli.
+Elles sont disponibles en dernier recours si la commande commande complète viendrait à manquer.
+
+Comme sur LFS, les deux systèmes d’init sysV et systemd sont proposés mais contrairement à LFS.
+
+Spiky utilise la NuTyX en mode systemd pour son usage personnel et pour la mise à jour de ses paquets.
+J'utilise quasi exclusivement NuTyX en mode sysV sur mes machines bureaux et serveurs.
+
+Les deux cohabitent sans soucis sur la NuTyX.
+
+Quelques modifications sont necessaire dans le code source de systemd mais rien de bien méchant.
+Tous les paquets utilisant systemd sont compilés avec l'option systemd.
+Grace au concept des sous-paquets générés automatiquent que j'expliquerai plus loin,
+seule la librairie de systemd est necessaire pour le fonctionnement de NuTyX en mode sysV.
+Le paquet systemd.lib fait toujours parti d'un système de base NuTyX.
+Cela ne pose aucun problème quand au fonctionnement de sysV
+
+ 
+Lxdm, lightdm, xdm, slim, gdm, sddm ou dtlogin sont disponibles comme choix de gestionnaire de sessions.
+
+Les paquets de NuTyX sont organisé en collections.
+
+Trois collections constituent le cœur du système :
+- base, cli et gui.
+
+Les collections cli-extra et gui-extra comme leur nom l’indique, constituent l’ensemble de paquets extra en ligne de commande (cli-extra) et en graphique (gui-extra).
+
+Les paquets sont constitués de paquets de base et de sous paquets.
+Les sous-paquets sont classés par groupe :
+
+- devel : les paquets de développement
+- man : les paquets des manuels
+- lib : les paquets de librairie
+- doc : les paquets de documentation
+- service : les paquets de service
+
+
+Le paquet nutyx existe, il contient contient la structure des dossiers d'un système linux.
+Le paquet contient également deux scripts très utiles:
+
+- setup-nutyx pour la configuration de:
+
+    - Le réseau filaire et sans fils.
+    - La locale utilisée.
+    - Le clavier.
+    - L'horloge.
+    - L'utilisateur.
+
+- install-nutyx (et ses 2 liens generate-nutyx et  chroot-nutyx) permet:
+
+    - L'installation de NuTyX de base (ou plus complexe) dans un dossier (peut-êre une partition monté dans le dossier).
+    - L' ajout des fichiers de configuration de défaut. 
+     Principalement pour l'installation ci-dessus mais peut-être utilisé séparément.
+    - La génération d'une ISO NuTyX.
+    - Entrer dans une NuTyX installée dans un dossier
+
+Le paquet upgrade-nutyx permet de faire la mise à jour de manière transparente et complètement automatique.
+Une fois configuré proprement, l'utilisateur ne doit plus se soucier des mises à jour, le paquet s'occupe de tout.
+Une petite icone apparaît lorsque les maj sont disponibles, c'est à dire téléchargées avec succès et prêtes à être installées.
+
+Les paquets à mettre à jour sont installés lors de l'arrêt de la machine.
+
+NuTyX se décline en deux versions ou branches 
+
+Une version «rolling» semi-figée:
+
+Les mise à jour des paquets finaux comme les navigateurs, lecteurs vidéo, audio et autres ainsi que les mise à jour de sécurité
+sont également faites de manière continue.
+Les mises à jour sur la version rolling sont uniquement fait par moi-même.
+
+Il n’est plus nécessaire de réinstaller la distribution à chaque nouvelle version.
+
+Une version «testing» mise à jour continuellement:
+Elle est utilisée pour la préparation de la prochaine version rolling.
+Spiky prend en charge 95 % du travail qui consiste à mettre à jour l’ensemble des paquets des différentes collections.
+Etant l'ampleur des mise à jour, cette version "testing" n'est fortement déconseillée en "production" ou sur une machine 
+de l'utilisateur final.
+
+4. Différence entre CARDS et d’autres gestionnaires de paquets.
+
+CARDS est écrit dans un langage de bas niveau.
+Grâce au C++, le code base reste de taille modeste, et le nombre des dépendances de fonctionnement est réduit au strict minimum.
+D’autre part le gestionnaire est judicieusement constitué de 2 commandes principales dont une:
+
+
+- pkgadd (et ses liens pkginfo, pkgrm) est compilée de manière statique.
+Cela permet d’avoir une installation (en chroot) très minimaliste.
+Grâce au C++, le développement de cards est très simple (pendant très longtemps j’ai uniquement utilisé vim pour coder).
+Aucun outil de dévelopement complexe n’est necessaire.
+
+Ce gestionnaire de paquets est rapide … très rapide.
+Une installation avec les bons arguments prends dure 11 secondes.
+Dans l’exemple ci-dessus, une copie du dépôt se trouve dans le dossier local /srv/www:
+
+
+ <pre class="command"><kbd># time (DEPOT=/srv/www MOUNT=/srv/www install-nutyx)
+..
+real    0m10.824s
+user    0m9.389s
+sys     0m1.230s
+# 
+</kbd></pre>
+
+CARDS et NuTyX sont parfaitement associés.
+Par exemple la commande centrale mybld utilise le script install-nutyx pour son fonctionnement.
+Les paquets sont TOUJOURS construits dans un environnement chrooté.
+
+Les concepts originaux de CARDS :
+
+Les collections sont interdépendantes mais indépendantes les une des autres.
+Il est tout à fait possible de choisir une partie des collections disponibles en binaires et de se créer par la même occasion ses propres collections.
+Seule la collection de base est vraiment indispensable.
+Les autres collections sont libre d’utilisation.
+Une hierarchie néanmoins existe : La collection «gui» dépend de la collection de la collection «cli» qui elle-même dépend de la collection «base».
+Parallèlement la collection cli-extra dépend de la collection «cli» qui dépende de... et la collection «gui-extra» dépendra de la collection «gui» qui elle dépend de…
+
+Le script mybld suffit pour la gestion des paquets binaires.
+Il dispose de quelques options très pratiques pour l’empaqueteur.
+Par exemple, la commande: mybld 5.18.2 5.18.3 compilera tous les paquets dont la version est en 5.18.2  vers la version 5.18.3 et
+cela dans le bonne ordre des collections ET des paquets.
+Une fois la compilation terminée,l’utilisateur peut accepter les commits et cards mettra à jour le git des recettes automatiquement.
+Mettre à jour firefox par exemple est aussi simple que: mybld firefox 108.0.2
+
+CARDS étant un fork du gestionnaire de paquets de CRUX Pkgutils,
+il me semblait logique de garder un maximum de fonctionnalitées déjà existantes.
+Une recette de NuTyX est donc logiquement ressemblante à celle de CRUX avec de nombreux ajouts:
+Empaqueteur, contributeurs, catégories, groupes, locales, jeu de paquets, alias, dépendances de fonctionnement,
+dépendances circulaires, dépendances de compilation.
+Des fonctions prédéfinies pour la compilation de paquets similaires comme xorg, kde, python.
+Inspiré cette fois de ArchLinux, les fonctions prepare(), package() sont également disponible.
+D’autres fonctions spécifiques au groupes standards disponible sont également prévues si les fonctions prédéfinis sont insuffisantes:
+devel(), doc(), service(), lib() et man()
+
+Comme expliqué plus haut, cards gérent automatiquement la séparation des paquets de base et les sous-paquets
+(devel, doc, service, lib, man et toutes les locales définies).
+
+L’utilisateur ne dois pas se préocupé des locales de ses paquets puisque tous les paquets sont founis avec les sous-paquets de locales.
+Autrement dit, si un utilisateur espagnol installe firefox comme paquet, la locale espagnole est installée automatiquement.
+Pas besoin de chercher le paquets comme sous de nombreuses distributions.
+
+Lors d’une recherche avec CARDS, la méthode de recherche va parcourir dans l’ordre suivant:
+La catégorie, le jeu de paquets, le nom, la description, l’URL, l’empaqueteur et la version.
+On peut donc par exemple rechercher tous les paquets d’une certaine version.
+Une fonction très pratique.
+
+La gestion des dépendances orphelines est totalement transparente et simplifie grandement la vie des utilisateurs.
+Une dépendance qui n’est plus utilisée par aucun paquet installé par l’utilisateur est automatiquement supprimé .
+
+Contrairement à d’autres gestionnaires de paquets,
+CARDS ne permet pas de blacklister un paquet, c’est à dire rendre impossible la mise à jour de celui-ci.
+La raison est toute simple, blacklister un paquet peut très rapidement rendre le système d’exploitation inutilisable.
+Imaginer que vous blacklister icu (librairie très sensible).
+Sous NuTyX, une nouvelle version de cette librairie implique que tous les paquets dépendants de cette librairie soient mis à jour.
+Donc Si par exemple blacklister la librairie icu serait possible, lors de la prochaine maj de celle-ci, le système d’exploitation serait inutilisable.
+
+Une simple commande suffit pour faire une mise à jour complète.
+La commande «cards upgrade» synchronise les infos metadonnées avec le serveur distant,
+télécharge les mise à jour des paquets installés obsolètes,
+mets à jour les paquets obsolètes,
+supprime les archives des paquets installés.
+L’utilisateur ne doit pas s’en soucier.
+
+Une fonction interessante sur CARDS est la commande base qui permet de revenir sur un système de base sans risque
+(si correctement configuré).
+Un dossier dans lequel se trouvent le nom de chaque paquet à garder suffit.
+Par défaut, c'est le dossier de la collection base qui est utilisé.
+Mais on peut très bien ajouter d'autres dossiers si l'on souhaite.
+
+cards base -r supprime alors tous les paquets qui ne sont pas répertoriés dans ce(s) dossier(s).
+J'utilise cette fonctionnalité dans la batterie de tests que j'expliquerai plus loin.
+
+
+Et enfin, ce qui fait vraiment la différence avec d’autres gestionnaires de paquets,
+CARDS est également utilisé comme moteur de rendu du site nutyx.org.
+Le site est propulsé par CARDS.
+La raison est très simple, la fonction principale du site est la recherche de paquets NuTyX.
+Il n’est pas possibible de se loguer sur le site nutyx.org.
+
+Dernier point, aucun coockies n’est installé lors de la visite du site www.nutyx.org.
+
+5. Publique cible de NuTyX
+C’est un sujet  qui récurrent sur NuTyX.
+
+Il n’existe pas d’installateur graphique et donc l’installation de NuTyX effraie dès le premier écran.
+Si un nouvel utilisateur n’a jamais installé un système d’exploitation autre que Windows ® ou Apple ®,
+il sera naturellement choqué par NuTyX.
+C’est très moche et sans doute que cela ne fonctionnera pas…$
+
+Malgré cela, dans la liste des possibilitées d’installations il y a bel et bien une installation complètement automatique
+c'est à dire que le partitionnement, le formatage et l’installation de l’amorçage sera faite sans aucuneintervention de l’utilisateur.
+La raison de cette approche était double:
+
+La première etant pour moi, qui doit tester chaque ISO produite, c’est extrèment simple et rapide.
+Cela m'évite de devoir choisir les mèmes options à chaque nouvelles installations.
+
+La deuxième étant pour le nouvel utilisateur
+qui dans 90 % des cas fera un premier test dans une machine virtuelle donc avec un disque totalement vierge dépourvu de toute partitions
+(conditions indispensables pour déclencher une installation automatique possible).
+Même si l’utilisateur est un expert, il pourra très rapidement installer une NuTyX de façon totalement automatique.
+
+6. Organisation du projet NuTyX.
+
+L’organisation est très simple.
+Nous sommes trois personnes sur le projet.
+
+Spiky que je salue très fort, s’occupe exclusivement de la mise à jour des paquets sur la version «testing».
+Il est très réactif, et profite pleinement de la simplicitée de mybld.
+Guth que je salue également très fort est une personne très discrète mais combien importante.
+Il est responsable du bon fonctionnement du serveur de dépots maître.
+En 16 ans, je n’ai pas souvenir avoir eu d’interruption.
+Il fait un travail extraordinaire.
+
+Je soutiens Spiky lorsqu’il est en difficulté avec certains paquets.
+Je mets à jour les failles de sécurité, les kernels, les navigateurs et autres applications ne fournissant pas de dépendances sur la version «rolling».
+Je maintiens les pages de documentation sur le site nutyx.org.
+CARDS est également une de mes tâches quotidiennes.
+Il m’arrive de trouver de nouvelles fonctionnalitées à implémenter.
+
+Lorsque le gel de la version «testing» arrive (c’est à dire plus ou moins tous les 1 à 2 mois)
+je reprends la branche que Spiky m’a si bien préparé et je commence ma batterie de tests:
+- Merging de la branche rolling vers testing
+- Installation de TOUS les paquets pour détecter quelque doublons de fichiers, dépendances manquantes ou obsolètes.
+
+Je génère toutes les ISO et les teste toutes en machine virtuelle. 
+Ensemble Spiky (en anglais) et moi (en français) rédigeons la nouvelle annonçant la prochaine version de NuTyX disponible.
+Une fois la version «testing» stabilisée et donc qui a passé tous les tests ci-dessus.
+La version «rolling» est écrasée avec la version «testing»,
+les ISOs sont générées en version «rolling» et publiées.
+Le script d’installation disponible sur nutyx.org est mis à jour.
+Les pages du site nutyx.org sont mis à jour avec la nouvelle version.
+La nouvelle est publiée sur le site et sur la liste de diffusion nutyx-annonce@nutyx.org.
+Et le cycle recommence.
+
+7. Statistiques et remerciements
+
+Je pourrai si je le voulais, obtenir des statistiques sur le nombre de pages visitées sur le site de
+tuxfamily.org à l'adresse:
+https://stats.tuxfamily.org/nutyx.org
+
+Pour connaître le nombre de téléchargement des ISOs, il faut se rendre sur le site https://sourgeforge.net/projects/nutyx/files.
+Les ISOs y sont mise à jour à chaque sortie de la nouvelle version NuTyX
+J'avoue que je n'y prete pas beaucoup d'attention.
+
+Je crois que c'est un projet très spécifiques avec des attentes spécifiques qui répondent d'abord à mes besoins.
+
+Je suis conscient qu'aujourd'hui le niveau d'exigeance d'un OS est devenu très élevé. Il est très difficile
+pour moi de répondre à toutes ces exigences.
+
+Je tiens encore à remercier chaleureusement Spiky pour son engagement sans failles dans le projet.
+C'est une personne très prècieuse qui m'aide tous les jours dans l'avancement de ce projet magnifique.
+
+Une énorme merci également à l'équipe de Tuxfamily pour le support logistique du site nutyx.org et des forums
+forum.nutyx et forums.nutyx.org.
+Un grand merci spécialement à Sylvain qui aura permit l'intégration du site et l'accès des forum.
+Le site étant écrit en ... C++...
+
+ 
