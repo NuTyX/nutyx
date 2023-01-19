@@ -1233,7 +1233,7 @@ fi
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
 [ -z "$LFS" ] && LFS="/mnt/hd"
 
-[ -z "$STRICT" ] && STRICT="kernel"
+[ -z "$STRICT" ] && STRICT="$KERNEL"
 [ -z "$MINI" ] && MINI="dhcpcd"
 [ -z "$BASE" ] && BASE="efibootmgr linux-firmware systemd \
 wireless-tools wpa-supplicant"
@@ -1268,7 +1268,9 @@ simple-scan gnome-weather gnome-chess"
 [ "$KERNEL" = "NONE" ] && KERNEL="none"
 
 if [ "$KERNEL" != "none"  ]; then
-	[ -z $ISO ] || KERNEL=""
+	if [ ! -z $ISO ]; then
+		[ -z $KERNEL ] && KERNEL=kernel
+	fi
 	CORE="acl attr bash coreutils readline \
 expat ncurses gmp flex file gzip mpc mpfr \
 grep sed findutils binutils \
@@ -1285,6 +1287,10 @@ dialog cpio \
 lsb-release grub eudev \
 sysklogd sysvinit $KERNEL "
 fi
+
+VERSION_KERNEL="$(basename lib/modules/*)"
+VERSION_KERNEL=${KERNEL/*-/}
+[ $VERSION_KERNEL == "kernel" ] && VERSION_KERNEL="stable"
 
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
@@ -1314,11 +1320,8 @@ gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, budgie
 fi
 if [ ! -z "$ISO" ];then
 	DEVEL+="
-for k in \$(ls /lib/modules/)
-do
-  mkinitramfs \$k
-  mv boot/initrd-\$k boot/initrd-stable
-done"
+mkinitramfs \$(basename /lib/modules/*)
+mv boot/initrd-* boot/initrd-${VERSION_KERNEL}"
 	if [ -z $MOUNT ]; then
 		DEVEL+="
 cards purge"
@@ -1584,11 +1587,8 @@ parse_options() {
 			"generate-nutyx")
 				check_root
 				setup_chroot
-				echo "for k in \$(ls /lib/modules/)
-do
-  mkinitramfs \$k
-  mv boot/initrd-\$k boot/initrd-stable
-done
+				echo "mkinitramfs \$(basename /lib/modules/*)
+mv boot/initrd-* boot/initrd-${VERSION_KERNEL}
 exit 0" > $LFS/$SETUP_FILE
 				chmod 177 $LFS/$SETUP_FILE
 				enter_chroot
@@ -1654,7 +1654,7 @@ done
 mksquashfs $DIRS ISO/boot/NuTyX.squashfs
 }
 generate_iso() {
-local FILE MD5SUM VERSION_KERNEL LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
+local FILE MD5SUM LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
 SCRIPTDIR
 
 LABEL="nutyxcd"
@@ -1671,7 +1671,6 @@ SCRIPTDIR=$(pwd -P)
 
 cd $LFS
 
-VERSION_KERNEL="$(basename lib/modules/*)"
 
 cp -va boot ISO/
 
@@ -1717,52 +1716,52 @@ menu tabmsgrow 18
 menu tabmsg Press ENTER to boot or TAB to edit a menu entry
 
 EOF
-	cat > isolinux/live.cfg << "EOF"
-label live
+	echo "label live
  menu label ^Live
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro quiet live
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet live
 
 label live-debug
  menu label li^ve-Debug
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso live
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso live
 
 label live-toram
  menu label live copied to ^RAM
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro quiet live toram
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet live toram
 
 label live-debug-toram
  menu label live-Debug copied to ^RAM
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso live toram
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso live toram
 
-EOF
+" > isolinux/live.cfg
 
-	cat > isolinux/install.cfg << "EOF"
-default install
+
+	echo "default install
 label install
  menu label ^Install
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro quiet
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet
 
 label install-debug
  menu label install-^Debug
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso
 
 label install-toram
  menu label Install copied to ^RAM
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro quiet toram
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet toram
 
 label install-debug-toram
  menu label install-Debug copied to RA^M
- kernel /boot/kernel-stable
- append initrd=/boot/initrd-stable vga=788 ro rootdelay=8 testiso toram
+ kernel /boot/kernel-${VERSION_KERNEL}
+ append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso toram
 
-EOF
+" > isolinux/install.cfg
+
 	cat > isolinux/isolinux.cfg << "EOF"
 path
 include menu.cfg
