@@ -1871,7 +1871,12 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	echo "$PARTITION" > $TMP/boot
 }
 setup_grub() {
-	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE SPNR OPTIONS TARGET
+	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE SPNR OPTIONS TARGET VERSION_KERNEL
+
+	VERSION_KERNEL="$(basename /lib/modules/*)"
+	VERSION_KERNEL=${VERSION_KERNEL/*-/}
+	[ $VERSION_KERNEL == "NuTyX" ] && VERSION_KERNEL="stable"
+
 	GRUB_CONFIG_FILE="grub.cfg"
 	GRUB_CONFIG_DIR=""
 	GRUB_DESTINATION_DIR=""
@@ -2060,12 +2065,12 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		echo "
 menuentry \"NuTyX SysV Quiet Mode\" {
-   linux /${GRUB_DESTINATION_DIR}kernel-stable root=${NuTyX_PART} ro quiet verbose=no
-   initrd /${GRUB_DESTINATION_DIR}initrd-stable
+   linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro quiet verbose=no
+   initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}
 }
 menuentry \"NuTyX SysV Verbose Mode \" {
-   linux /${GRUB_DESTINATION_DIR}kernel-stable root=${NuTyX_PART} ro
-   initrd /${GRUB_DESTINATION_DIR}initrd-stable
+   linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro
+   initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}
 }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 	else
 		#
@@ -2101,34 +2106,35 @@ menuentry \"NuTyX SysV Verbose Mode \" {
 #                                                               #
 #################################################################
 #
-#menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
+EOF
+
+echo "#menuentry  \"Harddisk number 2 and partition number 3 verbose mode\" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-stable init=/sbin/init root=/dev/sdb3 ro
+#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/init root=/dev/sdb3 ro
 #}
 #
 # The same one with systemd:
 #
-#menuentry  "Harddisk number 2 and partition number 3 verbose mode" {
+#menuentry  \"Harddisk number 2 and partition number 3 verbose mode\" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-stable init=/sbin/systemd-init root=/dev/sdb3 ro
+#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/systemd-init root=/dev/sdb3 ro
 #}
 #
 # The same one with RuNyX (Experimental):
 #
-#menuentry  "Harddisk number 2 and partition number 3" {
+#menuentry  \"Harddisk number 2 and partition number 3\" {
 #   set root=(hd1,3)
-#   linux /boot/kernel-stable init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
+#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
 #}
 #
 # An other one with initrd and rootdelay (to use with USB stick for ex)
 #
-#menuentry  "Harddisk number 2 and partition number 1 with initrd" {
+#menuentry  \"Harddisk number 2 and partition number 1 with initrd\" {
 #   set root=(hd1,1)
-#   linux /boot/kernel-stable init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
-#   initrd /boot/initrd-stable
+#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
+#   initrd /boot/initrd-${VERSION_KERNEL}
 #}
-#
-EOF
+#" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 		if [ ! -f $TMP/boot_partition/${GRUB_DESTINATION_DIR}initrd ]; then
 			cp /media/cdrom/boot/initrd \
 			$TMP/boot_partition/${GRUB_DESTINATION_DIR}initrd 2> /dev/null
