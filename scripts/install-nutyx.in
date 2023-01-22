@@ -1259,7 +1259,6 @@ simple-scan gnome-weather gnome-chess"
 [ -z "$LXQT" ] && LXQT="breeze-gtk sddm lxqt"
 [ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lightdm enlightenment"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
-[ -z "$BUDGIE" ] && BUDGIE="lightdm budgie"
 [ -z "$CINNAMON" ] && CINNAMON="lightdm cinnamon"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome"
@@ -1290,7 +1289,7 @@ fi
 
 VERSION_KERNEL="$(basename lib/modules/*)"
 VERSION_KERNEL=${KERNEL/*-/}
-[ $VERSION_KERNEL == "kernel" ] && VERSION_KERNEL="stable"
+[ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
 
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
@@ -1308,14 +1307,13 @@ if [ ! -z $ISO ]; then
 		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
 		LXQT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXQT";;
 		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
-		BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $BUDGIE";;
 		CINNAMON) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $CINNAMON";;
 		ENLIGHTENMENT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $ENLIGHTENMENT";;
 		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
-gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, budgie, mate, gnome, kde5" && exit 1;;
+gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1554,7 +1552,6 @@ LXQT         : $LXQT
 CINNAMON     : $CINNAMON
 ENLIGHTENMENT: $ENLIGHTENMENT
 XFCE4        : $XFCE4
-BUDGIE       : $BUDGIE
 MATE         : $MATE
 GNOME        : $GNOME
 KDE5         : $KDE5
