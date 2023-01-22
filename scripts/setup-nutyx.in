@@ -1696,7 +1696,7 @@ install_nutyx() {
 		mv ${2}/{home,.home}
 	fi
 
-	(for DIR in opt bin etc lib lib64 root run sbin usr var
+	(for DIR in opt bin etc lib lib64 root run sbin usr var boot
 	do
 		[ -d ${2}/$DIR ] && rm -rf ${2}/$DIR &> /dev/tty2
 	done
