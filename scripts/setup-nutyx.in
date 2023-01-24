@@ -216,7 +216,7 @@ setup_user()
 	fi
 	local RESULT
 	USER_GROUPS=""
-	DEFAULT_GROUPS="users disk network floppy fuse video lp lpadmin netdev tty audio cdrom scanner adm vboxusers wheel"
+	DEFAULT_GROUPS="users disk network floppy fuse video lp lpadmin netdev tty audio cdrom scanner adm wheel"
 	# Avoid spaces troubles :)
 	OLD_IFS=$IFS
 #	IFS="|
