@@ -1262,6 +1262,7 @@ simple-scan gnome-weather gnome-chess"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome"
 [ -z "$KDE5" ] && KDE5="adwaita-qt kde5"
+[ -z "$BUDGIE" ] && BUDGIE="budgie"
 
 [ "$KERNEL" = "NONE" ] && KERNEL="none"
 
@@ -1311,6 +1312,7 @@ if [ ! -z $ISO ]; then
 		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
+                BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $BUDGIE";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
 gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, mate, gnome, kde5" && exit 1;;
 	esac
