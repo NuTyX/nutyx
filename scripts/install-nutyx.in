@@ -1313,8 +1313,8 @@ if [ ! -z $ISO ]; then
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
 		KDE5) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE5 $KDE5_EXTRA";;
                 BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $BUDGIE";;
-		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, \
-gui_extra, cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, mate, gnome, kde5" && exit 1;;
+		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, gui_extra, \
+cde, openbox, jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, budgie, mate, gnome, kde5" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1553,6 +1553,7 @@ LXQT         : $LXQT
 CINNAMON     : $CINNAMON
 ENLIGHTENMENT: $ENLIGHTENMENT
 XFCE4        : $XFCE4
+BUDGIE       : $BUDGIE
 MATE         : $MATE
 GNOME        : $GNOME
 KDE5         : $KDE5
