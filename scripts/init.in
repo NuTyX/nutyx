@@ -71,8 +71,8 @@ fi
        no_device $device
        problem
    done
-   if  [ "$rootfstype" != "auto" ]; then
-	rootfstype=`print_file_system $device`
+   if  [ "$rootfstype" == "auto" ]; then
+	   rootfstype=$(print_file_system $device)
    fi
    if [ "$rootfstype" == "no" ]; then
        no_mount $device
