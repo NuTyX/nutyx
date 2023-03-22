@@ -144,7 +144,7 @@ do_mount_in_ram()
 			mkdir -p /boot/grub/fonts
 			cp $SQFS/grub/fonts/unicode.pf2 /boot/grub/fonts/unicode.pf2
 			cp $SQFS/grub/splash.png /boot/grub/splash.png
-			if [ ! -d /media/cdrom/`uname -m` ]; then
+			if [ ! -d /media/cdrom/$(uname -m) ]; then
 				umount /media/cdrom
 				eject $DEV > /dev/null 2>&1
 			fi
@@ -206,7 +206,7 @@ find_media() {
 		mkdir -p /media/fromdev
 		mount -o ro ${fromdev} /media/fromdev
 		modprobe loop
-		LOOPDEV=`losetup -f`
+		LOOPDEV=$(losetup -f)
 		losetup $LOOPDEV /media/fromdev${fromiso}
 	fi
 
@@ -435,7 +435,7 @@ if [ -z $root ]; then
 	[ "$verbose" == "no" ]  && clear
 
 	MainLoop
-	root=`cat /root/boot`
+	root=$(cat /root/boot)
 
 	[ "$verbose" == "no" ] || printf "Stop udev ...\n"
 	do_stop_udev
