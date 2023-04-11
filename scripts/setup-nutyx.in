@@ -1262,9 +1262,13 @@ case $REPLY in
 		echo 'export XKB_DEFAULT_LAYOUT="cf"' > ${WAYLKB};;
 	cz*) echo '  Option "XkbLayout" "cz"' >> ${XORGKB}
 		echo 'export XKB_DEFAULT_LAYOUT="cz"' > ${WAYLKB};;
-	fr|fr-*|azerty)
+	fr|fr-latin*|azerty)
 		echo '  Option "XkbLayout" "fr"' >> ${XORGKB}
 		echo 'export XKB_DEFAULT_LAYOUT="fr"' > ${WAYLKB};;
+	fr-bepo|fr-bepo-latin*)
+		echo '  Option "XkbLayout" "fr"
+  Option "XkbVariant" "bepo"' >> ${XORGKB}
+		echo 'export XKB_DEFAULT_LAYOUT="fr(bepo)"' > ${WAYLKB};;
 	fr_CH*) echo '  Option "XkbLayout" "ch"
   Option "XkbVariant" "fr"' >> ${XORGKB}
 		echo 'export XKB_DEFAULT_LAYOUT="ch(fr)"' > ${WAYLKB};;
