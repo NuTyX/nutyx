@@ -857,6 +857,7 @@ if [ $EUID -eq 0 ] ; then
         alias up='cards install -u'
         alias check='cards diff'
         alias sysup='cards upgrade'
+	alias upcheck='cards sync && cards upgrade -s'
 else
         alias nu='sudo setup-nutyx -cu'
         alias del='sudo cards remove'
@@ -864,6 +865,7 @@ else
         alias up='sudo cards install -u'
         alias check='sudo cards diff'
         alias sysup='sudo cards upgrade'
+	alias upcheck='sudo cards sync && sudo cards upgrade -s'
 fi
 alias search='cards search'
 alias ll='ls -l'
@@ -872,6 +874,8 @@ alias duh='du -h --max-depth=1'
 alias dfh='df -h'
 alias pkgfind='cards list | grep -i'
 alias paste-nutyx='curl -F '\''f:1=<-'\'' ix.io'
+
+$(which neofetch)
 # End ~/.bashrc
 EOF
 [ -f ${LFS}/root/$FILE ] && return
