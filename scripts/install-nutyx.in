@@ -320,7 +320,10 @@ echo -n "]"
 # Remet le curseur à sa place
 tput rc
 }
-PROMPT_COMMAND=prompt_command
+# If you want to see the upper right corner info
+# that look like: [10:18 x86_64 6.3.2-NuTyX thierry@nutyx]
+# you need to ucomment following line
+#PROMPT_COMMAND=prompt_command
 
 case $TERM in
         xterm|rxvt*)
@@ -1153,7 +1156,7 @@ xorg-xrandr xorg-setxkbmap gnome-themes-extra"
 simple-scan gnome-weather gnome-chess"
 [ -z "$CDE" ] && CDE="cde"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
-[ -z "$JWM" ] && JWM="lxdm jwm"
+[ -z "$JWM" ] && JWM="lxdm jwm jwm-miyolinux-theme"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
 [ -z "$LXQT" ] && LXQT="breeze-gtk sddm lxqt"
 [ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lightdm enlightenment"
