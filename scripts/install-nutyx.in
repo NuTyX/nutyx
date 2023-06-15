@@ -326,7 +326,7 @@ tput rc
 #PROMPT_COMMAND=prompt_command
 
 case $TERM in
-        xterm|rxvt*)
+        xterm*|rxvt*)
                 TITLEBAR='\[\033]0;\u@\h \007\]'
                 ;;
         *)
