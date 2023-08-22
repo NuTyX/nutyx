@@ -2415,7 +2415,6 @@ initrd_only() {
 	else
 		# we are in the initrd
 		SETUP_INITRD="yes"
-		SETUP_START_SERVICE="yes"
 	fi
 }
 parse_options() {
@@ -2544,7 +2543,8 @@ cleanup () {
 
 top_loop() {
 	if [ "$SETUP_INITRD" = "yes" ]; then
-		[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
+		SETUP_INSTALL="no"
+		LANG=de_CH.utf-8 setup_language
 		if [ ! -d /media/cdrom/boot ]; then
 			dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
 				--msgbox "    $(gettext "You can remove the ISO media now.")" 6 60
@@ -2579,8 +2579,7 @@ main () {
 	TMP="$(mktemp -d)"
 	parse_options "$@"
 	if [ "$SETUP_INITRD" == "yes" ]; then
-		SETUP_CONFIG_LANGUAGE="yes"
-		SETUP_INSTALL="no"
+		top_loop
 	fi
 
 	if [ "$SETUP_CHECKALL" == "yes" ]; then
