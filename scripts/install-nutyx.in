@@ -1142,8 +1142,8 @@ fi
 
 [ -z "$STRICT" ] && STRICT="$KERNEL"
 [ -z "$MINI" ] && MINI="dhcpcd"
-[ -z "$BASE" ] && BASE="efibootmgr linux-firmware systemd \
-wireless-tools wpa-supplicant"
+[ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
+systemd wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
 [ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
