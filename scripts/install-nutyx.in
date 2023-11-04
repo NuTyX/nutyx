@@ -84,15 +84,11 @@ if [ -d "$DEPOT_CD/depot" ]; then
 	umount $(cat /tmp/depot)
 fi
 [ ! -z $MOUNT ] && umount ${LFS}/${DEPOT}
-[ -d /sys/firmware/efi/efivars ] && \
-umount ${LFS}/sys/firmware/efi/efivars
 
-umount ${LFS}/run
-umount ${LFS}/dev/shm
-umount ${LFS}/dev/pts
-umount ${LFS}/dev
-umount ${LFS}/proc
-umount ${LFS}/sys
+mountpoint ${LFS}/run > /dev/null && umount ${LFS}/run
+mountpoint ${LFS}/dev > /dev/null && umount -R ${LFS}/dev
+mountpoint ${LFS}/proc > /dev/null && umount ${LFS}/proc
+mountpoint ${LFS}/sys > /dev/null && umount -R ${LFS}/sys
 }
 #***********************************************************************
 # Function - setup_chroot
@@ -108,12 +104,12 @@ umount ${LFS}/sys
 #***********************************************************************
 setup_chroot() {
 cp /etc/resolv.conf ${LFS}/etc/resolv.conf
-mount --bind /dev ${LFS}/dev
-mount -t devpts devpts ${LFS}/dev/pts
-mount -t proc proc ${LFS}/proc
-mount -t sysfs sysfs ${LFS}/sys
-mount -t tmpfs tmpfs ${LFS}/run
-mount -t tmpfs tmpfs ${LFS}/dev/shm
+mountpoint ${LFS}/dev > /dev/null || mount --bind /dev ${LFS}/dev
+mountpoint ${LFS}/dev/pts > /dev/null || mount -t devpts devpts ${LFS}/dev/pts
+mountpoint ${LFS}/proc > /dev/null || mount -t proc proc ${LFS}/proc
+mountpoint ${LFS}/sys > /dev/null || mount -t sysfs sysfs ${LFS}/sys
+mountpoint ${LFS}/run > /dev/null || mount -t tmpfs tmpfs ${LFS}/run
+mountpoint ${LFS}/dev/shm > /dev/null || mount -t tmpfs tmpfs ${LFS}/dev/shm
 
 if [ -h ${LFS}/dev/shm ]; then
    mkdir -p ${LFS}/$(readlink ${LFS}/dev/shm)
