@@ -1190,9 +1190,13 @@ lsb-release grub eudev \
 sysklogd sysvinit $KERNEL "
 fi
 
-VERSION_KERNEL="$(basename lib/modules/*)"
-VERSION_KERNEL=${KERNEL/*-/}
-[ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
+if [ -d $LFS/lib/modules ];then
+  VERSION_KERNEL="$(basename $LFS/lib/modules/*)"
+  VERSION_KERNEL=${VERSION_KERNEL/*-/}
+else
+  VERSION_KERNEL=${KERNEL/*-/}
+  [ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
+fi
 
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
@@ -1486,9 +1490,11 @@ parse_options() {
 				unmountall
 				exit 0;;
 			"generate-nutyx")
+				check_variables  "$@"
 				check_root
 				setup_chroot
-				echo "mkinitramfs \$(basename /lib/modules/*)
+				echo "rm boot/initrd*
+mkinitramfs \$(basename /lib/modules/*)
 mv boot/initrd-* boot/initrd-${VERSION_KERNEL}
 exit 0" > $LFS/$SETUP_FILE
 				chmod 177 $LFS/$SETUP_FILE
