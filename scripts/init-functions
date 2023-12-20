@@ -80,6 +80,7 @@ ECHOCMD="echo"
 SYSLOGDCMD="/usr/sbin/syslogd"
 KLOGDCMD="/usr/sbin/klogd"
 SEDCMD="sed"
+MODPROBECMD="$(which modprobe)"
 
 ########################################################################
 # start_daemon()                                                       #
@@ -1042,7 +1043,7 @@ do_load_modules()
          esac
 
          # Attempt to load the module, passing any arguments provided.
-         modprobe ${module} ${args} >/dev/null
+         $MODPROBECMD ${module} ${args} >/dev/null
 
          # Print the module name if successful, otherwise take note.
          if [ $? -eq 0 ]; then
