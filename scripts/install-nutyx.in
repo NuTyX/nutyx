@@ -1110,9 +1110,10 @@ You are not root, cannot continue...
 fi
 }
 check_variables() {
-
-CR="nutyx busybox curl gcc bzip2 glibc \
-zlib lz4 xz zstd libarchive openssl cards"
+local CR
+CR="nutyx busybox gcc bzip2 glibc   \
+zlib lz4 xz zstd libarchive openssl \
+libunistring libidn2 libpsl curl cards"
 
 if [ -z "$CHROOT" ]; then
 	CHROOT="$CR"
