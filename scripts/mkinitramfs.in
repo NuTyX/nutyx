@@ -33,6 +33,11 @@ do
    cp /lib/modules/$KERNEL_VERSION/modules.$i \
    $WDIR/lib/modules/$KERNEL_VERSION
 done
+touch $WDIR/lib/modules/$KERNEL_VERSION/modules.builtin.modinfo
+
+[ -f /lib/modules/$KERNEL_VERSION/modules.builtin.modinfo ] && \
+   cp /lib/modules/$KERNEL_VERSION/modules.builtin.modinfo \
+   $WDIR/lib/modules/$KERNEL_VERSION
 depmod -b $WDIR $KERNEL_VERSION
 }
 
