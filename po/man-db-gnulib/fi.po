@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnulib 4.0.0.2567\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
 "PO-Revision-Date: 2019-12-26 12:28+0200\n"
 "Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -21,27 +21,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural= ( n!=1) ;\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: %s-arvo on pienempi tai yhtäsuuri kuin %s"
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: ARGP_HELP_FMT-parametri vaatii arvon"
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: Tuntematon ARGP_HELP_FMT-parametri"
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "Roskaa ARGP_HELP_FMT:ssä: %s"
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -49,70 +49,70 @@ msgstr ""
 "Pitkien valitsinten pakolliset tai valinnaiset argumentit ovat pakollisia "
 "tai valinnaisia myös vastaaville lyhyille."
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr "Käyttö:"
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr "  tai: "
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 msgid " [OPTION...]"
 msgstr " [VALITSIN...]"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "Lisätietoja komennolla ”%s --help” tai ”%s --usage”.\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "Lähetä raportit ohjelmistovioista (englanniksi) osoitteeseen %s.\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "Tuntematon järjestelmävirhe"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr "anna tämä opasteluettelo"
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr "anna lyhyt käyttöohje"
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "NIMI"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr "aseta ohjelman nimi"
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr "S"
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr "odota S sekuntia (oletus 3600)"
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 msgid "print program version"
 msgstr "tulosta ohjelman versio"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(OHJELMAVIRHE) Versiota ei tiedetä!?"
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: Liian monta argumenttia\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(OHJELMAVIRHE) Valitsin olisi pitänyt tunnistaa‽"
 
@@ -161,77 +161,82 @@ msgstr "nykyisen työhakemiston kirjaaminen ei onnistu"
 msgid "failed to return to initial working directory"
 msgstr "palaaminen alkuperäiseen työhakemistoon epäonnistui"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr "Onnistui"
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr "Ei täsmäävyyttä"
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Virheellinen säännöllinen lauseke"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Virheellinen vertailumerkki"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Virheellinen merkkiluokan nimi"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Kenoviiva lopussa"
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Virheellinen takaisinviittaus"
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Pariton [, [^, [:, [. tai [="
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Pariton ( tai \\("
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Pariton \\{"
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Virheellinen \\{\\}:n sisältö"
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Virheellinen välin loppu"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Muisti lopussa"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Virheellinen edeltävä säännöllinen lauseke"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Ennenaikainen säännöllisen lausekkeen loppu"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Säännöllinen lauseke on liian suuri"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Pariton ) tai \\)"
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Ei edellistä säännöllistä lauseketta"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr "ei kyetä näyttämään virheilmoitusta"
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"
@@ -767,9 +772,6 @@ msgstr "tavalliset tiedostokahvat"
 
 #~ msgid "invalid spec"
 #~ msgstr "virheellinen määrittely"
-
-#~ msgid "unable to display error message"
-#~ msgstr "ei kyetä näyttämään virheilmoitusta"
 
 #, c-format
 #~ msgid "Packaged by %s (%s)\n"

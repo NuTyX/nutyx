@@ -2,59 +2,59 @@
 # Copyright (C) 1997 Free Software Foundation, Inc.
 # This file is distributed under the same license as the cpio package.
 # Kim Seong-Jin <stmksjp@lgeds.lg.co.kr>, 1997.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019, 2020, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cpio 2.12\n"
+"Project-Id-Version: cpio 2.14\n"
 "Report-Msgid-Bugs-To: bug-cpio@gnu.org\n"
-"POT-Creation-Date: 2019-11-06 09:58+0200\n"
-"PO-Revision-Date: 2019-03-12 16:35+0900\n"
+"POT-Creation-Date: 2024-01-14 13:56+0200\n"
+"PO-Revision-Date: 2023-05-03 11:56+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: gnu/argmatch.c:134
+#: gnu/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "%2$s에 대해 잘못된 %1$s 인자"
 
-#: gnu/argmatch.c:135
+#: gnu/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "%2$s에 대해 모호한 %1$s 인자"
 
-#: gnu/argmatch.c:154
+#: gnu/argmatch.c:165
 msgid "Valid arguments are:"
 msgstr "유효한 인자는 다음과 같습니다:"
 
-#: gnu/argp-help.c:148
+#: gnu/argp-help.c:151
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: %s 값은 %s 보다 작거나 같아야합니다"
 
-#: gnu/argp-help.c:224
+#: gnu/argp-help.c:227
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: ARGP_HELP_FMT 매개변수에 값이 필요합니다"
 
-#: gnu/argp-help.c:234
+#: gnu/argp-help.c:237
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: 알 수 없는 ARGP_HELP_FMT 매개변수"
 
-#: gnu/argp-help.c:247
+#: gnu/argp-help.c:250
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "ARGP_HELP_FMT에 불필요한 값: %s"
 
-#: gnu/argp-help.c:1227
+#: gnu/argp-help.c:1368
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -62,141 +62,114 @@ msgstr ""
 "긴 옵션에 대한 필수 또는 선택 인자 값은 관련 단축 길이 옵션에 대해 필수이거"
 "나 선택입니다."
 
-#: gnu/argp-help.c:1614
+#: gnu/argp-help.c:1734
 msgid "Usage:"
 msgstr "사용법:"
 
-#: gnu/argp-help.c:1618
+#: gnu/argp-help.c:1738
 msgid "  or: "
 msgstr "  또는: "
 
-#: gnu/argp-help.c:1630
+#: gnu/argp-help.c:1750
 msgid " [OPTION...]"
 msgstr " [<옵션>...]"
 
-#: gnu/argp-help.c:1657
+#: gnu/argp-help.c:1777
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "자세한 정보는 '%s --help' 또는 '%s --usage'를 입력하십시오.\n"
 
-#: gnu/argp-help.c:1685
+#: gnu/argp-help.c:1805
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "%s에 버그를 보고하십시오.\n"
 
-#: gnu/argp-help.c:1886 gnu/error.c:191
+#: gnu/argp-help.c:2006 gnu/error.c:194
 msgid "Unknown system error"
 msgstr "알 수 없는 시스템 오류"
 
-#: gnu/argp-parse.c:81
+#: gnu/argp-parse.c:80
 msgid "give this help list"
 msgstr "이 도움말 목록을 제공합니다"
 
-#: gnu/argp-parse.c:82
+#: gnu/argp-parse.c:81
 msgid "give a short usage message"
 msgstr "간단한 사용법 메시지를 제공합니다"
 
-#: gnu/argp-parse.c:83 tests/genfile.c:131
+#: gnu/argp-parse.c:82 tests/genfile.c:134
 msgid "NAME"
 msgstr "<이름>"
 
-#: gnu/argp-parse.c:84
+#: gnu/argp-parse.c:83
 msgid "set the program name"
 msgstr "프로그램 이름을 설정합니다"
 
-#: gnu/argp-parse.c:85
+#: gnu/argp-parse.c:84
 msgid "SECS"
 msgstr "<초>"
 
-#: gnu/argp-parse.c:86
+#: gnu/argp-parse.c:85
 msgid "hang for SECS seconds (default 3600)"
 msgstr "<초>값으로 지정한 초 동안 대기합니다(기본값: 3600)"
 
-#: gnu/argp-parse.c:143
+#: gnu/argp-parse.c:142
 msgid "print program version"
 msgstr "프로그램 버전을 출력합니다"
 
-#: gnu/argp-parse.c:160
+#: gnu/argp-parse.c:159
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(프로그램 오류) 알려진 버전이 아닙니다!?"
 
-#: gnu/argp-parse.c:613
+#: gnu/argp-parse.c:612
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: 인자 값이 너무 많습니다\n"
 
-#: gnu/argp-parse.c:756
+#: gnu/argp-parse.c:758
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(프로그램 오류) 인식할 수 있는 옵션이어야 합니다!?"
 
-#: gnu/closeout.c:112 src/util.c:93 src/util.c:96 src/util.c:146
+#: gnu/closeout.c:121 src/util.c:91 src/util.c:94 src/util.c:144
 #, c-format
 msgid "write error"
 msgstr "기록 오류"
 
-#: gnu/getopt.c:575 gnu/getopt.c:604
+#: gnu/getopt.c:282
 #, c-format
-msgid "%s: option '%s' is ambiguous; possibilities:"
-msgstr "%s: '%s' 지정 옵션이 모호합니다. 가능한 값은 다음과 같습니다:"
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: '%s%s' 지정 옵션이 모호합니다\n"
 
-#: gnu/getopt.c:619
+#: gnu/getopt.c:288
 #, c-format
-msgid "%s: option '%s' is ambiguous\n"
-msgstr "%s: '%s' 지정 옵션이 모호합니다\n"
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: '%s%s' 지정 옵션이 모호합니다. 가능한 값은 다음과 같습니다:"
 
-#: gnu/getopt.c:654 gnu/getopt.c:658
+#: gnu/getopt.c:322
 #, c-format
-msgid "%s: option '--%s' doesn't allow an argument\n"
-msgstr "%s: '--%s' 옵션은 인자를 허용하지 않습니다\n"
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: 인식할 수 없는 옵션 '%s%s'\n"
 
-#: gnu/getopt.c:667 gnu/getopt.c:672
+#: gnu/getopt.c:348
 #, c-format
-msgid "%s: option '%c%s' doesn't allow an argument\n"
-msgstr ""
-"%s: '%c%s' 옵션은 인자를 허용하지 않습니다\n"
-"\n"
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: '%s%s' 옵션은 인자를 허용하지 않습니다\n"
 
-#: gnu/getopt.c:715 gnu/getopt.c:734
+#: gnu/getopt.c:363
 #, c-format
-msgid "%s: option '--%s' requires an argument\n"
-msgstr "%s: '--%s' 옵션에 인자가 필요합니다\n"
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: '%s%s' 옵션에 인자가 필요합니다\n"
 
-#: gnu/getopt.c:772 gnu/getopt.c:775
-#, c-format
-msgid "%s: unrecognized option '--%s'\n"
-msgstr "%s: 인식할 수 없는 옵션 '--%s'\n"
-
-#: gnu/getopt.c:783 gnu/getopt.c:786
-#, c-format
-msgid "%s: unrecognized option '%c%s'\n"
-msgstr "%s: 인식할 수 없는 옵션 '%c%s'\n"
-
-#: gnu/getopt.c:835 gnu/getopt.c:838
+#: gnu/getopt.c:624
 #, c-format
 msgid "%s: invalid option -- '%c'\n"
 msgstr "%s: 잘못된 옵션 -- '%c'\n"
 
-#: gnu/getopt.c:891 gnu/getopt.c:908 gnu/getopt.c:1118 gnu/getopt.c:1136
+#: gnu/getopt.c:639 gnu/getopt.c:685
 #, c-format
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: 옵션에 인자 값이 필요합니다 -- '%c'\n"
 
-#: gnu/getopt.c:964 gnu/getopt.c:980
-#, c-format
-msgid "%s: option '-W %s' is ambiguous\n"
-msgstr "%s: '-W %s' 지정 옵션이 모호합니다\n"
-
-#: gnu/getopt.c:1004 gnu/getopt.c:1022
-#, c-format
-msgid "%s: option '-W %s' doesn't allow an argument\n"
-msgstr "%s: '-W %s' 옵션은 인자를 허용하지 않습니다\n"
-
-#: gnu/getopt.c:1043 gnu/getopt.c:1061
-#, c-format
-msgid "%s: option '-W %s' requires an argument\n"
-msgstr "%s: '-W %s' 옵션에 인자가 필요합니다\n"
-
-#: gnu/obstack.c:338 gnu/obstack.c:340 gnu/xalloc-die.c:34
+#: gnu/obstack.c:317 gnu/obstack.c:319 gnu/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "메모리 고갈됨"
 
@@ -229,7 +202,7 @@ msgstr "초기 작업 디렉터리로의 복귀 실패"
 #. for your locale.
 #.
 #. If you don't know what to put here, please see
-#. <http://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
+#. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
 #: gnu/quotearg.c:354
 msgid "`"
@@ -239,12 +212,12 @@ msgstr "`"
 msgid "'"
 msgstr "'"
 
-#: gnu/version-etc.c:74
+#: gnu/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
 msgstr "%s (%s)(으)로 패키지 구성함\n"
 
-#: gnu/version-etc.c:77
+#: gnu/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
 msgstr "%s(으)로 패키지 구성함\n"
@@ -252,39 +225,36 @@ msgstr "%s(으)로 패키지 구성함\n"
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
-#: gnu/version-etc.c:84
+#: gnu/version-etc.c:83
 msgid "(C)"
 msgstr "(C)"
 
-#: gnu/version-etc.c:86
+#. TRANSLATORS: The %s placeholder is the web address of the GPL license.
+#: gnu/version-etc.c:88
+#, c-format
 msgid ""
-"\n"
-"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
-"html>.\n"
+"License GPLv3+: GNU GPL version 3 or later <%s>.\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
-"\n"
 msgstr ""
-"\n"
-"GPLv3+ 라이선스: GNU GPL 버전 3 이상 <https://gnu.org/licenses/gpl.html>.\n"
+"GPLv3+ 라이선스: GNU GPL 버전 3 이상 <%s>.\n"
 "이 프로그램은 자유 소프트웨어입니다: 자유롭게 바꾸고 재배포할 수 있습니다.\n"
-"법률이 허용하는 모든 범위내의 보증은 없습니다.\n"
-"\n"
+"법률이 허용하는 모든 범위 내의 보증은 없습니다.\n"
 
 #. TRANSLATORS: %s denotes an author name.
-#: gnu/version-etc.c:102
+#: gnu/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
 msgstr "%s이(가) 작성함.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:106
+#: gnu/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
 msgstr "%s, %s이(가) 작성함.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:110
+#: gnu/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
 msgstr "%s, %s, %s이(가) 작성함.\n"
@@ -292,7 +262,7 @@ msgstr "%s, %s, %s이(가) 작성함.\n"
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:117
+#: gnu/version-etc.c:120
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -304,7 +274,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:124
+#: gnu/version-etc.c:127
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -316,7 +286,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:131
+#: gnu/version-etc.c:134
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -328,7 +298,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:139
+#: gnu/version-etc.c:142
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -340,7 +310,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:147
+#: gnu/version-etc.c:150
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -354,7 +324,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:156
+#: gnu/version-etc.c:159
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -368,7 +338,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:167
+#: gnu/version-etc.c:170
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -383,33 +353,25 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: gnu/version-etc.c:245
+#: gnu/version-etc.c:249
 #, c-format
-msgid ""
-"\n"
-"Report bugs to: %s\n"
-msgstr ""
-"\n"
-"버그 보고 주소: %s\n"
+msgid "Report bugs to: %s\n"
+msgstr "버그 보고 주소: %s\n"
 
-#: gnu/version-etc.c:247
+#: gnu/version-etc.c:251
 #, c-format
 msgid "Report %s bugs to: %s\n"
 msgstr "%s 버그 보고 주소: %s\n"
 
-#: gnu/version-etc.c:251
+#: gnu/version-etc.c:255 gnu/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "%s 홈 페이지: <%s>\n"
 
-#: gnu/version-etc.c:253
+#: gnu/version-etc.c:260
 #, c-format
-msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
-msgstr "%s 홈 페이지: <http://www.gnu.org/software/%s/>\n"
-
-#: gnu/version-etc.c:256
-msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
-msgstr "GNU 소프트웨어 활용 일반 도움말: <https://www.gnu.org/gethelp/>\n"
+msgid "General help using GNU software: <%s>\n"
+msgstr "GNU 소프트웨어 활용 일반 도움말: <%s>\n"
 
 #. TRANSLATORS: %s after `Cannot' is a function name, e.g. `Cannot open'.
 #. Directly translating this to another language will not work, first because
@@ -434,48 +396,48 @@ msgstr "%s: 경고: %s 동작 진행할 수 없음"
 msgid "%s: Cannot change mode to %s"
 msgstr "%s: %s 모드로 바꿀 수 없음"
 
-#: lib/paxerror.c:103
+#: lib/paxerror.c:104
 #, c-format
-msgid "%s: Cannot change ownership to uid %lu, gid %lu"
-msgstr "%s: %lu uid, %lu gid로 소유권을 바꿀 수 없음"
+msgid "%s: Cannot change ownership to uid %ju, gid %ju"
+msgstr "%s: %ju uid, %ju gid로 소유권을 바꿀 수 없습니다"
 
-#: lib/paxerror.c:129
+#: lib/paxerror.c:130
 #, c-format
 msgid "%s: Cannot hard link to %s"
 msgstr "%s: %s 하드 링크를 만들 수 없습니다"
 
-#: lib/paxerror.c:181 lib/paxerror.c:213
+#: lib/paxerror.c:182 lib/paxerror.c:212
 #, c-format
-msgid "%s: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%1$s: %3$lu 바이트 읽는 중 %2$s 바이트 위치 읽기 오류"
+msgid "%s: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%1$s: %3$zu 바이트 위치 읽는 중 %2$jd 바이트 위치 읽기 오류"
 
 #: lib/paxerror.c:194
 #, c-format
-msgid "%s: Warning: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Warning: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%1$s: 경고: %3$lu 바이트 위치 읽는 중 %2$s 바이트 위치 읽기 오류"
+msgid "%s: Warning: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Warning: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%1$s: 경고: %3$zu 바이트 위치 읽는 중 %2$jd 바이트 위치 읽기 오류"
 
-#: lib/paxerror.c:261
+#: lib/paxerror.c:259
 #, c-format
-msgid "%s: Cannot seek to %s"
-msgstr "%s: %s을(를) 탐색할 없음"
+msgid "%s: Cannot seek to %jd"
+msgstr "%s: %jd 위치를 탐색할 수 없습니다"
 
-#: lib/paxerror.c:277
+#: lib/paxerror.c:273
 #, c-format
-msgid "%s: Warning: Cannot seek to %s"
-msgstr "%s: 오류: %s을(를) 탐색할 수 없습니다"
+msgid "%s: Warning: Cannot seek to %jd"
+msgstr "%s: 경고: %jd 위치를 탐색할 수 없습니다"
 
-#: lib/paxerror.c:286
+#: lib/paxerror.c:281
 #, c-format
 msgid "%s: Cannot create symlink to %s"
 msgstr "%s: %s 심볼릭 링크를 만들 수 없음"
 
-#: lib/paxerror.c:351
+#: lib/paxerror.c:346
 #, c-format
-msgid "%s: Wrote only %lu of %lu byte"
-msgid_plural "%s: Wrote only %lu of %lu bytes"
-msgstr[0] "%1$s: %3$lu 바이트 중 %2$lu 바이트만 기록함"
+msgid "%s: Wrote only %zu of %zu byte"
+msgid_plural "%s: Wrote only %zu of %zu bytes"
+msgstr[0] "%1$s: %3$zu 바이트 중 %2$zu 바이트만 기록함"
 
 #: lib/paxnames.c:140
 #, c-format
@@ -495,316 +457,326 @@ msgstr "빈 구성원 이름에서 `.' 대체"
 msgid "Substituting `.' for empty hard link target"
 msgstr "빈 하드 링크 대상에서 `.' 대체"
 
-#: lib/rtapelib.c:299
+#: lib/rtapelib.c:295
 #, c-format
 msgid "exec/tcp: Service not available"
 msgstr "exec/tcp: 서비스 동작하지 않음"
 
-#: lib/rtapelib.c:303
+#: lib/rtapelib.c:299
 #, c-format
 msgid "stdin"
 msgstr "stdin"
 
-#: lib/rtapelib.c:306
+#: lib/rtapelib.c:302
 #, c-format
 msgid "stdout"
 msgstr "stdout"
 
-#: lib/rtapelib.c:429
+#: lib/rtapelib.c:450
 #, c-format
 msgid "Cannot connect to %s: resolve failed"
 msgstr "%s에 연결할 수 없음: 해석 실패"
 
-#: lib/rtapelib.c:502
+#: lib/rtapelib.c:523
 #, c-format
 msgid "Cannot redirect files for remote shell"
 msgstr "원격 셸에 파일을 리다이렉션할 수 없음"
 
-#: lib/rtapelib.c:516
+#: lib/rtapelib.c:528
+#, c-format
+msgid "Cannot reset uid and gid: %s"
+msgstr "uid와 gid를 초기화할 수 없음: %s"
+
+#: lib/rtapelib.c:540
 #, c-format
 msgid "Cannot execute remote shell"
 msgstr "원격 셸을 실행할 수 없음"
 
-#: rmt/rmt.c:432
+#: rmt/rmt.c:434
 msgid "Seek direction out of range"
 msgstr "탐색 방향이 범위를 벗어납니다"
 
-#: rmt/rmt.c:438
+#: rmt/rmt.c:440
 msgid "Invalid seek direction"
 msgstr "잘못된 탐색 방향"
 
-#: rmt/rmt.c:446
+#: rmt/rmt.c:448
 msgid "Invalid seek offset"
 msgstr "잘못된 탐색 오프셋"
 
-#: rmt/rmt.c:452
+#: rmt/rmt.c:454
 msgid "Seek offset out of range"
 msgstr "탐색 오프셋이 범위를 벗어납니다"
 
-#: rmt/rmt.c:493 rmt/rmt.c:544 rmt/rmt.c:608
+#: rmt/rmt.c:495 rmt/rmt.c:546 rmt/rmt.c:610
 msgid "Invalid byte count"
 msgstr "잘못된 바이트 계수"
 
-#: rmt/rmt.c:499 rmt/rmt.c:550 rmt/rmt.c:614 rmt/rmt.c:625
+#: rmt/rmt.c:501 rmt/rmt.c:552 rmt/rmt.c:616 rmt/rmt.c:627
 msgid "Byte count out of range"
 msgstr "바이트 수가 범위를 벗어납니다"
 
-#: rmt/rmt.c:558
+#: rmt/rmt.c:560
 msgid "Premature eof"
 msgstr "갑작스러운 파일의 끝"
 
-#: rmt/rmt.c:601
+#: rmt/rmt.c:603
 msgid "Invalid operation code"
 msgstr "잘못된 동작 모드"
 
-#: rmt/rmt.c:636 rmt/rmt.c:680
+#: rmt/rmt.c:638 rmt/rmt.c:682
 msgid "Operation not supported"
 msgstr "처리 방식을 지원하지 않습니다"
 
-#: rmt/rmt.c:664
+#: rmt/rmt.c:666
 msgid "Unexpected arguments"
 msgstr "예상치 못한 인자 값"
 
-#: rmt/rmt.c:689
+#: rmt/rmt.c:691
 msgid "Manipulate a tape drive, accepting commands from a remote process"
 msgstr "원격 프로세스 명령을 받아들이는 테이프 드라이브를 다룹니다"
 
-#: rmt/rmt.c:696 src/main.c:129 tests/genfile.c:167
+#: rmt/rmt.c:698 src/main.c:130 tests/genfile.c:179
 msgid "NUMBER"
 msgstr "<번호>"
 
-#: rmt/rmt.c:697
+#: rmt/rmt.c:699
 msgid "set debug level"
 msgstr "디버깅 수준 설정"
 
-#: rmt/rmt.c:698 src/main.c:166 src/main.c:172 tests/genfile.c:133
-#: tests/genfile.c:181 tests/genfile.c:185 tests/genfile.c:188
-#: tests/genfile.c:194
+#: rmt/rmt.c:700 src/main.c:167 src/main.c:173 tests/genfile.c:136
+#: tests/genfile.c:193 tests/genfile.c:197 tests/genfile.c:200
+#: tests/genfile.c:206
 msgid "FILE"
 msgstr "<파일>"
 
-#: rmt/rmt.c:699
+#: rmt/rmt.c:701
 msgid "set debug output file name"
 msgstr "디버깅 출력 파일 이름 설정"
 
-#: rmt/rmt.c:715 rmt/rmt.c:783
+#: rmt/rmt.c:717 rmt/rmt.c:785
 #, c-format
 msgid "cannot open %s"
 msgstr "%s 열 수 없음"
 
-#: rmt/rmt.c:780 tests/genfile.c:953 tests/genfile.c:970
+#: rmt/rmt.c:782 tests/genfile.c:1036
 #, c-format
 msgid "too many arguments"
 msgstr "인자가 너무 많습니다"
 
-#: rmt/rmt.c:822
+#: rmt/rmt.c:824
 msgid "Garbage command"
 msgstr "쓸모 없는 명령"
 
-#: src/copyin.c:45
+#: src/copyin.c:46
 #, c-format
 msgid "warning: skipped %ld byte of junk"
 msgid_plural "warning: skipped %ld bytes of junk"
 msgstr[0] "경고: 불필요한 %ld 바이트 건너뜀"
 
-#: src/copyin.c:66
+#: src/copyin.c:68
 #, c-format
 msgid "rename %s -> "
 msgstr "%s 이름 바꾸기 -> "
 
-#: src/copyin.c:114
+#: src/copyin.c:116
 #, c-format
 msgid "%s: stored filename length is out of range"
 msgstr "%s: 저장한 파일 이름 길이가 범위를 벗어납니다"
 
-#: src/copyin.c:173 src/copyin.c:519 src/copyin.c:534 src/copyin.c:1378
+#: src/copyin.c:175 src/copyin.c:521 src/copyin.c:536 src/copyin.c:1552
 #, c-format
 msgid "%s: checksum error (0x%x, should be 0x%x)"
 msgstr "%s: 검사합 오류(0x%x, 0x%x 값이어야 함)"
 
-#: src/copyin.c:200 src/copypass.c:135
+#: src/copyin.c:202 src/copypass.c:129
 #, c-format
 msgid "%s not created: newer or same age version exists"
 msgstr "%s을(를) 만들지 않음: 새 버전 또는 동일한 버전이 있습니다"
 
-#: src/copyin.c:210 src/copypass.c:143
+#: src/copyin.c:212 src/copypass.c:137
 #, c-format
 msgid "cannot remove current %s"
 msgstr "현재 %s을(를) 제거할 수 없음"
 
-#: src/copyin.c:271 src/copyin.c:467 src/copyin.c:582 src/copypass.c:391
+#: src/copyin.c:273 src/copyin.c:469 src/copyin.c:584 src/copypass.c:395
 #, c-format
 msgid "cannot link %s to %s"
 msgstr "%s을(를) %s에 링크할 수 없음"
 
-#: src/copyin.c:500
+#: src/copyin.c:502
 #, c-format
 msgid "cannot swap halfwords of %s: odd number of halfwords"
 msgstr "%s 바이트를 치환할 수 없음: 바이트 수가 홀수입니다"
 
-#: src/copyin.c:508
+#: src/copyin.c:510
 #, c-format
 msgid "cannot swap bytes of %s: odd number of bytes"
 msgstr "%s 바이트를 치환할 수 없음: 바이트 수가 홀수입니다"
 
-#: src/copyin.c:659
-#, c-format
-msgid "%s: Cannot symlink to %s"
-msgstr "%s: %s을(를) 심볼릭 링크로 연결할 수 없음"
-
-#: src/copyin.c:713 src/copyout.c:832 src/copypass.c:314
+#: src/copyin.c:858 src/copyout.c:826 src/copypass.c:315
 #, c-format
 msgid "%s: unknown file type"
 msgstr "%s: 알 수 없는 파일 형식"
 
-#: src/copyin.c:848 src/copyin.c:855
+#: src/copyin.c:1015 src/copyin.c:1022
 #, c-format
 msgid "Malformed number %.*s"
 msgstr "잘못된 번호 %.*s"
 
-#: src/copyin.c:865
+#: src/copyin.c:1032
 #, c-format
 msgid "Archive value %.*s is out of range"
 msgstr "%.*s 아카이브 값이 범위를 벗어납니다"
 
-#: src/copyin.c:904
+#: src/copyin.c:1071
 #, c-format
 msgid "premature end of archive"
 msgstr "갑작스러운 아카이브의 끝"
 
-#: src/copyin.c:1120
+#: src/copyin.c:1170
+#, c-format
+msgid "malformed header: file name of zero length"
+msgstr "잘못된 헤더: 파일 이름 길이가 0입니다"
+
+#: src/copyin.c:1178
+#, c-format
+msgid "malformed header: file name is not nul-terminated"
+msgstr "잘못된 헤더: 파일 이름이 NULL로 끝나지 않았습니다"
+
+#: src/copyin.c:1300
 #, c-format
 msgid "warning: archive header has reverse byte-order"
 msgstr "경고: 아카이브 헤더 바이트 순서가 역순입니다"
 
-#: src/copyin.c:1260
+#: src/copyin.c:1437
 #, c-format
 msgid "standard input is closed"
 msgstr "표준 입력을 닫았습니다"
 
-#: src/copyin.c:1435 src/copyout.c:874 src/copypass.c:332
+#: src/copyin.c:1610 src/copyout.c:868 src/copypass.c:333
 #, c-format
 msgid "%lu block\n"
 msgid_plural "%lu blocks\n"
 msgstr[0] "%lu 블록\n"
 
-#: src/copyout.c:51 src/copyout.c:60
+#: src/copyout.c:49 src/copyout.c:57
 #, c-format
 msgid "cannot read checksum for %s"
 msgstr "%s의 검사합을 읽을 수 없음"
 
-#: src/copyout.c:293
-#, fuzzy, c-format
+#: src/copyout.c:290
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%s"
-msgstr "허용 범위를 넘어선 숫자: %s"
+msgstr "%1$s: 0..%4$s 허용 범위를 넘어선 값 %2$s %3$s"
 
-#: src/copyout.c:304
+#: src/copyout.c:301
 #, c-format
 msgid "%s: truncating %s"
 msgstr "%s: %s 자름"
 
-#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:476
+#: src/copyout.c:336 src/copyout.c:399 src/copyout.c:473
 msgid "inode number"
 msgstr "inode 번호"
 
-#: src/copyout.c:342 src/copyout.c:405 src/copyout.c:480
+#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:477
 msgid "file mode"
 msgstr "파일 모드"
 
-#: src/copyout.c:345 src/copyout.c:407 src/copyout.c:484
+#: src/copyout.c:342 src/copyout.c:404 src/copyout.c:481
 msgid "uid"
 msgstr "UID"
 
-#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:488
+#: src/copyout.c:345 src/copyout.c:406 src/copyout.c:485
 msgid "gid"
 msgstr "GID"
 
-#: src/copyout.c:351 src/copyout.c:412 src/copyout.c:492
+#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:489
 msgid "number of links"
 msgstr "링크 수"
 
-#: src/copyout.c:354 src/copyout.c:417
+#: src/copyout.c:351 src/copyout.c:414
 msgid "modification time"
 msgstr "수정 시각"
 
-#: src/copyout.c:357 src/copyout.c:424 src/copyout.c:516
+#: src/copyout.c:354 src/copyout.c:421 src/copyout.c:513
 msgid "file size"
 msgstr "파일 크기"
 
-#: src/copyout.c:361
+#: src/copyout.c:358
 msgid "device major number"
 msgstr "장치 주 번호"
 
-#: src/copyout.c:365
+#: src/copyout.c:362
 msgid "device minor number"
 msgstr "장치 부 번호"
 
-#: src/copyout.c:369
+#: src/copyout.c:366
 msgid "rdev major"
 msgstr "rdev 주 번호"
 
-#: src/copyout.c:373
+#: src/copyout.c:370
 msgid "rdev minor"
 msgstr "rdev 부 번호"
 
-#: src/copyout.c:377 src/copyout.c:420 src/copyout.c:503
+#: src/copyout.c:374 src/copyout.c:417 src/copyout.c:500
 msgid "name size"
 msgstr "이름 크기"
 
-#: src/copyout.c:399
+#: src/copyout.c:396
 msgid "device number"
 msgstr "장치 번호"
 
-#: src/copyout.c:414
+#: src/copyout.c:411
 msgid "rdev"
 msgstr "rdev"
 
-#: src/copyout.c:472
+#: src/copyout.c:469
 #, c-format
 msgid "%s: truncating inode number"
 msgstr "%s: inode 번호 잘림"
 
-#: src/copyout.c:502
-#, fuzzy, c-format
+#: src/copyout.c:499
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%u"
-msgstr "허용 범위를 넘어선 숫자: %s"
+msgstr "%1$s: 0..%4$u 허용 범위를 넘어선 값 %2$s %3$s"
 
-#: src/copyout.c:515
-#, fuzzy, c-format
+#: src/copyout.c:512
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%lu"
-msgstr "허용 범위를 넘어선 숫자: %s"
+msgstr "%1$s: 0..%4$lu 허용 범위를 넘어선 값 %2$s %3$s"
 
-#: src/copyout.c:564
+#: src/copyout.c:561
 #, c-format
 msgid "%s: file name too long"
 msgstr "%s: 파일 이름이 너무 깁니다"
 
-#: src/copyout.c:621
+#: src/copyout.c:618
 #, c-format
 msgid "standard output is closed"
 msgstr "표준 출력을 닫았습니다"
 
-#: src/copyout.c:644 src/copypass.c:99
+#: src/copyout.c:641 src/copypass.c:93
 #, c-format
 msgid "blank line ignored"
 msgstr "빈 줄은 무시합니다"
 
-#: src/copyout.c:757
+#: src/copyout.c:751
 #, c-format
 msgid "%s not dumped: not a regular file"
 msgstr "%s 덤프하지 않음: 일반 파일 아님"
 
-#: src/copyout.c:808
+#: src/copyout.c:802
 #, c-format
 msgid "%s: symbolic link too long"
 msgstr "%s: 심볼릭 링크가 너무 깁니다"
 
-#: src/copypass.c:386
+#: src/copypass.c:390
 #, c-format
 msgid "%s linked to %s"
 msgstr "%s을(를) %s 링크로 연결했습니다"
 
-#: src/main.c:76
+#: src/main.c:77
 msgid ""
 "GNU `cpio' copies files to and from archives\n"
 "\n"
@@ -826,96 +798,96 @@ msgstr ""
 "  # <이름-목록>의 파일을 <대상-디렉터리>에 복사\n"
 "  cpio -p <대상-디렉터리> < <이름-목록>\n"
 
-#: src/main.c:92
+#: src/main.c:93
 #, c-format
 msgid "%s is meaningless with %s"
 msgstr "%s은(는) %s와(과) 동작하지 않습니다"
 
-#: src/main.c:98
+#: src/main.c:99
 msgid "Main operation mode:"
 msgstr "주 동작 모드:"
 
-#: src/main.c:100
+#: src/main.c:101
 msgid "Create the archive (run in copy-out mode)"
 msgstr "아카이브 만들기(copy-out 모드로 실행)"
 
-#: src/main.c:102
+#: src/main.c:103
 msgid "Extract files from an archive (run in copy-in mode)"
 msgstr "아카이브에서 파일 추출(copy-in 모드로 실행)"
 
-#: src/main.c:104
+#: src/main.c:105
 msgid "Run in copy-pass mode"
 msgstr "복사-전달 모드로 실행"
 
-#: src/main.c:106
+#: src/main.c:107
 msgid "Print a table of contents of the input"
 msgstr "입력의 내용 목록을 출력합니다"
 
-#: src/main.c:112
+#: src/main.c:113
 msgid "Operation modifiers valid in any mode:"
 msgstr "어떤 모드에서든 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:114
+#: src/main.c:115
 msgid "DIR"
 msgstr "<디렉터리>"
 
-#: src/main.c:115
+#: src/main.c:116
 msgid "Change to directory DIR"
 msgstr "<디렉터리>로 이동"
 
-#: src/main.c:118
+#: src/main.c:119
 msgid "Archive file is local, even if its name contains colons"
 msgstr "아카이브 파일은 이름에 콜론이 들어있어도 로컬에 있습니다"
 
-#: src/main.c:119 tests/genfile.c:154
+#: src/main.c:120 tests/genfile.c:158
 msgid "FORMAT"
 msgstr "<형식>"
 
-#: src/main.c:120
+#: src/main.c:121
 msgid "Use given archive FORMAT"
 msgstr "아카이브 <형식>설정을 사용합니다"
 
-#: src/main.c:122
+#: src/main.c:123
 msgid "Set the I/O block size to 5120 bytes"
 msgstr "입출력 블록 크기를 5120 바이트로 설정합니다"
 
-#: src/main.c:123
+#: src/main.c:124
 msgid "BLOCK-SIZE"
 msgstr "<블록-크기>"
 
-#: src/main.c:124
+#: src/main.c:125
 msgid "Set the I/O block size to BLOCK-SIZE * 512 bytes"
 msgstr "입출력 블록 크기를 <블록-크기> * 512 바이트로 설정합니다"
 
-#: src/main.c:126
+#: src/main.c:127
 msgid "Use the old portable (ASCII) archive format"
 msgstr "오래된 이식형(ASCII) 아카이브 형식을 사용합니다"
 
-#: src/main.c:128
+#: src/main.c:129
 msgid "Print a \".\" for each file processed"
 msgstr "각 파일을 처리할 때마다 \".\" 출력"
 
-#: src/main.c:130
+#: src/main.c:131
 msgid "Set the I/O block size to the given NUMBER of bytes"
 msgstr "<번호> 바이트 만큼 입출력 블록 크기를 설정합니다"
 
-#: src/main.c:132
+#: src/main.c:133
 msgid "Do not print the number of blocks copied"
 msgstr "복사한 블록 수를 출력하지 않습니다"
 
-#: src/main.c:134
+#: src/main.c:135
 msgid "Verbosely list the files processed"
 msgstr "처리한 파일을 자세하게 목록 출력합니다"
 
-#: src/main.c:137
+#: src/main.c:138
 msgid "Enable debugging info"
 msgstr "디버깅 정보 활성"
 
-#: src/main.c:139
+#: src/main.c:140
 msgid "FLAG"
 msgstr "<플래그>"
 
-#: src/main.c:140
+#: src/main.c:141
 msgid ""
 "Control warning display. Currently FLAG is one of 'none', 'truncate', 'all'. "
 "Multiple options accumulate."
@@ -923,24 +895,24 @@ msgstr ""
 "경고 표시를 제어합니다. 현재 <플래그> 값은 'none', 'truncate', 'all' 중 하나"
 "입니다. 다중 옵션 값을 누적해서 쓸 수 있습니다."
 
-#: src/main.c:141
+#: src/main.c:142
 msgid "[USER][:.][GROUP]"
 msgstr "[<사용자>][:.][<그룹>]"
 
-#: src/main.c:142
+#: src/main.c:143
 msgid ""
 "Set the ownership of all files created to the specified USER and/or GROUP"
 msgstr "만든 모든 파일의 소유자를 지정 <사용자> 내지 <그룹>으로 설정합니다"
 
-#: src/main.c:147
+#: src/main.c:148
 msgid "Operation modifiers valid in copy-in and copy-out modes"
 msgstr "copy-in 모드와 copy-out 모드에서 쓸 수 있는 동작 지정 옵션 값"
 
-#: src/main.c:148 src/main.c:183 src/main.c:193
+#: src/main.c:149 src/main.c:184 src/main.c:194
 msgid "[[USER@]HOST:]FILE-NAME"
 msgstr "[[<사용자>@]<호스트>:]<파일-이름>"
 
-#: src/main.c:149
+#: src/main.c:150
 msgid ""
 "Use this FILE-NAME instead of standard input or output. Optional USER and "
 "HOST specify the user and host names in case of a remote archive"
@@ -948,42 +920,42 @@ msgstr ""
 "표준 입출력 대신 <파일-이름>을 사용합니다. 원격 아카이브를 쓸 경우 <사용자>"
 "와 <호스트>를 별도로 지정합니다."
 
-#: src/main.c:150 tests/genfile.c:170
+#: src/main.c:151 tests/genfile.c:182
 msgid "STRING"
 msgstr "<문자열>"
 
-#: src/main.c:151
+#: src/main.c:152
 msgid "Print STRING when the end of a volume of the backup media is reached"
 msgstr "백업 미디어 볼륨 끝에 다다랐을 때 <문자열>을 출력합니다"
 
-#: src/main.c:153 src/mt.c:182 tests/genfile.c:191
+#: src/main.c:154 src/mt.c:181 tests/genfile.c:203
 msgid "COMMAND"
 msgstr "<명령>"
 
-#: src/main.c:154
+#: src/main.c:155
 msgid "Use COMMAND instead of rsh"
 msgstr "rsh 대신 <명령>을 사용합니다"
 
-#: src/main.c:160
+#: src/main.c:161
 msgid "Operation modifiers valid only in copy-in mode:"
 msgstr "copy-in 모드에서만 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:162
+#: src/main.c:163
 msgid "Only copy files that do not match any of the given patterns"
 msgstr "주어진 패턴과 일치하지 않는 파일만 복사합니다"
 
-#: src/main.c:164
+#: src/main.c:165
 msgid "In the verbose table of contents listing, show numeric UID and GID"
 msgstr "자세한 목록을 통해 UID와 GID 번호를 나타냅니다"
 
-#: src/main.c:167
+#: src/main.c:168
 msgid ""
 "Read additional patterns specifying filenames to extract or list from FILE"
 msgstr ""
 "<파일>을 통해 추출하거나 목록을 나타낼 파일 이름을 지정하는 추가 패턴을 읽습"
 "니다"
 
-#: src/main.c:169
+#: src/main.c:170
 msgid ""
 "When reading a CRC format archive, only verify the CRC's of each file in the "
 "archive, don't actually extract the files"
@@ -991,11 +963,11 @@ msgstr ""
 "CRC 형식 아카이브를 읽을 때, 아카이브의 각 파일에 있는 CRC만 검증하며, 실제"
 "로 파일을 추출하지는 않습니다"
 
-#: src/main.c:171
+#: src/main.c:172
 msgid "Interactively rename files"
 msgstr "대화 방식으로 파일 이름을 바꿉니다"
 
-#: src/main.c:175
+#: src/main.c:176
 msgid ""
 "Swap both halfwords of words and bytes of halfwords in the data. Equivalent "
 "to -sS"
@@ -1003,19 +975,19 @@ msgstr ""
 "데이터의 각 2바이트 중 1바이트, 4바이트 중 2바이트 위치를 짝지어 바꿉니다. -"
 "sS와 동일합니다"
 
-#: src/main.c:177
+#: src/main.c:178
 msgid "Swap the bytes of each halfword in the files"
 msgstr "파일의 각 바이트 위치를 2바이트씩 짝지어 바꿉니다"
 
-#: src/main.c:179
+#: src/main.c:180
 msgid "Swap the halfwords of each word (4 bytes) in the files"
 msgstr "파일의 각 2바이트 위치를 4바이트씩 짝지어 바꿉니다"
 
-#: src/main.c:182
+#: src/main.c:183
 msgid "Extract files to standard output"
 msgstr "표준 출력으로 파일을 추출합니다"
 
-#: src/main.c:184
+#: src/main.c:185
 msgid ""
 "Archive filename to use instead of standard input. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
@@ -1023,15 +995,15 @@ msgstr ""
 "표준 입력 대신 사용할 아카이브 파일 이름입니다. 원격 아카이브를 쓸 경우 <사용"
 "자>와 <호스트>를 별도로 지정합니다."
 
-#: src/main.c:190
+#: src/main.c:191
 msgid "Operation modifiers valid only in copy-out mode:"
 msgstr "copy-out 모드에서만 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:192
+#: src/main.c:193
 msgid "Append to an existing archive."
 msgstr "기존 아카이브 뒤에 붙입니다."
 
-#: src/main.c:194
+#: src/main.c:195
 msgid ""
 "Archive filename to use instead of standard output. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
@@ -1039,90 +1011,94 @@ msgstr ""
 "표준 출력 대신 사용할 아카이브 파일 이름입니다. 원격 아카이브를 쓸 경우 <사용"
 "자>와 <호스트>를 별도로 지정합니다."
 
-#: src/main.c:196
+#: src/main.c:197
 msgid "Renumber inodes"
 msgstr "inode 번호 다시 부여"
 
-#: src/main.c:198
+#: src/main.c:199
 msgid "Don't store device numbers"
 msgstr "장치 번호를 저장하지 않음"
 
-#: src/main.c:200
+#: src/main.c:201
+msgid "ignore number of links of a directory; always assume 2"
+msgstr "여러 디렉터리 링크를 무시합니다. 항상 2로 가정합니다."
+
+#: src/main.c:203
 msgid "Create device-independent (reproducible) archives"
 msgstr "장치-독립(재현 가능) 아카이브를 만듭니다"
 
-#: src/main.c:207
+#: src/main.c:210
 msgid "Operation modifiers valid only in copy-pass mode:"
 msgstr "copy-pass 모드에서 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:209
+#: src/main.c:212
 msgid "Link files instead of copying them, when  possible"
 msgstr "가능하다면 파일을 복사하는 대신 심볼릭 링크를 겁니다"
 
-#: src/main.c:216
+#: src/main.c:219
 msgid "Operation modifiers valid in copy-in and copy-out modes:"
 msgstr "copy-in 모드와 copy-out 모드에서 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:218
+#: src/main.c:221
 msgid "Do not strip file system prefix components from the file names"
 msgstr "파일 이름에서 파일 시스템 접두부를 제거하지 않습니다"
 
-#: src/main.c:221
+#: src/main.c:224
 msgid "Create all files relative to the current directory"
 msgstr "현재 디렉터리에 상대 위치에 있는 모든 파일을 만듭니다"
 
-#: src/main.c:226
+#: src/main.c:229
 msgid "Operation modifiers valid in copy-out and copy-pass modes:"
 msgstr "copy-out 모드와 copy-pass 모드에서 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:228
+#: src/main.c:231
 msgid ""
 "Filenames in the list are delimited by null characters instead of newlines"
 msgstr "목록의 파일이 개행 문자 대신 널 문자로 나눕니다"
 
-#: src/main.c:230
+#: src/main.c:233
 msgid ""
 "Dereference  symbolic  links  (copy  the files that they point to instead of "
 "copying the links)."
 msgstr "심볼릭 링크 참조를 해제합니다(링크 복사 대신 가리키는 파일을 복사)."
 
-#: src/main.c:232
+#: src/main.c:235
 msgid "Reset the access times of files after reading them"
 msgstr "파일을 읽은 후 접근 시각을 초기화합니다"
 
-#: src/main.c:238
+#: src/main.c:241
 msgid "Operation modifiers valid in copy-in and copy-pass modes:"
 msgstr "copy-in 모드와 copy-pass 모드에서 쓸 수 있는 동작 지정 옵션 값:"
 
-#: src/main.c:240
+#: src/main.c:243
 msgid "Retain previous file modification times when creating files"
 msgstr "파일을 만들 때 이전 파일 수정 시각 정보를 유지합니다"
 
-#: src/main.c:242
+#: src/main.c:245
 msgid "Create leading directories where needed"
 msgstr "필요한 하위 디렉터리 경로를 만듭니다"
 
-#: src/main.c:244
+#: src/main.c:247
 msgid "Do not change the ownership of the files"
 msgstr "파일의 소유자를 바꾸지 않습니다"
 
-#: src/main.c:246
+#: src/main.c:249
 msgid "Replace all files unconditionally"
 msgstr "무조건 모든 파일을 교체"
 
-#: src/main.c:248
+#: src/main.c:251
 msgid "Write files with large blocks of zeros as sparse files"
 msgstr "거대 용량 0 블록을 분할 파일에 넣어 파일 기록"
 
-#: src/main.c:324 src/main.c:341
+#: src/main.c:327 src/main.c:344
 msgid "invalid block size"
 msgstr "잘못된 블록 크기"
 
-#: src/main.c:330 src/main.c:366
+#: src/main.c:333 src/main.c:369
 msgid "Archive format multiply defined"
 msgstr "여러 아카이브 형식을 지정했습니다"
 
-#: src/main.c:384
+#: src/main.c:387
 #, c-format
 msgid ""
 "invalid archive format `%s'; valid formats are:\n"
@@ -1131,133 +1107,133 @@ msgstr ""
 "잘못된 `%s' 아카이브 형식. 유효한 형식은 다음과 같습니다:\n"
 "crc, newc, odc, bin, ustar, tar(모든 대문자도 인식함)"
 
-#: src/main.c:391 src/main.c:436 src/main.c:450
+#: src/main.c:394 src/main.c:439 src/main.c:453
 msgid "Mode already defined"
 msgstr "이미 모드를 지정했습니다"
 
-#: src/main.c:430
+#: src/main.c:433
 msgid "--no-preserve-owner cannot be used with --owner"
 msgstr "--no-preserve-owner 옵션은 --owner 옵션을 함께 사용할 수 없습니다"
 
-#: src/main.c:485
+#: src/main.c:493
 msgid "--owner cannot be used with --no-preserve-owner"
 msgstr "--owner 옵션은 --no-preserve-owner 옵션을 함께 사용할 수 없습니다"
 
-#: src/main.c:532
+#: src/main.c:541
 #, c-format
 msgid "Invalid value for --warning option: %s"
 msgstr "--warning 옵션에 잘못된 값: %s"
 
-#: src/main.c:562
+#: src/main.c:571
 msgid "[destination-directory]"
 msgstr "[<대상-디렉터리>]"
 
-#: src/main.c:598
+#: src/main.c:607
 msgid "You must specify one of -oipt options."
-msgstr ""
+msgstr "-oipt 옵션 중 하나를 지정해야합니다."
 
-#: src/main.c:624
+#: src/main.c:633
 msgid "Both -I and -F are used in copy-in mode"
 msgstr "-I 옵션과 -F 옵션을 모두 copy-in 모드에 사용했습니다"
 
-#: src/main.c:636 src/main.c:676
+#: src/main.c:645 src/main.c:685
 msgid "Too many arguments"
 msgstr "인자가 너무 많습니다"
 
-#: src/main.c:655
+#: src/main.c:664
 msgid ""
 "--append is used but no archive file name is given (use -F or -O options)"
 msgstr ""
 "--append 옵션 지정했으나 아카이브 파일 이름이 없습니다(-F 또는 -O 옵션 사용)"
 
-#: src/main.c:662
+#: src/main.c:671
 msgid "Both -O and -F are used in copy-out mode"
 msgstr "-O 옵션과 -F 옵션을 모두 copy-out 모드에 사용했습니다"
 
-#: src/main.c:678
+#: src/main.c:687
 msgid "Not enough arguments"
 msgstr "인자가 충분하지 않습니다"
 
-#: src/main.c:682
+#: src/main.c:691
 msgid "Archive format is not specified in copy-pass mode (use --format option)"
 msgstr ""
 "복사-전달 모드의 아카이브 형식을 지정하지 않았습니다(--format 옵션 사용)"
 
-#: src/main.c:708
+#: src/main.c:717
 #, c-format
 msgid "-F can be used only with --create or --extract"
 msgstr "-F 옵션은 --create 또는 --extract 옵션만 함께 사용할 수 있습니다"
 
-#: src/main.c:711
+#: src/main.c:720
 #, c-format
 msgid "Cannot open %s"
 msgstr "%s 열 수 없음"
 
-#: src/main.c:783
+#: src/main.c:792
 #, c-format
 msgid "error closing archive"
 msgstr "아카이브 닫기 오류"
 
-#: src/makepath.c:82 src/makepath.c:129
+#: src/makepath.c:81 src/makepath.c:128
 #, c-format
 msgid "cannot make directory `%s'"
 msgstr "`%s' 디렉터리를 만들 수 없음"
 
-#: src/makepath.c:105 src/makepath.c:155
+#: src/makepath.c:104 src/makepath.c:154
 #, c-format
 msgid "`%s' exists but is not a directory"
 msgstr "`%s'(이)가 이미 있으나 디렉터리가 아닙니다"
 
-#: src/mt.c:166
+#: src/mt.c:165
 msgid "control magnetic tape drive operation"
 msgstr "자기 테이프 드라이브 동작을 처리합니다"
 
-#: src/mt.c:180
+#: src/mt.c:179
 msgid "DEVICE"
 msgstr "<장치>"
 
-#: src/mt.c:181
+#: src/mt.c:180
 msgid "use device as the file name of the tape drive to operate on"
 msgstr "파일 이름으로 지정한 처리할 테이프 드라이브 장치를 활용합니다"
 
-#: src/mt.c:183
+#: src/mt.c:182
 msgid "use remote COMMAND instead of rsh"
 msgstr "rsh 대신 원격 <명령>을 활용합니다"
 
-#: src/mt.c:204
+#: src/mt.c:203
 msgid "operation"
 msgstr "동작"
 
-#: src/mt.c:212
+#: src/mt.c:211
 #, c-format
 msgid "invalid count value"
 msgstr "잘못된 계수 값"
 
-#: src/mt.c:231
+#: src/mt.c:230
 #, c-format
 msgid "no tape device specified"
 msgstr "테이프 장치를 지정하지 않음"
 
-#: src/mt.c:254
+#: src/mt.c:253
 msgid "operation [count]"
 msgstr "명령 [갯수]"
 
-#: src/mt.c:271
+#: src/mt.c:270
 #, c-format
 msgid "%s is not a character special file"
 msgstr "%s(은)는 캐릭터 특수 파일이 아닙니다"
 
-#: src/mt.c:282 src/mt.c:291
+#: src/mt.c:281 src/mt.c:290
 #, c-format
 msgid "%s: rmtioctl failed"
 msgstr "%s: rmtioctl 처리 실패"
 
-#: src/mt.c:344
+#: src/mt.c:343
 #, c-format
 msgid "%s: rmtopen failed"
 msgstr "%s: rmtopen 처리 실패"
 
-#: src/mt.c:357
+#: src/mt.c:356
 #, c-format
 msgid "%s: rmtclose failed"
 msgstr "%s: rmtclose 처리 실패"
@@ -1267,109 +1243,109 @@ msgstr "%s: rmtclose 처리 실패"
 msgid "invalid header: checksum error"
 msgstr "잘못된 헤더: 검사합 오류"
 
-#: src/userspec.c:122
+#: src/userspec.c:123
 msgid "invalid user"
 msgstr "잘못된 사용자"
 
-#: src/userspec.c:128
+#: src/userspec.c:129
 msgid "cannot get the login group of a numeric UID"
 msgstr "숫자 UID 값의 로그인 그룹 정보를 가져올 수 없습니다"
 
-#: src/userspec.c:175
+#: src/userspec.c:172
 msgid "invalid group"
 msgstr "잘못된 그룹"
 
-#: src/util.c:148
+#: src/util.c:146
 #, c-format
 msgid "write error: partial write"
 msgstr "쓰기 오류: 일부만 기록함"
 
-#: src/util.c:210 src/util.c:376
+#: src/util.c:208 src/util.c:374
 #, c-format
 msgid "read error"
 msgstr "읽기 오류"
 
-#: src/util.c:212
+#: src/util.c:210
 #, c-format
 msgid "premature end of file"
 msgstr "갑작스러운 파일의 끝"
 
-#: src/util.c:495 src/util.c:546
+#: src/util.c:493 src/util.c:544
 #, c-format
 msgid "File %s shrunk by %s byte, padding with zeros"
 msgid_plural "File %s shrunk by %s bytes, padding with zeros"
 msgstr[0] "%s 파일이 %s 바이트로 줄어들어 0으로 채웁니다"
 
-#: src/util.c:502 src/util.c:553
+#: src/util.c:500 src/util.c:551
 #, c-format
 msgid "Read error at byte %lld in file %s, padding with zeros"
 msgstr "%2$s 파일의 %1$lld 바이트 읽기 오류. 0으로 채웁니다"
 
-#: src/util.c:588
+#: src/util.c:586
 #, c-format
 msgid "File %s grew, %<PRIuMAX> new byte not copied"
 msgid_plural "File %s grew, %<PRIuMAX> new bytes not copied"
 msgstr[0] "%s 파일 크기가 늘어났습니다. 새 %<PRIuMAX> 바이트는 복사하지 않음"
 
-#: src/util.c:594
+#: src/util.c:592
 #, c-format
 msgid "File %s was modified while being copied"
 msgstr "%s 파일을 복사하는 동안 수정했습니다"
 
-#: src/util.c:608
+#: src/util.c:606
 #, c-format
 msgid "virtual memory exhausted"
 msgstr "가상 메모리가 바닥났습니다"
 
-#: src/util.c:614
+#: src/util.c:612
 #, c-format
 msgid "Creating intermediate directory `%s'"
 msgstr "`%s' 중간 디렉터리 만드는 중"
 
-#: src/util.c:651 src/util.c:657
+#: src/util.c:649 src/util.c:655
 #, c-format
 msgid "cannot seek on output"
 msgstr "출력 내용을 탐색할 수 없습니다"
 
-#: src/util.c:875
+#: src/util.c:871
 #, c-format
 msgid "Found end of tape.  Load next tape and press RETURN. "
 msgstr ""
 "테이프 마지막에 도달했습니다.  다음 테이프를 넣고 RETURN 키를 누르십시오. "
 
-#: src/util.c:877
+#: src/util.c:873
 #, c-format
 msgid "Found end of tape.  To continue, type device/file name when ready.\n"
 msgstr ""
 "테이프 마지막에 도달했습니다.  계속하려면 준비된 장치/파일 이름을 입력하십시"
 "오.\n"
 
-#: src/util.c:900
+#: src/util.c:896
 #, c-format
 msgid "To continue, type device/file name when ready.\n"
 msgstr "계속하려면 준비된 장치/파일 이름을 입력하십시오.\n"
 
-#: src/util.c:925
+#: src/util.c:921
 #, c-format
 msgid "internal error: tape descriptor changed from %d to %d"
 msgstr "내부 오류: 테이프 서술자가 %d에서 %d(으)로 바뀌었습니다"
 
-#: src/util.c:1487
+#: src/util.c:1492
 #, c-format
 msgid "%s is not a directory"
 msgstr "%s은(는) 디렉터리가 아닙니다"
 
-#: src/util.c:1507
+#: src/util.c:1512
 #, c-format
 msgid "Creating directory `%s'"
 msgstr "`%s' 디렉터리 만드는 중"
 
-#: src/util.c:1514
+#: src/util.c:1519
 #, c-format
 msgid "cannot change to directory `%s'"
 msgstr "`%s' 디렉터리로 이동할 수 없음"
 
-#: tests/genfile.c:112
+#: tests/genfile.c:115
 msgid ""
 "genfile manipulates data files for GNU paxutils test suite.\n"
 "OPTIONS are:\n"
@@ -1377,94 +1353,109 @@ msgstr ""
 "genfile은 GNU paxutils 테스트 모음용 데이터 파일을 다룹니다.\n"
 "<옵션>은 다음과 같습니다:\n"
 
-#: tests/genfile.c:128
+#: tests/genfile.c:131
 msgid "File creation options:"
 msgstr "파일 만들기 옵션:"
 
-#: tests/genfile.c:129 tests/genfile.c:140
+#: tests/genfile.c:132 tests/genfile.c:143
 msgid "SIZE"
 msgstr "<크기>"
 
-#: tests/genfile.c:130
+#: tests/genfile.c:133
 msgid "Create file of the given SIZE"
 msgstr "주어진 <크기> 값의 파일을 만듭니다"
 
-#: tests/genfile.c:132
+#: tests/genfile.c:135
 msgid "Write to file NAME, instead of standard output"
 msgstr "표준 입력 대신 지정 <이름>을 가진 파일에 기록합니다"
 
-#: tests/genfile.c:134
+#: tests/genfile.c:137
 msgid "Read file names from FILE"
 msgstr "<파일>에서 파일 이름을 읽습니다"
 
-#: tests/genfile.c:136
+#: tests/genfile.c:139
 msgid "-T reads null-terminated names"
 msgstr "-T 옵션이 널문자로 끝난 이름을 읽었습니다"
 
-#: tests/genfile.c:137
+#: tests/genfile.c:140
 msgid "PATTERN"
 msgstr "<패턴>"
 
-#: tests/genfile.c:138
+#: tests/genfile.c:141
 msgid "Fill the file with the given PATTERN. PATTERN is 'default' or 'zeros'"
 msgstr ""
 "주어진 <패턴>으로 파일 이름을 만듭니다. <패턴> 값은 'default' 또는 'zeros' 입"
 "니다."
 
-#: tests/genfile.c:141
+#: tests/genfile.c:144
 msgid "Size of a block for sparse file"
 msgstr "분할 파일 블록 크기"
 
-#: tests/genfile.c:143
+#: tests/genfile.c:146
 msgid "Generate sparse file. Rest of the command line gives the file map."
 msgstr "분할 파일을 만듭니다. 명령행 나머지 부분은 파일 맵입니다."
 
-#: tests/genfile.c:145
+#: tests/genfile.c:148
 msgid "OFFSET"
 msgstr "<오프셋>"
 
-#: tests/genfile.c:146
+#: tests/genfile.c:149
 msgid "Seek to the given offset before writing data"
 msgstr "데이터 기록 전 주어진 오프셋을 탐색합니다"
 
 #: tests/genfile.c:152
+msgid "Suppress non-fatal diagnostic messages"
+msgstr "덜 치명적인 진단 메시지 무시"
+
+#: tests/genfile.c:156
 msgid "File statistics options:"
 msgstr "파일 통계 옵션:"
 
-#: tests/genfile.c:155
+#: tests/genfile.c:159
 msgid "Print contents of struct stat for each given file. Default FORMAT is: "
 msgstr ""
 "주어진 각 파일의 구조 stat 내용을 출력합니다. 기본 <형식>은 다음과 같습니다: "
 
-#: tests/genfile.c:162
+#: tests/genfile.c:163
+msgid "stat symbolic links instead of referenced files"
+msgstr ""
+
+#: tests/genfile.c:167
+msgid ""
+"Set access and modification times of the files to the time supplied by --"
+"date option"
+msgstr ""
+
+#: tests/genfile.c:174
 msgid "Synchronous execution options:"
 msgstr "동기 실행 옵션:"
 
-#: tests/genfile.c:164
-msgid "OPTION"
-msgstr "<옵션>"
+#: tests/genfile.c:176
+msgid "N"
+msgstr "<숫자>"
 
-#: tests/genfile.c:165
+#: tests/genfile.c:177
 msgid ""
-"Execute ARGS. Useful with --checkpoint and one of --cut, --append, --touch, "
-"--unlink"
+"Execute ARGS. Trigger checkpoints every Nth record (default 1). Useful with "
+"--checkpoint and one of --cut, --append, --touch, --unlink"
 msgstr ""
-"<인자>를 실행합니다. --checkpoint와 --cut, --append, --touch, --unlink 중 옵"
-"션 하나를 활용하면 좋습니다"
+"<인자>를 실행합니다. <숫자>번째 레코드마다 확인 지점을 실행합니다(기본값 1). "
+"--checkpoint와 --cut, --append, --touch, --unlink 중 옵션 하나를 활용하면 좋"
+"습니다."
 
-#: tests/genfile.c:168
+#: tests/genfile.c:180
 msgid "Perform given action (see below) upon reaching checkpoint NUMBER"
 msgstr "검사점 <번호>에 도달하면 주어진 동작을 수행합니다(하단 참고)"
 
-#: tests/genfile.c:171
+#: tests/genfile.c:183
 msgid "Set date for next --touch option"
 msgstr "--touch 옵션 동작시 날짜를 설정합니다"
 
-#: tests/genfile.c:174
+#: tests/genfile.c:186
 msgid "Display executed checkpoints and exit status of COMMAND"
 msgstr "<명령>의 실행 검사 지점과 종료 상태를 표시합니다"
 
-#: tests/genfile.c:179
+#: tests/genfile.c:191
 msgid ""
 "Synchronous execution actions. These are executed when checkpoint number "
 "given by --checkpoint option is reached."
@@ -1472,159 +1463,201 @@ msgstr ""
 "동기 실행 동작입니다. --checkpoint 옵션 횟수만큼 검사점 번호에 도달하면 실행"
 "합니다."
 
-#: tests/genfile.c:182
+#: tests/genfile.c:194
 msgid ""
 "Truncate FILE to the size specified by previous --length option (or 0, if it "
 "is not given)"
 msgstr ""
 "<파일>을 앞서 --length 옵션으로 지정한 크기(값이 없으면 0) 만큼 자릅니다"
 
-#: tests/genfile.c:186
+#: tests/genfile.c:198
 msgid "Append SIZE bytes to FILE. SIZE is given by previous --length option."
 msgstr ""
 "<파일>에 <크기> 만큼 뒤에 붙입니다. <크기>는 앞의 --length 옵션으로 지정합니"
 "다."
 
-#: tests/genfile.c:189
+#: tests/genfile.c:201
 msgid "Update the access and modification times of FILE"
 msgstr "<파일>의 접근, 수정 시각을 업데이트합니다"
 
-#: tests/genfile.c:192
+#: tests/genfile.c:204
 msgid "Execute COMMAND"
 msgstr "<명령>을 실행합니다"
 
-#: tests/genfile.c:195
-msgid "Unlink FILE"
-msgstr "<파일>의 링크를 해제합니다"
+#: tests/genfile.c:207
+msgid "Delete FILE"
+msgstr "<파일>을 삭제합니다"
 
-#: tests/genfile.c:245
+#: tests/genfile.c:258
 #, c-format
 msgid "Invalid size: %s"
 msgstr "잘못된 크기: %s"
 
-#: tests/genfile.c:250
+#: tests/genfile.c:263
 #, c-format
 msgid "Number out of allowed range: %s"
 msgstr "허용 범위를 넘어선 숫자: %s"
 
-#: tests/genfile.c:253
+#: tests/genfile.c:266
 #, c-format
 msgid "Negative size: %s"
 msgstr "음수 크기입니다: %s"
 
-#: tests/genfile.c:266 tests/genfile.c:630
+#: tests/genfile.c:279 tests/genfile.c:672
 #, c-format
 msgid "stat(%s) failed"
 msgstr "stat(%s) 처리 실패"
 
-#: tests/genfile.c:269
+#: tests/genfile.c:284
 #, c-format
-msgid "requested file length %lu, actual %lu"
-msgstr "요청한 파일 길이는 %lu지만, 실제 파일 길이는 %lu입니다"
+msgid "requested file length %jd, actual %jd"
+msgstr "요청한 파일 길이는 %jd지만, 실제 파일 길이는 %jd입니다"
 
-#: tests/genfile.c:273
+#: tests/genfile.c:289
 #, c-format
 msgid "created file is not sparse"
 msgstr "만든 파일은 분할 파일이 아닙니다"
 
-#: tests/genfile.c:362
+#: tests/genfile.c:390
 #, c-format
 msgid "Error parsing number near `%s'"
 msgstr "`%s' 부근에서 숫자 해석 오류"
 
-#: tests/genfile.c:368
+#: tests/genfile.c:396
 #, c-format
 msgid "Unknown date format"
 msgstr "알 수 없는 날짜 형식"
 
-#: tests/genfile.c:392
+#: tests/genfile.c:420
 msgid "[ARGS...]"
 msgstr "[<인자>...]"
 
-#: tests/genfile.c:429 tests/genfile.c:469 tests/genfile.c:571
-#: tests/genfile.c:734 tests/genfile.c:748
+#: tests/genfile.c:457 tests/genfile.c:497 tests/genfile.c:598
+#: tests/genfile.c:787 tests/genfile.c:801
 #, c-format
 msgid "cannot open `%s'"
 msgstr "`%s' 열 수 없음"
 
-#: tests/genfile.c:435
+#: tests/genfile.c:463
 msgid "cannot seek"
 msgstr "탐색 불가"
 
-#: tests/genfile.c:452
+#: tests/genfile.c:480
 #, c-format
 msgid "file name contains null character"
 msgstr "파일 이름에 널 문자가 있음"
 
-#: tests/genfile.c:566
+#: tests/genfile.c:593
 #, c-format
 msgid "cannot generate sparse files on standard output, use --file option"
 msgstr "표준 출력으로 분할 파일을 만들 수 없습니다. --file 옵션을 사용하십시오"
 
-#: tests/genfile.c:657
+#: tests/genfile.c:699
 #, c-format
 msgid "incorrect mask (near `%s')"
 msgstr "잘못된 마스크(`%s' 부근)"
 
-#: tests/genfile.c:663 tests/genfile.c:696
+#: tests/genfile.c:705 tests/genfile.c:738
 #, c-format
 msgid "Unknown field `%s'"
 msgstr "알 수 없는 `%s' 필드"
 
-#: tests/genfile.c:723
+#: tests/genfile.c:756 tests/genfile.c:776
 #, c-format
 msgid "cannot set time on `%s'"
 msgstr "`%s' 시간으로 맞출 수 없음"
 
-#: tests/genfile.c:753
+#: tests/genfile.c:806
 #, c-format
 msgid "cannot truncate `%s'"
 msgstr "`%s'을(를) 자를 수 없음"
 
-#: tests/genfile.c:762
+#: tests/genfile.c:815
 #, c-format
 msgid "command failed: %s"
 msgstr "명령 실패: %s"
 
-#: tests/genfile.c:767
+#: tests/genfile.c:822
+#, c-format
+msgid "cannot stat `%s'"
+msgstr "`%s' 상태 정보 확인 불가"
+
+#: tests/genfile.c:826
+#, c-format
+msgid "cannot remove directory `%s'"
+msgstr "`%s' 디렉터리를 제거할 수 없음"
+
+#: tests/genfile.c:829
 #, c-format
 msgid "cannot unlink `%s'"
 msgstr "`%s' 링크를 해제할 수 없음"
 
-#: tests/genfile.c:894
+#: tests/genfile.c:969
 #, c-format
 msgid "Command exited successfully\n"
 msgstr "명령 처리 상태에서 잘 빠져나왔습니다\n"
 
-#: tests/genfile.c:896
+#: tests/genfile.c:971
 #, c-format
 msgid "Command failed with status %d\n"
 msgstr "%d 상태로 명령 처리 실패\n"
 
-#: tests/genfile.c:900
+#: tests/genfile.c:975
 #, c-format
 msgid "Command terminated on signal %d\n"
 msgstr "명령에서 %d 시그널을 반환하여 중단함\n"
 
-#: tests/genfile.c:902
+#: tests/genfile.c:977
 #, c-format
 msgid "Command stopped on signal %d\n"
 msgstr "명령에서 %d 시그널을 반환하여 멈춤\n"
 
-#: tests/genfile.c:905
+#: tests/genfile.c:980
 #, c-format
 msgid "Command dumped core\n"
 msgstr "명령 코어 덤프\n"
 
-#: tests/genfile.c:908
+#: tests/genfile.c:983
 #, c-format
 msgid "Command terminated\n"
 msgstr "명령 실행 중단함\n"
 
-#: tests/genfile.c:940
+#: tests/genfile.c:1015
 #, c-format
 msgid "--stat requires file names"
 msgstr "--stat 옵션에 파일 이름이 필요합니다"
+
+#: tests/genfile.c:1023
+#, fuzzy, c-format
+msgid "--set-times requires file names"
+msgstr "--stat 옵션에 파일 이름이 필요합니다"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: '--%s' 옵션은 인자를 허용하지 않습니다\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: 인식할 수 없는 옵션 '--%s'\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: '-W %s' 지정 옵션이 모호합니다\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: '-W %s' 옵션은 인자를 허용하지 않습니다\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: '-W %s' 옵션에 인자가 필요합니다\n"
+
+#~ msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+#~ msgstr "%s 홈 페이지: <http://www.gnu.org/software/%s/>\n"
+
+#~ msgid "%s: Cannot symlink to %s"
+#~ msgstr "%s: %s을(를) 심볼릭 링크로 연결할 수 없음"
+
+#~ msgid "OPTION"
+#~ msgstr "<옵션>"
+
+#~ msgid "Unlink FILE"
+#~ msgstr "<파일>의 링크를 해제합니다"
 
 #~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
 #~ msgstr "%.*s: ARGP_HELP_FMT 매개변수 값은 양수여야합니다"
@@ -1703,8 +1736,8 @@ msgstr "--stat 옵션에 파일 이름이 필요합니다"
 
 #~ msgid "unrecognized flag `%c' for -p; recognized flags are `aemop'"
 #~ msgstr ""
-#~ "-p$(C?!(B $(C4kGQ(B, $(C@N=DGR(B $(C<v(B $(C>x4B(B $(CGC7!1W(B `%c'; "
-#~ "$(C@N=DGR(B $(C<v(B $(C@V4B(B $(CGC7!1W5i@:(B `aemop'$(C@T4O4Y(B"
+#~ "-p$(C?!(B $(C4kGQ(B, $(C@N=DGR(B $(C<v(B $(C>x4B(B $(CGC7!1W(B `%c'; "
+#~ "$(C@N=DGR(B $(C<v(B $(C@V4B(B $(CGC7!1W5i@:(B `aemop'$(C@T4O4Y(B"
 
 #~ msgid "ambiguous"
 #~ msgstr "$(C>V8EGU4O4Y(B"
@@ -1771,8 +1804,8 @@ msgstr "--stat 옵션에 파일 이름이 필요합니다"
 #~ "verify-crc]\n"
 #~ "       [--quiet] [--help] [--version] [pattern...] [< archive]\n"
 #~ msgstr ""
-#~ "       %s {-i|--extract} [-bcdfmnrtsuvBSV] [-C $(C9Y>FF.(B] [-E "
-#~ "$(CFD@O(B] [-H $(CG|=D(B]\n"
+#~ "       %s {-i|--extract} [-bcdfmnrtsuvBSV] [-C $(C9Y>FF.(B] [-E "
+#~ "$(CFD@O(B] [-H $(CG|=D(B]\n"
 #~ "       [-M $(C8^=CAv(B] [-R [$(C;g?k@Z(B][:.][$(C1W7l(B]] [-I [[$(C;g?"
 #~ "k@Z(B@]$(CH#=:F.(B:]$(C>FD+@L:j(B]\n"
 #~ "       [-F [[$(C;g?k@Z(B@]$(CH#=:F.(B:]$(C>FD+@L:j(B] [--file=[[$(C;g?"
@@ -1857,8 +1890,8 @@ msgstr "--stat 옵션에 파일 이름이 필요합니다"
 
 #~ msgid "can not omit both user and group"
 #~ msgstr ""
-#~ "$(C;g?k@Z?M(B $(C1W7l(B $(C5Q(B $(C4Y8&(B $(C;}7+GR(B $(C<v4B(B "
-#~ "$(C>x=@4O4Y(B"
+#~ "$(C;g?k@Z?M(B $(C1W7l(B $(C5Q(B $(C4Y8&(B $(C;}7+GR(B $(C<v4B(B "
+#~ "$(C>x=@4O4Y(B"
 
 #~ msgid "No previous regular expression"
 #~ msgstr "$(C@L@|(B $(CA$1T=D@L(B $(C>x=@4O4Y(B"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU sed 4.2.1\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
 "PO-Revision-Date: 2012-03-17 16:30+0100\n"
 "Last-Translator: Savvas Radevic <vicedar@gmail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 #, fuzzy
 msgid "write error"
 msgstr "εσωτερικό σφάλμα"
@@ -28,42 +28,79 @@ msgstr "εσωτερικό σφάλμα"
 msgid "preserving permissions for %s"
 msgstr ""
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr ""
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 #, fuzzy
 msgid "invalid character class"
 msgstr "Μη έγκυρο όνομα κλάσης χαρακτήρων"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr ""
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr ""
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+#, fuzzy
+msgid "? at start of expression"
+msgstr "Μη έγκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1331
+#, fuzzy
+msgid "* at start of expression"
+msgstr "Μη έγκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1345
+#, fuzzy
+msgid "+ at start of expression"
+msgstr "Μη έγκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1400
+#, fuzzy
+msgid "{...} at start of expression"
+msgstr "Μη έγκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1403
 #, fuzzy
 msgid "invalid content of \\{\\}"
 msgstr "Μη έγκυρο περιεχόμενο εντός \\{\\}"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 #, fuzzy
 msgid "regular expression too big"
 msgstr "Πολύ μεγάλη κανονική έκφραση"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr ""
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr ""
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr ""
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr ""
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr ""
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr ""
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr ""
 
@@ -72,42 +109,7 @@ msgstr ""
 msgid "Unknown system error"
 msgstr "άγνωστος κώδικας σφάλματος"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr ""
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr ""
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr ""
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr ""
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr ""
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr ""
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr ""
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 #, fuzzy
 msgid "memory exhausted"
 msgstr "Εξάντληση διαθέσιμης μνήμης"
@@ -133,84 +135,84 @@ msgstr "Εξάντληση διαθέσιμης μνήμης"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr ""
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr ""
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Επιτυχία"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Κανένα ταίριασμα"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Μη έγκυρη κανονική έκφραση"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Μη έγκυρος χαρακτήρας ταξινόμησης"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Μη έγκυρο όνομα κλάσης χαρακτήρων"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Τελευταίος χαρακτήρας η πισωκάθετος"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Μη έγκυρη οπισθαναφορά"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 #, fuzzy
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Αταίριαστο [ ή [^"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Αταίριαστο ( ή \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Αταίριαστο \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Μη έγκυρο περιεχόμενο εντός \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Μη έγκυρο τέλος εύρους"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Εξάντληση διαθέσιμης μνήμης"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Μη έγκυρη προηγούμενη κανονική έκφραση"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Πρόωρος τερματισμός κανονικής έκφρασης"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Πολύ μεγάλη κανονική έκφραση"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Αταίριαστο ) ή \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Δεν βρέθηκε προηγούμενη κανονική έκφραση"
 
@@ -480,17 +482,17 @@ msgstr ""
 msgid "e/r/w commands disabled in sandbox mode"
 msgstr ""
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s: αρχείο %s γραμμή %lu: %s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s: -e έκφραση #%lu, χαρακτήρας %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "αδυναμία εύρεσης ετικέττας για μετάβαση στο `%s'"
@@ -500,52 +502,52 @@ msgstr "αδυναμία εύρεσης ετικέττας για μετάβασ
 msgid "case conversion produced an invalid character"
 msgstr ""
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s: αδυναμία ανάγνωσης του %s: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "αδυναμία επεξεργασίας του %s: είναι τερματικό"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "αδυναμία επεξεργασίας του %s: δεν είναι κανονικό αρχείο"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr ""
 "%s: προειδοποίηση: αποτυχία ορισμού προεπιλεγμένου πλαισίου δημιουργίας "
 "αρχείου ως %s: %s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr ""
 "%s: προειδοποίηση: αποτυχία πάρσης πλαίσιου ασφαλείας του αρχείου %s: %s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "αδυναμία ανοίγματος του αρχείου %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "σφάλμα στη υποδιαδικασία"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "η επιλογή `e' δεν υποστηρίζεται"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "η εντολή `e' δεν υποστηρίζεται"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "δεν υπάρχουν αρχεία εισόδου"
 
@@ -586,7 +588,7 @@ msgstr ""
 msgid "Assaf Gordon"
 msgstr ""
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, fuzzy, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
@@ -595,28 +597,28 @@ msgstr ""
 "Κεντρική ιστοσελίδα GNU sed: <http://www.gnu.org/software/sed/>.\n"
 "Γενική βοήθεια χρήσης GNU λογισμικού: <http://www.gnu.org/gethelp/>.\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr ""
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
 msgstr ""
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
 msgstr ""
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
 msgstr ""
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
 msgstr ""
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -626,7 +628,7 @@ msgstr ""
 "εισόδου]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -635,7 +637,7 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "                 δεν γίνεται αυτόματη εκτύπωση του χώρου υποδείγματος\n"
 
-#: sed/sed.c:160
+#: sed/sed.c:139
 #, fuzzy, c-format
 msgid ""
 "      --debug\n"
@@ -644,7 +646,7 @@ msgstr ""
 "  --posix\n"
 "                 απενεργοποίηση όλων των επεκτάσεων GNU στο πρωτότυπο sed.\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -653,7 +655,7 @@ msgstr ""
 "  -e σενάριο --expression=σενάριο\n"
 "                 προσθήκη του σεναρίου στις εντολές προς εκτέλεση\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -663,7 +665,7 @@ msgstr ""
 "  -f αρχείο-σεναρίου --file=αρχείο-σεναρίου\n"
 "                 προσθήκη του αρχείου-σεναρίου στις εντολές προς εκτέλεση\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -672,7 +674,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "                 ακολούθηση συμβολικών συνδέσμων στην επιτόπια επεξεργασία\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, fuzzy, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -682,7 +684,7 @@ msgstr ""
 "                 επιτόπια επεξεργασία (δημιουργίας αντιγράφου αν παρέχεται "
 "ΕΠΙΘΗΜΑ)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -693,7 +695,7 @@ msgstr ""
 "                 άνοιγμα αρχείων ως δυαδικά (οι χαρακτήρες CR και LF δεν "
 "έχουν ειδική σημασία)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -703,7 +705,7 @@ msgstr ""
 "                 καθορισμός επιθυμητού μήκους γραμμής για αναδίπλωση γραμμών "
 "στην εντολή `l'\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -712,7 +714,7 @@ msgstr ""
 "  --posix\n"
 "                 απενεργοποίηση όλων των επεκτάσεων GNU στο πρωτότυπο sed.\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, fuzzy, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -722,7 +724,7 @@ msgstr ""
 "  -r, --regexp-extended\n"
 "                 χρήση επεκτεταμένων κανονικών εκφράσεων στο σενάριο.\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, fuzzy, c-format
 msgid ""
 "  -s, --separate\n"
@@ -733,14 +735,14 @@ msgstr ""
 "                 τα αρχεία εισόδου να λογίζονται ξεχωριστά, αντί ως ένας\n"
 "                 συνεχής μακρύς χείμαρρος.\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
 "                 operate in sandbox mode (disable e/r/w commands).\n"
 msgstr ""
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -753,25 +755,25 @@ msgstr ""
 "εισόδου\n"
 "                 και άδειασμα των ενταμιευτών εξόδου συχνότερα\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
 "                 separate lines by NUL characters\n"
 msgstr ""
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "      --help     εμφάνιση αυτού του κειμένου βοηθείας και έξοδος\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr ""
 "      --version  εμφάνιση πληροφοριών έκδοσης προγράμματος και έξοδος\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -788,60 +790,63 @@ msgstr ""
 "καθοριστεί αρχεία εισόδου, τότε γίνεται ανάγνωση της κανονικής εισόδου.\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
 msgstr ""
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
 msgstr ""
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "αδυναμία διαγραφής του %s: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "αδυναμία ανοίγματος του %s: %s"
 
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "αδυναμία προσάρτησης στο %s: %s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, fuzzy, c-format
 msgid "failed to set binary mode on '%s'"
 msgstr "η μνήμη εξαντλήθηκε"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, fuzzy, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
 msgstr[0] "αδυναμία εγγραφής %d στοιχείου στο %s: %s"
 msgstr[1] "αδυναμία εγγραφής %d στοιχείων στο %s: %s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "σφάλμα ανάγνωσης στο %s: %s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, fuzzy, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "αδυναμία ακολούθησης του συμβολικού συνδέσμου %s: %s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "αδυναμία ακολούθησης του συμβολικού συνδέσμου %s: %s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "αδυναμία ανάγνωσης εγγραφής για το %s στον κατάλογο αρχείων: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "αδυναμία μετονομασίας του %s: %s"
+
+#, c-format
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "αδυναμία ανάγνωσης εγγραφής για το %s στον κατάλογο αρχείων: %s"
+
+#, c-format
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "αδυναμία διαγραφής του %s: %s"
 
 #~ msgid ""
 #~ "  -R, --regexp-perl\n"

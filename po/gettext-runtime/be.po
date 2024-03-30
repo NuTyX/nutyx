@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gettext 0.11.5\n"
 "Report-Msgid-Bugs-To: bug-gettext@gnu.org\n"
-"POT-Creation-Date: 2020-07-26 21:56+0200\n"
+"POT-Creation-Date: 2023-11-17 22:40+0100\n"
 "PO-Revision-Date: 2002-09-04 18:51+0300\n"
 "Last-Translator: Ales Nyakhaychyk <i18n@infonet.by>\n"
 "Language-Team: Belarusian <i18n@tut.by>\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: gnulib-lib/closeout.c:66
 msgid "write error"
 msgstr ""
 
-#: gnulib-lib/error.c:195
+#: gnulib-lib/error.c:194
 msgid "Unknown system error"
 msgstr "Невядомая сістэмная памылка"
 
@@ -68,12 +68,11 @@ msgstr "%s: нерэчаісны выбар -- %c\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: выбар патрабуе аргумэнт -- %c\n"
 
-#: gnulib-lib/xmalloc.c:38
-#, c-format
+#: gnulib-lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "памяць вычарпана"
 
-#: src/envsubst.c:110 src/gettext.c:135 src/ngettext.c:124
+#: src/envsubst.c:110 src/gettext.c:135 src/ngettext.c:125
 #, c-format, no-wrap
 msgid ""
 "Copyright (C) %s Free Software Foundation, Inc.\n"
@@ -82,7 +81,7 @@ msgid ""
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
 
-#: src/envsubst.c:116 src/gettext.c:141 src/ngettext.c:130
+#: src/envsubst.c:116 src/gettext.c:141 src/ngettext.c:131
 #, c-format
 msgid "Written by %s.\n"
 msgstr "Аўтар %s.\n"
@@ -92,17 +91,17 @@ msgstr "Аўтар %s.\n"
 msgid "Bruno Haible"
 msgstr ""
 
-#: src/envsubst.c:125 src/gettext.c:159 src/ngettext.c:142
+#: src/envsubst.c:125 src/gettext.c:159 src/ngettext.c:143
 #, c-format
 msgid "too many arguments"
 msgstr "вельмі шмат аргумэнтаў"
 
-#: src/envsubst.c:136 src/gettext.c:169 src/ngettext.c:154
+#: src/envsubst.c:136 src/gettext.c:169 src/ngettext.c:155
 #, c-format
 msgid "missing arguments"
 msgstr "прапушчаны аргумэнты"
 
-#: src/envsubst.c:174 src/gettext.c:246 src/ngettext.c:211
+#: src/envsubst.c:174 src/gettext.c:246 src/ngettext.c:212
 #, fuzzy, c-format
 #| msgid "Try `%s --help' for more information.\n"
 msgid "Try '%s --help' for more information.\n"
@@ -129,7 +128,7 @@ msgstr ""
 msgid "  -v, --variables             output the variables occurring in SHELL-FORMAT\n"
 msgstr ""
 
-#: src/envsubst.c:195 src/gettext.c:275 src/ngettext.c:241
+#: src/envsubst.c:195 src/gettext.c:275 src/ngettext.c:242
 #, c-format, no-wrap
 msgid "Informative output:\n"
 msgstr ""
@@ -174,7 +173,7 @@ msgstr ""
 #. email address for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: src/envsubst.c:223 src/gettext.c:299 src/ngettext.c:262
+#: src/envsubst.c:223 src/gettext.c:299 src/ngettext.c:263
 #, c-format
 msgid ""
 "Report bugs in the bug tracker at <%s>\n"
@@ -191,7 +190,7 @@ msgid "standard input"
 msgstr "стандартны ўвод"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/gettext.c:141 src/ngettext.c:130
+#: src/gettext.c:141 src/ngettext.c:131
 msgid "Ulrich Drepper"
 msgstr ""
 
@@ -214,12 +213,12 @@ msgstr "Адлюстроўвае пераклады на родную мову �
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated messages from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/gettext.c:263 src/ngettext.c:228
+#: src/gettext.c:263 src/ngettext.c:229
 #, c-format
 msgid "  -c, --context=CONTEXT     specify context for MSGID\n"
 msgstr ""
 
-#: src/gettext.c:265 src/ngettext.c:230
+#: src/gettext.c:265 src/ngettext.c:231
 #, c-format
 msgid "  -e                        enable expansion of some escape sequences\n"
 msgstr ""
@@ -229,7 +228,7 @@ msgstr ""
 msgid "  -n                        suppress trailing newline\n"
 msgstr ""
 
-#: src/gettext.c:269 src/ngettext.c:232
+#: src/gettext.c:269 src/ngettext.c:233
 #, c-format
 msgid "  -E                        (ignored for compatibility)\n"
 msgstr ""
@@ -241,12 +240,12 @@ msgid ""
 "                            to MSGID from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/gettext.c:277 src/ngettext.c:243
+#: src/gettext.c:277 src/ngettext.c:244
 #, c-format
 msgid "  -h, --help                display this help and exit\n"
 msgstr ""
 
-#: src/gettext.c:279 src/ngettext.c:245
+#: src/gettext.c:279 src/ngettext.c:246
 #, c-format
 msgid "  -V, --version             display version information and exit\n"
 msgstr ""
@@ -281,12 +280,12 @@ msgstr ""
 "замест існуючых паведамленьняў знаходзіць у азначаным каталёгу перакладзеныя.\n"
 "Стандартная дырэкторыя для пошуку: %s\n"
 
-#: src/ngettext.c:216
+#: src/ngettext.c:217
 #, c-format, no-wrap
 msgid "Usage: %s [OPTION] [TEXTDOMAIN] MSGID MSGID-PLURAL COUNT\n"
 msgstr "Выкарыстаньне %s [ВЫБАР] [TEXTDOMAIN] MSGID MSGID-PLURAL COUNT\n"
 
-#: src/ngettext.c:221
+#: src/ngettext.c:222
 #, c-format, no-wrap
 msgid ""
 "Display native language translation of a textual message whose grammatical\n"
@@ -295,31 +294,31 @@ msgstr ""
 "Адлюстроўвае пераклады тэкставых паведамленьняў на родную мову, чыя\n"
 "граматычная хорма патрабуе ліку (множнага ці адзіночнага).\n"
 
-#: src/ngettext.c:226
+#: src/ngettext.c:227
 #, c-format, no-wrap
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated message from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/ngettext.c:234
+#: src/ngettext.c:235
 #, c-format
 msgid ""
 "  [TEXTDOMAIN]              retrieve translated message from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/ngettext.c:236
+#: src/ngettext.c:237
 #, c-format
 msgid ""
 "  MSGID MSGID-PLURAL        translate MSGID (singular) / MSGID-PLURAL "
 "(plural)\n"
 msgstr ""
 
-#: src/ngettext.c:238
+#: src/ngettext.c:239
 #, c-format
 msgid ""
 "  COUNT                     choose singular/plural form based on this value\n"
 msgstr ""
 
-#: src/ngettext.c:249
+#: src/ngettext.c:250
 #, c-format, no-wrap
 msgid ""
 "If the TEXTDOMAIN parameter is not given, the domain is determined from the\n"

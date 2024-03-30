@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnulib 3.0.0.6062.a6b16\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
 "PO-Revision-Date: 2011-09-02 18:39+0900\n"
 "Last-Translator: Yasuaki Taniguchi <yasuakit@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
@@ -22,27 +22,27 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: %s の値は %s の値以下です"
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: ARGP_HELP_FMT パラメータには値が必要です"
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: 不明な ARGP_HELP_FMT パラメータ"
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "ARGP_HELP_FMT 中にごみがあります: %s"
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -50,24 +50,24 @@ msgstr ""
 "長い形式のオプションで必須または任意の引数は、それに対応する短い形式のオプ"
 "ションでも同様に必須または任意です。"
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr "使用法:"
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr "または: "
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 msgid " [OPTION...]"
 msgstr " [OPTION...]"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, fuzzy, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "詳細は `%s --help' または `%s --usage' を実行して下さい。\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr ""
@@ -75,48 +75,48 @@ msgstr ""
 "翻訳に関するバグは<translation-team-ja@lists.sourceforge.net>に報告してくださ"
 "い。\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "不明なシステムエラー"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr "このヘルプを表示する"
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr "短い使用方法を表示する"
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "名前"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr "プログラム名を設定する"
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr "SECS"
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr "SECS 秒でハング (デフォルト 3600)"
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 msgid "print program version"
 msgstr "プログラムのバージョンを表示する"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(プログラムエラー) 不明なバージョン!?"
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: 引数が多すぎます\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(プログラムエラー) オプションは認識されているべきです!?"
 
@@ -165,78 +165,83 @@ msgstr "現在の作業ディレクトリを記録することができません
 msgid "failed to return to initial working directory"
 msgstr "初期作業ディレクトリに戻るのに失敗しました"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr "成功です"
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr "一致しません"
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "無効な正規表現です"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "無効な照合文字です"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "無効な文字クラス名です"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "終端のバックスラッシュ"
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "無効な前方参照です"
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 #, fuzzy
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "[ または [^ が不一致です"
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "( または \\( が不一致です"
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "\\{ が不一致です"
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "\\{\\} の中身が無効です"
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "無効な範囲終了です"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "メモリを使い果たしました"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "無効な前方正規表現です"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "正規表現が途中で終了しました"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "正規表現が大きすぎます"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr ") または \\) が不一致です"
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "以前に正規表現がありません"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr "エラーメッセージを表示できません"
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"
@@ -680,10 +685,6 @@ msgstr ""
 
 #~ msgid "invalid spec"
 #~ msgstr "無効な指定"
-
-#, c-format
-#~ msgid "unable to display error message"
-#~ msgstr "エラーメッセージを表示できません"
 
 #, c-format
 #~ msgid "Packaged by %s (%s)\n"

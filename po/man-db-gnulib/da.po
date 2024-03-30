@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnulib 2.0.0.3462.e9796\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
 "PO-Revision-Date: 2011-01-20 22:11+0100\n"
 "Last-Translator: Keld Simonsen <keld@keldix.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -24,27 +24,27 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: værdien på %s er mindre end eller lig med %s"
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: ARGP_HELP_FMT-parameteren kræver en værdi"
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: Ukendt ARGP_HELP_FMT-parameter"
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "Snavs i ARGP_HELP_FMT: %s"
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -52,72 +52,72 @@ msgstr ""
 "Obligatoriske eller valgfrie argumenter til lange flag er også obligatoriske "
 "eller valgfrie for tilsvarende korte flag."
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr "Brug:"
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr "   eller:  "
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 msgid " [OPTION...]"
 msgstr " [FLAG...]"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, fuzzy, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "Forsøg med '%s --help' eller '%s --usage' for mere information.\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr ""
 "Rapportér fejl til %s.\n"
 "Send synspunkter på oversættelsen til <dansk@dansk-gruppen.dk>\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "Ukendt systemfejl"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr "giv denne hjælpeliste"
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr "giv en kort meddelelse om brug"
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "NAVN"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr "angiv progravnavnet"
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr "S"
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr "hæng i S sekunder (som standard 3600)"
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 msgid "print program version"
 msgstr "udskriv programversion"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(PROGRAMFEJL) Ingen version kendt!?"
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: For mange argumenter\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(PROGRAMFEJL) Flaget burde være blevet genkendt!?"
 
@@ -166,78 +166,83 @@ msgstr "kan ikke notere aktuelt arbejdskatalog"
 msgid "failed to return to initial working directory"
 msgstr "kunne ikke gå tilbage til det oprindelige arbejdskatalog"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr "Lykkedes"
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr "Ingen træffer"
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Fejlagtigt regulært udtryk"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Ugyldigt sorteringstegn"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Ugyldigt tegnklassenavn"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Afsluttende baglæns skråstreg"
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Ugyldig bagudreference"
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 #, fuzzy
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Ensomt [ eller [^"
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Ensomt ( eller \\("
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Ensomt \\\\{"
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Ugyldigt indhold i \\{\\}"
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Ugyldigt intervalslut"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Hukommelse opbrugt"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Fejlagtigt foregående regulært udtryk"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "For tidlig afslutning af regulært udtryk"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "For stort regulært udtryk"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Ensomt ) eller \\)"
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Intet foregående regulært udtryk"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr "kan ikke vise fejlmeddelelse"
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"
@@ -677,10 +682,6 @@ msgstr ""
 
 #~ msgid "invalid spec"
 #~ msgstr "ugyldig specifikation"
-
-#, c-format
-#~ msgid "unable to display error message"
-#~ msgstr "kan ikke vise fejlmeddelelse"
 
 #, c-format
 #~ msgid "Packaged by %s (%s)\n"

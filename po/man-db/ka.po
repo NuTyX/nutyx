@@ -1,0 +1,971 @@
+# Georgian translation for man-db
+# Copyright (C) 2023 Colin Watson (msgids)
+# This file is distributed under the same license as the man-db package.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: man-db 2.11.0-pre1\n"
+"Report-Msgid-Bugs-To: Colin Watson <cjwatson@debian.org>\n"
+"POT-Creation-Date: 2023-09-23 21:53+0100\n"
+"PO-Revision-Date: 2023-04-11 05:36+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: lib/filenames.c:50 src/straycats.c:131 src/straycats.c:150
+#, c-format
+msgid "warning: %s: ignoring bogus filename"
+msgstr "გაფრთხილება: %s: საეჭვო ფაილის სახელის გამოტოვება"
+
+#: lib/pathsearch.c:83 lib/pathsearch.c:133 src/manp.c:1170
+#, c-format
+msgid "can't determine current directory"
+msgstr "მიმდინარე საქაღალდის იდენტიფიკაციის პრობლემა"
+
+#: lib/security.c:80
+#, c-format
+msgid "can't set effective uid"
+msgstr "ეფექტური UID-ის დაყენების შეცდომა"
+
+#: lib/security.c:119
+#, c-format
+msgid "the setuid man user \"%s\" does not exist"
+msgstr ""
+
+#: lib/xregcomp.c:50
+#, c-format
+msgid "fatal: regex `%s': %s"
+msgstr "ფატალური: რეგულარული გამოსახულება `%s': %s"
+
+#: libdb/db_delete.c:109
+#, c-format
+msgid "multi key %s does not exist"
+msgstr ""
+
+#: libdb/db_lookup.c:81
+#, c-format
+msgid "can't lock index cache %s"
+msgstr ""
+
+#: libdb/db_lookup.c:88
+#, c-format
+msgid "index cache %s corrupt"
+msgstr "ინდექსის კეში %s დაზიანებულია"
+
+#: libdb/db_lookup.c:94
+#, c-format
+msgid "cannot replace key %s"
+msgstr ""
+
+#: libdb/db_lookup.c:171 libdb/db_lookup.c:182
+#, c-format
+msgid "only %d field in content"
+msgid_plural "only %d fields in content"
+msgstr[0] "შემცველობაში მხოლოდ %d ველია"
+msgstr[1] "შემცველობაში მხოლოდ %d ველია"
+
+#: libdb/db_lookup.c:355
+#, c-format
+msgid "bad fetch on multi key %s"
+msgstr ""
+
+#: libdb/db_lookup.c:436 src/whatis.c:711
+#, c-format
+msgid "Database %s corrupted; rebuild with mandb --create"
+msgstr "ბაზა %s დაზიანებულია. ააგეთ ის თავიდან ბრძანებით --create"
+
+#: libdb/db_ver.c:56
+#, c-format
+msgid "warning: %s has no version identifier\n"
+msgstr ""
+
+#: libdb/db_ver.c:60
+#, c-format
+msgid "warning: %s is version %s, expecting %s\n"
+msgstr ""
+
+#: libdb/db_ver.c:82
+#, c-format
+msgid "fatal: unable to insert version identifier into %s"
+msgstr ""
+
+#: src/accessdb.c:62
+msgid "[MAN DATABASE]"
+msgstr ""
+
+#: src/accessdb.c:63
+#, c-format
+msgid "The man database defaults to %s%s."
+msgstr ""
+
+#: src/accessdb.c:66 src/catman.c:106 src/globbing_test.c:62
+#: src/lexgrog_test.c:79 src/man.c:280 src/man-recode.c:118
+#: src/manconv_main.c:100 src/mandb.c:119 src/manpath.c:67 src/whatis.c:127
+#: src/zsoelim_main.c:72
+msgid "emit debugging messages"
+msgstr ""
+
+#: src/accessdb.c:140
+#, c-format
+msgid "can't open %s for reading"
+msgstr "%s-ის წასაკითხად გახსნა შეუძლებელია"
+
+#: src/catman.c:103
+msgid "[SECTION...]"
+msgstr "[სექცია…]"
+
+#: src/catman.c:107 src/man.c:309 src/whatis.c:141
+msgid "PATH"
+msgstr "ბილიკი"
+
+#: src/catman.c:108 src/man.c:310 src/whatis.c:142
+msgid "set search path for manual pages to PATH"
+msgstr ""
+
+#: src/catman.c:109 src/man.c:278 src/mandb.c:131 src/manpath.c:69
+#: src/whatis.c:145
+msgid "FILE"
+msgstr "FILE"
+
+#: src/catman.c:110 src/man.c:279 src/mandb.c:132 src/manpath.c:70
+#: src/whatis.c:146
+msgid "use this user configuration file"
+msgstr "მომხმარებლის კონფიგურაცის ამ ფაილის გამოყენება"
+
+#: src/catman.c:202
+#, c-format
+msgid "man command failed with exit status %d"
+msgstr ""
+
+#: src/catman.c:279
+#, c-format
+msgid "NULL content for key: %s"
+msgstr ""
+
+#: src/catman.c:300
+#, c-format
+msgid ""
+"\n"
+"Updating cat files for section %s of man hierarchy %s\n"
+msgstr ""
+
+#: src/catman.c:350
+#, c-format
+msgid "cannot write within %s"
+msgstr "%s-ში ჩაწერა შეუძლებელია"
+
+#: src/catman.c:417
+#, c-format
+msgid "cannot read database %s"
+msgstr "ბაზის (%s) წაკითხვის შეცდომა"
+
+#: src/catman.c:433
+#, c-format
+msgid "unable to update %s"
+msgstr "%s-ის განახლების შეცდომა"
+
+#: src/check_mandirs.c:109
+#, c-format
+msgid "warning: %s/man%s/%s.%s*: competing extensions"
+msgstr ""
+
+#: src/check_mandirs.c:135
+#, c-format
+msgid "can't update index cache %s"
+msgstr "ინდექსის კეშის (%s) განახლების შეცდომა"
+
+#: src/check_mandirs.c:228
+#, c-format
+msgid "warning: %s: bad symlink or ROFF `.so' request"
+msgstr ""
+
+#: src/check_mandirs.c:293
+#, c-format
+msgid "warning: %s: ignoring empty file"
+msgstr "გაფრთხილება: %s ცარიელი ფაილის გამოტოვება"
+
+#: src/check_mandirs.c:297 src/straycats.c:268
+#, c-format
+msgid "warning: %s: whatis parse for %s(%s) failed"
+msgstr ""
+
+#: src/check_mandirs.c:325 src/check_mandirs.c:495 src/mandb.c:959
+#: src/straycats.c:93 src/straycats.c:296 src/ult_src.c:99
+#, c-format
+msgid "can't search directory %s"
+msgstr "საქაღალდეში ძებნის შეცდომა: %s"
+
+#: src/check_mandirs.c:374 src/man.c:1766
+#, c-format
+msgid "can't chown %s"
+msgstr "chown -ის შეცდომა: %s"
+
+#: src/check_mandirs.c:396 src/check_mandirs.c:419
+#, c-format
+msgid "warning: cannot create catdir %s"
+msgstr ""
+
+#: src/check_mandirs.c:451 src/man.c:1778 src/mandb.c:242
+#, c-format
+msgid "can't chmod %s"
+msgstr ""
+
+#: src/check_mandirs.c:500
+#, c-format
+msgid "can't change to directory %s"
+msgstr "საქაღალდის %s-ზე შეცვლა შეუძლებელია"
+
+#: src/check_mandirs.c:548
+#, c-format
+msgid "can't create index cache %s"
+msgstr "ინდექსის კეშის (%s) შექმნის შეცდომა"
+
+#: src/check_mandirs.c:570
+#, c-format
+msgid "Updating index cache for path `%s/%s'. Wait..."
+msgstr ""
+
+#: src/check_mandirs.c:596 src/check_mandirs.c:652
+msgid "done.\n"
+msgstr "დასრულებულია.   \n"
+
+#: src/check_mandirs.c:917
+#, c-format
+msgid "Purging old database entries in %s...\n"
+msgstr ""
+
+#: src/descriptions_store.c:62
+#, c-format
+msgid "warning: failed to store entry for %s(%s)"
+msgstr ""
+
+#: src/globbing_test.c:59
+msgid "PATH SECTION NAME"
+msgstr "ბილიკი სექცია სახელი"
+
+#: src/globbing_test.c:63 src/man.c:314
+msgid "EXTENSION"
+msgstr "EXTENSION"
+
+#: src/globbing_test.c:64 src/man.c:315
+msgid "limit search to extension type EXTENSION"
+msgstr ""
+
+#: src/globbing_test.c:66 src/man.c:317
+msgid "look for pages case-insensitively (default)"
+msgstr ""
+
+#: src/globbing_test.c:67 src/man.c:318
+msgid "look for pages case-sensitively"
+msgstr ""
+
+#: src/globbing_test.c:68
+msgid "interpret page name as a regex"
+msgstr ""
+
+#: src/globbing_test.c:69
+msgid "the page name contains wildcards"
+msgstr ""
+
+#: src/lexgrog.l:726
+#, c-format
+msgid "warning: whatis for %s exceeds %d byte, truncating."
+msgid_plural "warning: whatis for %s exceeds %d bytes, truncating."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/lexgrog.l:888 src/man.c:2378 src/man.c:2464 src/man.c:2562
+#: src/man-recode.c:184 src/man-recode.c:209 src/manconv_main.c:164
+#: src/straycats.c:210 src/ult_src.c:158 src/zsoelim.l:532
+#, c-format
+msgid "can't open %s"
+msgstr "'%s'-ის გახსნის შეცდომა"
+
+#: src/lexgrog_test.c:75 src/zsoelim_main.c:69
+msgid "FILE..."
+msgstr "ფაილი..."
+
+#: src/lexgrog_test.c:76
+msgid "The defaults are --man and --whatis."
+msgstr ""
+
+#: src/lexgrog_test.c:80
+msgid "parse as man page"
+msgstr ""
+
+#: src/lexgrog_test.c:81
+msgid "parse as cat page"
+msgstr ""
+
+#: src/lexgrog_test.c:82
+msgid "show whatis information"
+msgstr ""
+
+#: src/lexgrog_test.c:84
+msgid "show guessed series of preprocessing filters"
+msgstr ""
+
+#: src/lexgrog_test.c:85 src/man.c:301 src/man.c:339
+msgid "ENCODING"
+msgstr "_კოდირება"
+
+#: src/lexgrog_test.c:86 src/man.c:340
+msgid "use selected output encoding"
+msgstr ""
+
+#: src/lexgrog_test.c:130 src/man.c:576 src/man.c:585
+#, c-format
+msgid "%s: incompatible options"
+msgstr "%s: შეუთავსებელი პარამეტრები"
+
+#: src/man.c:172 src/man-recode.c:242
+#, c-format
+msgid "command exited with status %d: %s"
+msgstr ""
+
+#: src/man.c:260
+msgid "[SECTION] PAGE..."
+msgstr "[სექცია] გვერდი..."
+
+#: src/man.c:282
+msgid "reset all options to their default values"
+msgstr ""
+
+#: src/man.c:283
+msgid "WARNINGS"
+msgstr "გაფრთხილებები"
+
+#: src/man.c:285
+msgid "enable warnings from groff"
+msgstr ""
+
+#: src/man.c:287
+msgid "Main modes of operation:"
+msgstr ""
+
+#: src/man.c:288
+msgid "equivalent to whatis"
+msgstr "იგივე, რაც whatis"
+
+#: src/man.c:289
+msgid "equivalent to apropos"
+msgstr "იგივე, რაც apropos"
+
+#: src/man.c:290
+msgid "search for text in all pages"
+msgstr "ტექსტის ყველა გვერდზე ძებნა"
+
+#: src/man.c:291
+msgid "print physical location of man page(s)"
+msgstr ""
+
+#: src/man.c:295
+msgid "print physical location of cat file(s)"
+msgstr ""
+
+#: src/man.c:298
+msgid "interpret PAGE argument(s) as local filename(s)"
+msgstr ""
+
+#: src/man.c:300
+msgid "used by catman to reformat out of date cat pages"
+msgstr ""
+
+#: src/man.c:302
+msgid "output source page encoded in ENCODING"
+msgstr ""
+
+#: src/man.c:304
+msgid "Finding manual pages:"
+msgstr ""
+
+#: src/man.c:305 src/whatis.c:143
+msgid "LOCALE"
+msgstr "ენა"
+
+#: src/man.c:306
+msgid "define the locale for this particular man search"
+msgstr ""
+
+#: src/man.c:307 src/manpath.c:71 src/whatis.c:139
+msgid "SYSTEM"
+msgstr "სისტემა"
+
+#: src/man.c:308 src/manpath.c:72 src/whatis.c:140
+msgid "use manual pages from other systems"
+msgstr ""
+
+#: src/man.c:311 src/whatis.c:136
+msgid "LIST"
+msgstr "სია"
+
+#: src/man.c:312
+msgid "use colon separated section list"
+msgstr ""
+
+#: src/man.c:319
+msgid "show all pages matching regex"
+msgstr ""
+
+#: src/man.c:321
+msgid "show all pages matching wildcard"
+msgstr ""
+
+#: src/man.c:323
+msgid "make --regex and --wildcard match page names only, not descriptions"
+msgstr ""
+
+#: src/man.c:326
+msgid "find all matching manual pages"
+msgstr ""
+
+#: src/man.c:327
+msgid "force a cache consistency check"
+msgstr ""
+
+#: src/man.c:329
+msgid "don't try subpages, e.g. 'man foo bar' => 'man foo-bar'"
+msgstr ""
+
+#: src/man.c:332
+msgid "Controlling formatted output:"
+msgstr ""
+
+#: src/man.c:333
+msgid "PAGER"
+msgstr "PAGER"
+
+#: src/man.c:334
+msgid "use program PAGER to display output"
+msgstr ""
+
+#: src/man.c:335 src/man.c:347
+msgid "STRING"
+msgstr "სტრიქონი"
+
+#: src/man.c:336
+msgid "provide the `less' pager with a prompt"
+msgstr ""
+
+#: src/man.c:338
+msgid "display ASCII translation of certain latin1 chars"
+msgstr ""
+
+#: src/man.c:342
+msgid "turn off hyphenation"
+msgstr ""
+
+#: src/man.c:345
+msgid "turn off justification"
+msgstr ""
+
+#: src/man.c:348
+msgid ""
+"STRING indicates which preprocessors to run:\n"
+"e - [n]eqn, p - pic, t - tbl,\n"
+"g - grap, r - refer, v - vgrind"
+msgstr ""
+
+#: src/man.c:352
+#, c-format
+msgid "use %s to format pages"
+msgstr ""
+
+#: src/man.c:353
+msgid "DEVICE"
+msgstr "მოწყობილობა"
+
+#: src/man.c:354
+#, c-format
+msgid "use %s with selected device"
+msgstr ""
+
+#: src/man.c:355
+msgid "BROWSER"
+msgstr "ბრაუზერი"
+
+#: src/man.c:357
+#, c-format
+msgid "use %s or BROWSER to display HTML output"
+msgstr ""
+
+#: src/man.c:358
+msgid "RESOLUTION"
+msgstr "გაფართოება"
+
+#: src/man.c:360
+msgid ""
+"use groff and display through gxditview (X11):\n"
+"-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12"
+msgstr ""
+
+#: src/man.c:363
+msgid "use groff and force it to produce ditroff"
+msgstr ""
+
+#: src/man.c:635 src/man.c:779
+#, c-format
+msgid "No manual entry for %s\n"
+msgstr ""
+
+#: src/man.c:637
+#, c-format
+msgid "(Alternatively, what manual page do you want from section %s?)\n"
+msgstr ""
+
+#: src/man.c:641
+msgid "What manual page do you want?\n"
+msgstr ""
+
+#: src/man.c:642
+msgid "For example, try 'man man'.\n"
+msgstr "მაგალითად, სცადეთ 'man man'.\n"
+
+#: src/man.c:776
+#, c-format
+msgid "No manual entry for %s in section %s\n"
+msgstr ""
+
+#: src/man.c:785
+#, c-format
+msgid "See '%s' for help when manual pages are not available.\n"
+msgstr ""
+
+#: src/man.c:1398
+#, c-format
+msgid "ignoring unknown preprocessor `%c'"
+msgstr ""
+
+#: src/man.c:1789 src/man-recode.c:251 src/mandb.c:233
+#, c-format
+msgid "can't rename %s to %s"
+msgstr ""
+
+#: src/man.c:1806
+#, c-format
+msgid "can't set times on %s"
+msgstr ""
+
+#: src/man.c:1815 src/man.c:1852
+#, c-format
+msgid "can't unlink %s"
+msgstr "ბმულის მოხსნის შეცდომა: %s"
+
+#: src/man.c:1882
+#, c-format
+msgid "can't create temporary cat for %s"
+msgstr "%s-სთვის დროებითი კატალოგის შექმნა შეუძლებელია"
+
+#: src/man.c:2000
+#, c-format
+msgid "can't create temporary directory"
+msgstr "დროებითი საქაღალდის შექმნა შეუძლებელია"
+
+#: src/man.c:2011 src/man-recode.c:217
+#, c-format
+msgid "can't open temporary file %s"
+msgstr "დროებით ფაილის (%s) გახსნის შეცდომა"
+
+#: src/man.c:2041 src/man.c:2072
+#, c-format
+msgid "can't remove directory %s"
+msgstr "საქაღალდის (%s) წაშლის შეცდომა"
+
+#: src/man.c:2209
+#, c-format
+msgid "--Man-- next: %s [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]\n"
+msgstr ""
+
+#: src/man.c:2507
+#, c-format
+msgid ""
+"\n"
+"cannot write to %s in catman mode"
+msgstr ""
+
+#: src/man.c:2587
+#, c-format
+msgid "Can't convert %s to cat name"
+msgstr ""
+
+#: src/man.c:3356
+#, c-format
+msgid "%s: relying on whatis refs is deprecated\n"
+msgstr ""
+
+#: src/man.c:3497 src/man.c:4359
+#, c-format
+msgid "mandb command failed with exit status %d"
+msgstr ""
+
+#: src/man.c:3695
+#, c-format
+msgid "internal error: candidate type %d out of range"
+msgstr ""
+
+#: src/man.c:4302
+msgid " Manual page "
+msgstr " სახელმძღვანელო გვერდი "
+
+#: src/man-recode.c:110
+msgid "-t CODE {--suffix SUFFIX | --in-place} FILENAME..."
+msgstr "-t კოდი {--suffix სუფიქსი | --in-place} ფაილის სახელი..."
+
+#: src/man-recode.c:113 src/manconv_main.c:99
+msgid "CODE"
+msgstr "CODE"
+
+#: src/man-recode.c:113 src/manconv_main.c:99
+msgid "encoding for output"
+msgstr "გამოტანის კოდირება"
+
+#: src/man-recode.c:114
+msgid "SUFFIX"
+msgstr "სუფიქსი"
+
+#: src/man-recode.c:115
+msgid "suffix to append to output file name"
+msgstr "გამოტანილი ფაილის სახელისთვის მისაწერი სუფიქსი"
+
+#: src/man-recode.c:117
+msgid "overwrite input files in place"
+msgstr ""
+
+#: src/man-recode.c:119 src/manconv_main.c:101 src/manpath.c:68
+msgid "produce fewer warnings"
+msgstr "ნაკლების გაფრთხილების ჩვენება"
+
+#: src/man-recode.c:155 src/manconv_main.c:136
+#, c-format
+msgid "must specify an output encoding"
+msgstr ""
+
+#: src/man-recode.c:159
+#, c-format
+msgid "must use either --suffix or --in-place"
+msgstr ""
+
+#: src/man-recode.c:163
+#, c-format
+msgid "--suffix and --in-place are mutually exclusive"
+msgstr ""
+
+#: src/man-recode.c:257 src/mandb.c:226
+#, c-format
+msgid "can't remove %s"
+msgstr "%s-ის წაშლა შეუძლებელია"
+
+#: src/manconv.c:238
+#, c-format
+msgid "can't write to standard output"
+msgstr "სტანდარტულ შეყვანაში ჩაწერის შეცდომა"
+
+#: src/manconv.c:466
+msgid "iconv: incomplete character at end of buffer"
+msgstr ""
+
+#: src/manconv_main.c:94
+msgid "[-f CODE[:...]] -t CODE [FILENAME]"
+msgstr "[-f კოდი[:...]] -t კოდი [ფაილისსახელი]"
+
+#: src/manconv_main.c:97
+msgid "CODE[:...]"
+msgstr "კოდი[:...]"
+
+#: src/manconv_main.c:98
+msgid "possible encodings of original text"
+msgstr "ორიგინალი ტექსტის შესაძლო კოდირებები"
+
+#: src/mandb.c:116
+msgid "[MANPATH]"
+msgstr "[MANPATH]"
+
+#: src/mandb.c:120
+msgid "work quietly, except for 'bogus' warning"
+msgstr ""
+
+#: src/mandb.c:122
+msgid "don't look for or add stray cats to the dbs"
+msgstr ""
+
+#: src/mandb.c:124
+msgid "don't purge obsolete entries from the dbs"
+msgstr ""
+
+#: src/mandb.c:125
+msgid "produce user databases only"
+msgstr ""
+
+#: src/mandb.c:127
+msgid "create dbs from scratch, rather than updating"
+msgstr ""
+
+#: src/mandb.c:128
+msgid "check manual pages for correctness"
+msgstr ""
+
+#: src/mandb.c:129
+msgid "FILENAME"
+msgstr "ფაილის სახელი"
+
+#: src/mandb.c:130
+msgid "update just the entry for this filename"
+msgstr ""
+
+#: src/mandb.c:290
+#, c-format
+msgid "can't write to %s"
+msgstr "%s-ზე ჩაწერა შეუძლებელია"
+
+#: src/mandb.c:295
+#, c-format
+msgid "can't read from %s"
+msgstr "%s-დან წაკითხვის შეცდომა"
+
+#: src/mandb.c:625
+#, c-format
+msgid "Processing manual pages under %s...\n"
+msgstr ""
+
+#: src/mandb.c:745 src/mandb.c:773
+#, c-format
+msgid "Removing obsolete cat directory %s...\n"
+msgstr ""
+
+#: src/mandb.c:903
+#, c-format
+msgid ""
+"Only the '%s' user can create or update system-wide databases; acting as if "
+"the --user-db option was used.\n"
+msgstr ""
+
+#: src/mandb.c:926
+#, c-format
+msgid "warning: no MANDB_MAP directives in %s, using your manpath"
+msgstr ""
+
+#: src/mandb.c:995
+#, c-format
+msgid "%d man subdirectory contained newer manual pages.\n"
+msgid_plural "%d man subdirectories contained newer manual pages.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/mandb.c:1000
+#, c-format
+msgid "%d manual page was added.\n"
+msgid_plural "%d manual pages were added.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/mandb.c:1004
+#, c-format
+msgid "%d stray cat was added.\n"
+msgid_plural "%d stray cats were added.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/mandb.c:1009
+#, c-format
+msgid "%d old database entry was purged.\n"
+msgid_plural "%d old database entries were purged.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/mandb.c:1027
+#, c-format
+msgid "No databases created."
+msgstr "ბაზები არ შექმნილა."
+
+#: src/manp.c:329
+#, c-format
+msgid "can't make sense of the manpath configuration file %s"
+msgstr ""
+
+#: src/manp.c:335
+#, c-format
+msgid "warning: %s"
+msgstr "გაფრთხილება: %s"
+
+#: src/manp.c:341
+#, c-format
+msgid "warning: %s isn't a directory"
+msgstr "გაფრთხილება: %s საქაღალდე არაა"
+
+#: src/manp.c:672
+#, c-format
+msgid "warning: $PATH not set"
+msgstr "გაფრთხილება: $PATH დაყენებული არაა"
+
+#: src/manp.c:679
+#, c-format
+msgid "warning: empty $PATH"
+msgstr "გაფრთხილება: $PATH ცარიელია"
+
+#: src/manp.c:707
+#, c-format
+msgid "warning: $MANPATH set, prepending %s"
+msgstr ""
+
+#: src/manp.c:718
+#, c-format
+msgid "warning: $MANPATH set, appending %s"
+msgstr ""
+
+#: src/manp.c:730
+#, c-format
+msgid "warning: $MANPATH set, inserting %s"
+msgstr ""
+
+#: src/manp.c:744
+#, c-format
+msgid "warning: $MANPATH set, ignoring %s"
+msgstr ""
+
+#: src/manp.c:806
+#, c-format
+msgid "can't parse directory list `%s'"
+msgstr ""
+
+#: src/manp.c:861
+#, c-format
+msgid "can't open the manpath configuration file %s"
+msgstr ""
+
+#: src/manp.c:898
+#, c-format
+msgid "warning: mandatory directory %s doesn't exist"
+msgstr "გაფრთხილება: აუცილებელი საქაღალდე (%s) არ არსებობს."
+
+#: src/manp.c:1357
+#, c-format
+msgid "warning: %s does not begin with %s"
+msgstr "გაფრთხილება: %s-ი %s-ით არ იწყება"
+
+#: src/manpath.c:65
+msgid "show relative catpaths"
+msgstr ""
+
+#: src/manpath.c:66
+msgid "show the entire global manpath"
+msgstr ""
+
+#: src/manpath.c:130
+#, c-format
+msgid "warning: no global manpaths set in config file %s"
+msgstr ""
+
+#: src/straycats.c:301
+#, c-format
+msgid "Checking for stray cats under %s...\n"
+msgstr ""
+
+#: src/ult_src.c:74
+#, c-format
+msgid "warning: %s is a dangling symlink"
+msgstr ""
+
+#: src/ult_src.c:77 src/ult_src.c:272 src/ult_src.c:372
+#, c-format
+msgid "can't resolve %s"
+msgstr "გადაწყვეტის პრობლემა: %s"
+
+#: src/ult_src.c:431
+#, c-format
+msgid "%s is self referencing"
+msgstr "%s თავის თავს მიმართავს"
+
+#: src/whatis.c:123
+msgid "KEYWORD..."
+msgstr "საკვანძოსიტყვა..."
+
+#: src/whatis.c:124
+msgid "The --regex option is enabled by default."
+msgstr "პარამეტრი --regex ნაგულისხმებადაა ჩართული."
+
+#: src/whatis.c:128
+msgid "print verbose warning messages"
+msgstr "დამატებითი გაფრთხილების შეტყობინებების დაბეჭდვა"
+
+#: src/whatis.c:129
+msgid "interpret each keyword as a regex"
+msgstr ""
+
+#: src/whatis.c:131
+msgid "search each keyword for exact match"
+msgstr ""
+
+#: src/whatis.c:132
+msgid "the keyword(s) contain wildcards"
+msgstr ""
+
+#: src/whatis.c:134
+msgid "require all keywords to match"
+msgstr ""
+
+#: src/whatis.c:135
+msgid "do not trim output to terminal width"
+msgstr ""
+
+#: src/whatis.c:137
+msgid "search only these sections (colon-separated)"
+msgstr ""
+
+#: src/whatis.c:144
+msgid "define the locale for this search"
+msgstr ""
+
+#: src/whatis.c:242
+#, c-format
+msgid "%s what?\n"
+msgstr "%s რა?\n"
+
+#: src/whatis.c:386 src/whatis.c:404
+#, c-format
+msgid "warning: %s contains a pointer loop"
+msgstr ""
+
+#: src/whatis.c:398 src/whatis.c:406
+msgid "(unknown subject)"
+msgstr "(უცნობი თემა)"
+
+#: src/whatis.c:836
+#, c-format
+msgid "%s: nothing appropriate.\n"
+msgstr "%s: არაფერი შესაბამისი.\n"
+
+#: src/zsoelim.l:186
+#, c-format
+msgid "%s:%d: .so requests nested too deeply or are recursive"
+msgstr ""
+
+#: src/zsoelim.l:201
+#, c-format
+msgid "%s:%d: warning: failed .so request"
+msgstr ""
+
+#: src/zsoelim.l:223
+#, c-format
+msgid "%s:%d: warning: newline in .so request, ignoring"
+msgstr ""
+
+#: src/zsoelim.l:293
+#, c-format
+msgid "%s:%d: warning: newline in .lf request, ignoring"
+msgstr ""
+
+#: src/zsoelim.l:333
+#, c-format
+msgid "%s:%d: unterminated quote in roff request"
+msgstr ""
+
+#: src/zsoelim_main.c:73
+msgid "compatibility switch (ignored)"
+msgstr ""

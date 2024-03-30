@@ -1,55 +1,71 @@
-# Mesajele �n limba rom�n� pentru diffutils-2.8.3
-# Copyright (C) 2003 Free Software Foundation, Inc.
-# Acest fi?ier este distribuit sub aceea?i licen?? ca ?i pachetul diffutils
-# Eugen Hoanca <eugenh@urban-grafx.ro>, 2003.
+# translation of diffutils-3.8.43.po to Romanian
+# Mesajele în limba română pentru diffutils
+# Copyright © 2003, 2021, 2023 Free Software Foundation, Inc.
+# Acest fișier este distribuit sub aceeași licență ca și pachetul diffutils
+# This file is distributed under the same license as the diffutils package.
+#
+# Eugen Hoanca <eugenh@urban-grafx.ro>, 2003 diffutils-2.8.3.
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2021-2023.
+#
+# Cronologia traducerii fișierului „diffutils”:
+# Traducerea inițială, făcută de EH, pentru versiunea diffutils 2.8.3.
+# Traducerea inițială, făcută de R-GC, pentru versiunea diffutils 3.7.41, 2021.
+# Traducerea inițială, făcută de R-GC, pentru versiunea diffutils 3.8.43, 2023.
+# Actualizare a traducerii pentru versiunea Y, făcută de X, Z(anul).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: diffutils 2.8.3\n"
+"Project-Id-Version: diffutils 3.8.43\n"
 "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
-"POT-Creation-Date: 2021-08-01 18:56-0700\n"
-"PO-Revision-Date: 2003-08-22 08:43+0300\n"
-"Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
+"POT-Creation-Date: 2023-05-21 01:51-0700\n"
+"PO-Revision-Date: 2023-01-01 21:24+0100\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || ((n%100) > 0 && "
+"(n%100) < 20)) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Bookmarks: 87,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
-msgstr ""
+msgstr "argument %s nevalid pentru %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
-msgstr ""
+msgstr "argument %s ambiguu pentru %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
-msgstr ""
+msgstr "Argumentele valide sunt:"
 
-#: lib/c-stack.c:187
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "eroare de program"
 
-#: lib/c-stack.c:188
+# Am tradus inițial ca:stivă plină(overflow), dar cu toate că mi se pare o formulă apropiată;
+# am ales această variantă care reprezintă exact ce înseamnă: „stack overflow”
+#: lib/c-stack.c:187
 msgid "stack overflow"
-msgstr "stiv� plin�(overflow)"
+msgstr "stivă debordată"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
-msgstr "Eroare de sistem necunoscut�"
+msgstr "Eroare de sistem necunoscută"
 
 #: lib/file-type.c:40
 msgid "regular empty file"
-msgstr "fi�ier obi�nuit(regular) vid"
+msgstr "fișier obișnuit gol"
 
 #: lib/file-type.c:40
 msgid "regular file"
-msgstr "fi�ier obi�nuit"
+msgstr "fișier obișnuit"
 
 #: lib/file-type.c:43
 msgid "directory"
@@ -57,11 +73,11 @@ msgstr "director"
 
 #: lib/file-type.c:46
 msgid "symbolic link"
-msgstr "leg�tur� simbolic�"
+msgstr "legătură simbolică"
 
 #: lib/file-type.c:52
 msgid "message queue"
-msgstr "coad�(queue) de mesaje"
+msgstr "coadă(queue) de mesaje"
 
 #: lib/file-type.c:55
 msgid "semaphore"
@@ -69,115 +85,150 @@ msgstr "semafor"
 
 #: lib/file-type.c:58
 msgid "shared memory object"
-msgstr "obiect memorie global�(shared memory)"
+msgstr "obiect de memorie partajat"
 
+# NOTĂ: să intru în contact cu dezvoltatorii, pentru a ști ce au vrut să spună...
+# Am făcut-o, m-am pus în contact cu ei:
+# Mulțumiri lui Jim Meyering ce mi-a întins o mînă de ajutor și m-a „luminat”:
+# a "typed memory object" is a POSIX-specified construct. See
+# https://pubs.opengroup.org/onlinepubs/009695399/functions/posix_typed_mem_open.html,
+# so probably deserves a literal translation.
+# Am intrat în pagină, și-am găsit:
+# The posix_typed_mem_open() function shall establish a connection between the typed memory object specified by the string pointed to by name and a file descriptor. It shall create an open file description that refers to the typed memory object and a file descriptor that refers to that open file description.
+# Concluzia mea: „obiect de memorie tipizat”
 #: lib/file-type.c:61
-#, fuzzy
 msgid "typed memory object"
-msgstr "obiect memorie global�(shared memory)"
+msgstr "obiect de memorie tipizat"
 
 #: lib/file-type.c:66
 msgid "block special file"
-msgstr "fi�ier bloc special"
+msgstr "fișier special de bloc"
 
 #: lib/file-type.c:69
 msgid "character special file"
-msgstr "fi�ier caracter special"
+msgstr "fișier special de caracter"
 
 #: lib/file-type.c:72
 msgid "contiguous data"
-msgstr ""
+msgstr "date învecinate(în continuare)"
 
+# primul intrat, primul ieșit(fifo=first in, first out)
 #: lib/file-type.c:75
 msgid "fifo"
 msgstr "fifo"
 
+# NOTĂ: să intru în contact cu dezvoltatorii, pentru a ști ce au vrut să spună...
+# Am făcut-o, m-am pus în contact cu ei:
+# Mulțumiri lui Jim Meyering ce mi-a întins o mînă de ajutor și m-a „luminat”:
+# A "door" is a reference to this Solaris invention:
+# https://en.wikipedia.org/wiki/Doors_(computing)
+# Am intrat în pagină și-am găsit următoarea informație:
+# - Doors were developed by Sun Microsystems as a core part of the Spring operating system, then added to Solaris in version 2.5 as an undocumented internal interface.[
+# - A Linux port of Doors was released in 2003, but is only available for version 2.4.18.
+# Concluzia mea este că termenul se poate lăsa așa cum apare în engleză, mai ales că proiectul a fost abandonat...
+# Sau, pus ca: „poartă(door)”?
 #: lib/file-type.c:78
 msgid "door"
-msgstr ""
+msgstr "door"
 
 #: lib/file-type.c:81
-#, fuzzy
 msgid "multiplexed block special file"
-msgstr "fi�ier bloc special"
+msgstr "fișier special de bloc multiplexat"
 
 #: lib/file-type.c:84
-#, fuzzy
 msgid "multiplexed character special file"
-msgstr "fi�ier caracter special"
+msgstr "fișier special de caracter multiplexat"
 
 #: lib/file-type.c:87
 msgid "multiplexed file"
-msgstr ""
+msgstr "fișier multiplexat"
 
+# Am tras cu ochiul la traducerile celorlalți latini, și majoritatea a adoptat forma de: fișier numit / fișier denumit. A doua formă mi s-a părut „mai” corectă...
+# NOTĂ: să intru în contact cu dezvoltatorii, pentru a ști ce au vrut să spună...
+# Am făcut-o, m-am pus în contact cu ei:
+# Mulțumiri lui Jim Meyering ce mi-a întins o mînă de
+# ajutor și m-a „luminat”:
+# I don't know what S_ISNAM ("named file") is, but did find a reference
+# to it being Xenix-related in gdb's sources, so it's probably no longer
+# relevant.
+# Concluzia mea: traducerea făcută este corectă, dar intrarea(definiția) e posibil să dispară într-o versiune viitoare a „diffutils”...
 #: lib/file-type.c:90
-#, fuzzy
 msgid "named file"
-msgstr "fi�ier ciudat"
+msgstr "fișier denumit"
 
 #: lib/file-type.c:93
-#, fuzzy
 msgid "network special file"
-msgstr "fi�ier bloc special"
+msgstr "fișier special de rețea"
 
 #: lib/file-type.c:96
 msgid "migrated file with data"
-msgstr ""
+msgstr "fișier migrat cu date"
 
 #: lib/file-type.c:99
 msgid "migrated file without data"
-msgstr ""
+msgstr "fișier migrat fără date"
 
 #: lib/file-type.c:102
 msgid "port"
-msgstr ""
+msgstr "port"
 
 #: lib/file-type.c:105
 msgid "socket"
-msgstr "socket"
+msgstr "soclu(socket)"
 
+# NOTĂ: să intru în contact cu dezvoltatorii, pentru a ști ce au vrut să spună...
+# Am făcut-o, m-am pus în contact cu ei:
+# Mulțumiri lui Jim Meyering ce mi-a întins o mînă de ajutor și m-a „luminat”:
+# For whiteout, it's an old BSD-era type of file that was used to
+# "remove" (actually "cause to appear to be absent") a file from an
+# underlying read-only file system image.
+# It's old enough that I think it is very unlikely to have been printed
+# via diff tools in the last 5-10 years.
+# I like what I see in fr.po for "whiteout", since the French "voilé"
+# means "veiled":
+#     msgstr "voilé (whiteout)"
 #: lib/file-type.c:108
 msgid "whiteout"
-msgstr ""
+msgstr "voalat(whiteout)"
 
 #: lib/file-type.c:110
 msgid "weird file"
-msgstr "fi�ier ciudat"
+msgstr "fișier straniu"
 
 #: lib/getopt.c:278
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: op�iunea `%s' este ambigu�\n"
+msgstr "%s: opțiunea „%s%s” este ambiguă\n"
 
 #: lib/getopt.c:284
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: op�iunea `%s' este ambigu�\n"
+msgstr "%s: opțiunea „%s%s” este ambiguă; posibilități:"
 
 #: lib/getopt.c:319
-#, fuzzy, c-format
+#, c-format
 msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: op�iune necunoscut� `%c%s'\n"
+msgstr "%s: opțiune nerecunoscută „%s%s”\n"
 
 #: lib/getopt.c:345
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: op�iunea `%c%s' nu permite parametri\n"
+msgstr "%s: opțiunea „%s%s” nu permite un argument\n"
 
 #: lib/getopt.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: op�iunea `%s' necesit� un parametru\n"
+msgstr "%s: opțiunea „%s%s” necesită un argument\n"
 
 #: lib/getopt.c:621
-#, fuzzy, c-format
+#, c-format
 msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: op�iune invalid� -- %c\n"
+msgstr "%s: opțiune nevalidă -- „%c”\n"
 
 #: lib/getopt.c:636 lib/getopt.c:682
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: op�iunea necesit� un parametru -- %c\n"
+msgstr "%s: opțiunea necesită un argument -- „%c”\n"
 
 #. TRANSLATORS:
 #. Get translations for open and closing quotation marks.
@@ -200,134 +251,146 @@ msgstr "%s: op�iunea necesit� un parametru -- %c\n"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
-msgstr ""
+msgstr "„"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
-msgstr ""
+msgstr "”"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Succes"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Nici o potrivire"
 
-#: lib/regcomp.c:141
+# Am aplicat informațiile găsite în pagina:
+# https://ro.wikipedia.org/wiki/Expresie_regulat%C4%83
+# Contribuție: Daniel Șerbănescu
+# Traducerea inițială(înainte de revizuire):
+# Expresie normală nevalidă
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
-msgstr "Expresie normal�(regular) invalid�"
+msgstr "Expresie regulată nevalidă"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
-msgstr "Caracter de comparare invalid"
+msgstr "Caracter de unire nevalid"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
-msgstr "Nume clas� caracter invalid�"
+msgstr "Nume de clasă de caracter nevalid"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
-msgstr "Backslash de sf�r�it de linie(trailing)"
+msgstr "Bară oblică inversă la final de linie"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
-msgstr "Referin�� precedent� invalid�"
+msgstr "Referință precedentă nevalidă"
 
-#: lib/regcomp.c:156
-#, fuzzy
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
-msgstr "[ sau [^ ne�nchise"
+msgstr "[, [^, [:, [., sau [= neînchise"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
-msgstr "( or \\( ne�nchise"
+msgstr "( sau \\( neînchise"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
-msgstr "\\{ ne�nchis�"
+msgstr "\\{ neînchisă"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
-msgstr "Con�inut invalid al \\{\\}"
+msgstr "Conținut nevalid al \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
-msgstr "Sf�r�it de domeniu invalid"
+msgstr "Sfârșit de interval nevalid"
 
-#: lib/regcomp.c:171
+# traducerea inițială: „Memorie plină”
+# - părerea mea este că nu este o alegere prea reușită(plin/plină ne duce mereu cu gîndul la ceva complet preparat(ă) să (ne) țină mult..... nu este cazul ăsta
+# - exhaust = terminat, obosit, istovit, vlăguit, epuizat, extenuat, golit complet; am ales ca potrivit «epuizat»
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
-msgstr "Memorie plin�"
+msgstr "Memorie epuizată"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
-msgstr "Expresie normal� de preceden�� invalid�"
+msgstr "Expresia regulată precedentă nevalidă"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
-msgstr "Sf�r�it prematur de expresie normal�"
+msgstr "Sfârșit prematur de expresie regulată"
 
-#: lib/regcomp.c:180
+# Trad. anterioară:Expresie normală prea mare
+# sînt de părere că o expresie normală sau nu, poate fi scurtă sau lungă (mică sau mare, în niciun caz)
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
-msgstr "Expresie normal� prea mare"
+msgstr "Expresie regulată prea lungă"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
-msgstr ") or \\) nedeschise"
+msgstr ") sau \\) nedeschise"
 
-#: lib/regcomp.c:676
+# „... antecedentă” -> traducerea anterioară
+# după cîte știu:
+# antecedent(ă) - se referă la fapte, întâmplări anterioare unei anumite date sau stări(în popor, trăiri) ale unei persane
+# cu toate că arată o anterioritate, această anterioritate nu se referă la lucruri, obiecte
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
-msgstr "Nu a existat nici o expresie normal� antecedent�"
+msgstr "Nu a existat nici o expresie regulată anterioară"
 
 #: lib/xalloc-die.c:34
 msgid "memory exhausted"
-msgstr "memorie plin�"
+msgstr "memorie epuizată"
 
 #: lib/xfreopen.c:34
 msgid "stdin"
-msgstr ""
+msgstr "intrarea standard(stdin)"
 
 #: lib/xfreopen.c:35
 msgid "stdout"
-msgstr ""
+msgstr "ieșirea standard(stdout)"
 
 #: lib/xfreopen.c:36
 msgid "stderr"
-msgstr ""
+msgstr "ieșirea de eroare standard(stderr)"
 
 #: lib/xfreopen.c:37
-#, fuzzy
 msgid "unknown stream"
-msgstr "Eroare de sistem necunoscut�"
+msgstr "flux necunoscut"
 
 #: lib/xfreopen.c:38
 #, c-format
 msgid "failed to reopen %s with mode %s"
-msgstr ""
+msgstr "eșuare la redeschiderea %s cu modul %s"
 
 #: lib/xstdopen.c:34
 #, c-format
 msgid "standard file descriptors"
-msgstr ""
+msgstr "descriptori de fișiere standard"
 
 #: lib/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
-msgstr ""
+msgstr "Împachetat de %s (%s)\n"
 
 #: lib/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
-msgstr ""
+msgstr "Împachetat de %s\n"
 
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
 #: lib/version-etc.c:83
 msgid "(C)"
-msgstr "(C)"
+msgstr "©"
 
 #. TRANSLATORS: The %s placeholder is the web address of the GPL license.
 #: lib/version-etc.c:88
@@ -337,24 +400,28 @@ msgid ""
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
+"Licență GPLv3+: GNU GPL versiunea 3 sau mai recentă <%s>.\n"
+"Acesta este software liber: sunteți liber să îl schimbați și să îl "
+"redistribuiți.\n"
+"Nu există NICIO GARANȚIE, în măsura permisă de lege.\n"
 
 #. TRANSLATORS: %s denotes an author name.
 #: lib/version-etc.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "Written by %s.\n"
-msgstr "Scris de Thomas Lord."
+msgstr "Scris de %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:109
-#, fuzzy, c-format
+#, c-format
 msgid "Written by %s and %s.\n"
-msgstr "Scris de Randy Smith."
+msgstr "Scris de %s și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:113
-#, fuzzy, c-format
+#, c-format
 msgid "Written by %s, %s, and %s.\n"
-msgstr "Scris de Randy Smith."
+msgstr "Scris de %s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -365,6 +432,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -375,6 +444,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -385,6 +456,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -395,6 +468,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -406,6 +481,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -417,6 +495,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -428,6 +509,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, %s, and others.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s, și alții.\n"
 
 #. TRANSLATORS: The placeholder indicates the bug-reporting address
 #. for this package.  Please add _another line_ saying
@@ -437,546 +521,592 @@ msgstr ""
 #, c-format
 msgid "Report bugs to: %s\n"
 msgstr ""
+"Raportați erorile din program la: %s\n"
+"Raportați erorile de traducere la: <translation-team-ro@lists.sourceforge."
+"net>\n"
 
+# Se referă la erorile din distribuția folosită de utilizator (Debian, Fedora, OpenSUSE, Gentoo,,, sau oricare alta pe gustul său), deobicei erori de împachetare a programului.
 #: lib/version-etc.c:251
 #, c-format
 msgid "Report %s bugs to: %s\n"
-msgstr ""
+msgstr "Raportați erorile din %s la: %s\n"
 
 #: lib/version-etc.c:255 lib/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
-msgstr ""
+msgstr "Pagina principală a %s: <%s>\n"
 
 #: lib/version-etc.c:260
 #, c-format
 msgid "General help using GNU software: <%s>\n"
-msgstr ""
+msgstr "Ajutor general pentru utilizarea software-ului GNU: <%s>\n"
 
-#: src/analyze.c:454 src/diff.c:1406
+#: src/analyze.c:455 src/diff.c:1478
 #, c-format
 msgid "Files %s and %s differ\n"
-msgstr "Fi�ierele %s �i %s difer�\n"
+msgstr "Fișierele %s și %s diferă\n"
 
-#: src/analyze.c:455
+#: src/analyze.c:456
 #, c-format
 msgid "Binary files %s and %s differ\n"
-msgstr "Fi�ierele binare %s �i %s difer�\n"
+msgstr "Fișierele binare %s și %s diferă\n"
 
-#: src/analyze.c:706 src/diff3.c:1470 src/util.c:1254
+#: src/analyze.c:707 src/diff3.c:1457 src/util.c:1354
 msgid "No newline at end of file"
-msgstr "Nici un element de linie nou� la sf�r�itul fi�ierului"
+msgstr "Nici un element de linie nouă la sfârșitul fișierului"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/cmp.c:45
 msgid "Torbjorn Granlund"
-msgstr ""
+msgstr "Torbjorn Granlund"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/cmp.c:46
 msgid "David MacKenzie"
-msgstr ""
+msgstr "David MacKenzie"
 
-#: src/cmp.c:120 src/diff.c:879 src/diff3.c:467 src/sdiff.c:160
-#, fuzzy, c-format
+#: src/cmp.c:124 src/diff.c:939 src/diff3.c:465 src/sdiff.c:159
+#, c-format
 msgid "Try '%s --help' for more information."
-msgstr "�ncerca�i  `%s --help' pentru mai multe informa�ii."
+msgstr "Încercați «%s --help» pentru mai multe informații."
 
-#: src/cmp.c:138
-#, fuzzy, c-format
+#: src/cmp.c:142
+#, c-format
 msgid "invalid --ignore-initial value '%s'"
-msgstr "invalid --se ignor� valoarea ini�ial� `%s'"
+msgstr "valoarea opțiunii „--ignore-initial” nu este validă „%s”"
 
-#: src/cmp.c:148
+#: src/cmp.c:152
 #, c-format
 msgid "options -l and -s are incompatible"
-msgstr "op�iunile -l �i -s sunt incompatibile"
+msgstr "opțiunile „-l” și „-s” sunt incompatibile"
 
-#: src/cmp.c:156 src/diff.c:887 src/diff3.c:474 src/sdiff.c:168 src/sdiff.c:316
-#: src/sdiff.c:323 src/sdiff.c:876 src/util.c:852 src/util.c:952 src/util.c:959
+#: src/cmp.c:160 src/diff.c:947 src/diff3.c:472 src/sdiff.c:167 src/sdiff.c:314
+#: src/sdiff.c:321 src/sdiff.c:873 src/util.c:952 src/util.c:1052
+#: src/util.c:1059
 msgid "write failed"
-msgstr "scriere e�uat�"
+msgstr "scriere eșuată"
 
-#: src/cmp.c:158 src/diff.c:889 src/diff.c:1471 src/diff3.c:476 src/sdiff.c:170
+#: src/cmp.c:162 src/diff.c:949 src/diff.c:1543 src/diff3.c:474 src/sdiff.c:169
 msgid "standard output"
-msgstr "ie�ire(output) standard"
+msgstr "ieșire standard"
 
-#: src/cmp.c:162
-#, fuzzy
+#: src/cmp.c:166
 msgid "-b, --print-bytes          print differing bytes"
-msgstr "-b  --print-bytes  Tip�re�te octe�ii diferi�i."
+msgstr "-b, --print-bytes          afișează octeții care sunt diferiți"
 
-#: src/cmp.c:163
-#, fuzzy
+# saltă sau sare primii octeți... ?
+# am optat pentru prima variantă, și nu știu dacă nu era mai bine de utilizat formula: OMIS/OMITERE???
+# Decizie finală(după revizare/corectare „Mulțumesc, Daniel Șerbănescu!”):
+# se omit primii SALT octeți...
+# în această ordine, SALT = un număr(de octeți)
+#: src/cmp.c:167
 msgid "-i, --ignore-initial=SKIP         skip first SKIP bytes of both inputs"
 msgstr ""
-"-i OMIS  --ignore-initial=OMIS  Omite primii octe�i OMISi din intrare(input)."
+"-i, --ignore-initial=SALT  omite primii SALT octeți din cele două intrări"
 
-#: src/cmp.c:164
-#, fuzzy
+#: src/cmp.c:168
 msgid ""
 "-i, --ignore-initial=SKIP1:SKIP2  skip first SKIP1 bytes of FILE1 and\n"
 "                                      first SKIP2 bytes of FILE2"
 msgstr ""
-"  Omite primii OMIS1 octe�i din FI�IER1 �i primii OMIS2 octe�i din FI�IER2"
+"-i, --ignore-initial=SALT1:SALT2\n"
+"                             omite primii SALT1 octeți din FIȘIERUL1 și "
+"primii\n"
+"                             SALT2 octeți din FIȘIERUL2"
 
-#: src/cmp.c:166
-#, fuzzy
+#: src/cmp.c:170
 msgid ""
 "-l, --verbose              output byte numbers and differing byte values"
 msgstr ""
-"-l  --verbose  Tip�re�te numerele octe�ilor �i valorile octe�ilor diferi�i."
+"-l, --verbose              afișează numerele de octeți și valorile tuturor\n"
+"                             octeților care diferă"
 
-#: src/cmp.c:167
-#, fuzzy
+#: src/cmp.c:171
 msgid "-n, --bytes=LIMIT          compare at most LIMIT bytes"
-msgstr "-n LIMIT�  --bytes=LIMIT�  Compar� cel mult LIMIT� octe�i."
+msgstr "-n, --bytes=LIMITĂ         compară cel mult LIMITĂ octeți"
 
-#: src/cmp.c:168
+#: src/cmp.c:172
 msgid "-s, --quiet, --silent      suppress all normal output"
-msgstr ""
+msgstr "-s, --quiet, --silent      suprimă toate detaliile de ieșire normale"
 
-#: src/cmp.c:169
+#: src/cmp.c:173
 msgid "    --help                 display this help and exit"
-msgstr ""
+msgstr "    --help                 afișează acest mesaj de ajutor, și iese"
 
-#: src/cmp.c:170
-#, fuzzy
+#: src/cmp.c:174
 msgid "-v, --version              output version information and exit"
-msgstr "-v  --version  Tip�re�te informa�ii despre versiune."
-
-#: src/cmp.c:179
-#, c-format
-msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
-msgstr "Folosire: %s [OP�IUNE]... FI�IER1 [FI�IER2 [OMIS1 [OMIS2]]]\n"
-
-#: src/cmp.c:181
-msgid "Compare two files byte by byte."
-msgstr "Compar� dou� fi�iere octet cu octet."
+msgstr ""
+"-v, --version              afișează informații despre versiune, și iese"
 
 #: src/cmp.c:183
-#, fuzzy
+#, c-format
+msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
+msgstr "Utilizare: %s [OPȚIUNE]... FIŞIER1 [FIŞIER2 [SALT1 [SALT2]]]\n"
+
+#: src/cmp.c:185
+msgid "Compare two files byte by byte."
+msgstr "Compară două fișiere octet cu octet."
+
+#: src/cmp.c:187
 msgid ""
 "The optional SKIP1 and SKIP2 specify the number of bytes to skip\n"
 "at the beginning of each file (zero by default)."
 msgstr ""
-"OMIS1 �i OMIS2 sunt numerele de octe�i care s� fie omi�i din fiecare fi�ier."
+"Parametrii opționali SALT1 și SALT2 specifică numărul de octeți\n"
+"ce se saltă în fiecare fișier (valoarea predefinită este zero)."
 
-#: src/cmp.c:186 src/diff.c:999 src/diff3.c:514 src/sdiff.c:211
+#: src/cmp.c:190 src/diff.c:1059 src/diff3.c:512 src/sdiff.c:210
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
+"Argumentele obligatorii pentru opțiunile lungi sunt deasemenea obligatorii\n"
+"pentru opțiunile scurte.\n"
 
-#: src/cmp.c:192
+#: src/cmp.c:196
 msgid ""
 "SKIP values may be followed by the following multiplicative suffixes:\n"
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
 "GB 1,000,000,000, G 1,073,741,824, and so on for T, P, E, Z, Y."
 msgstr ""
-"Valorile OMIS pot fi urmate de urm�toarele sufixe multiplicative:\n"
+"Valorile SALT pot fi urmate de următoarele sufixe multiplicative:\n"
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
-"GB 1,000,000,000, G 1,073,741,824, �i a�a mai departe pentru T, P, E, Z, Y."
+"GB 1,000,000,000, G 1,073,741,824, și așa mai departe pentru T, P, E, Z, Y."
 
-#: src/cmp.c:195
-#, fuzzy
+#: src/cmp.c:199
 msgid "If a FILE is '-' or missing, read standard input."
-msgstr ""
-"Dac� un FI�IER este `-' sau lipse�te, se cite�te intrarea(input) standard."
+msgstr "Dacă un FIȘIER este „-” sau lipsește, se citește intrarea standard."
 
-#: src/cmp.c:196 src/diff.c:987 src/sdiff.c:221
+#: src/cmp.c:200 src/diff.c:1047 src/sdiff.c:220
 msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
 msgstr ""
+"Starea de ieșire este 0 dacă intrările sunt aceleași, 1 dacă sunt diferite "
+"și\n"
+"2 dacă sunt probleme."
 
-#: src/cmp.c:243
-#, fuzzy, c-format
+#: src/cmp.c:247
+#, c-format
 msgid "invalid --bytes value '%s'"
-msgstr "valoare --bytes invalid� `%s'"
+msgstr "valoarea „%s”, a opțiunii „--bytes”, este nevalidă"
 
-#: src/cmp.c:269 src/diff.c:797 src/diff3.c:361 src/sdiff.c:567
-#, fuzzy, c-format
+#: src/cmp.c:273 src/diff.c:857 src/diff3.c:368 src/sdiff.c:564
+#, c-format
 msgid "missing operand after '%s'"
-msgstr "lipse�te operandul dup� `%s'"
+msgstr "lipsește operandul după „%s”"
 
-#: src/cmp.c:281 src/diff.c:799 src/diff3.c:363 src/sdiff.c:569
-#, fuzzy, c-format
+#: src/cmp.c:285 src/diff.c:859 src/diff3.c:370 src/sdiff.c:566
+#, c-format
 msgid "extra operand '%s'"
-msgstr "operand �n plus(extra) `%s'"
+msgstr "operand în plus(extra) „%s”"
 
-#: src/cmp.c:507
+#: src/cmp.c:521
 #, c-format
 msgid "%s %s differ: byte %s, line %s\n"
-msgstr "%s %s difer�: octetul %s, linia %s\n"
+msgstr "%s %s diferă: octetul %s, linia %s\n"
 
-#: src/cmp.c:523
+#: src/cmp.c:537
 #, c-format
 msgid "%s %s differ: byte %s, line %s is %3o %s %3o %s\n"
-msgstr "%s %s difer�: octetul %s, linia %s este %3o %s %3o %s\n"
+msgstr "%s %s diferă: octetul %s, din linia %s este %3o %s %3o %s\n"
 
-#: src/cmp.c:580
-#, fuzzy, c-format
-msgid "cmp: EOF on %s which is empty\n"
-msgstr "cmp: EOF �n %s\n"
-
+# EOF = End Of File
 #: src/cmp.c:594
-#, fuzzy, c-format
+#, c-format
+msgid "cmp: EOF on %s which is empty\n"
+msgstr "cmp: sfârșit de fișier(EOF) găsit în %s, care este gol\n"
+
+#: src/cmp.c:608
+#, c-format
 msgid "cmp: EOF on %s after byte %s, line %s\n"
-msgstr "%s %s difer�: octetul %s, linia %s\n"
+msgstr "cmp: sfârșit de fișier(EOF) în %s după octetul %s, linia %s\n"
 
-#: src/cmp.c:595
-#, fuzzy, c-format
+#: src/cmp.c:609
+#, c-format
 msgid "cmp: EOF on %s after byte %s, in line %s\n"
-msgstr "%s %s difer�: octetul %s, linia %s\n"
+msgstr "cmp: sfârșit de fișier(EOF) în %s după octetul %s, din linia %s\n"
 
-#: src/cmp.c:601
-#, fuzzy, c-format
+#: src/cmp.c:615
+#, c-format
 msgid "cmp: EOF on %s after byte %s\n"
-msgstr "cmp: EOF �n %s\n"
+msgstr "cmp: sfârșit de fișier(EOF) găsit în %s după octetul %s\n"
+
+#. This is a proper name. See the gettext manual, section Names.
+#: src/diff.c:50
+msgid "Paul Eggert"
+msgstr "Paul Eggert"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/diff.c:51
-msgid "Paul Eggert"
-msgstr ""
+msgid "Mike Haertel"
+msgstr "Mike Haertel"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/diff.c:52
-msgid "Mike Haertel"
-msgstr ""
+msgid "David Hayes"
+msgstr "David Hayes"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/diff.c:53
-msgid "David Hayes"
-msgstr ""
+msgid "Richard Stallman"
+msgstr "Richard Stallman"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/diff.c:54
-msgid "Richard Stallman"
-msgstr ""
-
-#. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:55
 msgid "Len Tower"
-msgstr ""
+msgstr "Len Tower"
 
-#: src/diff.c:355
-#, fuzzy, c-format
+#: src/diff.c:365
+#, c-format
 msgid "invalid context length '%s'"
-msgstr "lungime invalid� de context `%s'"
+msgstr "lungime nevalidă a contextului „%s”"
 
-#: src/diff.c:438
+#: src/diff.c:487
 #, c-format
 msgid "pagination not supported on this host"
-msgstr "pagina�ie nesuportat� de acest host"
+msgstr "sistemul acesta(gazda), nu acceptă paginarea"
 
-#: src/diff.c:453 src/diff3.c:341
+#: src/diff.c:502 src/diff3.c:348
 #, c-format
 msgid "too many file label options"
-msgstr "prea multe op�iuni de etichete fi�ier"
+msgstr "prea multe opțiuni de etichetă fișier"
 
-#: src/diff.c:530
-#, fuzzy, c-format
+#: src/diff.c:579
+#, c-format
 msgid "invalid width '%s'"
-msgstr "lungime invalid� `%s'"
+msgstr "lățime nevalidă „%s”"
 
-#: src/diff.c:534
+#: src/diff.c:583
 msgid "conflicting width options"
-msgstr "op�iuni de lungime �n conflict"
+msgstr "opțiuni de lățime în conflict"
 
-#: src/diff.c:559
-#, fuzzy, c-format
+#: src/diff.c:608
+#, c-format
 msgid "invalid horizon length '%s'"
-msgstr "lungime de orizont invalid� `%s'"
+msgstr "lungime de orizont nevalidă „%s”"
 
-#: src/diff.c:615
-#, fuzzy, c-format
+#: src/diff.c:664
+#, c-format
 msgid "invalid tabsize '%s'"
-msgstr "m�rime tab invalid� `%s'"
+msgstr "mărime tabulator nevalidă „%s”"
 
-#: src/diff.c:619
+#: src/diff.c:668
 msgid "conflicting tabsize options"
-msgstr "op�iuni m�rime tab �n conflict"
+msgstr "opțiuni mărime tabulator în conflict"
 
-#: src/diff.c:774
+# am tradus prima dată: X și Y amîndouă specificate
+# (da, și?)   «că nu-i spune mare lucru utilizatorului aplicației»
+# așa că am „adoptat” această traducere: atît X cît și Y au fost specificate
+#: src/diff.c:834
 msgid "--from-file and --to-file both specified"
-msgstr " --from-file �i --to-file sunt specificate �mpreun�"
+msgstr "s-a specificat atât „--from-file” cât și „--to-file”"
 
-#: src/diff.c:893
-#, fuzzy
+#: src/diff.c:953
 msgid "    --normal                  output a normal diff (the default)"
-msgstr "--normal  Afi�eaz� un diff normal."
+msgstr ""
+"    --normal                    afișează un diff normal (modul predefinit)"
 
-#: src/diff.c:894
-#, fuzzy
+#: src/diff.c:954
 msgid "-q, --brief                   report only when files differ"
-msgstr "-q  --brief  Afi�eaz� doar dac� fi�ierele difer�."
+msgstr "-q, --brief                     raportează doar dacă fișierele diferă"
 
-#: src/diff.c:895
-#, fuzzy
+#: src/diff.c:955
 msgid "-s, --report-identical-files  report when two files are the same"
 msgstr ""
-"-s  --report-identical-files  Raporteaz� c�nd dou� fi�iere sunt asem�n�toare."
+"-s, --report-identical-files    raportează când două fișiere sunt identice"
 
-#: src/diff.c:896
+#: src/diff.c:956
 msgid ""
 "-c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context"
 msgstr ""
+"-c, -C NUM, --context[=NUM]     afișează NUM (predefinit 3) linii de "
+"context\n"
+"                                copiat"
 
-#: src/diff.c:897
-#, fuzzy
+#: src/diff.c:957
 msgid ""
 "-u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context"
 msgstr ""
-"-w NUM  --width=NUM  Afi�eaz� cel mult NUM (implicit 130) coloane tip�rite."
+"-u, -U NUM, --unified[=NUM]     afișează NUM (predefinit 3) linii de "
+"context\n"
+"                                unificat"
 
-#: src/diff.c:898
-#, fuzzy
+#: src/diff.c:958
 msgid "-e, --ed                      output an ed script"
-msgstr "-e  --ed  Afi�eaz� un script ed."
+msgstr "-e, --ed                        afișează un script ed"
 
-#: src/diff.c:899
-#, fuzzy
+#: src/diff.c:959
 msgid "-n, --rcs                     output an RCS format diff"
-msgstr "-n  --rcs  Afi�eaz� un diff �n format RCS."
+msgstr "-n, --rcs                       afișează un diff în format RCS"
 
-#: src/diff.c:900
+#: src/diff.c:960
 msgid "-y, --side-by-side            output in two columns"
-msgstr ""
+msgstr "-y, --side-by-side              afișează în două coloane"
 
-#: src/diff.c:901
-#, fuzzy
+#: src/diff.c:961
 msgid ""
 "-W, --width=NUM               output at most NUM (default 130) print columns"
 msgstr ""
-"-w NUM  --width=NUM  Afi�eaz� cel mult NUM (implicit 130) coloane tip�rite."
+"-W, --width=NUM                 afișează cel mult NUM (predefinit 130) "
+"coloane\n"
+"                                imprimate"
 
-#: src/diff.c:902
-#, fuzzy
+#: src/diff.c:962
 msgid ""
 "    --left-column             output only the left column of common lines"
-msgstr "-l  --left-column  Afi�eaz� doar coloana din st�nga a liniilor comune."
+msgstr ""
+"    --left-column               afișează doar în coloana din stânga liniile\n"
+"                                comune"
 
-#: src/diff.c:903
-#, fuzzy
+#: src/diff.c:963
 msgid "    --suppress-common-lines   do not output common lines"
-msgstr "-s  --suppress-common-lines  Nu afi�a liniile comune."
+msgstr "    --suppress-common-lines     nu afișează liniile comune"
 
-#: src/diff.c:905
+#: src/diff.c:965
 msgid "-p, --show-c-function         show which C function each change is in"
 msgstr ""
+"-p, --show-c-function           afișează în ce funcție C se află fiecare "
+"modi-\n"
+"                                ficare"
 
-#: src/diff.c:906
+#: src/diff.c:966
 msgid "-F, --show-function-line=RE   show the most recent line matching RE"
 msgstr ""
+"-F, --show-function-line=ExpReg\n"
+"                                afișează linia cea mai recentă ce se "
+"potrivește\n"
+"                                cu ExpReg"
 
-#: src/diff.c:907
+#: src/diff.c:967
 msgid ""
 "    --label LABEL             use LABEL instead of file name and timestamp\n"
 "                                (can be repeated)"
 msgstr ""
+"    --label ETICHETA            utilizează ETICHETA în loc de numele "
+"fișierului\n"
+"                                și la marca de timp (se poate repeta)"
 
-#: src/diff.c:910
-#, fuzzy
+# Inițial, am tradus:
+# expand = extinde
+# După revizuire:
+# expand = expande
+# pentru că, alternativa, „expandează”
+# mă cam zgîrîie la urechi, plus că rimează cu
+# unele cuvinte ce sînt de evitat
+# Modificat în final la „expandează”
+#: src/diff.c:970
 msgid "-t, --expand-tabs             expand tabs to spaces in output"
-msgstr "-t  --expand-tabs  Schimb� tab-urile �n spa�ii la ie�ire(output)."
+msgstr ""
+"-t, --expand-tabs               expandează tabulatorii la spații la ieșire"
 
-#: src/diff.c:911
-#, fuzzy
+#: src/diff.c:971
 msgid "-T, --initial-tab             make tabs line up by prepending a tab"
-msgstr "-T  --initial-tab  Aliniaz� tab-urile ad�ug�nd �n fa�� un tab."
+msgstr ""
+"-T, --initial-tab               face ca tabulatorii să se alinieze, "
+"adăugând\n"
+"                                în față un tabulator"
 
-#: src/diff.c:912
-#, fuzzy
+#: src/diff.c:972
 msgid ""
 "    --tabsize=NUM             tab stops every NUM (default 8) print columns"
 msgstr ""
-"--tabsize=NUM  Opririle tab-ului vor fi la fiecare NUM (implicit 8) coloane "
-"tip�rite."
+"    --tabsize=NUM               tabulatorul se oprește la fiecare NUM "
+"(predefi-\n"
+"                                nit 8) coloane de tipărire"
 
-#: src/diff.c:913
+#: src/diff.c:973
 msgid ""
 "    --suppress-blank-empty    suppress space or tab before empty output lines"
 msgstr ""
+"    --suppress-blank-empty      suprimă spațiul sau tabulația înaintea "
+"liniilor\n"
+"                                goale de ieșire"
 
-#: src/diff.c:914
-#, fuzzy
+# De aflat ce înseamnă „pr”; pobabil „prompter”?
+# Am aflat, înseamnă printer și acțiunea sa, print.
+# De moment, voi lăsa traducerea așa.
+#: src/diff.c:974
 msgid "-l, --paginate                pass output through 'pr' to paginate it"
 msgstr ""
-"-l  --paginate  Trimite ie�irea(output) prin `pr' pentru a fi paginat�."
+"-l, --paginate                  trece ieșirea prin „pr” pentru a o pagina"
 
-#: src/diff.c:916
-#, fuzzy
+#: src/diff.c:976
 msgid ""
 "-r, --recursive                 recursively compare any subdirectories found"
-msgstr "-r  --recursive  Compar� recursiv orice subdirector �nt�lnit."
-
-#: src/diff.c:917
-msgid "    --no-dereference            don't follow symbolic links"
 msgstr ""
+"-r, --recursive                 compară recursiv orice subdirector întâlnit"
 
-#: src/diff.c:918
-#, fuzzy
+#: src/diff.c:977
+msgid "    --no-dereference            don't follow symbolic links"
+msgstr "    --no-dereference            nu urmează legăturile simbolice"
+
+#: src/diff.c:978
 msgid "-N, --new-file                  treat absent files as empty"
-msgstr "-N  --new-file  Trateaz� fi�ierele lips� ca vide."
+msgstr "-N, --new-file                  tratează fișierele lipsă ca goale"
 
-#: src/diff.c:919
-#, fuzzy
+#: src/diff.c:979
 msgid "    --unidirectional-new-file   treat absent first files as empty"
-msgstr "--unidirectional-new-file  Trateaz� primele fi�iere lips� ca vide."
+msgstr ""
+"    --unidirectional-new-file   tratează primele fișierele lipsă ca goale"
 
-#: src/diff.c:920
-#, fuzzy
+#: src/diff.c:980
 msgid "    --ignore-file-name-case     ignore case when comparing file names"
 msgstr ""
-"--ignore-file-name-case  Ignor� cazul c�nd se compar� numele de fi�iere."
+"    --ignore-file-name-case     ignoră diferențele dintre majuscule și "
+"minuscule\n"
+"                                când se compară numele de fișiere"
 
-#: src/diff.c:921
-#, fuzzy
+#: src/diff.c:981
 msgid "    --no-ignore-file-name-case  consider case when comparing file names"
 msgstr ""
-"--no-ignore-file-name-case  Ia �n calcul cazul atunci c�nd se compar� numele "
-"de fi�iere."
+"    --no-ignore-file-name-case  ia în calcul diferențele dintre majuscule "
+"și\n"
+"                                minuscule când se compară numele de fișiere"
 
-#: src/diff.c:922
-#, fuzzy
+#: src/diff.c:982
 msgid "-x, --exclude=PAT               exclude files that match PAT"
-msgstr "-x TIP  --exclude=TIP  Exclude fi�ierele care se potrivesc TIParului."
+msgstr ""
+"-x, --exclude=MODEL             exclude fișierele care se potrivesc MODELului"
 
-#: src/diff.c:923
-#, fuzzy
+#: src/diff.c:983
 msgid ""
 "-X, --exclude-from=FILE         exclude files that match any pattern in FILE"
 msgstr ""
-"-X FI�IER  --exclude-from=FI�IER  Exclude fi�ierele care se potrivesc "
-"oric�rui tipar din FI�IER."
+"-X, --exclude-from=FILE         exclude fișierele care se potrivesc "
+"oricărui\n"
+"                                tipar din FIȘIER"
 
-#: src/diff.c:924
-#, fuzzy
+#: src/diff.c:984
 msgid ""
 "-S, --starting-file=FILE        start with FILE when comparing directories"
 msgstr ""
-"-S FI�IER  --starting-file=FI�IER  �ncepe cu FI�IER �n compararea "
-"directoarelor."
+"-S, --starting-file=FIŞIER      începe cu FIȘIER când se compară directoare"
 
-#: src/diff.c:925
-#, fuzzy
+# Nu știu dacă corect n-ar fi..; «operatorii», «operanzii», mă cam zgîrîie la ureche cînd citesc textul...!
+# Trebuie să consult această temă... curînd!
+#: src/diff.c:985
 msgid ""
 "    --from-file=FILE1           compare FILE1 to all operands;\n"
 "                                  FILE1 can be a directory"
 msgstr ""
-"--from-file=FI�IER1  Compar� FI�IER1 cu to�i operanzii.  FI�IER1 poate fi "
-"director."
+"    --from-file=FIŞIER1         compară FIŞIER1 cu toți operanzii;\n"
+"                                FIŞIER1 poate să fie un director"
 
-#: src/diff.c:927
-#, fuzzy
+#: src/diff.c:987
 msgid ""
 "    --to-file=FILE2             compare all operands to FILE2;\n"
 "                                  FILE2 can be a directory"
 msgstr ""
-"--to-file=FI�IER2  Compar� to�i operanzii cu FI�IER2.  FI�IER2 poate fi "
-"director."
+"    --to-file=FIŞIER2           compară FIŞIER2 cu toți operanzii;\n"
+"                                FIŞIER2 poate să fie un director"
 
-#: src/diff.c:930
-#, fuzzy
+#: src/diff.c:990
 msgid ""
 "-i, --ignore-case               ignore case differences in file contents"
 msgstr ""
-"-i  --ignore-case  Ignor� diferen�ele de caz din con�inutul fi�ierului."
+"-i, --ignore-case               ignoră diferențele dintre majuscule și \n"
+"                                minuscule din conținutul fișierului"
 
-#: src/diff.c:931
-#, fuzzy
+#: src/diff.c:991
 msgid "-E, --ignore-tab-expansion      ignore changes due to tab expansion"
 msgstr ""
-"-E  --ignore-tab-expansion  Ignor� schimb�rile produse de modificarea tab-"
-"ului."
+"-E, --ignore-tab-expansion      ignoră modificările din cauza expandării \n"
+"                                tabulatorului"
 
-#: src/diff.c:932
-#, fuzzy
+#: src/diff.c:992
 msgid "-Z, --ignore-trailing-space     ignore white space at line end"
-msgstr "-w  --ignore-all-space  Ignor� tot spa�iul vid."
+msgstr ""
+"-Z, --ignore-trailing-space     ignoră spațiul în alb la sfârșit de linie"
 
-#: src/diff.c:933
-#, fuzzy
+#: src/diff.c:993
 msgid ""
 "-b, --ignore-space-change       ignore changes in the amount of white space"
-msgstr "-b  --ignore-space-change  Ignor� schimb�rile din spa�iul vid."
+msgstr ""
+"-b, --ignore-space-change       ignoră schimbările cantității de spațiu în "
+"alb"
 
-#: src/diff.c:934
-#, fuzzy
+#: src/diff.c:994
 msgid "-w, --ignore-all-space          ignore all white space"
-msgstr "-w  --ignore-all-space  Ignor� tot spa�iul vid."
+msgstr "-w, --ignore-all-space          ignoră toate spațiile în alb"
 
-#: src/diff.c:935
-#, fuzzy
+#: src/diff.c:995
 msgid ""
 "-B, --ignore-blank-lines        ignore changes where lines are all blank"
 msgstr ""
-"-B  --ignore-blank-lines  Ignor� schimb�rile unde toate liniile sunt "
-"goale(blank)."
+"-B, --ignore-blank-lines        ignoră schimbările unde toate liniile sunt "
+"goale"
 
-#: src/diff.c:936
-#, fuzzy
+# Mi s-a aprins „beculețul”, RE = RegularExpression (pentru englezi).
+# Așa că: „care se potrivesc RE-ului”, nu se «potrivește», de loc.
+# Pentru români, cred că „ExpNorm”, este alegerea cea mai bună;
+# mă înșelam, conform paginii:
+# https://ro.wikipedia.org/wiki/Expresie_regulat%C4%83, este:
+# „ExpReg”
+#: src/diff.c:996
 msgid "-I, --ignore-matching-lines=RE  ignore changes where all lines match RE"
 msgstr ""
-"-I RE  --ignore-matching-lines=RE  Ignor� schimb�rile la toate liniile care "
-"se potrivesc RE-ului."
+"-I, --ignore-matching-lines=ExpReg\n"
+"                                ignoră modificările din toate liniile care "
+"se\n"
+"                                potrivesc cu ExpReg"
 
-#: src/diff.c:938
-#, fuzzy
+#: src/diff.c:998
 msgid "-a, --text                      treat all files as text"
-msgstr "-a  --text  Trateaz� toate fi�ierele ca text."
+msgstr ""
+"-a, --text                      tratează toate fișierele ca fiind de text"
 
-#: src/diff.c:939
-#, fuzzy
+# de revizuit..
+#: src/diff.c:999
 msgid "    --strip-trailing-cr         strip trailing carriage return on input"
 msgstr ""
-"--strip-trailing-cr  Elimin� returul de car(carriage return) final la "
-"intrare(input)."
+"    --strip-trailing-cr         elimină returul de caret din intrarea dată"
 
-#: src/diff.c:941
-#, fuzzy
+#: src/diff.c:1001
 msgid "    --binary                    read and write data in binary mode"
-msgstr "--binary  Cite�te �i scrie date �n mod binar."
+msgstr "    --binary                    citește și scrie datele în mod binar"
 
-#: src/diff.c:944
-#, fuzzy
+#: src/diff.c:1004
 msgid ""
 "-D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs"
 msgstr ""
-"-D NUME  --ifdef=NUME  Afi�eaz� fi�ierul rezultat(merged) pentru a ar�ta "
-"diff-urile`#ifdef NAME'."
+"-D, --ifdef=NUME                generează un fișier combinat ce afișează\n"
+"                                diferențele cu „#ifdef NAME”"
 
-#: src/diff.c:945
-#, fuzzy
+# Trebuie să investighez ce înseamnă sigla «GFMT»
+# Vreo idee pentru o traducere mai bună?
+#: src/diff.c:1005
 msgid "    --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT"
 msgstr ""
-"--GTYPE-group-format=GFMT  Similar, dar formatul de intrare GTYPE se "
-"grupeaz� cu GFMT."
+"    --GTYPE-group-format=GFMT   formatează grupurile de intrare GTYPE cu GFMT"
 
-#: src/diff.c:946
-#, fuzzy
+# Trebuie să investighez ce înseamnă sigla «LFMT»
+# Vreo idee pentru o traducere mai bună?
+#: src/diff.c:1006
 msgid "    --line-format=LFMT          format all input lines with LFMT"
-msgstr "--line-format=LFMT  Similar, dar formateaz� toate liniile cu LFMT."
+msgstr ""
+"    --line-format=LFMT          formatează toate liniile de intrare cu LFMT"
 
-#: src/diff.c:947
-#, fuzzy
+# Am folosit o traducere un pic diferită față de cele două de mai de sus...
+# trebuie să investighez ce înseamnă sigla «LTYPE»
+#: src/diff.c:1007
 msgid "    --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT"
 msgstr ""
-"--LTYPE-line-format=LFMT  Similar, dar formateaz� liniile de intrare LTYPE "
-"cu LFMT."
+"    --LTYPE-line-format=LFMT    formatează liniile de intrare LTYPE cu LFMT"
 
-#: src/diff.c:948
+#: src/diff.c:1008
 msgid ""
 "  These format options provide fine-grained control over the output\n"
 "    of diff, generalizing -D/--ifdef."
 msgstr ""
+"  Aceste opțiuni de format oferă un control fin asupra rezultatului de "
+"«diff»,\n"
+"  generalizând „-D/--ifdef”."
 
-#: src/diff.c:950
-#, fuzzy
+#: src/diff.c:1010
 msgid "  LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'."
 msgstr ""
-"  LTYPE este `old', `new', sau `unchanged'.  GTYPE este LTYPE sau `changed'."
+"  LTYPE este „old”(vechi), „new”(nou) sau „unchanged” (neschimbat).\n"
+"  GTYPE este precum LTYPE sau „changed” (schimbat)."
 
-#: src/diff.c:951
-#, fuzzy
+#: src/diff.c:1011
 msgid ""
 "  GFMT (only) may contain:\n"
 "    %<  lines from FILE1\n"
@@ -991,36 +1121,36 @@ msgid ""
 "        M  L+1\n"
 "    %(A=B?T:E)  if A equals B then T else E"
 msgstr ""
-"  GFMT poate con�ine:\n"
-"    %<  linii din FI�IER1\n"
-"    %>  linii din FI�IER2\n"
-"    %=  linii comune lui FI�IER1 si FI�IER2\n"
-"    %[-][WIDTH][.[PREC]]{doxX}LETTER  specifica�ii stil printf pentru "
-"LETTER\n"
-"      LETTERs sunt dup� cum urmeaz� pentru grup nou, liter� mic� pentru grup "
-"vechi:\n"
-"        F  primul num�r de linie\n"
-"        L  ultimul num�r de linie\n"
+"  GFMT poate conține, doar:\n"
+"    %<  linii din FIȘIER\n"
+"    %>  linii din FIȘIER\n"
+"    %=  linii comune lui FIȘIER1 și FIȘIER2\n"
+"    %[-][LĂȚIME][.[PRECIZIE]]{doxX}LITERA  specificații stil «printf» "
+"pentru\n"
+"    LITERA\n"
+"      LITERA(ele) sunt după cum urmează pentru grup nou, (literă mică "
+"pentru\n"
+"      grup vechi):\n"
+"        F  primul număr de linie\n"
+"        L  ultimul număr de linie\n"
 "        N  numere de linii = L-F+1\n"
 "        E  F-1\n"
 "        M  L+1"
 
-#: src/diff.c:963
-#, fuzzy
+#: src/diff.c:1023
 msgid ""
 "  LFMT (only) may contain:\n"
 "    %L  contents of line\n"
 "    %l  contents of line, excluding any trailing newline\n"
 "    %[-][WIDTH][.[PREC]]{doxX}n  printf-style spec for input line number"
 msgstr ""
-"  LFMT poate con�ine:\n"
-"    %L  con�inut de linie\n"
-"    %l  con�inut de linie, excluz�nd orice caracter de linie nou� final\n"
-"    %[-][WIDTH][.[PREC]]{doxX}n  specifica�ii  stil printf-pentru "
-"introducerea num�rului de linie"
+"  LFMT poate conține, doar:\n"
+"    %L  conținut de linie\n"
+"    %l  conținut de linie, excluzând orice caracter de linie nouă final\n"
+"    %[-][LĂȚIME][.[PRECIZIE]{doxX}n  specificații  stil «printf» pentru\n"
+"                                     introducerea numărului de linie"
 
-#: src/diff.c:967
-#, fuzzy
+#: src/diff.c:1027
 msgid ""
 "  Both GFMT and LFMT may contain:\n"
 "    %%  %\n"
@@ -1028,251 +1158,267 @@ msgid ""
 "    %c'\\OOO'  the character with octal code OOO\n"
 "    C    the character C (other characters represent themselves)"
 msgstr ""
-" Una din GFMT sau LFMT poate con�ine:\n"
+"  Atât GFMT cât și LFMT pot să conțină:\n"
 "    %%  %\n"
 "    %c'C'  caracterul singular C\n"
-"    %c'\\OOO'  caracterul cu codul octal OOO"
+"    %c'\\OOO'  caracterul cu codul octal OOO\n"
+"    C    caracterul C (celelalte caractere se reprezintă pe ele însele)"
 
-#: src/diff.c:973
-#, fuzzy
+#: src/diff.c:1033
 msgid "-d, --minimal            try hard to find a smaller set of changes"
 msgstr ""
-"-d  --minimal  �ncearc� din greu s� g�se�ti un set mai mic de schimb�ri"
+"-d, --minimal            se străduiește să găsească un grup mai mic de "
+"schimbări"
 
-#: src/diff.c:974
-#, fuzzy
+#: src/diff.c:1034
 msgid "    --horizon-lines=NUM  keep NUM lines of the common prefix and suffix"
-msgstr "--horizon-lines=NUM  Re�ine NUM linii de prefix �i sufix comun."
+msgstr "    --horizon-lines=NUM  reține NUM linii de prefix și sufix comun"
 
-#: src/diff.c:975
-#, fuzzy
+#: src/diff.c:1035
 msgid ""
 "    --speed-large-files  assume large files and many scattered small changes"
 msgstr ""
-"-H  --speed-large-files  Presupune fi�iere mari �i multe modific�ri mici "
-"�mpr�tiate."
+"    --speed-large-files  presupune că fișierele sunt mari și că "
+"modificările\n"
+"                         sunt multe, mici și împrăștiate"
 
-#: src/diff.c:976
+#: src/diff.c:1036
 msgid ""
 "    --color[=WHEN]       color output; WHEN is 'never', 'always', or "
 "'auto';\n"
 "                           plain --color means --color='auto'"
 msgstr ""
+"    --color[=CÂND]       colorează ieșirea CÂND poate să fie "
+"„never”(niciodată),\n"
+"                         „always”(întotdeauna), sau „auto”(valoarea "
+"implicită)"
 
-#: src/diff.c:978
+#: src/diff.c:1038
 msgid ""
 "    --palette=PALETTE    the colors to use when --color is active; PALETTE "
 "is\n"
 "                           a colon-separated list of terminfo capabilities"
 msgstr ""
+"    --palette=PALETA     paleta de culori ce se utilizează când opțiunea\n"
+"                         „--color” este prezentă; PALETA este o listă "
+"separată\n"
+"                         prin două puncte(:) de termeni(nume de culoare)"
 
-#: src/diff.c:981
+#: src/diff.c:1041
 msgid "    --help               display this help and exit"
-msgstr ""
+msgstr "    --help               afișează acest mesaj de ajutor și iese"
 
-#: src/diff.c:982
-#, fuzzy
+#: src/diff.c:1042
 msgid "-v, --version            output version information and exit"
-msgstr "-v  --version  Tip�re�te informa�ii despre versiune."
+msgstr "-v, --version            afișează informații despre versiune și iese"
 
-#: src/diff.c:984
-#, fuzzy
+#: src/diff.c:1044
 msgid "FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE' or 'FILE DIR'."
 msgstr ""
-"FI�IEREle sunt `FI�IER1 FI�IER2' sau `DIR1 DIR2' sau `DIR FI�IER...' or "
-"`FI�IER... DIR'."
+"FIȘIERE sunt „FIȘIER1 FIȘIER2” sau „DIR1 DIR2” sau „DIR FIȘIER” sau „FIȘIER "
+"DIR”."
 
-#: src/diff.c:985
-#, fuzzy
+# Nu știu cum este corect:
+# - pe FIȘIER(e), sau:
+# - în FIȘIER(e)
+#: src/diff.c:1045
 msgid ""
 "If --from-file or --to-file is given, there are no restrictions on FILE(s)."
 msgstr ""
-"Dac� --from-file sau --to-file sunt precizate, nu exist� restric�ii pe "
-"FI�IERE."
+"Dacă --from-file sau --to-file sunt precizate, nu există restricții pentru "
+"FIȘIER(e)."
 
-#: src/diff.c:986 src/diff3.c:533 src/sdiff.c:220
-#, fuzzy
+#: src/diff.c:1046 src/diff3.c:531 src/sdiff.c:219
 msgid "If a FILE is '-', read standard input."
-msgstr "Dac� FI�IER este `-', se cite�te intrarea(input) standard."
+msgstr "Dacă un FIȘIER este „-”, se citește intrarea standard."
 
-#: src/diff.c:996
+#: src/diff.c:1056
 #, c-format
 msgid "Usage: %s [OPTION]... FILES\n"
-msgstr "Folosire: %s [OP�IUNE]... FI�IERE\n"
+msgstr "Utilizare: %s [OPȚIUNE]... FIȘIERE\n"
 
-#: src/diff.c:997
-#, fuzzy
+#: src/diff.c:1057
 msgid "Compare FILES line by line."
-msgstr "Compar� fi�ierele linie cu linie."
+msgstr "Compară FIȘIERELE linie cu linie."
 
-#: src/diff.c:1034
-#, fuzzy, c-format
+# opțiunea %s are valoarea „%s” în conflict cu altă opțiune
+# În realitate s-ar putea să fie:
+# opțiunea %s are valoarea „%s” în conflict cu altă valoare (trebuie văzut)
+#: src/diff.c:1094
+#, c-format
 msgid "conflicting %s option value '%s'"
-msgstr "Exist� un conflict cu %s �n valoarea op�iunii `%s'"
+msgstr "opțiunea %s are valoarea „%s” în conflict cu altă opțiune"
 
-#: src/diff.c:1047
+#: src/diff.c:1107
 #, c-format
 msgid "conflicting output style options"
-msgstr "Conflict �n op�iunile stilului de afi�are(output)"
+msgstr "opțiunile stilului de afișare sunt în conflict"
 
-#: src/diff.c:1063
-#, fuzzy, c-format
+#: src/diff.c:1123
+#, c-format
 msgid "invalid color '%s'"
-msgstr "lungime invalid� de context `%s'"
+msgstr "culoare nevalidă „%s”"
 
-#: src/diff.c:1119 src/diff.c:1329
+#: src/diff.c:1197 src/diff.c:1401
 #, c-format
 msgid "Only in %s: %s\n"
-msgstr "Doar �n %s: %s\n"
+msgstr "Doar în %s: %s\n"
 
-#: src/diff.c:1253
-#, fuzzy
+#: src/diff.c:1325
 msgid "cannot compare '-' to a directory"
-msgstr "nu se poate compara `-' cu un director"
+msgstr "nu se poate compara „-” cu un director"
 
-#: src/diff.c:1288
+#: src/diff.c:1360
 msgid "-D option not supported with directories"
-msgstr "op�iunea -D nu este compatibil� cu directoarele"
+msgstr "opțiunea „-D” nu este compatibilă cu directoarele"
 
-#: src/diff.c:1297
+#: src/diff.c:1369
 #, c-format
 msgid "Common subdirectories: %s and %s\n"
-msgstr "Subdirectoare comune: %s �i %s.\n"
+msgstr "Subdirectoare comune: %s și %s.\n"
 
-#: src/diff.c:1339 src/diff.c:1389
+#: src/diff.c:1411 src/diff.c:1461
 #, c-format
 msgid "File %s is a %s while file %s is a %s\n"
-msgstr "Fi�ierul %s este un %s pe c�nd fi�ierul %s este un %s.\n"
+msgstr "Fișierul %s este un %s pe când fișierul %s este un %s.\n"
 
-#: src/diff.c:1375
-#, fuzzy, c-format
+#: src/diff.c:1447
+#, c-format
 msgid "Symbolic links %s and %s differ\n"
-msgstr "Fi�ierele %s �i %s difer�\n"
+msgstr "Legăturile simbolice %s și %s sunt diferite\n"
 
-#: src/diff.c:1462
+#: src/diff.c:1534
 #, c-format
 msgid "Files %s and %s are identical\n"
-msgstr "Fi�ierele %s �i %s sunt identice\n"
+msgstr "Fișierele %s și %s sunt identice\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff3.c:43
-#, fuzzy
+#: src/diff3.c:51
 msgid "Randy Smith"
-msgstr "Scris de Randy Smith."
+msgstr "Randy Smith"
 
-#: src/diff3.c:356
+#: src/diff3.c:363
 #, c-format
 msgid "incompatible options"
-msgstr "op�iuni incompatibile"
+msgstr "opțiuni incompatibile"
 
-#: src/diff3.c:396
-#, fuzzy
+#: src/diff3.c:403
 msgid "'-' specified for more than one input file"
-msgstr "`-' specificat pentru mai mult de un fi�ier de intrare(input)"
+msgstr "s-a specificat „-” pentru mai mult de un fișier de intrare"
 
-#: src/diff3.c:447 src/diff3.c:1295 src/diff3.c:1698 src/diff3.c:1753
-#: src/sdiff.c:308 src/sdiff.c:846 src/sdiff.c:857
+#: src/diff3.c:445 src/diff3.c:1284 src/diff3.c:1683 src/diff3.c:1738
+#: src/sdiff.c:306 src/sdiff.c:843 src/sdiff.c:854
 msgid "read failed"
-msgstr "citire e�uat�"
+msgstr "citire eșuată"
+
+#: src/diff3.c:478
+msgid "-A, --show-all              output all changes, bracketing conflicts"
+msgstr ""
+"-A, --show-all              afișează toate modificările, închizând "
+"conflictele\n"
+"                              între paranteze"
 
 #: src/diff3.c:480
-#, fuzzy
-msgid "-A, --show-all              output all changes, bracketing conflicts"
-msgstr "-A  --show-all  Afi�eaz� toate modific�rile, conflictele de paranteze."
-
-#: src/diff3.c:482
-#, fuzzy
 msgid ""
 "-e, --ed                    output ed script incorporating changes\n"
 "                                from OLDFILE to YOURFILE into MYFILE"
 msgstr ""
-"-e  --ed  Trimite(output) modific�rile nerezultate(unmerged) de la "
-"FI�IER_VECHI la  FI�IERUL_VOSTRU �n FI�IERUL_MEU.."
+"-e, --ed                    afișează un script «ed» ce incorporează "
+"modifică-\n"
+"                              rile dintre FIȘIERUL_VECHI și FIȘIERUL_TĂU "
+"în \n"
+"                              FIȘIERUL_MEU"
 
-#: src/diff3.c:484
-#, fuzzy
+#: src/diff3.c:482
 msgid "-E, --show-overlap          like -e, but bracket conflicts"
 msgstr ""
-"-E  --show-overlap  Afi�eaz� modific�rile nerezultate(unmerged), conflictele "
-"de paranteze."
+"-E, --show-overlap          ca „-e”, dar închizând conflictele între "
+"paranteze"
 
-#: src/diff3.c:485
-#, fuzzy
+#: src/diff3.c:483
 msgid ""
 "-3, --easy-only             like -e, but incorporate only nonoverlapping "
 "changes"
 msgstr ""
-"-3  --easy-only  Afi�eaz� schimb�rile nesuprapuse(nonoverlapping) �i "
-"nerezultate(unmerged)."
+"-3, --easy-only             ca „-e”, dar încorporează doar modificările ce "
+"nu\n"
+"                              se suprapun"
 
-#: src/diff3.c:486
-#, fuzzy
+#: src/diff3.c:484
 msgid ""
 "-x, --overlap-only          like -e, but incorporate only overlapping changes"
-msgstr "-x  --overlap-only  Afi�eaz� toate schimb�rile de suprapunere."
+msgstr ""
+"-x, --overlap-only          ca „-e”, dar încorporează doar modificările ce "
+"se\n"
+"                              suprapun"
 
-#: src/diff3.c:487
+#: src/diff3.c:485
 msgid "-X                          like -x, but bracket conflicts"
 msgstr ""
+"-X                          ca „-x”, dar închide conflictele între paranteze"
+
+#: src/diff3.c:486
+msgid "-i                          append 'w' and 'q' commands to ed scripts"
+msgstr ""
+"-i                          adaugă comenzile „w” și „q” la scripturile «ed»"
 
 #: src/diff3.c:488
-#, fuzzy
-msgid "-i                          append 'w' and 'q' commands to ed scripts"
-msgstr "-i  Adaug� comenzile `w' �i `q' la scripturile ed."
-
-#: src/diff3.c:490
 msgid ""
 "-m, --merge                 output actual merged file, according to\n"
 "                                -A if no other options are given"
 msgstr ""
+"-m, --merge                 afișează fișierul combinat, conform „-A” dacă "
+"nu\n"
+"                              sunt date alte opțiuni"
 
-#: src/diff3.c:493
-#, fuzzy
+#: src/diff3.c:491
 msgid "-a, --text                  treat all files as text"
-msgstr "-a  --text  Trateaz� toate fi�ierele ca text."
+msgstr "-a, --text                  tratează toate fișierele ca text"
 
-#: src/diff3.c:494
-#, fuzzy
+# de revizuit...
+#: src/diff3.c:492
 msgid "    --strip-trailing-cr     strip trailing carriage return on input"
 msgstr ""
-"--strip-trailing-cr  Elimin� returul de car(carriage return) final la "
-"intrare(input)."
+"    --strip-trailing-cr     elimină returul de caret final din intrarea dată"
+
+#: src/diff3.c:493
+msgid "-T, --initial-tab           make tabs line up by prepending a tab"
+msgstr ""
+"-T, --initial-tab           aliniază tabulatorii adăugând în față un "
+"tabulator"
+
+#: src/diff3.c:494
+msgid "    --diff-program=PROGRAM  use PROGRAM to compare files"
+msgstr ""
+"    --diff-program=PROGRAM  utilizează PROGRAM pentru a compara fișierele"
 
 #: src/diff3.c:495
-#, fuzzy
-msgid "-T, --initial-tab           make tabs line up by prepending a tab"
-msgstr "-T  --initial-tab  Aliniaz� tab-urile ad�ug�nd �n fa�� un tab."
-
-#: src/diff3.c:496
-#, fuzzy
-msgid "    --diff-program=PROGRAM  use PROGRAM to compare files"
-msgstr "--diff-program=PROGRAM  Folose�te PROGRAM pentru a compara fi�ierele."
-
-#: src/diff3.c:497
 msgid ""
 "-L, --label=LABEL           use LABEL instead of file name\n"
 "                                (can be repeated up to three times)"
 msgstr ""
+"-L, --label=ETICHETA        utilizează ETICHETA în loc de numele fișierului\n"
+"                              (poate fi repetat de până la trei ori)"
 
-#: src/diff3.c:500
+#: src/diff3.c:498
 msgid "    --help                  display this help and exit"
-msgstr ""
+msgstr "    --help                  afișează acest mesaj de ajutor și iese"
 
-#: src/diff3.c:501
-#, fuzzy
+#: src/diff3.c:499
 msgid "-v, --version               output version information and exit"
-msgstr "-v  --version  Tip�re�te informa�ii despre versiune."
+msgstr ""
+"-v, --version               afișează informații despre versiune și iese"
 
-#: src/diff3.c:510
+#: src/diff3.c:508
 #, c-format
 msgid "Usage: %s [OPTION]... MYFILE OLDFILE YOURFILE\n"
-msgstr "Folosire: %s [OP�IUNE]... FI�IERUL_MEU FI�IER_VECHI FI�IERUL_T�U\n"
+msgstr "Utilizare: %s [OPȚIUNE]... FIȘIERUL_MEU FIȘIERUL_VECHI FIȘIERUL_TĂU\n"
 
-#: src/diff3.c:512
+#: src/diff3.c:510
 msgid "Compare three files line by line."
-msgstr "Compar� trei fi�iere linie cu linie"
+msgstr "Compară trei fișiere linie cu linie."
 
-#: src/diff3.c:522
+#: src/diff3.c:520
 msgid ""
 "\n"
 "The default output format is a somewhat human-readable representation of\n"
@@ -1285,208 +1431,221 @@ msgid ""
 "and output the actual merged file.  For unusual input, this is more\n"
 "robust than using ed.\n"
 msgstr ""
+"\n"
+"Formatul predefinit de ieșire este o reprezentare mai mult sau mai puțin\n"
+"lizibilă a modificărilor.\n"
+"\n"
+"Opțiunile „-e”, „-E”, „-x”, „-X” (și corespondentele lor lungi) generează "
+"un\n"
+"script «ed» în locul rezultatului predefinit.\n"
+"\n"
+"În cele din urmă, opțiunea „-m”/„--merge” face ca «diff3» să efectueze "
+"îmbinarea\n"
+"intern și să afișeze fișierul îmbinat.  Pentru anumite intrări, acest lucru\n"
+"este mai robust decât utilizarea lui ed.\n"
 
-#: src/diff3.c:534
+#: src/diff3.c:532
 msgid "Exit status is 0 if successful, 1 if conflicts, 2 if trouble."
 msgstr ""
+"Starea de ieșire este 0 dacă are succes, 1 dacă există conflicte și 2 dacă "
+"sunt\n"
+"probleme."
 
-#: src/diff3.c:727
+#: src/diff3.c:725
 msgid "internal error: screwup in format of diff blocks"
-msgstr "eroare intern�: z�p�ceal� �n formatul blocurilor diff"
+msgstr "eroare internă: confuzie în formatul blocurilor diff"
 
-#: src/diff3.c:1022
+#: src/diff3.c:1015
 #, c-format
 msgid "%s: diff failed: "
-msgstr "%s: diff e�uat: "
+msgstr "%s: diff eșuat: "
 
-#: src/diff3.c:1044
+#: src/diff3.c:1037
 msgid "internal error: invalid diff type in process_diff"
-msgstr "eroare intern�: tip diff invalid �n process_diff"
+msgstr "eroare internă: tip diff nevalid în process_diff"
 
-#: src/diff3.c:1069
+#: src/diff3.c:1060
 msgid "invalid diff format; invalid change separator"
-msgstr "format diff invalid; separator de modificare invalid"
+msgstr "format diff nevalid; separator de modificare nevalid"
 
-#: src/diff3.c:1305
+#: src/diff3.c:1294
 msgid "invalid diff format; incomplete last line"
-msgstr "format diff invalid; ultim�-linie incomplet�"
+msgstr "format diff nevalid; ultima-linie incompletă"
 
-#: src/diff3.c:1329 src/sdiff.c:276 src/util.c:969
-#, fuzzy, c-format
+#: src/diff3.c:1318 src/sdiff.c:274 src/util.c:1069
+#, c-format
 msgid "subsidiary program '%s' could not be invoked"
-msgstr "programul subsidiar `%s' nu a fost g�sit"
+msgstr "programul subsidiar „%s'” nu a putut fi invocat"
 
-#: src/diff3.c:1354
+#: src/diff3.c:1343
 msgid "invalid diff format; incorrect leading line chars"
-msgstr "format diff invalid; caractere precedente liniei incorecte"
+msgstr "format diff nevalid; caractere la începutul liniei incorecte"
 
-#: src/diff3.c:1427
+#: src/diff3.c:1416
 msgid "internal error: invalid diff type passed to output"
-msgstr "eroare intern�: tip invalid de diff trimis spre ie�ire(output)"
+msgstr "eroare internă: tip nevalid de diff trimis spre ieșire"
 
-#: src/diff3.c:1700 src/diff3.c:1757
+#: src/diff3.c:1685 src/diff3.c:1742
 msgid "input file shrank"
-msgstr "fi�ier de intrare(input) mic�orat"
+msgstr "fișierul de intrare s-a micșorat"
 
-#: src/dir.c:156
-#, fuzzy, c-format
+#: src/dir.c:154
+#, c-format
 msgid "cannot compare file names '%s' and '%s'"
-msgstr "nu se pot compara numele de fi�iere `%s' �i `%s'"
+msgstr "nu se pot compara numele de fișiere „%s” și „%s”"
 
-#: src/dir.c:225
+#: src/dir.c:223
 #, c-format
 msgid "%s: recursive directory loop"
-msgstr ""
+msgstr "%s: buclă de director recursiv"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/sdiff.c:44
-#, fuzzy
 msgid "Thomas Lord"
-msgstr "Scris de Thomas Lord."
+msgstr "Thomas Lord"
 
-#: src/sdiff.c:174
-#, fuzzy
+#: src/sdiff.c:173
 msgid ""
 "-o, --output=FILE            operate interactively, sending output to FILE"
 msgstr ""
-"-o FI�IER  --output=FI�IER  Opereaz� interactiv, trimi��nd outputul spre "
-"FI�IER."
+"-o, --output=FIȘIER          operează interactiv, trimițând rezultatul "
+"către\n"
+"                               fișierul FIȘIER"
 
-#: src/sdiff.c:176
-#, fuzzy
+#: src/sdiff.c:175
 msgid ""
 "-i, --ignore-case            consider upper- and lower-case to be the same"
 msgstr ""
-"-i  --ignore-case  Consider� majusculele �i minusculele ca fiind acelea�i."
+"-i, --ignore-case            consideră majusculele și minusculele ca fiind\n"
+"                               același lucru"
 
-#: src/sdiff.c:177
-#, fuzzy
+#: src/sdiff.c:176
 msgid "-E, --ignore-tab-expansion   ignore changes due to tab expansion"
 msgstr ""
-"-E  --ignore-tab-expansion  Ignor� schimb�rile produse de modificarea tab-"
-"ului."
+"-E, --ignore-tab-expansion   ignoră schimbările produse de expandarea "
+"tabula-\n"
+"                               torului"
+
+#: src/sdiff.c:177
+msgid "-Z, --ignore-trailing-space  ignore white space at line end"
+msgstr "-Z, --ignore-trailing-space  ignoră spațiul în alb la sfârșit de linie"
 
 #: src/sdiff.c:178
-#, fuzzy
-msgid "-Z, --ignore-trailing-space  ignore white space at line end"
-msgstr "-w  --ignore-all-space  Ignor� tot spa�iul vid."
-
-#: src/sdiff.c:179
-#, fuzzy
 msgid ""
 "-b, --ignore-space-change    ignore changes in the amount of white space"
-msgstr "-b  --ignore-space-change  Ignor� schimb�rile din spa�iul vid."
+msgstr ""
+"-b, --ignore-space-change    ignoră diferențele din cantitatea de spațiu în "
+"alb"
+
+#: src/sdiff.c:179
+msgid "-W, --ignore-all-space       ignore all white space"
+msgstr "-W, --ignore-all-space       ignoră tot spațiul în alb"
 
 #: src/sdiff.c:180
-#, fuzzy
-msgid "-W, --ignore-all-space       ignore all white space"
-msgstr "-W  --ignore-all-space  Ignor� tot spa�iul gol."
-
-#: src/sdiff.c:181
-#, fuzzy
 msgid "-B, --ignore-blank-lines     ignore changes whose lines are all blank"
 msgstr ""
-"-B  --ignore-blank-lines  Ignor� schimb�rile unde toate liniile sunt "
-"goale(blank)."
+"-B, --ignore-blank-lines     ignoră schimbările în care toate liniile sunt "
+"goale"
 
-#: src/sdiff.c:182
-#, fuzzy
+#: src/sdiff.c:181
 msgid "-I, --ignore-matching-lines=RE  ignore changes all whose lines match RE"
 msgstr ""
-"-I RE  --ignore-matching-lines=RE  Ignor� schimb�rile la toate liniile care "
-"se potrivesc RE-ului."
+"-I, --ignore-matching-lines=ExpReg\n"
+"                               ignoră modificările din toate liniile care "
+"se\n"
+"                               potrivesc cu ExpReg"
 
-#: src/sdiff.c:183
-#, fuzzy
+# de revizuit...
+#: src/sdiff.c:182
 msgid "    --strip-trailing-cr      strip trailing carriage return on input"
 msgstr ""
-"--strip-trailing-cr  Elimin� returul de car(carriage return) final la "
-"intrare(input)."
+"    --strip-trailing-cr      elimină returul de caret final din intrarea dată"
 
-#: src/sdiff.c:184
-#, fuzzy
+#: src/sdiff.c:183
 msgid "-a, --text                   treat all files as text"
-msgstr "-a  --text  Trateaz� toate fi�ierele ca text."
+msgstr "-a, --text                   tratează toate fișierele ca text"
 
-#: src/sdiff.c:186
-#, fuzzy
+#: src/sdiff.c:185
 msgid ""
 "-w, --width=NUM              output at most NUM (default 130) print columns"
 msgstr ""
-"-w NUM  --width=NUM  Afi�eaz� cel mult NUM (implicit 130) coloane tip�rite."
+"-w, --width=NUM              afișează cel mult NUM (predefinit 130) coloane\n"
+"                               imprimate"
 
-#: src/sdiff.c:187
-#, fuzzy
+#: src/sdiff.c:186
 msgid ""
 "-l, --left-column            output only the left column of common lines"
-msgstr "-l  --left-column  Afi�eaz� doar coloana din st�nga a liniilor comune."
+msgstr ""
+"-l, --left-column            afișează doar coloana din stânga a liniilor "
+"comune"
 
-#: src/sdiff.c:188
-#, fuzzy
+#: src/sdiff.c:187
 msgid "-s, --suppress-common-lines  do not output common lines"
-msgstr "-s  --suppress-common-lines  Nu afi�a liniile comune."
+msgstr "-s, --suppress-common-lines  nu afișează liniile comune"
+
+# Nu sînt sigur:
+# extinde tabulatorii la spatii la ieșire
+# sau:
+# extinde tabulatorii în spatii la ieșire
+#: src/sdiff.c:189
+msgid "-t, --expand-tabs            expand tabs to spaces in output"
+msgstr ""
+"-t, --expand-tabs            expandează tabulatorii la spatii la ieșire"
 
 #: src/sdiff.c:190
-#, fuzzy
-msgid "-t, --expand-tabs            expand tabs to spaces in output"
-msgstr "-t  --expand-tabs  Schimb� tab-urile �n spa�ii la ie�ire(output)."
-
-#: src/sdiff.c:191
-#, fuzzy
 msgid ""
 "    --tabsize=NUM            tab stops at every NUM (default 8) print columns"
 msgstr ""
-"--tabsize=NUM  Opririle tab-ului vor fi la fiecare NUM (implicit 8) coloane "
-"tip�rite."
+"    --tabsize=NUM            tabulatorul se oprește la fiecare NUM (implicit "
+"8)\n"
+"                               coloane imprimate"
 
-#: src/sdiff.c:193
-#, fuzzy
+#: src/sdiff.c:192
 msgid "-d, --minimal                try hard to find a smaller set of changes"
 msgstr ""
-"-d  --minimal  �ncearc� din greu s� g�se�ti un set mai mic de schimb�ri"
+"-d, --minimal                se străduiește să găsească un grup mai mic de\n"
+"                               schimbări"
 
-#: src/sdiff.c:194
-#, fuzzy
+#: src/sdiff.c:193
 msgid ""
 "-H, --speed-large-files      assume large files, many scattered small changes"
 msgstr ""
-"-H  --speed-large-files  Presupune fi�iere mari �i multe modific�ri mici "
-"�mpr�tiate."
+"-H, --speed-large-files      presupune că fișierele sunt mari și că "
+"modifică-\n"
+"                               rile sunt multe, mici și împrăștiate"
 
-#: src/sdiff.c:195
-#, fuzzy
+#: src/sdiff.c:194
 msgid "    --diff-program=PROGRAM   use PROGRAM to compare files"
-msgstr "--diff-program=PROGRAM  Folose�te PROGRAM pentru a compara fi�ierele."
+msgstr ""
+"    --diff-program=PROGRAM   utilizează PROGRAM pentru a compara fișierele"
+
+#: src/sdiff.c:196
+msgid "    --help                   display this help and exit"
+msgstr "    --help                   afișează acest mesaj de ajutor și iese"
 
 #: src/sdiff.c:197
-msgid "    --help                   display this help and exit"
-msgstr ""
-
-#: src/sdiff.c:198
-#, fuzzy
 msgid "-v, --version                output version information and exit"
-msgstr "-v  --version  Tip�re�te informa�ii despre versiune."
+msgstr ""
+"-v, --version                afișează informații despre versiune și iese"
 
-#: src/sdiff.c:207
+#: src/sdiff.c:206
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
-msgstr "Folosire: %s [OP�IUNE]... FI�IER1 FI�IER2\n"
+msgstr "Utilizare: %s [OPȚIUNE]... FIȘIER FIȘIER\n"
 
-#: src/sdiff.c:209
-#, fuzzy
+#: src/sdiff.c:208
 msgid "Side-by-side merge of differences between FILE1 and FILE2."
-msgstr "Analiz� pas cu pas a diferen�elor de fi�iere."
+msgstr "Combinarea pe două coloane a diferențelor dintre FIȘIER1 și FIȘIER2."
 
-#: src/sdiff.c:330
+#: src/sdiff.c:328
 msgid "cannot interactively merge standard input"
-msgstr "nu poate rezulta(merge) interactiv intrarea(input) standard"
+msgstr "nu se poate combina interactiv cu intrarea standard"
 
-#: src/sdiff.c:597
+#: src/sdiff.c:594
 msgid "both files to be compared are directories"
-msgstr "ambele fi�iere de comparat sunt directoare"
+msgstr "ambele fișiere de comparat sunt directoare"
 
-#: src/sdiff.c:820
-#, fuzzy
+#: src/sdiff.c:817
 msgid ""
 "ed:\tEdit then use both versions, each decorated with a header.\n"
 "eb:\tEdit then use both versions.\n"
@@ -1499,54 +1658,38 @@ msgid ""
 "v:\tVerbosely include common lines.\n"
 "q:\tQuit.\n"
 msgstr ""
-"ed:\tEditeaz� apoi folose�te ambele versiuni, fiecare decorat� cu un cap de "
-"tabel.\n"
-"eb:\tEditeaz� apoi folose�te ambele versiuni.\n"
-"el:\tEditeaz� apoi folose�te versiunea din st�nga.\n"
-"er:\tEditeaz� apoi folose�te versiunea din dreapta.\n"
-"e:\tEditeaz� o versiune nou�.\n"
-"l:\tFolose�te versiunea din st�nga.\n"
-"r:\tFolose�te versiunea din dreapta.\n"
-"s:\tInclude silen�ios liniile comune.\n"
+"ed:\tEditează apoi folosește ambele versiuni, fiecare decorată cu un antet.\n"
+"eb:\tEditează apoi folosește ambele versiuni\n"
+"el sau e1:\tEditează apoi folosește versiunea din stânga.\n"
+"er sau e2:\tEditează apoi folosește versiunea din dreapta.\n"
+"e:\tIgnoră ambele versiuni și editează o versiune nouă.\n"
+"l sau 1:\tFolosește versiunea din stânga.\n"
+"r sau 2:\tFolosește versiunea din dreapta.\n"
+"s:\tInclude silențios liniile comune.\n"
 "v:\tInclude detaliat liniile comune.\n"
-"q:\tIe�ire.\n"
+"q:\tIeșire.\n"
 
-#: src/util.c:662
-#, fuzzy, c-format
+#: src/util.c:755
+#, c-format
 msgid "unrecognized prefix: %s"
-msgstr "%s: op�iune necunoscut� `--%s'\n"
+msgstr "prefix nerecunoscut: %s"
 
-#: src/util.c:692
+#: src/util.c:785
 #, c-format
 msgid "unparsable value for --palette"
-msgstr ""
+msgstr "valoare imposibil de analizat pentru opțiunea „--palette”"
 
-#, fuzzy
-#~ msgid "invalid %s%s argument '%s'"
-#~ msgstr "valoare --bytes invalid� `%s'"
-
-#, fuzzy
-#~ msgid "%s: option '--%s' doesn't allow an argument\n"
-#~ msgstr "%s: op�iunea `--%s' nu permite parametri\n"
-
-#, fuzzy
-#~ msgid "%s: unrecognized option '--%s'\n"
-#~ msgstr "%s: op�iune necunoscut� `--%s'\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' is ambiguous\n"
-#~ msgstr "%s: op�iunea `-W %s' este ambigu�\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
-#~ msgstr "%s: op�iunea `-W %s' nu permite parametri\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' requires an argument\n"
-#~ msgstr "%s: op�iunea `%s' necesit� un parametru\n"
+#~ msgid "%s: option `--%s' doesn't allow an argument\n"
+#~ msgstr "%s: opţiunea `--%s' nu permite parametri\n"
 
 #~ msgid "%s: illegal option -- %c\n"
-#~ msgstr "%s: op�iune ilegal� -- %c\n"
+#~ msgstr "%s: opţiune ilegală -- %c\n"
+
+#~ msgid "%s: option `-W %s' is ambiguous\n"
+#~ msgstr "%s: opţiunea `-W %s' este ambiguă\n"
+
+#~ msgid "%s: option `-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: opţiunea `-W %s' nu permite parametri\n"
 
 #~ msgid ""
 #~ "This program comes with NO WARRANTY, to the extent permitted by law.\n"
@@ -1554,41 +1697,41 @@ msgstr ""
 #~ "under the terms of the GNU General Public License.\n"
 #~ "For more information about these matters, see the files named COPYING."
 #~ msgstr ""
-#~ "Acest program NU vine cu NICI O GARAN�IE, �n m�sura permis� de lege.\n"
-#~ "Pute�i redistribui copii ale acestui program\n"
-#~ "sub termenii Licen�ei Publice Generale GNU.\n"
-#~ "Pentru mai multe informa�ii despre aceste chestiuni, citi�i fi�ierul "
+#~ "Acest program NU vine cu NICI O GARANŢIE, în măsura permisă de lege.\n"
+#~ "Puteţi redistribui copii ale acestui program\n"
+#~ "sub termenii Licenţei Publice Generale GNU.\n"
+#~ "Pentru mai multe informaţii despre aceste chestiuni, citiţi fişierul "
 #~ "numit COPYING."
 
 #~ msgid "Written by Torbjorn Granlund and David MacKenzie."
-#~ msgstr "Scris de Torbjorn Granlund �i David MacKenzie."
+#~ msgstr "Scris de Torbjorn Granlund şi David MacKenzie."
 
 #~ msgid "-i SKIP1:SKIP2  --ignore-initial=SKIP1:SKIP2"
 #~ msgstr "-i OMIS1:OMIS2  --ignore-initial=OMIS1:OMIS2"
 
 #~ msgid "-s  --quiet  --silent  Output nothing; yield exit status only."
 #~ msgstr ""
-#~ "-s  --quiet  --silent  Nu tip�re�te nimic; anun��(yield) doar starea de "
-#~ "ie�ire."
+#~ "-s  --quiet  --silent  Nu tipăreşte nimic; anunţă(yield) doar starea de "
+#~ "ieşire."
 
 #~ msgid "--help  Output this help."
-#~ msgstr "--help  Tip�re�te acest ajutor."
+#~ msgstr "--help  Tipăreşte acest ajutor."
 
 #~ msgid "Report bugs to <bug-gnu-utils@gnu.org>."
-#~ msgstr "Raporta�i erorile(bugs)la <bug-gnu-utils@gnu.org>."
+#~ msgstr "Raportaţi erorile(bugs)la <bug-gnu-utils@gnu.org>."
 
 #~ msgid ""
 #~ "Written by Paul Eggert, Mike Haertel, David Hayes,\n"
 #~ "Richard Stallman, and Len Tower."
 #~ msgstr ""
 #~ "Scris de Paul Eggert, Mike Haertel, David Hayes,\n"
-#~ "Richard Stallman, �i Len Tower."
+#~ "Richard Stallman, şi Len Tower."
 
 #~ msgid "`-%ld' option is obsolete; use `-%c %ld'"
-#~ msgstr "`-%ld' op�iunea este �nvechit�; folosi�i `-%c %ld'"
+#~ msgstr "`-%ld' opţiunea este învechită; folosiţi `-%c %ld'"
 
 #~ msgid "`-%ld' option is obsolete; omit it"
-#~ msgstr "`-%ld' op�iunea este �nvechit�; omite�i-o"
+#~ msgstr "`-%ld' opţiunea este învechită; omiteţi-o"
 
 #~ msgid ""
 #~ "-c  -C NUM  --context[=NUM]  Output NUM (default 3) lines of copied "
@@ -1599,14 +1742,14 @@ msgstr ""
 #~ "  -p  --show-c-function  Show which C function each change is in.\n"
 #~ "  -F RE  --show-function-line=RE  Show the most recent line matching RE."
 #~ msgstr ""
-#~ "-c  -C NUM  --context[=NUM]  Tip�re�te NUM (implicit 3) linii de "
+#~ "-c  -C NUM  --context[=NUM]  Tipăreşte NUM (implicit 3) linii de "
 #~ "contextcopiat.\n"
-#~ "-u  -U NUM  --unified[=NUM]  Tip�re�te NUM (implicit 3) linii de "
+#~ "-u  -U NUM  --unified[=NUM]  Tipăreşte NUM (implicit 3) linii de "
 #~ "contextunificat.\n"
-#~ "  --label ETICHET�  Folose�te ETICHET� �n loc de nume fi�ier.\n"
-#~ "  -p  --show-c-function  Afi�eaz� fiecare schimbare din fiecare func�ie "
+#~ "  --label ETICHETĂ  Foloseşte ETICHETĂ în loc de nume fişier.\n"
+#~ "  -p  --show-c-function  Afişează fiecare schimbare din fiecare funcţie "
 #~ "C.\n"
-#~ "  -F RE  --show-function-line=RE  Afi�eaz� cele mai recente linii care se "
+#~ "  -F RE  --show-function-line=RE  Afişează cele mai recente linii care se "
 #~ "potrivesc RE."
 
 #~ msgid ""
@@ -1615,33 +1758,33 @@ msgstr ""
 #~ "  --left-column  Output only the left column of common lines.\n"
 #~ "  --suppress-common-lines  Do not output common lines."
 #~ msgstr ""
-#~ "-y  --side-by-side  Afi�eaz� pe dou� coloane.\n"
-#~ "  -W NUM  --width=NUM  Afi�eaz� cel mult NUM (implicit 130) coloane "
-#~ "tip�rite.\n"
-#~ "  --left-column  Afi�eaz� doar coloana din st�nga a liniilor comune.\n"
-#~ "  --suppress-common-lines  Nu afi�a liniile comune."
+#~ "-y  --side-by-side  Afişează pe două coloane.\n"
+#~ "  -W NUM  --width=NUM  Afişează cel mult NUM (implicit 130) coloane "
+#~ "tipărite.\n"
+#~ "  --left-column  Afişează doar coloana din stânga a liniilor comune.\n"
+#~ "  --suppress-common-lines  Nu afişa liniile comune."
 
 #~ msgid ""
 #~ "--speed-large-files  Assume large files and many scattered small changes."
 #~ msgstr ""
-#~ "--speed-large-files  Presupune fi�iere mari �i multe modific�ri mici "
-#~ "�mpr�tiate."
+#~ "--speed-large-files  Presupune fişiere mari şi multe modificări mici "
+#~ "împrăştiate."
 
 #~ msgid "-X  Output overlapping changes, bracketing them."
-#~ msgstr "-X  Afi�eaz� schimb�rile de suprapunere, pun�ndu-le �n paranteze."
+#~ msgstr "-X  Afişează schimbările de suprapunere, punându-le în paranteze."
 
 #~ msgid "-m  --merge  Output merged file instead of ed script (default -A)."
 #~ msgstr ""
-#~ "-m  --merge  Afi�eaz� fi�ierul rezultat(merged) �n loc de scriputl ed "
+#~ "-m  --merge  Afişează fişierul rezultat(merged) în loc de scriputl ed "
 #~ "(implicit -A)."
 
 #~ msgid "-L LABEL  --label=LABEL  Use LABEL instead of file name."
 #~ msgstr ""
-#~ "-L ETICHET�  --label=ETICHET�  Folose�te ETICHET� �n loc de numele "
-#~ "fi�ierului."
+#~ "-L ETICHETĂ  --label=ETICHETĂ  Foloseşte ETICHETĂ în loc de numele "
+#~ "fişierului."
 
 #~ msgid "subsidiary program `%s' failed"
-#~ msgstr "programul subsidiar `%s' e�uat"
+#~ msgstr "programul subsidiar `%s' eşuat"
 
 #~ msgid "subsidiary program `%s' not executable"
 #~ msgstr "programul subsidiar `%s' nu este executabil"

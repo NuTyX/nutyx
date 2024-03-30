@@ -1,24 +1,34 @@
-# Mesajele în limba românã pentru findutils.
+# Mesajele Ã®n limba romÃ¢nÄƒ pentru findutils.
 # Copyright (C) 2005 Free Software Foundation, Inc.
-# Acest fiºier este distribuit sub aceeaºi licenşã ca ºi pachetul findutils.
+# Acest fiÈ™ier este distribuit sub aceeaÈ™i licenÈ›Äƒ ca È™i pachetul findutils.
+# This file is distributed under the same license as the findutils package.
+#
 # Laurentiu Buzdugan <lbuz@rolix.org>, 2003,2004,2005
-#
-#
+# Traducere fÄƒcutÄƒ de LB, pentru versiunea findutils 4.2.24.
+# Actualizare a mesajelor, de la fiÈ™ierul â€findutils-4.5.15.potâ€.
+# Actualizare a codÄƒrii caracteror, la codarea de caractere UTF-8.
+# Actualizare a diacriticelor de la â€cu sedilÄƒâ€ la â€cu virgulÄƒâ€.
+# Actualizare a algoritmului formelor de plural (de la â€douÄƒâ€ la â€treiâ€).
+# NU È™i a mesajelor traduse (acestea au rÄƒmas neschimbate).
+# Eliminare a mesajelor ce-au dispÄƒrut Ã®n ultima versiune.
+# ActualizÄƒri realizate de Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 15.01.2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: findutils 4.2.24\n"
+"Project-Id-Version: findutils 4.5.15\n"
 "Report-Msgid-Bugs-To: bug-findutils@gnu.org\n"
-"POT-Creation-Date: 2021-01-09 17:36+0100\n"
-"PO-Revision-Date: 2005-08-01 12:00-0500\n"
-"Last-Translator: Laurentiu Buzdugan <lbuz@rolix.org>\n"
+"POT-Creation-Date: 2022-02-02 01:18+0100\n"
+"PO-Revision-Date: 2022-01-23 19:36+0100\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: find/exec.c:123
 #, c-format
@@ -31,9 +41,9 @@ msgid "Cannot close standard input"
 msgstr ""
 
 #: find/exec.c:272
-#, c-format
+#, fuzzy, c-format
 msgid "Failed to change directory%s%s"
-msgstr ""
+msgstr "nu pot obÈ›ine directorul curent"
 
 #: find/exec.c:317 xargs/xargs.c:1322
 msgid "cannot fork"
@@ -42,7 +52,7 @@ msgstr "nu pot executa fork"
 #: find/exec.c:348
 #, c-format
 msgid "error waiting for %s"
-msgstr "eroare aºteptând pentru %s"
+msgstr "eroare aÈ™teptÃ¢nd pentru %s"
 
 #: find/exec.c:357
 #, c-format
@@ -57,137 +67,100 @@ msgstr ""
 msgid "unknown"
 msgstr "necunoscut"
 
-#: find/ftsfind.c:228 find/oldfind.c:1115
+#: find/ftsfind.c:231
 #, fuzzy, c-format
 msgid ""
 "Symbolic link %s is part of a loop in the directory hierarchy; we have "
 "already visited the directory to which it points."
 msgstr ""
-"Legãtura simbolicã `%s' este parte a unei bucle în ierarhia de directoare; "
-"am vizitat deja directorul cãtre care şinteºte."
+"LegÄƒtura simbolicÄƒ `%s' este parte a unei bucle Ã®n ierarhia de directoare; "
+"am vizitat deja directorul cÄƒtre care È›inteÈ™te."
 
-#: find/ftsfind.c:242
+#: find/ftsfind.c:245
 #, fuzzy, c-format
 msgid ""
 "File system loop detected; %s is part of the same file system loop as %s."
 msgstr ""
-"Am detectat o buclã în sistemul de fiºiere; `%s' are acelaºi numãr de "
-"unitate ºi inode ca ºi un director care este %d %s."
+"Am detectat o buclÄƒ Ã®n sistemul de fiÈ™iere; `%s' are acelaÈ™i numÄƒr de "
+"unitate È™i inode ca È™i un director care este %d %s."
 
-#: find/ftsfind.c:391 find/util.c:254
+#: find/ftsfind.c:394 find/util.c:259
 #, c-format
 msgid "WARNING: file %s appears to have mode 0000"
 msgstr ""
 
-#: find/ftsfind.c:506
+#: find/ftsfind.c:509
 #, c-format
 msgid "cannot search %s"
 msgstr ""
 
-#: find/ftsfind.c:552
+#: find/ftsfind.c:555
 #, c-format
 msgid "failed to restore working directory after searching %s"
 msgstr ""
 
-#: find/ftsfind.c:622 find/oldfind.c:179
+#: find/ftsfind.c:582
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: find/ftsfind.c:584
+msgid "file operands cannot be combined with -files0-from"
+msgstr ""
+
+#: find/ftsfind.c:595
+msgid ""
+"option -files0-from reading from standard input cannot be combined with -ok, "
+"-okdir"
+msgstr ""
+
+#: find/ftsfind.c:598
+msgid "(standard input)"
+msgstr ""
+
+#: find/ftsfind.c:606
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: find/ftsfind.c:625
+msgid ""
+"option -files0-from: standard input must not refer to the same file when "
+"combined with -ok, -okdir"
+msgstr ""
+
+#: find/ftsfind.c:668
+#, c-format
+msgid "%s: read error"
+msgstr ""
+
+#: find/ftsfind.c:695
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: find/ftsfind.c:719
+#, fuzzy, c-format
+msgid "error reading %s"
+msgstr "eroare aÈ™teptÃ¢nd pentru %s"
+
+#: find/ftsfind.c:754
 msgid "Failed to initialize shared-file hash table"
 msgstr ""
 
-#: find/ftsfind.c:638 find/oldfind.c:195 locate/frcode.c:222
-#: locate/locate.c:1568 xargs/xargs.c:434
+#: find/ftsfind.c:770 locate/frcode.c:222 locate/locate.c:1568
+#: xargs/xargs.c:434
 #, fuzzy
 msgid "The atexit library function failed"
-msgstr "verificarea corectitudinii funcşie de bibliotecã fnmatch() a eºuat."
+msgstr "verificarea corectitudinii funcÈ›ie de bibliotecÄƒ fnmatch() a eÈ™uat."
 
-#: find/oldfind.c:238
-#, fuzzy
-msgid "cannot stat current directory"
-msgstr "nu pot obşine directorul curent"
-
-#: find/oldfind.c:331
-msgid "Cannot read list of mounted devices."
-msgstr ""
-
-#: find/oldfind.c:420
-#, fuzzy, c-format
-msgid "WARNING: file system %s has recently been unmounted."
-msgstr "Avertisment: sistemul de fiºiere %s de fost demontat de curând."
-
-#: find/oldfind.c:430
-#, fuzzy, c-format
-msgid "WARNING: file system %s has recently been mounted."
-msgstr "Avertisment: sistemul de fiºiere %s de fost montat de curând."
-
-#: find/oldfind.c:527
-#, fuzzy, c-format
-msgid ""
-"%s%s changed during execution of %s (old device number %ld, new device "
-"number %ld, file system type is %s) [ref %ld]"
-msgstr ""
-"%s%s s-a schimbat în timpul execuşiei lui %s (vechiul nr. dispozitiv %ld, "
-"noul nr. dispozitiv %ld, tipul sistemului de fiºiere este %s) [ref %ld]"
-
-#: find/oldfind.c:564
-#, fuzzy, c-format
-msgid ""
-"%s%s changed during execution of %s (old inode number %<PRIuMAX>, new inode "
-"number %<PRIuMAX>, file system type is %s) [ref %ld]"
-msgstr ""
-"%s%s s-a schimbat în timpul execuşiei lui %s (vechiul nr. inode %ld, noul "
-"nr. inode %ld, tipul sistemului de fiºiere este %s) [ref %ld]"
-
-#: find/oldfind.c:729
-#, fuzzy
-msgid "failed to return to parent directory"
-msgstr "nu pot obşine directorul curent"
-
-#: find/oldfind.c:1015
-#, c-format
-msgid "Failed to safely change directory into %s"
-msgstr ""
-
-#: find/oldfind.c:1134
-#, fuzzy, c-format
-msgid ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d level higher in the file system hierarchy"
-msgid_plural ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d levels higher in the file system hierarchy"
-msgstr[0] ""
-"Am detectat o buclã în sistemul de fiºiere; `%s' are acelaºi numãr de "
-"unitate ºi inode ca ºi un director care este %d %s."
-msgstr[1] ""
-"Am detectat o buclã în sistemul de fiºiere; `%s' are acelaºi numãr de "
-"unitate ºi inode ca ºi un director care este %d %s."
-
-#: find/oldfind.c:1386
-#, c-format
-msgid "warning: not following the symbolic link %s"
-msgstr "avertisment: nu urmez legãtura simbolicã %s"
-
-#: find/oldfind.c:1458
-#, fuzzy, c-format
-msgid ""
-"WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> but "
-"we already saw %<PRIuMAX> subdirectories): this may be a bug in your file "
-"system driver.  Automatically turning on find's -noleaf option.  Earlier "
-"results may have failed to include directories that should have been "
-"searched."
-msgstr ""
-"AVERTISMENT: Numãrul de legãturi hard este greºit pentru %s: acesta ar putea "
-"fi un bug în driverul dvs. pentru sistemul de fiºiere.  Pornesc automat "
-"opşiunea -noleaf a lui find.  Rezultatele precedente ar fi putut eºua sã "
-"includã directoare care ar fi trebuit cãutate."
-
-#: find/parser.c:449
+#: find/parser.c:451
 msgid ""
 "The -delete action automatically turns on -depth, but -prune does nothing "
 "when -depth is in effect.  If you want to carry on anyway, just explicitly "
 "use the -depth option."
 msgstr ""
 
-#: find/parser.c:608
+#: find/parser.c:609
 #, fuzzy, c-format
 msgid ""
 "warning: you have specified the global option %s after the argument %s, but "
@@ -195,41 +168,41 @@ msgid ""
 "it as well as those specified after it.  Please specify global options "
 "before other arguments."
 msgstr ""
-"avertisment: aşi specificat opşiunea %s dupã un argument non-opşiune %s, dar "
-"opşiunile nu sunt pozişionale (%s afecteazã testele specificate înainte de "
-"el ca ºi cele specificate dupã el).  Vã rugãm specificaşi opşiunile înainte "
+"avertisment: aÈ›i specificat opÈ›iunea %s dupÄƒ un argument non-opÈ›iune %s, dar "
+"opÈ›iunile nu sunt poziÈ›ionale (%s afecteazÄƒ testele specificate Ã®nainte de "
+"el ca È™i cele specificate dupÄƒ el).  VÄƒ rugÄƒm specificaÈ›i opÈ›iunile Ã®nainte "
 "de alte argumente.\n"
 
-#: find/parser.c:911
+#: find/parser.c:912
 #, c-format
 msgid ""
 "warning: the -d option is deprecated; please use -depth instead, because the "
 "latter is a POSIX-compliant feature."
 msgstr ""
-"avertisment: opşiunea -d nu mai este validã; vã rugãm folosişi -depth în "
-"locul lui, pentru cã aceasta din urmã respectã standardul POSIX."
+"avertisment: opÈ›iunea -d nu mai este validÄƒ; vÄƒ rugÄƒm folosiÈ›i -depth Ã®n "
+"locul lui, pentru cÄƒ aceasta din urmÄƒ respectÄƒ standardul POSIX."
 
-#: find/parser.c:1154
+#: find/parser.c:1167
 #, c-format
 msgid ""
 "%s is not the name of an existing group and it does not look like a numeric "
 "group ID because it has the unexpected suffix %s"
 msgstr ""
 
-#: find/parser.c:1169
+#: find/parser.c:1182
 #, c-format
 msgid "%s is not the name of an existing group"
 msgstr ""
 
-#: find/parser.c:1175
+#: find/parser.c:1188
 msgid "argument to -group is empty, but should be a group name"
 msgstr ""
 
-#: find/parser.c:1248
+#: find/parser.c:1261
 msgid "sanity check of the fnmatch() library function failed."
-msgstr "verificarea corectitudinii funcşie de bibliotecã fnmatch() a eºuat."
+msgstr "verificarea corectitudinii funcÈ›ie de bibliotecÄƒ fnmatch() a eÈ™uat."
 
-#: find/parser.c:1263
+#: find/parser.c:1276
 #, c-format
 msgid ""
 "warning: %s matches against basenames only, but the given pattern contains a "
@@ -237,42 +210,42 @@ msgid ""
 "time.  Did you mean %s?"
 msgstr ""
 
-#: find/parser.c:1386
+#: find/parser.c:1399
 #, c-format
 msgid "Expected a positive decimal integer argument to %s, but got %s"
 msgstr ""
 
-#: find/parser.c:1551
+#: find/parser.c:1564
 #, c-format
 msgid "This system does not provide a way to find the birth time of a file."
 msgstr ""
 
-#: find/parser.c:1572
+#: find/parser.c:1585
 #, fuzzy, c-format
 msgid "The %s test needs an argument"
-msgstr "%s: opşiunea `%s' necesitã un argument\n"
+msgstr "%s: opÈ›iunea `%s' necesitÄƒ un argument\n"
 
-#: find/parser.c:1609
+#: find/parser.c:1622
 #, c-format
 msgid "I cannot figure out how to interpret %s as a date or time"
 msgstr ""
 
-#: find/parser.c:1626
+#: find/parser.c:1639
 #, fuzzy, c-format
 msgid "Cannot obtain birth time of file %s"
-msgstr "Nu pot deschide fiºierul de intrare `%s'"
+msgstr "Nu pot deschide fiÈ™ierul de intrare `%s'"
 
-#: find/parser.c:1770
+#: find/parser.c:1783
 #, c-format
 msgid "warning: -%s %s will not match anything because it ends with /."
 msgstr ""
 
-#: find/parser.c:1865
+#: find/parser.c:1878
 #, fuzzy, c-format
 msgid "invalid mode %s"
 msgstr "mod invalid `%s'"
 
-#: find/parser.c:1883
+#: find/parser.c:1896
 #, c-format
 msgid ""
 "warning: you have specified a mode pattern %s (which is equivalent to /000). "
@@ -280,110 +253,110 @@ msgid ""
 "-000; that is, while it used to match no files, it now matches all files."
 msgstr ""
 
-#: find/parser.c:2056
-#, fuzzy, c-format
+#: find/parser.c:2069
+#, c-format
 msgid "failed to compile regular expression '%s': %s"
-msgstr "Expresiei regularã invalidã"
+msgstr ""
 
-#: find/parser.c:2085
+#: find/parser.c:2098
 msgid "invalid null argument to -size"
 msgstr "argument null invalid pentru -size"
 
-#: find/parser.c:2135
+#: find/parser.c:2148
 #, c-format
 msgid "invalid -size type `%c'"
 msgstr "tip -size invalid `%c'"
 
-#: find/parser.c:2145
+#: find/parser.c:2158
 #, fuzzy, c-format
 msgid "Invalid argument `%s%s' to -size"
 msgstr "argument invalid `%s' pentru `%s'"
 
-#: find/parser.c:2327
+#: find/parser.c:2340
 msgid ""
 "The -show-control-chars option takes a single argument which must be "
 "'literal' or 'safe'"
 msgstr ""
 
-#: find/parser.c:2441
+#: find/parser.c:2454
 #, fuzzy, c-format
 msgid "Invalid argument %s to -used"
 msgstr "argument invalid %s pentru %s"
 
-#: find/parser.c:2482
+#: find/parser.c:2495
 #, c-format
 msgid "%s is not the name of a known user"
 msgstr ""
 
-#: find/parser.c:2489
+#: find/parser.c:2502
 msgid "The argument to -user should not be empty"
 msgstr ""
 
-#: find/parser.c:2514
+#: find/parser.c:2527
 #, c-format
 msgid "Features enabled: "
-msgstr "Capabilitãşi activate: "
+msgstr "CapabilitÄƒÈ›i activate: "
 
-#: find/parser.c:2575
+#: find/parser.c:2588
 msgid "invalid predicate -context: SELinux is not enabled."
 msgstr ""
 
-#: find/parser.c:2639
+#: find/parser.c:2652
 #, c-format
 msgid "Arguments to %s should contain at least one letter"
 msgstr ""
 
-#: find/parser.c:2704
+#: find/parser.c:2717
 #, c-format
 msgid ""
 "%s %c is not supported because symbolic links are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2716
+#: find/parser.c:2729
 #, c-format
 msgid ""
 "%s %c is not supported because FIFOs are not supported on the platform find "
 "was compiled on."
 msgstr ""
 
-#: find/parser.c:2728
+#: find/parser.c:2741
 #, c-format
 msgid ""
 "%s %c is not supported because named sockets are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2744
+#: find/parser.c:2757
 #, c-format
 msgid ""
 "%s %c is not supported because Solaris doors are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2752
+#: find/parser.c:2765
 #, fuzzy, c-format
 msgid "Unknown argument to %s: %c"
-msgstr "argument lipsã pentru `%s'"
+msgstr "argument lipsÄƒ pentru `%s'"
 
-#: find/parser.c:2760
+#: find/parser.c:2773
 #, c-format
 msgid "Duplicate file type '%c' in the argument list to %s."
 msgstr ""
 
-#: find/parser.c:2776
+#: find/parser.c:2789
 #, c-format
 msgid "Must separate multiple arguments to %s using: ','"
 msgstr ""
 
-#: find/parser.c:2785
+#: find/parser.c:2798
 #, c-format
 msgid ""
 "Last file type in list argument to %s is missing, i.e., list is ending on: "
 "','"
 msgstr ""
 
-#: find/parser.c:2844
+#: find/parser.c:2857
 #, fuzzy, c-format
 msgid ""
 "The current directory is included in the PATH environment variable, which is "
@@ -391,60 +364,60 @@ msgid ""
 "current directory from your $PATH (that is, remove \".\", doubled colons, or "
 "leading or trailing colons)"
 msgstr ""
-"Directorul curent este inclus în variabila de mediu PATH, ceea ce este "
-"periculos (insecure) în combinaşie cu acşiune %s a lui find.  Vã rugãm "
-"îndepãrtaşi directorul curent din $PATH (adicã îndepãrtaşi \".\" sau primul "
+"Directorul curent este inclus Ã®n variabila de mediu PATH, ceea ce este "
+"periculos (insecure) Ã®n combinaÈ›ie cu acÈ›iune %s a lui find.  VÄƒ rugÄƒm "
+"Ã®ndepÄƒrtaÈ›i directorul curent din $PATH (adicÄƒ Ã®ndepÄƒrtaÈ›i \".\" sau primul "
 "sau ultimul \":\")"
 
-#: find/parser.c:2856
+#: find/parser.c:2869
 #, fuzzy, c-format
 msgid ""
 "The relative path %s is included in the PATH environment variable, which is "
 "insecure in combination with the %s action of find.  Please remove that "
 "entry from $PATH"
 msgstr ""
-"Directorul curent este inclus în variabila de mediu PATH, ceea ce este "
-"periculos (insecure) în combinaşie cu acşiune %s a lui find.  Vã rugãm "
-"îndepãrtaşi directorul curent din $PATH (adicã îndepãrtaşi \".\" sau primul "
+"Directorul curent este inclus Ã®n variabila de mediu PATH, ceea ce este "
+"periculos (insecure) Ã®n combinaÈ›ie cu acÈ›iune %s a lui find.  VÄƒ rugÄƒm "
+"Ã®ndepÄƒrtaÈ›i directorul curent din $PATH (adicÄƒ Ã®ndepÄƒrtaÈ›i \".\" sau primul "
 "sau ultimul \":\")"
 
-#: find/parser.c:2965
+#: find/parser.c:2980
 msgid ""
 "You may not use {} within the utility name for -execdir and -okdir, because "
 "this is a potential security problem."
 msgstr ""
-"Nu puteşi folosi {} în cadrul numelui utilitarului pentru -execdir ºi -"
-"okdir, pentru cã aceasta este o potenşialã problemã de securitate."
+"Nu puteÈ›i folosi {} Ã®n cadrul numelui utilitarului pentru -execdir È™i -"
+"okdir, pentru cÄƒ aceasta este o potenÈ›ialÄƒ problemÄƒ de securitate."
 
-#: find/parser.c:2991
+#: find/parser.c:3006
 #, c-format
 msgid "Only one instance of {} is supported with -exec%s ... +"
-msgstr "Numai o singurã instanşã de {} este suportatã cu -exec%s ... +"
+msgstr "Numai o singurÄƒ instanÈ›Äƒ de {} este suportatÄƒ cu -exec%s ... +"
 
-#: find/parser.c:3001
+#: find/parser.c:3016
 #, c-format
 msgid "In %s the %s must appear by itself, but you specified %s"
 msgstr ""
 
-#: find/parser.c:3020
+#: find/parser.c:3035
 #, fuzzy
 msgid "The environment is too large for exec()."
 msgstr "mediul (environment) este prea larg pentru exec"
 
-#: find/parser.c:3189
+#: find/parser.c:3204
 #, c-format
 msgid "arithmetic overflow while converting %s days to a number of seconds"
 msgstr ""
 
-#: find/parser.c:3213
+#: find/parser.c:3228
 msgid "arithmetic overflow when trying to calculate the end of today"
 msgstr ""
 
-#: find/parser.c:3372
+#: find/parser.c:3387
 msgid "standard error"
 msgstr ""
 
-#: find/parser.c:3377
+#: find/parser.c:3392
 msgid "standard output"
 msgstr ""
 
@@ -453,21 +426,21 @@ msgstr ""
 msgid "cannot delete %s"
 msgstr ""
 
-#: find/pred.c:652
+#: find/pred.c:650
 #, c-format
 msgid "WARNING: cannot determine birth time of file %s"
 msgstr ""
 
-#: find/pred.c:700
+#: find/pred.c:698
 #, c-format
 msgid "< %s ... %s > ? "
 msgstr "< %s ... %s > ? "
 
-#: find/pred.c:702
+#: find/pred.c:700
 msgid "Failed to write prompt for -ok"
 msgstr ""
 
-#: find/pred.c:1175 find/print.c:1238
+#: find/pred.c:1173 find/print.c:1238
 #, c-format
 msgid "getfilecon failed: %s"
 msgstr ""
@@ -501,116 +474,122 @@ msgstr ""
 #: find/print.c:414
 #, c-format
 msgid "warning: unrecognized format directive `%%%c'"
-msgstr "avertisment: directivã format nerecunoscutã `%%%c'"
+msgstr "avertisment: directivÄƒ format nerecunoscutÄƒ `%%%c'"
 
-#: find/tree.c:115 find/tree.c:120 find/tree.c:212 find/tree.c:251
+#: find/tree.c:115 find/tree.c:120 find/tree.c:226 find/tree.c:265
 msgid "invalid expression"
-msgstr "expresie invalidã"
+msgstr "expresie invalidÄƒ"
 
 #: find/tree.c:126
 #, fuzzy, c-format
 msgid ""
 "invalid expression; you have used a binary operator '%s' with nothing before "
 "it."
-msgstr "expresie invalidã; aşi folosit un operator binar cu nimic înaintea sa."
+msgstr "expresie invalidÄƒ; aÈ›i folosit un operator binar cu nimic Ã®naintea sa."
 
-#: find/tree.c:137
+#: find/tree.c:135 find/tree.c:194
+#, fuzzy, c-format
+msgid ""
+"invalid expression: expected expression before closing parentheses '%s'."
+msgstr "expresie invalidÄƒ; aveÈ›i prea multe ')'"
+
+#: find/tree.c:145
 #, c-format
 msgid "expected an expression between '%s' and ')'"
 msgstr ""
 
-#: find/tree.c:147
+#: find/tree.c:155
 #, fuzzy, c-format
 msgid "expected an expression after '%s'"
-msgstr "predicat adişional neaºteptat"
+msgstr "predicat adiÈ›ional neaÈ™teptat"
 
-#: find/tree.c:152
+#: find/tree.c:160
 msgid "invalid expression; you have too many ')'"
-msgstr "expresie invalidã; aveşi prea multe ')'"
+msgstr "expresie invalidÄƒ; aveÈ›i prea multe ')'"
 
-#: find/tree.c:175
+#: find/tree.c:183
 #, fuzzy, c-format
 msgid ""
 "invalid expression; expected to find a ')' but didn't see one. Perhaps you "
 "need an extra predicate after '%s'"
 msgstr ""
-"expresie invalidã; aºteptam sã gãsesc o ')' pe undeva, dar nu am gãsit-o."
+"expresie invalidÄƒ; aÈ™teptam sÄƒ gÄƒsesc o ')' pe undeva, dar nu am gÄƒsit-o."
 
-#: find/tree.c:184
+#: find/tree.c:198
 #, fuzzy
 msgid "invalid expression; empty parentheses are not allowed."
-msgstr "expresie invalidã; aveşi prea multe ')'"
+msgstr "expresie invalidÄƒ; aveÈ›i prea multe ')'"
 
-#: find/tree.c:190
+#: find/tree.c:204
 msgid ""
 "invalid expression; I was expecting to find a ')' somewhere but did not see "
 "one."
 msgstr ""
-"expresie invalidã; aºteptam sã gãsesc o ')' pe undeva, dar nu am gãsit-o."
+"expresie invalidÄƒ; aÈ™teptam sÄƒ gÄƒsesc o ')' pe undeva, dar nu am gÄƒsit-o."
 
-#: find/tree.c:197 find/tree.c:821
+#: find/tree.c:211 find/tree.c:835
 msgid "oops -- invalid expression type!"
 msgstr "hopa -- tip expresie invalid!"
 
-#: find/tree.c:269
+#: find/tree.c:283
 #, c-format
 msgid "oops -- invalid expression type (%d)!"
 msgstr "hopa -- tip expresie invalid (%d)!"
 
-#: find/tree.c:1098
+#: find/tree.c:1112
 #, c-format
 msgid ""
 "warning: there is no entry in the predicate evaluation cost table for "
 "predicate %s; please report this as a bug"
 msgstr ""
 
-#: find/tree.c:1272
+#: find/tree.c:1286
 #, fuzzy, c-format
 msgid "paths must precede expression: `%s'"
-msgstr "cãile trebuie specificate înaintea expresiei"
+msgstr "cÄƒile trebuie specificate Ã®naintea expresiei"
 
-#: find/tree.c:1274
+#: find/tree.c:1288
 #, c-format
 msgid "possible unquoted pattern after predicate `%s'?"
 msgstr ""
 
-#: find/tree.c:1284
+#: find/tree.c:1298
 #, fuzzy, c-format
 msgid "unknown predicate `%s'"
 msgstr "predicat invalid `%s'"
 
-#: find/tree.c:1304
+#: find/tree.c:1318
 #, c-format
 msgid "invalid predicate `%s'"
 msgstr "predicat invalid `%s'"
 
-#: find/tree.c:1308
+#: find/tree.c:1322
 #, c-format
 msgid "invalid argument `%s' to `%s'"
 msgstr "argument invalid `%s' pentru `%s'"
 
-#: find/tree.c:1315
+#: find/tree.c:1329
 #, c-format
 msgid "missing argument to `%s'"
-msgstr "argument lipsã pentru `%s'"
+msgstr "argument lipsÄƒ pentru `%s'"
 
-#: find/tree.c:1391
+#: find/tree.c:1405
 #, fuzzy
 msgid "you have too many ')'"
-msgstr "expresie invalidã; aveşi prea multe ')'"
+msgstr "expresie invalidÄƒ; aveÈ›i prea multe ')'"
 
-#: find/tree.c:1397
+#: find/tree.c:1411
 #, fuzzy, c-format
 msgid "unexpected extra predicate '%s'"
-msgstr "predicat adişional neaºteptat"
+msgstr "predicat adiÈ›ional neaÈ™teptat"
 
-#: find/tree.c:1399
+#: find/tree.c:1413
 msgid "unexpected extra predicate"
-msgstr "predicat adişional neaºteptat"
+msgstr "predicat adiÈ›ional neaÈ™teptat"
 
-#: find/tree.c:1520
+#: find/tree.c:1534
 msgid "oops -- invalid default insertion of and!"
-msgstr "hopa -- inserare implicitã invalidã de and!"
+msgstr "hopa -- inserare implicitÄƒ invalidÄƒ de and!"
 
 #: find/util.c:139
 #, fuzzy
@@ -629,147 +608,163 @@ msgid ""
 msgstr "Folosire : %s [-H] [-L] [-P] [cale...] [expresie]\n"
 
 #: find/util.c:173
+#, fuzzy
 msgid ""
 "\n"
-"default path is the current directory; default expression is -print\n"
-"expression may consist of: operators, options, tests, and actions:\n"
+"Default path is the current directory; default expression is -print.\n"
+"Expression may consist of: operators, options, tests, and actions.\n"
 msgstr ""
 "\n"
-"calea implicitã este directorul curent; expresia implicitã este -print\n"
-"expresia poate fi compusã din: operatori opşiuni, teste ºi acşiuni:\n"
+"calea implicitÄƒ este directorul curent; expresia implicitÄƒ este -print\n"
+"expresia poate fi compusÄƒ din: operatori opÈ›iuni, teste È™i acÈ›iuni:\n"
 
 #: find/util.c:176
+#, fuzzy
 msgid ""
-"operators (decreasing precedence; -and is implicit where no others are "
+"\n"
+"Operators (decreasing precedence; -and is implicit where no others are "
 "given):\n"
 "      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2\n"
 "      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2\n"
 msgstr ""
-"operatori (precedenşa în scãdere; -and este implicit când alşii nu sunt "
-"precizaşi):\n"
+"operatori (precedenÈ›a Ã®n scÄƒdere; -and este implicit cÃ¢nd alÈ›ii nu sunt "
+"precizaÈ›i):\n"
 "      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2\n"
 "      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2\n"
 
 #: find/util.c:180
 msgid ""
-"positional options (always true): -daystart -follow -regextype\n"
 "\n"
-"normal options (always true, specified before other expressions):\n"
-"      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
-"      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
+"Positional options (always true):\n"
+"      -daystart -follow -nowarn -regextype -warn\n"
 msgstr ""
-"opşiuni pozişionale (întotdeauna adevãrat): -daystart -follow -regextype\n"
+
+#: find/util.c:183
+#, fuzzy
+msgid ""
 "\n"
-"opşiuni normale (întotdeauna adevãrat, specificate înaintea altor "
+"Normal options (always true, specified before other expressions):\n"
+"      -depth -files0-from FILE -maxdepth LEVELS -mindepth LEVELS\n"
+"       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
+msgstr ""
+"opÈ›iuni poziÈ›ionale (Ã®ntotdeauna adevÄƒrat): -daystart -follow -regextype\n"
+"\n"
+"opÈ›iuni normale (Ã®ntotdeauna adevÄƒrat, specificate Ã®naintea altor "
 "expresii):\n"
 "      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
 "      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
 
-#: find/util.c:185
-msgid ""
-"tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N\n"
-"      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME\n"
-"      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex "
-"PATTERN\n"
-"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE"
-msgstr ""
-"teste (N poate fi +N sau -N sau N): -amin N -anewer FIªIER -atime N -cmin N\n"
-"      -cnewer FIªIER -ctime N -empty -false -fstype TIP -gid N -group NUME\n"
-"      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex "
-"PATTERN\n"
-"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FIªIER"
-
-#: find/util.c:190
+#: find/util.c:187
 #, fuzzy
 msgid ""
 "\n"
+"Tests (N can be +N or -N or N):\n"
+"      -amin N -anewer FILE -atime N -cmin N -cnewer FILE -context CONTEXT\n"
+"      -ctime N -empty -false -fstype TYPE -gid N -group NAME -ilname "
+"PATTERN\n"
+"      -iname PATTERN -inum N -iwholename PATTERN -iregex PATTERN\n"
+"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE\n"
 "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
 "      -readable -writable -executable\n"
 "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NAME -xtype [bcdpfls]"
+"      -used N -user NAME -xtype [bcdpfls]\n"
 msgstr ""
-"      -nouser -nogroup -path PATTERN -perm [+-]MOD -regex PATTERN\n"
-"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NUME -xtype [bcdpfls]\n"
-
-#: find/util.c:195
-msgid "      -context CONTEXT\n"
-msgstr ""
+"teste (N poate fi +N sau -N sau N): -amin N -anewer FIÈ˜IER -atime N -cmin N\n"
+"      -cnewer FIÈ˜IER -ctime N -empty -false -fstype TIP -gid N -group NUME\n"
+"      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex "
+"PATTERN\n"
+"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FIÈ˜IER"
 
 #: find/util.c:197
 #, fuzzy
 msgid ""
 "\n"
-"actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
+"Actions:\n"
+"      -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
 "      -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit\n"
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
+msgstr ""
+"acÈ›iuni: -delete -print0 -printf FORMAT -fprintf FORMAT FIÈ˜IER -print \n"
+"      -fprint0 FIÈ˜IER -fprint FIÈ˜IER -ls -fls FIÈ˜IER -prune -quit\n"
+"      -exec COMANDÄ‚ ; -exec COMANDÄ‚ {} + -ok COMANDÄ‚ ;\n"
+"      -execdir COMANDÄ‚ ; -execdir COMANDÄ‚ {} + -okdir COMANDÄ‚ ;\n"
+
+#: find/util.c:204
+msgid ""
+"\n"
+"Other common options:\n"
+msgstr ""
+
+#: find/util.c:206 xargs/xargs.c:1751
+msgid "      --help                   display this help and exit\n"
+msgstr ""
+
+#: find/util.c:207 xargs/xargs.c:1752
+msgid ""
+"      --version                output version information and exit\n"
 "\n"
 msgstr ""
-"acşiuni: -delete -print0 -printf FORMAT -fprintf FORMAT FIªIER -print \n"
-"      -fprint0 FIªIER -fprint FIªIER -ls -fls FIªIER -prune -quit\n"
-"      -exec COMANDÃ ; -exec COMANDÃ {} + -ok COMANDÃ ;\n"
-"      -execdir COMANDÃ ; -execdir COMANDÃ {} + -okdir COMANDÃ ;\n"
 
-#: find/util.c:205
+#: find/util.c:210
 msgid ""
 "\n"
 "Use '-D help' for a description of the options, or see find(1)\n"
 "\n"
 msgstr ""
 
-#: find/util.c:491
-#, c-format
+#: find/util.c:475
+#, fuzzy, c-format
 msgid "Failed to save initial working directory%s%s"
-msgstr ""
+msgstr "nu pot obÈ›ine directorul curent"
 
-#: find/util.c:510
-#, c-format
+#: find/util.c:494
+#, fuzzy, c-format
 msgid "Failed to restore initial working directory%s%s"
-msgstr ""
+msgstr "nu pot obÈ›ine directorul curent"
 
-#: find/util.c:848
+#: find/util.c:832
 #, fuzzy, c-format
 msgid "Ignoring unrecognised debug flag %s"
 msgstr "avertisment: escape nerecunoscut `\\%c'"
 
-#: find/util.c:855
+#: find/util.c:839
 #, c-format
 msgid "Empty argument to the -D option."
 msgstr ""
 
-#: find/util.c:872
+#: find/util.c:856
 msgid "The -O option must be immediately followed by a decimal integer"
 msgstr ""
 
-#: find/util.c:882 find/util.c:893
+#: find/util.c:866 find/util.c:877
 msgid "Please specify a decimal number immediately after -O"
 msgstr ""
 
-#: find/util.c:898 find/util.c:903
+#: find/util.c:882 find/util.c:887
 #, c-format
 msgid "Invalid optimisation level %s"
 msgstr ""
 
-#: find/util.c:911
+#: find/util.c:895
 #, c-format
 msgid ""
 "Optimisation level %lu is too high.  If you want to find files very quickly, "
 "consider using GNU locate."
 msgstr ""
 
-#: find/util.c:957
+#: find/util.c:941
 #, c-format
 msgid "Missing argument after the -D option."
 msgstr ""
 
-#: find/util.c:1060
+#: find/util.c:1044
 msgid ""
 "The environment variable FIND_BLOCK_SIZE is not supported, the only thing "
 "that affects the block size is the POSIXLY_CORRECT environment variable"
 msgstr ""
-"Variabila de mediu FIND_BLOCK_SIZE nu este suportatã, singurul lucru care "
-"afecteazã dimensiunea blocului esre variabila de mediu POSIXLY_CORRECT"
+"Variabila de mediu FIND_BLOCK_SIZE nu este suportatÄƒ, singurul lucru care "
+"afecteazÄƒ dimensiunea blocului esre variabila de mediu POSIXLY_CORRECT"
 
 #: lib/bugreports.c:28
 #, fuzzy, c-format
@@ -780,13 +775,13 @@ msgid ""
 "%s or, if\n"
 "you have no web access, by sending email to <%s>.\n"
 msgstr ""
-"Raportaşi (ºi urmãrişi progresul reparãrii) bug-urilor folosind pagina de\n"
+"RaportaÈ›i (È™i urmÄƒriÈ›i progresul reparÄƒrii) bug-urilor folosind pagina de\n"
 "raportare a bug-urilor din findutils de la http://savannah.gnu.org/ sau,\n"
-"dacã nu aveşi acces la internet, trimişând email la <bug-findutils@gnu.org>."
+"dacÄƒ nu aveÈ›i acces la internet, trimiÈ›Ã¢nd email la <bug-findutils@gnu.org>."
 
 #: lib/buildcmd.c:144
 msgid "command too long"
-msgstr "comandã prea lungã"
+msgstr "comandÄƒ prea lungÄƒ"
 
 #: lib/buildcmd.c:284
 msgid "can't call exec() due to argument size restrictions"
@@ -796,11 +791,11 @@ msgstr ""
 #, fuzzy
 msgid "cannot fit single argument within argument list size limit"
 msgstr ""
-"nu pot potrivi un singur argument în limita dimensiunii listei de argumente"
+"nu pot potrivi un singur argument Ã®n limita dimensiunii listei de argumente"
 
 #: lib/buildcmd.c:355
 msgid "argument list too long"
-msgstr "listã argumente prea lungã"
+msgstr "listÄƒ argumente prea lungÄƒ"
 
 #: lib/buildcmd.c:612
 #, c-format
@@ -905,13 +900,13 @@ msgstr "argument invalid %s pentru %s"
 #, fuzzy, c-format
 msgid "locate database %s contains a filename longer than locate can handle"
 msgstr ""
-"avertisment: calea bazei de date locate `%s' conşine în faşa un caracter "
-"`:', care nu este un nume de bazã de date valid"
+"avertisment: calea bazei de date locate `%s' conÈ›ine Ã®n faÈ›a un caracter "
+"`:', care nu este un nume de bazÄƒ de date valid"
 
 #: locate/locate.c:544 locate/locate.c:563
 #, fuzzy, c-format
 msgid "locate database %s is corrupt or invalid"
-msgstr "baza de date locate `%s' este coruptã sau invalidã"
+msgstr "baza de date locate `%s' este coruptÄƒ sau invalidÄƒ"
 
 #: locate/locate.c:848
 #, c-format
@@ -922,18 +917,19 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Locate database size: %s byte\n"
 msgid_plural "Locate database size: %s bytes\n"
-msgstr[0] "Dimensiune baza de date locate: %s octeşi\n"
-msgstr[1] "Dimensiune baza de date locate: %s octeşi\n"
+msgstr[0] "Dimensiune baza de date locate: %s octeÈ›i\n"
+msgstr[1] "Dimensiune baza de date locate: %s octeÈ›i\n"
+msgstr[2] ""
 
 #: locate/locate.c:862
 #, fuzzy, c-format
 msgid "Matching Filenames: %s\n"
-msgstr "Nume fiºiere: %s "
+msgstr "Nume fiÈ™iere: %s "
 
 #: locate/locate.c:863
 #, fuzzy, c-format
 msgid "All Filenames: %s\n"
-msgstr "Nume fiºiere: %s "
+msgstr "Nume fiÈ™iere: %s "
 
 #: locate/locate.c:869
 #, c-format
@@ -992,12 +988,12 @@ msgstr ""
 #: locate/locate.c:1146
 #, fuzzy, c-format
 msgid "Old-format locate database %s is too short to be valid"
-msgstr "baza de date locate `%s' este coruptã sau invalidã"
+msgstr "baza de date locate `%s' este coruptÄƒ sau invalidÄƒ"
 
 #: locate/locate.c:1298
 #, c-format
 msgid "Database %s is in the %s format.\n"
-msgstr "Baza de date %s este în formatul %s.\n"
+msgstr "Baza de date %s este Ã®n formatul %s.\n"
 
 #: locate/locate.c:1325
 msgid "The database has little-endian machine-word encoding.\n"
@@ -1057,7 +1053,7 @@ msgstr ""
 #, c-format
 msgid "warning: the locate database can only be read from stdin once."
 msgstr ""
-"avertisment: baza de date locate poate fi doar cititã de la stdin o datã."
+"avertisment: baza de date locate poate fi doar cititÄƒ de la stdin o datÄƒ."
 
 #: locate/locate.c:1836
 #, c-format
@@ -1082,7 +1078,7 @@ msgstr ""
 #: locate/word_io.c:126
 #, fuzzy, c-format
 msgid "error reading a word from %s"
-msgstr "eroare aºteptând pentru %s"
+msgstr "eroare aÈ™teptÃ¢nd pentru %s"
 
 #: xargs/xargs.c:254
 #, c-format
@@ -1140,7 +1136,7 @@ msgstr ""
 #: xargs/xargs.c:699
 #, fuzzy, c-format
 msgid "failed to unset environment variable %s"
-msgstr "Variabile dvs. de mediu ocupã %ld octeşi\n"
+msgstr "Variabile dvs. de mediu ocupÄƒ %ld octeÈ›i\n"
 
 #: xargs/xargs.c:712
 #, c-format
@@ -1160,29 +1156,29 @@ msgstr ""
 #: xargs/xargs.c:756
 #, fuzzy, c-format
 msgid "Cannot open input file %s"
-msgstr "Nu pot deschide fiºierul de intrare `%s'"
+msgstr "Nu pot deschide fiÈ™ierul de intrare `%s'"
 
 #: xargs/xargs.c:775
 #, fuzzy, c-format
 msgid "Your environment variables take up %<PRIuMAX> bytes\n"
-msgstr "Variabile dvs. de mediu ocupã %ld octeşi\n"
+msgstr "Variabile dvs. de mediu ocupÄƒ %ld octeÈ›i\n"
 
 #: xargs/xargs.c:778
 #, fuzzy, c-format
 msgid "POSIX upper limit on argument length (this system): %<PRIuMAX>\n"
-msgstr "limitele POSIX min ºi max pentru lungimea unui argument: %ld, %ld\n"
+msgstr "limitele POSIX min È™i max pentru lungimea unui argument: %ld, %ld\n"
 
 #: xargs/xargs.c:781
 #, fuzzy, c-format
 msgid ""
 "POSIX smallest allowable upper limit on argument length (all systems): "
 "%<PRIuMAX>\n"
-msgstr "limitele POSIX min ºi max pentru lungimea unui argument: %ld, %ld\n"
+msgstr "limitele POSIX min È™i max pentru lungimea unui argument: %ld, %ld\n"
 
 #: xargs/xargs.c:784
 #, fuzzy, c-format
 msgid "Maximum length of command we could actually use: %<PRIuMAX>\n"
-msgstr "Lungimea mazimã a unei comenzi pe care o putem în fapt folosi: %ld\n"
+msgstr "Lungimea mazimÄƒ a unei comenzi pe care o putem Ã®n fapt folosi: %ld\n"
 
 #: xargs/xargs.c:787
 #, fuzzy, c-format
@@ -1216,8 +1212,8 @@ msgid ""
 "unmatched %s quote; by default quotes are special to xargs unless you use "
 "the -0 option"
 msgstr ""
-"ghilimele %s fãrã pereche; în mod implicit ghilimelele sunt speciale pentru "
-"xargs, în afarã de cazul în care folosişi opşiunea -0"
+"ghilimele %s fÄƒrÄƒ pereche; Ã®n mod implicit ghilimelele sunt speciale pentru "
+"xargs, Ã®n afarÄƒ de cazul Ã®n care folosiÈ›i opÈ›iunea -0"
 
 #: xargs/xargs.c:935 xargs/xargs.c:1030
 msgid "double"
@@ -1236,7 +1232,7 @@ msgstr ""
 
 #: xargs/xargs.c:1059 xargs/xargs.c:1124
 msgid "argument line too long"
-msgstr "linie argumente prea lungã"
+msgstr "linie argumente prea lungÄƒ"
 
 #: xargs/xargs.c:1146 xargs/xargs.c:1163
 msgid "Failed to write to stderr"
@@ -1253,7 +1249,7 @@ msgstr ""
 #: xargs/xargs.c:1205
 #, fuzzy, c-format
 msgid "failed to set environment variable %s"
-msgstr "Variabile dvs. de mediu ocupã %ld octeşi\n"
+msgstr "Variabile dvs. de mediu ocupÄƒ %ld octeÈ›i\n"
 
 #: xargs/xargs.c:1259
 msgid "failed to redirect standard input of the child process"
@@ -1279,7 +1275,7 @@ msgstr ""
 
 #: xargs/xargs.c:1528
 msgid "error waiting for child process"
-msgstr "eroare aºteptând pentru procese copil"
+msgstr "eroare aÈ™teptÃ¢nd pentru procese copil"
 
 #: xargs/xargs.c:1561
 #, c-format
@@ -1289,7 +1285,7 @@ msgstr ""
 #: xargs/xargs.c:1580
 #, c-format
 msgid "%s: exited with status 255; aborting"
-msgstr "%s: a terminat cu starea 255; renunş"
+msgstr "%s: a terminat cu starea 255; renunÈ›"
 
 #: xargs/xargs.c:1583
 #, c-format
@@ -1304,17 +1300,17 @@ msgstr "%s: terminat de semnalul %d"
 #: xargs/xargs.c:1671
 #, fuzzy, c-format
 msgid "%s: invalid number \"%s\" for -%c option\n"
-msgstr "%s: numãr invalid pentru opşiunea -%c\n"
+msgstr "%s: numÄƒr invalid pentru opÈ›iunea -%c\n"
 
 #: xargs/xargs.c:1678
 #, fuzzy, c-format
 msgid "%s: value %s for -%c option should be >= %ld\n"
-msgstr "%s: valoarea pentru opşiunea -%c ar trebui sã fie >= %ld\n"
+msgstr "%s: valoarea pentru opÈ›iunea -%c ar trebui sÄƒ fie >= %ld\n"
 
 #: xargs/xargs.c:1687
 #, fuzzy, c-format
 msgid "%s: value %s for -%c option should be <= %ld\n"
-msgstr "%s: valoarea pentru opşiunea -%c ar trebui sã fie < %ld\n"
+msgstr "%s: valoarea pentru opÈ›iunea -%c ar trebui sÄƒ fie < %ld\n"
 
 #: xargs/xargs.c:1707
 #, c-format
@@ -1452,65 +1448,149 @@ msgstr ""
 msgid "  -x, --exit                   exit if the size (see -s) is exceeded\n"
 msgstr ""
 
-#: xargs/xargs.c:1751
-msgid "      --help                   display this help and exit\n"
-msgstr ""
+#, fuzzy, c-format
+#~ msgid "cannot stat current directory"
+#~ msgstr "nu pot obÈ›ine directorul curent"
 
-#: xargs/xargs.c:1752
-msgid ""
-"      --version                output version information and exit\n"
-"\n"
-msgstr ""
+#, fuzzy, c-format
+#~ msgid "WARNING: file system %s has recently been unmounted."
+#~ msgstr "Avertisment: sistemul de fiÈ™iere %s de fost demontat de curÃ¢nd."
+
+#, fuzzy, c-format
+#~ msgid "WARNING: file system %s has recently been mounted."
+#~ msgstr "Avertisment: sistemul de fiÈ™iere %s de fost montat de curÃ¢nd."
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old device number %ld, new device "
+#~ "number %ld, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "%s%s s-a schimbat Ã®n timpul execuÈ›iei lui %s (vechiul nr. dispozitiv %ld, "
+#~ "noul nr. dispozitiv %ld, tipul sistemului de fiÈ™iere este %s) [ref %ld]"
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old inode number %<PRIuMAX>, new "
+#~ "inode number %<PRIuMAX>, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "%s%s s-a schimbat Ã®n timpul execuÈ›iei lui %s (vechiul nr. inode %ld, noul "
+#~ "nr. inode %ld, tipul sistemului de fiÈ™iere este %s) [ref %ld]"
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d level higher in the file system hierarchy"
+#~ msgid_plural ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d levels higher in the file system hierarchy"
+#~ msgstr[0] ""
+#~ "Am detectat o buclÄƒ Ã®n sistemul de fiÈ™iere; `%s' are acelaÈ™i numÄƒr de "
+#~ "unitate È™i inode ca È™i un director care este %d %s."
+#~ msgstr[1] ""
+#~ "Am detectat o buclÄƒ Ã®n sistemul de fiÈ™iere; `%s' are acelaÈ™i numÄƒr de "
+#~ "unitate È™i inode ca È™i un director care este %d %s."
+#~ msgstr[2] ""
+
+#, c-format
+#~ msgid "warning: not following the symbolic link %s"
+#~ msgstr "avertisment: nu urmez legÄƒtura simbolicÄƒ %s"
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> "
+#~ "but we already saw %<PRIuMAX> subdirectories): this may be a bug in your "
+#~ "file system driver.  Automatically turning on find's -noleaf option.  "
+#~ "Earlier results may have failed to include directories that should have "
+#~ "been searched."
+#~ msgstr ""
+#~ "AVERTISMENT: NumÄƒrul de legÄƒturi hard este greÈ™it pentru %s: acesta ar "
+#~ "putea fi un bug Ã®n driverul dvs. pentru sistemul de fiÈ™iere.  Pornesc "
+#~ "automat opÈ›iunea -noleaf a lui find.  Rezultatele precedente ar fi putut "
+#~ "eÈ™ua sÄƒ includÄƒ directoare care ar fi trebuit cÄƒutate."
+
+#, fuzzy
+#~ msgid ""
+#~ "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+#~ msgstr ""
+#~ "      -nouser -nogroup -path PATTERN -perm [+-]MOD -regex PATTERN\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NUME -xtype [bcdpfls]\n"
+
+#, c-format
+#~ msgid ""
+#~ "warning: Unix filenames usually don't contain slashes (though pathnames "
+#~ "do).  That means that '%s %s' will probably evaluate to false all the "
+#~ "time on this system.  You might find the '-wholename' test more useful, "
+#~ "or perhaps '-samefile'.  Alternatively, if you are using GNU grep, you "
+#~ "could use 'find ... -print0 | grep -FzZ %s'."
+#~ msgstr ""
+#~ "avertisment: de obicei, numele de fiÈ™iere Ã®n Unix nu conÈ›in shash-uri "
+#~ "(dar numele de cÄƒi da).  Aceasta Ã®nseamnÄƒ cÄƒ '%s %s' va fi evaluat ca "
+#~ "fals tot timpul pe acest sistem.  AÈ›i putea gÄƒsi testul '-wholename' mai "
+#~ "folositor, sau probabil '-samefile'.  Alternativ, dacÄƒ folosiÈ›i GNU grep, "
+#~ "puteÈ›i folosi 'find ... -print0 | grep -FzZ %s'."
+
+#, fuzzy, c-format
+#~ msgid "] [path...] [expression]\n"
+#~ msgstr "Folosire : %s [cale...] [expresie]\n"
+
+#, c-format
+#~ msgid "invalid argument %s for %s"
+#~ msgstr "argument invalid %s pentru %s"
 
 #, c-format
 #~ msgid "ambiguous argument %s for %s"
 #~ msgstr "argument ambiguu %s pentru %s"
 
 #~ msgid "Unknown system error"
-#~ msgstr "Eroare de sistem necunoscutã"
+#~ msgstr "Eroare de sistem necunoscutÄƒ"
 
-#, c-format
-#~ msgid "%s: option `%s' is ambiguous\n"
-#~ msgstr "%s: opşiunea `%s' este ambiguã\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '%s' is ambiguous; possibilities:"
+#~ msgstr "%s: opÈ›iunea `%s' este ambiguÄƒ\n"
 
-#, c-format
-#~ msgid "%s: option `--%s' doesn't allow an argument\n"
-#~ msgstr "%s: opşiunea `--%s' nu permite un argument\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: opÈ›iunea `--%s' nu permite un argument\n"
 
-#, c-format
-#~ msgid "%s: option `%c%s' doesn't allow an argument\n"
-#~ msgstr "%s: opşiunea `%c%s' nu permite un argument\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '%c%s' doesn't allow an argument\n"
+#~ msgstr "%s: opÈ›iunea `%c%s' nu permite un argument\n"
 
-#, c-format
-#~ msgid "%s: unrecognized option `--%s'\n"
-#~ msgstr "%s: opşiune nerecunoscutã `--%s'\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '--%s' requires an argument\n"
+#~ msgstr "%s: opÈ›iunea `%s' necesitÄƒ un argument\n"
 
-#, c-format
-#~ msgid "%s: unrecognized option `%c%s'\n"
-#~ msgstr "%s: opşiune nerecunoscutã `%c%s'\n"
+#, fuzzy, c-format
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: opÈ›iune nerecunoscutÄƒ `--%s'\n"
 
-#, c-format
-#~ msgid "%s: illegal option -- %c\n"
-#~ msgstr "%s: opşiune ilegalã -- %c\n"
+#, fuzzy, c-format
+#~ msgid "%s: unrecognized option '%c%s'\n"
+#~ msgstr "%s: opÈ›iune nerecunoscutÄƒ `%c%s'\n"
 
-#, c-format
-#~ msgid "%s: invalid option -- %c\n"
-#~ msgstr "%s: opşiune ilegalã -- %c\n"
+#, fuzzy, c-format
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: opÈ›iune ilegalÄƒ -- %c\n"
 
-#, c-format
-#~ msgid "%s: option requires an argument -- %c\n"
-#~ msgstr "%s: opşiunea necesitã un argument -- %c\n"
+#, fuzzy, c-format
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: opÈ›iunea necesitÄƒ un argument -- %c\n"
 
-#, c-format
-#~ msgid "%s: option `-W %s' is ambiguous\n"
-#~ msgstr "%s: opşiunea `-W %s' este ambiguã\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: opÈ›iunea `-W %s' este ambiguÄƒ\n"
 
-#, c-format
-#~ msgid "%s: option `-W %s' doesn't allow an argument\n"
-#~ msgstr "%s: opşiunea `-W %s' nu permite un argument\n"
+#, fuzzy, c-format
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: opÈ›iunea `-W %s' nu permite un argument\n"
 
-#~ msgid "block size"
-#~ msgstr "dimensiune bloc"
+#, fuzzy, c-format
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: opÈ›iunea `%s' necesitÄƒ un argument\n"
 
 #~ msgid "`"
 #~ msgstr "`"
@@ -1524,46 +1604,21 @@ msgstr ""
 #~ msgid "^[nN]"
 #~ msgstr "^[nN]"
 
-#~ msgid "level higher in the filesystem hierarchy"
-#~ msgstr "nivel mai înalt în ierarhia sistemului de fiºiere"
+#, fuzzy
+#~ msgid "memory exhausted"
+#~ msgstr "Memorie epuizatÄƒ"
 
-#~ msgid "levels higher in the filesystem hierarchy"
-#~ msgstr "nivele mai înalte în ierarhia sistemului de fiºiere"
+#, fuzzy, c-format
+#~ msgid "invalid %s%s argument '%s'"
+#~ msgstr "argument invalid `%s' pentru `%s'"
 
-#, c-format
-#~ msgid "Usage: %s [path...] [expression]\n"
-#~ msgstr "Folosire : %s [cale...] [expresie]\n"
+#, fuzzy, c-format
+#~ msgid "invalid suffix in %s%s argument '%s'"
+#~ msgstr "argument invalid `%s' pentru `%s'"
 
-#, c-format
-#~ msgid ""
-#~ "warning: Unix filenames usually don't contain slashes (though pathnames "
-#~ "do).  That means that '%s %s' will probably evaluate to false all the "
-#~ "time on this system.  You might find the '-wholename' test more useful, "
-#~ "or perhaps '-samefile'.  Alternatively, if you are using GNU grep, you "
-#~ "could use 'find ... -print0 | grep -FzZ %s'."
-#~ msgstr ""
-#~ "avertisment: de obicei, numele de fiºiere în Unix nu conşin shash-uri "
-#~ "(dar numele de cãi da).  Aceasta înseamnã cã '%s %s' va fi evaluat ca "
-#~ "fals tot timpul pe acest sistem.  Aşi putea gãsi testul '-wholename' mai "
-#~ "folositor, sau probabil '-samefile'.  Alternativ, dacã folosişi GNU grep, "
-#~ "puteşi folosi 'find ... -print0 | grep -FzZ %s'."
-
-#~ msgid ""
-#~ "warning: the predicate -ipath is deprecated; please use -iwholename "
-#~ "instead."
-#~ msgstr ""
-#~ "avertisment: predicatul -ipath nu mai este valid; vã rugã sã folosişi -"
-#~ "iwholename în locul lui."
-
-#, c-format
-#~ msgid "GNU find version %s\n"
-#~ msgstr "GNU find versiunea %s\n"
-
-#~ msgid "oops -- invalid expression type in mark_stat!"
-#~ msgstr "hopa -- tip expresie invalid în mark_stat!"
-
-#~ msgid "oops -- invalid expression type in mark_type!"
-#~ msgstr "hopa -- tip expresie invalid în mark_type!"
+#, fuzzy, c-format
+#~ msgid "%s%s argument '%s' too large"
+#~ msgstr "listÄƒ argumente prea lungÄƒ"
 
 #, c-format
 #~ msgid ""
@@ -1571,7 +1626,7 @@ msgstr ""
 #~ "or     %s most_common_bigrams < file-list > locate-database\n"
 #~ msgstr ""
 #~ "Folosire: %s [--version | --help]\n"
-#~ "sau       %s cele_mai_comune_bigrame < listã-fisiere > baza-de-date-"
+#~ "sau       %s cele_mai_comune_bigrame < listÄƒ-fisiere > baza-de-date-"
 #~ "locate\n"
 
 #~ msgid ""
@@ -1579,183 +1634,4 @@ msgstr ""
 #~ "Report bugs to <bug-findutils@gnu.org>.\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Raportaşi bug-uri la <bug-findutils@gnu.org>.\n"
-
-#, c-format
-#~ msgid "GNU findutils version %s\n"
-#~ msgstr "GNU findutils versiunea %s\n"
-
-#, c-format
-#~ msgid "with a cumulative length of %s bytes"
-#~ msgstr "cu o lungime cumulativã de %s octeşi"
-
-#, c-format
-#~ msgid ""
-#~ "\n"
-#~ "\tof which %s contain whitespace, "
-#~ msgstr ""
-#~ "\n"
-#~ "\tdin care %s conşin spaşii albe, "
-
-#, c-format
-#~ msgid ""
-#~ "\n"
-#~ "\t%s contain newline characters, "
-#~ msgstr ""
-#~ "\n"
-#~ "\t%s conşin caractele linie-nouã, "
-
-#, c-format
-#~ msgid ""
-#~ "\n"
-#~ "\tand %s contain characters with the high bit set.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "\tºi %s conşin caractere cu bitul înalt setat.\n"
-
-#~ msgid "old"
-#~ msgstr "vechi"
-
-#, c-format
-#~ msgid "GNU locate version %s\n"
-#~ msgstr "GNU locate versiunea %s\n"
-
-#~ msgid "argument to --limit"
-#~ msgstr "argument pentru --limit"
-
-#, c-format
-#~ msgid "GNU xargs version %s\n"
-#~ msgstr "GNU xargs versiunea %s\n"
-
-#, c-format
-#~ msgid "Reducing arg_max (%ld) to arg_size (%ld)\n"
-#~ msgstr "Reducem arg_max (%ld) la arg_size (%ld)\n"
-
-#, c-format
-#~ msgid ""
-#~ "Usage: %s [-0prtx] [-e[eof-str]] [-i[replace-str]] [-l[max-lines]]\n"
-#~ "       [-n max-args] [-s max-chars] [-P max-procs] [--null] [--eof[=eof-"
-#~ "str]]\n"
-#~ "       [--replace[=replace-str]] [--max-lines[=max-lines]] [--"
-#~ "interactive]\n"
-#~ "       [--max-chars=max-chars] [--verbose] [--exit] [--max-procs=max-"
-#~ "procs]\n"
-#~ "       [--max-args=max-args] [--no-run-if-empty] [--arg-file=file]\n"
-#~ "       [--version] [--help] [command [initial-arguments]]\n"
-#~ msgstr ""
-#~ "Folosire: %s [-0prtx] [-e[ºir-eof]] [-i[ºir-înlocuire]] [-l[max-linii]]\n"
-#~ "     [-n arg-max] [-s max-caractere] [-P max-procese] [--null] [--"
-#~ "eof[=ºir-eof]]\n"
-#~ "     [--replace[=ºir-înlocuire]] [--max-lines[=linii-max]] [--"
-#~ "interactive]\n"
-#~ "     [--max-chars=max-caractere] [--verbose] [--exit] [--max-procs=max-"
-#~ "proc]\n"
-#~ "     [--max-args=max-arg] [--no-run-if-empty] [--arg-file=file]\n"
-#~ "     [--version] [--help] [command [argumente-inişiale]]\n"
-
-#~ msgid "Success"
-#~ msgstr "Succes"
-
-#~ msgid "No match"
-#~ msgstr "Nici o potrivire"
-
-#~ msgid "Invalid collation character"
-#~ msgstr "Caracter colatare invalid"
-
-#~ msgid "Invalid character class name"
-#~ msgstr "Nume clasã caractere invalid"
-
-#~ msgid "Trailing backslash"
-#~ msgstr "Trailing backslash"
-
-#~ msgid "Invalid back reference"
-#~ msgstr "Referinşã înapoi invalidã"
-
-#~ msgid "Unmatched [ or [^"
-#~ msgstr "[ sau [^ fãrã pereche"
-
-#~ msgid "Unmatched ( or \\("
-#~ msgstr "( sau \\( fãrã pereche"
-
-#~ msgid "Unmatched \\{"
-#~ msgstr "\\{ fãrã pereche"
-
-#~ msgid "Invalid content of \\{\\}"
-#~ msgstr "Conşinut invalid pentru \\{\\}"
-
-#~ msgid "Invalid range end"
-#~ msgstr "Capãt interval invalid"
-
-#~ msgid "Memory exhausted"
-#~ msgstr "Memorie epuizatã"
-
-#~ msgid "Invalid preceding regular expression"
-#~ msgstr "Invalid precedând expresie regularã"
-
-#~ msgid "Premature end of regular expression"
-#~ msgstr "Sfârºit prematur al expresiei regulare"
-
-#~ msgid "Regular expression too big"
-#~ msgstr "Expresie regularã prea mare"
-
-#~ msgid "Unmatched ) or \\)"
-#~ msgstr ") sau \\) fãrã pereche"
-
-#~ msgid "No previous regular expression"
-#~ msgstr "Nici o expresie regularã anterioarã"
-
-#~ msgid ""
-#~ "actions: -exec COMMAND ; -fprint FILE -fprint0 FILE -fprintf FILE FORMAT\n"
-#~ "      -fls FILE -ok COMMAND ; -print -print0 -printf FORMAT -prune -ls -"
-#~ "delete\n"
-#~ "      -quit\n"
-#~ msgstr ""
-#~ "acşiuni: -exec COMANDÃ ; -fprint FIªIER -fprint0 FIªIER\n"
-#~ "      -fprintf FIªIER FORMAT -fls FILE -ok COMANDÃ ; -print -print0\n"
-#~ "      -printf FORMAT -prune -ls -delete -quit\n"
-
-#~ msgid "Predicate List:\n"
-#~ msgstr "Listã Directive:\n"
-
-#~ msgid "Eval Tree:\n"
-#~ msgstr "Arbore Eval:\n"
-
-#~ msgid "Optimized Eval Tree:\n"
-#~ msgstr "Arbore Eval Optimizat:\n"
-
-#~ msgid "Optimized command line:\n"
-#~ msgstr "Linie de comandã optimizatã:\n"
-
-#~ msgid "virtual memory exhausted"
-#~ msgstr "memorie virtualã epuizatã"
-
-#~ msgid "inserting %s\n"
-#~ msgstr "inserez %s\n"
-
-#~ msgid "    type: %s    %s  "
-#~ msgstr "    tip: %s    %s  "
-
-#~ msgid "left:\n"
-#~ msgstr "stânga:\n"
-
-#~ msgid "right:\n"
-#~ msgstr "dreapta:\n"
-
-#~ msgid "[stat called here] "
-#~ msgstr "[stat apelat aici] "
-
-#~ msgid "[type needed here] "
-#~ msgstr "[tip necesar aici] "
-
-#~ msgid "Normalized Eval Tree:\n"
-#~ msgstr "Arbore Eval Normalizat:\n"
-
-#~ msgid "error in %s: %s"
-#~ msgstr "eroare în %s: %s"
-
-#~ msgid ""
-#~ "warning: locate database path `%s' contains a trailing colon, which is "
-#~ "not a valid database name"
-#~ msgstr ""
-#~ "avertisment: calea bazei de date locate `%s' conşine în coadã un caracter "
-#~ "`:', care nu este un nume de bazã de date valid"
+#~ "RaportaÈ›i bug-uri la <bug-findutils@gnu.org>.\n"

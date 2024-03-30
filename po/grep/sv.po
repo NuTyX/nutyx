@@ -1,17 +1,17 @@
 # Swedish messages for GNU Grep
-# Copyright © 1996, 1998, 1999, 2000, 2001, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Free Software Foundation, Inc.
+# Copyright © 1996, 1998, 1999, 2000, 2001, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the grep package.
 # Thomas Olsson <cid95tho@student1.lu.se>, 1996.
 # Daniel Resare <daniel@resare.com>, 1998, 1999, 2000, 2001.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: grep 3.5.16\n"
+"Project-Id-Version: grep 3.10.12\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
-"PO-Revision-Date: 2020-11-04 19:03+0100\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
+"PO-Revision-Date: 2023-04-23 12:03+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,71 +19,104 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "ogiltigt argument %s för %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "tvetydigt argument %s för %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Giltiga argument är:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "programfel"
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "stacköverspill"
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
 msgstr "skrivfel"
 
-#: lib/dfa.c:954
+#: lib/dfa.c:897
 msgid "unbalanced ["
 msgstr "obalanserad ["
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
 msgstr "ogiltig teckenklass"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "syntax för teckenklass är [[:space:]], inte [:space:]"
 
-#: lib/dfa.c:1268
+#: lib/dfa.c:1222
 msgid "unfinished \\ escape"
 msgstr "oavslutad \\-sekvens"
 
-#: lib/dfa.c:1429
+#: lib/dfa.c:1332
+msgid "? at start of expression"
+msgstr "? i början på uttryck"
+
+#: lib/dfa.c:1344
+msgid "* at start of expression"
+msgstr "* i början på uttryck"
+
+#: lib/dfa.c:1358
+msgid "+ at start of expression"
+msgstr "+ i början på uttryck"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr "{...} i början på uttryck"
+
+#: lib/dfa.c:1416
 msgid "invalid content of \\{\\}"
 msgstr "ogiltigt innehåll i \\{\\}"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 msgid "regular expression too big"
 msgstr "reguljärt uttryck är för stort"
 
-#: lib/dfa.c:1916
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr "löst \\ före ej utskrivbart tecken"
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr "löst \\ före blanktecken"
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "löst \\ före %lc"
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr "löst \\"
+
+#: lib/dfa.c:1925
 msgid "unbalanced ("
 msgstr "obalanserad ("
 
-#: lib/dfa.c:2033
+#: lib/dfa.c:2042
 msgid "no syntax specified"
 msgstr "ingen syntax angiven"
 
-#: lib/dfa.c:2044
+#: lib/dfa.c:2053
 msgid "unbalanced )"
 msgstr "obalanserad )"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Okänt systemfel"
 
@@ -122,7 +155,7 @@ msgstr "%s: ogiltig flagga -- ”%c”\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: flaggan behöver ett argument -- ”%c”\n"
 
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "minnet är slut"
 
@@ -136,7 +169,7 @@ msgstr "kan inte notera aktuell arbetskatalog"
 msgid "failed to return to initial working directory"
 msgstr "misslyckades med att återvända till ursprunglig arbetskatalog"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
 msgstr "misslyckades med att ställa in text/binärläge för filbeskrivare"
@@ -166,83 +199,83 @@ msgstr "misslyckades med att ställa in text/binärläge för filbeskrivare"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "”"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "”"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Lyckades"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Ingen träff"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Ogiltigt reguljärt uttryck"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Ogiltigt sorteringstecken"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Ogiltigt teckenklassnamn"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Efterföljande omvänt snedstreck"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Ogiltig bakåtreferens"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Omatchad [, [^, [:, [. eller [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Omatchad ( eller \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Omatchad \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Ogiltigt innehåll i \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Ogiltigt intervallslut"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Minnet är slut"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Ogiltigt inledande reguljärt uttryck"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "För tidigt slut på reguljärt uttryck"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Reguljärt uttryck är för stort"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Omatchad ) eller \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Inget tidigare reguljärt uttryck"
 
@@ -279,19 +312,19 @@ msgstr ""
 #: lib/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
-msgstr "Skriven av %s.\n"
+msgstr "Skrivet av %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
-msgstr "Skriven av %s och %s.\n"
+msgstr "Skrivet av %s och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
-msgstr "Skriven av %s, %s och %s.\n"
+msgstr "Skrivet av %s, %s och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -302,7 +335,7 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s\n"
+"Skrivet av %s, %s, %s\n"
 "och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
@@ -314,7 +347,7 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
@@ -326,7 +359,7 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s, %s och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
@@ -338,7 +371,7 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s, %s, %s och %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
@@ -351,7 +384,7 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s, %s, %s, %s\n"
 "och %s.\n"
 
@@ -365,7 +398,7 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
 "%s och %s.\n"
 
@@ -379,7 +412,7 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, %s, and others.\n"
 msgstr ""
-"Skriven av %s, %s, %s,\n"
+"Skrivet av %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
 "%s, %s och andra.\n"
 
@@ -411,49 +444,54 @@ msgstr "Webbplats för %s: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Allmän hjälp för GNU-programvara: <%s>\n"
 
-#: src/grep.c:648
+#: src/dfasearch.c:59
+#, c-format
+msgid "warning: %s"
+msgstr "varning: %s"
+
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(standard in)"
 
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
 msgstr "ogiltigt argument till -A, -B eller -C"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
 msgstr "det är för mycket indata för att räkna"
 
-#: src/grep.c:1646
+#: src/grep.c:1651
 #, c-format
 msgid "%s: binary file matches"
 msgstr "%s: binär fil matchar"
 
-#: src/grep.c:1684
+#: src/grep.c:1689
 #, c-format
 msgid "%s: warning: recursive directory loop"
 msgstr "%s: varning: rekursiv katalogloop"
 
-#: src/grep.c:1904
+#: src/grep.c:1909
 #, c-format
 msgid "%s: input file is also the output"
 msgstr "%s: inmatningsfilen är även utmatningen"
 
-#: src/grep.c:1966 src/grep.c:1973
+#: src/grep.c:1971 src/grep.c:1978
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
 msgstr "Användning: %s [FLAGGA]... MÖNSTER [FIL]...\n"
 
-#: src/grep.c:1968
+#: src/grep.c:1973
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Försök med ”%s --help” för mer information\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
 msgstr "Sök efter MÖNSTER i varje FIL.\n"
 
-#: src/grep.c:1975
+#: src/grep.c:1980
 #, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -466,7 +504,7 @@ msgstr ""
 "\n"
 "Val och tolkning av mönster:\n"
 
-#: src/grep.c:1980
+#: src/grep.c:1985
 #, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
@@ -479,7 +517,7 @@ msgstr ""
 "  -G, --basic-regexp         MÖNSTER är enkla reguljära uttryck\n"
 "  -P, --perl-regexp          MÖNSTER är reguljära uttryck som i Perl\n"
 
-#: src/grep.c:1986
+#: src/grep.c:1991
 #, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
@@ -499,7 +537,7 @@ msgstr ""
 "  -x, --line-regexp          matcha endast hela rader\n"
 "  -z, --null-data            en datarad slutar i 0 byte, inte nyradstecken\n"
 
-#: src/grep.c:1994
+#: src/grep.c:1999
 #, c-format
 msgid ""
 "\n"
@@ -516,7 +554,7 @@ msgstr ""
 "  -V, --version             visa versionsinformation och avsluta\n"
 "      --help                visa detta hjälpmeddelande och avsluta\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -541,7 +579,7 @@ msgstr ""
 "      --label=ETIKETT       skriv ut ETIKETT som filnamnsprefix för standard "
 "in\n"
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -557,7 +595,7 @@ msgstr ""
 "                            TYP  är ”binary”, ”text” eller ”without-match”\n"
 "  -a, --text                samma som --binary-files=text\n"
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -576,7 +614,7 @@ msgstr ""
 "  -r, --recursive           samma som --directories=recurse\n"
 "  -R, --dereference-recursive  detsamma, men följ alla symboliska länkar\n"
 
-#: src/grep.c:2028
+#: src/grep.c:2033
 #, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
@@ -593,7 +631,7 @@ msgstr ""
 "FIL\n"
 "      --exclude-dir=GLOB    kataloger som matchar GLOB hoppas över\n"
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -610,7 +648,7 @@ msgstr ""
 "behövs)\n"
 "  -Z, --null                skriv ut 0-tecken efter FILnamn\n"
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, c-format
 msgid ""
 "\n"
@@ -625,10 +663,12 @@ msgstr ""
 "  -A, --after-context=ANTAL  skriv ANTAL rader efter träffad rad\n"
 "  -C, --context=ANTAL        skriv ANTAL rader runt träffad rad\n"
 
-#: src/grep.c:2048
+#: src/grep.c:2053
 #, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -637,6 +677,10 @@ msgid ""
 "\n"
 msgstr ""
 "  -ANTAL                    samma som --context=ANTAL\n"
+"      --group-separator=SEP  skriv ut SEP på rad mellan matchningar med "
+"sammanhang\n"
+"      --no-group-separator  skriv inte ut separator för matchningar med "
+"sammanhang\n"
 "      --color[=NÄR],\n"
 "      --colour[=NÄR]        använd markörer för att särskilja träff\n"
 "                            NÄR kan vara ”always”, ”never” eller ”auto”.\n"
@@ -644,7 +688,7 @@ msgstr ""
 "Windows)\n"
 "\n"
 
-#: src/grep.c:2055
+#: src/grep.c:2062
 #, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
@@ -657,90 +701,128 @@ msgstr ""
 "Avslutningsstatus är 0 om någon rad, annars 1;\n"
 "om något fel inträffar och -q inte angavs, är avslutningsstatusen 2.\n"
 
-#: src/grep.c:2097
+#: src/grep.c:2104
 msgid "conflicting matchers specified"
 msgstr "motstridiga söksträngar angivna"
 
-#: src/grep.c:2104
+#: src/grep.c:2111
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr "Perlmatchning stöds inte i ett bygge med --disable-perl-regexp"
 
-#: src/grep.c:2106
+#: src/grep.c:2113
 #, c-format
 msgid "invalid matcher %s"
 msgstr "ogiltig matchning %s"
 
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
 msgstr "okänd metod för enheter"
 
-#: src/grep.c:2689
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr "varning: --unix-byte-offsets (-u) är föråldrat"
+
+#: src/grep.c:2688
 msgid "invalid max count"
 msgstr "ogiltigt värde för antal träffar"
 
-#: src/grep.c:2747
+#: src/grep.c:2746
 msgid "unknown binary-files type"
 msgstr "okänd binärfiltyp"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
-"Skrivet av Mike Haertel och andra, se <https://git.sv.gnu.org/cgit/grep.git/"
-"tree/AUTHORS>."
+"Skrivet av Mike Haertel och andra, se\n"
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
-msgstr "misslyckades med att allokera minne för JIT-stacken för PCRE"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
+msgstr "varning: GREP_COLOR='%s' är föråldrad; använd GREP_COLORS='mt=%s'"
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+"\n"
+"grep -P använder PCRE2 %s\n"
+
+#: src/pcresearch.c:169
+msgid "-P supports only unibyte locales on this platform"
+msgstr "-P stöder endast unibyte-lokaler på denna plattform"
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
 msgstr "-P stöder endast unibyte- och UTF-8-lokaler"
 
-#: src/pcresearch.c:143
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
 msgstr "flaggan -P har endast stöd för ett mönster"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr "internt fel (bör aldrig inträffa)"
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
 msgstr "översteg radlängdsgräns för PCRE"
 
-#: src/pcresearch.c:306
+#: src/pcresearch.c:368
 #, c-format
 msgid "%s: memory exhausted"
 msgstr "%s: minnet är slut"
 
-#: src/pcresearch.c:310
+#: src/pcresearch.c:371
 #, c-format
 msgid "%s: exhausted PCRE JIT stack"
 msgstr "%s: fyllde JIT-stacken för PCRE"
 
-#: src/pcresearch.c:315
+#: src/pcresearch.c:375
 #, c-format
 msgid "%s: exceeded PCRE's backtracking limit"
 msgstr "%s: översteg gräns för PCRE-bakåtspårning"
 
-#: src/pcresearch.c:319
+#: src/pcresearch.c:380
 #, c-format
-msgid "%s: exceeded PCRE's recursion limit"
-msgstr "%s: översteg rekursionsgräns för PCRE"
+msgid "%s: exceeded PCRE's nested backtracking limit"
+msgstr "%s: översteg gräns för nästlad PCRE-bakåtspårning"
 
-#: src/pcresearch.c:327
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr "%s: PCRE upptäckte rekursiv loop"
+
+#: src/pcresearch.c:389
+#, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr "%s: översteg heap-gräns för PCRE"
+
+#: src/pcresearch.c:398
 #, c-format
 msgid "%s: internal PCRE error: %d"
 msgstr "%s: internt PCRE-fel: %d"
 
+#~ msgid ""
+#~ "\n"
+#~ "Built with PCRE "
+#~ msgstr ""
+#~ "\n"
+#~ "Byggt med PCRE "
+
+#~ msgid "JIT internal error: %d"
+#~ msgstr "internt JIT-fel: %d"
+
+#~ msgid "failed to allocate memory for the PCRE JIT stack"
+#~ msgstr "misslyckades med att allokera minne för JIT-stacken för PCRE"
+
+#~ msgid "internal error (should never happen)"
+#~ msgstr "internt fel (bör aldrig inträffa)"
+
 #~ msgid "warning: GREP_OPTIONS is deprecated; please use an alias or script"
 #~ msgstr ""
 #~ "warning: GREP_OPTIONS är föråldrat; använd ett alias eller ett skript"
-
-#~ msgid "warning: %s: %s"
-#~ msgstr "varning: %s: %s"
 
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "Webbplats för %s: <https://www.gnu.org/software/%s/>\n"
@@ -756,9 +838,6 @@ msgstr "%s: internt PCRE-fel: %d"
 
 #~ msgid "Mike Haertel"
 #~ msgstr "Mike Haertel"
-
-#~ msgid "internal error"
-#~ msgstr "internt fel"
 
 #~ msgid "%s: option '--%s' doesn't allow an argument\n"
 #~ msgstr "%s: flaggan ”--%s” tillåter inget argument\n"
@@ -900,8 +979,8 @@ msgstr "%s: internt PCRE-fel: %d"
 #~ "  -a, --text                motsvarar --binary-files=text\n"
 #~ "  -I                        motsvarar --binary-files=without-match\n"
 #~ "  -d, --directories=ÅTGÄRD  hur kataloger skall hanteras\n"
-#~ "                            ÅTGÄRD är \"read\", \"recurse\" eller \"skip"
-#~ "\".\n"
+#~ "                            ÅTGÄRD är \"read\", \"recurse\" eller "
+#~ "\"skip\".\n"
 #~ "  -D, --devices=ÅTGÄRD      hur enheter hanteras, FIFO:er och uttag\n"
 #~ "                            ÅTGÄRD är \"read\" eller \"skip\"\n"
 #~ "  -R, -r, --recursive       motsvarar --directories=recurse\n"

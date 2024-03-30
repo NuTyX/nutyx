@@ -1,0 +1,745 @@
+# Korean translation of the psmisc package.
+# Copyright (C) 2022 Free Software Foundation, Inc.
+# This file is distributed under the same license as the psmisc package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2022, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: psmisc 23.7-rc1\n"
+"Report-Msgid-Bugs-To: csmall@dropbear.xyz\n"
+"POT-Creation-Date: 2024-03-03 21:55+1100\n"
+"PO-Revision-Date: 2024-02-14 11:01+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: src/fuser.c:146
+#, c-format
+msgid ""
+"Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]\n"
+"             [-k [-i] [-SIGNAL]] NAME...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"Show which processes use the named files, sockets, or filesystems.\n"
+"\n"
+"  -a,--all              display unused files too\n"
+"  -i,--interactive      ask before killing (ignored without -k)\n"
+"  -I,--inode            use always inodes to compare files\n"
+"  -k,--kill             kill processes accessing the named file\n"
+"  -l,--list-signals     list available signal names\n"
+"  -m,--mount            show all processes using the named filesystems or\n"
+"                        block device\n"
+"  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
+"  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
+"  -s,--silent           silent operation\n"
+"  -SIGNAL               send this signal instead of SIGKILL\n"
+"  -u,--user             display user IDs\n"
+"  -v,--verbose          verbose output\n"
+"  -w,--writeonly        kill only processes with write access\n"
+"  -V,--version          display version information\n"
+msgstr ""
+"사용법: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n <영역>]\n"
+"             [-k [-i] [-<시그널>]] <이름>...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"어떤 프로세스가 이름을 지정한 파일, 소켓, 파일시스템을 사용하는지 나타냅니"
+"다.\n"
+"\n"
+"  -a,--all              사용하지 않는 파일도 표시\n"
+"  -i,--interactive      강제로 끝내기 전 확인 (-k 없으면 무시함)\n"
+"  -I,--inode            파일 비교시 항상 아이노드 활용\n"
+"  -k,--kill             이름이 붙은 파일에 접근하는 프로세스 강제로 끝내기\n"
+"  -l,--list-signals     모든 가용 시그널 이름 표시\n"
+"  -m,--mount            이름을 지정한 파일 시스템 또는 블록 장치로\n"
+"                        모든 프로세스 표시\n"
+"  -M,--ismountpoint     <이름>이 마운트 지점일 경우에만 요청 수행\n"
+"  -n,--namespace <영역>  지정 이름 영역 (file, udp, 또는 tcp)에서 검색\n"
+"  -s,--silent           동작 출력 안함\n"
+"  -<시그널>             SIGKILL 대신 지정 시그널 전송\n"
+"  -u,--user             사용자 ID 표시\n"
+"  -v,--verbose          자세하게 출력\n"
+"  -w,--writeonly        쓰기 접근이 있는 프로세스만 강제로 끝냄\n"
+"  -V,--version          버전 정보 표시\n"
+
+#: src/fuser.c:167
+#, c-format
+msgid ""
+"  -4,--ipv4             search IPv4 sockets only\n"
+"  -6,--ipv6             search IPv6 sockets only\n"
+msgstr ""
+"  -4,--ipv4             IPv4 소켓만 검색\n"
+"  -6,--ipv6             IPv6 소켓만 검색\n"
+
+#: src/fuser.c:170
+#, c-format
+msgid ""
+"  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
+"\n"
+msgstr ""
+"  udp/tcp 이름: [<로컬_포트>][,[<원격_호스트>][,[<원격_포트>]]]\n"
+"\n"
+
+#: src/fuser.c:176
+#, c-format
+msgid "fuser (PSmisc) %s\n"
+msgstr "fuser (PSmisc) %s\n"
+
+#: src/fuser.c:178 src/killall.c:870 src/pstree.c:1337
+#, c-format
+msgid ""
+"Copyright (C) 1993-2024 Werner Almesberger and Craig Small\n"
+"\n"
+msgstr ""
+"Copyright (C) 1993-2024 Werner Almesberger and Craig Small\n"
+"\n"
+
+#: src/fuser.c:180 src/killall.c:872 src/peekfd.c:195 src/prtstat.c:68
+#: src/pstree.c:1339
+#, c-format
+msgid ""
+"PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
+"This is free software, and you are welcome to redistribute it under\n"
+"the terms of the GNU General Public License.\n"
+"For more information about these matters, see the files named COPYING.\n"
+msgstr ""
+"PSmisc는 명백한 무보증을 통해 제공합니다.\n"
+"이 프로그램은 자유 소프트웨어이며, GNU 공중 사용 허가서의\n"
+"조항에 따른 재배포를 환영합니다.\n"
+"자세한 정보는 COPYING 파일을 살펴보십시오.\n"
+"\n"
+
+#: src/fuser.c:202
+#, c-format
+msgid "Cannot open /proc directory: %s\n"
+msgstr "/proc 디렉터리 열 수 없음: %s\n"
+
+#: src/fuser.c:404 src/fuser.c:463
+#, c-format
+msgid "Cannot allocate memory for matched proc: %s\n"
+msgstr "일치하는 proc에 메모리를 할당할 수 없음: %s\n"
+
+#: src/fuser.c:494
+#, c-format
+msgid "Specified filename %s does not exist.\n"
+msgstr "지정한 %s 파일 이름이 없습니다.\n"
+
+#: src/fuser.c:497
+#, c-format
+msgid "Cannot stat %s: %s\n"
+msgstr "%s 상태 정보 가져올 수 없음: %s\n"
+
+#: src/fuser.c:649
+#, c-format
+msgid "Cannot resolve local port %s: %s\n"
+msgstr "%s 로컬 포트를 해석할 수 없음: %s\n"
+
+#: src/fuser.c:670
+#, c-format
+msgid "Unknown local port AF %d\n"
+msgstr "알 수 없는 로컬 포트 AF %d번\n"
+
+#: src/fuser.c:753
+#, c-format
+msgid "Cannot open protocol file \"%s\": %s\n"
+msgstr "\"%s\" 프로토콜 파일을 열 수 없습니다: %s\n"
+
+#: src/fuser.c:1079
+#, c-format
+msgid "Specified filename %s is not a mountpoint.\n"
+msgstr "지정한 %s 파일은 마운트 지점이 아닙니다.\n"
+
+#: src/fuser.c:1175
+#, c-format
+msgid "%s: Invalid option %s\n"
+msgstr "%s: 부적절한 옵션 %s\n"
+
+#: src/fuser.c:1230
+msgid "Namespace option requires an argument."
+msgstr "이름 영역 옵션에 인자가 필요합니다."
+
+#: src/fuser.c:1242
+msgid "Invalid namespace name"
+msgstr "부적절한 이름 영역의 이름"
+
+#: src/fuser.c:1309
+msgid "You can only use files with mountpoint options"
+msgstr "마운트 지점 옵션에만 파일을 활용할 수 있습니다"
+
+#: src/fuser.c:1356
+msgid "No process specification given"
+msgstr "지정한 프로세스가 없습니다"
+
+#: src/fuser.c:1373
+msgid "all option cannot be used with silent option."
+msgstr "모든 옵션은 출력 중지 옵션과 사용할 수 없습니다."
+
+#: src/fuser.c:1378
+msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
+msgstr "IPv4 및 IPv6 소켓을 동시에 검색할 수 없습니다"
+
+#: src/fuser.c:1474
+#, c-format
+msgid "%*s USER        PID ACCESS COMMAND\n"
+msgstr "%*s 사용자      PID 접근 명령\n"
+
+#: src/fuser.c:1508 src/fuser.c:1554
+msgid "(unknown)"
+msgstr "(알 수 없음)"
+
+#: src/fuser.c:1650 src/fuser.c:1706
+#, c-format
+msgid "Cannot stat file %s: %s\n"
+msgstr "%s 파일 상태 정보 가져올 수 없음: %s\n"
+
+#: src/fuser.c:1803
+#, c-format
+msgid "Cannot open /proc/net/unix: %s\n"
+msgstr "/proc/net/unix 열 수 없음: %s\n"
+
+#: src/fuser.c:1909
+#, c-format
+msgid "Kill process %d ? (y/N) "
+msgstr "프로세스 %d번을 강제로 끝냅니까? (y/N) "
+
+#: src/fuser.c:1950
+#, c-format
+msgid "Could not kill process %d: %s\n"
+msgstr "프로세스 %d번을 강제로 끝낼 수 없습니다: %s\n"
+
+#: src/fuser.c:1966
+#, c-format
+msgid "Cannot open a network socket.\n"
+msgstr "네트워크 소켓을 열 수 없습니다.\n"
+
+#: src/fuser.c:1971
+#, c-format
+msgid "Cannot find socket's device number.\n"
+msgstr "소켓 장치 번호를 찾을 수 없습니다.\n"
+
+#: src/killall.c:111
+#, c-format
+msgid "Kill %s(%s%d) ? (y/N) "
+msgstr "%s 프로세스(%s%d)를 강제로 끝냅니까 ? (y/N) "
+
+#: src/killall.c:114
+#, c-format
+msgid "Signal %s(%s%d) ? (y/N) "
+msgstr "%s 시그널(%s%d)을 보냅니까? (y/N) "
+
+#: src/killall.c:262
+#, c-format
+msgid "killall: Cannot get UID from process status\n"
+msgstr "killall: 프로세스 상태 정보에서 UID를 가져올 수 없습니다\n"
+
+#: src/killall.c:368
+#, c-format
+msgid "killall: Bad regular expression: %s\n"
+msgstr "killall: 잘못된 정규 표현식: %s\n"
+
+#: src/killall.c:525
+#, c-format
+msgid "killall: skipping partial match %s(%d)\n"
+msgstr "killall: 일부 %s 일치 항목을 건너뜀(%d)\n"
+
+#: src/killall.c:775
+#, c-format
+msgid "Killed %s(%s%d) with signal %d\n"
+msgstr "%s(%s%d)을(를) %d번 시그널로 강제로 끝냈습니다\n"
+
+#: src/killall.c:796
+#, c-format
+msgid "%s: no process found\n"
+msgstr "%s: 지정 프로세스가 없습니다\n"
+
+#: src/killall.c:837
+#, c-format
+msgid "Usage: killall [OPTION]... [--] NAME...\n"
+msgstr "사용법: killall [<옵션>]... [--] <이름>...\n"
+
+#: src/killall.c:839
+#, c-format
+msgid ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact          require exact match for very long names\n"
+"  -I,--ignore-case    case insensitive process name match\n"
+"  -g,--process-group  kill process group instead of process\n"
+"  -y,--younger-than   kill processes younger than TIME\n"
+"  -o,--older-than     kill processes older than TIME\n"
+"  -i,--interactive    ask for confirmation before killing\n"
+"  -l,--list           list all known signal names\n"
+"  -q,--quiet          don't print complaints\n"
+"  -r,--regexp         interpret NAME as an extended regular expression\n"
+"  -s,--signal SIGNAL  send this signal instead of SIGTERM\n"
+"  -u,--user USER      kill only process(es) running as USER\n"
+"  -v,--verbose        report if the signal was successfully sent\n"
+"  -V,--version        display version information\n"
+"  -w,--wait           wait for processes to die\n"
+"  -n,--ns PID         match processes that belong to the same namespaces\n"
+"                      as PID\n"
+msgstr ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact          매우 긴 이름에 정확히 일치해야 함\n"
+"  -I,--ignore-case    프로세스 이름 일치시 대소문자 구분 안함\n"
+"  -g,--process-group  프로세스가 아닌 프로세스 그룹 강제로 끝냄\n"
+"  -y,--younger-than   지정 <시간> 이후의 프로세스를 강제로 끝냄\n"
+"  -o,--older-than     지정 <시간> 이전의 프로세스를 강제로 끝냄\n"
+"  -i,--interactive    강제로 끝내기 전 확인 질문\n"
+"  -l,--list           일려진 모든 시그널 이름을 나타냄\n"
+"  -q,--quiet          처리 질문/오류 등을 나타내지 않음\n"
+"  -r,--regexp         <이름> 을 확장 정규 표현식으로 해석\n"
+"  -s,--signal <시그널>  SIGTERM 대신 지정 시그널 보냄\n"
+"  -u,--user <사용자>  지정 <사용자>가 실행하는 프로세스만 강제로 끝냄\n"
+"  -v,--verbose        시그널을 제대로 보냈는지 보고\n"
+"  -V,--version        버전 정보를 나타냄\n"
+"  -w,--wait           프로세스가 끝날 때까지 대기\n"
+"  -n,--ns PID         PID에 해당하는 동일한 이름 영역 이름과 일치하는 프로세"
+"스만\n"
+"                      처리\n"
+
+#: src/killall.c:859
+#, c-format
+msgid ""
+"  -Z,--context REGEXP kill only process(es) having context\n"
+"                      (must precede other arguments)\n"
+msgstr ""
+"  -Z,--context <정규식> 컨텍스트에 해당하는 프로세스만 강제로 끝냅니다\n"
+"                      (다른 인자보다 우선해야함)\n"
+
+#: src/killall.c:955 src/killall.c:961
+msgid "Invalid time format"
+msgstr "잘못된 시간 형식"
+
+#: src/killall.c:981
+#, c-format
+msgid "Cannot find user %s\n"
+msgstr "%s 사용자가 없습니다\n"
+
+#: src/killall.c:1016
+msgid "Invalid namespace PID"
+msgstr "부적절한 이름 영역 PID"
+
+#: src/killall.c:1023
+#, c-format
+msgid "Bad regular expression: %s\n"
+msgstr "잘못된 정규 표현식: %s\n"
+
+#: src/killall.c:1057
+#, c-format
+msgid "killall: Maximum number of names is %d\n"
+msgstr "killall: 이름에 할당한 최대 번호는 %d번입니다\n"
+
+#: src/killall.c:1062
+#, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
+msgstr "killall: %s에 프로세스 항목이 빠졌습니다 (마운트 안함?)\n"
+
+#: src/peekfd.c:183
+#, c-format
+msgid "Error attaching to pid %i\n"
+msgstr "PID %i번에 접근하는 중 오류\n"
+
+#: src/peekfd.c:191
+#, c-format
+msgid "peekfd (PSmisc) %s\n"
+msgstr "peekfd (PSmisc) %s\n"
+
+#: src/peekfd.c:193
+#, c-format
+msgid ""
+"Copyright (C) 2007 Trent Waddington\n"
+"\n"
+msgstr ""
+"Copyright (C) 2007 Trent Waddington\n"
+"\n"
+
+#: src/peekfd.c:203
+#, c-format
+msgid ""
+"Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8, --eight-bit-clean        output 8 bit clean streams.\n"
+"    -n, --no-headers             don't display read/write from fd headers.\n"
+"    -c, --follow                 peek at any new child processes too.\n"
+"    -t, --tgid                   peek at all threads where tgid equals "
+"<pid>.\n"
+"    -d, --duplicates-removed     remove duplicate read/writes from the "
+"output.\n"
+"    -V, --version                prints version info.\n"
+"    -h, --help                   prints this help.\n"
+"\n"
+"  Press CTRL-C to end output.\n"
+msgstr ""
+"사용법: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8, --eight-bit-clean        8 비트 클린 스트림을 출력합니다.\n"
+"    -n, --no-headers             fd 헤더의 읽기 쓰기를 나타내지 않습니다.\n"
+"    -c, --follow                 어떤 새 하위 프로세스도 살펴봅니다.\n"
+"    -t, --tgid                   <pid>와 동일한 모든 tgid 스레드를 살펴봅니"
+"다.\n"
+"    -d, --duplicates-removed     출력에서 읽기/쓰기 중복을 제거합니다.\n"
+"    -V, --version                버전 정보를 나타냅니다.\n"
+"    -h, --help                   이 도움말을 나타냅니다.\n"
+"\n"
+"  출력을 끝내려면 CTRL-C 키를 누르십시오.\n"
+
+#: src/prtstat.c:54
+#, c-format
+msgid ""
+"Usage: prtstat [options] PID ...\n"
+"       prtstat -V\n"
+"Print information about a process\n"
+"    -r,--raw       Raw display of information\n"
+"    -V,--version   Display version information and exit\n"
+msgstr ""
+"사용법: prtstat [<옵션>] PID ...\n"
+"        prtstat -V\n"
+"프로세스 정보를 출력합니다\n"
+"    -r,--raw       원시 정보를 나타냅니다\n"
+"    -V,--version   버전 정보를 나타낸 후 나갑니다\n"
+
+#: src/prtstat.c:65
+#, c-format
+msgid "prtstat (PSmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
+
+#: src/prtstat.c:66
+#, c-format
+msgid ""
+"Copyright (C) 2009-2024 Craig Small\n"
+"\n"
+msgstr ""
+"Copyright (C) 2009-2024 Craig Small\n"
+"\n"
+
+#: src/prtstat.c:78
+msgid "running"
+msgstr "실행중"
+
+#: src/prtstat.c:80
+msgid "sleeping"
+msgstr "대기중"
+
+#: src/prtstat.c:82
+msgid "disk sleep"
+msgstr "디스크대기"
+
+#: src/prtstat.c:84
+msgid "zombie"
+msgstr "좀비"
+
+#: src/prtstat.c:86
+msgid "traced"
+msgstr "추적함"
+
+#: src/prtstat.c:88
+msgid "paging"
+msgstr "페이징"
+
+#: src/prtstat.c:90
+msgid "unknown"
+msgstr "알수없음"
+
+#: src/prtstat.c:164
+#, c-format
+msgid ""
+"Process: %-14s\t\tState: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
+msgstr ""
+"프로세스: %-14s\t\t상태: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\t스레드: %ld\n"
+
+#: src/prtstat.c:169
+#, c-format
+msgid ""
+"Process, Group and Session IDs\n"
+"  Process ID: %d\t\t  Parent ID: %d\n"
+"    Group ID: %d\t\t Session ID: %d\n"
+"  T Group ID: %d\n"
+"\n"
+msgstr ""
+"프로세스, 그룹, 세션 ID\n"
+"  프로세스 ID: %d\t\t 상위 ID: %d\n"
+"      그룹 ID: %d\t\t 세션 ID: %d\n"
+"    T 그룹 ID: %d\n"
+"\n"
+
+#: src/prtstat.c:175
+#, c-format
+msgid ""
+"Page Faults\n"
+"  This Process    (minor major): %8lu  %8lu\n"
+"  Child Processes (minor major): %8lu  %8lu\n"
+msgstr ""
+"페이징 실패\n"
+"    이 프로세스 (minor major): %8lu  %8lu\n"
+"  하위 프로세스 (minor major): %8lu  %8lu\n"
+
+#: src/prtstat.c:180
+#, c-format
+msgid ""
+"CPU Times\n"
+"  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
+msgstr ""
+"CPU 시간\n"
+"    이 프로세스 (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  하위 프로세스 (user system guest):       %6.2f %6.2f %6.2f\n"
+
+#: src/prtstat.c:189
+#, c-format
+msgid ""
+"Memory\n"
+"  Vsize:       %-10s\n"
+"  RSS:         %-10s \t\t RSS Limit: %s\n"
+"  Code Start:  %#-10lx\t\t Code Stop:  %#-10lx\n"
+"  Stack Start: %#-10lx\n"
+"  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
+msgstr ""
+"메모리\n"
+"  Vsize:       %-10s\n"
+"  RSS:         %-10s \t\t RSS 한계: %s\n"
+"  Code 시작:  %#-10lx\t\t Code 정지:  %#-10lx\n"
+"  스택 시작: %#-10lx\n"
+"  스택 포인터 (ESP): %#10lx\t 명령 포인터 (EIP): %#10lx\n"
+
+#: src/prtstat.c:199
+#, c-format
+msgid ""
+"Scheduling\n"
+"  Policy: %s\n"
+"  Nice:   %ld \t\t RT Priority: %ld %s\n"
+msgstr ""
+"스케쥴링\n"
+"  정책: %s\n"
+"  Nice:   %ld \t\t RT 우선순위: %ld %s\n"
+
+#: src/prtstat.c:220
+msgid "asprintf in print_stat failed.\n"
+msgstr "print_stat에서 asprint에 실패했습니다.\n"
+
+#: src/prtstat.c:225
+#, c-format
+msgid "Process with pid %d does not exist.\n"
+msgstr "PID %d번 프로세스는 없습니다.\n"
+
+#: src/prtstat.c:227
+#, c-format
+msgid "Unable to open stat file for pid %d (%s)\n"
+msgstr "PID %d번의 상태 정보 파일을 열 수 없습니다(%s)\n"
+
+#: src/prtstat.c:243
+#, c-format
+msgid "Unable to allocate memory for proc_info\n"
+msgstr "proc_info에 필요한 메모리를 할당할 수 없습니다\n"
+
+#: src/prtstat.c:283
+#, c-format
+msgid "Unable to scan stat file"
+msgstr "상태 정보 파일을 검사할 수 없습니다"
+
+#: src/prtstat.c:318
+msgid "Invalid option"
+msgstr "부적절한 옵션"
+
+#: src/prtstat.c:323
+msgid "You must provide at least one PID."
+msgstr "최소한 PID 하나는 지정해야 합니다."
+
+#: src/prtstat.c:327
+#, c-format
+msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
+msgstr ""
+"/proc 디렉터리를 마운트하지 않아 /proc/self/stat 상태 정보를 가져올 수 없습니"
+"다.\n"
+
+#: src/pstree.c:1254
+#, c-format
+msgid "%s is empty (not mounted ?)\n"
+msgstr "%s은(는) 비어있습니다 (마운트 안함?)\n"
+
+#: src/pstree.c:1287
+#, c-format
+msgid ""
+"Usage: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N type ]\n"
+"              [ -A | -G | -U ] [ PID | USER ]\n"
+"   or: pstree -V\n"
+msgstr ""
+"사용법: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N type ]\n"
+"               [ -A | -G | -U ] [ PID | USER ]\n"
+"  또는: pstree -V\n"
+
+#: src/pstree.c:1291
+#, c-format
+msgid ""
+"\n"
+"Display a tree of processes.\n"
+"\n"
+msgstr ""
+"\n"
+"프로세스를 트리 형식으로 나타냅니다.\n"
+"\n"
+
+#: src/pstree.c:1294
+#, c-format
+msgid ""
+"  -a, --arguments     show command line arguments\n"
+"  -A, --ascii         use ASCII line drawing characters\n"
+"  -c, --compact-not   don't compact identical subtrees\n"
+msgstr ""
+"  -a, --arguments     명령행 실행 인자를 나타냅니다\n"
+"  -A, --ascii         선 문자 표현시 ASCII을 활용합니다\n"
+"  -c, --compact-not   이상적인 하위 트리를 축소하지 않습니다\n"
+
+#: src/pstree.c:1298
+#, c-format
+msgid ""
+"  -C, --color=TYPE    color process by attribute\n"
+"                      (age)\n"
+msgstr ""
+"  -C, --color=<형식>  속성에 따라 색상을 처리합니다\n"
+"                      (age)\n"
+
+#: src/pstree.c:1301
+#, c-format
+msgid ""
+"  -g, --show-pgids    show process group ids; implies -c\n"
+"  -G, --vt100         use VT100 line drawing characters\n"
+msgstr ""
+"  -g, --show-pgids    프로세스 그룹 ID를 나타냅니다. -c 생략함\n"
+"  -G, --vt100         선 문자 표현시 VT100을 활용합니다\n"
+
+#: src/pstree.c:1304
+#, c-format
+msgid ""
+"  -h, --highlight-all highlight current process and its ancestors\n"
+"  -H PID, --highlight-pid=PID\n"
+"                      highlight this process and its ancestors\n"
+"  -l, --long          don't truncate long lines\n"
+msgstr ""
+"  -h, --highlight-all 현재 프로세스와 상위 요소를 강조합니다\n"
+"  -H PID, --highlight-pid=PID\n"
+"                      지정 프로세스와 상위 요소를 강조합니다\n"
+"  -l, --long          긴 줄을 자르지 않습니다\n"
+
+#: src/pstree.c:1309
+#, c-format
+msgid ""
+"  -n, --numeric-sort  sort output by PID\n"
+"  -N TYPE, --ns-sort=TYPE\n"
+"                      sort output by this namespace type\n"
+"                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
+"  -p, --show-pids     show PIDs; implies -c\n"
+msgstr ""
+"  -n, --numeric-sort  PID순으로 출력 내용을 정렬합니다\n"
+"  -N <형식>, --ns-sort=<형식>\n"
+"                      이름 영역 형식에 따라 출력 내용을 정렬합니다\n"
+"                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
+"  -p, --show-pids     PID를 나타냅니다. -c 생략함\n"
+
+#: src/pstree.c:1315
+#, c-format
+msgid ""
+"  -s, --show-parents  show parents of the selected process\n"
+"  -S, --ns-changes    show namespace transitions\n"
+"  -t, --thread-names  show full thread names\n"
+"  -T, --hide-threads  hide threads, show only processes\n"
+msgstr ""
+"  -s, --show-parents  선택한 프로세스의 상위 요소를 나타냅니다\n"
+"  -S, --ns-changes    이름 영역 변이를 나타냅니다\n"
+"  -t, --thread-names  전체 스레드 이름을 나타냅니다\n"
+"  -T, --hide-threads  스레드는 숨기고 프로세스만 나타냅니다\n"
+
+#: src/pstree.c:1320
+#, c-format
+msgid ""
+"  -u, --uid-changes   show uid transitions\n"
+"  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
+"  -V, --version       display version information\n"
+msgstr ""
+"  -u, --uid-changes   UID 변이를 나타냅니다\n"
+"  -U, --unicode       선 문자 표현시 UTF-8 (유니코드)를 활용합니다\n"
+"  -V, --version       버전 정보를 나타냅니다\n"
+
+#: src/pstree.c:1324
+#, c-format
+msgid ""
+"  -Z, --security-context\n"
+"                      show security attributes\n"
+msgstr ""
+"  -Z, --security-context\n"
+"                      보안 속성을 나타냅니다\n"
+
+#: src/pstree.c:1326
+#, c-format
+msgid ""
+"\n"
+"  PID    start at this PID; default is 1 (init)\n"
+"  USER   show only trees rooted at processes of this user\n"
+"\n"
+msgstr ""
+"\n"
+"  PID    이 PID값으로 시작합니다. 기본값은 1(init)입니다\n"
+"  USER   이 사용자의 최상위 기본 실행 프로세스만을 나타냅니다\n"
+"\n"
+
+#: src/pstree.c:1334
+#, c-format
+msgid "pstree (PSmisc) %s\n"
+msgstr "pstree (PSmisc) %s\n"
+
+#: src/pstree.c:1455
+#, c-format
+msgid "TERM is not set\n"
+msgstr "TERM을 설정하지 않았습니다\n"
+
+#: src/pstree.c:1459
+#, c-format
+msgid "Can't get terminal capabilities\n"
+msgstr "터미널 가용 정보를 가져올 수 없습니다\n"
+
+#: src/pstree.c:1477
+#, c-format
+msgid "procfs file for %s namespace not available\n"
+msgstr "%s 이름 공간에 procfs 파일이 없습니다.\n"
+
+#: src/pstree.c:1523
+#, c-format
+msgid "No such user name: %s\n"
+msgstr "그런 사용자 이름은 없습니다: %s\n"
+
+#: src/pstree.c:1539
+#, c-format
+msgid "Process %d not found.\n"
+msgstr "%d번 프로세스가 없습니다.\n"
+
+#: src/pstree.c:1555
+#, c-format
+msgid "No processes found.\n"
+msgstr "프로세스가 없습니다.\n"
+
+#: src/pstree.c:1563
+#, c-format
+msgid "Press return to close\n"
+msgstr "Return키를 눌러 닫으십시오\n"
+
+#: src/signals.c:84
+#, c-format
+msgid "%s: unknown signal; %s -l lists signals.\n"
+msgstr ""
+"%s: 알 수 없는 시그널. 시그널 목록을 보려면 %s -l 명령을 사용하십시오.\n"
+
+#, c-format
+#~ msgid ""
+#~ "Copyright (C) 1993-2021 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1993-2021 Werner Almesberger and Craig Small\n"
+#~ "\n"

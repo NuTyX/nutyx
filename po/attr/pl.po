@@ -1,5 +1,5 @@
 # Copyright (C) 2004  Free Software Foundation, Inc.
-# Copyright (C) 2004, 2005  Jakub Bogusz <qboosh@pld-linux.org>
+# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2022.
 #
 # This program is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -18,22 +18,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: attr-2.4.28\n"
+"Project-Id-Version: attr-2.5.1\n"
 "Report-Msgid-Bugs-To: acl-devel@nongnu.org\n"
-"POT-Creation-Date: 2021-03-16 07:49+0100\n"
-"PO-Revision-Date: 2006-01-21 21:13+0100\n"
+"POT-Creation-Date: 2024-01-13 21:39-0500\n"
+"PO-Revision-Date: 2021-05-20 21:45+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: libattr/attr_copy_fd.c:80 libattr/attr_copy_fd.c:95
 #: libattr/attr_copy_file.c:78 libattr/attr_copy_file.c:93
 #, c-format
 msgid "listing attributes of %s"
-msgstr "wypisywanie atrybutów %s"
+msgstr "wypisywanie atrybutÃ³w %s"
 
 #: libattr/attr_copy_fd.c:115 libattr/attr_copy_fd.c:132
 #: libattr/attr_copy_file.c:113 libattr/attr_copy_file.c:130
@@ -45,134 +45,12 @@ msgstr "odczyt atrybutu %s dla %s"
 #: libattr/attr_copy_file.c:143 libattr/attr_copy_file.c:162
 #, c-format
 msgid "setting attributes for %s"
-msgstr "ustawianie atrybutów dla %s"
+msgstr "ustawianie atrybutÃ³w dla %s"
 
 #: libattr/attr_copy_fd.c:152 libattr/attr_copy_file.c:150
 #, c-format
 msgid "setting attribute %s for %s"
 msgstr "ustawianie atrybutu %s dla %s"
-
-#: tools/setfattr.c:75 tools/getfattr.c:100
-msgid "No such attribute"
-msgstr "Nie ma takiego atrybutu"
-
-#: tools/setfattr.c:129
-#, c-format
-msgid "%s: %s: No filename found in line %d, aborting\n"
-msgstr "%s: %s: Nie znaleziono nazwy pliku w linii %d, przerwanie pracy\n"
-
-#: tools/setfattr.c:133
-#, c-format
-msgid "%s: No filename found in line %d of standard input, aborting\n"
-msgstr ""
-"%s: Nie znaleziono nazwy pliku w linii %d standardowego wej¶cia, przerwanie "
-"pracy\n"
-
-#: tools/setfattr.c:180
-#, c-format
-msgid "%s %s -- set extended attributes\n"
-msgstr "%s %s -- ustawianie rozszerzonych atrybutów\n"
-
-#: tools/setfattr.c:181 tools/getfattr.c:385
-#, c-format
-msgid "Usage: %s %s\n"
-msgstr "Sk³adnia: %s %s\n"
-
-#: tools/setfattr.c:182
-#, c-format
-msgid "       %s %s\n"
-msgstr "       %s %s\n"
-
-#: tools/setfattr.c:184
-#, fuzzy, c-format
-msgid ""
-"  -n, --name=name         set the value of the named extended attribute\n"
-"  -x, --remove=name       remove the named extended attribute\n"
-"  -v, --value=value       use value as the attribute value\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --restore=file      restore extended attributes\n"
-"      --raw               attribute value is not encoded\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=nazwa        ustawienie warto¶ci atrybutu po nazwie\n"
-"  -x, --remove=nazwa      usuniêcie atrybutu po nazwie\n"
-"  -v, --value=warto¶ci    u¿ycie warto¶ci jako warto¶ci atrybutu\n"
-"  -h, --no-dereference    nie pod±¿anie za dowi±zaniami symbolicznymi\n"
-"      --restore=plik      odtworzenie rozszerzonych atrybutów\n"
-"      --version           wy¶wietlenie informacji o wersji i zakoñczenie\n"
-"      --help              ten tekst pomocy\n"
-
-#: tools/setfattr.c:264
-#, c-format
-msgid ""
-"Usage: %s %s\n"
-"       %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Sk³adnia: %s %s\n"
-"          %s %s\n"
-"`%s --help' wy¶wietli wiêcej informacji.\n"
-
-#: tools/getfattr.c:265
-#, c-format
-msgid "%s: Removing leading '/' from absolute path names\n"
-msgstr "%s: Usuniêcie wiod±cego '/' ze ¶cie¿ek bezwzglêdnych\n"
-
-#: tools/getfattr.c:383
-#, c-format
-msgid "%s %s -- get extended attributes\n"
-msgstr "%s %s -- odczyt rozszerzonych atrybutów\n"
-
-#: tools/getfattr.c:388
-#, fuzzy, c-format
-msgid ""
-"  -n, --name=name         get the named extended attribute value\n"
-"  -d, --dump              get all extended attribute values\n"
-"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
-"      --match=pattern     only get attributes with names matching pattern\n"
-"      --only-values       print the bare values only\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --one-file-system   skip files on different filesystems\n"
-"      --absolute-names    don't strip leading '/' in pathnames\n"
-"  -R, --recursive         recurse into subdirectories\n"
-"  -L, --logical           logical walk, follow symbolic links\n"
-"  -P  --physical          physical walk, do not follow symbolic links\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=nazwa        odczyt warto¶ci rozszerzonego atrybutu po nazwie\n"
-"  -d, --dump              odczyt warto¶ci wszystkich rozszerzonych "
-"atrybutów\n"
-"  -e, --encoding=...      kodowanie warto¶ci (jako 'text', 'hex' lub "
-"'base64')\n"
-"      --match=wzorzec     odczyt tylko warto¶ci atrybutów pasuj±cych do "
-"wzorca\n"
-"      --only-values       wypisywanie tylko samych warto¶ci\n"
-"  -h, --no-dereference    nie pod±¿anie za dowi±zaniami symbolicznymi\n"
-"      --absolute-names    nie pomijanie wiod±cych '/' ze ¶cie¿ek\n"
-"  -R, --recursive         rekurencyjne wchodzenie do katalogów\n"
-"  -L, --logical           przechodzenie logiczne, pod±¿anie za dowi±zaniami\n"
-"                            symbolicznymi\n"
-"  -P, --physical          przechodzenie fizyczne, nie pod±¿anie za "
-"dowi±zaniami\n"
-"                            symbolicznymi\n"
-"      --version           wy¶wietlenie informacji o wersji i zakoñczenie\n"
-"      --help              ten tekst pomocy\n"
-
-#: tools/getfattr.c:489
-#, c-format
-msgid "%s: invalid regular expression \"%s\"\n"
-msgstr "%s: b³êdne wyra¿enie regularne \"%s\"\n"
-
-#: tools/getfattr.c:503
-#, c-format
-msgid ""
-"Usage: %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Sk³adnia: %s %s\n"
-"`%s --help' wy¶wietli wiêcej informacji.\n"
 
 #: tools/attr.c:49
 #, c-format
@@ -183,12 +61,12 @@ msgid ""
 "       %s [-LRq]  -l pathname                          # list attrs \n"
 "      -s reads a value from stdin and -g writes a value to stdout\n"
 msgstr ""
-"Sk³adnia: %s [-LRSq] -s atrybut [-V warto¶æ] ¶cie¿ka  # ustawienie warto¶ci\n"
-"          %s [-LRSq] -g atrybut ¶cie¿ka               # odczytanie warto¶ci\n"
-"          %s [-LRSq] -r atrybut ¶cie¿ka               # usuniêcie atrybutu\n"
-"          %s [-LRq]  -l ¶cie¿ka                       # lista atrybutów\n"
-"      -s odczytuje warto¶æ ze standardowego wej¶cia,\n"
-"      -g zapisuje na standardowe wyj¶cie\n"
+"SkÅ‚adnia: %s [-LRSq] -s atrybut [-V wartoÅ›Ä‡] Å›cieÅ¼ka  # ustawienie wartoÅ›ci\n"
+"          %s [-LRSq] -g atrybut Å›cieÅ¼ka               # odczytanie wartoÅ›ci\n"
+"          %s [-LRSq] -r atrybut Å›cieÅ¼ka               # usuniÄ™cie atrybutu\n"
+"          %s [-LRq]  -l Å›cieÅ¼ka                       # lista atrybutÃ³w\n"
+"      -s odczytuje wartoÅ›Ä‡ ze standardowego wejÅ›cia,\n"
+"      -g zapisuje na standardowe wyjÅ›cie\n"
 
 #: tools/attr.c:87 tools/attr.c:104 tools/attr.c:113 tools/attr.c:122
 #, c-format
@@ -208,44 +86,168 @@ msgstr "Nierozpoznana opcja: %c\n"
 #: tools/attr.c:147
 #, c-format
 msgid "A filename to operate on is required\n"
-msgstr "Nazwa pliku do operacji jest obowi±zkowa\n"
+msgstr "Nazwa pliku do operacji jest obowiÄ…zkowa\n"
 
 #: tools/attr.c:179
 #, c-format
 msgid "Could not set \"%s\" for %s\n"
-msgstr "Nie mo¿na ustawiæ \"%s\" dla %s\n"
+msgstr "Nie moÅ¼na ustawiÄ‡ \"%s\" dla %s\n"
 
 #: tools/attr.c:184
 #, c-format
 msgid "Attribute \"%s\" set to a %d byte value for %s:\n"
-msgstr "Atrybut \"%1$s\" dla %3$s ustawiono na warto¶æ %2$d-bajtow±:\n"
+msgstr "Atrybut \"%1$s\" dla %3$s ustawiono na wartoÅ›Ä‡ %2$d-bajtowÄ…:\n"
 
 #: tools/attr.c:202
 #, c-format
 msgid "Could not get \"%s\" for %s\n"
-msgstr "Nie mo¿na odczytaæ \"%s\" dla %s\n"
+msgstr "Nie moÅ¼na odczytaÄ‡ \"%s\" dla %s\n"
 
 #: tools/attr.c:207
 #, c-format
 msgid "Attribute \"%s\" had a %d byte value for %s:\n"
-msgstr "Atrybut \"%1$s\" dla %3$s mia³ warto¶æ %2$d-bajtow±:\n"
+msgstr "Atrybut \"%1$s\" dla %3$s miaÅ‚ wartoÅ›Ä‡ %2$d-bajtowÄ…:\n"
 
 #: tools/attr.c:220
 #, c-format
 msgid "Could not remove \"%s\" for %s\n"
-msgstr "Nie mo¿na usun±æ \"%s\" dla %s\n"
+msgstr "Nie moÅ¼na usunÄ…Ä‡ \"%s\" dla %s\n"
 
 #: tools/attr.c:238
-#, fuzzy, c-format
+#, c-format
 msgid "Could not list %s\n"
-msgstr "Nie mo¿na wypisaæ listy \"%s\" dla %s\n"
+msgstr "Nie moÅ¼na wypisaÄ‡ listy %s\n"
 
 #: tools/attr.c:248
 #, c-format
 msgid "Attribute \"%s\" has a %d byte value for %s\n"
-msgstr "Atrybut \"%1$s\" dla %3$s ma warto¶æ %2$d-bajtow±\n"
+msgstr "Atrybut \"%1$s\" dla %3$s ma wartoÅ›Ä‡ %2$d-bajtowÄ…\n"
 
 #: tools/attr.c:260
 #, c-format
 msgid "At least one of -s, -g, -r, or -l is required\n"
 msgstr "Wymagane jest co najmniej jedno z -s, -g, -r lub -l\n"
+
+#: tools/getfattr.c:100 tools/setfattr.c:75
+msgid "No such attribute"
+msgstr "Nie ma takiego atrybutu"
+
+#: tools/getfattr.c:265
+#, c-format
+msgid "%s: Removing leading '/' from absolute path names\n"
+msgstr "%s: UsuniÄ™cie wiodÄ…cego '/' ze Å›cieÅ¼ek bezwzglÄ™dnych\n"
+
+#: tools/getfattr.c:383
+#, c-format
+msgid "%s %s -- get extended attributes\n"
+msgstr "%s %s -- odczyt rozszerzonych atrybutÃ³w\n"
+
+#: tools/getfattr.c:385 tools/setfattr.c:181
+#, c-format
+msgid "Usage: %s %s\n"
+msgstr "SkÅ‚adnia: %s %s\n"
+
+#: tools/getfattr.c:388
+#, fuzzy, c-format
+msgid ""
+"  -n, --name=name         get the named extended attribute value\n"
+"  -d, --dump              get all extended attribute values\n"
+"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
+"  -m, --match=pattern     only get attributes with names matching pattern\n"
+"      --only-values       print the bare values only\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --one-file-system   skip files on different filesystems\n"
+"      --absolute-names    don't strip leading '/' in pathnames\n"
+"  -R, --recursive         recurse into subdirectories\n"
+"  -L, --logical           logical walk, follow symbolic links\n"
+"  -P  --physical          physical walk, do not follow symbolic links\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=nazwa        odczyt wartoÅ›ci rozszerzonego atrybutu po nazwie\n"
+"  -d, --dump              odczyt wartoÅ›ci wszystkich rozszerzonych "
+"atrybutÃ³w\n"
+"  -e, --encoding=...      kodowanie wartoÅ›ci (jako 'text', 'hex' lub "
+"'base64')\n"
+"      --match=wzorzec     odczyt tylko wartoÅ›ci atrybutÃ³w pasujÄ…cych do "
+"wzorca\n"
+"      --only-values       wypisywanie tylko samych wartoÅ›ci\n"
+"  -h, --no-dereference    niepodÄ…Å¼anie za dowiÄ…zaniami symbolicznymi\n"
+"      --one-file-system   pomijanie plikÃ³w na innych systemach plikÃ³w\n"
+"      --absolute-names    niepomijanie wiodÄ…cych '/' ze Å›cieÅ¼ek\n"
+"  -R, --recursive         rekurencyjne wchodzenie do katalogÃ³w\n"
+"  -L, --logical           przechodzenie logiczne, podÄ…Å¼anie za dowiÄ…zaniami\n"
+"                            symbolicznymi\n"
+"  -P, --physical          przechodzenie fizyczne, niepodÄ…Å¼anie za "
+"dowiÄ…zaniami\n"
+"                            symbolicznymi\n"
+"      --version           wyÅ›wietlenie informacji o wersji i zakoÅ„czenie\n"
+"      --help              ten tekst pomocy\n"
+
+#: tools/getfattr.c:489
+#, c-format
+msgid "%s: invalid regular expression \"%s\"\n"
+msgstr "%s: bÅ‚Ä™dne wyraÅ¼enie regularne \"%s\"\n"
+
+#: tools/getfattr.c:503
+#, c-format
+msgid ""
+"Usage: %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"SkÅ‚adnia: %s %s\n"
+"`%s --help' wyÅ›wietli wiÄ™cej informacji.\n"
+
+#: tools/setfattr.c:129
+#, c-format
+msgid "%s: %s: No filename found in line %d, aborting\n"
+msgstr "%s: %s: Nie znaleziono nazwy pliku w linii %d, przerwanie pracy\n"
+
+#: tools/setfattr.c:133
+#, c-format
+msgid "%s: No filename found in line %d of standard input, aborting\n"
+msgstr ""
+"%s: Nie znaleziono nazwy pliku w linii %d standardowego wejÅ›cia, przerwanie "
+"pracy\n"
+
+#: tools/setfattr.c:180
+#, c-format
+msgid "%s %s -- set extended attributes\n"
+msgstr "%s %s -- ustawianie rozszerzonych atrybutÃ³w\n"
+
+#: tools/setfattr.c:182
+#, c-format
+msgid "       %s %s\n"
+msgstr "       %s %s\n"
+
+#: tools/setfattr.c:184
+#, c-format
+msgid ""
+"  -n, --name=name         set the value of the named extended attribute\n"
+"  -x, --remove=name       remove the named extended attribute\n"
+"  -v, --value=value       use value as the attribute value\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --restore=file      restore extended attributes\n"
+"      --raw               attribute value is not encoded\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=nazwa        ustawienie wartoÅ›ci atrybutu po nazwie\n"
+"  -x, --remove=nazwa      usuniÄ™cie atrybutu po nazwie\n"
+"  -v, --value=wartoÅ›ci    uÅ¼ycie wartoÅ›ci jako wartoÅ›ci atrybutu\n"
+"  -h, --no-dereference    niepodÄ…Å¼anie za dowiÄ…zaniami symbolicznymi\n"
+"      --restore=plik      odtworzenie rozszerzonych atrybutÃ³w\n"
+"      --raw               wartoÅ›Ä‡ atrybutu nie jest zakodowania\n"
+"      --version           wyÅ›wietlenie informacji o wersji i zakoÅ„czenie\n"
+"      --help              ten tekst pomocy\n"
+
+#: tools/setfattr.c:264
+#, c-format
+msgid ""
+"Usage: %s %s\n"
+"       %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"SkÅ‚adnia: %s %s\n"
+"          %s %s\n"
+"`%s --help' wyÅ›wietli wiÄ™cej informacji.\n"

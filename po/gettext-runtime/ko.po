@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU gettext-runtime 0.20.2\n"
 "Report-Msgid-Bugs-To: bug-gettext@gnu.org\n"
-"POT-Creation-Date: 2020-07-26 21:56+0200\n"
+"POT-Creation-Date: 2023-11-17 22:40+0100\n"
 "PO-Revision-Date: 2020-04-16 19:30+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "write error"
 msgstr "쓰기 오류"
 
-#: gnulib-lib/error.c:195
+#: gnulib-lib/error.c:194
 msgid "Unknown system error"
 msgstr "알 수 없는 시스템 오류"
 
@@ -63,12 +63,11 @@ msgstr "%s: 잘못된 옵션 -- '%c'\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: 이 옵션은 인수가 필요합니다 -- '%c'\n"
 
-#: gnulib-lib/xmalloc.c:38
-#, c-format
+#: gnulib-lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "메모리가 바닥났습니다"
 
-#: src/envsubst.c:110 src/gettext.c:135 src/ngettext.c:124
+#: src/envsubst.c:110 src/gettext.c:135 src/ngettext.c:125
 #, c-format, no-wrap
 msgid ""
 "Copyright (C) %s Free Software Foundation, Inc.\n"
@@ -81,7 +80,7 @@ msgstr ""
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 
-#: src/envsubst.c:116 src/gettext.c:141 src/ngettext.c:130
+#: src/envsubst.c:116 src/gettext.c:141 src/ngettext.c:131
 #, c-format
 msgid "Written by %s.\n"
 msgstr "%s이(가) 만들었습니다.\n"
@@ -91,17 +90,17 @@ msgstr "%s이(가) 만들었습니다.\n"
 msgid "Bruno Haible"
 msgstr "Bruno Haible"
 
-#: src/envsubst.c:125 src/gettext.c:159 src/ngettext.c:142
+#: src/envsubst.c:125 src/gettext.c:159 src/ngettext.c:143
 #, c-format
 msgid "too many arguments"
 msgstr "인수가 너무 많음"
 
-#: src/envsubst.c:136 src/gettext.c:169 src/ngettext.c:154
+#: src/envsubst.c:136 src/gettext.c:169 src/ngettext.c:155
 #, c-format
 msgid "missing arguments"
 msgstr "인수가 빠졌음"
 
-#: src/envsubst.c:174 src/gettext.c:246 src/ngettext.c:211
+#: src/envsubst.c:174 src/gettext.c:246 src/ngettext.c:212
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "더 많은 정보를 보려면 '%s --help' 하십시오.\n"
@@ -126,7 +125,7 @@ msgstr "동작 모드:\n"
 msgid "  -v, --variables             output the variables occurring in SHELL-FORMAT\n"
 msgstr "  -v, --variables             <쉘-형식>에 나오는 변수를 출력합니다\n"
 
-#: src/envsubst.c:195 src/gettext.c:275 src/ngettext.c:241
+#: src/envsubst.c:195 src/gettext.c:275 src/ngettext.c:242
 #, c-format, no-wrap
 msgid "Informative output:\n"
 msgstr "정보 출력:\n"
@@ -170,7 +169,7 @@ msgstr ""
 #. email address for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: src/envsubst.c:223 src/gettext.c:299 src/ngettext.c:262
+#: src/envsubst.c:223 src/gettext.c:299 src/ngettext.c:263
 #, c-format
 msgid ""
 "Report bugs in the bug tracker at <%s>\n"
@@ -189,7 +188,7 @@ msgid "standard input"
 msgstr "표준 입력"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/gettext.c:141 src/ngettext.c:130
+#: src/gettext.c:141 src/ngettext.c:131
 msgid "Ulrich Drepper"
 msgstr "Ulrich Drepper"
 
@@ -212,12 +211,12 @@ msgstr "주어진 메시지에 대한 고유어 번역문을 표시합니다.\n"
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated messages from TEXTDOMAIN\n"
 msgstr "  -d, --domain=<TEXTDOMAIN> <TEXTDOMAIN>에서 번역 메시지를 가져옵니다\n"
 
-#: src/gettext.c:263 src/ngettext.c:228
+#: src/gettext.c:263 src/ngettext.c:229
 #, c-format
 msgid "  -c, --context=CONTEXT     specify context for MSGID\n"
 msgstr "  -c, --context=<문맥>      <MSGID>에 대한 문맥을 지정합니다\n"
 
-#: src/gettext.c:265 src/ngettext.c:230
+#: src/gettext.c:265 src/ngettext.c:231
 #, c-format
 msgid "  -e                        enable expansion of some escape sequences\n"
 msgstr "  -e                        이스케이프 시퀀스 확장을 사용합니다\n"
@@ -227,7 +226,7 @@ msgstr "  -e                        이스케이프 시퀀스 확장을 사용�
 msgid "  -n                        suppress trailing newline\n"
 msgstr "  -n                        끝에 줄 바꿈을 하지 않습니다\n"
 
-#: src/gettext.c:269 src/ngettext.c:232
+#: src/gettext.c:269 src/ngettext.c:233
 #, c-format
 msgid "  -E                        (ignored for compatibility)\n"
 msgstr "  -E                        (아무 효과 없음, 호환성 옵션)\n"
@@ -242,12 +241,12 @@ msgstr ""
 "서\n"
 "                            가져옵니다\n"
 
-#: src/gettext.c:277 src/ngettext.c:243
+#: src/gettext.c:277 src/ngettext.c:244
 #, c-format
 msgid "  -h, --help                display this help and exit\n"
 msgstr "  -h, --help                이 도움말을 표시하고 끝납니다\n"
 
-#: src/gettext.c:279 src/ngettext.c:245
+#: src/gettext.c:279 src/ngettext.c:246
 #, c-format
 msgid "  -V, --version             display version information and exit\n"
 msgstr "  -V, --version             버전 정보를 표시하고 끝납니다\n"
@@ -273,12 +272,12 @@ msgstr ""
 "목록에서 번역되어 있는 메시지만이 출력됩니다.\n"
 "기본 탐색 디렉터리: %s\n"
 
-#: src/ngettext.c:216
+#: src/ngettext.c:217
 #, c-format, no-wrap
 msgid "Usage: %s [OPTION] [TEXTDOMAIN] MSGID MSGID-PLURAL COUNT\n"
 msgstr "사용법: %s [<옵션>] [<TEXTDOMAIN>] <MSGID> <MSGID-PLURAL> <개수>\n"
 
-#: src/ngettext.c:221
+#: src/ngettext.c:222
 #, c-format, no-wrap
 msgid ""
 "Display native language translation of a textual message whose grammatical\n"
@@ -287,18 +286,18 @@ msgstr ""
 "숫자에 따라 문법이 달라지는, 주어진 메시지에 대한 고유어 번역문을\n"
 "표시합니다.\n"
 
-#: src/ngettext.c:226
+#: src/ngettext.c:227
 #, c-format, no-wrap
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated message from TEXTDOMAIN\n"
 msgstr "  -d, --domain=<TEXTDOMAIN> <TEXTDOMAIN>에서 번역 메시지를 가져옵니다\n"
 
-#: src/ngettext.c:234
+#: src/ngettext.c:235
 #, c-format
 msgid ""
 "  [TEXTDOMAIN]              retrieve translated message from TEXTDOMAIN\n"
 msgstr "  [<TEXTDOMAIN>]            <도메인>에서 번역 메시지를 가져옵니다\n"
 
-#: src/ngettext.c:236
+#: src/ngettext.c:237
 #, c-format
 msgid ""
 "  MSGID MSGID-PLURAL        translate MSGID (singular) / MSGID-PLURAL "
@@ -306,13 +305,13 @@ msgid ""
 msgstr ""
 "  <MSGID> <MSGID-복수형>    <MSGID> (단수형) / <MSGID-복수형> (복수형) 번역\n"
 
-#: src/ngettext.c:238
+#: src/ngettext.c:239
 #, c-format
 msgid ""
 "  COUNT                     choose singular/plural form based on this value\n"
 msgstr "  <개수>                    이 값에 따라 단수형/복수형을 선택합니다\n"
 
-#: src/ngettext.c:249
+#: src/ngettext.c:250
 #, c-format, no-wrap
 msgid ""
 "If the TEXTDOMAIN parameter is not given, the domain is determined from the\n"

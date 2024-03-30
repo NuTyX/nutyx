@@ -2,15 +2,15 @@
 # Copyright (C) 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gdbm package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2011, 2013, 2016, 2018.
+# Yuri Chornoivan <yurchor@ukr.net>, 2011, 2013, 2016, 2018, 2020, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: gdbm 1.15\n"
+"Project-Id-Version: gdbm 1.21.90\n"
 "Report-Msgid-Bugs-To: bug-gdbm@gnu.org\n"
-"POT-Creation-Date: 2020-12-23 14:43+0200\n"
-"PO-Revision-Date: 2018-06-22 09:06+0200\n"
+"POT-Creation-Date: 2022-02-04 16:04+0200\n"
+"PO-Revision-Date: 2021-09-03 13:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,328 +18,162 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 20.12.0\n"
 
-#: src/bucket.c:90 src/bucket.c:249
-msgid "couldn't init cache"
-msgstr "не вдалося ініціалізувати кеш"
-
-#: src/bucket.c:119 src/bucket.c:445 src/falloc.c:197 src/falloc.c:333
-#: src/findkey.c:112 src/gdbmstore.c:169 src/update.c:37 src/update.c:101
+#: src/bucket.c:399 src/bucket.c:684 src/falloc.c:211 src/falloc.c:337
+#: src/findkey.c:124 src/gdbmstore.c:168 src/update.c:36 src/update.c:76
 msgid "lseek error"
 msgstr "помилка lseek"
 
-#: src/bucket.c:299
+#: src/bucket.c:534
 msgid "directory overflow"
 msgstr "переповнення каталогу"
 
-#: src/bucket.c:310 src/falloc.c:297 src/findkey.c:85 src/findkey.c:101
+#: src/bucket.c:545 src/falloc.c:302 src/findkey.c:97 src/findkey.c:113
 msgid "malloc error"
 msgstr "помилка malloc"
 
-#: src/datconv.c:264
-#, c-format
-msgid "(not enough data)"
-msgstr "(недостатньо даних)"
-
-#: src/datconv.c:356
-msgid "cannot convert"
-msgstr "не вдалося перетворити"
-
-#: src/datconv.c:365
-#, c-format
-msgid "cannot convert value #%d: %s"
-msgstr "не вдалося перетворити значення №%d: %s"
-
-#: src/datconv.c:391 src/datconv.c:440
-msgid "mixing tagged and untagged values is not allowed"
-msgstr "не можна одночасно використовувати значення з теґами і без теґів"
-
-#: src/datconv.c:445
-#, c-format
-msgid "%s: no such field in datum"
-msgstr ""
-
-#: src/falloc.c:187
+#: src/falloc.c:201
 msgid "malloc failed"
 msgstr "невдала спроба виконати malloc"
 
-#: src/gdbm_dump.c:22
-msgid "dump a GDBM database to a file"
-msgstr ""
-
-#: src/gdbm_dump.c:23
-#, fuzzy
-msgid "DB_FILE [FILE]"
-msgstr "ФАЙЛБД"
-
-#: src/gdbm_dump.c:25
-msgid "select dump format"
-msgstr "виберіть формат дампу"
-
-#: src/gdbm_dump.c:67
-msgid "unknown dump format"
-msgstr "невідомий формат дампу"
-
-#: src/gdbm_dump.c:74 src/gdbm_load.c:215
-msgid "unknown option"
-msgstr "невідомий параметр"
-
-#: src/gdbm_dump.c:90 src/gdbm_load.c:231
-#, c-format
-msgid "too many arguments; try `%s -h' for more info"
-msgstr ""
-"надто багато параметрів; скористайтеся командою «%s -h», щоб отримати "
-"довідкову інформацію"
-
-#: src/gdbm_dump.c:110 src/gdbm_load.c:251
-#, c-format
-msgid "cannot open %s"
-msgstr "не вдалося відкрити %s"
-
-#: src/gdbm_dump.c:118 src/gdbm_load.c:261
-msgid "gdbm_open failed"
-msgstr "помилка gdbm_open"
-
-#: src/gdbm_dump.c:125
-msgid "dump error"
-msgstr "помилка під час створення дампу"
-
-#: src/gdbm_load.c:32
-msgid "load a GDBM database from a file"
-msgstr ""
-
-#: src/gdbm_load.c:33
-#, fuzzy
-msgid "FILE [DB_FILE]"
-msgstr "ФАЙЛБД"
-
-#: src/gdbm_load.c:35
-msgid "replace records in the existing database"
-msgstr "замінити записи у наявній базі даних"
-
-#: src/gdbm_load.c:36
-msgid "MODE"
-msgstr "РЕЖИМ"
-
-#: src/gdbm_load.c:36
-msgid "set file mode"
-msgstr "встановити режим доступу до файла"
-
-#: src/gdbm_load.c:37
-msgid "NAME|UID[:NAME|GID]"
-msgstr "НАЗВА|UID[:НАЗВА|GID]"
-
-#: src/gdbm_load.c:37
-msgid "set file owner"
-msgstr "встановити власника файла"
-
-#: src/gdbm_load.c:38
-msgid "do not attempt to set file meta-data"
-msgstr "не намагатися встановити значення метаданих файла"
-
-#: src/gdbm_load.c:39
-msgid "use memory mapping"
-msgstr "використовувати прив’язку до пам’яті"
-
-#: src/gdbm_load.c:40 src/gdbm_load.c:41
-msgid "NUM"
-msgstr "ЧИСЛО"
-
-#: src/gdbm_load.c:40
-msgid "set the cache size"
-msgstr "встановити розмір кешу"
-
-#: src/gdbm_load.c:41
-msgid "set the block size"
-msgstr "встановити розмір блоку"
-
-#: src/gdbm_load.c:79
-#, c-format
-msgid "invalid number: %s"
-msgstr "некоректне число: %s"
-
-#: src/gdbm_load.c:84
-#, c-format
-msgid "invalid number: %s: %s"
-msgstr "некоректне число: %s: %s"
-
-#: src/gdbm_load.c:136
-#, c-format
-msgid "invalid octal number"
-msgstr "помилкове вісімкове число"
-
-#: src/gdbm_load.c:161
-#, c-format
-msgid "invalid user name: %s"
-msgstr "некоректна назва облікового запису користувача: %s"
-
-#: src/gdbm_load.c:180
-#, c-format
-msgid "invalid group name: %s"
-msgstr "некоректна назва групи: %s"
-
-#: src/gdbm_load.c:192
-#, c-format
-msgid "no such UID: %lu"
-msgstr "немає такого UID: %lu"
-
-#: src/gdbm_load.c:267 src/gdbmtool.c:111 src/gdbmtool.c:117 src/gdbmtool.c:123
-#: src/gdbmtool.c:1055
-#, c-format
-msgid "gdbm_setopt failed: %s"
-msgstr "помилка gdbm_setopt: %s"
-
-#: src/gdbm_load.c:281 src/gdbm_load.c:299 src/gdbmtool.c:1038
-#, c-format
-msgid "error restoring metadata: %s (%s)"
-msgstr "помилка під час спроби відновлення метаданих: %s (%s)"
-
-#: src/gdbm_load.c:290
-#, c-format
-msgid "cannot load from %s"
-msgstr "не вдалося завантажити з %s"
-
-#: src/gdbm_load.c:307
-msgid "gdbm_setopt failed"
-msgstr "помилка gdbm_setopt"
-
-#: src/gdbmerrno.c:103
+#: src/gdbmerrno.c:102
 msgid "No error"
 msgstr "Без помилок"
 
-#: src/gdbmerrno.c:104
+#: src/gdbmerrno.c:103
 msgid "Malloc error"
 msgstr "Помилка malloc"
 
-#: src/gdbmerrno.c:105
+#: src/gdbmerrno.c:104
 msgid "Block size error"
 msgstr "Помилка у розмірі блоку"
 
-#: src/gdbmerrno.c:106
+#: src/gdbmerrno.c:105
 msgid "File open error"
 msgstr "Помилка відкриття файла"
 
-#: src/gdbmerrno.c:107
+#: src/gdbmerrno.c:106
 msgid "File write error"
 msgstr "Помилка запису до файла"
 
-#: src/gdbmerrno.c:108
+#: src/gdbmerrno.c:107
 msgid "File seek error"
 msgstr "Помилка позиціювання у файлі"
 
-#: src/gdbmerrno.c:109
+#: src/gdbmerrno.c:108
 msgid "File read error"
 msgstr "Помилка читання файла"
 
-#: src/gdbmerrno.c:110
+#: src/gdbmerrno.c:109
 msgid "Bad magic number"
 msgstr "Помилкове магічне число"
 
-#: src/gdbmerrno.c:111
+#: src/gdbmerrno.c:110
 msgid "Empty database"
 msgstr "Порожня база даних"
 
-#: src/gdbmerrno.c:112
+#: src/gdbmerrno.c:111
 msgid "Can't be reader"
 msgstr "Не може читати"
 
-#: src/gdbmerrno.c:113
+#: src/gdbmerrno.c:112
 msgid "Can't be writer"
 msgstr "Не може записувати"
 
-#: src/gdbmerrno.c:114
+#: src/gdbmerrno.c:113
 msgid "Reader can't delete"
 msgstr "Зчитувач не може вилучати"
 
-#: src/gdbmerrno.c:115
+#: src/gdbmerrno.c:114
 msgid "Reader can't store"
 msgstr "Зчитувач не може зберігати"
 
-#: src/gdbmerrno.c:116
+#: src/gdbmerrno.c:115
 msgid "Reader can't reorganize"
 msgstr "Зчитувач не може змінювати впорядкування"
 
-#: src/gdbmerrno.c:117
+#: src/gdbmerrno.c:116
 msgid "Should not happen: unused error code"
 msgstr "Такого не мало статися: невикористаний код помилки"
 
-#: src/gdbmerrno.c:118 src/gdbmtool.c:457
+#: src/gdbmerrno.c:117
 msgid "Item not found"
 msgstr "Пункт не знайдено"
 
-#: src/gdbmerrno.c:119
+#: src/gdbmerrno.c:118
 msgid "Reorganize failed"
 msgstr "Спроба перевпорядкування завершилася невдало"
 
-#: src/gdbmerrno.c:120
+#: src/gdbmerrno.c:119
 msgid "Cannot replace"
 msgstr "Заміна неможлива"
 
-#: src/gdbmerrno.c:121
-msgid "Illegal data"
-msgstr "Некоректні дані"
+#: src/gdbmerrno.c:120
+msgid "Malformed data"
+msgstr "Помилкове форматування даних"
 
-#: src/gdbmerrno.c:122
+#: src/gdbmerrno.c:121
 msgid "Option already set"
 msgstr "Параметр вже встановлено"
 
-#: src/gdbmerrno.c:123
-msgid "Illegal option"
-msgstr "Некоректний параметр"
+#: src/gdbmerrno.c:122
+msgid "Bad option value"
+msgstr "Помилкове значення параметра"
 
-#: src/gdbmerrno.c:124
+#: src/gdbmerrno.c:123
 msgid "Byte-swapped file"
 msgstr "Файл зі зміненим порядком байтів"
 
-#: src/gdbmerrno.c:125
+#: src/gdbmerrno.c:124
 msgid "File header assumes wrong off_t size"
 msgstr "У заголовку файла припускається помилкове значення розміру off_t"
 
-#: src/gdbmerrno.c:126
+#: src/gdbmerrno.c:125
 msgid "Bad file flags"
 msgstr "Помилкові параметри файла"
 
-#: src/gdbmerrno.c:127
+#: src/gdbmerrno.c:126
 msgid "Cannot stat file"
 msgstr "Не вдалося виконати stat для файла"
 
-#: src/gdbmerrno.c:128
+#: src/gdbmerrno.c:127
 msgid "Unexpected end of file"
 msgstr "Неочікуваний символ кінця файла"
 
-#: src/gdbmerrno.c:129
+#: src/gdbmerrno.c:128
 msgid "Database name not given"
 msgstr "Не вказано назви бази даних"
 
-#: src/gdbmerrno.c:130
+#: src/gdbmerrno.c:129
 msgid "Failed to restore file owner"
 msgstr "Не вдалося відновити запис власника файла"
 
-#: src/gdbmerrno.c:131
+#: src/gdbmerrno.c:130
 msgid "Failed to restore file mode"
 msgstr "Не вдалося відновити режим доступу до файла"
 
-#: src/gdbmerrno.c:132
+#: src/gdbmerrno.c:131
 msgid "Database needs recovery"
 msgstr "База даних потребує відновлення"
 
-#: src/gdbmerrno.c:133
+#: src/gdbmerrno.c:132
 msgid "Failed to create backup copy"
 msgstr "Не вдалося створити резервну копію"
 
-#: src/gdbmerrno.c:134
+#: src/gdbmerrno.c:133
 msgid "Bucket directory overflow"
 msgstr "Переповнення каталогу ділянок"
 
-#: src/gdbmerrno.c:135
+#: src/gdbmerrno.c:134
 msgid "Malformed bucket header"
 msgstr "Помилкове форматування заголовка ділянок"
 
-#: src/gdbmerrno.c:136
+#: src/gdbmerrno.c:135
 msgid "Malformed database file header"
 msgstr "Помилкове форматування заголовка файлів бази даних"
 
+#. TRANSLATORS: avail_block is a field name. Don't translate it.
 #: src/gdbmerrno.c:137
 msgid "Malformed avail_block"
 msgstr "Помилкове форматування avail_block"
@@ -354,43 +188,259 @@ msgstr "Некоректний запис каталогу"
 
 #: src/gdbmerrno.c:140
 msgid "Error closing file"
-msgstr ""
+msgstr "Помилка під час спроби закрити файл"
 
 #: src/gdbmerrno.c:141
 msgid "Error synchronizing file"
-msgstr ""
+msgstr "Помилка під час спроби синхронізувати файл"
 
 #: src/gdbmerrno.c:142
 msgid "Error truncating file"
-msgstr ""
+msgstr "Помилка під час спроби обрізати файл"
 
-#: src/gdbmtool.c:92
+#: src/gdbmerrno.c:143
+msgid "Bucket cache corrupted"
+msgstr "Пошкоджено кеш ділянок"
+
+#: src/gdbmerrno.c:144
+msgid "Malformed bucket hash entry"
+msgstr "Помилкове форматування запису хешу ділянок"
+
+#: src/gdbmerrno.c:145
+msgid "Reflink failed"
+msgstr "Помилка reflink"
+
+#: src/gdbmerrno.c:146
+msgid "Failed to resolve real path name"
+msgstr "Не вдалося визначити справжній шлях"
+
+#: src/gdbmerrno.c:147
+msgid "Function usage error"
+msgstr "Помилка у використанні функції"
+
+#: src/recover.c:272
+#, c-format
+msgid "can't read bucket #%d: %s"
+msgstr "не вдалося прочитати ділянку №%d: %s"
+
+#: src/recover.c:300
+#, c-format
+msgid "can't read key pair %d:%d (%lu:%d): %s"
+msgstr "не вдалося прочитати пару ключів %d:%d (%lu:%d): %s"
+
+#: src/recover.c:330
+#, c-format
+msgid "ignoring duplicate key %d:%d (%lu:%d)"
+msgstr "ігноруємо дубльований ключ %d:%d (%lu:%d)"
+
+#: src/recover.c:340
+#, c-format
+msgid "fatal: can't store element %d:%d (%lu:%d): %s"
+msgstr "критична помилка: не вдалося зберегти елемент %d:%d (%lu:%d): %s"
+
+#: tools/datconv.c:291
+#, c-format
+msgid "(not enough data)"
+msgstr "(недостатньо даних)"
+
+#: tools/datconv.c:383
+msgid "cannot convert"
+msgstr "не вдалося перетворити"
+
+#: tools/datconv.c:392
+#, c-format
+msgid "cannot convert value #%d: %s"
+msgstr "не вдалося перетворити значення №%d: %s"
+
+#: tools/datconv.c:418 tools/datconv.c:467
+msgid "mixing tagged and untagged values is not allowed"
+msgstr "не можна одночасно використовувати значення з теґами і без теґів"
+
+#: tools/datconv.c:472
+#, c-format
+msgid "%s: no such field in datum"
+msgstr "%s: у даних немає такого поля"
+
+#: tools/gdbm_dump.c:22
+msgid "dump a GDBM database to a file"
+msgstr "створити дамп бази даних GDBM до файла"
+
+#: tools/gdbm_dump.c:23
+msgid "DB_FILE [FILE]"
+msgstr "ФАЙЛБД [ФАЙЛ]"
+
+#: tools/gdbm_dump.c:25
+msgid "select dump format"
+msgstr "виберіть формат дампу"
+
+#: tools/gdbm_dump.c:67
+msgid "unknown dump format"
+msgstr "невідомий формат дампу"
+
+#: tools/gdbm_dump.c:74 tools/gdbm_load.c:215
+msgid "unknown option"
+msgstr "невідомий параметр"
+
+#: tools/gdbm_dump.c:90 tools/gdbm_load.c:231
+#, c-format
+msgid "too many arguments; try `%s -h' for more info"
+msgstr ""
+"надто багато параметрів; скористайтеся командою «%s -h», щоб отримати "
+"довідкову інформацію"
+
+#: tools/gdbm_dump.c:110 tools/gdbm_load.c:251
+#, c-format
+msgid "cannot open %s"
+msgstr "не вдалося відкрити %s"
+
+#: tools/gdbm_dump.c:118 tools/gdbm_load.c:261
+msgid "gdbm_open failed"
+msgstr "помилка gdbm_open"
+
+#: tools/gdbm_dump.c:125
+msgid "dump error"
+msgstr "помилка під час створення дампу"
+
+#: tools/gdbm_load.c:32
+msgid "load a GDBM database from a file"
+msgstr "завантажити базу даних GDBM з файла"
+
+#: tools/gdbm_load.c:33
+msgid "FILE [DB_FILE]"
+msgstr "ФАЙЛ [ФАЙЛБД]"
+
+#: tools/gdbm_load.c:35
+msgid "replace records in the existing database"
+msgstr "замінити записи у наявній базі даних"
+
+#: tools/gdbm_load.c:36
+msgid "MODE"
+msgstr "РЕЖИМ"
+
+#: tools/gdbm_load.c:36
+msgid "set file mode"
+msgstr "встановити режим доступу до файла"
+
+#: tools/gdbm_load.c:37
+msgid "NAME|UID[:NAME|GID]"
+msgstr "НАЗВА|UID[:НАЗВА|GID]"
+
+#: tools/gdbm_load.c:37
+msgid "set file owner"
+msgstr "встановити власника файла"
+
+#: tools/gdbm_load.c:38
+msgid "do not attempt to set file meta-data"
+msgstr "не намагатися встановити значення метаданих файла"
+
+#: tools/gdbm_load.c:39
+msgid "use memory mapping"
+msgstr "використовувати прив’язку до пам’яті"
+
+#: tools/gdbm_load.c:40 tools/gdbm_load.c:41
+msgid "NUM"
+msgstr "ЧИСЛО"
+
+#: tools/gdbm_load.c:40
+msgid "set the cache size"
+msgstr "встановити розмір кешу"
+
+#: tools/gdbm_load.c:41
+msgid "set the block size"
+msgstr "встановити розмір блоку"
+
+#: tools/gdbm_load.c:79
+#, c-format
+msgid "invalid number: %s"
+msgstr "некоректне число: %s"
+
+#: tools/gdbm_load.c:84
+#, c-format
+msgid "invalid number: %s: %s"
+msgstr "некоректне число: %s: %s"
+
+#: tools/gdbm_load.c:136
+#, c-format
+msgid "invalid octal number"
+msgstr "помилкове вісімкове число"
+
+#: tools/gdbm_load.c:161
+#, c-format
+msgid "invalid user name: %s"
+msgstr "некоректна назва облікового запису користувача: %s"
+
+#: tools/gdbm_load.c:180
+#, c-format
+msgid "invalid group name: %s"
+msgstr "некоректна назва групи: %s"
+
+#: tools/gdbm_load.c:192
+#, c-format
+msgid "no such UID: %lu"
+msgstr "немає такого UID: %lu"
+
+#: tools/gdbm_load.c:267
+#, c-format
+msgid "gdbm_setopt failed: %s"
+msgstr "помилка gdbm_setopt: %s"
+
+#: tools/gdbm_load.c:281 tools/gdbm_load.c:299
+#, c-format
+msgid "error restoring metadata: %s (%s)"
+msgstr "помилка під час спроби відновлення метаданих: %s (%s)"
+
+#: tools/gdbm_load.c:290 tools/gdbmshell.c:1635
+#, c-format
+msgid "cannot load from %s"
+msgstr "не вдалося завантажити з %s"
+
+#: tools/gdbm_load.c:307
+msgid "gdbm_setopt failed"
+msgstr "помилка gdbm_setopt"
+
+#: tools/gdbmshell.c:64 tools/gdbmshell.c:157 tools/gdbmshell.c:361
+#: tools/gdbmshell.c:497 tools/gdbmshell.c:873 tools/gdbmshell.c:910
+#: tools/gdbmshell.c:919
+#, c-format
+msgid "%s failed"
+msgstr "помилка %s"
+
+#: tools/gdbmshell.c:120
 #, c-format
 msgid "database %s already exists; overwrite"
 msgstr "база даних %s вже існує; перезапис"
 
-#: src/gdbmtool.c:104
+#: tools/gdbmshell.c:151
 #, c-format
-msgid "cannot open database %s: %s"
-msgstr "не вдалося відкрити базу даних %s: %s"
+msgid "cannot open database %s"
+msgstr "не вдалося відкрити базу даних %s"
 
-#: src/gdbmtool.c:141
-#, c-format
-msgid "warning: using default database file %s"
-msgstr "попередження: використовуємо типовий файл бази даних %s"
+#: tools/gdbmshell.c:252
+#, fuzzy, c-format
+msgid "Bucket #%d"
+msgstr "Ділянка %s"
 
-#: src/gdbmtool.c:190
+#: tools/gdbmshell.c:255
 #, c-format
 msgid ""
-"bits = %d\n"
-"count= %d\n"
-"Hash Table:\n"
+"address     = %lu\n"
+"depth       = %d\n"
+"hash prefix = %08x\n"
+"references  = %u"
 msgstr ""
-"бітів = %d\n"
-"кільк.= %d\n"
-"Таблиця хешів:\n"
 
-#: src/gdbmtool.c:193
+#: tools/gdbmshell.c:270
+#, c-format
+msgid ""
+"count       = %d\n"
+"load factor = %3d\n"
+msgstr ""
+
+#: tools/gdbmshell.c:275
+msgid "Hash Table:\n"
+msgstr ""
+
+#: tools/gdbmshell.c:277
 #, c-format
 msgid ""
 "    #    hash value     key size    data size     data adr home  key start\n"
@@ -398,81 +448,71 @@ msgstr ""
 "     #    значення хешу  розм. ключа розм. даних   адр. дан. домівка поч. "
 "ключа\n"
 
-#: src/gdbmtool.c:211
-#, c-format
+#: tools/gdbmshell.c:295
+#, fuzzy, c-format
 msgid ""
 "\n"
-"Avail count = %1d\n"
+"Avail count = %d\n"
 msgstr ""
 "\n"
 "Кіль. дост. = %1d\n"
 
-#: src/gdbmtool.c:212
+#: tools/gdbmshell.c:296
 #, c-format
 msgid "Address           size\n"
 msgstr "Адреса            розмір\n"
 
-#: src/gdbmtool.c:284
-#, c-format
-msgid ""
-"\n"
-"header block\n"
-"size  = %d\n"
-"count = %d\n"
-msgstr ""
-"\n"
-"блок заголовкаk\n"
-"розмір = %d\n"
-"кільк. = %d\n"
+#: tools/gdbmshell.c:347
+msgid "header block"
+msgstr "блок заголовка"
 
-#: src/gdbmtool.c:310
+#: tools/gdbmshell.c:349
+#, c-format
+msgid "block = %lu"
+msgstr "блок  = %lu"
+
+#: tools/gdbmshell.c:350
 #, c-format
 msgid ""
 "\n"
-"block = %d\n"
 "size  = %d\n"
 "count = %d\n"
 msgstr ""
 "\n"
-"блок  = %d\n"
 "розмір= %d\n"
 "кільк.= %d\n"
 
-#: src/gdbmtool.c:315
-msgid "invalid avail_block"
-msgstr "некоректне значення avail_block"
-
-#: src/gdbmtool.c:330
+#: tools/gdbmshell.c:374
 #, c-format
 msgid ""
-"Bucket Cache (size %zu):\n"
+"Bucket Cache (size %zu/%zu):\n"
 "  Index:         Address  Changed  Data_Hash \n"
 msgstr ""
-"Кеш ділянок (розмір %zu):\n"
+"Кеш ділянок (розмір %zu/%zu):\n"
 "  Номер:          Адреса   Змінено  Хеш_даних \n"
 
-#: src/gdbmtool.c:338
+#: tools/gdbmshell.c:381
 msgid "True"
 msgstr "Так"
 
-#: src/gdbmtool.c:338
+#: tools/gdbmshell.c:381
 msgid "False"
 msgstr "Ні"
 
-#: src/gdbmtool.c:343
+#: tools/gdbmshell.c:386
 #, c-format
-msgid "Bucket cache has not been initialized.\n"
-msgstr "Кеш ділянок не було ініціалізовано.\n"
+msgid "Bucket cache is empty.\n"
+msgstr "Кеш ділянок не порожній.\n"
 
-#: src/gdbmtool.c:401
+#: tools/gdbmshell.c:463
 msgid "nothing to close"
 msgstr "нічого закривати"
 
-#: src/gdbmtool.c:440
+#: tools/gdbmshell.c:506
 msgid "count buffer overflow"
 msgstr "переповнення буфера лічильника"
 
-#: src/gdbmtool.c:443
+#: tools/gdbmshell.c:509
 #, c-format
 msgid "There is %s item in the database.\n"
 msgid_plural "There are %s items in the database.\n"
@@ -481,126 +521,121 @@ msgstr[1] "У базі даних %s пункти.\n"
 msgstr[2] "У базі даних %s пунктів.\n"
 msgstr[3] "У базі даних %s пункт.\n"
 
-#: src/gdbmtool.c:459
-#, c-format
-msgid "Can't delete: %s"
-msgstr "Не вдалося вилучити: %s"
+#: tools/gdbmshell.c:526 tools/gdbmshell.c:550 tools/gdbmshell.c:630
+msgid "No such item found"
+msgstr "Такого пункту не знайдено"
 
-#: src/gdbmtool.c:475 src/gdbmtool.c:542
-msgid "No such item found."
-msgstr "Такого пункту не знайдено."
+#: tools/gdbmshell.c:529
+msgid "Can't delete"
+msgstr "Не вдалося вилучити"
 
-#: src/gdbmtool.c:477
-#, c-format
-msgid "Can't fetch data: %s"
-msgstr "Не вдалося отримати дані: %s"
+#: tools/gdbmshell.c:553
+msgid "Can't fetch data"
+msgstr "Не вдалося отримати дані"
 
-#: src/gdbmtool.c:487
-#, c-format
-msgid "Item not inserted: %s."
-msgstr "Пункт не вставлено: %s."
+#: tools/gdbmshell.c:566
+msgid "Item not inserted"
+msgstr "Пункт не вставлено"
 
-#: src/gdbmtool.c:510
+#: tools/gdbmshell.c:594
 #, c-format
 msgid "No such item found.\n"
 msgstr "Такого пункту не знайдено.\n"
 
-#: src/gdbmtool.c:512 src/gdbmtool.c:547
-#, c-format
-msgid "Can't find key: %s"
-msgstr "Не вдалося знайти ключ: %s"
+#: tools/gdbmshell.c:597
+msgid "Can't find first key"
+msgstr "Не вдалося знайти перший ключ"
 
-#: src/gdbmtool.c:555
-msgid "Reorganization failed."
-msgstr "Спроба перевпорядкування завершилася невдало."
+#: tools/gdbmshell.c:634
+msgid "Can't find next key"
+msgstr "Не вдалося знайти наступний ключ"
 
-#: src/gdbmtool.c:557
+#: tools/gdbmshell.c:645
+msgid "Reorganization failed"
+msgstr "Спроба перевпорядкування завершилася невдало"
+
+#: tools/gdbmshell.c:649
 msgid "Reorganization succeeded."
 msgstr "Успішне перевпорядкування."
 
-#: src/gdbmtool.c:607 src/gdbmtool.c:617 src/gdbmtool.c:627 src/gdbmtool.c:734
-#: src/gdbmtool.c:743
+#: tools/gdbmshell.c:700 tools/gdbmshell.c:710 tools/gdbmshell.c:720
+#: tools/gdbmshell.c:825 tools/gdbmshell.c:834
 #, c-format
-msgid "not a number (stopped near %s)\n"
-msgstr "не є числом (зупинка поблизу %s)\n"
+msgid "not a number (stopped near %s)"
+msgstr "не є числом (зупинка поблизу %s)"
 
-#: src/gdbmtool.c:634 src/gdbmtool.c:978 src/gdbmtool.c:1010
+#: tools/gdbmshell.c:727 tools/gdbmshell.c:1561 tools/gdbmshell.c:1596
 #, c-format
 msgid "unrecognized argument: %s"
 msgstr "невідомий аргумент: %s"
 
-#: src/gdbmtool.c:643
+#: tools/gdbmshell.c:736
 #, c-format
 msgid "Recovery succeeded.\n"
 msgstr "Успішне відновлення.\n"
 
-#: src/gdbmtool.c:647
+#: tools/gdbmshell.c:740
 #, c-format
 msgid "Keys recovered: %lu, failed: %lu, duplicate: %lu\n"
 msgstr "Ключів відновлено: %lu, помилок: %lu, дублікатів: %lu\n"
 
-#: src/gdbmtool.c:652
+#: tools/gdbmshell.c:745
 #, c-format
 msgid "Buckets recovered: %lu, failed: %lu\n"
 msgstr "Ділянок відновлено: %lu, помилок: %lu\n"
 
-#: src/gdbmtool.c:660
+#: tools/gdbmshell.c:753
 #, c-format
 msgid "Original database preserved in file %s"
 msgstr "Початкову базу даних збережено у файлі %s"
 
-#: src/gdbmtool.c:668
-#, c-format
-msgid "Recovery failed: %s"
-msgstr "Помилка під час спроби відновлення: %s"
+#: tools/gdbmshell.c:761
+msgid "Recovery failed"
+msgstr "Помилка під час спроби відновлення"
 
-#: src/gdbmtool.c:712
+#: tools/gdbmshell.c:812 tools/gdbmshell.c:894
 #, c-format
 msgid "no current bucket\n"
 msgstr "немає поточної ділянки\n"
 
-#: src/gdbmtool.c:716
+#: tools/gdbmshell.c:861
 #, c-format
-msgid "Bucket #%s"
-msgstr "Ділянка %s"
+msgid "bucket number out of range (0..%lu)"
+msgstr "номер ділянки поза припустимим діапазоном (0..%lu)"
 
-#: src/gdbmtool.c:719
-msgid "Current bucket"
-msgstr "Поточна ділянка"
-
-#: src/gdbmtool.c:720
+#: tools/gdbmshell.c:904 tools/gdbmshell.c:916
 #, c-format
-msgid ""
-"\n"
-" current directory entry = %d.\n"
+msgid "no sibling\n"
 msgstr ""
-"\n"
-" поточний запис каталогу = %d.\n"
 
-#: src/gdbmtool.c:722
-#, c-format
-msgid " current bucket address  = %lu.\n"
-msgstr " поточна адреса ділянки  = %lu.\n"
-
-#: src/gdbmtool.c:765
-msgid "Not a bucket."
-msgstr "Не є ділянкою."
-
-#: src/gdbmtool.c:812
+#: tools/gdbmshell.c:964
 #, c-format
 msgid "Hash table directory.\n"
 msgstr "Каталог таблиці хешів.\n"
 
-#: src/gdbmtool.c:813
-#, c-format
+#: tools/gdbmshell.c:965
+#, fuzzy, c-format
 msgid ""
-"  Size =  %d.  Bits = %d,  Buckets = %zu.\n"
+"  Size =  %d.  Capacity = %lu.  Bits = %d,  Buckets = %zu.\n"
 "\n"
 msgstr ""
 "  Розмір =  %d.  Біти = %d, Ділянки = %zu.\n"
 "\n"
 
-#: src/gdbmtool.c:838
+#: tools/gdbmshell.c:972
+msgid "Index"
+msgstr ""
+
+#: tools/gdbmshell.c:972
+msgid "Hash Pfx"
+msgstr ""
+
+#: tools/gdbmshell.c:972
+#, fuzzy
+msgid "Bucket address"
+msgstr "Ділянка %s"
+
+#: tools/gdbmshell.c:1040
 #, c-format
 msgid ""
 "\n"
@@ -611,383 +646,458 @@ msgstr ""
 "Заголовок файла: \n"
 "\n"
 
-#: src/gdbmtool.c:839
-#, c-format
-msgid "  table        = %lu\n"
-msgstr "  таблиця      = %lu\n"
+#: tools/gdbmshell.c:1041
+#, fuzzy, c-format
+msgid "  type            = %s\n"
+msgstr "  тип          = %s\n"
 
-#: src/gdbmtool.c:841
-#, c-format
-msgid "  table size   = %d\n"
-msgstr "  розм. таблиці= %d\n"
+#: tools/gdbmshell.c:1042
+#, fuzzy, c-format
+msgid "  directory start = %lu\n"
+msgstr ""
+"\n"
+" поточний запис каталогу = %d.\n"
 
-#: src/gdbmtool.c:842
-#, c-format
-msgid "  table bits   = %d\n"
-msgstr "  біти таблиці = %d\n"
-
-#: src/gdbmtool.c:843
-#, c-format
-msgid "  block size   = %d\n"
-msgstr "  розмір блоку = %d\n"
-
-#: src/gdbmtool.c:844
-#, c-format
-msgid "  bucket elems = %d\n"
-msgstr "  ел. у ділянці= %d\n"
-
-#: src/gdbmtool.c:845
-#, c-format
-msgid "  bucket size  = %d\n"
+#: tools/gdbmshell.c:1044
+#, fuzzy, c-format
+msgid "  directory size  = %d\n"
 msgstr "  розм. ділянки= %d\n"
 
-#: src/gdbmtool.c:846
-#, c-format
-msgid "  header magic = %x\n"
+#: tools/gdbmshell.c:1045
+#, fuzzy, c-format
+msgid "  directory depth = %d\n"
+msgstr ""
+"\n"
+" поточний запис каталогу = %d.\n"
+
+#: tools/gdbmshell.c:1046
+#, fuzzy, c-format
+msgid "  block size      = %d\n"
+msgstr "  розмір блоку = %d\n"
+
+#: tools/gdbmshell.c:1047
+#, fuzzy, c-format
+msgid "  bucket elems    = %d\n"
+msgstr "  ел. у ділянці= %d\n"
+
+#: tools/gdbmshell.c:1048
+#, fuzzy, c-format
+msgid "  bucket size     = %d\n"
+msgstr "  розм. ділянки= %d\n"
+
+#: tools/gdbmshell.c:1049
+#, fuzzy, c-format
+msgid "  header magic    = %x\n"
 msgstr "  маг. ч. заг. = %x\n"
 
-#: src/gdbmtool.c:847
-#, c-format
-msgid "  next block   = %lu\n"
+#: tools/gdbmshell.c:1050
+#, fuzzy, c-format
+msgid "  next block      = %lu\n"
 msgstr "  наст. блок   = %lu\n"
 
-#: src/gdbmtool.c:849
-#, c-format
-msgid "  avail size   = %d\n"
+#: tools/gdbmshell.c:1053
+#, fuzzy, c-format
+msgid "  avail size      = %d\n"
 msgstr "  дост. розмір = %d\n"
 
-#: src/gdbmtool.c:850
-#, c-format
-msgid "  avail count  = %d\n"
+#: tools/gdbmshell.c:1054
+#, fuzzy, c-format
+msgid "  avail count     = %d\n"
 msgstr "  дост. к-ть   = %d\n"
 
-#: src/gdbmtool.c:851
-#, c-format
-msgid "  avail nx blk = %lu\n"
+#: tools/gdbmshell.c:1055
+#, fuzzy, c-format
+msgid "  avail next block= %lu\n"
 msgstr "  дост. н. блок.= %lu\n"
 
-#: src/gdbmtool.c:864
+#: tools/gdbmshell.c:1060
+#, c-format
+msgid ""
+"\n"
+"Extended Header: \n"
+"\n"
+msgstr ""
+"\n"
+"Розширений заголовок: \n"
+"\n"
+
+#: tools/gdbmshell.c:1061
+#, fuzzy, c-format
+msgid "      version = %d\n"
+msgstr "        версія = %d\n"
+
+#: tools/gdbmshell.c:1062
+#, fuzzy, c-format
+msgid "      numsync = %u\n"
+msgstr "       numsync = %u\n"
+
+#: tools/gdbmshell.c:1176
+msgid "bad file mode"
+msgstr "помилковий режим доступу до файла"
+
+#: tools/gdbmshell.c:1186
+msgid "insufficient precision"
+msgstr ""
+
+#. TRANSLATORS: Stands for "Not Available".
+#: tools/gdbmshell.c:1199
+msgid "N/A"
+msgstr "н/д"
+
+#: tools/gdbmshell.c:1207 tools/gdbmshell.c:1212
+msgid "can't open database"
+msgstr "не вдалося відкрити базу даних"
+
+#: tools/gdbmshell.c:1217
+msgid "not a regular file"
+msgstr "не є звичайним файлом"
+
+#: tools/gdbmshell.c:1222
+msgid "ERROR"
+msgstr "ПОМИЛКА"
+
+#: tools/gdbmshell.c:1232
+#, c-format
+msgid "%s: ERROR: can't stat: %s"
+msgstr "%s: ПОМИЛКА: не вдалося статистично обробити: %s"
+
+#: tools/gdbmshell.c:1256
+msgid "Invalid arguments in call to gdbm_latest_snapshot"
+msgstr "Некоректні аргументи у виклику gdbm_latest_snapshot"
+
+#: tools/gdbmshell.c:1261
+msgid ""
+"Function is not implemented: GDBM is built without crash-tolerance support"
+msgstr "Функцію не реалізовано: GDBM зібрано без підтримки crash-tolerance"
+
+#: tools/gdbmshell.c:1269
+msgid "Selected the most recent snapshot"
+msgstr "Вибрано найсвіжіший знімок"
+
+#: tools/gdbmshell.c:1273
+msgid "Neither snapshot is readable"
+msgstr "Жоден зі знімків не є придатним до читання"
+
+#: tools/gdbmshell.c:1278
+msgid "Error selecting snapshot"
+msgstr "Помилка під час вибору знімка"
+
+#: tools/gdbmshell.c:1283
+msgid "Snapshot modes and dates are the same"
+msgstr "Режими доступу і дати знімків є тотожними"
+
+#: tools/gdbmshell.c:1288
+msgid "Snapshot sync counters differ by more than 1"
+msgstr ""
+"Лічильники синхронізації знімків відрізняються на значення, яке перевищує 1"
+
+#: tools/gdbmshell.c:1314
+#, c-format
+msgid "unexpected error code: %d"
+msgstr "неочікуваний код помилки: %d"
+
+#: tools/gdbmshell.c:1331
 #, c-format
 msgid "hash value = %x, bucket #%u, slot %u"
 msgstr "значення хешу = %x, ділянка %u, слот %u"
 
-#: src/gdbmtool.c:870
+#: tools/gdbmshell.c:1337
 #, c-format
 msgid "hash value = %x"
 msgstr "значення хешу = %x"
 
-#: src/gdbmtool.c:934
-#, c-format
-msgid "%s; the key was:"
-msgstr "%s; ключем було:"
+#: tools/gdbmshell.c:1390
+#, fuzzy, c-format
+msgid "unrecognized parameter: %s\n"
+msgstr "невідомий аргумент: %s"
 
-#: src/gdbmtool.c:987
-#, c-format
-msgid "error dumping database: %s"
-msgstr "помилка під час спроби створення дампу бази даних: %s"
+#: tools/gdbmshell.c:1397
+#, fuzzy
+msgid "select bucket first\n"
+msgstr "виберіть формат дампу"
 
-#: src/gdbmtool.c:1047
-#, c-format
-msgid "cannot load from %s: %s"
-msgstr "не вдалося завантажити з %s: %s"
+#: tools/gdbmshell.c:1448
+#, fuzzy, c-format
+msgid "error reading entry %d"
+msgstr "помилка під час спроби відновлення метаданих"
 
-#: src/gdbmtool.c:1063
+#: tools/gdbmshell.c:1457 tools/gdbmshell.c:1495
+msgid "the key was:"
+msgstr "ключем було:"
+
+#: tools/gdbmshell.c:1570
+msgid "error dumping database"
+msgstr "помилка під час спроби створення дампу бази даних"
+
+#: tools/gdbmshell.c:1628
+msgid "error restoring metadata"
+msgstr "помилка під час спроби відновлення метаданих"
+
+#: tools/gdbmshell.c:1661
 #, c-format
 msgid "Database file: %s\n"
 msgstr "Файл бази даних: %s\n"
 
-#: src/gdbmtool.c:1065
-msgid "No database name"
-msgstr "Немає назви бази даних"
-
-#: src/gdbmtool.c:1067
+#: tools/gdbmshell.c:1663
 msgid "Database is open"
 msgstr "Базу даних відкрито"
 
-#: src/gdbmtool.c:1069
+#: tools/gdbmshell.c:1665
 msgid "Database is not open"
 msgstr "Базу даних не відкрито"
 
-#: src/gdbmtool.c:1123
+#: tools/gdbmshell.c:1720
 #, c-format
 msgid "unknown debug flag: %s"
 msgstr "невідомий прапорець діагностики: %s"
 
-#: src/gdbmtool.c:1126
+#: tools/gdbmshell.c:1723
 #, c-format
 msgid "invalid type of argument %d"
 msgstr "некоректний тип аргументу %d"
 
-#: src/gdbmtool.c:1131
+#: tools/gdbmshell.c:1728
 #, c-format
 msgid "Debug flags:"
 msgstr "Прапорці діагностики:"
 
-#: src/gdbmtool.c:1137
+#: tools/gdbmshell.c:1734
 msgid "none"
 msgstr "немає"
 
-#: src/gdbmtool.c:1141
+#: tools/gdbmshell.c:1738
 msgid "compiled without debug support"
 msgstr "зібрано без підтримки діагностики"
 
-#: src/gdbmtool.c:1196
+#: tools/gdbmshell.c:1789
+#, c-format
+msgid "command failed with status %d"
+msgstr "помилка команди зі станом %d"
+
+#: tools/gdbmshell.c:1792
+#, c-format
+msgid "command terminated on signal %d"
+msgstr "виконання команди перервано за сигналом %d"
+
+#. TRANSLATORS: %s is the stream name
+#: tools/gdbmshell.c:1862
+#, c-format
+msgid "input history is not available for %s input stream"
+msgstr "журнал введення недоступний для потоку введення %s"
+
+#: tools/gdbmshell.c:1954
 msgid "count (number of entries)"
 msgstr "порахувати (кількість записів)"
 
-#: src/gdbmtool.c:1199 src/gdbmtool.c:1214 src/gdbmtool.c:1242
-#: src/gdbmtool.c:1306
+#: tools/gdbmshell.c:1964 tools/gdbmshell.c:1992 tools/gdbmshell.c:2045
+#: tools/gdbmshell.c:2154
 msgid "KEY"
 msgstr "КЛЮЧ"
 
-#: src/gdbmtool.c:1202
+#: tools/gdbmshell.c:1967
 msgid "delete a record"
 msgstr "вилучити запис"
 
-#: src/gdbmtool.c:1205 src/gdbmtool.c:1220 src/gdbmtool.c:1545
+#: tools/gdbmshell.c:1977 tools/gdbmshell.c:2005 tools/gdbmtool.c:93
 msgid "FILE"
 msgstr "ФАЙЛ"
 
-#: src/gdbmtool.c:1211
+#: tools/gdbmshell.c:1982
 msgid "export"
 msgstr "експортувати"
 
-#: src/gdbmtool.c:1217
+#: tools/gdbmshell.c:1995
 msgid "fetch record"
 msgstr "отримати запис"
 
-#: src/gdbmtool.c:1226
+#: tools/gdbmshell.c:2010
 msgid "import"
 msgstr "імпортувати"
 
-#: src/gdbmtool.c:1232
+#: tools/gdbmshell.c:2022
 msgid "list"
 msgstr "список"
 
-#: src/gdbmtool.c:1235
+#: tools/gdbmshell.c:2032
 msgid "[KEY]"
 msgstr "[КЛЮЧ]"
 
-#: src/gdbmtool.c:1239
-msgid "nextkey"
-msgstr "наступний ключ"
+#: tools/gdbmshell.c:2035
+msgid "continue iteration: get next key and datum"
+msgstr "продовжити ітерацію: отримати наступний ключ і дані"
 
-#: src/gdbmtool.c:1243
+#: tools/gdbmshell.c:2046
 msgid "DATA"
 msgstr "ДАНІ"
 
-#: src/gdbmtool.c:1247
+#: tools/gdbmshell.c:2049
 msgid "store"
 msgstr "зберегти"
 
-#: src/gdbmtool.c:1253
-msgid "firstkey"
-msgstr "перший ключ"
+#: tools/gdbmshell.c:2058
+msgid "begin iteration: get first key and datum"
+msgstr "почати ітерацію: отримати перший ключ і дані"
 
-#: src/gdbmtool.c:1259
+#: tools/gdbmshell.c:2067
 msgid "reorganize"
 msgstr "перевпорядкувати"
 
-#: src/gdbmtool.c:1272
+#: tools/gdbmshell.c:2086
 msgid "recover the database"
 msgstr "відновити базу даних"
 
-#: src/gdbmtool.c:1278
+#: tools/gdbmshell.c:2095
 msgid "print avail list"
 msgstr "показати список доступних"
 
-#: src/gdbmtool.c:1281
-msgid "NUMBER"
+#: tools/gdbmshell.c:2105
+#, fuzzy
+msgid "[NUMBER]"
 msgstr "ЧИСЛО"
 
-#: src/gdbmtool.c:1285
+#: tools/gdbmshell.c:2108
 msgid "print a bucket"
 msgstr "вивести ділянку"
 
-#: src/gdbmtool.c:1291
+#: tools/gdbmshell.c:2117
 msgid "print current bucket"
 msgstr "вивести поточну ділянку"
 
-#: src/gdbmtool.c:1297
+#: tools/gdbmshell.c:2126
+#, fuzzy
+msgid "print sibling bucket"
+msgstr "вивести ділянку"
+
+#: tools/gdbmshell.c:2135
 msgid "print hash directory"
 msgstr "вивести каталог хешів"
 
-#: src/gdbmtool.c:1303
+#: tools/gdbmshell.c:2144
 msgid "print database file header"
 msgstr "вивести заголовок файла бази даних"
 
-#: src/gdbmtool.c:1310
+#: tools/gdbmshell.c:2157
 msgid "hash value of key"
 msgstr "хешувати значення ключа"
 
-#: src/gdbmtool.c:1316
+#: tools/gdbmshell.c:2165
 msgid "print the bucket cache"
 msgstr "вивести ділянку кешу"
 
-#: src/gdbmtool.c:1322
+#: tools/gdbmshell.c:2174
 msgid "print current program status"
 msgstr "вивести дані щодо поточного стану програми"
 
-#: src/gdbmtool.c:1328
+#: tools/gdbmshell.c:2182
+msgid "Synchronize the database with disk copy"
+msgstr "Синхронізувати базу даних із копією на диску"
+
+#: tools/gdbmshell.c:2191
+msgid "Upgrade the database to extended format"
+msgstr "Розширити базу даних до розширеного формату"
+
+#: tools/gdbmshell.c:2200
+msgid "Downgrade the database to standard format"
+msgstr "Відновити стандартний формат бази даних"
+
+#: tools/gdbmshell.c:2214
+msgid "analyze two database snapshots"
+msgstr "проаналізувати два знімки бази даних"
+
+#: tools/gdbmshell.c:2222
 msgid "print version of gdbm"
 msgstr "вивести дані щодо версії gdbm"
 
-#: src/gdbmtool.c:1334
+#: tools/gdbmshell.c:2230
 msgid "print this help list"
 msgstr "вивести цей довідковий список"
 
-#: src/gdbmtool.c:1340
+#: tools/gdbmshell.c:2239
 msgid "quit the program"
 msgstr "завершити роботу програми"
 
-#: src/gdbmtool.c:1346
+#: tools/gdbmshell.c:2251
 msgid "set or list variables"
 msgstr "встановити або показати список встановлених змінних"
 
-#: src/gdbmtool.c:1352
+#: tools/gdbmshell.c:2262
 msgid "unset variables"
 msgstr "скасувати встановлення значень змінних"
 
-#: src/gdbmtool.c:1360
+#: tools/gdbmshell.c:2274
 msgid "define datum structure"
 msgstr "визначити структуру даних"
 
-#: src/gdbmtool.c:1367
+#: tools/gdbmshell.c:2285
 msgid "source command script"
 msgstr "початковий скрипт команди"
 
-#: src/gdbmtool.c:1373
+#: tools/gdbmshell.c:2293
 msgid "close the database"
 msgstr "закрити базу даних"
 
-#: src/gdbmtool.c:1379
+#: tools/gdbmshell.c:2305
 msgid "open new database"
 msgstr "відкрити нову базу даних"
 
-#: src/gdbmtool.c:1383
+#: tools/gdbmshell.c:2314
 msgid "[FROM]"
 msgstr "[ЗВІДКИ]"
 
-#: src/gdbmtool.c:1384
+#: tools/gdbmshell.c:2315
 msgid "[COUNT]"
 msgstr "[К-ТЬ]"
 
-#: src/gdbmtool.c:1388
+#: tools/gdbmshell.c:2318
 msgid "show input history"
 msgstr "показати журнал введення"
 
-#: src/gdbmtool.c:1395
+#: tools/gdbmshell.c:2327
 msgid "query/set debug level"
 msgstr "визначити або встановити рівень діагностики"
 
-#: src/gdbmtool.c:1525
+#: tools/gdbmshell.c:2335
+msgid "invoke the shell"
+msgstr "викликати команду оболонку"
+
+#: tools/gdbmshell.c:2347
+msgid "describe GDBM error code"
+msgstr ""
+
+#: tools/gdbmshell.c:2492
 msgid "Invalid command. Try ? for help."
 msgstr ""
 "Некоректна команда. Віддайте команду «?», щоб ознайомитися зі списком команд."
 
-#: src/gdbmtool.c:1526
+#: tools/gdbmshell.c:2493
 msgid "Unknown command"
 msgstr "Невідома команда"
 
-#: src/gdbmtool.c:1534
-msgid "examine and/or modify a GDBM database"
-msgstr "перевірити і/або внести зміни до бази даних GDBM"
-
-#: src/gdbmtool.c:1535
-msgid "DBFILE [COMMAND [ARG ...]]"
-msgstr "ФАЙЛ_ДБ [КОМАНДА [АРГУМЕНТ ...]]"
-
-#: src/gdbmtool.c:1543 src/gdbmtool.c:1544
-msgid "SIZE"
-msgstr "РОЗМІР"
-
-#: src/gdbmtool.c:1543
-msgid "set block size"
-msgstr "встановити розмір блоку"
-
-#: src/gdbmtool.c:1544
-msgid "set cache size"
-msgstr "встановити розмір кешу"
-
-#: src/gdbmtool.c:1545
-msgid "read commands from FILE"
-msgstr "читати команди з файла ФАЙЛ"
-
-#: src/gdbmtool.c:1547
-msgid "disable file locking"
-msgstr "вимкнути блокування файлів"
-
-#: src/gdbmtool.c:1548
-msgid "do not use mmap"
-msgstr "не використовувати mmap"
-
-#: src/gdbmtool.c:1549
-msgid "create database"
-msgstr "створити базу даних"
-
-#: src/gdbmtool.c:1550
-msgid "do not read .gdbmtoolrc file"
-msgstr "не читати файл .gdbmtoolrc"
-
-#: src/gdbmtool.c:1551
-msgid "open database in read-only mode"
-msgstr "відкрити базу даних лише для читання"
-
-#: src/gdbmtool.c:1552
-msgid "synchronize to disk after each write"
-msgstr "синхронізувати дані з диском після кожного запису"
-
-#: src/gdbmtool.c:1553
-msgid "don't print initial banner"
-msgstr "не виводити початкове повідомлення (банер)"
-
-#: src/gdbmtool.c:1555
-msgid "enable lexical analyzer traces"
-msgstr "увімкнути трасування засобу лексичного аналізу"
-
-#: src/gdbmtool.c:1556
-msgid "enable grammar traces"
-msgstr "увімкнути трасування граматики"
-
-#: src/gdbmtool.c:1836
+#: tools/gdbmshell.c:2808
 #, c-format
 msgid "cannot coerce %s to %s"
 msgstr "не вдалося примусово виконати %s над %s"
 
-#: src/gdbmtool.c:1911
+#: tools/gdbmshell.c:2957
 #, c-format
 msgid "%s: not enough arguments"
 msgstr "%s: недостатньо аргументів"
 
-#: src/gdbmtool.c:1918
+#: tools/gdbmshell.c:2964
 msgid "unexpected eof"
 msgstr "неочікуваний символ кінця файла"
 
-#: src/gdbmtool.c:1941
+#: tools/gdbmshell.c:2980
 #, c-format
 msgid "%s: too many arguments"
 msgstr "%s: забагато аргументів"
 
-#: src/gdbmtool.c:1969
+#: tools/gdbmshell.c:3041
 #, c-format
 msgid "cannot run pager `%s': %s"
 msgstr "не вдалося запустити засіб поділу на сторінки «%s»: %s"
 
-#: src/gdbmtool.c:2018
-msgid "cannot find home directory"
-msgstr "не вдалося знайти домашній каталог"
-
-#: src/gdbmtool.c:2146
-#, c-format
-msgid "unknown option; try `%s -h' for more info"
-msgstr "невідомий параметр, віддайте команду «%s -h», щоб дізнатися більше"
-
-#: src/gdbmtool.c:2170
-#, fuzzy
-msgid "--file and command cannot be used together"
-msgstr "--file і команду and не можна поєднувати"
-
-#: src/gdbmtool.c:2192
+#: tools/gdbmshell.c:3146
 #, c-format
 msgid ""
 "\n"
@@ -998,80 +1108,245 @@ msgstr ""
 "Ласкаво просимо до інструмента gdbm. Введіть «?», щоб отримати довідку.\n"
 "\n"
 
-#: src/gram.y:153
-#, c-format
-msgid "duplicate tag: %s"
+#: tools/gdbmtool.c:48
+msgid "cannot find home directory"
+msgstr "не вдалося знайти домашній каталог"
+
+#: tools/gdbmtool.c:82
+msgid "examine and/or modify a GDBM database"
+msgstr "перевірити і/або внести зміни до бази даних GDBM"
+
+#: tools/gdbmtool.c:83
+msgid "DBFILE [COMMAND [ARG ...]]"
+msgstr "ФАЙЛ_ДБ [КОМАНДА [АРГУМЕНТ ...]]"
+
+#: tools/gdbmtool.c:91 tools/gdbmtool.c:92
+msgid "SIZE"
+msgstr "РОЗМІР"
+
+#: tools/gdbmtool.c:91
+msgid "set block size"
+msgstr "встановити розмір блоку"
+
+#: tools/gdbmtool.c:92
+msgid "set cache size"
+msgstr "встановити розмір кешу"
+
+#: tools/gdbmtool.c:93
+msgid "read commands from FILE"
+msgstr "читати команди з файла ФАЙЛ"
+
+#: tools/gdbmtool.c:95
+msgid "disable file locking"
+msgstr "вимкнути блокування файлів"
+
+#: tools/gdbmtool.c:96
+msgid "do not use mmap"
+msgstr "не використовувати mmap"
+
+#: tools/gdbmtool.c:97
+msgid "create database"
+msgstr "створити базу даних"
+
+#: tools/gdbmtool.c:98
+msgid "do not read .gdbmtoolrc file"
+msgstr "не читати файл .gdbmtoolrc"
+
+#: tools/gdbmtool.c:99
+msgid "open database in read-only mode"
+msgstr "відкрити базу даних лише для читання"
+
+#: tools/gdbmtool.c:100
+msgid "synchronize to disk after each write"
+msgstr "синхронізувати дані з диском після кожного запису"
+
+#: tools/gdbmtool.c:101
+msgid "don't print initial banner"
+msgstr "не виводити початкове повідомлення (банер)"
+
+#. TRANSLATORS: File Descriptor.
+#: tools/gdbmtool.c:104
+msgid "FD"
+msgstr "ДФ"
+
+#: tools/gdbmtool.c:105
+msgid "open database at the given file descriptor"
+msgstr "відкрити базу даних на вказаному дескрипторі файла"
+
+#: tools/gdbmtool.c:106
+msgid "extended format (numsync)"
+msgstr "розширений формат (numsync)"
+
+#: tools/gdbmtool.c:108
+#, fuzzy
+msgid "enable trace mode"
+msgstr "увімкнути трасування граматики"
+
+#: tools/gdbmtool.c:109
+msgid "print timing after each command"
 msgstr ""
 
-#: src/gram.y:228
+#: tools/gdbmtool.c:111
+msgid "enable lexical analyzer traces"
+msgstr "увімкнути трасування засобу лексичного аналізу"
+
+#: tools/gdbmtool.c:112
+msgid "enable grammar traces"
+msgstr "увімкнути трасування граматики"
+
+#: tools/gdbmtool.c:149
+#, c-format
+msgid "invalid file descriptor: %s"
+msgstr "некоректний дескриптор файла: %s"
+
+#: tools/gdbmtool.c:226
+#, fuzzy, c-format
+msgid "unknown option %s; try `%s -h' for more info"
+msgstr "невідомий параметр %c, віддайте команду «%s -h», щоб дізнатися більше"
+
+#: tools/gdbmtool.c:229
+#, c-format
+msgid "unknown option %c; try `%s -h' for more info"
+msgstr "невідомий параметр %c, віддайте команду «%s -h», щоб дізнатися більше"
+
+#: tools/gdbmtool.c:253
+msgid "--file and command cannot be used together"
+msgstr "--file і команду не можна поєднувати"
+
+#: tools/gram.y:172
+#, c-format
+msgid "duplicate tag: %s"
+msgstr "дублювання теґу: %s"
+
+#: tools/gram.y:253
 #, c-format
 msgid "expected \"key\" or \"content\", but found \"%s\""
 msgstr "мало бути вказано «key» або «content», втім, вказано «%s»"
 
-#: src/gram.y:299 src/gram.y:320 src/gram.y:352
+#: tools/gram.y:325 tools/gram.y:354 tools/gram.y:386
 #, c-format
 msgid "no such variable: %s"
 msgstr "немає такої змінної: %s"
 
-#: src/gram.y:303
+#: tools/gram.y:329
 #, c-format
 msgid "%s is not a boolean variable"
 msgstr "%s не є булевою змінною"
 
-#: src/gram.y:307 src/gram.y:332
+#: tools/gram.y:333
+#, c-format
+msgid "%s: setting is not allowed"
+msgstr "%s: встановлення заборонено"
+
+#: tools/gram.y:337
+#, fuzzy
+msgid "can't set variable"
+msgstr "скасувати встановлення значень змінних"
+
+#: tools/gram.y:341 tools/gram.y:366
 #, c-format
 msgid "unexpected error setting %s: %d"
 msgstr "неочікувана помилка під час встановлення %s: %d"
 
-#: src/gram.y:324
+#: tools/gram.y:358
 #, c-format
 msgid "%s: bad variable type"
 msgstr "%s: помилковий тип змінної"
 
-#: src/gram.y:328
+#: tools/gram.y:362
 #, c-format
 msgid "%s: value %s is not allowed"
 msgstr "%s: значенням %s користуватися не можна"
 
-#: src/gram.y:356
+#: tools/gram.y:390
 #, c-format
 msgid "%s: variable cannot be unset"
 msgstr "%s: скасувати визначення змінної не можна"
 
-#: src/lex.l:96
+#: tools/input-file.c:60
+#, c-format
+msgid "cannot open `%s': %s"
+msgstr "не вдалося відкрити «%s»: %s"
+
+#: tools/input-file.c:65
+#, fuzzy, c-format
+msgid "%s is not a regular file"
+msgstr "не є звичайним файлом"
+
+#: tools/input-file.c:72
+#, c-format
+msgid "cannot open %s for reading: %s"
+msgstr "не вдалося відкрити %s для читання: %s"
+
+#: tools/lex.l:144
 msgid "recursive sourcing"
 msgstr "рекурсивне визначення джерела"
 
-#: src/lex.l:98
+#: tools/lex.l:146
 #, c-format
 msgid "%s already sourced here"
 msgstr "%s вже є джерелом"
 
-#: src/lex.l:204 src/lex.l:214
+#: tools/lex.l:257 tools/lex.l:267
 msgid "invalid #line statement"
 msgstr "некоректна інструкція #line"
 
-#: src/parseopt.c:49
+#: tools/parseopt.c:49
 msgid "give this help list"
 msgstr "показати ці довідкові дані"
 
-#: src/parseopt.c:50
+#: tools/parseopt.c:50
 msgid "print program version"
 msgstr "вивести дані щодо версії програми"
 
-#: src/parseopt.c:51
+#: tools/parseopt.c:51
 msgid "give a short usage message"
 msgstr "отримати коротке повідомлення щодо користування"
 
-#: src/parseopt.c:346 src/parseopt.c:429
+#: tools/parseopt.c:289
+#, c-format
+msgid "error in ARGP_HELP_FMT: improper usage of [no-]%s\n"
+msgstr ""
+
+#: tools/parseopt.c:307
+#, c-format
+msgid "error in ARGP_HELP_FMT: bad value for %s"
+msgstr ""
+
+#: tools/parseopt.c:311
+#, c-format
+msgid " (near %s)"
+msgstr ""
+
+#: tools/parseopt.c:320
+#, c-format
+msgid "error in ARGP_HELP_FMT: %s value is out of range\n"
+msgstr ""
+
+#: tools/parseopt.c:331
+#, c-format
+msgid "%s: ARGP_HELP_FMT parameter requires a value\n"
+msgstr ""
+
+#: tools/parseopt.c:340
+#, c-format
+msgid "%s: Unknown ARGP_HELP_FMT parameter\n"
+msgstr ""
+
+#: tools/parseopt.c:367
+#, c-format
+msgid "ARGP_HELP_FMT: missing delimiter near %s\n"
+msgstr ""
+
+#: tools/parseopt.c:487 tools/parseopt.c:565
 msgid "Usage:"
 msgstr "Користування:"
 
-#: src/parseopt.c:348
+#: tools/parseopt.c:489
 msgid "OPTION"
 msgstr "ПАРАМЕТР"
 
-#: src/parseopt.c:362
+#: tools/parseopt.c:510
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -1083,12 +1358,12 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: src/parseopt.c:373
+#: tools/parseopt.c:523
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "Повідомляйте про вади на адресу %s.\n"
 
-#: src/parseopt.c:376
+#: tools/parseopt.c:526
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "Домашня сторінка %s: <%s>\n"
@@ -1096,33 +1371,84 @@ msgstr "Домашня сторінка %s: <%s>\n"
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
-#: src/parseopt.c:539
+#: tools/parseopt.c:667
 msgid "(C)"
 msgstr "©"
 
-#: src/recover.c:267
-#, fuzzy, c-format
-msgid "can't read bucket #%d: %s"
-msgstr "не вдалося перетворити значення №%d: %s"
-
-#: src/recover.c:295
-#, c-format
-msgid "can't read key pair %d:%d (%lu:%d): %s"
-msgstr ""
-
-#: src/recover.c:325
-#, c-format
-msgid "ignoring duplicate key %d:%d (%lu:%d)"
-msgstr ""
-
-#: src/recover.c:335
-#, c-format
-msgid "fatal: can't store element %d:%d (%lu:%d): %s"
-msgstr ""
-
-#: src/util.c:99
+#. TRANSLATORS: Please, don't translate 'y' and 'n'.
+#: tools/util.c:100
 msgid "Please, reply 'y' or 'n'"
-msgstr ""
+msgstr "Будь ласка, дайте відповідь «y» («так») або «n» («ні»)"
+
+#: tools/var.c:792
+#, fuzzy, c-format
+msgid "unrecognized error code: %s"
+msgstr "неочікуваний код помилки: %d"
+
+#~ msgid ""
+#~ "bits = %d\n"
+#~ "count= %d\n"
+#~ "Hash Table:\n"
+#~ msgstr ""
+#~ "бітів = %d\n"
+#~ "кільк.= %d\n"
+#~ "Таблиця хешів:\n"
+
+#~ msgid "Current bucket"
+#~ msgstr "Поточна ділянка"
+
+#~ msgid " current bucket address  = %lu.\n"
+#~ msgstr " поточна адреса ділянки  = %lu.\n"
+
+#~ msgid "  table        = %lu\n"
+#~ msgstr "  таблиця      = %lu\n"
+
+#~ msgid "  table size   = %d\n"
+#~ msgstr "  розм. таблиці= %d\n"
+
+#~ msgid "  table bits   = %d\n"
+#~ msgstr "  біти таблиці = %d\n"
+
+#~ msgid "Illegal data"
+#~ msgstr "Некоректні дані"
+
+#~ msgid "Illegal option"
+#~ msgstr "Некоректний параметр"
+
+#~ msgid "warning: using default database file %s"
+#~ msgstr "попередження: використовуємо типовий файл бази даних %s"
+
+#~ msgid "Not a bucket."
+#~ msgstr "Не є ділянкою."
+
+#~ msgid "cannot load from %s: %s"
+#~ msgstr "не вдалося завантажити з %s: %s"
+
+#~ msgid "No database name"
+#~ msgstr "Немає назви бази даних"
+
+#~ msgid ""
+#~ "\n"
+#~ "header block\n"
+#~ "size  = %d\n"
+#~ "count = %d\n"
+#~ msgstr ""
+#~ "\n"
+#~ "блок заголовкаk\n"
+#~ "розмір = %d\n"
+#~ "кільк. = %d\n"
+
+#~ msgid "couldn't init cache"
+#~ msgstr "не вдалося ініціалізувати кеш"
+
+#~ msgid "invalid avail_block"
+#~ msgstr "некоректне значення avail_block"
+
+#~ msgid "nextkey"
+#~ msgstr "наступний ключ"
+
+#~ msgid "firstkey"
+#~ msgstr "перший ключ"
 
 #~ msgid "Wrong file offset"
 #~ msgstr "Помилковий відступ від початку файла"
@@ -1132,15 +1458,6 @@ msgstr ""
 
 #~ msgid "too many arguments"
 #~ msgstr "забагато аргументів"
-
-#~ msgid "cannot open `%s': %s"
-#~ msgstr "не вдалося відкрити «%s»: %s"
-
-#~ msgid "%s is not a regular file"
-#~ msgstr "%s не є звичайним файлом"
-
-#~ msgid "cannot open %s for reading: %s"
-#~ msgstr "не вдалося відкрити %s для читання: %s"
 
 #~ msgid "Unknown update"
 #~ msgstr "Невідоме оновлення"

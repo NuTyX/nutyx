@@ -10,10 +10,10 @@
 # colaborar connosco, podes atopar máis información en <http://trasno.gal>
 msgid ""
 msgstr ""
-"Project-Id-Version: grep 3.4.31\n"
+"Project-Id-Version: grep 3.5.16\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
-"PO-Revision-Date: 2020-10-11 02:52+0200\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
+"PO-Revision-Date: 2020-11-09 12:44+0100\n"
 "Last-Translator: Francisco Javier Tsao Santín <tsao@members.fsf.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -24,69 +24,105 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "o argumento %s para %s é incorrecto"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "o argumento %s para %s é ambiguo"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Os argumentos correctos son:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "erro de programa"
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "desbordamento de pila"
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
 msgstr "erro de escritura"
 
-#: lib/dfa.c:954
+#: lib/dfa.c:897
 msgid "unbalanced ["
 msgstr "[ desemparellado"
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
 msgstr "clase de caracteres incorrecta"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "a sintaxe da clase de caracteres é [[:space:]], non [:space:]"
 
-#: lib/dfa.c:1268
+#: lib/dfa.c:1222
 msgid "unfinished \\ escape"
 msgstr "secuencia de escape \\ sen rematar"
 
-#: lib/dfa.c:1429
+#: lib/dfa.c:1332
+#, fuzzy
+msgid "? at start of expression"
+msgstr "Expresión regular incorrecta"
+
+#: lib/dfa.c:1344
+#, fuzzy
+msgid "* at start of expression"
+msgstr "Expresión regular incorrecta"
+
+#: lib/dfa.c:1358
+#, fuzzy
+msgid "+ at start of expression"
+msgstr "Expresión regular incorrecta"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr ""
+
+#: lib/dfa.c:1416
 msgid "invalid content of \\{\\}"
 msgstr "contido incorrecto de \\{\\}"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 msgid "regular expression too big"
 msgstr "expresión regular demasiado grande"
 
-#: lib/dfa.c:1916
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr ""
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr ""
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr ""
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr ""
+
+#: lib/dfa.c:1925
 msgid "unbalanced ("
 msgstr "( desemparellado"
 
-#: lib/dfa.c:2033
+#: lib/dfa.c:2042
 msgid "no syntax specified"
 msgstr "no se especificou ningunha sintaxe"
 
-#: lib/dfa.c:2044
+#: lib/dfa.c:2053
 msgid "unbalanced )"
 msgstr ") desemparellado"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Erro do sistema descoñecido"
 
@@ -125,7 +161,7 @@ msgstr "%s: a opción -- '%c' non é correcta\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: a opción require un argumento -- '%c'\n"
 
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "memoria esgotada"
 
@@ -139,7 +175,7 @@ msgstr "non se puido rexistrar o cartafol de traballo activo"
 msgid "failed to return to initial working directory"
 msgstr "produciuse un fallo ao volver ao cartafol de traballo inicial"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
 msgstr "produciuse un fallo ao configurar o modo do descritor texto/binario"
@@ -165,83 +201,83 @@ msgstr "produciuse un fallo ao configurar o modo do descritor texto/binario"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "«"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "»"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Correcto"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "No hai ningunha coincidencia"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Expresión regular incorrecta"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Carácter de unión incorrecto"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Nome de clase de caracteres incorrecto"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Barra invertida ao final"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Referencia cara atrás incorrecta"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "[, [^, [:, [., ou [= desemparellado"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "( ou \\( desemparellado"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "\\{ desemparellado"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Contido incorrecto \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Final de intervalo incorrecto"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Memoria esgotada"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "A expresión regular precedente é incorrecta"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Final prematuro da expresión regular"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "A expresión regular é demasiado grande"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr ") ou \\) desemparellado"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "No hai ningunha expresión regular anterior"
 
@@ -406,49 +442,54 @@ msgstr "Páxina de web de %s: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Axuda xeral sobre o uso de software de GNU: <%s>\n"
 
-#: src/grep.c:648
+#: src/dfasearch.c:59
+#, fuzzy, c-format
+msgid "warning: %s"
+msgstr "atención: %s: %s"
+
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(entrada estándar)"
 
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
 msgstr "argumento de lonxitude do contexto incorrecto"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
 msgstr "a entrada é longa de máis para facer a conta"
 
-#: src/grep.c:1646
+#: src/grep.c:1651
 #, c-format
 msgid "%s: binary file matches"
 msgstr "%s: coincide o ficheiro binario"
 
-#: src/grep.c:1684
+#: src/grep.c:1689
 #, c-format
 msgid "%s: warning: recursive directory loop"
 msgstr "%s: aviso: ciclo de cartafoles recursivo"
 
-#: src/grep.c:1904
+#: src/grep.c:1909
 #, c-format
 msgid "%s: input file is also the output"
 msgstr "%s: o ficheiro de entrada tamén é o de saída"
 
-#: src/grep.c:1966 src/grep.c:1973
+#: src/grep.c:1971 src/grep.c:1978
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
 msgstr "Uso: %s [OPCIÓN]... PATRÓNS [FICHEIRO]...\n"
 
-#: src/grep.c:1968
+#: src/grep.c:1973
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Consulte con '%s --help' para máis información.\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
 msgstr "Busca PATRÓNS en cada FICHERO.\n"
 
-#: src/grep.c:1975
+#: src/grep.c:1980
 #, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -460,7 +501,7 @@ msgstr ""
 "\n"
 "Selección de patróns e interpretación:\n"
 
-#: src/grep.c:1980
+#: src/grep.c:1985
 #, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
@@ -473,7 +514,7 @@ msgstr ""
 "  -G, --basic-regexp        O PATRÓNS son expresións regulares básicas\n"
 "  -P, --perl-regexp         O PATRÓNS son expresións regulares en Perl\n"
 
-#: src/grep.c:1986
+#: src/grep.c:1991
 #, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
@@ -495,7 +536,7 @@ msgstr ""
 "  -z, --null-data           unha liña de datos termina nun byte 0, non nun "
 "carácter de nova liña\n"
 
-#: src/grep.c:1994
+#: src/grep.c:1999
 #, c-format
 msgid ""
 "\n"
@@ -512,7 +553,7 @@ msgstr ""
 "  -V, --version             amosa a versión e finaliza\n"
 "      --help                amosa esta axuda e finaliza\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -540,7 +581,7 @@ msgstr ""
 "      --label=ETIQUETA      utiliza ETIQUETA como prefixo estándar do nome "
 "de ficheiro\n"
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -556,7 +597,7 @@ msgstr ""
 "                            TIPO é 'binary', 'text', ou 'without-match'\n"
 "  -a, --text                equivalente a --binary-files=text\n"
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -576,7 +617,7 @@ msgstr ""
 "  -R, --dereference-recursive  equivalente, pero seguindo tódolas ligazóns "
 "simbólicas\n"
 
-#: src/grep.c:2028
+#: src/grep.c:2033
 #, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
@@ -595,7 +636,7 @@ msgstr ""
 "      --exclude-dir=PATRÓN       omítense os cartafoles que coinciden con "
 "PATRÓN\n"
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -613,7 +654,7 @@ msgstr ""
 "cada FICHEIRO\n"
 "  -Z, --null                imprime un byte 0 despois do nome do FICHEIRO\n"
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, c-format
 msgid ""
 "\n"
@@ -628,10 +669,12 @@ msgstr ""
 "  -A, --after-context=NÚM   amosa o NÚM de liñas de contexto posterior\n"
 "  -C, --context=NÚM         amosa o NÚM liñas de contexto\n"
 
-#: src/grep.c:2048
-#, c-format
+#: src/grep.c:2053
+#, fuzzy, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -646,7 +689,7 @@ msgstr ""
 "  -U, --binary              non elimina os caracteres CR de retorno de liña "
 "(MSDOS/Windows)\n"
 
-#: src/grep.c:2055
+#: src/grep.c:2062
 #, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
@@ -662,87 +705,122 @@ msgstr ""
 "de se producir algún  erro e asemade non se especificou -q,\n"
 "o estado de saída é 2.\n"
 
-#: src/grep.c:2097
+#: src/grep.c:2104
 msgid "conflicting matchers specified"
 msgstr "especificáronse expresións conflitivas"
 
-#: src/grep.c:2104
+#: src/grep.c:2111
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr ""
 "A coincidencia compatible con Perl non está soportada nun compilado --"
 "disable-perl-regexp"
 
-#: src/grep.c:2106
+#: src/grep.c:2113
 #, c-format
 msgid "invalid matcher %s"
 msgstr "a expresión %s non é correcta"
 
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
 msgstr "método de dispositivos descoñecido"
 
-#: src/grep.c:2689
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr ""
+
+#: src/grep.c:2688
 msgid "invalid max count"
 msgstr "contador máximo incorrecto"
 
-#: src/grep.c:2747
+#: src/grep.c:2746
 msgid "unknown binary-files type"
 msgstr "tipo binary-files descoñecido"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
+#, fuzzy
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
 "Escrito por Mike Haertel e outros, véxase\n"
 "<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>"
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
-msgstr "ao tentar dispoñer de memoria produciuse un erro para a pila PCRE JIT"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
+msgstr ""
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+
+#: src/pcresearch.c:169
+#, fuzzy
+msgid "-P supports only unibyte locales on this platform"
+msgstr "-P admite só locales unibyte e UTF-8"
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
 msgstr "-P admite só locales unibyte e UTF-8"
 
-#: src/pcresearch.c:143
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
 msgstr "a opción -P admite só un patrón"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr "erro interno (non debería ocorrer nunca)"
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
 msgstr "excedeuse o tamaño límite das liñas PCRE"
 
-#: src/pcresearch.c:306
-#, fuzzy, c-format
-msgid "%s: memory exhausted"
-msgstr "memoria esgotada"
-
-#: src/pcresearch.c:310
-#, fuzzy, c-format
-msgid "%s: exhausted PCRE JIT stack"
-msgstr "esgotouse a pila PCRE JIT"
-
-#: src/pcresearch.c:315
-#, fuzzy, c-format
-msgid "%s: exceeded PCRE's backtracking limit"
-msgstr "excedeuse o límite de volta atrás das PCREs"
-
-#: src/pcresearch.c:319
-#, fuzzy, c-format
-msgid "%s: exceeded PCRE's recursion limit"
-msgstr "excedeuse o límite de recursividade das PCREs"
-
-#: src/pcresearch.c:327
-#, fuzzy, c-format
-msgid "%s: internal PCRE error: %d"
-msgstr "erro interno de PCRE: %d"
-
+#: src/pcresearch.c:368
 #, c-format
+msgid "%s: memory exhausted"
+msgstr "%s: memoria esgotada"
+
+#: src/pcresearch.c:371
+#, c-format
+msgid "%s: exhausted PCRE JIT stack"
+msgstr "%s: esgotouse a pila PCRE JIT"
+
+#: src/pcresearch.c:375
+#, c-format
+msgid "%s: exceeded PCRE's backtracking limit"
+msgstr "%s: excedeuse o límite de volta atrás das PCREs"
+
+#: src/pcresearch.c:380
+#, fuzzy, c-format
+msgid "%s: exceeded PCRE's nested backtracking limit"
+msgstr "%s: excedeuse o límite de volta atrás das PCREs"
+
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr ""
+
+#: src/pcresearch.c:389
+#, fuzzy, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr "%s: excedeuse o límite de recursividade das PCREs"
+
+#: src/pcresearch.c:398
+#, c-format
+msgid "%s: internal PCRE error: %d"
+msgstr "%s: erro interno de PCRE: %d"
+
+#, fuzzy, c-format
+#~ msgid "JIT internal error: %d"
+#~ msgstr "erro interno"
+
+#~ msgid "failed to allocate memory for the PCRE JIT stack"
+#~ msgstr ""
+#~ "ao tentar dispoñer de memoria produciuse un erro para a pila PCRE JIT"
+
+#~ msgid "internal error (should never happen)"
+#~ msgstr "erro interno (non debería ocorrer nunca)"
+
 #~ msgid "warning: GREP_OPTIONS is deprecated; please use an alias or script"
 #~ msgstr "aviso: GREP_OPTIONS está obsoleto; utilice un alias ou un script"
 
@@ -760,12 +838,6 @@ msgstr "erro interno de PCRE: %d"
 
 #~ msgid "Mike Haertel"
 #~ msgstr "Mike Haertel"
-
-#~ msgid "warning: %s: %s"
-#~ msgstr "atención: %s: %s"
-
-#~ msgid "internal error"
-#~ msgstr "erro interno"
 
 #~ msgid "%s: option '--%s' doesn't allow an argument\n"
 #~ msgstr "%s: a opción '--%s' non admite ningíºn argumento\n"

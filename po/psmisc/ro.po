@@ -1,26 +1,76 @@
-# Mesajele �n limba rom�n� pentru psmisc.
-# Copyright (C) 2003 Free Software Foundation, Inc.
-# Acest fi�ier este distribuit sub aceea�i licen�� ca �i pachetul psmisc.
+# Mesajele în limba română pentru pachetul psmisc.
+# Copyright (C) 2003, 2022 Free Software Foundation, Inc.
+# Acest fișier este distribuit sub aceeași licență ca și pachetul psmisc.
+# This file is distributed under the same license as the psmisc package.
+#
 # Laurentiu Buzdugan <lbuz@rolix.org>, 2005.
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2022 - 2024.
 #
-#
+# Cronologia traducerii fișierului „psmisc”:
+# Traducerea inițială, făcută de LB, pentru versiunea psmisc 21.6pre1.
+# Actualizare a mesajelor, de la fișierul „psmisc-23.4rc1.pot”.
+# Actualizare a codării caracteror, la codarea de caractere UTF-8.
+# Actualizare a diacriticelor de la „cu sedilă” la „cu virgulă”.
+# Actualizare a algoritmului formelor de plural (de la „două” la „trei”).
+# NU și a mesajelor traduse (acestea au rămas neschimbate).
+# Eliminare a mesajelor ce-au dispărut în ultima versiune.
+# Actualizări realizate de Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 15.01.2022.
+# Actualizare a traducerii pentru versiunea 23.5rc1, făcută de R-GC, mar-2022.
+# Actualizare a traducerii pentru versiunea 23.6-rc1, făcută de R-GC, dec-2022.
+# Actualizare a traducerii pentru versiunea 23.7-rc1, făcută de R-GC, feb-2024.
+# Actualizare a traducerii pentru versiunea Y, făcută de X, Y(anul).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc-21.6pre1\n"
+"Project-Id-Version: psmisc 23.7-rc1\n"
 "Report-Msgid-Bugs-To: csmall@dropbear.xyz\n"
-"POT-Creation-Date: 2021-02-06 11:02+1100\n"
-"PO-Revision-Date: 2005-02-24 12:00-0500\n"
-"Last-Translator: Laurentiu Buzdugan <lbuz@rolix.org>\n"
+"POT-Creation-Date: 2024-03-03 21:55+1100\n"
+"PO-Revision-Date: 2024-02-13 18:35+0100\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: src/fuser.c:145
+# R-GC, scrie:
+# am făcut unele modificări, față de traducerea
+# inițială, pornind de la sugestiile făcute de DȘ:
+# 1. „-n,--namespace SPAȚIU caută în acest spațiu de nume (file, udp, sau tcp)”
+# aici „file” trebuie să devină „fișier”, spune DȘ;
+# încep să „investighez” printre traducerile făcute
+# de celelalte echipe(majoritatea au tradus «file»),
+# și în final descopăr, în traducerea bulgară,
+# o idee de-a îmbunătăți traducerea făcută,
+# așa cum se poate vedea.
+# 2. "Utilizare: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPAȚIU]\n"
+# " [-k [-i] [-SEMNAL]] NUME...\n"
+# → „SIGNAL” rebuie să rămână netradus, este detaliat mai jos și explicat ca fiind o comandă;
+# spune DȘ.
+# încă o dată mă pun să „investighez”, și în
+# traducerea făcută de Benno S, găsesc răspunsul
+# pe care-l bănuiam:
+# „-SIGNAL               trimite acest semnal în loc de SIGKILL” →  „-SEMNAL               trimite acest semnal în loc de semnalul” SIGKILL
+# ***
+# am corectat de la „inod-uri” la „noduri-i”,
+# pentru a fi în concordanță cu celelalte
+# traduceri, și mai ales cu:
+#
+# «inode este (index node)», adică:
+# „nod de index”, așa că am folosit forma,
+# prescurtată folosită, adaptată la limba
+# română → « nod-i ».
+# Sursa folosită:
+# https://en.wikipedia.org/wiki/Inode, aici se
+# găsește explicația „etimologică :)” a
+# cuvîntului, oferită de
+# Dennis Ritchie, «autorul»
+# acestui cuvînt.
+#: src/fuser.c:146
 #, c-format
 msgid ""
 "Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]\n"
@@ -45,39 +95,66 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
+"Utilizare: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPAȚIU]\n"
+"             [-k [-i] [-SEMNAL]] NUME...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"Afișează ce procese utilizează fișierele, soclurile sau sistemele de\n"
+"fișiere specificate.\n"
+"\n"
+"  -a,--all              afișează și fișierele neutilizate\n"
+"  -i,--interactive      întreabă înainte de a omorî (ignorată fără „-k”)\n"
+"  -I,--inode            utilizează întotdeauna noduri-i pentru a compara "
+"fișierele\n"
+"  -k,--kill             omoară procesele care accesează fișierul numit\n"
+"  -l,--list-signals     listează numele semnalelor disponibile\n"
+"  -m,--mount            afișează toate procesele ce folosesc sistemul de\n"
+"                        fișiere sau dispozitivul bloc specificat\n"
+"  -M,--ismountpoint     îndeplinește cererea numai dacă NUME este un\n"
+"                        punct de montare\n"
+"  -n,--namespace SPAȚIU caută în acest SPAȚIU de nume (poate fi\n"
+"                        fișier, udp, sau tcp)\n"
+"  -s,--silent           operare silențioasă\n"
+"  -SEMNAL               trimite acest semnal în loc de semnalul SIGKILL\n"
+"  -u,--user             afișează ID-uri de utilizator\n"
+"  -v,--verbose          ieșire detaliată\n"
+"  -w,--writeonly        omoară doar procesele cu acces de scriere\n"
+"  -V,--version          afișează informații despre versiune\n"
 
-#: src/fuser.c:166
+#: src/fuser.c:167
 #, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
 "  -6,--ipv6             search IPv6 sockets only\n"
 msgstr ""
+"  -4,--ipv4             caută numai socluri(sockets) IPv4\n"
+"  -6,--ipv6             caută numai socluri(sockets) IPv6\n"
 
-#: src/fuser.c:169
+#: src/fuser.c:170
 #, c-format
 msgid ""
-"  -                     reset options\n"
-"\n"
 "  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
 "\n"
 msgstr ""
+"  nume udp/tcp: [port_local][,[gazdă_rmt][,[port_rmt]]]\n"
+"\n"
 
 #: src/fuser.c:176
-#, fuzzy, c-format
+#, c-format
 msgid "fuser (PSmisc) %s\n"
-msgstr "fuser (psmisc) %s\n"
+msgstr "fuser (PSmisc) %s\n"
 
-#: src/fuser.c:179 src/pstree.c:1266
-#, fuzzy, c-format
+#: src/fuser.c:178 src/killall.c:870 src/pstree.c:1337
+#, c-format
 msgid ""
-"Copyright (C) 1993-2020 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2024 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2002 Werner Almesberger �i Craig Small\n"
+"Drepturi de autor © 1993-2024 Werner Almesberger și Craig Small\n"
 "\n"
 
-#: src/fuser.c:181 src/killall.c:839 src/peekfd.c:195 src/prtstat.c:68
-#: src/pstree.c:1268
+#: src/fuser.c:180 src/killall.c:872 src/peekfd.c:195 src/prtstat.c:68
+#: src/pstree.c:1339
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -85,164 +162,202 @@ msgid ""
 "the terms of the GNU General Public License.\n"
 "For more information about these matters, see the files named COPYING.\n"
 msgstr ""
-"PSmisc vine f�r� ABSOLUT NICI O GARAN�IE.\n"
-"Acesta este software liber, �i sunte�i benevenit s� �l redistribui�i\n"
-"�n conformitate cu termenii GNU General Public License.\n"
-"Pentru informa�ii suplimentare referitoare la aceste chestiuni,\n"
-"vede�i fi�ierele numite COPYING.\n"
+"PSmisc vine fără ABSOLUT NICI O GARANȚIE.\n"
+"Acesta este software liber, și sunteți binevenit să îl redistribuiți\n"
+"în conformitate cu termenii GNU General Public License.\n"
+"Pentru informații suplimentare referitoare la aceste chestiuni,\n"
+"consultați fișierele numite COPYING.\n"
 
-#: src/fuser.c:203
+#: src/fuser.c:202
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
-msgstr ""
+msgstr "Nu se poate deschide directorul «/proc»: %s\n"
 
-#: src/fuser.c:394 src/fuser.c:447 src/fuser.c:2078
+# R-GC, scrie:
+# m-am uitat peste multe alte traduceri, iar cea
+# care mi s-a părut că descrie cel mai bine idea
+# autorului, a fost traducerea făcută de
+# Benno Schulenberg.
+#: src/fuser.c:404 src/fuser.c:463
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
-msgstr ""
+msgstr "Memorie disponibilă insuficientă pentru a procesa procesul găsit: %s\n"
 
-#: src/fuser.c:474
+#: src/fuser.c:494
 #, c-format
 msgid "Specified filename %s does not exist.\n"
-msgstr ""
+msgstr "Numele fișierului specificat %s, nu există.\n"
 
-#: src/fuser.c:477
+#: src/fuser.c:497
 #, c-format
 msgid "Cannot stat %s: %s\n"
-msgstr ""
+msgstr "Nu se poate determina starea lui %s: %s\n"
 
-#: src/fuser.c:614
+#: src/fuser.c:649
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
-msgstr ""
+msgstr "Nu se poate rezolva portul local %s: %s\n"
 
-#: src/fuser.c:634
+#: src/fuser.c:670
 #, c-format
 msgid "Unknown local port AF %d\n"
-msgstr ""
+msgstr "Port local necunoscut AF %d\n"
 
-#: src/fuser.c:723
+#: src/fuser.c:753
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
-msgstr ""
+msgstr "Nu se poate deschide fișierul de protocol „%s”: %s\n"
 
-#: src/fuser.c:1026
+#: src/fuser.c:1079
 #, c-format
 msgid "Specified filename %s is not a mountpoint.\n"
-msgstr ""
+msgstr "Numele fișierului specificat %s nu este un punct de montare.\n"
 
-#: src/fuser.c:1118
-#, fuzzy, c-format
+#: src/fuser.c:1175
+#, c-format
 msgid "%s: Invalid option %s\n"
-msgstr "%s/%s: specifica�ie invalid�\n"
+msgstr "%s: Opțiune nevalidă %s\n"
 
-#: src/fuser.c:1172
+# R-GC, scrie:
+# încă o traducere a unui mesaj, avînd ca sursă de
+# inspirație, traducerea făcută de Benno Schulenberg
+#: src/fuser.c:1230
 msgid "Namespace option requires an argument."
-msgstr ""
+msgstr "Opțiunea spațiului de nume „-n”, necesită un argument."
 
-#: src/fuser.c:1189
+#: src/fuser.c:1242
 msgid "Invalid namespace name"
-msgstr ""
+msgstr "Spațiu de nume nevalid"
 
-#: src/fuser.c:1254
+#: src/fuser.c:1309
 msgid "You can only use files with mountpoint options"
-msgstr ""
+msgstr "Puteți utiliza numai fișiere cu opțiuni de punct de montare"
 
-#: src/fuser.c:1304
+#: src/fuser.c:1356
 msgid "No process specification given"
-msgstr ""
+msgstr "Nu s-a specificat niciun proces"
 
-#: src/fuser.c:1319
+#: src/fuser.c:1373
 msgid "all option cannot be used with silent option."
-msgstr ""
+msgstr "nu toate opțiunile pot fi utilizate cu opțiunea silențioasă."
 
-#: src/fuser.c:1324
+#: src/fuser.c:1378
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr ""
+"Nu puteți căuta doar socluri(sockets) IPv4 și doar socluri(sockets) IPv6 în "
+"același timp"
 
-#: src/fuser.c:1413
-#, fuzzy, c-format
+#: src/fuser.c:1474
+#, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
-msgstr ""
-"\n"
-"%*s UTILIZATOR  PID ACCES  COMAND�\n"
+msgstr "%*s UTILIZATOR  PID ACCES  COMANDĂ\n"
 
-#: src/fuser.c:1446 src/fuser.c:1503
+#: src/fuser.c:1508 src/fuser.c:1554
 msgid "(unknown)"
-msgstr ""
+msgstr "(necunoscut)"
 
-#: src/fuser.c:1588 src/fuser.c:1638
+#: src/fuser.c:1650 src/fuser.c:1706
 #, c-format
 msgid "Cannot stat file %s: %s\n"
-msgstr ""
+msgstr "Nu se poate determina starea fișierului %s: %s\n"
 
-#: src/fuser.c:1731
+#: src/fuser.c:1803
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
-msgstr ""
+msgstr "Nu se poate deschide «/proc/net/unix»: %s\n"
 
-#: src/fuser.c:1826
+# R-GC, scrie:
+# sugestie/corecție venită de la DȘ:
+# „msgstr "Terminați procesul %d ? (d/N) "
+# → până aici a fost „kill” = ”a omorî”, ar trebui să fie tot așa și aici”.
+# Ai dreptate, Daniel, acest mesaj a fost tradus de
+# LB(printre puținele pe care le-a tradus), și la
+# corectrea ce-am făcut-o înainte de ați trimite
+# fișierul la corectat, mi-a scăpat...
+# O aplic acum...
+# Așa fișierul e coerent...,
+# exact cum îmi place mie :)ˇ
+#: src/fuser.c:1909
 #, c-format
 msgid "Kill process %d ? (y/N) "
-msgstr "Termin� process %d ? (y/N) "
+msgstr "Omorâți procesul %d ? (d/N) "
 
-#: src/fuser.c:1862
+#: src/fuser.c:1950
 #, c-format
 msgid "Could not kill process %d: %s\n"
-msgstr ""
+msgstr "Nu s-a putut omorî procesul %d: %s\n"
 
-#: src/fuser.c:1877
+#: src/fuser.c:1966
 #, c-format
 msgid "Cannot open a network socket.\n"
-msgstr ""
+msgstr "Nu se poate deschide un soclu(socket) de rețea.\n"
 
-#: src/fuser.c:1881
-#, fuzzy, c-format
+#: src/fuser.c:1971
+#, c-format
 msgid "Cannot find socket's device number.\n"
-msgstr "nu pot g�si numerele dispozitivelor socket-urilor"
+msgstr "Nu se poate găsi numărul dispozitivului soclu(socket).\n"
 
-#: src/killall.c:109
+#: src/killall.c:111
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
-msgstr "Termin� %s(%s%d) ? (y/N) "
+msgstr "Omorâți %s(%s%d)? (d/N) "
 
-#: src/killall.c:112
-#, fuzzy, c-format
+#: src/killall.c:114
+#, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
-msgstr "Termin� %s(%s%d) ? (y/N) "
+msgstr "Trimiteți semnalul %s(%s%d) ? (d/N) "
 
-#: src/killall.c:255
+#: src/killall.c:262
 #, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr ""
+msgstr "killall: Nu se poate obține UID-ul de la starea procesului\n"
 
-#: src/killall.c:344
+#: src/killall.c:368
 #, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr ""
+msgstr "killall: Expresie regulată greșită: %s\n"
 
-#: src/killall.c:501
-#, fuzzy, c-format
+#: src/killall.c:525
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "am ignorat potrivirea par�ial� %s(%d)\n"
+msgstr "killall: am ignorat potrivirea parțială %s(%d)\n"
 
-#: src/killall.c:744
+#: src/killall.c:775
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
-msgstr "Am terminat %s(%s%d) cu semnalul %d\n"
+msgstr "A fost omorât %s(%s%d) cu semnalul %d\n"
 
-#: src/killall.c:763
-#, fuzzy, c-format
+#: src/killall.c:796
+#, c-format
 msgid "%s: no process found\n"
-msgstr "%s: nici un proces nu a fost terminat\n"
+msgstr "%s: nu a fost găsit niciun proces\n"
 
-#: src/killall.c:804
-#, fuzzy, c-format
+# DȘ, spune:
+# „msgstr "Utilizare: killall [ OPȚIUNE... ] [ -- ] NUME...\n"
+# → păstrează formatul original... punctele în afara parantezelor drepte”
+# Ai perfectă dreptate, Daniel, corecție aplicată!
+#: src/killall.c:837
+#, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
-msgstr "folosire: killall [ OP�IUNI ] [ -- ] nume ...\n"
+msgstr "Utilizare: killall [ OPȚIUNE]... [ -- ] NUME...\n"
 
-#: src/killall.c:806
-#, fuzzy, c-format
+# DȘ, spune:
+# 1. „" -i,--interactive cere confirmare înainte de-a omorî\n"
+# → „de a” fără cratimă”
+# Corecție aplicată!
+# 2. „" -I,--ignore-case ignoră diferența dintre MAJUS./minus în numele pro-\n"
+# " cesului.\n"
+# → poți muta tot cuvântul pe linia următoare, evitând despărțirea în silabe”
+# Corecție, aplicată!; motivul pentru care am folo-
+# sit separarea în silabe, a fost aceea de-a crea
+# iluzia unui dreptunghi, pentru mesajul ce apare
+# la rularea comenzii «killall --help».
+# Așa am observat o greșeală de dactilografiere,
+# în mesajul următor:
+# „(trebuie să precedă alte argumente)” →
+# „(trebuie să preceadă alte argumente)”
+#: src/killall.c:839
+#, c-format
 msgid ""
 "       killall -l, --list\n"
 "       killall -V, --version\n"
@@ -267,75 +382,70 @@ msgstr ""
 "       killall -l, --list\n"
 "       killall -V --version\n"
 "\n"
-"  -e,--exact          cere potrivire exact� pentru nume foarte lungi;\n"
-"  -I,--ignore-case    potrive�te numele indiferent de cazul caracterelor\n"
-"  -g,--process-group  termin� grupul procesului �n loc de proces\n"
-"  -i,--interactive    cere confirmare �nainte de terminare\n"
-"  -l,--list           listeaz� toate numele de semnale cunoscute\n"
-"  -q,--quiet          nu afi�a pl�ngerile\n"
-"  -s,--signal         trimite semnal �n loc de SIGTERM\n"
-"  -v,--verbose        raporteaz� dac� semnalul a fost trimis cu succes\n"
-"  -V,--version        afi�eaz� informa�ii despre versiune\n"
-"  -w,--wait           a�teapt� ca procesele s� termine\n"
-"\n"
+"  -e,--exact          cere potrivire exactă pentru nume foarte lungi;\n"
+"  -I,--ignore-case    ignoră diferența dintre MAJUS./minus în numele\n"
+"                      procesului.\n"
+"  -g,--process-group  omoară grupul procesului în loc de un proces\n"
+"  -y,--younger-than   omoară procesele mai recente de ORA\n"
+"  -o,--older-than     omoară procesele mai vechi de ORA\n"
+"  -i,--interactive    cere confirmare înainte de a omorî\n"
+"  -l,--list           listează toate numele de semnale cunoscute\n"
+"  -q,--quiet          nu afișează mesajele de eroare\n"
+"  -r,--regexp         interpretează NUME ca o expresie regulată extinsă\n"
+"  -s,--signal SEMNAL  trimite acest semnal în loc de SIGTERM\n"
+"  -u,--user UTILIZATOR  omoară doar procesul(ele) ce rulează ca UTILIZATOR\n"
+"  -v,--verbose        raportează dacă semnalul a fost trimis cu succes\n"
+"  -V,--version        afișează informații despre versiune\n"
+"  -w,--wait           așteaptă ca procesele să moară\n"
+"  -n,--ns PID         numai procesele care aparțin aceluiași spațiu de nume\n"
+"                      ca PID\n"
 
-#: src/killall.c:826
-#, fuzzy, c-format
+#: src/killall.c:859
+#, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
 "                      (must precede other arguments)\n"
 msgstr ""
-"  -d,--sid            termin� numai procesele av�nd sid\n"
-"  -c,--context        termin� numai procesele av�nd scontext\n"
-"   (-s, -c sunt mutual exlusive �i trebuie s� precead� celelalte argumente\n"
-"\n"
+"  -Z,--context EXPREG omoară doar procesele cu acest context\n"
+"                      (trebuie să preceadă alte argumente)\n"
 
-#: src/killall.c:837
-#, fuzzy, c-format
-msgid ""
-"Copyright (C) 1993-2021 Werner Almesberger and Craig Small\n"
-"\n"
-msgstr ""
-"Copyright (C) 1993-2002 Werner Almesberger �i Craig Small\n"
-"\n"
-
-#: src/killall.c:922 src/killall.c:928
+#: src/killall.c:955 src/killall.c:961
 msgid "Invalid time format"
-msgstr ""
+msgstr "Format de oră nevalid"
 
-#: src/killall.c:948
+#: src/killall.c:981
 #, c-format
 msgid "Cannot find user %s\n"
-msgstr ""
+msgstr "Nu se poate găsii utilizatorul %s\n"
 
-#: src/killall.c:983
+#: src/killall.c:1016
 msgid "Invalid namespace PID"
-msgstr ""
+msgstr "PID nevalid pentru spațiul de nume"
 
-#: src/killall.c:990
+#: src/killall.c:1023
 #, c-format
 msgid "Bad regular expression: %s\n"
-msgstr ""
+msgstr "Expresie regulată greșită: %s\n"
 
-#: src/killall.c:1024
-#, fuzzy, c-format
+#: src/killall.c:1057
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Num�r maxim de nume este %d\n"
+msgstr "killall: Numărul maxim de nume este %d\n"
 
-#: src/killall.c:1029
-#, fuzzy, c-format
+#: src/killall.c:1062
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s este gol (nu este montat ?)\n"
+msgstr "killall: %s nu are intrări de proces (nu este montat?)\n"
 
 #: src/peekfd.c:183
 #, c-format
 msgid "Error attaching to pid %i\n"
-msgstr ""
+msgstr "Eroare la atașarea procesului cu id-ul %i\n"
 
 #: src/peekfd.c:191
-#, fuzzy, c-format
+#, c-format
 msgid "peekfd (PSmisc) %s\n"
-msgstr "pstree (psmisc) %s\n"
+msgstr "peekfd (PSmisc) %s\n"
 
 #: src/peekfd.c:193
 #, c-format
@@ -343,6 +453,8 @@ msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
 "\n"
 msgstr ""
+"Drepturi de autor © 2007 Trent Waddington\n"
+"\n"
 
 #: src/peekfd.c:203
 #, c-format
@@ -360,6 +472,21 @@ msgid ""
 "\n"
 "  Press CTRL-C to end output.\n"
 msgstr ""
+"Utilizare: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8, --eight-bit-clean        scoate fluxuri curate de 8 biți.\n"
+"    -n, --no-headers             nu afișează citirea/scrierea din antetele "
+"fd.\n"
+"    -c, --follow                 aruncă o privire și asupra oricărui proces\n"
+"                                 copil nou.\n"
+"    -t, --tgid                   aruncă o privire la toate firele în care "
+"tgid\n"
+"                                 este egal cu <pid>.\n"
+"    -d, --duplicates-removed     elimină citirile/scrierile duplicate de la "
+"ieșire.\n"
+"    -V, --version                imprimă informații despre versiune.\n"
+"    -h, --help                   imprimă acest ajutor.\n"
+"\n"
+"  Apăsați «CTRL-C» pentru a termina ieșirea.\n"
 
 #: src/prtstat.c:54
 #, c-format
@@ -370,48 +497,53 @@ msgid ""
 "    -r,--raw       Raw display of information\n"
 "    -V,--version   Display version information and exit\n"
 msgstr ""
+"Utilizare: prtstat [opțiuni] PID ...\n"
+"       prtstat -V\n"
+"Imprimă informații despre un proces\n"
+"    -r,--raw       Afișează informație neprelucrată despre proces\n"
+"    -V,--version   Afișează informații despre versiune și iese\n"
 
 #: src/prtstat.c:65
-#, fuzzy, c-format
+#, c-format
 msgid "prtstat (PSmisc) %s\n"
-msgstr "pstree (psmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
 
 #: src/prtstat.c:66
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Copyright (C) 2009-2020 Craig Small\n"
+"Copyright (C) 2009-2024 Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2002 Werner Almesberger �i Craig Small\n"
+"Drepturi de autor © 2009-2024 Craig Small\n"
 "\n"
 
 #: src/prtstat.c:78
 msgid "running"
-msgstr ""
+msgstr "rulează"
 
 #: src/prtstat.c:80
 msgid "sleeping"
-msgstr ""
+msgstr "adormit"
 
 #: src/prtstat.c:82
 msgid "disk sleep"
-msgstr ""
+msgstr "așteptând accesul la disc"
 
 #: src/prtstat.c:84
 msgid "zombie"
-msgstr ""
+msgstr "zombie"
 
 #: src/prtstat.c:86
 msgid "traced"
-msgstr ""
+msgstr "urmărit(traced)"
 
 #: src/prtstat.c:88
 msgid "paging"
-msgstr ""
+msgstr "paginare memorie"
 
 #: src/prtstat.c:90
 msgid "unknown"
-msgstr ""
+msgstr "necunoscut"
 
 #: src/prtstat.c:164
 #, c-format
@@ -419,6 +551,8 @@ msgid ""
 "Process: %-14s\t\tState: %c (%s)\n"
 "  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
 msgstr ""
+"Proces: %-14s\t\tStare: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tFire exec.: %ld\n"
 
 #: src/prtstat.c:169
 #, c-format
@@ -429,6 +563,11 @@ msgid ""
 "  T Group ID: %d\n"
 "\n"
 msgstr ""
+"ID-urile de Proces, Grup și Sesiune\n"
+"  ID Proces:  %d\t\t ID Părinte: %d\n"
+"    ID Grup:  %d\t\t ID Sesiune: %d\n"
+"  T ID Grup: %d\n"
+"\n"
 
 #: src/prtstat.c:175
 #, c-format
@@ -437,6 +576,9 @@ msgid ""
 "  This Process    (minor major): %8lu  %8lu\n"
 "  Child Processes (minor major): %8lu  %8lu\n"
 msgstr ""
+"Erori în pagină\n"
+"  Acest proces  (minor major): %8lu  %8lu\n"
+"  Procese copil (minor major): %8lu  %8lu\n"
 
 #: src/prtstat.c:180
 #, c-format
@@ -445,6 +587,10 @@ msgid ""
 "  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
+"Timpii CPU\n"
+"  Acest proces  (utilizator de sistem invitat blkio): %6.2f %6.2f %6.2f "
+"%6.2f\n"
+"  Procese copil (utilizator de sistem invitat):       %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
 #, c-format
@@ -456,6 +602,12 @@ msgid ""
 "  Stack Start: %#-10lx\n"
 "  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
 msgstr ""
+"Memorie\n"
+"  Dimensiune virtuală:               %-10s\n"
+"  RSS:                             %-10s \t\tLimită RSS: %s\n"
+"  Începutul codului:                %#-10lx\t\tTerminare cod:  %#-10lx\n"
+"  Începutul stocării:                %#-10lx\n"
+"  Indicator stocare (ESP):  %#10lx\t\t\tIndic. instruc. (EIP): %#10lx\n"
 
 #: src/prtstat.c:199
 #, c-format
@@ -464,88 +616,125 @@ msgid ""
 "  Policy: %s\n"
 "  Nice:   %ld \t\t RT Priority: %ld %s\n"
 msgstr ""
+"Planificare\n"
+"  Politică:    %s\n"
+"  Curtoazie:   %ld \t\t Prioritate RT: %ld %s\n"
 
 #: src/prtstat.c:220
 msgid "asprintf in print_stat failed.\n"
-msgstr ""
+msgstr "asprintf în print_stat a eșuat.\n"
 
 #: src/prtstat.c:225
 #, c-format
 msgid "Process with pid %d does not exist.\n"
-msgstr ""
+msgstr "Procesul cu pid %d nu există.\n"
 
 #: src/prtstat.c:227
 #, c-format
 msgid "Unable to open stat file for pid %d (%s)\n"
-msgstr ""
+msgstr "Nu se poate deschide fișierul de stare pentru pid-ul %d (%s)\n"
 
 #: src/prtstat.c:243
 #, c-format
 msgid "Unable to allocate memory for proc_info\n"
-msgstr ""
+msgstr "Nu se poate aloca memorie pentru proc_info\n"
 
 #: src/prtstat.c:283
 #, c-format
 msgid "Unable to scan stat file"
-msgstr ""
+msgstr "Nu se poate scana fișierul de stare"
 
 #: src/prtstat.c:318
 msgid "Invalid option"
-msgstr ""
+msgstr "Opțiune nevalidă"
 
 #: src/prtstat.c:323
 msgid "You must provide at least one PID."
-msgstr ""
+msgstr "Trebuie să furnizați cel puțin un PID."
 
 #: src/prtstat.c:327
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
+"«/proc» nu este montat, nu se poate determina starea lui «/proc/self/stat».\n"
 
-#: src/pstree.c:1183
+#: src/pstree.c:1254
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s este gol (nu este montat ?)\n"
 
-#: src/pstree.c:1216
+#: src/pstree.c:1287
 #, c-format
 msgid ""
 "Usage: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N type ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "   or: pstree -V\n"
 msgstr ""
+"Utilizare: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N tip ]\n"
+"              [ -A | -G | -U ] [ PID | UTILIZATOR ]\n"
+"   sau: pstree -V\n"
 
-#: src/pstree.c:1220
+#: src/pstree.c:1291
 #, c-format
 msgid ""
 "\n"
 "Display a tree of processes.\n"
 "\n"
 msgstr ""
+"\n"
+"Afișează un arbore de procese.\n"
+"\n"
 
-#: src/pstree.c:1223
+# R-GC, scrie:
+# am tradus inițial:
+# „use ASCII line drawing characters”
+# ca:
+# „utilizează caractere pentru trasarea de linii ASCII”
+# După ce-am citit de cîteva ori cu voce tare, fraza,
+# am început să-mă întreb:
+# - Și ce dracu, au vrut să spună autorii, cu asta?
+# După ce-am întors, problema, pe toate fețele,
+# am ajuns la concluzia prezentată; traducerea
+# ce apare în mesajul afișat la rularea comenzii:
+# «pstree --help». (se repetă pentru VT100)
+#: src/pstree.c:1294
 #, c-format
 msgid ""
 "  -a, --arguments     show command line arguments\n"
 "  -A, --ascii         use ASCII line drawing characters\n"
 "  -c, --compact-not   don't compact identical subtrees\n"
 msgstr ""
+"  -a, --arguments     afișează argumentele liniei de comandă\n"
+"  -A, --ascii         utilizează trasarea de linii ASCII pentru caractere\n"
+"  -c, --compact-not   nu compactează subarborii identici\n"
 
-#: src/pstree.c:1227
+#: src/pstree.c:1298
 #, c-format
 msgid ""
 "  -C, --color=TYPE    color process by attribute\n"
 "                      (age)\n"
 msgstr ""
+"  -C, --color=TIP     colorează procesele după atributul\n"
+"                      (vârstă)\n"
 
-#: src/pstree.c:1230
+#: src/pstree.c:1301
 #, c-format
 msgid ""
 "  -g, --show-pgids    show process group ids; implies -c\n"
 "  -G, --vt100         use VT100 line drawing characters\n"
 msgstr ""
+"  -g, --show-pgids    afișează ID-urile grupului de procese; implică „-c”\n"
+"  -G, --vt100         utilizează trasarea de linii VT100 pentru caractere\n"
 
-#: src/pstree.c:1233
+# DȘ, spune:
+# „" -h, --highlight-all highlight evidențiază procesul actual și antecesorii "
+# → al 2-lea „highlight” nu trebuie să apară în limba română”
+# R-GC, răspunde:
+# „Scuze am folosit «Ctrl + b», pentru a copia
+# mesajul original la traducere, și la marcarea textului ce trebuia tradus, mi-a scăpat „highlight”
+# de la marcare...”
+# Mulțumesc, corecție aplicată!
+#: src/pstree.c:1304
 #, c-format
 msgid ""
 "  -h, --highlight-all highlight current process and its ancestors\n"
@@ -553,8 +742,13 @@ msgid ""
 "                      highlight this process and its ancestors\n"
 "  -l, --long          don't truncate long lines\n"
 msgstr ""
+"  -h, --highlight-all highlight evidențiază procesul actual și antecesorii "
+"săi\n"
+"  -H PID, --highlight-pid=PID\n"
+"                      evidențiază procesul acesta și antecesorii săi\n"
+"  -l, --long          nu trunchiază liniile lungi\n"
 
-#: src/pstree.c:1238
+#: src/pstree.c:1309
 #, c-format
 msgid ""
 "  -n, --numeric-sort  sort output by PID\n"
@@ -563,8 +757,13 @@ msgid ""
 "                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 msgstr ""
+"  -n, --numeric-sort  sortează ieșirea după PID\n"
+"  -N TYPE, --ns-sort=TIP\n"
+"                      sortează rezultatul după spațiul de nume:\n"
+"                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
+"  -p, --show-pids     afișează PID-urile; implică „-c”\n"
 
-#: src/pstree.c:1244
+#: src/pstree.c:1315
 #, c-format
 msgid ""
 "  -s, --show-parents  show parents of the selected process\n"
@@ -572,23 +771,33 @@ msgid ""
 "  -t, --thread-names  show full thread names\n"
 "  -T, --hide-threads  hide threads, show only processes\n"
 msgstr ""
+"  -s, --show-parents  afișează părinții procesului selectat\n"
+"  -S, --ns-changes    afișează tranzițiile spațiului de nume\n"
+"  -t, --thread-names  afișează numele complete ale firelor\n"
+"  -T, --hide-threads  ascunde firele, afișează doar procesele\n"
 
-#: src/pstree.c:1249
+#: src/pstree.c:1320
 #, c-format
 msgid ""
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
+"  -u, --uid-changes   afișează tranzițiile uid\n"
+"  -U, --unicode       utilizează trasarea de linii UTF-8 (Unicode) pentru "
+"caractere\n"
+"  -V, --version       afișează informații despre versiune\n"
 
-#: src/pstree.c:1253
+#: src/pstree.c:1324
 #, c-format
 msgid ""
 "  -Z, --security-context\n"
 "                      show security attributes\n"
 msgstr ""
+"  -Z, --security-context\n"
+"                      afișează atributele de securitate\n"
 
-#: src/pstree.c:1255
+#: src/pstree.c:1326
 #, c-format
 msgid ""
 "\n"
@@ -596,227 +805,61 @@ msgid ""
 "  USER   show only trees rooted at processes of this user\n"
 "\n"
 msgstr ""
+"\n"
+"  PID          începe de la procesul cu acest ID; prestabilit este 1 (init)\n"
+"  UTILIZATOR   afișează numai arbori cu rădăcina în procesele acestui "
+"utilizator\n"
+"\n"
 
-#: src/pstree.c:1263
-#, fuzzy, c-format
+#: src/pstree.c:1334
+#, c-format
 msgid "pstree (PSmisc) %s\n"
-msgstr "pstree (psmisc) %s\n"
+msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1383
+#: src/pstree.c:1455
 #, c-format
 msgid "TERM is not set\n"
-msgstr "TERM nu este setat\n"
+msgstr "TERM nu este definit\n"
 
-#: src/pstree.c:1387
+#: src/pstree.c:1459
 #, c-format
 msgid "Can't get terminal capabilities\n"
-msgstr "Nu pot ob�ine capabilit��ile terminalului\n"
+msgstr "Nu se pot obține caracteristicile terminalului\n"
 
-#: src/pstree.c:1405
+#: src/pstree.c:1477
 #, c-format
 msgid "procfs file for %s namespace not available\n"
-msgstr ""
+msgstr "Fișierul «procfs» pentru spațiul de nume %s nu este disponibil\n"
 
-#: src/pstree.c:1452
+#: src/pstree.c:1523
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Nici un utilizator cu acest nume: %s\n"
 
-#: src/pstree.c:1478
+#: src/pstree.c:1539
+#, c-format
+msgid "Process %d not found.\n"
+msgstr "Procesul %d nu a fost găsit.\n"
+
+#: src/pstree.c:1555
 #, c-format
 msgid "No processes found.\n"
-msgstr "Nu a fost g�sit nici un proces.\n"
+msgstr "Nu a fost găsit nici un proces.\n"
 
-#: src/pstree.c:1486
+#: src/pstree.c:1563
 #, c-format
 msgid "Press return to close\n"
-msgstr "Ap�sa�i tasta return pentru a �nchide\n"
+msgstr "Apăsați tasta «Enter» pentru a închide\n"
 
 #: src/signals.c:84
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
-msgstr "%s: semnal necunoscut; %s -l listeaz� semnalele.\n"
+msgstr "%s: semnal necunoscut; %s -l listează semnalele.\n"
 
 #, c-format
 #~ msgid ""
-#~ "usage: pidof [ -eg ] name ...\n"
-#~ "       pidof -V\n"
-#~ "\n"
-#~ "    -e      require exact match for very long names;\n"
-#~ "            skip if the command line is unavailable\n"
-#~ "    -g      show process group ID instead of process ID\n"
-#~ "    -V      display version information\n"
+#~ "Copyright (C) 1993-2021 Werner Almesberger and Craig Small\n"
 #~ "\n"
 #~ msgstr ""
-#~ "folosire: pidof [ -eg ] nume ...\n"
-#~ "          pidof -V\n"
-#~ "\n"
-#~ "    -e      cere potrivire exact� pentru nume foarte lungi;\n"
-#~ "            ignor� dac� linia de comand� nu este disponibil�\n"
-#~ "    -g      arat� ID-ul grupului procesului �n loc de ID-ul procesului\n"
-#~ "    -V      afi�eaz� informa�ii despre versiune\n"
-#~ "\n"
-
-#, c-format
-#~ msgid ""
-#~ "usage: killall [-s sid] [-c context] [ -egiqvw ] [ -signal ] name ...\n"
-#~ msgstr ""
-#~ "folosire: killall [-s sid] [-c context] [ -egiqvw ] [ -signal ] nume ...\n"
-
-#, c-format
-#~ msgid "%s: SID (%s) must be numeric\n"
-#~ msgstr "%s: SID (%s) trebuie s� fie numeric\n"
-
-#, c-format
-#~ msgid "-4 flag used but proc file %s is not readable\n"
-#~ msgstr "a�i folosit op�iune -4 dar fi�ierul proc %s nu este citibil\n"
-
-#, c-format
-#~ msgid "-6 flag used but proc file %s is not readable\n"
-#~ msgstr "a�i folosit op�iune -6 dar fi�ierul proc %s nu este citibil\n"
-
-#, c-format
-#~ msgid "kill %d"
-#~ msgstr "kill %d"
-
-#, c-format
-#~ msgid "No automatic removal. Please use  umount %s\n"
-#~ msgstr "Nici o �tergere automat�.  V� rug�m folosi�i  umount %s\n"
-
-#, c-format
-#~ msgid "No automatic removal. Please use  swapoff %s\n"
-#~ msgstr "Nici o �tergere automat�.  V� rug�m folosi�i  swapoff %s\n"
-
-#, c-format
-#~ msgid "Internal error (type %d)\n"
-#~ msgstr "Eroare intern� (tip %d)\n"
-
-#, c-format
-#~ msgid "kernel mount  "
-#~ msgstr "kernel mount  "
-
-#, c-format
-#~ msgid "kernel loop   "
-#~ msgstr "kernel loop   "
-
-#, c-format
-#~ msgid "kernel swap   "
-#~ msgstr "kernel swap   "
-
-#, c-format
-#~ msgid ""
-#~ "usage: fuser [ -a | -s | -c ] [ -n space ] [ -signal ] [ -kimuv ] "
-#~ "name ...\n"
-#~ "             [ - ] [ -n space ] [ -signal ] [ -kimuv ] name ...\n"
-#~ "       fuser -l\n"
-#~ "       fuser -V\n"
-#~ "\n"
-#~ "    -a        display unused files too\n"
-#~ "    -c        mounted FS\n"
-#~ "    -f        silently ignored (for POSIX compatibility)\n"
-#~ "    -k        kill processes accessing that file\n"
-#~ "    -i        ask before killing (ignored without -k)\n"
-#~ "    -l        list signal names\n"
-#~ "    -m        mounted FS\n"
-#~ "    -n space  search in the specified name space (file, udp, or tcp)\n"
-#~ "    -s        silent operation\n"
-#~ "    -signal   send signal instead of SIGKILL\n"
-#~ "    -u        display user ids\n"
-#~ "    -v        verbose output\n"
-#~ "    -V        display version information\n"
-#~ "    -4        search IPv4 sockets only\n"
-#~ "    -6        search IPv6 sockets only\n"
-#~ "    -         reset options\n"
-#~ "\n"
-#~ "  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
-#~ "\n"
-#~ msgstr ""
-#~ "folosire: fuser [ -a | -s | -c ] [ -n spa�iu ] [ -signal ] [ -kimuv ] "
-#~ "nume ...\n"
-#~ "             [ - ] [ -n spa�iu ] [ -signal ] [ -kimuv ] nume ...\n"
-#~ "       fuser -l\n"
-#~ "       fuser -V\n"
-#~ "\n"
-#~ "    -a        afi�eaz� �� fi�ierele nefolosite\n"
-#~ "    -c        FS montat(e)\n"
-#~ "    -f        ignorat pe t�cute (pentru compatibilitate POSIX)\n"
-#~ "    -k        termin� procesele ce acceseaz� acel fi�ier\n"
-#~ "    -i        �ntreab� �nainte de a termina (ignorat f�r� -k)\n"
-#~ "    -l        listeaz� numele semnalelor\n"
-#~ "    -m        FS montat(e)\n"
-#~ "    -n spa�iu caut� �n numele de spa�iu specificat (fi�ier, udp, sau "
-#~ "tcp)\n"
-#~ "    -s        operare pe t�cute\n"
-#~ "    -signal   trimite semnal �n loc de SIGKILL\n"
-#~ "    -u        afi�eaz� ID-uri utilizator\n"
-#~ "    -v        ie�ire detaliat�\n"
-#~ "    -V        afi�eaz� informa�ii despre versiune\n"
-#~ "    -4        caut� numai socket-urile IPv4\n"
-#~ "    -6        caut� numai socket-urile IPv6\n"
-#~ "    -         reseteaz� op�iuni\n"
-#~ "\n"
-#~ "  nume udp/tcp: [local_port][,[rmt_host][,[rmt_port]]]\n"
-#~ "\n"
-
-#, c-format
-#~ msgid "ignoring -m in name space \"%s\"\n"
-#~ msgstr "ignor -m �n spa�iul de nume \"%s\"\n"
-
-#, c-format
-#~ msgid "MAX_DEPTH not big enough.\n"
-#~ msgstr "MAX_DEPTH nu este suficient de mare.\n"
-
-#, c-format
-#~ msgid ""
-#~ "usage: pstree [ -a ] [ -c ] [ -h | -H pid ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
-#~ "              [ -A | -G | -U ] [ pid | user]\n"
-#~ "       pstree -V\n"
-#~ "\n"
-#~ "    -a     show command line arguments\n"
-#~ "    -A     use ASCII line drawing characters\n"
-#~ "    -c     don't compact identical subtrees\n"
-#~ "    -h     highlight current process and its ancestors\n"
-#~ "    -H pid highlight process \"pid\" and its ancestors\n"
-#~ "    -G     use VT100 line drawing characters\n"
-#~ "    -l     don't truncate long lines\n"
-#~ "    -n     sort output by PID\n"
-#~ "    -p     show PIDs; implies -c\n"
-#~ "    -u     show uid transitions\n"
-#~ msgstr ""
-#~ "usage: pstree [ -a ] [ -c ] [ -h | -H pid ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
-#~ "              [ -A | -G | -U ] [ pid | user]\n"
-#~ "       pstree -V\n"
-#~ "\n"
-#~ "    -a     afi�eaz� argumentele liniei de comand�\n"
-#~ "    -A     folose�te caractere de desenare ASCII\n"
-#~ "    -c     nu compacta sub-arborii identici\n"
-#~ "    -h     eviden�iaz� procesul curent �i str�mo�ii acestuia\n"
-#~ "    -H pid eviden�iaz� procesul \"pid\" �i str�mo�ii acestuia\n"
-#~ "    -G     folose�te caractere de desenare VT100\n"
-#~ "    -l     nu trunca liniile lungi\n"
-#~ "    -n     sorteaz� ie�irea dup� PID\n"
-#~ "    -p     afi�eaz� PID-urile; implic� -c\n"
-#~ "    -u     afi�eaz� tranzi�iilr uid\n"
-
-#, c-format
-#~ msgid ""
-#~ "    -s     show Flask SIDs\n"
-#~ "    -x     show Flask security contexts\n"
-#~ msgstr ""
-#~ "    -s     arat� SID-urile Flask\n"
-#~ "    -x     arat� contextele de securitate Flask\n"
-
-#, c-format
-#~ msgid ""
-#~ "    -U     use UTF-8 (Unicode) line drawing characters\n"
-#~ "    -V     display version information\n"
-#~ "    pid    start at pid, default 1 (init)\n"
-#~ "    user   show only trees rooted at processes of that user\n"
-#~ "\n"
-#~ msgstr ""
-#~ "   -U      folose�te caractere de desenare UTF-8 (Unicode)\n"
-#~ "   -V      afi�eaz� informa�ii despre versiune\n"
-#~ "   pid     �ncepe la pid, implicit 1 (init)\n"
-#~ "   utiliz  arat� numai arborii cu r�dacin� la procesele acestui "
-#~ "utiliz[ator]\n"
+#~ "Drepturi de autor © 1993-2002 Werner Almesberger și Craig Small\n"
 #~ "\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: diffutils 3.7.41\n"
 "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
-"POT-Creation-Date: 2021-08-01 18:56-0700\n"
+"POT-Creation-Date: 2023-05-21 01:51-0700\n"
 "PO-Revision-Date: 2021-07-26 10:13+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
@@ -15,33 +15,33 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "неисправан аргумент „%s“ за „%s“"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "нејасан аргумент „%s“ за „%s“"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Исправни аргументи су:"
 
-#: lib/c-stack.c:187
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "грешка програма"
 
-#: lib/c-stack.c:188
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "стек препуњен"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Непозната системска грешка"
 
@@ -197,83 +197,83 @@ msgstr "%s: опција захтева аргумент -- „%c“\n"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "„"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "“"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Успешно"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Нема поклапања"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Неисправан регуларни израз"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Неисправан знак слагања"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Неправилан назив разреда знака"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Пратећа обрнута коса црта"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Неисправна повратна упута"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Неупарено [, [^, [:, [., или [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Неупарено ( или \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Неупарено \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Неисправан садржај у \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Неисправан крај опсега"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Меморија је исцрпљена"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Неисправан претходећи регуларни израз"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Преран завршетак регуларног израза"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Регуларан израз је исувише велики"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Неупарено ) или \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Нема претходног регуларног израза"
 
@@ -468,17 +468,17 @@ msgstr "%s матична страница: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Општа помоћ за коришћење ГНУ софтвера: <%s>\n"
 
-#: src/analyze.c:454 src/diff.c:1406
+#: src/analyze.c:455 src/diff.c:1478
 #, c-format
 msgid "Files %s and %s differ\n"
 msgstr "Датотеке „%s“ и „%s“ су различите\n"
 
-#: src/analyze.c:455
+#: src/analyze.c:456
 #, c-format
 msgid "Binary files %s and %s differ\n"
 msgstr "Бинарне датотеке %s и %s различите\n"
 
-#: src/analyze.c:706 src/diff3.c:1470 src/util.c:1254
+#: src/analyze.c:707 src/diff3.c:1457 src/util.c:1354
 msgid "No newline at end of file"
 msgstr "Без новог реда на крају датотеке"
 
@@ -492,81 +492,82 @@ msgstr "Торбјорн Гранлунд"
 msgid "David MacKenzie"
 msgstr "Дејвид Мек Кензи"
 
-#: src/cmp.c:120 src/diff.c:879 src/diff3.c:467 src/sdiff.c:160
+#: src/cmp.c:124 src/diff.c:939 src/diff3.c:465 src/sdiff.c:159
 #, c-format
 msgid "Try '%s --help' for more information."
 msgstr "Покушајте „%s --help“ за више информација."
 
-#: src/cmp.c:138
+#: src/cmp.c:142
 #, c-format
 msgid "invalid --ignore-initial value '%s'"
 msgstr "неисправна „--ignore-initial“ вредност „%s“"
 
-#: src/cmp.c:148
+#: src/cmp.c:152
 #, c-format
 msgid "options -l and -s are incompatible"
 msgstr "опције -l и -s не иду заједно"
 
-#: src/cmp.c:156 src/diff.c:887 src/diff3.c:474 src/sdiff.c:168 src/sdiff.c:316
-#: src/sdiff.c:323 src/sdiff.c:876 src/util.c:852 src/util.c:952 src/util.c:959
+#: src/cmp.c:160 src/diff.c:947 src/diff3.c:472 src/sdiff.c:167 src/sdiff.c:314
+#: src/sdiff.c:321 src/sdiff.c:873 src/util.c:952 src/util.c:1052
+#: src/util.c:1059
 msgid "write failed"
 msgstr "записивање није успело"
 
-#: src/cmp.c:158 src/diff.c:889 src/diff.c:1471 src/diff3.c:476 src/sdiff.c:170
+#: src/cmp.c:162 src/diff.c:949 src/diff.c:1543 src/diff3.c:474 src/sdiff.c:169
 msgid "standard output"
 msgstr "стандардни излаз"
 
-#: src/cmp.c:162
+#: src/cmp.c:166
 msgid "-b, --print-bytes          print differing bytes"
 msgstr ""
 "-b  --print-bytes                   исписује бајтове који се разликују."
 
-#: src/cmp.c:163
+#: src/cmp.c:167
 msgid "-i, --ignore-initial=SKIP         skip first SKIP bytes of both inputs"
 msgstr ""
 "-i БРОЈ  --ignore-initial=БРОЈ      изоставља првих БРОЈ бајтова улаза."
 
-#: src/cmp.c:164
+#: src/cmp.c:168
 msgid ""
 "-i, --ignore-initial=SKIP1:SKIP2  skip first SKIP1 bytes of FILE1 and\n"
 "                                      first SKIP2 bytes of FILE2"
 msgstr ""
 "  изоставља првих БРОЈ1 бајтова ДАТОТЕКЕ1 и првих БРОЈ2 бајтова ДАТОТЕКЕ2."
 
-#: src/cmp.c:166
+#: src/cmp.c:170
 msgid ""
 "-l, --verbose              output byte numbers and differing byte values"
 msgstr ""
 "-l  --verbose                       исписује редни број и вредност бајтова "
 "који се разликују."
 
-#: src/cmp.c:167
+#: src/cmp.c:171
 msgid "-n, --bytes=LIMIT          compare at most LIMIT bytes"
 msgstr ""
 "-n ОГРАНИЧЕЊЕ  --bytes=ОГРАНИЧЕЊЕ   пореди до највише ОГРАНИЧЕЊЕ бајтова."
 
-#: src/cmp.c:168
+#: src/cmp.c:172
 msgid "-s, --quiet, --silent      suppress all normal output"
 msgstr "-s, --quiet, --silent               потискује све обичне излазе"
 
-#: src/cmp.c:169
+#: src/cmp.c:173
 msgid "    --help                 display this help and exit"
 msgstr "    --help                          приказује ову помоћ и излази"
 
-#: src/cmp.c:170
+#: src/cmp.c:174
 msgid "-v, --version              output version information and exit"
 msgstr "-v  --version                       исписује податке о издању."
 
-#: src/cmp.c:179
+#: src/cmp.c:183
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
 msgstr "Употреба: %s [ОПЦИЈА]... ДАТОТЕКА1 [ДАТОТЕКА2 [БРОЈ1 [БРОЈ2]]]\n"
 
-#: src/cmp.c:181
+#: src/cmp.c:185
 msgid "Compare two files byte by byte."
 msgstr "Поредите две датотеке бајт по бајт."
 
-#: src/cmp.c:183
+#: src/cmp.c:187
 msgid ""
 "The optional SKIP1 and SKIP2 specify the number of bytes to skip\n"
 "at the beginning of each file (zero by default)."
@@ -574,13 +575,13 @@ msgstr ""
 "Изборни БРОЈ1 и БРОЈ2 су бројеви бајтова за изостављање на почетку\n"
 "сваке датотеке (подразумева се нула)."
 
-#: src/cmp.c:186 src/diff.c:999 src/diff3.c:514 src/sdiff.c:211
+#: src/cmp.c:190 src/diff.c:1059 src/diff3.c:512 src/sdiff.c:210
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
 "Обавезни аргументи за дуге опције су обавезни и за кратке опције такође.\n"
 
-#: src/cmp.c:192
+#: src/cmp.c:196
 msgid ""
 "SKIP values may be followed by the following multiplicative suffixes:\n"
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
@@ -591,191 +592,191 @@ msgstr ""
 "1,073,741,824,\n"
 "итд. за T, P, E, Z, Y."
 
-#: src/cmp.c:195
+#: src/cmp.c:199
 msgid "If a FILE is '-' or missing, read standard input."
 msgstr "Чита стандардни улаз ако ДАТОТЕКА недостаје или је „-“."
 
-#: src/cmp.c:196 src/diff.c:987 src/sdiff.c:221
+#: src/cmp.c:200 src/diff.c:1047 src/sdiff.c:220
 msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
 msgstr "Излазно стање је 0 ако су улази исти, 1 за различите, 2 за грешку."
 
-#: src/cmp.c:243
+#: src/cmp.c:247
 #, c-format
 msgid "invalid --bytes value '%s'"
 msgstr "неисправна --bytes вредност „%s“"
 
-#: src/cmp.c:269 src/diff.c:797 src/diff3.c:361 src/sdiff.c:567
+#: src/cmp.c:273 src/diff.c:857 src/diff3.c:368 src/sdiff.c:564
 #, c-format
 msgid "missing operand after '%s'"
 msgstr "недостаје оператор после „%s“"
 
-#: src/cmp.c:281 src/diff.c:799 src/diff3.c:363 src/sdiff.c:569
+#: src/cmp.c:285 src/diff.c:859 src/diff3.c:370 src/sdiff.c:566
 #, c-format
 msgid "extra operand '%s'"
 msgstr "вишак оператор „%s“"
 
-#: src/cmp.c:507
+#: src/cmp.c:521
 #, c-format
 msgid "%s %s differ: byte %s, line %s\n"
 msgstr "%s %s се разликују: бајт %s, ред %s\n"
 
-#: src/cmp.c:523
+#: src/cmp.c:537
 #, c-format
 msgid "%s %s differ: byte %s, line %s is %3o %s %3o %s\n"
 msgstr "%s %s се разликују: бајт %s, ред %s је %3o %s %3o %s\n"
 
-#: src/cmp.c:580
+#: src/cmp.c:594
 #, c-format
 msgid "cmp: EOF on %s which is empty\n"
 msgstr "cmp: крај датотеке на %s које је празно\n"
 
-#: src/cmp.c:594
+#: src/cmp.c:608
 #, c-format
 msgid "cmp: EOF on %s after byte %s, line %s\n"
 msgstr "cmp: крај датотеке на %s након бајта %s, %s. ред\n"
 
-#: src/cmp.c:595
+#: src/cmp.c:609
 #, c-format
 msgid "cmp: EOF on %s after byte %s, in line %s\n"
 msgstr "cmp: крај датотеке на %s након бајта %s, у %s. реду\n"
 
-#: src/cmp.c:601
+#: src/cmp.c:615
 #, c-format
 msgid "cmp: EOF on %s after byte %s\n"
 msgstr "cmp: крај датотеке на %s након бајта %s\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:51
+#: src/diff.c:50
 msgid "Paul Eggert"
 msgstr "Пол Егерт"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:52
+#: src/diff.c:51
 msgid "Mike Haertel"
 msgstr "Мајк Хартел"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:53
+#: src/diff.c:52
 msgid "David Hayes"
 msgstr "Дејвид Хејес"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:54
+#: src/diff.c:53
 msgid "Richard Stallman"
 msgstr "Ричард Столман"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:55
+#: src/diff.c:54
 msgid "Len Tower"
 msgstr "Лен Тауер"
 
-#: src/diff.c:355
+#: src/diff.c:365
 #, c-format
 msgid "invalid context length '%s'"
 msgstr "неисправна дужина склопа „%s“"
 
-#: src/diff.c:438
+#: src/diff.c:487
 #, c-format
 msgid "pagination not supported on this host"
 msgstr "прелом страна није подржан на овом рачунару"
 
-#: src/diff.c:453 src/diff3.c:341
+#: src/diff.c:502 src/diff3.c:348
 #, c-format
 msgid "too many file label options"
 msgstr "исувише опција за ознаку датотеке"
 
-#: src/diff.c:530
+#: src/diff.c:579
 #, c-format
 msgid "invalid width '%s'"
 msgstr "неисправна дужина „%s“"
 
-#: src/diff.c:534
+#: src/diff.c:583
 msgid "conflicting width options"
 msgstr "сукобљене опције ширине"
 
-#: src/diff.c:559
+#: src/diff.c:608
 #, c-format
 msgid "invalid horizon length '%s'"
 msgstr "неисправна дужина видокруга „%s“"
 
-#: src/diff.c:615
+#: src/diff.c:664
 #, c-format
 msgid "invalid tabsize '%s'"
 msgstr "неисправна величина табулатора „%s“"
 
-#: src/diff.c:619
+#: src/diff.c:668
 msgid "conflicting tabsize options"
 msgstr "сукобљене опције величине табулатора"
 
-#: src/diff.c:774
+#: src/diff.c:834
 msgid "--from-file and --to-file both specified"
 msgstr "„--from-file“ и „--to-file“ су наведени оба"
 
-#: src/diff.c:893
+#: src/diff.c:953
 msgid "    --normal                  output a normal diff (the default)"
 msgstr "    --normal                  исписује обичне разлике (основно)"
 
-#: src/diff.c:894
+#: src/diff.c:954
 msgid "-q, --brief                   report only when files differ"
 msgstr "-q  --brief                   исписује само када се датотеке разликују"
 
-#: src/diff.c:895
+#: src/diff.c:955
 msgid "-s, --report-identical-files  report when two files are the same"
 msgstr "-s  --report-identical-files  извештава када су две датотеке исте"
 
-#: src/diff.c:896
+#: src/diff.c:956
 msgid ""
 "-c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context"
 msgstr ""
 "-c, -C БРОЈ, --context[=БРОЈ] исписује БРОЈ (почетно 3) редова умноженог "
 "склопа"
 
-#: src/diff.c:897
+#: src/diff.c:957
 msgid ""
 "-u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context"
 msgstr ""
 "-w БРОЈ  --width=БРОЈ         исписује БРОЈ (почетно 3) редова обједињеног "
 "склопа"
 
-#: src/diff.c:898
+#: src/diff.c:958
 msgid "-e, --ed                      output an ed script"
 msgstr "-e  --ed                      исписује ед спис"
 
-#: src/diff.c:899
+#: src/diff.c:959
 msgid "-n, --rcs                     output an RCS format diff"
 msgstr "-n  --rcs                     исписује РЦС запис разлика"
 
-#: src/diff.c:900
+#: src/diff.c:960
 msgid "-y, --side-by-side            output in two columns"
 msgstr "-y, --side-by-side            исписује у две колоне"
 
-#: src/diff.c:901
+#: src/diff.c:961
 msgid ""
 "-W, --width=NUM               output at most NUM (default 130) print columns"
 msgstr ""
 "-w БРЈ  --width=БРЈ           исписује на највише БРЈ (почетно 130) колона"
 
-#: src/diff.c:902
+#: src/diff.c:962
 msgid ""
 "    --left-column             output only the left column of common lines"
 msgstr ""
 "-l  --left-column             исписује само леву колону заједничких редова"
 
-#: src/diff.c:903
+#: src/diff.c:963
 msgid "    --suppress-common-lines   do not output common lines"
 msgstr "-s  --suppress-common-lines   не приказује заједничке редове"
 
-#: src/diff.c:905
+#: src/diff.c:965
 msgid "-p, --show-c-function         show which C function each change is in"
 msgstr ""
 "-p, --show-c-function         приказује у којој Ц функцији је свака промена"
 
-#: src/diff.c:906
+#: src/diff.c:966
 msgid "-F, --show-function-line=RE   show the most recent line matching RE"
 msgstr ""
 "-F, --show-function-line=РИ   приказује најскорији ред који одговара РИ"
 
-#: src/diff.c:907
+#: src/diff.c:967
 msgid ""
 "    --label LABEL             use LABEL instead of file name and timestamp\n"
 "                                (can be repeated)"
@@ -784,82 +785,82 @@ msgstr ""
 "временске ознаке\n"
 "                                (може да се понавља)"
 
-#: src/diff.c:910
+#: src/diff.c:970
 msgid "-t, --expand-tabs             expand tabs to spaces in output"
 msgstr "-t  --expand-tabs             развија табулаторе у размаке за излаз"
 
-#: src/diff.c:911
+#: src/diff.c:971
 msgid "-T, --initial-tab             make tabs line up by prepending a tab"
 msgstr ""
 "-T  --initial-tab             поравнава табулаторе додајући један табулатор."
 
-#: src/diff.c:912
+#: src/diff.c:972
 msgid ""
 "    --tabsize=NUM             tab stops every NUM (default 8) print columns"
 msgstr ""
 "--tabsize=БРЈ                 величина табулатора је БРЈ (почетно 8) колона"
 
-#: src/diff.c:913
+#: src/diff.c:973
 msgid ""
 "    --suppress-blank-empty    suppress space or tab before empty output lines"
 msgstr ""
 "--suppress-blank-empty        потискује размак или табулатор пре празних "
 "редова излаза"
 
-#: src/diff.c:914
+#: src/diff.c:974
 msgid "-l, --paginate                pass output through 'pr' to paginate it"
 msgstr "-l  --paginate                пропушта излаз кроз „pr“ за прелом"
 
-#: src/diff.c:916
+#: src/diff.c:976
 msgid ""
 "-r, --recursive                 recursively compare any subdirectories found"
 msgstr ""
 "-r  --recursive                 дубински упоређује све пронађене "
 "поддиректоријуме"
 
-#: src/diff.c:917
+#: src/diff.c:977
 msgid "    --no-dereference            don't follow symbolic links"
 msgstr "    --no-dereference            не прати симболичке везе"
 
-#: src/diff.c:918
+#: src/diff.c:978
 msgid "-N, --new-file                  treat absent files as empty"
 msgstr "-N  --new-file                  сматра празним недостајуће датотеке"
 
-#: src/diff.c:919
+#: src/diff.c:979
 msgid "    --unidirectional-new-file   treat absent first files as empty"
 msgstr ""
 "    --unidirectional-new-file   сматра празним прве недостајуће датотеке"
 
-#: src/diff.c:920
+#: src/diff.c:980
 msgid "    --ignore-file-name-case     ignore case when comparing file names"
 msgstr ""
 "    --ignore-file-name-case     занемарује словну величину поређујући назива "
 "датотека"
 
-#: src/diff.c:921
+#: src/diff.c:981
 msgid "    --no-ignore-file-name-case  consider case when comparing file names"
 msgstr ""
 "    --no-ignore-file-name-case  урачунава словну величину поређујући називе "
 "датотека"
 
-#: src/diff.c:922
+#: src/diff.c:982
 msgid "-x, --exclude=PAT               exclude files that match PAT"
 msgstr "-x, --exclude=ОБР               искључује датотеке које поклапају ОБР"
 
-#: src/diff.c:923
+#: src/diff.c:983
 msgid ""
 "-X, --exclude-from=FILE         exclude files that match any pattern in FILE"
 msgstr ""
 "-X, --exclude-from=ТЕКА         искључује датотеке које поклапа било који "
 "образац у ТЕКА"
 
-#: src/diff.c:924
+#: src/diff.c:984
 msgid ""
 "-S, --starting-file=FILE        start with FILE when comparing directories"
 msgstr ""
 "-S, --starting-file=ТЕКА        почиње од ТЕКА при поређењу директоријума"
 
-#: src/diff.c:925
+#: src/diff.c:985
 msgid ""
 "    --from-file=FILE1           compare FILE1 to all operands;\n"
 "                                  FILE1 can be a directory"
@@ -867,7 +868,7 @@ msgstr ""
 "    --from-file=ТЕКА1           упоређује ТЕКУ1 са свим оперантима. ТЕКА1 "
 "може бити директоријум"
 
-#: src/diff.c:927
+#: src/diff.c:987
 msgid ""
 "    --to-file=FILE2             compare all operands to FILE2;\n"
 "                                  FILE2 can be a directory"
@@ -875,75 +876,75 @@ msgstr ""
 "    --to-file=ТЕКА2             упоређује све операнте са ТЕКОМ2. ТЕКА2 може "
 "бити директоријум"
 
-#: src/diff.c:930
+#: src/diff.c:990
 msgid ""
 "-i, --ignore-case               ignore case differences in file contents"
 msgstr ""
 "-i  --ignore-case               занемарује словну величину у склопу датотека"
 
-#: src/diff.c:931
+#: src/diff.c:991
 msgid "-E, --ignore-tab-expansion      ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion      занемарује промене услед развијања табулатора"
 
-#: src/diff.c:932
+#: src/diff.c:992
 msgid "-Z, --ignore-trailing-space     ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space     занемарује размак на крају реда"
 
-#: src/diff.c:933
+#: src/diff.c:993
 msgid ""
 "-b, --ignore-space-change       ignore changes in the amount of white space"
 msgstr ""
 "-b  --ignore-space-change       занемарује промене због количине празног "
 "простора"
 
-#: src/diff.c:934
+#: src/diff.c:994
 msgid "-w, --ignore-all-space          ignore all white space"
 msgstr "-w  --ignore-all-space          занемарује све празне просторе"
 
-#: src/diff.c:935
+#: src/diff.c:995
 msgid ""
 "-B, --ignore-blank-lines        ignore changes where lines are all blank"
 msgstr ""
 "-B  --ignore-blank-lines        занемарује промене услед празних редова"
 
-#: src/diff.c:936
+#: src/diff.c:996
 msgid "-I, --ignore-matching-lines=RE  ignore changes where all lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=РИ  занемарује промене чији редови поклапају РИ"
 
-#: src/diff.c:938
+#: src/diff.c:998
 msgid "-a, --text                      treat all files as text"
 msgstr "-a  --text                      сматра све датотеке као текст"
 
-#: src/diff.c:939
+#: src/diff.c:999
 msgid "    --strip-trailing-cr         strip trailing carriage return on input"
 msgstr "    --strip-trailing-cr         огољава пратеће <CR> на улазу"
 
-#: src/diff.c:941
+#: src/diff.c:1001
 msgid "    --binary                    read and write data in binary mode"
 msgstr "    --binary                    чита и пише податке у бинарном режиму"
 
-#: src/diff.c:944
+#: src/diff.c:1004
 msgid ""
 "-D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs"
 msgstr ""
 "-D, --ifdef=НАЗИВ               исписује стопљену датотеку да прикаже "
 "„#ifdef НАЗИВ“ разлике"
 
-#: src/diff.c:945
+#: src/diff.c:1005
 msgid "    --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT"
 msgstr "    --GTYPE-group-format=ГОБЛ   обликује GTYPE улазне групе са ГОБЛ"
 
-#: src/diff.c:946
+#: src/diff.c:1006
 msgid "    --line-format=LFMT          format all input lines with LFMT"
 msgstr "    --line-format=РОБЛ          обликује све улазне редове са РОБЛ"
 
-#: src/diff.c:947
+#: src/diff.c:1007
 msgid "    --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT"
 msgstr "    --LTYPE-line-format=РОБЛ    обликује LTYPE улазне редове са РОБЛ"
 
-#: src/diff.c:948
+#: src/diff.c:1008
 msgid ""
 "  These format options provide fine-grained control over the output\n"
 "    of diff, generalizing -D/--ifdef."
@@ -951,12 +952,12 @@ msgstr ""
 "  Ове опције записа обезбеђује фино подешено управљање преко излаза\n"
 "    различника, генерализујући -D/--ifdef."
 
-#: src/diff.c:950
+#: src/diff.c:1010
 msgid "  LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'."
 msgstr ""
 "  LTYPE је „old“, „new“, или „unchanged“. GTYPE је LTYPE или „changed“."
 
-#: src/diff.c:951
+#: src/diff.c:1011
 msgid ""
 "  GFMT (only) may contain:\n"
 "    %<  lines from FILE1\n"
@@ -984,7 +985,7 @@ msgstr ""
 "        M  L+1\n"
 "    %(A=B?T:E)  ако је А исто као Б онда Т супротно Е"
 
-#: src/diff.c:963
+#: src/diff.c:1023
 msgid ""
 "  LFMT (only) may contain:\n"
 "    %L  contents of line\n"
@@ -996,7 +997,7 @@ msgstr ""
 "    %l  садржај реда, изузев пратећих знакова за нови ред\n"
 "    %[-][ШИРН][.[ТАЧН]]{doxX}n  printf-стил за улазни број реда"
 
-#: src/diff.c:967
+#: src/diff.c:1027
 msgid ""
 "  Both GFMT and LFMT may contain:\n"
 "    %%  %\n"
@@ -1010,22 +1011,22 @@ msgstr ""
 "    %c'\\OOO'  знак са окталним кодом OOO\n"
 "    З         знак З (други знаци представљају сами себе)"
 
-#: src/diff.c:973
+#: src/diff.c:1033
 msgid "-d, --minimal            try hard to find a smaller set of changes"
 msgstr "-d  --minimal            труди се да нађе мањи скуп промена"
 
-#: src/diff.c:974
+#: src/diff.c:1034
 msgid "    --horizon-lines=NUM  keep NUM lines of the common prefix and suffix"
 msgstr ""
 "    --horizon-lines=БРЈ  чува БРЈ редова заједничког префикса и суфикса"
 
-#: src/diff.c:975
+#: src/diff.c:1035
 msgid ""
 "    --speed-large-files  assume large files and many scattered small changes"
 msgstr ""
 "    --speed-large-files  за велике датотеке са много раштрканих малих измена"
 
-#: src/diff.c:976
+#: src/diff.c:1036
 msgid ""
 "    --color[=WHEN]       color output; WHEN is 'never', 'always', or "
 "'auto';\n"
@@ -1035,7 +1036,7 @@ msgstr ""
 "„always“ (увек), или „auto“ (подразумевано);\n"
 "                         обична „--color“ значи „--color='auto'“"
 
-#: src/diff.c:978
+#: src/diff.c:1038
 msgid ""
 "    --palette=PALETTE    the colors to use when --color is active; PALETTE "
 "is\n"
@@ -1046,112 +1047,112 @@ msgstr ""
 "                          списак могућности података термина раздвојен "
 "двотачком"
 
-#: src/diff.c:981
+#: src/diff.c:1041
 msgid "    --help               display this help and exit"
 msgstr "    --help               приказује ову помоћ и излази"
 
-#: src/diff.c:982
+#: src/diff.c:1042
 msgid "-v, --version            output version information and exit"
 msgstr "-v  --version            исписује податке о издању"
 
-#: src/diff.c:984
+#: src/diff.c:1044
 msgid "FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE' or 'FILE DIR'."
 msgstr ""
 "ДАТОТЕКЕ су „ТЕКА1 ТЕКА2“ или „ДИР1 ДИР2“ или „ДИР ТЕКА“ или „ТЕКА ДИР“."
 
-#: src/diff.c:985
+#: src/diff.c:1045
 msgid ""
 "If --from-file or --to-file is given, there are no restrictions on FILE(s)."
 msgstr ""
 "Нема ограничења за ДАТОТЕКЕ ако је задато „--from-file“ или „--to-file“."
 
-#: src/diff.c:986 src/diff3.c:533 src/sdiff.c:220
+#: src/diff.c:1046 src/diff3.c:531 src/sdiff.c:219
 msgid "If a FILE is '-', read standard input."
 msgstr "Ако је ДАТОТЕКА „-“, чита стандардни улаз."
 
-#: src/diff.c:996
+#: src/diff.c:1056
 #, c-format
 msgid "Usage: %s [OPTION]... FILES\n"
 msgstr "Употреба: %s [ОПЦИЈА]... ДАТОТЕКЕ\n"
 
-#: src/diff.c:997
+#: src/diff.c:1057
 msgid "Compare FILES line by line."
 msgstr "Поредите ДАТОТЕКЕ ред по ред."
 
-#: src/diff.c:1034
+#: src/diff.c:1094
 #, c-format
 msgid "conflicting %s option value '%s'"
 msgstr "сукоб вредности „%s“ опције „%s“"
 
-#: src/diff.c:1047
+#: src/diff.c:1107
 #, c-format
 msgid "conflicting output style options"
 msgstr "сукобљене опције излазног стила"
 
-#: src/diff.c:1063
+#: src/diff.c:1123
 #, c-format
 msgid "invalid color '%s'"
 msgstr "неисправна боја „%s“"
 
-#: src/diff.c:1119 src/diff.c:1329
+#: src/diff.c:1197 src/diff.c:1401
 #, c-format
 msgid "Only in %s: %s\n"
 msgstr "Само у %s: %s\n"
 
-#: src/diff.c:1253
+#: src/diff.c:1325
 msgid "cannot compare '-' to a directory"
 msgstr "не могу поредити „-“ са директоријумом"
 
-#: src/diff.c:1288
+#: src/diff.c:1360
 msgid "-D option not supported with directories"
 msgstr "опција „-D“ није подржана за директоријуме"
 
-#: src/diff.c:1297
+#: src/diff.c:1369
 #, c-format
 msgid "Common subdirectories: %s and %s\n"
 msgstr "Заједнички поддиректоријуми: %s и %s\n"
 
-#: src/diff.c:1339 src/diff.c:1389
+#: src/diff.c:1411 src/diff.c:1461
 #, c-format
 msgid "File %s is a %s while file %s is a %s\n"
 msgstr "Датотека „%s“ је „%s“ док је датотека „%s“ „%s“\n"
 
-#: src/diff.c:1375
+#: src/diff.c:1447
 #, c-format
 msgid "Symbolic links %s and %s differ\n"
 msgstr "Симболичке везе „%s“ и „%s“ су различите\n"
 
-#: src/diff.c:1462
+#: src/diff.c:1534
 #, c-format
 msgid "Files %s and %s are identical\n"
 msgstr "Датотеке „%s“ и „%s“ се истоветне\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff3.c:43
+#: src/diff3.c:51
 msgid "Randy Smith"
 msgstr "Ренди Смит"
 
-#: src/diff3.c:356
+#: src/diff3.c:363
 #, c-format
 msgid "incompatible options"
 msgstr "несагласне опције"
 
-#: src/diff3.c:396
+#: src/diff3.c:403
 msgid "'-' specified for more than one input file"
 msgstr "„-“ је наведено за више од једне улазне датотеке"
 
-#: src/diff3.c:447 src/diff3.c:1295 src/diff3.c:1698 src/diff3.c:1753
-#: src/sdiff.c:308 src/sdiff.c:846 src/sdiff.c:857
+#: src/diff3.c:445 src/diff3.c:1284 src/diff3.c:1683 src/diff3.c:1738
+#: src/sdiff.c:306 src/sdiff.c:843 src/sdiff.c:854
 msgid "read failed"
 msgstr "читање није успело"
 
-#: src/diff3.c:480
+#: src/diff3.c:478
 msgid "-A, --show-all              output all changes, bracketing conflicts"
 msgstr ""
 "-A  --show-all              исписује све промене, означавајући сукобе "
 "заградама"
 
-#: src/diff3.c:482
+#: src/diff3.c:480
 msgid ""
 "-e, --ed                    output ed script incorporating changes\n"
 "                                from OLDFILE to YOURFILE into MYFILE"
@@ -1159,31 +1160,31 @@ msgstr ""
 "-e  --ed                    исписује неспојене промене између СТАРАТЕКА и "
 "ТВОЈАТЕКА у МОЈАТЕКА"
 
-#: src/diff3.c:484
+#: src/diff3.c:482
 msgid "-E, --show-overlap          like -e, but bracket conflicts"
 msgstr "-E  --show-overlap          као -e, означавајући сукобе заградама"
 
-#: src/diff3.c:485
+#: src/diff3.c:483
 msgid ""
 "-3, --easy-only             like -e, but incorporate only nonoverlapping "
 "changes"
 msgstr ""
 "-3  --easy-only             као -e, али обједињује непреклопљене промене"
 
-#: src/diff3.c:486
+#: src/diff3.c:484
 msgid ""
 "-x, --overlap-only          like -e, but incorporate only overlapping changes"
 msgstr "-x, --overlap-only          као -e, али обједињује преклопљене промене"
 
-#: src/diff3.c:487
+#: src/diff3.c:485
 msgid "-X                          like -x, but bracket conflicts"
 msgstr "-X                          као -x, означавајући сукобе заградама"
 
-#: src/diff3.c:488
+#: src/diff3.c:486
 msgid "-i                          append 'w' and 'q' commands to ed scripts"
 msgstr "-i                          придодаје „w“ и „q“ наредбе ед списима"
 
-#: src/diff3.c:490
+#: src/diff3.c:488
 msgid ""
 "-m, --merge                 output actual merged file, according to\n"
 "                                -A if no other options are given"
@@ -1191,24 +1192,24 @@ msgstr ""
 "-m, --merge                 исписује тренутну стопљену датотеку, у складу\n"
 "                                са -A ако нису дате друге опције"
 
-#: src/diff3.c:493
+#: src/diff3.c:491
 msgid "-a, --text                  treat all files as text"
 msgstr "-a  --text                  сматра све датотеке као текст"
 
-#: src/diff3.c:494
+#: src/diff3.c:492
 msgid "    --strip-trailing-cr     strip trailing carriage return on input"
 msgstr "    --strip-trailing-cr     огољава пратеће <CR> на улазу"
 
-#: src/diff3.c:495
+#: src/diff3.c:493
 msgid "-T, --initial-tab           make tabs line up by prepending a tab"
 msgstr ""
 "-T  --initial-tab           поравнава табулаторе додајући један табулатор"
 
-#: src/diff3.c:496
+#: src/diff3.c:494
 msgid "    --diff-program=PROGRAM  use PROGRAM to compare files"
 msgstr "    --diff-program=ПРОГРАМ  користи ПРОГРАМ за поређење датотека"
 
-#: src/diff3.c:497
+#: src/diff3.c:495
 msgid ""
 "-L, --label=LABEL           use LABEL instead of file name\n"
 "                                (can be repeated up to three times)"
@@ -1216,24 +1217,24 @@ msgstr ""
 "-L, --label=ОЗНАКА          користи ОЗНАКУ уместо назива датотеке\n"
 "                                (може да се понови до три пута)"
 
-#: src/diff3.c:500
+#: src/diff3.c:498
 msgid "    --help                  display this help and exit"
 msgstr "    --help                  приказује ову помоћ и излази"
 
-#: src/diff3.c:501
+#: src/diff3.c:499
 msgid "-v, --version               output version information and exit"
 msgstr "-v, --version               исписује податке о издању и излази"
 
-#: src/diff3.c:510
+#: src/diff3.c:508
 #, c-format
 msgid "Usage: %s [OPTION]... MYFILE OLDFILE YOURFILE\n"
 msgstr "Употреба: %s [ОПЦИЈА]... МОЈАТЕКА СТАРАТЕКА ТВОЈАТЕКА\n"
 
-#: src/diff3.c:512
+#: src/diff3.c:510
 msgid "Compare three files line by line."
 msgstr "Поредите три датотеке ред по ред."
 
-#: src/diff3.c:522
+#: src/diff3.c:520
 msgid ""
 "\n"
 "The default output format is a somewhat human-readable representation of\n"
@@ -1256,54 +1257,54 @@ msgstr ""
 "и да испише тренутно стопљену датотеку.  За необичан улаз, ово је много\n"
 "рогпадније него употреба еда.\n"
 
-#: src/diff3.c:534
+#: src/diff3.c:532
 msgid "Exit status is 0 if successful, 1 if conflicts, 2 if trouble."
 msgstr "Излазно стање је 0 за успех, 1 за сукобе, 2 за грешку."
 
-#: src/diff3.c:727
+#: src/diff3.c:725
 msgid "internal error: screwup in format of diff blocks"
 msgstr "унутрашња грешка: зез у запису блокова разлика"
 
-#: src/diff3.c:1022
+#: src/diff3.c:1015
 #, c-format
 msgid "%s: diff failed: "
 msgstr "%s: разлике нису успеле: "
 
-#: src/diff3.c:1044
+#: src/diff3.c:1037
 msgid "internal error: invalid diff type in process_diff"
 msgstr "унутрашња грешка: неисправна врста разлика у „process_diff“"
 
-#: src/diff3.c:1069
+#: src/diff3.c:1060
 msgid "invalid diff format; invalid change separator"
 msgstr "неисправан запис разлика; неисправан раздвојник измена"
 
-#: src/diff3.c:1305
+#: src/diff3.c:1294
 msgid "invalid diff format; incomplete last line"
 msgstr "неисправан облик разлика; непотпун задњи ред"
 
-#: src/diff3.c:1329 src/sdiff.c:276 src/util.c:969
+#: src/diff3.c:1318 src/sdiff.c:274 src/util.c:1069
 #, c-format
 msgid "subsidiary program '%s' could not be invoked"
 msgstr "помоћни програм „%s“ не може бити покренут"
 
-#: src/diff3.c:1354
+#: src/diff3.c:1343
 msgid "invalid diff format; incorrect leading line chars"
 msgstr "неисправан запис разлика; нетачни водећи знакови реда"
 
-#: src/diff3.c:1427
+#: src/diff3.c:1416
 msgid "internal error: invalid diff type passed to output"
 msgstr "унутрашња грешка: неисправна врста разлика прослеђена излазу"
 
-#: src/diff3.c:1700 src/diff3.c:1757
+#: src/diff3.c:1685 src/diff3.c:1742
 msgid "input file shrank"
 msgstr "улазна датотека се скупила"
 
-#: src/dir.c:156
+#: src/dir.c:154
 #, c-format
 msgid "cannot compare file names '%s' and '%s'"
 msgstr "не могу поредити називе датотека „%s“ и „%s“"
 
-#: src/dir.c:225
+#: src/dir.c:223
 #, c-format
 msgid "%s: recursive directory loop"
 msgstr "%s: дубинска петља кроз директоријуме"
@@ -1313,120 +1314,120 @@ msgstr "%s: дубинска петља кроз директоријуме"
 msgid "Thomas Lord"
 msgstr "Томас Лорд"
 
-#: src/sdiff.c:174
+#: src/sdiff.c:173
 msgid ""
 "-o, --output=FILE            operate interactively, sending output to FILE"
 msgstr "-o, --output=ТЕКА            ради међудејствено, шаљући излаз у ТЕКА"
 
-#: src/sdiff.c:176
+#: src/sdiff.c:175
 msgid ""
 "-i, --ignore-case            consider upper- and lower-case to be the same"
 msgstr "-i  --ignore-case            сматра истим велика и мала слова"
 
-#: src/sdiff.c:177
+#: src/sdiff.c:176
 msgid "-E, --ignore-tab-expansion   ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion   занемарује промене услед развијања табулатора"
 
-#: src/sdiff.c:178
+#: src/sdiff.c:177
 msgid "-Z, --ignore-trailing-space  ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space  занемарује размак на крају реда"
 
-#: src/sdiff.c:179
+#: src/sdiff.c:178
 msgid ""
 "-b, --ignore-space-change    ignore changes in the amount of white space"
 msgstr ""
 "-b  --ignore-space-change    занемарује промене због количине празног "
 "простора"
 
-#: src/sdiff.c:180
+#: src/sdiff.c:179
 msgid "-W, --ignore-all-space       ignore all white space"
 msgstr "-W  --ignore-all-space       занемарује све размаке"
 
-#: src/sdiff.c:181
+#: src/sdiff.c:180
 msgid "-B, --ignore-blank-lines     ignore changes whose lines are all blank"
 msgstr "-B  --ignore-blank-lines     занемарује промене услед празних редова"
 
-#: src/sdiff.c:182
+#: src/sdiff.c:181
 msgid "-I, --ignore-matching-lines=RE  ignore changes all whose lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=РИ  занемарује промене чији редови поклапају РИ"
 
-#: src/sdiff.c:183
+#: src/sdiff.c:182
 msgid "    --strip-trailing-cr      strip trailing carriage return on input"
 msgstr "    --strip-trailing-cr      огољава пратеће <CR> на улазу"
 
-#: src/sdiff.c:184
+#: src/sdiff.c:183
 msgid "-a, --text                   treat all files as text"
 msgstr "-a  --text                   сматра све датотеке као текст"
 
-#: src/sdiff.c:186
+#: src/sdiff.c:185
 msgid ""
 "-w, --width=NUM              output at most NUM (default 130) print columns"
 msgstr ""
 "-w, --width=БРОЈ             исписује на највише БРОЈ (почетно 130) колона"
 
-#: src/sdiff.c:187
+#: src/sdiff.c:186
 msgid ""
 "-l, --left-column            output only the left column of common lines"
 msgstr ""
 "-l  --left-column            исписује само леву колону заједничких редова"
 
-#: src/sdiff.c:188
+#: src/sdiff.c:187
 msgid "-s, --suppress-common-lines  do not output common lines"
 msgstr "-s  --suppress-common-lines  не приказује заједничке редове"
 
-#: src/sdiff.c:190
+#: src/sdiff.c:189
 msgid "-t, --expand-tabs            expand tabs to spaces in output"
 msgstr "-t  --expand-tabs            развија табулаторе у размаке за излаз"
 
-#: src/sdiff.c:191
+#: src/sdiff.c:190
 msgid ""
 "    --tabsize=NUM            tab stops at every NUM (default 8) print columns"
 msgstr ""
 "    --tabsize=БРОЈ           величина табулатора је БРОЈ (почетно 8) колона"
 
-#: src/sdiff.c:193
+#: src/sdiff.c:192
 msgid "-d, --minimal                try hard to find a smaller set of changes"
 msgstr "-d  --minimal                труди се да нађе мањи скуп промена"
 
-#: src/sdiff.c:194
+#: src/sdiff.c:193
 msgid ""
 "-H, --speed-large-files      assume large files, many scattered small changes"
 msgstr ""
 "-H  --speed-large-files      за велике датотеке са много раштрканих малих "
 "измена"
 
-#: src/sdiff.c:195
+#: src/sdiff.c:194
 msgid "    --diff-program=PROGRAM   use PROGRAM to compare files"
 msgstr "    --diff-program=ПРОГРАМ   користи ПРОГРАМ за поређење датотека"
 
-#: src/sdiff.c:197
+#: src/sdiff.c:196
 msgid "    --help                   display this help and exit"
 msgstr "    --help                   приказује ову помоћ и излази"
 
-#: src/sdiff.c:198
+#: src/sdiff.c:197
 msgid "-v, --version                output version information and exit"
 msgstr "-v  --version                исписује податке о издању"
 
-#: src/sdiff.c:207
+#: src/sdiff.c:206
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
 msgstr "Употреба: %s [ОПЦИЈА]... ДАТОТЕКА1 ДАТОТЕКА2\n"
 
-#: src/sdiff.c:209
+#: src/sdiff.c:208
 msgid "Side-by-side merge of differences between FILE1 and FILE2."
 msgstr "Упоредно стапање разлика између ДАТОТЕКЕ1 и ДАТОТЕКЕ2."
 
-#: src/sdiff.c:330
+#: src/sdiff.c:328
 msgid "cannot interactively merge standard input"
 msgstr "не могу интерактивно уклопити стандардни улаз"
 
-#: src/sdiff.c:597
+#: src/sdiff.c:594
 msgid "both files to be compared are directories"
 msgstr "обе датотеке за поређење су директоријуми"
 
-#: src/sdiff.c:820
+#: src/sdiff.c:817
 msgid ""
 "ed:\tEdit then use both versions, each decorated with a header.\n"
 "eb:\tEdit then use both versions.\n"
@@ -1450,12 +1451,12 @@ msgstr ""
 "v:          Умеће заједничке редове бучно.\n"
 "q:          Завршава.\n"
 
-#: src/util.c:662
+#: src/util.c:755
 #, c-format
 msgid "unrecognized prefix: %s"
 msgstr "непознат префикс: %s"
 
-#: src/util.c:692
+#: src/util.c:785
 #, c-format
 msgid "unparsable value for --palette"
 msgstr "необрадива вредност за „--palette“"

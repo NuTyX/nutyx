@@ -7,21 +7,21 @@
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: sed 4.7.13\n"
+"Project-Id-Version: sed 4.8.44\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
-"PO-Revision-Date: 2020-01-07 00:55+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
+"PO-Revision-Date: 2022-11-03 08:17+0800\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@lists.linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 19.12.0\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.2\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
 msgstr "寫入錯誤"
 
@@ -30,39 +30,72 @@ msgstr "寫入錯誤"
 msgid "preserving permissions for %s"
 msgstr "正為 %s 保留權限"
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr "不平衡的 ["
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 msgid "invalid character class"
 msgstr "無效字元類別"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "字元類別語法是 [[:space:]] 而非 [:space:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr "未完成的 \\ 跳脫字元"
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+msgid "? at start of expression"
+msgstr "表示式開頭有 ?"
+
+#: lib/dfa.c:1331
+msgid "* at start of expression"
+msgstr "表示式開頭有 *"
+
+#: lib/dfa.c:1345
+msgid "+ at start of expression"
+msgstr "表示式開頭有 +"
+
+#: lib/dfa.c:1400
+msgid "{...} at start of expression"
+msgstr "表示式開頭有 {…}"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
 msgstr "無效的 \\{\\} 中內容"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 msgid "regular expression too big"
 msgstr "正規表示式過長"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr "在不可見字元前有孤立的 \\"
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr "在空白前有孤立的 \\"
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "在 %lc 前有孤立的 \\"
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr "有孤立的 \\"
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr "不平衡的 ("
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr "未指定語法"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr "不平衡的 )"
 
@@ -70,42 +103,7 @@ msgstr "不平衡的 )"
 msgid "Unknown system error"
 msgstr "未知系統錯誤"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s：「%s%s」選項不明確\n"
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s：「%s%s」選項不明確；可能是："
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s：無法識別的選項「%s%s」\n"
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s：「%s%s」選項不允許引數\n"
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s：「%s%s」選項需要引數\n"
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s：無效選項 --「%c」\n"
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s：選項需要引數 --「%c」\n"
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "記憶體耗盡"
 
@@ -130,83 +128,83 @@ msgstr "記憶體耗盡"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "`"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "'"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "成功"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "沒有符合者"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "不正確的正規表示式"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "不正確的核對字元"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "不正確的字元等級名稱"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "末端有倒斜線"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "不正確的返回參考"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "沒有符合的 [、[^、[:、[. 或 [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "未匹配的「(」或「\\」"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "未匹配的「\\{」"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "不正確的「\\{\\}」內容"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "不正確的範圍結束"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "記憶體耗盡"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "不正確的前導正規表示式"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "正規表示式的過早結束"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "正規表示式太大"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "未匹配的「)」或「\\」"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "沒有先前的正規表示式"
 
@@ -490,17 +488,17 @@ msgstr "不允許在「\\c」之後加入遞迴跳脫字元"
 msgid "e/r/w commands disabled in sandbox mode"
 msgstr "e/r/w 指令已在沙盒模式中停用"
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s: 檔案 %s 列號: %lu: %s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s: -e 表示式 #%lu，字元 %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "無法為目的是「%s」的跳移找到標籤"
@@ -510,49 +508,49 @@ msgstr "無法為目的是「%s」的跳移找到標籤"
 msgid "case conversion produced an invalid character"
 msgstr "大小寫轉換產生了無效字元"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s: 無法讀取 %s: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "無法編輯 %s: 是一個終端機"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "無法編輯 %s: 不是一個正常檔案"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr "%s：警告：無法設定 %s：%s 的預設檔案建立語境"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr "%s：警告：無法提取 %s：%s 的安全語境"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "無法打開暫存檔案 %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "錯誤發生於副行程中"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "不支援選項「e」"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "不支援命令「e」"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "沒有輸入檔案"
 
@@ -593,7 +591,7 @@ msgstr "Jim Meyering"
 msgid "Assaf Gordon"
 msgstr "Assaf Gordon"
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
@@ -602,28 +600,28 @@ msgstr ""
 "GNU sed 首頁：<https://www.gnu.org/software/sed/>。\n"
 "使用 GNU 軟體的一般說明：<https://www.gnu.org/gethelp/>。\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr "將漏洞回報傳到該 E-mail：<%s>。\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
 msgstr "這個 sed 程式編譯時帶有 SELinux 支援。"
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
 msgstr "此系統有啟用 SELinux。"
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
 msgstr "此系統未啟用 SELinux。"
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
 msgstr "這個 sed 程式編譯時不帶有 SELinux 支援。"
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -632,7 +630,7 @@ msgstr ""
 "用法: %s [選項]... {若無其他命令稿則只能放命令稿} [輸入檔]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -641,7 +639,7 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "                 抑止樣版空間的自動顯示\n"
 
-#: sed/sed.c:160
+#: sed/sed.c:139
 #, c-format
 msgid ""
 "      --debug\n"
@@ -650,7 +648,7 @@ msgstr ""
 "      --debug\n"
 "                 說明程式執行過程\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -659,7 +657,7 @@ msgstr ""
 "  -e 命令稿, --expression=命令稿\n"
 "                 加入命令稿做為執行的命令\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -669,7 +667,7 @@ msgstr ""
 "  -f 命令稿檔案, --file=命令稿檔案\n"
 "                 加入命令稿檔案內容做為執行的命令\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -678,7 +676,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "                 就地處理時追隨符號連結\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -687,7 +685,7 @@ msgstr ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
 "                 一次編輯檔案 (若提供 SUFFIX 則建立備份)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -697,7 +695,7 @@ msgstr ""
 "  -b, --binary\n"
 "                 以二進位模式開啟檔案 (並未特殊處理 CR+LF)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -706,7 +704,7 @@ msgstr ""
 "  -l N, --line-length=N\n"
 "                 指定使用「l」命令時想要的換列長度\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -715,7 +713,7 @@ msgstr ""
 "  --posix\n"
 "                 停用所有 GNU 擴充功能。\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -726,7 +724,7 @@ msgstr ""
 "                 在指令中使用延伸正規表達式\n"
 "                 (若要可攜性請使用 POSIX -E)。\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, c-format
 msgid ""
 "  -s, --separate\n"
@@ -737,7 +735,7 @@ msgstr ""
 "                 將檔案視為各自分離而非單一且\n"
 "                 連續的長字串。\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
@@ -746,7 +744,7 @@ msgstr ""
 "      --sandbox\n"
 "                 在沙盒模式中操作 (停用 e/r/w 指令)。\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -757,7 +755,7 @@ msgstr ""
 "  -u, --unbuffered\n"
 "                 從輸入檔中讀取最少量的資料並更常清空輸出緩衝區\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
@@ -766,17 +764,17 @@ msgstr ""
 "  -z, --null-data\n"
 "                 以 NUL 字元分割行列\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "      --help     顯示本輔助訊息並離開\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr "      --version  輸出版本資訊並離開\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -792,59 +790,81 @@ msgstr ""
 "假如未指定輸入檔，就會從標準輸入來讀取。\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
 msgstr "無法在 STDIN 設定二進位模式"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
 msgstr "無法在 STDOUT 設定二進位模式"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "無法移除 %s: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "無法打開檔案 %s: %s"
 
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "無法附加到 %s：%s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, c-format
 msgid "failed to set binary mode on '%s'"
 msgstr "無法在「%s」設定二進位模式"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
 msgstr[0] "無法將 %llu 個項目寫到 %s：%s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "讀取 %s 時出錯: %s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "無法 readlink %s：%s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "無法追隨符號連結 %s：%s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "無法取得狀態 %s：%s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "無法更改名稱 %s: %s"
+
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s：「%s%s」選項不明確\n"
+
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s：「%s%s」選項不明確；可能是："
+
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s：無法識別的選項「%s%s」\n"
+
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s：「%s%s」選項不允許引數\n"
+
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s：「%s%s」選項需要引數\n"
+
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s：無效選項 --「%c」\n"
+
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s：選項需要引數 --「%c」\n"
+
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "無法移除 %s: %s"
+
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "無法取得狀態 %s：%s"
 
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "%s 的首頁：<https://www.gnu.org/software/%s/>\n"

@@ -1,17 +1,17 @@
 # Dutch translations for GNU sed.
-# Copyright (C) 2018 Free Software Foundation, Inc.
+# Copyright (C) 2022 Free Software Foundation, Inc.
 # This file is distributed under the same license as the sed package.
 #
 # "Zou zij er niet goed aan doen haar oude karakter te huichelen?"
 #
 # Taco Witte <tcwitte@cs.uu.nl>, 2004, 2005.
-# Benno Schulenberg <benno@vertaalt.nl>, 2005, 2006, 2007, 2008, 2010, 2016, 2018.
+# Benno Schulenberg <benno@vertaalt.nl>, 2005, 2006, 2007, 2008, 2010, 2016, 2018, 2020, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: sed-4.5.48\n"
+"Project-Id-Version: sed-4.8.44\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
-"PO-Revision-Date: 2018-12-19 10:08+0100\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
+"PO-Revision-Date: 2022-10-23 14:27+0200\n"
 "Last-Translator: Benno Schulenberg <vertaling@coevern.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
 msgstr "schrijffout"
 
@@ -30,39 +30,72 @@ msgstr "schrijffout"
 msgid "preserving permissions for %s"
 msgstr "behouden van toegangsrechten van %s"
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr "ongepaarde ["
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 msgid "invalid character class"
 msgstr "ongeldige tekenklasse"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "syntax van tekenklasse is [[:space:]], niet [:space:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr "onafgemaakte \\-stuurcode"
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+msgid "? at start of expression"
+msgstr "? aan begin van expressie"
+
+#: lib/dfa.c:1331
+msgid "* at start of expression"
+msgstr "* aan begin van expressie"
+
+#: lib/dfa.c:1345
+msgid "+ at start of expression"
+msgstr "+ aan begin van expressie"
+
+#: lib/dfa.c:1400
+msgid "{...} at start of expression"
+msgstr "{...} aan begin van expressie"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
 msgstr "ongeldige inhoud van \\{\\}"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 msgid "regular expression too big"
 msgstr "reguliere expressie is te groot"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr "verdwaalde \\ voor ontoonbaar teken"
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr "verdwaalde \\ voor witruimte"
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "verdwaalde \\ voor %lc"
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr "verdwaalde \\"
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr "ongepaarde ("
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr "geen syntax opgegeven"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr "ongepaarde )"
 
@@ -70,42 +103,7 @@ msgstr "ongepaarde )"
 msgid "Unknown system error"
 msgstr "Onbekende systeemfout"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: optie '%s%s' is niet eenduidig\n"
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: optie '%s%s' is niet eenduidig; mogelijkheden zijn:"
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: onbekende optie '%s%s'\n"
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: optie '%s%s' staat geen argument toe\n"
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: optie '%s%s' vereist een argument\n"
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: ongeldige optie -- '%c'\n"
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: optie vereist een argument -- '%c'\n"
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "onvoldoende geheugen beschikbaar"
 
@@ -130,83 +128,83 @@ msgstr "onvoldoende geheugen beschikbaar"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "‘"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "’"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Gelukt"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Geen overeenkomsten"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Ongeldige reguliere expressie"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Ongeldig samengesteld teken"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Ongeldige tekenklassenaam"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Backslash aan het eind"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Ongeldige terugverwijzing"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Ongepaarde [, [^, [:, [., of [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Ongepaarde ( of \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Ongepaarde \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Ongeldige inhoud van \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Ongeldig bereikeinde"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Onvoldoende geheugen beschikbaar"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Ongeldige voorafgaande reguliere expressie"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Voortijdig einde van reguliere expressie"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Reguliere expressie is te groot"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Ongepaarde ) of \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Geen eerdere reguliere expressie"
 
@@ -234,19 +232,17 @@ msgstr "©"
 
 #. TRANSLATORS: The %s placeholder is the web address of the GPL license.
 #: lib/version-etc.c:88
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "License GPLv3+: GNU GPL version 3 or later <%s>.\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
-"\n"
 "Dit is vrije software: u mag het vrijelijk wijzigen en verder verspreiden.\n"
 "De precieze licentie is GPL-3+: GNU General Public License versie 3 of "
 "later.\n"
-"Zie https://gnu.org/licenses/gpl.html voor de volledige (Engelse) tekst.\n"
+"Zie <%s> voor de volledige (Engelse) tekst.\n"
 "Deze software kent GEEN GARANTIE, voor zover de wet dit toestaat.\n"
-"\n"
 
 #. TRANSLATORS: %s denotes an author name.
 #: lib/version-etc.c:105
@@ -361,10 +357,9 @@ msgstr ""
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
 #: lib/version-etc.c:249
-#, fuzzy, c-format
+#, c-format
 msgid "Report bugs to: %s\n"
 msgstr ""
-"\n"
 "Rapporteer gebreken in het programma aan <%s>;\n"
 "meld fouten in de vertaling aan <vertaling@vrijschrift.org>.\n"
 
@@ -381,10 +376,9 @@ msgid "%s home page: <%s>\n"
 msgstr "Webpagina van '%s': <%s>\n"
 
 #: lib/version-etc.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "General help using GNU software: <%s>\n"
-msgstr ""
-"Algemene hulp bij gebruik van GNU-software: <https://www.gnu.org/gethelp/>\n"
+msgstr "Algemene hulp bij gebruik van GNU-software: <%s>\n"
 
 #: sed/compile.c:146
 msgid "multiple `!'s"
@@ -503,17 +497,17 @@ msgstr "recursief escapen is niet toegestaan na \\c"
 msgid "e/r/w commands disabled in sandbox mode"
 msgstr "de e/r/w-commando's zijn uitgeschakeld in sandbox-modus"
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s: bestand %s, regel %lu: %s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s: expressie #%lu, teken %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "kan label voor sprong naar '%s' niet vinden"
@@ -523,51 +517,51 @@ msgstr "kan label voor sprong naar '%s' niet vinden"
 msgid "case conversion produced an invalid character"
 msgstr "kastomzetting produceerde een ongeldig teken"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s: kan %s niet lezen: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "kan %s niet bewerken: is een terminal"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "kan %s niet bewerken: is geen gewoon bestand"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr ""
 "%s: Waarschuwing: kan standaard bestandscreatiecontext niet op %s instellen: "
 "%s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr "%s: Waarschuwing: kan geen veiligheidscontext van %s verkrijgen: %s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "kan tijdelijk bestand %s niet openen: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "fout in subproces"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "'e'-opdracht is niet mogelijk"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "'e'-opdracht is niet mogelijk"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "geen invoerbestanden"
 
@@ -608,7 +602,7 @@ msgstr "Jim Meyering"
 msgid "Assaf Gordon"
 msgstr "Assaf Gordon"
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
@@ -617,30 +611,30 @@ msgstr ""
 "Webpagina van GNU sed: <https://www.gnu.org/software/sed/>.\n"
 "Algemene hulp bij gebruik van GNU-software: <https://www.gnu.org/gethelp/>.\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr ""
 "Rapporteer gebreken in het programma aan: <%s>;\n"
 "meld fouten in de vertaling aan: <vertaling@vrijschriftorg>.\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
-msgstr ""
+msgstr "Dit 'sed'-programma is gebouwd met ondersteuning voor SELinux."
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
-msgstr ""
+msgstr "SELinux is ingeschakeld op dit systeem."
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
-msgstr ""
+msgstr "SELinux is uitgeschakeld op dit systeem."
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
-msgstr ""
+msgstr "Dit 'sed'-programma is gebouwd zonder ondersteuning voor SELinux."
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -649,7 +643,7 @@ msgstr ""
 "Gebruik:  %s [OPTIE]... {SCRIPT_als_verder_geen_script} [INVOERBESTAND]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -658,7 +652,7 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "             automatische weergave van patroonruimte onderdrukken\n"
 
-#: sed/sed.c:160
+#: sed/sed.c:139
 #, c-format
 msgid ""
 "      --debug\n"
@@ -667,7 +661,7 @@ msgstr ""
 "  --debug\n"
 "             de uitvoering van het programma annoteren\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -676,7 +670,7 @@ msgstr ""
 "  -e SCRIPT, --expression=SCRIPT\n"
 "             dit SCRIPT toevoegen aan de uit te voeren opdrachten\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -687,7 +681,7 @@ msgstr ""
 "             inhoud van SCRIPTBESTAND toevoegen aan de uit te voeren "
 "opdrachten\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -696,7 +690,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "             symbolische koppelingen volgen (bij bewerking ter plekke)\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -706,7 +700,7 @@ msgstr ""
 "             bestanden ter plekke bewerken\n"
 "             (en een reservekopie maken als een ACHTERVOEGSEL gegeven is)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -717,7 +711,7 @@ msgstr ""
 "             bestanden openen in binaire modus (regeleinden zijn niet "
 "speciaal)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -726,7 +720,7 @@ msgstr ""
 "  -l AANTAL, --line-length=AANTAL\n"
 "             de gewenste regelafbreeklengte voor de 'l'-opdracht\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -735,7 +729,7 @@ msgstr ""
 "  --posix\n"
 "             alle GNU-uitbreidingen uitschakelen\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -746,7 +740,7 @@ msgstr ""
 "             uitgebreide reguliere expressies gebruiken in het script\n"
 "             (gebruik voor portabiliteit de POSIX-optie '-E')\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, c-format
 msgid ""
 "  -s, --separate\n"
@@ -756,7 +750,7 @@ msgstr ""
 "  -s, --separate\n"
 "             bestanden als losstaand beschouwen, niet als één enkele stroom\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
@@ -765,7 +759,7 @@ msgstr ""
 "      --sandbox\n"
 "             in sandbox-modus opereren (de e/r/w-commando's uitschakelen)\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -777,7 +771,7 @@ msgstr ""
 "             minimale hoeveelheden gegevens laden uit de invoerbestanden,\n"
 "             en de uitvoerbuffers vaker leegmaken\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
@@ -787,17 +781,17 @@ msgstr ""
 "             regels scheiden met NUL-tekens\n"
 "\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "  --help     deze hulptekst tonen en stoppen\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr "  --version  programmaversie tonen en stoppen\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -814,70 +808,85 @@ msgstr ""
 "invoerbestanden gegeven zijn, wordt standaardinvoer gelezen.\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
 msgstr "kan standaardinvoer niet in binaire modus zetten"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
 msgstr "kan standaarduitvoer niet in binaire modus zetten"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "kan %s niet verwijderen: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "kan bestand %s niet openen: %s"
 
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "kan niet aan %s aanhechten: %s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, c-format
 msgid "failed to set binary mode on '%s'"
 msgstr "kan '%s' niet in binaire modus zetten"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
 msgstr[0] "kan %llu item niet naar %s schrijven: %s"
 msgstr[1] "kan %llu items niet naar %s schrijven: %s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "leesfout op %s: %s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "readlink() op %s is mislukt: %s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "kan symbolische koppeling %s niet volgen: %s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "kan de status van %s niet opvragen: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "kan %s niet hernoemen: %s"
 
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s: optie '%s%s' is niet eenduidig\n"
+
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s: optie '%s%s' is niet eenduidig; mogelijkheden zijn:"
+
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s: onbekende optie '%s%s'\n"
+
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s: optie '%s%s' staat geen argument toe\n"
+
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s: optie '%s%s' vereist een argument\n"
+
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: ongeldige optie -- '%c'\n"
+
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: optie vereist een argument -- '%c'\n"
+
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "kan %s niet verwijderen: %s"
+
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "kan de status van %s niet opvragen: %s"
+
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "Webpagina van '%s': <https://www.gnu.org/software/%s/>\n"
-
-#~ msgid ""
-#~ "  -R, --regexp-perl\n"
-#~ "                 use Perl 5's regular expressions syntax in the script.\n"
-#~ msgstr ""
-#~ "  -R, --regexp-perl\n"
-#~ "             reguliere expressies van Perl-5 gebruiken in het script\n"
 
 #~ msgid "%s: option '--%s' doesn't allow an argument\n"
 #~ msgstr "%s: optie '--%s' staat geen argument toe\n"
@@ -904,16 +913,6 @@ msgstr "kan %s niet hernoemen: %s"
 #~ "Rapporteer gebreken in het programma aan <%s>\n"
 #~ "met het woord \"%s\" ergens in de Onderwerp-regel;\n"
 #~ "meld fouten in de vertaling aan <vertaling@vrijschrift.org>.\n"
-
-#~ msgid "super-sed version %s\n"
-#~ msgstr "super-sed versie %s\n"
-
-#~ msgid ""
-#~ "based on GNU sed version %s\n"
-#~ "\n"
-#~ msgstr ""
-#~ "gebaseerd op GNU sed versie %s\n"
-#~ "\n"
 
 #~ msgid "GNU sed version %s\n"
 #~ msgstr "GNU sed versie %s\n"

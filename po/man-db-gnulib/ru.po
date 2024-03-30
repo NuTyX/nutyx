@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gnulib package.
 #
 # Sergey Poznyakoff <gray@gnu.org>, 2003,2004,2005.
-# Yuri Kozlov <yuray@komyakino.ru>, 2010, 2011, 2019.
+# Yuri Kozlov <yuray@komyakino.ru>, 2010, 2011, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnulib 4.0.0.2567\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
-"PO-Revision-Date: 2019-05-21 18:46+0300\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
+"PO-Revision-Date: 2023-07-07 05:18+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <gnu@d07.ru>\n"
 "Language: ru\n"
@@ -17,31 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 2.0\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: значение %s меньше или равно %s"
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: параметр ARGP_HELP_FMT требует значения"
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: неизвестный параметр ARGP_HELP_FMT"
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "Мусор в ARGP_HELP_FMT: %s"
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -49,72 +49,72 @@ msgstr ""
 "Обязательные или необязательные аргументы к длинным именам параметров "
 "остаются таковыми и к соответствующим коротким параметрам."
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr "Использование:"
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr "  или: "
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 msgid " [OPTION...]"
 msgstr " [ПАРАМЕТР...]"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr ""
 "Попробуйте «%s --help» или «%s --usage» для получения более подробного "
 "описания.\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "Об ошибках сообщай по адресу %s.\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "Неизвестная системная ошибка"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr "показать эту справку"
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr "показать короткую справку по использованию"
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "ИМЯ"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr "задать имя программы"
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr "СЕКУНД"
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr "остановиться на заданное число СЕКУНД (по умолчанию 3600)"
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 msgid "print program version"
 msgstr "показать номер версии программы"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(ОШИБКА ПРОГРАММЫ) Версия неизвестна!?"
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: слишком много аргументов\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(ОШИБКА ПРОГРАММЫ) Параметр должен был быть распознан!?"
 
@@ -163,77 +163,82 @@ msgstr "не удалось запомнить текущий рабочий к�
 msgid "failed to return to initial working directory"
 msgstr "не удалось вернуться в первоначальный рабочий каталог"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr "Успешно"
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr "Нет совпадений"
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Неверное регулярное выражение"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Неверный символ сравнения"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Неверное имя класса символов"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Конечная обратная косая черта"
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Неверная обратная ссылка"
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Непарная [, [^, [:, [. или [="
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Непарная ( или \\("
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Непарная \\{"
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Недопустимое содержимое в \\{\\}"
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Неверный конец диапазона"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Закончилась память"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Недопустимое предшествующее регулярное выражение"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Преждевременное завершение регулярного выражения"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Слишком большое регулярное выражение"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Непарная ) или \\)"
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Отсутствует предыдущее регулярное выражение"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr "невозможно показать сообщение об ошибке"
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"
@@ -506,7 +511,7 @@ msgstr "стандартные файловые дескрипторы"
 #~ msgstr "Системная ошибка"
 
 #~ msgid "Argument buffer too small"
-#~ msgstr "Слишком маленький буфер, указанный в аргументе"
+#~ msgstr "Буфер аргументов слишком мал"
 
 #~ msgid "Processing request in progress"
 #~ msgstr "Выполняется обработка запроса"
@@ -770,9 +775,6 @@ msgstr "стандартные файловые дескрипторы"
 
 #~ msgid "invalid spec"
 #~ msgstr "неверный spec"
-
-#~ msgid "unable to display error message"
-#~ msgstr "невозможно показать сообщение об ошибке"
 
 #, c-format
 #~ msgid "Packaged by %s (%s)\n"

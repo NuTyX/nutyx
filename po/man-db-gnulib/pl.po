@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnulib 4.0.0.2567\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
 "PO-Revision-Date: 2019-05-19 20:02+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -23,27 +23,27 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: wartość %s jest mniejsza lub równa %s"
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: Parametr ARGP_HELP_FMT wymaga podania wartości"
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: Nieznany parametr ARGP_HELP_FMT"
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "Błędne dane w ARGP_HELP_FMT: %s"
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -51,71 +51,71 @@ msgstr ""
 "Argumenty obowiązkowe lub opcjonalne dla długich opcji są również "
 "obowiązkowe lub opcjonalne dla odpowiednich krótkich opcji."
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr "Składnia:"
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr "    lub: "
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 msgid " [OPTION...]"
 msgstr " [OPCJA...]"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr ""
 "Polecenie '%s --help' lub '%s --usage' pozwoli uzyskać więcej informacji.\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "Prosimy zgłaszać błędy na adres %s.\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "Nieznany błąd systemowy"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr "wyświetlenie tego tekstu pomocy"
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr "wyświetlenie krótkiej informacji o składni polecenia"
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "NAZWA"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr "określenie nazwy programu"
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr "SEK"
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr "zatrzymanie na SEK sekund (domyślnie 3600)"
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 msgid "print program version"
 msgstr "wyświetlenie wersji programu"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(BŁĄD PROGRAMU) Nieznana wersja!?"
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: Za dużo argumentów\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(BŁĄD PROGRAMU) Opcja powinna zostać rozpoznana!?"
 
@@ -164,77 +164,82 @@ msgstr "nie udało się zapisać bieżącego katalogu roboczego"
 msgid "failed to return to initial working directory"
 msgstr "nie udało się wrócić do początkowego katalogu roboczego"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr "Sukces"
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr "Nic nie pasuje"
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Błędne wyrażenie regularne"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Błędny znak sortowany"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Błędna nazwa klasy znaków"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Kończący znak `\\'"
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Błędne odniesienie wstecz"
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Niesparowane [, [^, [:, [. lub [="
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Niesparowane ( lub \\("
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Niesparowane \\{"
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Błędna zawartość \\{\\}"
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Błędny koniec zakresu"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Pamięć wyczerpana"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Błędne poprzedzające wyrażenie regularne"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Przedwczesny koniec wyrażenia regularnego"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Wyrażenie regularne zbyt duże"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Niesparowane ) lub \\)"
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Brak poprzedniego wyrażenia regularnego"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr "nie można wyświetlić komunikatu błędu"
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"
@@ -774,9 +779,6 @@ msgstr "standardowe deskryptory plików"
 
 #~ msgid "invalid spec"
 #~ msgstr "błędna specyfikacja"
-
-#~ msgid "unable to display error message"
-#~ msgstr "nie można wyświetlić komunikatu błędu"
 
 #, c-format
 #~ msgid "Packaged by %s (%s)\n"

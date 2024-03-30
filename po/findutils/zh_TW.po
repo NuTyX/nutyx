@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: findutils 4.5.15\n"
 "Report-Msgid-Bugs-To: bug-findutils@gnu.org\n"
-"POT-Creation-Date: 2021-01-09 17:36+0100\n"
+"POT-Creation-Date: 2022-02-02 01:18+0100\n"
 "PO-Revision-Date: 2019-10-21 01:32+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -57,121 +57,96 @@ msgstr "無法讀取已掛載的檔案系統列表"
 msgid "unknown"
 msgstr "未知"
 
-#: find/ftsfind.c:228 find/oldfind.c:1115
+#: find/ftsfind.c:231
 #, c-format
 msgid ""
 "Symbolic link %s is part of a loop in the directory hierarchy; we have "
 "already visited the directory to which it points."
 msgstr ""
 
-#: find/ftsfind.c:242
+#: find/ftsfind.c:245
 #, c-format
 msgid ""
 "File system loop detected; %s is part of the same file system loop as %s."
 msgstr ""
 
-#: find/ftsfind.c:391 find/util.c:254
+#: find/ftsfind.c:394 find/util.c:259
 #, c-format
 msgid "WARNING: file %s appears to have mode 0000"
 msgstr "警告：檔案 %s 看似包含 0000 模式"
 
-#: find/ftsfind.c:506
+#: find/ftsfind.c:509
 #, c-format
 msgid "cannot search %s"
 msgstr "找不到 %s"
 
-#: find/ftsfind.c:552
+#: find/ftsfind.c:555
 #, c-format
 msgid "failed to restore working directory after searching %s"
 msgstr "搜尋完 %s 後無法恢復工作路徑"
 
-#: find/ftsfind.c:622 find/oldfind.c:179
+#: find/ftsfind.c:582
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: find/ftsfind.c:584
+msgid "file operands cannot be combined with -files0-from"
+msgstr ""
+
+#: find/ftsfind.c:595
+msgid ""
+"option -files0-from reading from standard input cannot be combined with -ok, "
+"-okdir"
+msgstr ""
+
+#: find/ftsfind.c:598
+#, fuzzy
+msgid "(standard input)"
+msgstr "標準輸出"
+
+#: find/ftsfind.c:606
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: find/ftsfind.c:625
+msgid ""
+"option -files0-from: standard input must not refer to the same file when "
+"combined with -ok, -okdir"
+msgstr ""
+
+#: find/ftsfind.c:668
+#, fuzzy, c-format
+msgid "%s: read error"
+msgstr "標準錯誤"
+
+#: find/ftsfind.c:695
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: find/ftsfind.c:719
+#, fuzzy, c-format
+msgid "error reading %s"
+msgstr "從「%s」讀取單字時發生錯誤"
+
+#: find/ftsfind.c:754
 msgid "Failed to initialize shared-file hash table"
 msgstr "無法初始化分享檔案的 Hash 表格"
 
-#: find/ftsfind.c:638 find/oldfind.c:195 locate/frcode.c:222
-#: locate/locate.c:1568 xargs/xargs.c:434
+#: find/ftsfind.c:770 locate/frcode.c:222 locate/locate.c:1568
+#: xargs/xargs.c:434
 msgid "The atexit library function failed"
 msgstr "atexit 函式庫函式執行失敗"
 
-#: find/oldfind.c:238
-msgid "cannot stat current directory"
-msgstr "無法 stat 目前目錄"
-
-#: find/oldfind.c:331
-msgid "Cannot read list of mounted devices."
-msgstr "無法讀取已掛載裝置的列表。"
-
-#: find/oldfind.c:420
-#, c-format
-msgid "WARNING: file system %s has recently been unmounted."
-msgstr "警告︰檔案系統 %s 剛被卸載。"
-
-#: find/oldfind.c:430
-#, c-format
-msgid "WARNING: file system %s has recently been mounted."
-msgstr "警告︰檔案系統 %s 剛被掛載。"
-
-#: find/oldfind.c:527
-#, c-format
-msgid ""
-"%s%s changed during execution of %s (old device number %ld, new device "
-"number %ld, file system type is %s) [ref %ld]"
-msgstr ""
-"執行 %3$s 時 %1$s%2$s 被修改過（舊的裝置號碼：%4$ld，新的裝置號碼：%5$ld，檔"
-"案系統類型：%6$s）[ref %7$ld]"
-
-#: find/oldfind.c:564
-#, c-format
-msgid ""
-"%s%s changed during execution of %s (old inode number %<PRIuMAX>, new inode "
-"number %<PRIuMAX>, file system type is %s) [ref %ld]"
-msgstr ""
-"執行 %3$s 時 %1$s%2$s 被修改過 (舊 inode 編號為 %4$<PRIuMAX>，新 inode 編號"
-"為 %5$<PRIuMAX>，檔案系統類型為 %6$s) [ref %7$ld]"
-
-#: find/oldfind.c:729
-msgid "failed to return to parent directory"
-msgstr "無法回到上層目錄"
-
-#: find/oldfind.c:1015
-#, c-format
-msgid "Failed to safely change directory into %s"
-msgstr "無法安全地將目錄切換至 %s"
-
-#: find/oldfind.c:1134
-#, c-format
-msgid ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d level higher in the file system hierarchy"
-msgid_plural ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d levels higher in the file system hierarchy"
-msgstr[0] ""
-
-#: find/oldfind.c:1386
-#, c-format
-msgid "warning: not following the symbolic link %s"
-msgstr "警告：未在符號連結 %s 之後"
-
-#: find/oldfind.c:1458
-#, c-format
-msgid ""
-"WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> but "
-"we already saw %<PRIuMAX> subdirectories): this may be a bug in your file "
-"system driver.  Automatically turning on find's -noleaf option.  Earlier "
-"results may have failed to include directories that should have been "
-"searched."
-msgstr ""
-
-#: find/parser.c:449
+#: find/parser.c:451
 msgid ""
 "The -delete action automatically turns on -depth, but -prune does nothing "
 "when -depth is in effect.  If you want to carry on anyway, just explicitly "
 "use the -depth option."
 msgstr ""
 
-#: find/parser.c:608
+#: find/parser.c:609
 #, c-format
 msgid ""
 "warning: you have specified the global option %s after the argument %s, but "
@@ -180,7 +155,7 @@ msgid ""
 "before other arguments."
 msgstr ""
 
-#: find/parser.c:911
+#: find/parser.c:912
 #, c-format
 msgid ""
 "warning: the -d option is deprecated; please use -depth instead, because the "
@@ -188,27 +163,27 @@ msgid ""
 msgstr ""
 "警告：-d 選項已經過時，請改用 -depth，因為後者才是符合 POSIX 標準的選項。"
 
-#: find/parser.c:1154
+#: find/parser.c:1167
 #, c-format
 msgid ""
 "%s is not the name of an existing group and it does not look like a numeric "
 "group ID because it has the unexpected suffix %s"
 msgstr ""
 
-#: find/parser.c:1169
+#: find/parser.c:1182
 #, c-format
 msgid "%s is not the name of an existing group"
 msgstr "%s 名稱不屬於任何現存群組"
 
-#: find/parser.c:1175
+#: find/parser.c:1188
 msgid "argument to -group is empty, but should be a group name"
 msgstr "傳入 -group 的參數空白，但應為群組名稱"
 
-#: find/parser.c:1248
+#: find/parser.c:1261
 msgid "sanity check of the fnmatch() library function failed."
 msgstr "測試 fnmatch() 是否可用時出錯。"
 
-#: find/parser.c:1263
+#: find/parser.c:1276
 #, c-format
 msgid ""
 "warning: %s matches against basenames only, but the given pattern contains a "
@@ -216,42 +191,42 @@ msgid ""
 "time.  Did you mean %s?"
 msgstr ""
 
-#: find/parser.c:1386
+#: find/parser.c:1399
 #, c-format
 msgid "Expected a positive decimal integer argument to %s, but got %s"
 msgstr "期望傳入 %s 的是十進位正整數參數，但卻是 %s"
 
-#: find/parser.c:1551
+#: find/parser.c:1564
 #, c-format
 msgid "This system does not provide a way to find the birth time of a file."
 msgstr "此系統未提供尋找檔案建立日期的方法。"
 
-#: find/parser.c:1572
+#: find/parser.c:1585
 #, c-format
 msgid "The %s test needs an argument"
 msgstr "%s 測試需要參數"
 
-#: find/parser.c:1609
+#: find/parser.c:1622
 #, c-format
 msgid "I cannot figure out how to interpret %s as a date or time"
 msgstr "無法確定要解析 %s 成日期還是時間"
 
-#: find/parser.c:1626
+#: find/parser.c:1639
 #, c-format
 msgid "Cannot obtain birth time of file %s"
 msgstr "無法取得檔案「%s」的建立時間"
 
-#: find/parser.c:1770
+#: find/parser.c:1783
 #, c-format
 msgid "warning: -%s %s will not match anything because it ends with /."
 msgstr "警告：-%s %s 因為以「/」結尾，因此什麼也不符合。"
 
-#: find/parser.c:1865
+#: find/parser.c:1878
 #, c-format
 msgid "invalid mode %s"
 msgstr "模式 %s 無效"
 
-#: find/parser.c:1883
+#: find/parser.c:1896
 #, c-format
 msgid ""
 "warning: you have specified a mode pattern %s (which is equivalent to /000). "
@@ -259,110 +234,110 @@ msgid ""
 "-000; that is, while it used to match no files, it now matches all files."
 msgstr ""
 
-#: find/parser.c:2056
+#: find/parser.c:2069
 #, c-format
 msgid "failed to compile regular expression '%s': %s"
 msgstr ""
 
-#: find/parser.c:2085
+#: find/parser.c:2098
 msgid "invalid null argument to -size"
 msgstr "-size 後是無效的空白參數"
 
-#: find/parser.c:2135
+#: find/parser.c:2148
 #, c-format
 msgid "invalid -size type `%c'"
 msgstr "-size 指定的檔案大小單位「%c」無效"
 
-#: find/parser.c:2145
+#: find/parser.c:2158
 #, c-format
 msgid "Invalid argument `%s%s' to -size"
 msgstr "傳給 -size 的參數「%s%s」無效"
 
-#: find/parser.c:2327
+#: find/parser.c:2340
 msgid ""
 "The -show-control-chars option takes a single argument which must be "
 "'literal' or 'safe'"
 msgstr ""
 
-#: find/parser.c:2441
+#: find/parser.c:2454
 #, c-format
 msgid "Invalid argument %s to -used"
 msgstr "傳給 -used 的參數「%s」無效"
 
-#: find/parser.c:2482
+#: find/parser.c:2495
 #, c-format
 msgid "%s is not the name of a known user"
 msgstr "%s 不是已知使用者的名稱"
 
-#: find/parser.c:2489
+#: find/parser.c:2502
 msgid "The argument to -user should not be empty"
 msgstr "傳入 -user 的參數不應空白"
 
-#: find/parser.c:2514
+#: find/parser.c:2527
 #, c-format
 msgid "Features enabled: "
 msgstr "啟用了的功能："
 
-#: find/parser.c:2575
+#: find/parser.c:2588
 msgid "invalid predicate -context: SELinux is not enabled."
 msgstr "-context 謂語無效：未啟用 SELinux。"
 
-#: find/parser.c:2639
+#: find/parser.c:2652
 #, fuzzy, c-format
 msgid "Arguments to %s should contain at least one letter"
 msgstr "傳入 -type 的參數應只包含一個字母"
 
-#: find/parser.c:2704
+#: find/parser.c:2717
 #, fuzzy, c-format
 msgid ""
 "%s %c is not supported because symbolic links are not supported on the "
 "platform find was compiled on."
 msgstr "不支援 -type %c，因為編譯 find 之平台不支援符號連結。"
 
-#: find/parser.c:2716
+#: find/parser.c:2729
 #, fuzzy, c-format
 msgid ""
 "%s %c is not supported because FIFOs are not supported on the platform find "
 "was compiled on."
 msgstr "不支援 -type %c，因為編譯 find 之平台不支援 FIFO。"
 
-#: find/parser.c:2728
+#: find/parser.c:2741
 #, fuzzy, c-format
 msgid ""
 "%s %c is not supported because named sockets are not supported on the "
 "platform find was compiled on."
 msgstr "不支援 -type %c，因為編譯 find 之平台不支援命名 socket。"
 
-#: find/parser.c:2744
+#: find/parser.c:2757
 #, fuzzy, c-format
 msgid ""
 "%s %c is not supported because Solaris doors are not supported on the "
 "platform find was compiled on."
 msgstr "不支援 -type %c，因為編譯 find 之平台不支援 Solaris 門。"
 
-#: find/parser.c:2752
+#: find/parser.c:2765
 #, fuzzy, c-format
 msgid "Unknown argument to %s: %c"
 msgstr "傳入 -type 的參數未知：%c"
 
-#: find/parser.c:2760
+#: find/parser.c:2773
 #, c-format
 msgid "Duplicate file type '%c' in the argument list to %s."
 msgstr ""
 
-#: find/parser.c:2776
+#: find/parser.c:2789
 #, c-format
 msgid "Must separate multiple arguments to %s using: ','"
 msgstr ""
 
-#: find/parser.c:2785
+#: find/parser.c:2798
 #, c-format
 msgid ""
 "Last file type in list argument to %s is missing, i.e., list is ending on: "
 "','"
 msgstr ""
 
-#: find/parser.c:2844
+#: find/parser.c:2857
 #, c-format
 msgid ""
 "The current directory is included in the PATH environment variable, which is "
@@ -373,7 +348,7 @@ msgstr ""
 "PATH 環境變數中包括了目前目錄，當配合 find 的 %s 操作模式時會令系統安全產生漏"
 "洞。請從 $PATH 變數移除目前目錄 (即是「.」、雙冒號或者最前或最後的冒號)"
 
-#: find/parser.c:2856
+#: find/parser.c:2869
 #, c-format
 msgid ""
 "The relative path %s is included in the PATH environment variable, which is "
@@ -383,7 +358,7 @@ msgstr ""
 "PATH 環境變數中包括了相對路徑「%s」，當配合 find 的 %s 操作模式時會令系統安全"
 "產生漏洞。請從 $PATH 變數移除該項"
 
-#: find/parser.c:2965
+#: find/parser.c:2980
 msgid ""
 "You may not use {} within the utility name for -execdir and -okdir, because "
 "this is a potential security problem."
@@ -391,34 +366,34 @@ msgstr ""
 "您不應該在 -execdir 和 -okdir 中使用 {} 作為程式名稱，因為這樣做可能會造成安"
 "全漏洞。"
 
-#: find/parser.c:2991
+#: find/parser.c:3006
 #, c-format
 msgid "Only one instance of {} is supported with -exec%s ... +"
 msgstr "在 -exec%s ... + 裡面只可以使用一次 {}"
 
-#: find/parser.c:3001
+#: find/parser.c:3016
 #, c-format
 msgid "In %s the %s must appear by itself, but you specified %s"
 msgstr ""
 
-#: find/parser.c:3020
+#: find/parser.c:3035
 msgid "The environment is too large for exec()."
 msgstr "執行 exec() 時的環境變數太大。"
 
-#: find/parser.c:3189
+#: find/parser.c:3204
 #, c-format
 msgid "arithmetic overflow while converting %s days to a number of seconds"
 msgstr ""
 
-#: find/parser.c:3213
+#: find/parser.c:3228
 msgid "arithmetic overflow when trying to calculate the end of today"
 msgstr ""
 
-#: find/parser.c:3372
+#: find/parser.c:3387
 msgid "standard error"
 msgstr "標準錯誤"
 
-#: find/parser.c:3377
+#: find/parser.c:3392
 msgid "standard output"
 msgstr "標準輸出"
 
@@ -427,21 +402,21 @@ msgstr "標準輸出"
 msgid "cannot delete %s"
 msgstr "無法刪除 %s"
 
-#: find/pred.c:652
+#: find/pred.c:650
 #, c-format
 msgid "WARNING: cannot determine birth time of file %s"
 msgstr "警告：無法確認 %s 檔案的建立時間"
 
-#: find/pred.c:700
+#: find/pred.c:698
 #, c-format
 msgid "< %s ... %s > ? "
 msgstr "< %s ... %s > ? "
 
-#: find/pred.c:702
+#: find/pred.c:700
 msgid "Failed to write prompt for -ok"
 msgstr "無法寫入用於 -ok 的提示"
 
-#: find/pred.c:1175 find/print.c:1238
+#: find/pred.c:1173 find/print.c:1238
 #, c-format
 msgid "getfilecon failed: %s"
 msgstr "getfilecon 失敗：%s"
@@ -477,7 +452,7 @@ msgstr "警告：「%%%c」格式指令後方應接其他字元"
 msgid "warning: unrecognized format directive `%%%c'"
 msgstr "警告：「%%%c」格式指令無法識別"
 
-#: find/tree.c:115 find/tree.c:120 find/tree.c:212 find/tree.c:251
+#: find/tree.c:115 find/tree.c:120 find/tree.c:226 find/tree.c:265
 msgid "invalid expression"
 msgstr "表達式無效"
 
@@ -488,97 +463,103 @@ msgid ""
 "it."
 msgstr ""
 
-#: find/tree.c:137
+#: find/tree.c:135 find/tree.c:194
+#, fuzzy, c-format
+msgid ""
+"invalid expression: expected expression before closing parentheses '%s'."
+msgstr "表達式無效；不允許空括弧。"
+
+#: find/tree.c:145
 #, c-format
 msgid "expected an expression between '%s' and ')'"
 msgstr "期望「%s」和「)」之間有表示式"
 
-#: find/tree.c:147
+#: find/tree.c:155
 #, c-format
 msgid "expected an expression after '%s'"
 msgstr "期望「%s」後有表示式"
 
-#: find/tree.c:152
+#: find/tree.c:160
 msgid "invalid expression; you have too many ')'"
 msgstr "表達式無效；出現太多的「)」"
 
-#: find/tree.c:175
+#: find/tree.c:183
 #, fuzzy, c-format
 msgid ""
 "invalid expression; expected to find a ')' but didn't see one. Perhaps you "
 "need an extra predicate after '%s'"
 msgstr "表達式無效；「)」本應出現但實際上沒有。或許在「%s」之後需要額外的謂語"
 
-#: find/tree.c:184
+#: find/tree.c:198
 msgid "invalid expression; empty parentheses are not allowed."
 msgstr "表達式無效；不允許空括弧。"
 
-#: find/tree.c:190
+#: find/tree.c:204
 msgid ""
 "invalid expression; I was expecting to find a ')' somewhere but did not see "
 "one."
 msgstr "表達式無效；「)」本應出現但實際上沒有"
 
-#: find/tree.c:197 find/tree.c:821
+#: find/tree.c:211 find/tree.c:835
 msgid "oops -- invalid expression type!"
 msgstr "表達式類型無效！"
 
-#: find/tree.c:269
+#: find/tree.c:283
 #, c-format
 msgid "oops -- invalid expression type (%d)!"
 msgstr "表達式類型 (%d) 無效！"
 
-#: find/tree.c:1098
+#: find/tree.c:1112
 #, c-format
 msgid ""
 "warning: there is no entry in the predicate evaluation cost table for "
 "predicate %s; please report this as a bug"
 msgstr ""
 
-#: find/tree.c:1272
+#: find/tree.c:1286
 #, fuzzy, c-format
 msgid "paths must precede expression: `%s'"
 msgstr "路徑必須放在表達式之前：%s"
 
-#: find/tree.c:1274
+#: find/tree.c:1288
 #, c-format
 msgid "possible unquoted pattern after predicate `%s'?"
 msgstr ""
 
-#: find/tree.c:1284
+#: find/tree.c:1298
 #, c-format
 msgid "unknown predicate `%s'"
 msgstr "未知謂語「%s」"
 
-#: find/tree.c:1304
+#: find/tree.c:1318
 #, c-format
 msgid "invalid predicate `%s'"
 msgstr "無效謂語「%s」"
 
-#: find/tree.c:1308
+#: find/tree.c:1322
 #, c-format
 msgid "invalid argument `%s' to `%s'"
 msgstr "「%2$s」的參數「%1$s」無效"
 
-#: find/tree.c:1315
+#: find/tree.c:1329
 #, c-format
 msgid "missing argument to `%s'"
 msgstr "「%s」後缺少了參數"
 
-#: find/tree.c:1391
+#: find/tree.c:1405
 msgid "you have too many ')'"
 msgstr "過多「)」"
 
-#: find/tree.c:1397
+#: find/tree.c:1411
 #, c-format
 msgid "unexpected extra predicate '%s'"
 msgstr "非預期延伸謂語「%s」"
 
-#: find/tree.c:1399
+#: find/tree.c:1413
 msgid "unexpected extra predicate"
 msgstr "非預期延伸謂語"
 
-#: find/tree.c:1520
+#: find/tree.c:1534
 msgid "oops -- invalid default insertion of and!"
 msgstr ""
 
@@ -599,18 +580,21 @@ msgid ""
 msgstr "用法：%s [-H] [-L] [-P] [-Olevel] [-D "
 
 #: find/util.c:173
+#, fuzzy
 msgid ""
 "\n"
-"default path is the current directory; default expression is -print\n"
-"expression may consist of: operators, options, tests, and actions:\n"
+"Default path is the current directory; default expression is -print.\n"
+"Expression may consist of: operators, options, tests, and actions.\n"
 msgstr ""
 "\n"
 "預設路徑為目前的目錄，預設的表達式是 -print\n"
 "表達式可以包括運算子、選項、測試和操作模式：\n"
 
 #: find/util.c:176
+#, fuzzy
 msgid ""
-"operators (decreasing precedence; -and is implicit where no others are "
+"\n"
+"Operators (decreasing precedence; -and is implicit where no others are "
 "given):\n"
 "      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2\n"
 "      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2\n"
@@ -621,11 +605,18 @@ msgstr ""
 
 #: find/util.c:180
 msgid ""
-"positional options (always true): -daystart -follow -regextype\n"
 "\n"
-"normal options (always true, specified before other expressions):\n"
-"      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
-"      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
+"Positional options (always true):\n"
+"      -daystart -follow -nowarn -regextype -warn\n"
+msgstr ""
+
+#: find/util.c:183
+#, fuzzy
+msgid ""
+"\n"
+"Normal options (always true, specified before other expressions):\n"
+"      -depth -files0-from FILE -maxdepth LEVELS -mindepth LEVELS\n"
+"       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
 msgstr ""
 "位置選項 (邏輯值永遠為 true): -daystart -follow -regextype\n"
 "\n"
@@ -633,13 +624,20 @@ msgstr ""
 "      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
 "      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
 
-#: find/util.c:185
+#: find/util.c:187
+#, fuzzy
 msgid ""
-"tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N\n"
-"      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME\n"
-"      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex "
+"\n"
+"Tests (N can be +N or -N or N):\n"
+"      -amin N -anewer FILE -atime N -cmin N -cnewer FILE -context CONTEXT\n"
+"      -ctime N -empty -false -fstype TYPE -gid N -group NAME -ilname "
 "PATTERN\n"
-"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE"
+"      -iname PATTERN -inum N -iwholename PATTERN -iregex PATTERN\n"
+"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE\n"
+"      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+"      -readable -writable -executable\n"
+"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+"      -used N -user NAME -xtype [bcdpfls]\n"
 msgstr ""
 "測試 (N 可以有或沒有正負號): -amin N -anewer FILE -atime N -cmin N\n"
 "      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME\n"
@@ -647,33 +645,15 @@ msgstr ""
 "PATTERN\n"
 "      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE"
 
-#: find/util.c:190
-#, fuzzy
-msgid ""
-"\n"
-"      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
-"      -readable -writable -executable\n"
-"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NAME -xtype [bcdpfls]"
-msgstr ""
-"      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
-"      -readable -writable -executable\n"
-"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NAME -xtype [bcdpfls]"
-
-#: find/util.c:195
-msgid "      -context CONTEXT\n"
-msgstr "      -context 上下文\n"
-
 #: find/util.c:197
 #, fuzzy
 msgid ""
 "\n"
-"actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
+"Actions:\n"
+"      -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
 "      -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit\n"
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
-"\n"
 msgstr ""
 "\n"
 "操作模式：      -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
@@ -681,47 +661,64 @@ msgstr ""
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
 
-#: find/util.c:205
+#: find/util.c:204
+msgid ""
+"\n"
+"Other common options:\n"
+msgstr ""
+
+#: find/util.c:206 xargs/xargs.c:1751
+msgid "      --help                   display this help and exit\n"
+msgstr "      --help                   顯示此說明後離開\n"
+
+#: find/util.c:207 xargs/xargs.c:1752
+#, fuzzy
+msgid ""
+"      --version                output version information and exit\n"
+"\n"
+msgstr "      --version                輸出版本資訊後離開\n"
+
+#: find/util.c:210
 msgid ""
 "\n"
 "Use '-D help' for a description of the options, or see find(1)\n"
 "\n"
 msgstr ""
 
-#: find/util.c:491
+#: find/util.c:475
 #, fuzzy, c-format
 msgid "Failed to save initial working directory%s%s"
 msgstr "無法儲存初始工作目錄：%s"
 
-#: find/util.c:510
+#: find/util.c:494
 #, fuzzy, c-format
 msgid "Failed to restore initial working directory%s%s"
 msgstr "無法復原初始工作目錄：%s"
 
-#: find/util.c:848
+#: find/util.c:832
 #, c-format
 msgid "Ignoring unrecognised debug flag %s"
 msgstr "忽略無法識別的偵錯旗標 %s"
 
-#: find/util.c:855
+#: find/util.c:839
 #, c-format
 msgid "Empty argument to the -D option."
 msgstr "傳入 -D 選項的參數空白。"
 
-#: find/util.c:872
+#: find/util.c:856
 msgid "The -O option must be immediately followed by a decimal integer"
 msgstr "必須在 -O 後立即接著一個十進位數字"
 
-#: find/util.c:882 find/util.c:893
+#: find/util.c:866 find/util.c:877
 msgid "Please specify a decimal number immediately after -O"
 msgstr "請在 -O 後立即指定一個十進位數字"
 
-#: find/util.c:898 find/util.c:903
+#: find/util.c:882 find/util.c:887
 #, c-format
 msgid "Invalid optimisation level %s"
 msgstr "最佳化等級 %s 無效"
 
-#: find/util.c:911
+#: find/util.c:895
 #, c-format
 msgid ""
 "Optimisation level %lu is too high.  If you want to find files very quickly, "
@@ -729,12 +726,12 @@ msgid ""
 msgstr ""
 "最佳化等級 %lu 過高。如果你希望非常快速地尋找檔案，請考慮使用 GNU locate。"
 
-#: find/util.c:957
+#: find/util.c:941
 #, fuzzy, c-format
 msgid "Missing argument after the -D option."
 msgstr "傳入 -D 選項的參數空白。"
 
-#: find/util.c:1060
+#: find/util.c:1044
 msgid ""
 "The environment variable FIND_BLOCK_SIZE is not supported, the only thing "
 "that affects the block size is the POSIXLY_CORRECT environment variable"
@@ -1419,16 +1416,63 @@ msgstr "  -t, --verbose                執行前輸出指令\n"
 msgid "  -x, --exit                   exit if the size (see -s) is exceeded\n"
 msgstr "  -x, --exit                   如果大小 (見 -s) 超出範圍則離開\n"
 
-#: xargs/xargs.c:1751
-msgid "      --help                   display this help and exit\n"
-msgstr "      --help                   顯示此說明後離開\n"
+#, c-format
+#~ msgid "cannot stat current directory"
+#~ msgstr "無法 stat 目前目錄"
 
-#: xargs/xargs.c:1752
-#, fuzzy
-msgid ""
-"      --version                output version information and exit\n"
-"\n"
-msgstr "      --version                輸出版本資訊後離開\n"
+#, c-format
+#~ msgid "Cannot read list of mounted devices."
+#~ msgstr "無法讀取已掛載裝置的列表。"
+
+#, c-format
+#~ msgid "WARNING: file system %s has recently been unmounted."
+#~ msgstr "警告︰檔案系統 %s 剛被卸載。"
+
+#, c-format
+#~ msgid "WARNING: file system %s has recently been mounted."
+#~ msgstr "警告︰檔案系統 %s 剛被掛載。"
+
+#, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old device number %ld, new device "
+#~ "number %ld, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "執行 %3$s 時 %1$s%2$s 被修改過（舊的裝置號碼：%4$ld，新的裝置號碼：%5$ld，"
+#~ "檔案系統類型：%6$s）[ref %7$ld]"
+
+#, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old inode number %<PRIuMAX>, new "
+#~ "inode number %<PRIuMAX>, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "執行 %3$s 時 %1$s%2$s 被修改過 (舊 inode 編號為 %4$<PRIuMAX>，新 inode 編"
+#~ "號為 %5$<PRIuMAX>，檔案系統類型為 %6$s) [ref %7$ld]"
+
+#, c-format
+#~ msgid "failed to return to parent directory"
+#~ msgstr "無法回到上層目錄"
+
+#, c-format
+#~ msgid "Failed to safely change directory into %s"
+#~ msgstr "無法安全地將目錄切換至 %s"
+
+#, c-format
+#~ msgid "warning: not following the symbolic link %s"
+#~ msgstr "警告：未在符號連結 %s 之後"
+
+#~ msgid ""
+#~ "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+#~ msgstr ""
+#~ "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+
+#~ msgid "      -context CONTEXT\n"
+#~ msgstr "      -context 上下文\n"
 
 #, c-format
 #~ msgid ""

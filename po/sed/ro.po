@@ -1,115 +1,131 @@
-# Mesajele �n limba rom�n� pentru sed.
-# Copyright (C) 2004 Free Software Foundation, Inc.
-# Acest fi�ier este distribuit sub aceea�i licen�� ca �i pachetul sed.
-# Laurentiu Buzdugan <lbuz@rolix.org>, 2003,2004,2005.
+# Mesajele în limba română pentru sed.
+# Copyright © 2003, 2004, 2005, 2020, 2022 Free Software Foundation, Inc.
+# This file is distributed under the same license as the sed package.
 #
+# Laurentiu Buzdugan <lbuz@rolix.org>, 2003,2004,2005.
+# Florentina Mușat <florentina.musat.28@gmail.com>, 2020.
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2022.
+#
+# Cronologia traducerii fișierului „sed”:
+# Traducerea inițială, făcută de LB, pentru versiunea sed 4.0.9.
+# Actualizare a traducerii pentru versiunea 4.1.1, făcută de LB.
+# Actualizare a traducerii pentru versiunea 4.1.4, făcută de LB.
+# Actualizare a traducerii pentru versiunea 4.7.13, făcută de FM.
+# Actualizare a mesajelor, de la fișierul „sed-4.7.13.pot”.
+# Actualizare a algoritmului formelor de plural (de la „două” la „trei”).
+# NU și a mesajelor traduse (acestea au rămas neschimbate).
+# Eliminare a mesajelor ce-au dispărut în ultima versiune.
+# Actualizări realizate de Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 15.01.2022.
+# Actualizare a traducerii pentru versiunea 4.8.44, făcută de R-GC.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: sed 4.1.4\n"
+"Project-Id-Version: sed 4.8.44\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
-"PO-Revision-Date: 2005-04-19 12:00-0500\n"
-"Last-Translator: Laurentiu Buzdugan <lbuz@rolix.org>\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
+"PO-Revision-Date: 2022-10-17 15:05+0200\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
-msgstr ""
+msgstr "eroare de scriere"
 
 #: lib/copy-acl.c:54
 #, c-format
 msgid "preserving permissions for %s"
-msgstr ""
+msgstr "se păstrează permisiunile pentru %s"
 
-#: lib/dfa.c:923
+# R-GC, scrie:
+# cred că ar trebui schimbată, traducerea făcută,
+# e corectă, dar nu reprezintă cu adevărat ceea ce
+# autorul vrea să spună (fără/îi lipsește, perechea)
+# Și bineînțeles următoarele mesaje cu acest
+# înțeles
+#: lib/dfa.c:894
 msgid "unbalanced ["
-msgstr ""
+msgstr "„[” fără perechea corespondentă"
 
-#: lib/dfa.c:1044
-#, fuzzy
+#: lib/dfa.c:1015
 msgid "invalid character class"
-msgstr "Nume de clas� de caractere incorect"
+msgstr "clasă de caracter nevalidă"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
-msgstr ""
+msgstr "sintaxa de clasă de caracter este [[:space:]], nu [:space:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
-msgstr ""
+msgstr "eludare „\\” neterminată"
 
-#: lib/dfa.c:1398
-#, fuzzy
+#: lib/dfa.c:1319
+msgid "? at start of expression"
+msgstr "„?” la începutul expresiei"
+
+#: lib/dfa.c:1331
+msgid "* at start of expression"
+msgstr "„*” la începutul expresiei"
+
+#: lib/dfa.c:1345
+msgid "+ at start of expression"
+msgstr "„+” la începutul expresiei"
+
+#: lib/dfa.c:1400
+msgid "{...} at start of expression"
+msgstr "{...} la începutul expresiei"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
-msgstr "Con�inut incorect pentru \\{\\}"
+msgstr "conținut nevalid al \\{\\}"
 
-#: lib/dfa.c:1401
-#, fuzzy
+#: lib/dfa.c:1405
 msgid "regular expression too big"
-msgstr "Expresie regular� prea mare"
+msgstr "expresie regulată prea lungă"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr "caracter în plus „\\”, înainte de caracter neimprimabil"
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr "caracter în plus „\\”, înainte de spațiu în alb"
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "caracter în plus „\\”, înainte de „%lc”"
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr "caracter în plus „\\”"
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
-msgstr ""
+msgstr "„(” fără perechea corespondentă"
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
-msgstr ""
+msgstr "nicio sintaxă specificată"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
-msgstr ""
+msgstr "„)” fără perechea corespondentă"
 
 #: lib/error.c:195
 msgid "Unknown system error"
-msgstr ""
+msgstr "Eroare de sistem necunoscută"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr ""
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr ""
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr ""
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr ""
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr ""
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr ""
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr ""
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
-#, fuzzy
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
-msgstr "Memorie epuizat�"
+msgstr "memorie epuizată"
 
 #. TRANSLATORS:
 #. Get translations for open and closing quotation marks.
@@ -132,108 +148,107 @@ msgstr "Memorie epuizat�"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
-msgstr ""
+msgstr "„"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
-msgstr ""
+msgstr "”"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Succes"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Nici o potrivire"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
-msgstr "Expresie regular� incorect�"
+msgstr "Expresie regulată incorectă"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
-msgstr "Cola�iune de caractere incorect�"
+msgstr "Colațiune de caractere incorectă"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
-msgstr "Nume de clas� de caractere incorect"
+msgstr "Nume de clasă de caractere incorect"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
-msgstr "Backslash �n coad�"
+msgstr "Bară oblică inversă la final"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
-msgstr "Referin�� �napoi incorect�"
+msgstr "Referință înapoi incorectă"
 
-#: lib/regcomp.c:156
-#, fuzzy
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
-msgstr "[ sau [^ f�r� pereche"
+msgstr "[, [^, [:, [., sau [= fără perechea corespondentă"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
-msgstr "( sau \\( f�r� pereche"
+msgstr "„(” sau „\\(” fără perechea corespondentă"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
-msgstr "\\{ f�r� pereche"
+msgstr "„\\{” fără perechea corespondentă"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
-msgstr "Con�inut incorect pentru \\{\\}"
+msgstr "Conținut incorect pentru \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
-msgstr "Sf�r�it de interval incorect"
+msgstr "Sfârșit de interval incorect"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
-msgstr "Memorie epuizat�"
+msgstr "Memorie epuizată"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
-msgstr "Expresie regular� precedent� incorect�"
+msgstr "Expresie regulată precedentă incorectă"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
-msgstr "Sf�r�it prematur al expresiei regulare"
+msgstr "Sfârșit prematur al expresiei regulate"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
-msgstr "Expresie regular� prea mare"
+msgstr "Expresie regulată prea mare"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
-msgstr ") sau \\) f�r� pereche"
+msgstr "„)” sau „\\)” fără perechea corespondentă"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
-msgstr "Nici o expresie regular� anterioar�"
+msgstr "Nici o expresie regulată anterioară"
 
 #: lib/set-acl.c:46
 #, c-format
 msgid "setting permissions for %s"
-msgstr ""
+msgstr "se stabilesc permisiunile pentru %s"
 
 #: lib/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
-msgstr ""
+msgstr "Împachetat de %s (%s)\n"
 
 #: lib/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
-msgstr ""
+msgstr "Împachetat de %s\n"
 
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
 #: lib/version-etc.c:83
 msgid "(C)"
-msgstr ""
+msgstr "©"
 
 #. TRANSLATORS: The %s placeholder is the web address of the GPL license.
 #: lib/version-etc.c:88
@@ -243,24 +258,28 @@ msgid ""
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
+"Licența GPLv3+: GNU GPL versiunea 3 sau ulterioară <%s>.\n"
+"Acesta este software liber: sunteți liber să îl modificați și să îl "
+"redistribuiți.\n"
+"NU există NICIO GARANȚIE, în măsura permisă de lege.\n"
 
 #. TRANSLATORS: %s denotes an author name.
 #: lib/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
-msgstr ""
+msgstr "Scris de %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
-msgstr ""
+msgstr "Scris de %s și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
-msgstr ""
+msgstr "Scris de %s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -271,6 +290,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -281,6 +302,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -291,6 +314,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -301,6 +326,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -312,6 +339,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -323,6 +353,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, și %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -334,6 +367,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, %s, and others.\n"
 msgstr ""
+"Scris de %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s, și alții.\n"
 
 #. TRANSLATORS: The placeholder indicates the bug-reporting address
 #. for this package.  Please add _another line_ saying
@@ -342,393 +378,414 @@ msgstr ""
 #: lib/version-etc.c:249
 #, c-format
 msgid "Report bugs to: %s\n"
-msgstr ""
+msgstr "Raportați erorile la: %s\n"
 
 #: lib/version-etc.c:251
 #, c-format
 msgid "Report %s bugs to: %s\n"
-msgstr ""
+msgstr "Raportați erorile %s la: %s\n"
 
 #: lib/version-etc.c:255 lib/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
-msgstr ""
+msgstr "Pagina principală a %s: <%s>\n"
 
 #: lib/version-etc.c:260
 #, c-format
 msgid "General help using GNU software: <%s>\n"
-msgstr ""
+msgstr "Ajutor general utilizând software GNU: <%s>\n"
 
 #: sed/compile.c:146
 msgid "multiple `!'s"
-msgstr "`!'-uri multiple"
+msgstr "„!” multiple"
 
 #: sed/compile.c:147
 msgid "unexpected `,'"
-msgstr "`,' nea�teptat"
+msgstr "«,» neaşteptat"
 
 #: sed/compile.c:149
 msgid "invalid usage of +N or ~N as first address"
-msgstr "Nu se poate folosi +N sau ~N ca prima adres�"
+msgstr "utilizare nevalidă a +N sau ~N ca prima adresă"
 
 #: sed/compile.c:150
 msgid "unmatched `{'"
-msgstr "`{' f�r� pereche"
+msgstr "„{” fără perechea corespondentă"
 
 #: sed/compile.c:151
 msgid "unexpected `}'"
-msgstr "`}' nea�teptat"
+msgstr "„}” neaşteptat"
 
 #: sed/compile.c:153
 msgid "extra characters after command"
-msgstr "extra caractere dup� comand�"
+msgstr "caractere în plus după comandă"
 
 #: sed/compile.c:155
 msgid "expected \\ after `a', `c' or `i'"
-msgstr "este a�teptat \\ dup� `a', `c' sau `i'"
+msgstr "era așteptat „\\” după „a”, „c'” sau „i”"
 
 #: sed/compile.c:157
 msgid "`}' doesn't want any addresses"
-msgstr "`}' nu vrea nici o adres�"
+msgstr "„}” nu vrea nicio adresă"
 
 #: sed/compile.c:159
 msgid ": doesn't want any addresses"
-msgstr ": nu vrea nici o adres�"
+msgstr "„:” nu vrea nicio adresă"
 
 #: sed/compile.c:161
 msgid "comments don't accept any addresses"
-msgstr "comentariile nu accept� nici o adres�"
+msgstr "comentariile nu acceptă nicio adresă"
 
 #: sed/compile.c:162
 msgid "missing command"
-msgstr "comand� absent�"
+msgstr "lipsește comanda"
 
 #: sed/compile.c:163
 msgid "command only uses one address"
-msgstr "comanda folose�te numai o adres�"
+msgstr "comanda folosește numai o adresă"
 
 #: sed/compile.c:165
 msgid "unterminated address regex"
-msgstr "regex adres� neterminat�"
+msgstr "expresie regulată neterminată pentru adresă"
 
 #: sed/compile.c:166
 msgid "unterminated `s' command"
-msgstr "comand� `s' neterminat�"
+msgstr "comandă «s» neterminată"
 
 #: sed/compile.c:167
 msgid "unterminated `y' command"
-msgstr "comand� `y' neterminat�"
+msgstr "comandă «y» neterminată"
 
 #: sed/compile.c:168
 msgid "unknown option to `s'"
-msgstr "op�iune necunoscut� pentru `s'"
+msgstr "opțiune necunoscută pentru «s»"
 
 #: sed/compile.c:170
 msgid "multiple `p' options to `s' command"
-msgstr "multiple op�iuni `p' pentru comanda `s'"
+msgstr "multiple opțiuni „p” pentru comanda «s»"
 
 #: sed/compile.c:172
 msgid "multiple `g' options to `s' command"
-msgstr "multiple op�iuni `g' pentru comanda `s'"
+msgstr "multiple opțiuni „g” pentru comanda «s»"
 
 #: sed/compile.c:174
 msgid "multiple number options to `s' command"
-msgstr "num�r multiplu de op�iuni pentru comanda `s'"
+msgstr "număr multiplu de opțiuni pentru comanda «s»"
 
 #: sed/compile.c:176
 msgid "number option to `s' command may not be zero"
-msgstr "num�rul de op�iuni pentru comanda `s' nu poate fi zero"
+msgstr "numărul de opțiuni pentru comanda «s» nu poate fi zero"
 
 #: sed/compile.c:178
 msgid "strings for `y' command are different lengths"
-msgstr "�irurile pentru comanda y au lungimi diferite"
+msgstr "șirurile pentru comanda «y» au lungimi diferite"
 
 #: sed/compile.c:180
 msgid "delimiter character is not a single-byte character"
-msgstr "caacterul delimitator nu este un caracter de un octet"
+msgstr "caracterul delimitator nu este un caracter de un octet"
 
 #: sed/compile.c:182
 msgid "expected newer version of sed"
-msgstr "am a�teptat o versiune mai recent� de sed"
+msgstr "se aștepta o versiune mai recentă de «sed»"
 
 #: sed/compile.c:184
 msgid "invalid usage of line address 0"
-msgstr "folosire invalid� adres� linie 0"
+msgstr "utilizare nevalidă a adresei de linie 0"
 
 #: sed/compile.c:185
 #, c-format
 msgid "unknown command: `%c'"
-msgstr "comand� necunoscut�: `%c'"
+msgstr "comandă necunoscută: «%c»"
 
 #: sed/compile.c:187
-#, fuzzy
 msgid "incomplete command"
-msgstr "comand� absent�"
+msgstr "comandă incompletă"
 
 #: sed/compile.c:189
 msgid "\":\" lacks a label"
-msgstr ""
+msgstr "„:” îi lipsește o etichetă"
 
 #: sed/compile.c:191
 msgid "recursive escaping after \\c not allowed"
-msgstr ""
+msgstr "eludarea recursivă după „\\c”, nu este permisă"
 
 #: sed/compile.c:193
 msgid "e/r/w commands disabled in sandbox mode"
-msgstr ""
-
-#: sed/compile.c:215
-#, c-format
-msgid "%s: file %s line %lu: %s\n"
-msgstr "%s: fi�ierul %s linia %lu: %s\n"
+msgstr "comenzile «e»/«r»/«w» sunt dezactivate în modul sandbox"
 
 #: sed/compile.c:218
 #, c-format
-msgid "%s: -e expression #%lu, char %lu: %s\n"
-msgstr "%s: -e expresia #%lu, caracterul %lu: %s\n"
+msgid "%s: file %s line %lu: %s\n"
+msgstr "%s: fișierul %s linia %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:221
+#, c-format
+msgid "%s: -e expression #%lu, char %lu: %s\n"
+msgstr "%s: „-e” expresia #%lu, caracterul %lu: %s\n"
+
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
-msgstr "nu pot g�si eticheta pentru saltul la `%s'"
+msgstr "nu se poate găsi eticheta pentru saltul la „%s”"
 
 #: sed/execute.c:253 sed/execute.c:270
 #, c-format
 msgid "case conversion produced an invalid character"
 msgstr ""
+"conversia de la majuscule la minuscule, sau viceversa, a produs un caracter "
+"nevalid"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
-msgstr "%s: nu pot citi %s: %s\n"
+msgstr "%s: nu se poate citi %s: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
-msgstr "nu am putut edita %s: acesta este un terminal"
+msgstr "nu s-a putut edita %s: acesta este un terminal"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
-msgstr "nu ap putu edita %s: acesta nu este un fi�ier normal"
+msgstr "nu s-a putut edita %s: acesta nu este un fișier obișnuit"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr ""
+"%s: avertisment: nu s-a putut stabili contextul de creare al fișierului "
+"implicit la %s: %s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
-msgstr ""
+msgstr "%s: avertisment: nu s-a putut obține contextul de securitate al %s: %s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
-msgstr "nu am putut deschide fi�ierul temporar %s: %s"
+msgstr "nu s-a putut deschide fișierul temporar %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
-msgstr "eroare �n subproces"
+msgstr "eroare în subproces"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
-msgstr "op�iunea `e' nu e suportat�"
+msgstr "opțiunea „e” nu este acceptată"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
-msgstr "comanda `e' nu e suportat�"
+msgstr "comanda «e» nu este acceptată"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
-msgstr ""
+msgstr "nu există fișiere de intrare"
 
 #: sed/regexp.c:40
 msgid "no previous regular expression"
-msgstr "nici o expresie regular� anterioar�"
+msgstr "nici o expresie regulată anterioară"
 
 #: sed/regexp.c:125
 #, c-format
 msgid "invalid reference \\%d on `s' command's RHS"
-msgstr "referin�� invalid� \\%d pentru expresia din dreapta a comenzii `s'"
+msgstr ""
+"referință nevalidă „\\%d” pentru expresia din partea dreaptă a comenzii «s»"
 
 #: sed/regexp.c:196
 msgid "regex input buffer length larger than INT_MAX"
 msgstr ""
+"lungimea memoriei tampon al intrării expresiei regulate este mai mare decât "
+"INT_MAX"
 
 #: sed/sed.c:37
 msgid "Jay Fenlason"
-msgstr ""
+msgstr "Jay Fenlason"
 
 #: sed/sed.c:38
 msgid "Tom Lord"
-msgstr ""
+msgstr "Tom Lord"
 
 #: sed/sed.c:39
 msgid "Ken Pizzini"
-msgstr ""
+msgstr "Ken Pizzini"
 
 #: sed/sed.c:40
 msgid "Paolo Bonzini"
-msgstr ""
+msgstr "Paolo Bonzini"
 
 #: sed/sed.c:41
 msgid "Jim Meyering"
-msgstr ""
+msgstr "Jim Meyering"
 
 #: sed/sed.c:42
 msgid "Assaf Gordon"
-msgstr ""
+msgstr "Assaf Gordon"
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
 "General help using GNU software: <https://www.gnu.org/gethelp/>.\n"
 msgstr ""
+"Pagina principală sed GNU: <https://www.gnu.org/software/sed/>.\n"
+"Ajutorul general pentru utilizarea de software GNU: <https://www.gnu.org/"
+"gethelp/>.\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
-msgstr ""
+msgstr "Trimiteți e-mail cu rapoartele de erori la: <%s>.\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
-msgstr ""
+msgstr "Acest program «sed» a fost construit cu suport SELinux."
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
-msgstr ""
+msgstr "SELinux este activat pe acest sistem."
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
-msgstr ""
+msgstr "SELinux nu este activat pe acest sistem."
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
-msgstr ""
+msgstr "Acest program «sed» a fost construit fără suport SELinux."
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
 "\n"
 msgstr ""
-"Folosire: %s [OP�IUNE]... {script-dac�-nu-alt-script} [fi�ier-intrare]...\n"
+"Utilizare: %s [OPȚIUNE]... {script-dacă-nu-alt-script} [fișier-intrare]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
 "                 suppress automatic printing of pattern space\n"
 msgstr ""
 "  -n, --quiet, --silent\n"
-"                 elimin� afi�area automat� a spa�iului de pattern\n"
+"                 elimină afișarea automată a spațiului de «model»\n"
 
-#: sed/sed.c:160
-#, fuzzy, c-format
+#: sed/sed.c:139
+#, c-format
 msgid ""
 "      --debug\n"
 "                 annotate program execution\n"
 msgstr ""
-"  --posix\n"
-"                 deactiveaz� toate extensiile GNU.\n"
+"      --debug\n"
+"                 adnotează execuția programului\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
 "                 add the script to the commands to be executed\n"
 msgstr ""
 "  -e script, --expression=script\n"
-"                 adaug� scriptul la comenzile ce trebuie executate\n"
+"                 adaugă scriptul la comenzi pentru a fi executat\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
 "                 add the contents of script-file to the commands to be "
 "executed\n"
 msgstr ""
-"  -f script-file, --file=script-file\n"
-"                 adaug� con�inutul scriptului-fi�ier la comenzile ce\n"
-"                 trebuie executate\n"
+"  -f fișier_script, --file=fișier_script\n"
+"                 adaugă conținutul fișier_script la comenzi pentru\n"
+"                  fi executat\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
 "                 follow symlinks when processing in place\n"
 msgstr ""
+"  --follow-symlinks\n"
+"                 urmărește legăturile simbolice atunci când se operează "
+"direct,\n"
+"                 asupra fișierului\n"
 
-#: sed/sed.c:171
-#, fuzzy, c-format
+#: sed/sed.c:150
+#, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
 "                 edit files in place (makes backup if SUFFIX supplied)\n"
 msgstr ""
 "  -i[SUFIX], --in-place[=SUFIX]\n"
-"                 editeaz� fi�ierele pe loc (creaz� copii de siguran��\n"
-"                 dac� este furnizat� extensia)\n"
+"                 editează fișierele scriind direct, asupra lor (face o copie "
+"de\n"
+"                 rezervă, doar dacă, SUFIX este furnizat)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
 "                 open files in binary mode (CR+LFs are not processed "
 "specially)\n"
 msgstr ""
+"  -b, --binary\n"
+"                 deschide fișierele în modul binar (CR+LF-urile nu sunt "
+"procesate special)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
 "                 specify the desired line-wrap length for the `l' command\n"
 msgstr ""
-"  -l N, --line-length=N\n"
-"                 specific� lungimea dorit� pentru trecut la linia urm�toare\n"
-"                 pentru comanda `l'\n"
+"  -l nr_caractere, --line-length=nr_caractere\n"
+"                 specifică pentru comanda «l», lungimea dorită pentru "
+"fiecare\n"
+"                 linie, înainte de-a se trece la linia următoare\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
 "                 disable all GNU extensions.\n"
 msgstr ""
 "  --posix\n"
-"                 deactiveaz� toate extensiile GNU.\n"
+"                 dezactivează toate extensiile GNU.\n"
 
-#: sed/sed.c:182
-#, fuzzy, c-format
+#: sed/sed.c:161
+#, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
 "                 use extended regular expressions in the script\n"
 "                 (for portability use POSIX -E).\n"
 msgstr ""
-"  -r, --regexp-extended\n"
-"                 folose�te sintaxa extins� a expresiilor regulare �n "
-"script.\n"
+"  -E, -r, --regexp-extended\n"
+"                 utilizează expresii regulate extinse în script\n"
+"                 (pentru portabilitate utilizați POSIX -E).\n"
 
-#: sed/sed.c:185
-#, fuzzy, c-format
+#: sed/sed.c:164
+#, c-format
 msgid ""
 "  -s, --separate\n"
 "                 consider files as separate rather than as a single,\n"
 "                 continuous long stream.\n"
 msgstr ""
 "  -s, --separate\n"
-"                 consider� fi�ierele ca fiind separate, �n loc de a le\n"
-"                 considera un flux lung continuu.\n"
+"                 consideră fișierele ca separate față de un singur,\n"
+"                 flux lung continuu.\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
 "                 operate in sandbox mode (disable e/r/w commands).\n"
 msgstr ""
+"      --sandbox\n"
+"                 operează în modul sandbox (dezactivează comenzile "
+"«e»/«r»/«w»).\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -737,28 +794,30 @@ msgid ""
 "                 the output buffers more often\n"
 msgstr ""
 "  -u, --unbuffered\n"
-"                 �ncarc� o cantitate minim� de date din fi�ierele de "
+"                 încarcă o cantitate minimă de date din fișierele de "
 "intrare\n"
-"                 �i gole�te bufferele mai des\n"
+"                 și golește memoriile tampon mai des\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
 "                 separate lines by NUL characters\n"
 msgstr ""
+"  -z, --null-data\n"
+"                 linii separate prin caractere NULL\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
-msgstr "      --help     afi�eaz� aceste mesaje �i termin�\n"
+msgstr "      --help     afișează aceste mesaj de ajutor și iese\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
-msgstr "      --version  afi�eaz� informa�ii despre versiune �i termin�\n"
+msgstr "      --version  afișează informații despre versiune și iese\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -769,111 +828,89 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Dac� nu este dat� nici una din op�iunile -e, --expression, -f, sau --file,\n"
-"atunci primul argument non-op�iune este luat ca scriptul sed de "
+"Dacă nu este dată nici una dintre opțiunile „-e”, „--expression”, „-f”, sau "
+"„--file”,\n"
+"atunci primul argument non-opțiune este luat ca scriptul «sed» de "
 "interpretat.\n"
-"Toate argumentele r�mase sunt considerate nume de fi�iere de intrare;  dac�\n"
-"nu este specificat nici un fi�ier de intrare, este citit� intrarea "
+"Toate argumentele rămase sunt considerate nume de fișiere de intrare;  dacă\n"
+"nu este specificat nici un fișier de intrare, este citită intrarea "
 "standard.\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
-msgstr ""
+msgstr "nu s-a putut stabili modul binar la STDIN (intrarea standard)"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
-msgstr ""
+msgstr "nu s-a putut stabili modul binar la STDOUT (ieșirea standard)"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "nu pot �terge %s: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
-msgstr "nu am putut deschide fi�ierul %s: %s"
+msgstr "nu s-a putut deschide fișierul %s: %s"
 
-#: sed/utils.c:165
-#, fuzzy, c-format
-msgid "couldn't attach to %s: %s"
-msgstr "Nu am putut scrie %d articol �n %s: %s"
-
-#: sed/utils.c:192
+#: sed/utils.c:148
 #, c-format
-msgid "failed to set binary mode on '%s'"
-msgstr ""
+msgid "couldn't attach to %s: %s"
+msgstr "nu s-a putut atașa la %s: %s"
 
 #: sed/utils.c:207
-#, fuzzy, c-format
+#, c-format
+msgid "failed to set binary mode on '%s'"
+msgstr "nu s-a putut stabili modul binar la „%s”"
+
+#: sed/utils.c:228
+#, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
-msgstr[0] "Nu am putut scrie %d articol �n %s: %s"
-msgstr[1] "Nu am putut scrie %d articole �n %s: %s"
+msgstr[0] "nu s-a putut scrie %llu element la %s: %s"
+msgstr[1] "nu s-au putut scrie %llu elemente la %s: %s"
+msgstr[2] "nu s-au putut scrie %llu de elemente la %s: %s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
-msgstr "eroare citire pentru %s: %s"
+msgstr "eroare de citire pentru %s: %s"
 
-#: sed/utils.c:336
-#, fuzzy, c-format
+#: sed/utils.c:358
+#, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "nu s-a putut citii legătura simbolică de către «readlink» %s: %s"
+
+#: sed/utils.c:361
+#, c-format
 msgid "couldn't follow symlink %s: %s"
-msgstr "nu am putut deschide fi�ierul %s: %s"
+msgstr "nu s-a putut urmări legătura simbolică %s: %s"
 
-#: sed/utils.c:370
-#, fuzzy, c-format
-msgid "cannot stat %s: %s"
-msgstr "nu pot redenumi %s: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
-msgstr "nu pot redenumi %s: %s"
+msgstr "nu se poate redenumi %s: %s"
 
-#~ msgid ""
-#~ "  -R, --regexp-perl\n"
-#~ "                 use Perl 5's regular expressions syntax in the script.\n"
-#~ msgstr ""
-#~ "  -R, --regexp-perl\n"
-#~ "                folose�te sintaxa expresiilor regulare din Perl 5 �n "
-#~ "script.\n"
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s: opțiunea „%s%s” este ambiguă\n"
 
-#~ msgid "cannot specify modifiers on empty regexp"
-#~ msgstr "nu se pot specifica modificatori pentru regexp vid�"
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s: opțiunea „%s%s” este ambiguă; posibilități:"
 
-#~ msgid ""
-#~ "E-mail bug reports to: %s .\n"
-#~ "Be sure to include the word ``%s'' somewhere in the ``Subject:'' field.\n"
-#~ msgstr ""
-#~ "Raporta�i bug-uri prin e-mail la: %s .\n"
-#~ "Fi�i siguri c� include�i ``%s'' undeva �n c�mpul ``Subject:''.\n"
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s: opțiunea nerecunoscută „%s%s”\n"
 
-#~ msgid "super-sed version %s\n"
-#~ msgstr "versiunea super-sed %s\n"
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s: opțiunea „%s%s” nu permite un argument\n"
 
-#~ msgid ""
-#~ "based on GNU sed version %s\n"
-#~ "\n"
-#~ msgstr ""
-#~ "bazat pe GNU sed versiunea %s\n"
-#~ "\n"
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s: opțiunea „%s%s” necesită un argument\n"
 
-#~ msgid "GNU sed version %s\n"
-#~ msgstr "GNU sed versiunea %s\n"
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: opțiune nevalidă -- „%c”\n"
 
-#~ msgid ""
-#~ "%s\n"
-#~ "This is free software; see the source for copying conditions.  There is "
-#~ "NO\n"
-#~ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-#~ "PURPOSE,\n"
-#~ "to the extent permitted by law.\n"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Acesta este software liber; vede�i codul surs� pentru condi�iile de "
-#~ "copiere.\n"
-#~ "Nu exist� NICI o garan�ie; nici m�car pentru VANDABILITATE sau "
-#~ "POTRIVIRE \n"
-#~ "PENTRU UN ANUME SCOP, conform legilor �n vigoare.\n"
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: opțiunea necesită un argument -- „%c”\n"
+
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "nu pot şterge %s: %s"
+
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "nu se poate da stat la %s: %s"

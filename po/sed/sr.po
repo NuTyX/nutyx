@@ -1,25 +1,26 @@
 # Serbian translation of sed.
-# Copyright (C) 2016 Free Software Foundation, Inc.
+# Copyright © 2020 Free Software Foundation, Inc.
 # This file is distributed under the same license as the sed package.
 # Aleksandar Jelenak <jelenak@verizon.net>, 2006.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012—2016.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012—2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: sed-4.2.2.177\n"
+"Project-Id-Version: sed-4.7.13\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
-"PO-Revision-Date: 2016-12-18 08:03+0200\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
+"PO-Revision-Date: 2020-04-02 17:50+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
 msgstr "грешка писања"
 
@@ -28,39 +29,76 @@ msgstr "грешка писања"
 msgid "preserving permissions for %s"
 msgstr "причувавам овлашћења за %s"
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr "неуравнотежена ["
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 msgid "invalid character class"
 msgstr "неисправна класа знака"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "синтакса класе знака је [[:размак:]], а не [:размак:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr "недовршена \\ излазим"
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+#, fuzzy
+msgid "? at start of expression"
+msgstr "Неисправан регуларни израз"
+
+#: lib/dfa.c:1331
+#, fuzzy
+msgid "* at start of expression"
+msgstr "Неисправан регуларни израз"
+
+#: lib/dfa.c:1345
+#, fuzzy
+msgid "+ at start of expression"
+msgstr "Неисправан регуларни израз"
+
+#: lib/dfa.c:1400
+#, fuzzy
+msgid "{...} at start of expression"
+msgstr "Неисправан регуларни израз"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
 msgstr "неисправан садржај \\{\\}"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 msgid "regular expression too big"
 msgstr "регуларни израз је превелик"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr ""
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr ""
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr ""
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr ""
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr "неуравнотежена ("
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr "синтакса није наведена"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr "неуравнотежена )"
 
@@ -68,42 +106,7 @@ msgstr "неуравнотежена )"
 msgid "Unknown system error"
 msgstr "Непозната грешка система"
 
-#: lib/getopt.c:278
-#, fuzzy, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: опција „%s“ је нејасна\n"
-
-#: lib/getopt.c:284
-#, fuzzy, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: опција „%s“ је нејасна; могућности:"
-
-#: lib/getopt.c:319
-#, fuzzy, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: непозната опција „%c%s“\n"
-
-#: lib/getopt.c:345
-#, fuzzy, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: опција „%c%s“ не дозвољава аргумент\n"
-
-#: lib/getopt.c:360
-#, fuzzy, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: опција „%s“ захтева аргумент\n"
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: неисправна опција — %c\n"
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: опција захтева аргумент — %c\n"
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "нема више меморије"
 
@@ -128,83 +131,83 @@ msgstr "нема више меморије"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "„"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "“"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Успешно"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Нема поклапања"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Неисправан регуларни израз"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Неисправан знак слагања"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Неисправан назив класе знака"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Пратећа обрнута коса црта"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Неисправна повратна упута"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Није упарена [, [^, [:, [., или [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Није упарена ( или \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Није упарена \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Неисправан садржај у \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Неисправан крај опсега"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Нема више меморије"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Неисправан регуларни израз који претходи"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Прерани крај регуларног израза"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Регуларан израз је превелик"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Није упарена ) или \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Нема претходног регуларног израза"
 
@@ -232,18 +235,15 @@ msgstr "©"
 
 #. TRANSLATORS: The %s placeholder is the web address of the GPL license.
 #: lib/version-etc.c:88
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "License GPLv3+: GNU GPL version 3 or later <%s>.\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
-"\n"
-"Дозвола ОЈЛв3+: Гнуова ОЈЛ издање 3 или касније <http://gnu.org/licenses/gpl."
-"html>.\n"
+"Дозвола ОЈЛв3+: Гнуова ОЈЛ издање 3 или касније <%s>.\n"
 "Ово је слободан софтвер: можете слободно да га мењате и расподељујете.\n"
 "Нема НИКАКВЕ ГАРАНЦИЈЕ, у оквирима дозвољеним законом.\n"
-"\n"
 
 #. TRANSLATORS: %s denotes an author name.
 #: lib/version-etc.c:105
@@ -358,11 +358,9 @@ msgstr ""
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
 #: lib/version-etc.c:249
-#, fuzzy, c-format
+#, c-format
 msgid "Report bugs to: %s\n"
-msgstr ""
-"\n"
-"Грешке пријавите на: %s\n"
+msgstr "Грешке пријавите на: %s\n"
 
 #: lib/version-etc.c:251
 #, c-format
@@ -375,9 +373,9 @@ msgid "%s home page: <%s>\n"
 msgstr "Матична страница за „%s“: <%s>\n"
 
 #: lib/version-etc.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "General help using GNU software: <%s>\n"
-msgstr "Општа помоћ за Гнуов софтвер: <http://www.gnu.org/gethelp/>\n"
+msgstr "Општа помоћ за Гнуов софтвер: <%s>\n"
 
 #: sed/compile.c:146
 msgid "multiple `!'s"
@@ -494,19 +492,19 @@ msgstr "дубинско завршавање реда након „\\c“ ни
 
 #: sed/compile.c:193
 msgid "e/r/w commands disabled in sandbox mode"
-msgstr ""
+msgstr "наредбе „e/r/w“ су искључене у режиму заштићеног окружења"
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s: датотека %s ред %lu: %s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s: -e израз #%lu, знак %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "не могу да нађем ознаку за скок на „%s“"
@@ -516,51 +514,51 @@ msgstr "не могу да нађем ознаку за скок на „%s“"
 msgid "case conversion produced an invalid character"
 msgstr "претварање величине знакова је резултирало неисправним знаком"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s: не могу да прочитам  %s: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "не могу да уредим %s: то је терминал"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "не могу да уредим %s: није обична датотека"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr ""
 "%s: упозорење: нисам успео да подесим основни контекст стварања датотеке на "
 "%s: %s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr "%s: упозорење: нисам успео да добавим безбедносни контекст за %s: %s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "не могу да отворим привремену датотеку %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "грешка у потпроцесу"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "опција „e“ није подржана"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "наредба „e“ није подржана"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "нема улазних датотека"
 
@@ -575,7 +573,7 @@ msgstr "неисправна референца \\%d на десној стра�
 
 #: sed/regexp.c:196
 msgid "regex input buffer length larger than INT_MAX"
-msgstr ""
+msgstr "дужина међумеморије уноса регизраза је већа од „INT_MAX“"
 
 #: sed/sed.c:37
 msgid "Jay Fenlason"
@@ -595,43 +593,43 @@ msgstr "Паоло Бонцини"
 
 #: sed/sed.c:41
 msgid "Jim Meyering"
-msgstr ""
+msgstr "Џим Мејеринг"
 
 #: sed/sed.c:42
 msgid "Assaf Gordon"
-msgstr ""
+msgstr "Асаф Гордон"
 
-#: sed/sed.c:124
-#, fuzzy, c-format
+#: sed/sed.c:103
+#, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
 "General help using GNU software: <https://www.gnu.org/gethelp/>.\n"
 msgstr ""
-"Матична страница ГНУ-овог седа: <http://www.gnu.org/software/sed/>.\n"
-"Општа помоћ за коришћење ГНУ-ових програма: <http://www.gnu.org/gethelp/>.\n"
+"Матична страница ГНУ-овог седа: <https://www.gnu.org/software/sed/>.\n"
+"Општа помоћ за коришћење ГНУ-ових програма: <https://www.gnu.org/gethelp/>.\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr "Извештаје о грешкама пошаљите на: <%s>.\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
-msgstr ""
+msgstr "Овај сед програм је изграђен са подршком СЕЛинукса."
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
-msgstr ""
+msgstr "СЕЛинукс је укључен на овом систему."
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
-msgstr ""
+msgstr "СЕЛинукс је искључен на овом систему."
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
-msgstr ""
+msgstr "Овај сед програм је изграђен без подршке СЕЛинукса."
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -641,7 +639,7 @@ msgstr ""
 "датотека]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -650,16 +648,16 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "                 обуставља аутоматски испис простора образаца\n"
 
-#: sed/sed.c:160
-#, fuzzy, c-format
+#: sed/sed.c:139
+#, c-format
 msgid ""
 "      --debug\n"
 "                 annotate program execution\n"
 msgstr ""
-"  --posix\n"
-"                 искључује сва ГНУ-ова проширења.\n"
+"      --debug\n"
+"                 бележи извршење програма\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -668,7 +666,7 @@ msgstr ""
 "  -e спис, --expression=скрипта\n"
 "                 додаје скрипту наредбама да би била извршена\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -678,7 +676,7 @@ msgstr ""
 "  -f списотека, --file=списотека\n"
 "                 додаје садржај списотеке наредбама да би била извршена\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -687,7 +685,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "                 прати симболичне везе када обрађује на месту\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -697,7 +695,7 @@ msgstr ""
 "                 уређује датотеке на месту (прави резерву ако је дат "
 "СУФИКС)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -708,7 +706,7 @@ msgstr ""
 "                 отвара датотеке у бинарном режиму (ЦР+ЛФ нису посебно "
 "обрађени)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -717,7 +715,7 @@ msgstr ""
 "  -l N, --line-length=Н\n"
 "                 наводи жељену ширину реда за наредбу „l“\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -726,7 +724,7 @@ msgstr ""
 "  --posix\n"
 "                 искључује сва ГНУ-ова проширења.\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -737,7 +735,7 @@ msgstr ""
 "                 користи проширене регуларне изразе у спису\n"
 "                 (зарад преносивости користитие „POSIX -E).\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, c-format
 msgid ""
 "  -s, --separate\n"
@@ -748,16 +746,17 @@ msgstr ""
 "                 сматра датотеке одвојеним а не као један,\n"
 "                 непрекидан дуги ток.\n"
 
-#: sed/sed.c:188
-#, fuzzy, c-format
+#: sed/sed.c:167
+#, c-format
 msgid ""
 "      --sandbox\n"
 "                 operate in sandbox mode (disable e/r/w commands).\n"
 msgstr ""
 "      --sandbox\n"
-"                 ради у режиму заштићеног окружења.\n"
+"                 ради у режиму заштићеног окружења (искључује „e/r/w“ "
+"наредбе).\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -769,7 +768,7 @@ msgstr ""
 "                 учитава најмање количине података из улазних датотека и\n"
 "                 чешће празни излазне бафере\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
@@ -778,17 +777,17 @@ msgstr ""
 "  -z, --null-data\n"
 "                 раздваја редове НИШТАВНИМ знацима\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "      --help     приказује ову помоћ и излази\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr "      --version  исписује податке о издању и излази\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -805,35 +804,30 @@ msgstr ""
 "стандардног улаза.\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
-msgstr ""
+msgstr "нисам успео да поставим бинарни режим на СТНД_УЛАЗ"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
-msgstr ""
+msgstr "нисам успео да поставим бинарни режим на СТНД_ИЗЛАЗ"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "не могу да уклоним %s: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "не могу да отворим датотеку %s: %s"
 
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "не могу да прикачим на %s: %s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, c-format
 msgid "failed to set binary mode on '%s'"
-msgstr ""
+msgstr "нисам успео да поставим бинарни режим на „%s“"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
@@ -841,36 +835,61 @@ msgstr[0] "не могу да запишем %llu ставку на %s: %s"
 msgstr[1] "не могу да запишем %llu ставке на %s: %s"
 msgstr[2] "не могу да запишем %llu ставки на %s: %s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "грешка читања на %s: %s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, fuzzy, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "не могу да пратим симболичку везу %s: %s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "не могу да пратим симболичку везу %s: %s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "не могу да добавим податке „%s“: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "не могу да преименујем %s: %s"
 
-#, fuzzy
-#~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
-#~ msgstr "Матична страница за „%s“: <http://www.gnu.org/software/%s/>\n"
+#, c-format
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "не могу да добавим податке „%s“: %s"
 
-#~ msgid ""
-#~ "  -R, --regexp-perl\n"
-#~ "                 use Perl 5's regular expressions syntax in the script.\n"
-#~ msgstr ""
-#~ "  -R, --regexp-perl\n"
-#~ "                 користи синтаксу регуларних израза Перла 5 у скрипти.\n"
+#, c-format
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "не могу да уклоним %s: %s"
+
+#, c-format
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s: опција „%s%s“ је нејасна\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s: опција „%s%s“ је нејасна; могућности:"
+
+#, c-format
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s: непозната опција „%s%s“\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s: опција „%s%s“ не дозвољава аргумент\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s: опција „%s%s“ захтева аргумент\n"
+
+#, c-format
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: неисправна опција — %c\n"
+
+#, c-format
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: опција захтева аргумент — %c\n"
 
 #~ msgid "%s: option '--%s' doesn't allow an argument\n"
 #~ msgstr "%s: опција „--%s“ не дозвољава аргумент\n"
@@ -886,6 +905,16 @@ msgstr "не могу да преименујем %s: %s"
 
 #~ msgid "%s: option '-W %s' requires an argument\n"
 #~ msgstr "%s: опција „-W %s“ захтева аргумент\n"
+
+#~ msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+#~ msgstr "Матична страница за „%s“: <http://www.gnu.org/software/%s/>\n"
+
+#~ msgid ""
+#~ "  -R, --regexp-perl\n"
+#~ "                 use Perl 5's regular expressions syntax in the script.\n"
+#~ msgstr ""
+#~ "  -R, --regexp-perl\n"
+#~ "                 користи синтаксу регуларних израза Перла 5 у скрипти.\n"
 
 #~ msgid "cannot specify modifiers on empty regexp"
 #~ msgstr "не можете навести измењивач празном рег. изразу"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: coreutils 5.2.1\n"
 "Report-Msgid-Bugs-To: bug-gnulib@gnu.org\n"
-"POT-Creation-Date: 2021-02-08 22:15+0000\n"
+"POT-Creation-Date: 2023-09-23 21:04+0000\n"
 "PO-Revision-Date: 2004-03-17 11:58+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: gl/lib/argp-help.c:158
+#: gl/lib/argp-help.c:161
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr ""
 
-#: gl/lib/argp-help.c:234
+#: gl/lib/argp-help.c:237
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr ""
 
-#: gl/lib/argp-help.c:244
+#: gl/lib/argp-help.c:247
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr ""
 
-#: gl/lib/argp-help.c:257
+#: gl/lib/argp-help.c:260
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr ""
 
-#: gl/lib/argp-help.c:1238
+#: gl/lib/argp-help.c:1373
 #, fuzzy
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
@@ -46,74 +46,74 @@ msgstr ""
 "Verpligte parameters vir langformaat opsies is ook verpligtend vir "
 "kortformaat opsies.\n"
 
-#: gl/lib/argp-help.c:1627
+#: gl/lib/argp-help.c:1739
 msgid "Usage:"
 msgstr ""
 
-#: gl/lib/argp-help.c:1631
+#: gl/lib/argp-help.c:1743
 msgid "  or: "
 msgstr ""
 
-#: gl/lib/argp-help.c:1643
+#: gl/lib/argp-help.c:1755
 #, fuzzy
 msgid " [OPTION...]"
 msgstr "Gebruik so:  %s [OPSIE]...\n"
 
-#: gl/lib/argp-help.c:1670
+#: gl/lib/argp-help.c:1782
 #, fuzzy, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "Probeer `%s --help' vir meer inligting.\n"
 
-#: gl/lib/argp-help.c:1698
+#: gl/lib/argp-help.c:1810
 #, fuzzy, c-format
 msgid "Report bugs to %s.\n"
 msgstr ""
 "\n"
 "Rapporteer foute aan <%s>.\n"
 
-#: gl/lib/argp-help.c:1898 gl/lib/error.c:195
+#: gl/lib/argp-help.c:2010 gl/lib/error.c:194
 msgid "Unknown system error"
 msgstr "Onbekende stelselfout"
 
-#: gl/lib/argp-parse.c:91
+#: gl/lib/argp-parse.c:90
 msgid "give this help list"
 msgstr ""
 
-#: gl/lib/argp-parse.c:92
+#: gl/lib/argp-parse.c:91
 msgid "give a short usage message"
 msgstr ""
 
-#: gl/lib/argp-parse.c:93
+#: gl/lib/argp-parse.c:92
 msgid "NAME"
 msgstr "NAAM"
 
-#: gl/lib/argp-parse.c:94
+#: gl/lib/argp-parse.c:93
 msgid "set the program name"
 msgstr ""
 
-#: gl/lib/argp-parse.c:95
+#: gl/lib/argp-parse.c:94
 msgid "SECS"
 msgstr ""
 
-#: gl/lib/argp-parse.c:96
+#: gl/lib/argp-parse.c:95
 msgid "hang for SECS seconds (default 3600)"
 msgstr ""
 
-#: gl/lib/argp-parse.c:154
+#: gl/lib/argp-parse.c:153
 #, fuzzy
 msgid "print program version"
 msgstr "leesfout"
 
-#: gl/lib/argp-parse.c:171
+#: gl/lib/argp-parse.c:170
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr ""
 
-#: gl/lib/argp-parse.c:624
+#: gl/lib/argp-parse.c:623
 #, fuzzy, c-format
 msgid "%s: Too many arguments\n"
 msgstr "te veel parameters\n"
 
-#: gl/lib/argp-parse.c:770
+#: gl/lib/argp-parse.c:769
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr ""
 
@@ -162,86 +162,91 @@ msgstr "kon nie na aanvanklike werkgids terugkeer nie"
 msgid "failed to return to initial working directory"
 msgstr "kon nie na aanvanklike werkgids terugkeer nie"
 
-#: gl/lib/regcomp.c:135
+#: gl/lib/regcomp.c:122
 msgid "Success"
 msgstr ""
 
-#: gl/lib/regcomp.c:138
+#: gl/lib/regcomp.c:125
 msgid "No match"
 msgstr ""
 
-#: gl/lib/regcomp.c:141
+#: gl/lib/regcomp.c:128
 #, fuzzy
 msgid "Invalid regular expression"
 msgstr "%s: ongeldige reëlmatige uitdrukking: %s"
 
-#: gl/lib/regcomp.c:144
+#: gl/lib/regcomp.c:131
 #, fuzzy
 msgid "Invalid collation character"
 msgstr "ongeldige karakterklas `%s'"
 
-#: gl/lib/regcomp.c:147
+#: gl/lib/regcomp.c:134
 #, fuzzy
 msgid "Invalid character class name"
 msgstr "ongeldige karakterklas `%s'"
 
-#: gl/lib/regcomp.c:150
+#: gl/lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr ""
 
-#: gl/lib/regcomp.c:153
+#: gl/lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr ""
 
-#: gl/lib/regcomp.c:156
+#: gl/lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr ""
 
-#: gl/lib/regcomp.c:159
+#: gl/lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr ""
 
-#: gl/lib/regcomp.c:162
+#: gl/lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr ""
 
-#: gl/lib/regcomp.c:165
+#: gl/lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr ""
 
-#: gl/lib/regcomp.c:168
+#: gl/lib/regcomp.c:155
 #, fuzzy
 msgid "Invalid range end"
 msgstr "%s: ongeldige reëlmatige uitdrukking: %s"
 
-#: gl/lib/regcomp.c:171
+#: gl/lib/regcomp.c:158
 #, fuzzy
 msgid "Memory exhausted"
 msgstr "geheue uitgeput"
 
-#: gl/lib/regcomp.c:174
+#: gl/lib/regcomp.c:161
 #, fuzzy
 msgid "Invalid preceding regular expression"
 msgstr "%s: ongeldige reëlmatige uitdrukking: %s"
 
-#: gl/lib/regcomp.c:177
+#: gl/lib/regcomp.c:164
 #, fuzzy
 msgid "Premature end of regular expression"
 msgstr "fout in soektog met reëlmatige uitdrukking"
 
-#: gl/lib/regcomp.c:180
+#: gl/lib/regcomp.c:167
 #, fuzzy
 msgid "Regular expression too big"
 msgstr "%s: ongeldige reëlmatige uitdrukking: %s"
 
-#: gl/lib/regcomp.c:183
+#: gl/lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr ""
 
-#: gl/lib/regcomp.c:676
+#: gl/lib/regcomp.c:650
 #, fuzzy
 msgid "No previous regular expression"
 msgstr "fout in soektog met reëlmatige uitdrukking"
+
+#: gl/lib/verror.c:76
+#, c-format
+msgid "unable to display error message"
+msgstr ""
 
 #: gl/lib/xalloc-die.c:34
 msgid "memory exhausted"

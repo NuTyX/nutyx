@@ -1,0 +1,767 @@
+# psmisc Georgian translation.
+# Copyright (C) 2022 Free Software Foundation, Inc.
+# This file is distributed under the same license as the psmisc package.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: psmisc 23.5rc1\n"
+"Report-Msgid-Bugs-To: csmall@dropbear.xyz\n"
+"POT-Creation-Date: 2024-03-03 21:55+1100\n"
+"PO-Revision-Date: 2022-10-17 07:37+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: src/fuser.c:146
+#, c-format
+msgid ""
+"Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]\n"
+"             [-k [-i] [-SIGNAL]] NAME...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"Show which processes use the named files, sockets, or filesystems.\n"
+"\n"
+"  -a,--all              display unused files too\n"
+"  -i,--interactive      ask before killing (ignored without -k)\n"
+"  -I,--inode            use always inodes to compare files\n"
+"  -k,--kill             kill processes accessing the named file\n"
+"  -l,--list-signals     list available signal names\n"
+"  -m,--mount            show all processes using the named filesystems or\n"
+"                        block device\n"
+"  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
+"  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
+"  -s,--silent           silent operation\n"
+"  -SIGNAL               send this signal instead of SIGKILL\n"
+"  -u,--user             display user IDs\n"
+"  -v,--verbose          verbose output\n"
+"  -w,--writeonly        kill only processes with write access\n"
+"  -V,--version          display version information\n"
+msgstr ""
+"გამოყენება: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]\n"
+"             [-k [-i] [-სიგნალი]] სახელი...\n"
+"       fuser -ლ\n"
+"       ფუზერი -V\n"
+"აჩვენეთ რომელი პროცესები იყენებენ დასახელებულ ფაილებს, სოკეტებს ან ფაილურ "
+"სისტემას.\n"
+"\n"
+"  -a,--ყველა აჩვენებს გამოუყენებელ ფაილებსაც\n"
+"  -i,--ინტერაქტიული კითხვა მოკვლის წინ (იგნორირებულია -k-ის გარეშე)\n"
+"  -I,--inode ყოველთვის იყენებს ინოდებს ფაილების შესადარებლად\n"
+"  -k,--kill kill პროცესების წვდომა დასახელებულ ფაილზე\n"
+"  -l,--list-სიგნალების სია ხელმისაწვდომი სიგნალის სახელები\n"
+"  -m,--mount აჩვენებს ყველა პროცესს დასახელებული ფაილური სისტემების "
+"გამოყენებით ან\n"
+"                        დაბლოკვის მოწყობილობა\n"
+"  -M,--ismountpoint შეასრულოს მოთხოვნა მხოლოდ იმ შემთხვევაში, თუ NAME არის "
+"სამონტაჟო წერტილი\n"
+"  -n,--namespace SPACE ძიება ამ სახელის სივრცეში (ფაილი, udp ან tcp)\n"
+"  -s,--ჩუმი ჩუმი ოპერაცია\n"
+"  -SIGNAL გაგზავნეთ ეს სიგნალი SIGKILL-ის ნაცვლად\n"
+"  -u,--მომხმარებლის ჩვენება მომხმარებლის ID\n"
+"  -v, - სიტყვიერი სიტყვიერი გამომავალი\n"
+"  -w,-- ჩაწერე მხოლოდ ჩაწერის წვდომის მქონე პროცესების მოკვლა\n"
+"  -V, ---ვერსიის ჩვენება ვერსიის ინფორმაციის\n"
+
+#: src/fuser.c:167
+#, c-format
+msgid ""
+"  -4,--ipv4             search IPv4 sockets only\n"
+"  -6,--ipv6             search IPv6 sockets only\n"
+msgstr ""
+"  -4,--ipv4 მოძებნეთ მხოლოდ IPv4 სოკეტები\n"
+"  -6,--ipv6 მოძებნეთ მხოლოდ IPv6 სოკეტები\n"
+
+#: src/fuser.c:170
+#, fuzzy, c-format
+#| msgid ""
+#| "  -                     reset options\n"
+#| "\n"
+#| "  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
+#| "\n"
+msgid ""
+"  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
+"\n"
+msgstr ""
+"  - პარამეტრების გადატვირთვა\n"
+"\n"
+"  udp/tcp სახელები: [local_port][,[rmt_host][,[rmt_port]]]\n"
+"\n"
+
+#: src/fuser.c:176
+#, c-format
+msgid "fuser (PSmisc) %s\n"
+msgstr "fuser (PSmisc) %s\n"
+
+#: src/fuser.c:178 src/killall.c:870 src/pstree.c:1337
+#, fuzzy, c-format
+#| msgid ""
+#| "Copyright (C) 1993-2022 Werner Almesberger and Craig Small\n"
+#| "\n"
+msgid ""
+"Copyright (C) 1993-2024 Werner Almesberger and Craig Small\n"
+"\n"
+msgstr ""
+"(C) 1993-2022 ვერნერ ალმესბერგერი და ქრეგ სმოლი, ყველა უფლება დაცულია\n"
+"\n"
+
+#: src/fuser.c:180 src/killall.c:872 src/peekfd.c:195 src/prtstat.c:68
+#: src/pstree.c:1339
+#, c-format
+msgid ""
+"PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
+"This is free software, and you are welcome to redistribute it under\n"
+"the terms of the GNU General Public License.\n"
+"For more information about these matters, see the files named COPYING.\n"
+msgstr ""
+"PSmisc აბსოლუტურად გარანტიის გარეშე მოგეწოდებათ.\n"
+"ეს უფასო პროგრამაა და თქვენ უფლება გაქვთ, გაავრცელოთ ის\n"
+"GNU-ის ზოგადი საჯარო ლიცენზიით.\n"
+"მეტი ინფორმაციისთვის იხილეთ ფაილი COPYING.\n"
+
+#: src/fuser.c:202
+#, c-format
+msgid "Cannot open /proc directory: %s\n"
+msgstr "/proc საქაღალდის გახსნის შეცდომა: %s\n"
+
+#: src/fuser.c:404 src/fuser.c:463
+#, c-format
+msgid "Cannot allocate memory for matched proc: %s\n"
+msgstr "შესაბამისი პროცესისთვის მეხსიერების გამოყოფის შეცდომა: %s\n"
+
+#: src/fuser.c:494
+#, c-format
+msgid "Specified filename %s does not exist.\n"
+msgstr "მითითებული ფაილი (%s) არ არსებობს.\n"
+
+#: src/fuser.c:497
+#, c-format
+msgid "Cannot stat %s: %s\n"
+msgstr "%s-ის აღმოჩენის შეცდომა: %s\n"
+
+#: src/fuser.c:649
+#, c-format
+msgid "Cannot resolve local port %s: %s\n"
+msgstr ""
+"ლოკალური პორტის (%s) ამოხსნის შეცდომა: %s\n"
+"\n"
+
+#: src/fuser.c:670
+#, c-format
+msgid "Unknown local port AF %d\n"
+msgstr "უცნობი ლოკალური პორტი AF %d\n"
+
+#: src/fuser.c:753
+#, c-format
+msgid "Cannot open protocol file \"%s\": %s\n"
+msgstr "პროტოკოლის ფაილის გახნის შეცდომა \"%s\": %s\n"
+
+#: src/fuser.c:1079
+#, c-format
+msgid "Specified filename %s is not a mountpoint.\n"
+msgstr "მითითებული ფაილის სახელი (%s) მიმაგრების წერტილი არაა.\n"
+
+#: src/fuser.c:1175
+#, c-format
+msgid "%s: Invalid option %s\n"
+msgstr "%s: არასწორი პარამეტრი %s\n"
+
+#: src/fuser.c:1230
+msgid "Namespace option requires an argument."
+msgstr "სახელების სივრცის პარამეტრისთვის არგუმენტის მითითება აუცილებელია."
+
+#: src/fuser.c:1242
+msgid "Invalid namespace name"
+msgstr "არასწორი სახელების სივრცის სახელი"
+
+#: src/fuser.c:1309
+msgid "You can only use files with mountpoint options"
+msgstr "შეგიძლიათ გამოიყენოთ მხოლოდ მიმაგრების წერტილის პარამეტრებიანი ფაილები"
+
+#: src/fuser.c:1356
+msgid "No process specification given"
+msgstr "პროცესის სპეციფიკაცია მითითებული არაა"
+
+#: src/fuser.c:1373
+msgid "all option cannot be used with silent option."
+msgstr "გაჩუმების პარამეტრთან ერთად ყველა პარამეტრს ვერ გამოიყენებთ."
+
+#: src/fuser.c:1378
+msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
+msgstr "მხოლოდ IPv4 და მხოლოდ IPv6 სოკეტების ერთდროული ძებნა შეუძლებელია"
+
+#: src/fuser.c:1474
+#, c-format
+msgid "%*s USER        PID ACCESS COMMAND\n"
+msgstr "%*s მომხმარებელი        PID წვდომა ბრძანება\n"
+
+#: src/fuser.c:1508 src/fuser.c:1554
+msgid "(unknown)"
+msgstr "(უცნობია)"
+
+#: src/fuser.c:1650 src/fuser.c:1706
+#, c-format
+msgid "Cannot stat file %s: %s\n"
+msgstr "ფაილის (%s) აღმოჩენის შეცდომა: %s\n"
+
+#: src/fuser.c:1803
+#, c-format
+msgid "Cannot open /proc/net/unix: %s\n"
+msgstr "/proc/net/unix-ის გახსნის შეცდომა: %s\n"
+
+#: src/fuser.c:1909
+#, c-format
+msgid "Kill process %d ? (y/N) "
+msgstr "მოვკლა პროცესი %d ? (y(დიახ)/N(არა, ნაგულისხმები) "
+
+#: src/fuser.c:1950
+#, c-format
+msgid "Could not kill process %d: %s\n"
+msgstr "პროცესის (%d) მოკვლის შეცდომა: %s\n"
+
+#: src/fuser.c:1966
+#, c-format
+msgid "Cannot open a network socket.\n"
+msgstr "ქსელური სოკეტის გახსნის შეცდომა.\n"
+
+#: src/fuser.c:1971
+#, c-format
+msgid "Cannot find socket's device number.\n"
+msgstr "სოკეტის მოწყობილობის ნომრის პოვნა შეუძლებელია.\n"
+
+#: src/killall.c:111
+#, c-format
+msgid "Kill %s(%s%d) ? (y/N) "
+msgstr "მოვკლა %s(%s%d) ? (y(დიახ)/N(არა, ნაგულისხმები) "
+
+#: src/killall.c:114
+#, c-format
+msgid "Signal %s(%s%d) ? (y/N) "
+msgstr "გავაგზავნო სიგნალი %s(%s%d) ? (y(დიახ)/N(არა, ნაგულისხმები) "
+
+#: src/killall.c:262
+#, c-format
+msgid "killall: Cannot get UID from process status\n"
+msgstr "killall: პროცესის სტატუსიდან UID-ის მიღების შეცდომა\n"
+
+#: src/killall.c:368
+#, c-format
+msgid "killall: Bad regular expression: %s\n"
+msgstr "killall: არასწორი რეგულარული გამოსახულება: %s\n"
+
+#: src/killall.c:525
+#, c-format
+msgid "killall: skipping partial match %s(%d)\n"
+msgstr "killall: ნაწილობრივი დამთხვევის %s(%d) გამოტოვება\n"
+
+#: src/killall.c:775
+#, c-format
+msgid "Killed %s(%s%d) with signal %d\n"
+msgstr "მოკვდა %s(%s%d) სიგნალით %d\n"
+
+#: src/killall.c:796
+#, c-format
+msgid "%s: no process found\n"
+msgstr "%s: პროცესი ვერ ვიპოვე\n"
+
+#: src/killall.c:837
+#, c-format
+msgid "Usage: killall [OPTION]... [--] NAME...\n"
+msgstr "გამოყენება: killall [პარამეტრი]... [--] სახელი...\n"
+
+#: src/killall.c:839
+#, c-format
+msgid ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact          require exact match for very long names\n"
+"  -I,--ignore-case    case insensitive process name match\n"
+"  -g,--process-group  kill process group instead of process\n"
+"  -y,--younger-than   kill processes younger than TIME\n"
+"  -o,--older-than     kill processes older than TIME\n"
+"  -i,--interactive    ask for confirmation before killing\n"
+"  -l,--list           list all known signal names\n"
+"  -q,--quiet          don't print complaints\n"
+"  -r,--regexp         interpret NAME as an extended regular expression\n"
+"  -s,--signal SIGNAL  send this signal instead of SIGTERM\n"
+"  -u,--user USER      kill only process(es) running as USER\n"
+"  -v,--verbose        report if the signal was successfully sent\n"
+"  -V,--version        display version information\n"
+"  -w,--wait           wait for processes to die\n"
+"  -n,--ns PID         match processes that belong to the same namespaces\n"
+"                      as PID\n"
+msgstr ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact          ყოველი გრძელი ხაზის ზუსტი დამთხვევის მოთხოვნა\n"
+"  -I,--ignore-case    პროცესის სახელის დამთხვევა რეგისტრის გათვალისწინების "
+"გარეშე\n"
+"  -g,--process-group  პროცესის მაგიერ პროცესების ჯგუფის მოკვლა\n"
+"  -y,--younger-than   მითითებულ დროზე უფრო ახალგაზრდა პროცესების მოკვლა\n"
+"  -o,--older-than     მითითებულ დროზე უფრო ხანდაზმული პროცესების მოკვლა\n"
+"  -i,--interactive    მოკვლამდე დასტურის მოთხოვნა\n"
+"  -l,--list           ყველა ცნობილი სიგნალის სახელის ჩამონათვალის ჩვენება\n"
+"  -q,--quiet          გაფრთხილებები ნაჩვენები არ იქნება\n"
+"  -r,--regexp         მითითებული სახელის, როგორც გაფართოებული რეგულარული "
+"გამოსახულების, მიღება\n"
+"  -s,--signal SIGNAL  SIGTERM-ის მაგიერ ამ სიგნალის გაგზავნა\n"
+"  -u,--user USER      მხოლოდ მითითებული მომხმარებლით გაშვებული პროცესების "
+"მოკვლა\n"
+"  -v,--verbose        ანგარიშის სიგნალის წარმატებით გაგზავნის შესახებ\n"
+"  -V,--version        ვერსიის ინფორმაციის ჩვენება\n"
+"  -w,--wait           პროცესების სიკვდილის დალოდება\n"
+"  -n,--ns PID         მხოლოდ იგივე სახელების სივრცეში მდებარე პროცესების "
+"დამთხვევა,\n"
+"                      როგორც PID\n"
+
+#: src/killall.c:859
+#, c-format
+msgid ""
+"  -Z,--context REGEXP kill only process(es) having context\n"
+"                      (must precede other arguments)\n"
+msgstr ""
+"  -Z,--context REGEX   მხოლოდ მითითებული კონტექსტის მქონე პროცესების მოკვლა\n"
+"                      (მითითებული უნდა იყოს ყველა სხვა დოკუმენტზე ადრე)\n"
+
+#: src/killall.c:955 src/killall.c:961
+msgid "Invalid time format"
+msgstr "დროის არასწორი ფორმატი"
+
+#: src/killall.c:981
+#, c-format
+msgid "Cannot find user %s\n"
+msgstr "მომხმარებლის (%s) პოვნა შეუძლებელია\n"
+
+#: src/killall.c:1016
+msgid "Invalid namespace PID"
+msgstr "სახელების სივრცის არასწორი PID"
+
+#: src/killall.c:1023
+#, c-format
+msgid "Bad regular expression: %s\n"
+msgstr "არასწორი რეგულარული გამოსახულება: %s\n"
+
+#: src/killall.c:1057
+#, c-format
+msgid "killall: Maximum number of names is %d\n"
+msgstr "killall: სახელების მაქსიმალური რაოდენობაა: %d\n"
+
+#: src/killall.c:1062
+#, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
+msgstr "killall: %s -ს პროცესის ჩანაწერები აკლია (არაა მიმაგრებული?)\n"
+
+#: src/peekfd.c:183
+#, c-format
+msgid "Error attaching to pid %i\n"
+msgstr "PID %i-თან მიბმის შეცდომა\n"
+
+#: src/peekfd.c:191
+#, c-format
+msgid "peekfd (PSmisc) %s\n"
+msgstr "peekfd (PSmisc) %s\n"
+
+#: src/peekfd.c:193
+#, c-format
+msgid ""
+"Copyright (C) 2007 Trent Waddington\n"
+"\n"
+msgstr ""
+"(C) 2007 ტრენტ ვადინგტონი, ყველა უფლება დაცულია\n"
+"\n"
+
+#: src/peekfd.c:203
+#, c-format
+msgid ""
+"Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8, --eight-bit-clean        output 8 bit clean streams.\n"
+"    -n, --no-headers             don't display read/write from fd headers.\n"
+"    -c, --follow                 peek at any new child processes too.\n"
+"    -t, --tgid                   peek at all threads where tgid equals "
+"<pid>.\n"
+"    -d, --duplicates-removed     remove duplicate read/writes from the "
+"output.\n"
+"    -V, --version                prints version info.\n"
+"    -h, --help                   prints this help.\n"
+"\n"
+"  Press CTRL-C to end output.\n"
+msgstr ""
+"გამოყენება: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8, --eight-bit-clean        8 ბიტიანი სუფთა ნაკადების გამოტანა.\n"
+"    -n, --no-headers             fd თავსართების ჩაწერა/წაკითხვა ნაჩვენები არ "
+"იქნება.\n"
+"    -c, --follow                 ახალი შვილი პროცესების მითვალყურებული "
+"იქნება.\n"
+"    -t, --tgid                   ყველა ახალი ნაკადის მითვალყურება, სადაც "
+"tgid <pid>-ის ტოლია.\n"
+"    -d, --duplicates-removed     გამოტანილი ინფორმაციიდან დუბლირებული ჩაწერა/"
+"წაკითხვების მოცილება.\n"
+"    -V, --version                ვერსიის ინფორმაციის ჩვენება.\n"
+"    -h, --help                   ამ დახმარების გამოტანა.\n"
+"\n"
+"  გამოტანის დასასრულებლად დააწექით CTRL-C.\n"
+
+#: src/prtstat.c:54
+#, c-format
+msgid ""
+"Usage: prtstat [options] PID ...\n"
+"       prtstat -V\n"
+"Print information about a process\n"
+"    -r,--raw       Raw display of information\n"
+"    -V,--version   Display version information and exit\n"
+msgstr ""
+"გამოყენება: prtstat [პარამეტრები] PID ...\n"
+"       prtstat -V\n"
+"პროცესის შესახებ ინფორმაციის გამოტანა\n"
+"    -r,--raw       დაუმუშავებელი ინფორმაციის გამოტანა\n"
+"    -V,--version   ვერსიის ინფორმაციის გამოტანა და გასვლა\n"
+
+#: src/prtstat.c:65
+#, c-format
+msgid "prtstat (PSmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
+
+#: src/prtstat.c:66
+#, fuzzy, c-format
+#| msgid ""
+#| "Copyright (C) 2009-2020 Craig Small\n"
+#| "\n"
+msgid ""
+"Copyright (C) 2009-2024 Craig Small\n"
+"\n"
+msgstr ""
+"2009-2020 Craig Small, ყველა უფლება დაცულია\n"
+"\n"
+
+#: src/prtstat.c:78
+msgid "running"
+msgstr "გაშვებულია"
+
+#: src/prtstat.c:80
+msgid "sleeping"
+msgstr "სძინავს"
+
+#: src/prtstat.c:82
+msgid "disk sleep"
+msgstr "დისკზე სძინავს"
+
+#: src/prtstat.c:84
+msgid "zombie"
+msgstr "ზომბი"
+
+#: src/prtstat.c:86
+msgid "traced"
+msgstr "მიყოლებული"
+
+#: src/prtstat.c:88
+msgid "paging"
+msgstr "პეიჯინგი"
+
+#: src/prtstat.c:90
+msgid "unknown"
+msgstr "unknown"
+
+#: src/prtstat.c:164
+#, c-format
+msgid ""
+"Process: %-14s\t\tState: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
+msgstr ""
+"პროცესი: %-14s\t\\მდგომარეობა: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tნაკადი: %ld\n"
+
+#: src/prtstat.c:169
+#, c-format
+msgid ""
+"Process, Group and Session IDs\n"
+"  Process ID: %d\t\t  Parent ID: %d\n"
+"    Group ID: %d\t\t Session ID: %d\n"
+"  T Group ID: %d\n"
+"\n"
+msgstr ""
+"პროცესების, ჯგუფებისა და სესიების ID-ები\n"
+"  პროცესის ID: %d\t\t  მშობლის ID: %d\n"
+"    ჯგუფის ID: %d\t\t სესიის ID: %d\n"
+"  T ჯგუფის ID: %d\n"
+"\n"
+
+#: src/prtstat.c:175
+#, c-format
+msgid ""
+"Page Faults\n"
+"  This Process    (minor major): %8lu  %8lu\n"
+"  Child Processes (minor major): %8lu  %8lu\n"
+msgstr ""
+"გვერდის შეცდომები\n"
+"  ეს პროცესი    (დამხმარე ძირითადი): %8lu  %8lu\n"
+"  შვილი პროცესები (დამხმარე ძირითადი): %8lu  %8lu\n"
+
+#: src/prtstat.c:180
+#, c-format
+msgid ""
+"CPU Times\n"
+"  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
+msgstr ""
+"CPU-ის დროები\n"
+"  ეს პროცესი    (მომხმარებელი სისტემა სტუმარი blkio): %6.2f %6.2f %6.2f "
+"%6.2f\n"
+"  შვილი პროცესები (მომხმარებელი სისტემა სტუმარი):       %6.2f %6.2f %6.2f\n"
+
+#: src/prtstat.c:189
+#, c-format
+msgid ""
+"Memory\n"
+"  Vsize:       %-10s\n"
+"  RSS:         %-10s \t\t RSS Limit: %s\n"
+"  Code Start:  %#-10lx\t\t Code Stop:  %#-10lx\n"
+"  Stack Start: %#-10lx\n"
+"  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
+msgstr ""
+"მეხსიერება\n"
+"  Vზომა:       %-10s\n"
+"  RSS:         %-10s \t\t RSS ზღვარი: %s\n"
+"  Code Start:  %#-10lx\t\t კოდის დასასრული:  %#-10lx\n"
+"  სტეკის დასაწყისი: %#-10lx\n"
+"  სტეკზე მაჩვენებელი (ESP): %#10lx\t Inst მაჩვენებელი (EIP): %#10lx\n"
+
+#: src/prtstat.c:199
+#, c-format
+msgid ""
+"Scheduling\n"
+"  Policy: %s\n"
+"  Nice:   %ld \t\t RT Priority: %ld %s\n"
+msgstr ""
+"დაგეგმვა\n"
+"  პოლიტიკა: %s\n"
+"  Nice:   %ld \t\t რდ პრიორიტეტი: %ld %s\n"
+
+#: src/prtstat.c:220
+msgid "asprintf in print_stat failed.\n"
+msgstr "print_stat -ში asprintf -ის შეცდომა.\n"
+
+#: src/prtstat.c:225
+#, c-format
+msgid "Process with pid %d does not exist.\n"
+msgstr "პროცესი PID-ით %d არ არსებობს.\n"
+
+#: src/prtstat.c:227
+#, c-format
+msgid "Unable to open stat file for pid %d (%s)\n"
+msgstr "შეცდომა stat ფაილის გახსნისას PID-სთვის %d (%s)\n"
+
+#: src/prtstat.c:243
+#, c-format
+msgid "Unable to allocate memory for proc_info\n"
+msgstr "შეცდომა proc_info -სთვის მეხსიერების გამოყოფისას\n"
+
+#: src/prtstat.c:283
+#, c-format
+msgid "Unable to scan stat file"
+msgstr "შეცდომა stat ფაილის სკანირებისას"
+
+#: src/prtstat.c:318
+msgid "Invalid option"
+msgstr "არასწორი პარამეტრი"
+
+#: src/prtstat.c:323
+msgid "You must provide at least one PID."
+msgstr "საჭიროა ერთი PID მაინც მიუთითოთ."
+
+#: src/prtstat.c:327
+#, c-format
+msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
+msgstr "/proc მიმაგრებული არაა. /proc/self/stat აღმოჩენილი არაა.\n"
+
+#: src/pstree.c:1254
+#, c-format
+msgid "%s is empty (not mounted ?)\n"
+msgstr "%s ცარიელია (არაა მიმაგრებული ?)\n"
+
+#: src/pstree.c:1287
+#, c-format
+msgid ""
+"Usage: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N type ]\n"
+"              [ -A | -G | -U ] [ PID | USER ]\n"
+"   or: pstree -V\n"
+msgstr ""
+"გამოყენება: pstree [-acglpsStTuZ] [ -h | -H PID ] [ -n | -N ტიპი ]\n"
+"              [ -A | -G | -U ] [ PID | მომხმარებელი ]\n"
+"   ან: pstree -V\n"
+
+#: src/pstree.c:1291
+#, c-format
+msgid ""
+"\n"
+"Display a tree of processes.\n"
+"\n"
+msgstr ""
+"\n"
+"პროცესების ხის ჩვენება.\n"
+"\n"
+
+#: src/pstree.c:1294
+#, c-format
+msgid ""
+"  -a, --arguments     show command line arguments\n"
+"  -A, --ascii         use ASCII line drawing characters\n"
+"  -c, --compact-not   don't compact identical subtrees\n"
+msgstr ""
+"  -a, --arguments     ბრძანების სტრიქონის არგუმენტების ჩვენება\n"
+"  -A, --ascii         ხაზების ხატვისას ASCII სიმბოლოების გამოყენება\n"
+"  -c, --compact-not   ერთნაირი ქვე-ხეების არ შედარდება\n"
+
+#: src/pstree.c:1298
+#, c-format
+msgid ""
+"  -C, --color=TYPE    color process by attribute\n"
+"                      (age)\n"
+msgstr ""
+"  -C, --color=ტიპი    პროცესის ფერი ატრიბუტის მიხედვით\n"
+"                      (ასაკი)\n"
+
+#: src/pstree.c:1301
+#, c-format
+msgid ""
+"  -g, --show-pgids    show process group ids; implies -c\n"
+"  -G, --vt100         use VT100 line drawing characters\n"
+msgstr ""
+"  -g, --show-pgids    პროცესის ჯგუფის ID-ების ჩვენება. იყენებს -c\n"
+"  -G, --vt100         VT100 -ის ხაზის დასახატი სიმბოლოების გამოყენება\n"
+
+#: src/pstree.c:1304
+#, c-format
+msgid ""
+"  -h, --highlight-all highlight current process and its ancestors\n"
+"  -H PID, --highlight-pid=PID\n"
+"                      highlight this process and its ancestors\n"
+"  -l, --long          don't truncate long lines\n"
+msgstr ""
+"  -h, --highlight-all მიდინარე პროცესისა და მისი წინაპრების გამოკვეთა\n"
+"  -H PID, --highlight-pid=PID\n"
+"                      ამ პროცესისა და მისი წინაპრების გამოკვეთა\n"
+"  -l, --long          გრძელი ხაზები წაკვეთილი არ იქნება\n"
+
+#: src/pstree.c:1309
+#, c-format
+msgid ""
+"  -n, --numeric-sort  sort output by PID\n"
+"  -N TYPE, --ns-sort=TYPE\n"
+"                      sort output by this namespace type\n"
+"                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
+"  -p, --show-pids     show PIDs; implies -c\n"
+msgstr ""
+"  -n, --numeric-sort  გამოტანილის PID-ით დალატება\n"
+"  -N TYPE, --ns-sort=TYPE\n"
+"                      ამ სახელების სივრცის ტიპის დალაგება\n"
+"                              (cgroup, ipc, mnt, net, pid, time, user, uts)\n"
+"  -p, --show-pids     PID-ების ჩვენება; ასევე ჩართავს -c\n"
+
+#: src/pstree.c:1315
+#, c-format
+msgid ""
+"  -s, --show-parents  show parents of the selected process\n"
+"  -S, --ns-changes    show namespace transitions\n"
+"  -t, --thread-names  show full thread names\n"
+"  -T, --hide-threads  hide threads, show only processes\n"
+msgstr ""
+"  -s, --show-parents  მონიშნული პროცესის მშობლების ჩვენება\n"
+"  -S, --ns-changes    სახელების სივრცის გადასვლის ჩვენებე\n"
+"  -t, --thread-names  ნაკადის სრული სახელების ჩვენება\n"
+"  -T, --hide-threads  ნაკადების დამალვა და მხოლოდ პროცესების ჩვენება\n"
+
+#: src/pstree.c:1320
+#, c-format
+msgid ""
+"  -u, --uid-changes   show uid transitions\n"
+"  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
+"  -V, --version       display version information\n"
+msgstr ""
+"  -u, --uid-changes   uid-ის გადასვლების ჩვენება\n"
+"  -U, --unicode       ხაზის დასახატი სიმბოლოებისთვის UTF-8-ის (უნიკოდი) "
+"გამოყენება\n"
+"  -V, --version       ვერსიის ინფორმაციის გამოტანა\n"
+
+#: src/pstree.c:1324
+#, c-format
+msgid ""
+"  -Z, --security-context\n"
+"                      show security attributes\n"
+msgstr ""
+"  -Z, --security-context\n"
+"                      უსაფრთხოების ატრიბუტების ჩვენება\n"
+
+#: src/pstree.c:1326
+#, c-format
+msgid ""
+"\n"
+"  PID    start at this PID; default is 1 (init)\n"
+"  USER   show only trees rooted at processes of this user\n"
+"\n"
+msgstr ""
+"\n"
+"  PID    PID-ებსის მითითებული რიცხვიდან დაწყება. ნაგულისხმებია 1 (init)\n"
+"  USER   მხოლოდ ამ მომხმარებლის პროცესების ფესვებიდან ამოზრდილი პროცესების "
+"ჩვენება\n"
+"\n"
+
+#: src/pstree.c:1334
+#, c-format
+msgid "pstree (PSmisc) %s\n"
+msgstr "pstree (PSmisc) %s\n"
+
+#: src/pstree.c:1455
+#, c-format
+msgid "TERM is not set\n"
+msgstr "TERM დაყენებული არაა\n"
+
+#: src/pstree.c:1459
+#, c-format
+msgid "Can't get terminal capabilities\n"
+msgstr "ტერმინალის შესაძლებლობების მიღების შეცდომა\n"
+
+#: src/pstree.c:1477
+#, c-format
+msgid "procfs file for %s namespace not available\n"
+msgstr "procfs ფაილი %s სახელთა სივრცისთვის მიუწვდომელია\n"
+
+#: src/pstree.c:1523
+#, c-format
+msgid "No such user name: %s\n"
+msgstr "ასეთი მომხმარებლის სახელი არ არსებობს: %s\n"
+
+#: src/pstree.c:1539
+#, c-format
+msgid "Process %d not found.\n"
+msgstr "პროცესი %d ვერ მოიძებნა.\n"
+
+#: src/pstree.c:1555
+#, c-format
+msgid "No processes found.\n"
+msgstr "პროცესები ვერ მოიძებნა.\n"
+
+#: src/pstree.c:1563
+#, c-format
+msgid "Press return to close\n"
+msgstr "დახურვისთვის დააჭირეთ დაბრუნებას\n"
+
+#: src/signals.c:84
+#, c-format
+msgid "%s: unknown signal; %s -l lists signals.\n"
+msgstr "%s: უცნობი სიგნალი. სიგნალების სიის მისაღებად გამოიყენეთ %s -l\n"
+
+#, c-format
+#~ msgid ""
+#~ "Copyright (C) 1993-2021 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "(C) 1993-2021 ვერნერ ალმესბერგერი და ქრეგ სმოლი, ყველა უფლება დაცულია\n"
+#~ "\n"

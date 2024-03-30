@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gdbm 1.12.90\n"
 "Report-Msgid-Bugs-To: bug-gdbm@gnu.org\n"
-"POT-Creation-Date: 2020-12-23 14:43+0200\n"
+"POT-Creation-Date: 2022-02-04 16:04+0200\n"
 "PO-Revision-Date: 2017-02-12 11:00+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -24,327 +24,161 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/bucket.c:90 src/bucket.c:249
-msgid "couldn't init cache"
-msgstr "kunne ikke initialisere mellemlager"
-
-#: src/bucket.c:119 src/bucket.c:445 src/falloc.c:197 src/falloc.c:333
-#: src/findkey.c:112 src/gdbmstore.c:169 src/update.c:37 src/update.c:101
+#: src/bucket.c:399 src/bucket.c:684 src/falloc.c:211 src/falloc.c:337
+#: src/findkey.c:124 src/gdbmstore.c:168 src/update.c:36 src/update.c:76
 msgid "lseek error"
 msgstr "lseek-fejl"
 
-#: src/bucket.c:299
+#: src/bucket.c:534
 msgid "directory overflow"
 msgstr "mappeoverløb"
 
-#: src/bucket.c:310 src/falloc.c:297 src/findkey.c:85 src/findkey.c:101
+#: src/bucket.c:545 src/falloc.c:302 src/findkey.c:97 src/findkey.c:113
 msgid "malloc error"
 msgstr "malloc-fejl"
 
-#: src/datconv.c:264
-#, c-format
-msgid "(not enough data)"
-msgstr "(ikke nok data)"
-
-#: src/datconv.c:356
-msgid "cannot convert"
-msgstr "kan ikke konvertere"
-
-#: src/datconv.c:365
-#, c-format
-msgid "cannot convert value #%d: %s"
-msgstr "kan ikke konvertere værdi #%d: %s"
-
-#: src/datconv.c:391 src/datconv.c:440
-msgid "mixing tagged and untagged values is not allowed"
-msgstr "blanding af mærkede og umærkede værdier er ikke tilladt"
-
-#: src/datconv.c:445
-#, c-format
-msgid "%s: no such field in datum"
-msgstr ""
-
-#: src/falloc.c:187
+#: src/falloc.c:201
 msgid "malloc failed"
 msgstr "malloc mislykkedes"
 
-#: src/gdbm_dump.c:22
-msgid "dump a GDBM database to a file"
-msgstr ""
-
-#: src/gdbm_dump.c:23
-#, fuzzy
-msgid "DB_FILE [FILE]"
-msgstr "DB-FIL"
-
-#: src/gdbm_dump.c:25
-msgid "select dump format"
-msgstr "vælg dump-format"
-
-#: src/gdbm_dump.c:67
-msgid "unknown dump format"
-msgstr "ukendt dump-format"
-
-#: src/gdbm_dump.c:74 src/gdbm_load.c:215
-msgid "unknown option"
-msgstr "ukendt tilvalg"
-
-#: src/gdbm_dump.c:90 src/gdbm_load.c:231
-#, c-format
-msgid "too many arguments; try `%s -h' for more info"
-msgstr "for mange argumenter; prøv »%s -h« for yderligere information"
-
-#: src/gdbm_dump.c:110 src/gdbm_load.c:251
-#, c-format
-msgid "cannot open %s"
-msgstr "kan ikke åbne %s"
-
-#: src/gdbm_dump.c:118 src/gdbm_load.c:261
-msgid "gdbm_open failed"
-msgstr "gdbm_open mislykkedes"
-
-#: src/gdbm_dump.c:125
-msgid "dump error"
-msgstr "dump-fejl"
-
-#: src/gdbm_load.c:32
-msgid "load a GDBM database from a file"
-msgstr ""
-
-#: src/gdbm_load.c:33
-#, fuzzy
-msgid "FILE [DB_FILE]"
-msgstr "DB-FIL"
-
-#: src/gdbm_load.c:35
-msgid "replace records in the existing database"
-msgstr "erstat poster i eksisterende database"
-
-#: src/gdbm_load.c:36
-msgid "MODE"
-msgstr "TILSTAND"
-
-#: src/gdbm_load.c:36
-msgid "set file mode"
-msgstr "angiv filtilstand"
-
-# oversættelse af navn: godt nok i tvivl her, fransk har oversat, polsk er oversat,
-# vietnamesisk har oversat, tysk er svær at se :o) 
-#: src/gdbm_load.c:37
-msgid "NAME|UID[:NAME|GID]"
-msgstr "NAVN|UID[:NAVN|GID]"
-
-#: src/gdbm_load.c:37
-msgid "set file owner"
-msgstr "angiv filejer"
-
-#: src/gdbm_load.c:38
-msgid "do not attempt to set file meta-data"
-msgstr "forsøg ikke at angive filmetadata"
-
-#: src/gdbm_load.c:39
-msgid "use memory mapping"
-msgstr "brug hukommelseskortlægning"
-
-#: src/gdbm_load.c:40 src/gdbm_load.c:41
-msgid "NUM"
-msgstr "NUM"
-
-#: src/gdbm_load.c:40
-msgid "set the cache size"
-msgstr "angiv cachestørrelsen"
-
-#: src/gdbm_load.c:41
-msgid "set the block size"
-msgstr "angiv blokstørrelsen"
-
-#: src/gdbm_load.c:79
-#, c-format
-msgid "invalid number: %s"
-msgstr "ugyldigt nummer: %s"
-
-#: src/gdbm_load.c:84
-#, c-format
-msgid "invalid number: %s: %s"
-msgstr "ugyldigt nummer: %s: %s"
-
-#: src/gdbm_load.c:136
-#, c-format
-msgid "invalid octal number"
-msgstr "ugyldigt oktaltal"
-
-#: src/gdbm_load.c:161
-#, c-format
-msgid "invalid user name: %s"
-msgstr "ugyldigt brugernavn: %s"
-
-#: src/gdbm_load.c:180
-#, c-format
-msgid "invalid group name: %s"
-msgstr "ugyldigt gruppenavn: %s"
-
-#: src/gdbm_load.c:192
-#, c-format
-msgid "no such UID: %lu"
-msgstr "ingen sådan UID: %lu"
-
-#: src/gdbm_load.c:267 src/gdbmtool.c:111 src/gdbmtool.c:117 src/gdbmtool.c:123
-#: src/gdbmtool.c:1055
-#, c-format
-msgid "gdbm_setopt failed: %s"
-msgstr "gdbm_setopt mislykkedes: %s"
-
-#: src/gdbm_load.c:281 src/gdbm_load.c:299 src/gdbmtool.c:1038
-#, c-format
-msgid "error restoring metadata: %s (%s)"
-msgstr "fejl under gendannelse af metadata %s (%s)"
-
-#: src/gdbm_load.c:290
-#, c-format
-msgid "cannot load from %s"
-msgstr "kan ikke indlæse fra %s"
-
-#: src/gdbm_load.c:307
-msgid "gdbm_setopt failed"
-msgstr "gdbm_setopt mislykkedes"
-
-#: src/gdbmerrno.c:103
+#: src/gdbmerrno.c:102
 msgid "No error"
 msgstr "Ingen fejl"
 
-#: src/gdbmerrno.c:104
+#: src/gdbmerrno.c:103
 msgid "Malloc error"
 msgstr "Malloc-fejl"
 
-#: src/gdbmerrno.c:105
+#: src/gdbmerrno.c:104
 msgid "Block size error"
 msgstr "Blok størrelse-fejl"
 
-#: src/gdbmerrno.c:106
+#: src/gdbmerrno.c:105
 msgid "File open error"
 msgstr "Fil åben-fejl"
 
-#: src/gdbmerrno.c:107
+#: src/gdbmerrno.c:106
 msgid "File write error"
 msgstr "Fil skriv-fejl"
 
-#: src/gdbmerrno.c:108
+#: src/gdbmerrno.c:107
 msgid "File seek error"
 msgstr "Fil søg-fejl"
 
-#: src/gdbmerrno.c:109
+#: src/gdbmerrno.c:108
 msgid "File read error"
 msgstr "Fil læse-fejl"
 
-#: src/gdbmerrno.c:110
+#: src/gdbmerrno.c:109
 msgid "Bad magic number"
 msgstr "Ugyldigt magisk nummer"
 
-#: src/gdbmerrno.c:111
+#: src/gdbmerrno.c:110
 msgid "Empty database"
 msgstr "Tom database"
 
-#: src/gdbmerrno.c:112
+#: src/gdbmerrno.c:111
 msgid "Can't be reader"
 msgstr "Kan ikke være læser"
 
-#: src/gdbmerrno.c:113
+#: src/gdbmerrno.c:112
 msgid "Can't be writer"
 msgstr "Kan ikke være skriver"
 
-#: src/gdbmerrno.c:114
+#: src/gdbmerrno.c:113
 msgid "Reader can't delete"
 msgstr "Skriver kan ikke slette"
 
-#: src/gdbmerrno.c:115
+#: src/gdbmerrno.c:114
 msgid "Reader can't store"
 msgstr "Læser kan ikke lagre"
 
-#: src/gdbmerrno.c:116
+#: src/gdbmerrno.c:115
 msgid "Reader can't reorganize"
 msgstr "Læser kan ikke omorganisere"
 
-#: src/gdbmerrno.c:117
+#: src/gdbmerrno.c:116
 msgid "Should not happen: unused error code"
 msgstr "Bør ikke ske: ubrugt fejlkode"
 
-#: src/gdbmerrno.c:118 src/gdbmtool.c:457
+#: src/gdbmerrno.c:117
 msgid "Item not found"
 msgstr "Element blev ikke fundet"
 
-#: src/gdbmerrno.c:119
+#: src/gdbmerrno.c:118
 msgid "Reorganize failed"
 msgstr "Omorganisering mislykkedes"
 
-#: src/gdbmerrno.c:120
+#: src/gdbmerrno.c:119
 msgid "Cannot replace"
 msgstr "Kan ikke erstatte"
 
-#: src/gdbmerrno.c:121
-msgid "Illegal data"
-msgstr "Illegale data"
+#: src/gdbmerrno.c:120
+msgid "Malformed data"
+msgstr ""
 
-#: src/gdbmerrno.c:122
+#: src/gdbmerrno.c:121
 msgid "Option already set"
 msgstr "Tilvalg allerede angivet"
 
-#: src/gdbmerrno.c:123
-msgid "Illegal option"
-msgstr "Illegalt tilvalg"
+#: src/gdbmerrno.c:122
+msgid "Bad option value"
+msgstr ""
 
-#: src/gdbmerrno.c:124
+#: src/gdbmerrno.c:123
 msgid "Byte-swapped file"
 msgstr "Byte-ombyttet fil"
 
-#: src/gdbmerrno.c:125
+#: src/gdbmerrno.c:124
 msgid "File header assumes wrong off_t size"
 msgstr ""
 
-#: src/gdbmerrno.c:126
+#: src/gdbmerrno.c:125
 msgid "Bad file flags"
 msgstr "Ugyldige filflag"
 
-#: src/gdbmerrno.c:127
+#: src/gdbmerrno.c:126
 msgid "Cannot stat file"
 msgstr "Kan ikke køre stat på fil"
 
-#: src/gdbmerrno.c:128
+#: src/gdbmerrno.c:127
 msgid "Unexpected end of file"
 msgstr "Uventet filafslutning"
 
-#: src/gdbmerrno.c:129
+#: src/gdbmerrno.c:128
 msgid "Database name not given"
 msgstr "Databasenavn var ikke angivet"
 
-#: src/gdbmerrno.c:130
+#: src/gdbmerrno.c:129
 msgid "Failed to restore file owner"
 msgstr "Kunne ikke gendanne filejer"
 
-#: src/gdbmerrno.c:131
+#: src/gdbmerrno.c:130
 msgid "Failed to restore file mode"
 msgstr "Kunne ikke gendanne filtilstand"
 
-#: src/gdbmerrno.c:132
+#: src/gdbmerrno.c:131
 msgid "Database needs recovery"
 msgstr "Databasen kræver gendannelse"
 
-#: src/gdbmerrno.c:133
+#: src/gdbmerrno.c:132
 msgid "Failed to create backup copy"
 msgstr "Kunne ikke oprette sikkerhedskopi"
 
-#: src/gdbmerrno.c:134
+#: src/gdbmerrno.c:133
 msgid "Bucket directory overflow"
 msgstr "Spand-mappeoverløb"
 
-#: src/gdbmerrno.c:135
+#: src/gdbmerrno.c:134
 msgid "Malformed bucket header"
 msgstr ""
 
-#: src/gdbmerrno.c:136
+#: src/gdbmerrno.c:135
 #, fuzzy
 msgid "Malformed database file header"
 msgstr "vis databasens filteksthoved"
 
+#. TRANSLATORS: avail_block is a field name. Don't translate it.
 #: src/gdbmerrno.c:137
 msgid "Malformed avail_block"
 msgstr ""
@@ -372,71 +206,287 @@ msgstr ""
 msgid "Error truncating file"
 msgstr ""
 
-#: src/gdbmtool.c:92
+#: src/gdbmerrno.c:143
+msgid "Bucket cache corrupted"
+msgstr ""
+
+#: src/gdbmerrno.c:144
+msgid "Malformed bucket hash entry"
+msgstr ""
+
+#: src/gdbmerrno.c:145
+#, fuzzy
+msgid "Reflink failed"
+msgstr "Omorganisering mislykkedes"
+
+#: src/gdbmerrno.c:146
+#, fuzzy
+msgid "Failed to resolve real path name"
+msgstr "Kunne ikke gendanne filtilstand"
+
+#: src/gdbmerrno.c:147
+#, fuzzy
+msgid "Function usage error"
+msgstr "Fil søg-fejl"
+
+#: src/recover.c:272
+#, fuzzy, c-format
+msgid "can't read bucket #%d: %s"
+msgstr "kan ikke konvertere værdi #%d: %s"
+
+#: src/recover.c:300
+#, c-format
+msgid "can't read key pair %d:%d (%lu:%d): %s"
+msgstr ""
+
+#: src/recover.c:330
+#, c-format
+msgid "ignoring duplicate key %d:%d (%lu:%d)"
+msgstr ""
+
+#: src/recover.c:340
+#, c-format
+msgid "fatal: can't store element %d:%d (%lu:%d): %s"
+msgstr ""
+
+#: tools/datconv.c:291
+#, c-format
+msgid "(not enough data)"
+msgstr "(ikke nok data)"
+
+#: tools/datconv.c:383
+msgid "cannot convert"
+msgstr "kan ikke konvertere"
+
+#: tools/datconv.c:392
+#, c-format
+msgid "cannot convert value #%d: %s"
+msgstr "kan ikke konvertere værdi #%d: %s"
+
+#: tools/datconv.c:418 tools/datconv.c:467
+msgid "mixing tagged and untagged values is not allowed"
+msgstr "blanding af mærkede og umærkede værdier er ikke tilladt"
+
+#: tools/datconv.c:472
+#, c-format
+msgid "%s: no such field in datum"
+msgstr ""
+
+#: tools/gdbm_dump.c:22
+msgid "dump a GDBM database to a file"
+msgstr ""
+
+#: tools/gdbm_dump.c:23
+#, fuzzy
+msgid "DB_FILE [FILE]"
+msgstr "DB-FIL"
+
+#: tools/gdbm_dump.c:25
+msgid "select dump format"
+msgstr "vælg dump-format"
+
+#: tools/gdbm_dump.c:67
+msgid "unknown dump format"
+msgstr "ukendt dump-format"
+
+#: tools/gdbm_dump.c:74 tools/gdbm_load.c:215
+msgid "unknown option"
+msgstr "ukendt tilvalg"
+
+#: tools/gdbm_dump.c:90 tools/gdbm_load.c:231
+#, c-format
+msgid "too many arguments; try `%s -h' for more info"
+msgstr "for mange argumenter; prøv »%s -h« for yderligere information"
+
+#: tools/gdbm_dump.c:110 tools/gdbm_load.c:251
+#, c-format
+msgid "cannot open %s"
+msgstr "kan ikke åbne %s"
+
+#: tools/gdbm_dump.c:118 tools/gdbm_load.c:261
+msgid "gdbm_open failed"
+msgstr "gdbm_open mislykkedes"
+
+#: tools/gdbm_dump.c:125
+msgid "dump error"
+msgstr "dump-fejl"
+
+#: tools/gdbm_load.c:32
+msgid "load a GDBM database from a file"
+msgstr ""
+
+#: tools/gdbm_load.c:33
+#, fuzzy
+msgid "FILE [DB_FILE]"
+msgstr "DB-FIL"
+
+#: tools/gdbm_load.c:35
+msgid "replace records in the existing database"
+msgstr "erstat poster i eksisterende database"
+
+#: tools/gdbm_load.c:36
+msgid "MODE"
+msgstr "TILSTAND"
+
+#: tools/gdbm_load.c:36
+msgid "set file mode"
+msgstr "angiv filtilstand"
+
+# oversættelse af navn: godt nok i tvivl her, fransk har oversat, polsk er oversat,
+# vietnamesisk har oversat, tysk er svær at se :o) 
+#: tools/gdbm_load.c:37
+msgid "NAME|UID[:NAME|GID]"
+msgstr "NAVN|UID[:NAVN|GID]"
+
+#: tools/gdbm_load.c:37
+msgid "set file owner"
+msgstr "angiv filejer"
+
+#: tools/gdbm_load.c:38
+msgid "do not attempt to set file meta-data"
+msgstr "forsøg ikke at angive filmetadata"
+
+#: tools/gdbm_load.c:39
+msgid "use memory mapping"
+msgstr "brug hukommelseskortlægning"
+
+#: tools/gdbm_load.c:40 tools/gdbm_load.c:41
+msgid "NUM"
+msgstr "NUM"
+
+#: tools/gdbm_load.c:40
+msgid "set the cache size"
+msgstr "angiv cachestørrelsen"
+
+#: tools/gdbm_load.c:41
+msgid "set the block size"
+msgstr "angiv blokstørrelsen"
+
+#: tools/gdbm_load.c:79
+#, c-format
+msgid "invalid number: %s"
+msgstr "ugyldigt nummer: %s"
+
+#: tools/gdbm_load.c:84
+#, c-format
+msgid "invalid number: %s: %s"
+msgstr "ugyldigt nummer: %s: %s"
+
+#: tools/gdbm_load.c:136
+#, c-format
+msgid "invalid octal number"
+msgstr "ugyldigt oktaltal"
+
+#: tools/gdbm_load.c:161
+#, c-format
+msgid "invalid user name: %s"
+msgstr "ugyldigt brugernavn: %s"
+
+#: tools/gdbm_load.c:180
+#, c-format
+msgid "invalid group name: %s"
+msgstr "ugyldigt gruppenavn: %s"
+
+#: tools/gdbm_load.c:192
+#, c-format
+msgid "no such UID: %lu"
+msgstr "ingen sådan UID: %lu"
+
+#: tools/gdbm_load.c:267
+#, c-format
+msgid "gdbm_setopt failed: %s"
+msgstr "gdbm_setopt mislykkedes: %s"
+
+#: tools/gdbm_load.c:281 tools/gdbm_load.c:299
+#, c-format
+msgid "error restoring metadata: %s (%s)"
+msgstr "fejl under gendannelse af metadata %s (%s)"
+
+#: tools/gdbm_load.c:290 tools/gdbmshell.c:1635
+#, c-format
+msgid "cannot load from %s"
+msgstr "kan ikke indlæse fra %s"
+
+#: tools/gdbm_load.c:307
+msgid "gdbm_setopt failed"
+msgstr "gdbm_setopt mislykkedes"
+
+#: tools/gdbmshell.c:64 tools/gdbmshell.c:157 tools/gdbmshell.c:361
+#: tools/gdbmshell.c:497 tools/gdbmshell.c:873 tools/gdbmshell.c:910
+#: tools/gdbmshell.c:919
+#, fuzzy, c-format
+msgid "%s failed"
+msgstr "malloc mislykkedes"
+
+#: tools/gdbmshell.c:120
 #, c-format
 msgid "database %s already exists; overwrite"
 msgstr "databasen %s findes allerede; overskriv"
 
-#: src/gdbmtool.c:104
-#, c-format
-msgid "cannot open database %s: %s"
+#: tools/gdbmshell.c:151
+#, fuzzy, c-format
+msgid "cannot open database %s"
 msgstr "kan ikke åbne databasen %s: %s"
 
-#: src/gdbmtool.c:141
-#, c-format
-msgid "warning: using default database file %s"
-msgstr "advarsel: bruger standarddatabasefilen %s"
+#: tools/gdbmshell.c:252
+#, fuzzy, c-format
+msgid "Bucket #%d"
+msgstr "Spand #%s"
 
-#: src/gdbmtool.c:190
+#: tools/gdbmshell.c:255
 #, c-format
 msgid ""
-"bits = %d\n"
-"count= %d\n"
-"Hash Table:\n"
+"address     = %lu\n"
+"depth       = %d\n"
+"hash prefix = %08x\n"
+"references  = %u"
 msgstr ""
-"bit  = %d\n"
-"antal= %d\n"
-"Hash-tabel:\n"
 
-#: src/gdbmtool.c:193
+#: tools/gdbmshell.c:270
+#, c-format
+msgid ""
+"count       = %d\n"
+"load factor = %3d\n"
+msgstr ""
+
+#: tools/gdbmshell.c:275
+msgid "Hash Table:\n"
+msgstr ""
+
+#: tools/gdbmshell.c:277
 #, c-format
 msgid ""
 "    #    hash value     key size    data size     data adr home  key start\n"
 msgstr ""
 "    #    hash-værdi     nøglestr.   datastr.      dataadr. hjem  nøglestart\n"
 
-#: src/gdbmtool.c:211
-#, c-format
+#: tools/gdbmshell.c:295
+#, fuzzy, c-format
 msgid ""
 "\n"
-"Avail count = %1d\n"
+"Avail count = %d\n"
 msgstr ""
 "\n"
 "Tilg. antal = %1d\n"
 
-#: src/gdbmtool.c:212
+#: tools/gdbmshell.c:296
 #, c-format
 msgid "Address           size\n"
 msgstr "Adresse           str.\n"
 
-#: src/gdbmtool.c:284
-#, c-format
-msgid ""
-"\n"
-"header block\n"
-"size  = %d\n"
-"count = %d\n"
+#: tools/gdbmshell.c:347
+msgid "header block"
 msgstr ""
-"\n"
-"teksthovedblok\n"
-"str.  = %d\n"
-"antal = %d\n"
 
-#: src/gdbmtool.c:310
-#, c-format
+#: tools/gdbmshell.c:349
+#, fuzzy, c-format
+msgid "block = %lu"
+msgstr "  næste blok   = %lu\n"
+
+#: tools/gdbmshell.c:350
+#, fuzzy, c-format
 msgid ""
 "\n"
-"block = %d\n"
 "size  = %d\n"
 "count = %d\n"
 msgstr ""
@@ -445,167 +495,166 @@ msgstr ""
 "str.  = %d\n"
 "antal = %d\n"
 
-#: src/gdbmtool.c:315
-msgid "invalid avail_block"
-msgstr ""
-
-#: src/gdbmtool.c:330
+#: tools/gdbmshell.c:374
 #, fuzzy, c-format
 msgid ""
-"Bucket Cache (size %zu):\n"
+"Bucket Cache (size %zu/%zu):\n"
 "  Index:         Address  Changed  Data_Hash \n"
 msgstr ""
 "Spand-cache (str. %zu):\n"
 "  Indeks: Adresse  Ændret   Datahash \n"
 
-#: src/gdbmtool.c:338
+#: tools/gdbmshell.c:381
 msgid "True"
 msgstr "Sand"
 
-#: src/gdbmtool.c:338
+#: tools/gdbmshell.c:381
 msgid "False"
 msgstr "Falsk"
 
-#: src/gdbmtool.c:343
-#, c-format
-msgid "Bucket cache has not been initialized.\n"
+#: tools/gdbmshell.c:386
+#, fuzzy, c-format
+msgid "Bucket cache is empty.\n"
 msgstr "Spand-cache er ikke blevet initialiseret.\n"
 
-#: src/gdbmtool.c:401
+#: tools/gdbmshell.c:463
 msgid "nothing to close"
 msgstr "intet at lukke"
 
-#: src/gdbmtool.c:440
+#: tools/gdbmshell.c:506
 msgid "count buffer overflow"
 msgstr "antal bufferoverløb"
 
-#: src/gdbmtool.c:443
+#: tools/gdbmshell.c:509
 #, c-format
 msgid "There is %s item in the database.\n"
 msgid_plural "There are %s items in the database.\n"
 msgstr[0] "Der er %s element i databasen.\n"
 msgstr[1] "Der er %s elementer i databasen.\n"
 
-#: src/gdbmtool.c:459
-#, c-format
-msgid "Can't delete: %s"
-msgstr "Kan ikke slette: %s"
-
-#: src/gdbmtool.c:475 src/gdbmtool.c:542
-msgid "No such item found."
+#: tools/gdbmshell.c:526 tools/gdbmshell.c:550 tools/gdbmshell.c:630
+#, fuzzy
+msgid "No such item found"
 msgstr "Intet sådant element fundet."
 
-#: src/gdbmtool.c:477
-#, c-format
-msgid "Can't fetch data: %s"
+#: tools/gdbmshell.c:529
+#, fuzzy
+msgid "Can't delete"
+msgstr "Kan ikke slette: %s"
+
+#: tools/gdbmshell.c:553
+#, fuzzy
+msgid "Can't fetch data"
 msgstr "Kan ikke hente data: %s"
 
-#: src/gdbmtool.c:487
-#, fuzzy, c-format
-msgid "Item not inserted: %s."
+#: tools/gdbmshell.c:566
+#, fuzzy
+msgid "Item not inserted"
 msgstr "Element ikke indsat."
 
-#: src/gdbmtool.c:510
+#: tools/gdbmshell.c:594
 #, c-format
 msgid "No such item found.\n"
 msgstr "Intet sådant element fundet.\n"
 
-#: src/gdbmtool.c:512 src/gdbmtool.c:547
-#, c-format
-msgid "Can't find key: %s"
+#: tools/gdbmshell.c:597
+#, fuzzy
+msgid "Can't find first key"
 msgstr "Kan ikke finde nøgle: %s"
 
-#: src/gdbmtool.c:555
-msgid "Reorganization failed."
+#: tools/gdbmshell.c:634
+#, fuzzy
+msgid "Can't find next key"
+msgstr "Kan ikke finde nøgle: %s"
+
+#: tools/gdbmshell.c:645
+#, fuzzy
+msgid "Reorganization failed"
 msgstr "Omorganisering mislykkedes."
 
-#: src/gdbmtool.c:557
+#: tools/gdbmshell.c:649
 msgid "Reorganization succeeded."
 msgstr "Omorganisering lykkedes."
 
-#: src/gdbmtool.c:607 src/gdbmtool.c:617 src/gdbmtool.c:627 src/gdbmtool.c:734
-#: src/gdbmtool.c:743
-#, c-format
-msgid "not a number (stopped near %s)\n"
+#: tools/gdbmshell.c:700 tools/gdbmshell.c:710 tools/gdbmshell.c:720
+#: tools/gdbmshell.c:825 tools/gdbmshell.c:834
+#, fuzzy, c-format
+msgid "not a number (stopped near %s)"
 msgstr "ikke et nummer (stoppet nær %s)\n"
 
-#: src/gdbmtool.c:634 src/gdbmtool.c:978 src/gdbmtool.c:1010
+#: tools/gdbmshell.c:727 tools/gdbmshell.c:1561 tools/gdbmshell.c:1596
 #, c-format
 msgid "unrecognized argument: %s"
 msgstr "ukendt argument: %s"
 
-#: src/gdbmtool.c:643
+#: tools/gdbmshell.c:736
 #, c-format
 msgid "Recovery succeeded.\n"
 msgstr "Gendannelse lykkedes.\n"
 
-#: src/gdbmtool.c:647
+#: tools/gdbmshell.c:740
 #, c-format
 msgid "Keys recovered: %lu, failed: %lu, duplicate: %lu\n"
 msgstr ""
 
-#: src/gdbmtool.c:652
+#: tools/gdbmshell.c:745
 #, c-format
 msgid "Buckets recovered: %lu, failed: %lu\n"
 msgstr ""
 
-#: src/gdbmtool.c:660
+#: tools/gdbmshell.c:753
 #, c-format
 msgid "Original database preserved in file %s"
 msgstr "Original database bevaret i filen %s"
 
-#: src/gdbmtool.c:668
-#, c-format
-msgid "Recovery failed: %s"
+#: tools/gdbmshell.c:761
+#, fuzzy
+msgid "Recovery failed"
 msgstr "Gendannelse mislykkedes: %s"
 
-#: src/gdbmtool.c:712
+#: tools/gdbmshell.c:812 tools/gdbmshell.c:894
 #, c-format
 msgid "no current bucket\n"
 msgstr "ingen nuværende spand\n"
 
-#: src/gdbmtool.c:716
+#: tools/gdbmshell.c:861
 #, c-format
-msgid "Bucket #%s"
-msgstr "Spand #%s"
-
-#: src/gdbmtool.c:719
-msgid "Current bucket"
-msgstr "Nuværende spand"
-
-#: src/gdbmtool.c:720
-#, c-format
-msgid ""
-"\n"
-" current directory entry = %d.\n"
+msgid "bucket number out of range (0..%lu)"
 msgstr ""
-"\n"
-" nuværende mappepost = %d.\n"
 
-#: src/gdbmtool.c:722
+#: tools/gdbmshell.c:904 tools/gdbmshell.c:916
 #, c-format
-msgid " current bucket address  = %lu.\n"
-msgstr " nuværende spandadresse = %lu.\n"
+msgid "no sibling\n"
+msgstr ""
 
-#: src/gdbmtool.c:765
-msgid "Not a bucket."
-msgstr "Ikke en spand."
-
-#: src/gdbmtool.c:812
+#: tools/gdbmshell.c:964
 #, c-format
 msgid "Hash table directory.\n"
 msgstr "Hashtabelmappe.\n"
 
-#: src/gdbmtool.c:813
-#, c-format
+#: tools/gdbmshell.c:965
+#, fuzzy, c-format
 msgid ""
-"  Size =  %d.  Bits = %d,  Buckets = %zu.\n"
+"  Size =  %d.  Capacity = %lu.  Bits = %d,  Buckets = %zu.\n"
 "\n"
 msgstr ""
 "  Str. =  %d.  Bit = %d,   Spande = %zu.\n"
 "\n"
 
-#: src/gdbmtool.c:838
+#: tools/gdbmshell.c:972
+msgid "Index"
+msgstr ""
+
+#: tools/gdbmshell.c:972
+msgid "Hash Pfx"
+msgstr ""
+
+#: tools/gdbmshell.c:972
+#, fuzzy
+msgid "Bucket address"
+msgstr "Spand #%s"
+
+#: tools/gdbmshell.c:1040
 #, c-format
 msgid ""
 "\n"
@@ -616,381 +665,462 @@ msgstr ""
 "Filteksthoved: \n"
 "\n"
 
-#: src/gdbmtool.c:839
-#, c-format
-msgid "  table        = %lu\n"
+#: tools/gdbmshell.c:1041
+#, fuzzy, c-format
+msgid "  type            = %s\n"
 msgstr "  tabel        = %lu\n"
 
-#: src/gdbmtool.c:841
-#, c-format
-msgid "  table size   = %d\n"
-msgstr "  tabelstr.    = %d\n"
+#: tools/gdbmshell.c:1042
+#, fuzzy, c-format
+msgid "  directory start = %lu\n"
+msgstr ""
+"\n"
+" nuværende mappepost = %d.\n"
 
-#: src/gdbmtool.c:842
-#, c-format
-msgid "  table bits   = %d\n"
-msgstr "  tabelbit     = %d\n"
-
-#: src/gdbmtool.c:843
-#, c-format
-msgid "  block size   = %d\n"
-msgstr "  blokstr.     = %d\n"
-
-#: src/gdbmtool.c:844
-#, c-format
-msgid "  bucket elems = %d\n"
-msgstr "  spand-elem. = %d\n"
-
-#: src/gdbmtool.c:845
-#, c-format
-msgid "  bucket size  = %d\n"
+#: tools/gdbmshell.c:1044
+#, fuzzy, c-format
+msgid "  directory size  = %d\n"
 msgstr "  spand-str.   = %d\n"
 
-#: src/gdbmtool.c:846
-#, c-format
-msgid "  header magic = %x\n"
+#: tools/gdbmshell.c:1045
+#, fuzzy, c-format
+msgid "  directory depth = %d\n"
+msgstr ""
+"\n"
+" nuværende mappepost = %d.\n"
+
+#: tools/gdbmshell.c:1046
+#, fuzzy, c-format
+msgid "  block size      = %d\n"
+msgstr "  blokstr.     = %d\n"
+
+#: tools/gdbmshell.c:1047
+#, fuzzy, c-format
+msgid "  bucket elems    = %d\n"
+msgstr "  spand-elem. = %d\n"
+
+#: tools/gdbmshell.c:1048
+#, fuzzy, c-format
+msgid "  bucket size     = %d\n"
+msgstr "  spand-str.   = %d\n"
+
+#: tools/gdbmshell.c:1049
+#, fuzzy, c-format
+msgid "  header magic    = %x\n"
 msgstr "  hovedmagi    = %x\n"
 
-#: src/gdbmtool.c:847
-#, c-format
-msgid "  next block   = %lu\n"
+#: tools/gdbmshell.c:1050
+#, fuzzy, c-format
+msgid "  next block      = %lu\n"
 msgstr "  næste blok   = %lu\n"
 
-#: src/gdbmtool.c:849
-#, c-format
-msgid "  avail size   = %d\n"
+#: tools/gdbmshell.c:1053
+#, fuzzy, c-format
+msgid "  avail size      = %d\n"
 msgstr "  tilg. str.   = %d\n"
 
-#: src/gdbmtool.c:850
-#, c-format
-msgid "  avail count  = %d\n"
+#: tools/gdbmshell.c:1054
+#, fuzzy, c-format
+msgid "  avail count     = %d\n"
 msgstr "  tilg. antal  = %d\n"
 
-#: src/gdbmtool.c:851
-#, c-format
-msgid "  avail nx blk = %lu\n"
+#: tools/gdbmshell.c:1055
+#, fuzzy, c-format
+msgid "  avail next block= %lu\n"
 msgstr "  tilg. nx-blk = %lu\n"
 
-#: src/gdbmtool.c:864
+#: tools/gdbmshell.c:1060
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Extended Header: \n"
+"\n"
+msgstr ""
+"\n"
+"Filteksthoved: \n"
+"\n"
+
+#: tools/gdbmshell.c:1061
+#, fuzzy, c-format
+msgid "      version = %d\n"
+msgstr "  tilg. antal  = %d\n"
+
+#: tools/gdbmshell.c:1062
+#, fuzzy, c-format
+msgid "      numsync = %u\n"
+msgstr "  tabel        = %lu\n"
+
+#: tools/gdbmshell.c:1176
+#, fuzzy
+msgid "bad file mode"
+msgstr "angiv filtilstand"
+
+#: tools/gdbmshell.c:1186
+msgid "insufficient precision"
+msgstr ""
+
+#. TRANSLATORS: Stands for "Not Available".
+#: tools/gdbmshell.c:1199
+msgid "N/A"
+msgstr ""
+
+#: tools/gdbmshell.c:1207 tools/gdbmshell.c:1212
+#, fuzzy
+msgid "can't open database"
+msgstr "kan ikke åbne databasen %s: %s"
+
+#: tools/gdbmshell.c:1217
+#, fuzzy
+msgid "not a regular file"
+msgstr "%s er ikke en normal fil"
+
+#: tools/gdbmshell.c:1222
+msgid "ERROR"
+msgstr ""
+
+#: tools/gdbmshell.c:1232
+#, c-format
+msgid "%s: ERROR: can't stat: %s"
+msgstr ""
+
+#: tools/gdbmshell.c:1256
+msgid "Invalid arguments in call to gdbm_latest_snapshot"
+msgstr ""
+
+#: tools/gdbmshell.c:1261
+msgid ""
+"Function is not implemented: GDBM is built without crash-tolerance support"
+msgstr ""
+
+#: tools/gdbmshell.c:1269
+msgid "Selected the most recent snapshot"
+msgstr ""
+
+#: tools/gdbmshell.c:1273
+msgid "Neither snapshot is readable"
+msgstr ""
+
+#: tools/gdbmshell.c:1278
+msgid "Error selecting snapshot"
+msgstr ""
+
+#: tools/gdbmshell.c:1283
+msgid "Snapshot modes and dates are the same"
+msgstr ""
+
+#: tools/gdbmshell.c:1288
+msgid "Snapshot sync counters differ by more than 1"
+msgstr ""
+
+#: tools/gdbmshell.c:1314
+#, fuzzy, c-format
+msgid "unexpected error code: %d"
+msgstr "uventet fejlindstilling %s: %d"
+
+#: tools/gdbmshell.c:1331
 #, c-format
 msgid "hash value = %x, bucket #%u, slot %u"
 msgstr "hash-værdi = %x, spand #%u, plads %u"
 
-#: src/gdbmtool.c:870
+#: tools/gdbmshell.c:1337
 #, c-format
 msgid "hash value = %x"
 msgstr "hash-værdi = %x"
 
-#: src/gdbmtool.c:934
+#: tools/gdbmshell.c:1390
+#, fuzzy, c-format
+msgid "unrecognized parameter: %s\n"
+msgstr "ukendt argument: %s"
+
+#: tools/gdbmshell.c:1397
+#, fuzzy
+msgid "select bucket first\n"
+msgstr "vælg dump-format"
+
+#: tools/gdbmshell.c:1448
 #, c-format
-msgid "%s; the key was:"
+msgid "error reading entry %d"
 msgstr ""
 
-#: src/gdbmtool.c:987
-#, c-format
-msgid "error dumping database: %s"
+#: tools/gdbmshell.c:1457 tools/gdbmshell.c:1495
+msgid "the key was:"
+msgstr ""
+
+#: tools/gdbmshell.c:1570
+#, fuzzy
+msgid "error dumping database"
 msgstr "der opstod en fejl under dumpning af databasen: %s"
 
-#: src/gdbmtool.c:1047
-#, c-format
-msgid "cannot load from %s: %s"
-msgstr "kan ikke indlæse fra %s: %s"
+#: tools/gdbmshell.c:1628
+#, fuzzy
+msgid "error restoring metadata"
+msgstr "fejl under gendannelse af metadata %s (%s)"
 
-#: src/gdbmtool.c:1063
+#: tools/gdbmshell.c:1661
 #, c-format
 msgid "Database file: %s\n"
 msgstr "Databasefil: %s\n"
 
-#: src/gdbmtool.c:1065
-msgid "No database name"
-msgstr "Intet databasenavn"
-
-#: src/gdbmtool.c:1067
+#: tools/gdbmshell.c:1663
 msgid "Database is open"
 msgstr "Database er åben"
 
-#: src/gdbmtool.c:1069
+#: tools/gdbmshell.c:1665
 msgid "Database is not open"
 msgstr "Database er ikke åben"
 
-#: src/gdbmtool.c:1123
+#: tools/gdbmshell.c:1720
 #, c-format
 msgid "unknown debug flag: %s"
 msgstr "ukendt fejlsøgningsflag: %s"
 
-#: src/gdbmtool.c:1126
+#: tools/gdbmshell.c:1723
 #, c-format
 msgid "invalid type of argument %d"
 msgstr "ugyldig type for argumentet %d"
 
-#: src/gdbmtool.c:1131
+#: tools/gdbmshell.c:1728
 #, c-format
 msgid "Debug flags:"
 msgstr "Fejlsøgningsflag:"
 
-#: src/gdbmtool.c:1137
+#: tools/gdbmshell.c:1734
 msgid "none"
 msgstr "ingen"
 
-#: src/gdbmtool.c:1141
+#: tools/gdbmshell.c:1738
 msgid "compiled without debug support"
 msgstr "kompileret uden fejlsøgningsunderstøttelse"
 
-#: src/gdbmtool.c:1196
+#: tools/gdbmshell.c:1789
+#, c-format
+msgid "command failed with status %d"
+msgstr ""
+
+#: tools/gdbmshell.c:1792
+#, c-format
+msgid "command terminated on signal %d"
+msgstr ""
+
+#. TRANSLATORS: %s is the stream name
+#: tools/gdbmshell.c:1862
+#, c-format
+msgid "input history is not available for %s input stream"
+msgstr ""
+
+#: tools/gdbmshell.c:1954
 msgid "count (number of entries)"
 msgstr "antal (antallet af poster)"
 
-#: src/gdbmtool.c:1199 src/gdbmtool.c:1214 src/gdbmtool.c:1242
-#: src/gdbmtool.c:1306
+#: tools/gdbmshell.c:1964 tools/gdbmshell.c:1992 tools/gdbmshell.c:2045
+#: tools/gdbmshell.c:2154
 msgid "KEY"
 msgstr "NØGLE"
 
-#: src/gdbmtool.c:1202
+#: tools/gdbmshell.c:1967
 msgid "delete a record"
 msgstr "slet en post"
 
-#: src/gdbmtool.c:1205 src/gdbmtool.c:1220 src/gdbmtool.c:1545
+#: tools/gdbmshell.c:1977 tools/gdbmshell.c:2005 tools/gdbmtool.c:93
 msgid "FILE"
 msgstr "FIL"
 
-#: src/gdbmtool.c:1211
+#: tools/gdbmshell.c:1982
 msgid "export"
 msgstr "eksport"
 
-#: src/gdbmtool.c:1217
+#: tools/gdbmshell.c:1995
 msgid "fetch record"
 msgstr "hent post"
 
-#: src/gdbmtool.c:1226
+#: tools/gdbmshell.c:2010
 msgid "import"
 msgstr "import"
 
-#: src/gdbmtool.c:1232
+#: tools/gdbmshell.c:2022
 msgid "list"
 msgstr "liste"
 
-#: src/gdbmtool.c:1235
+#: tools/gdbmshell.c:2032
 msgid "[KEY]"
 msgstr "[NØGLE]"
 
-#: src/gdbmtool.c:1239
-msgid "nextkey"
-msgstr "næstenøgle"
+#: tools/gdbmshell.c:2035
+msgid "continue iteration: get next key and datum"
+msgstr ""
 
-#: src/gdbmtool.c:1243
+#: tools/gdbmshell.c:2046
 msgid "DATA"
 msgstr "DATA"
 
-#: src/gdbmtool.c:1247
+#: tools/gdbmshell.c:2049
 msgid "store"
 msgstr "lager"
 
-#: src/gdbmtool.c:1253
-msgid "firstkey"
-msgstr "førstenøgle"
+#: tools/gdbmshell.c:2058
+msgid "begin iteration: get first key and datum"
+msgstr ""
 
-#: src/gdbmtool.c:1259
+#: tools/gdbmshell.c:2067
 msgid "reorganize"
 msgstr "omorganiser"
 
-#: src/gdbmtool.c:1272
+#: tools/gdbmshell.c:2086
 msgid "recover the database"
 msgstr "gendan databasen"
 
-#: src/gdbmtool.c:1278
+#: tools/gdbmshell.c:2095
 msgid "print avail list"
 msgstr "udskriv tilg. liste"
 
-#: src/gdbmtool.c:1281
-msgid "NUMBER"
+#: tools/gdbmshell.c:2105
+#, fuzzy
+msgid "[NUMBER]"
 msgstr "NUMMER"
 
-#: src/gdbmtool.c:1285
+#: tools/gdbmshell.c:2108
 msgid "print a bucket"
 msgstr "vis en spand"
 
-#: src/gdbmtool.c:1291
+#: tools/gdbmshell.c:2117
 msgid "print current bucket"
 msgstr "vis nuværende spand"
 
-#: src/gdbmtool.c:1297
+#: tools/gdbmshell.c:2126
+#, fuzzy
+msgid "print sibling bucket"
+msgstr "vis en spand"
+
+#: tools/gdbmshell.c:2135
 msgid "print hash directory"
 msgstr "vis hashmappe"
 
-#: src/gdbmtool.c:1303
+#: tools/gdbmshell.c:2144
 msgid "print database file header"
 msgstr "vis databasens filteksthoved"
 
-#: src/gdbmtool.c:1310
+#: tools/gdbmshell.c:2157
 msgid "hash value of key"
 msgstr "hash-værdi for nøgle"
 
-#: src/gdbmtool.c:1316
+#: tools/gdbmshell.c:2165
 msgid "print the bucket cache"
 msgstr "vis spandens mellemlager"
 
-#: src/gdbmtool.c:1322
+#: tools/gdbmshell.c:2174
 msgid "print current program status"
 msgstr "vis nuværende programstatus"
 
-#: src/gdbmtool.c:1328
+#: tools/gdbmshell.c:2182
+msgid "Synchronize the database with disk copy"
+msgstr ""
+
+#: tools/gdbmshell.c:2191
+msgid "Upgrade the database to extended format"
+msgstr ""
+
+#: tools/gdbmshell.c:2200
+msgid "Downgrade the database to standard format"
+msgstr ""
+
+#: tools/gdbmshell.c:2214
+msgid "analyze two database snapshots"
+msgstr ""
+
+#: tools/gdbmshell.c:2222
 msgid "print version of gdbm"
 msgstr "vis versionen for gdm"
 
-#: src/gdbmtool.c:1334
+#: tools/gdbmshell.c:2230
 msgid "print this help list"
 msgstr "vis denne hjælpeliste"
 
-#: src/gdbmtool.c:1340
+#: tools/gdbmshell.c:2239
 msgid "quit the program"
 msgstr "afslut programmet"
 
-#: src/gdbmtool.c:1346
+#: tools/gdbmshell.c:2251
 msgid "set or list variables"
 msgstr "angiv eller vis variabler"
 
-#: src/gdbmtool.c:1352
+#: tools/gdbmshell.c:2262
 msgid "unset variables"
 msgstr "fjern variabler"
 
-#: src/gdbmtool.c:1360
+#: tools/gdbmshell.c:2274
 msgid "define datum structure"
 msgstr "definer nulpunktsstruktur"
 
-#: src/gdbmtool.c:1367
+#: tools/gdbmshell.c:2285
 msgid "source command script"
 msgstr "kildekommandoskript"
 
-#: src/gdbmtool.c:1373
+#: tools/gdbmshell.c:2293
 msgid "close the database"
 msgstr "luk databasen"
 
-#: src/gdbmtool.c:1379
+#: tools/gdbmshell.c:2305
 msgid "open new database"
 msgstr "åbn ny database"
 
-#: src/gdbmtool.c:1383
+#: tools/gdbmshell.c:2314
 msgid "[FROM]"
 msgstr "[FRA]"
 
-#: src/gdbmtool.c:1384
+#: tools/gdbmshell.c:2315
 msgid "[COUNT]"
 msgstr "[ANTAL]"
 
-#: src/gdbmtool.c:1388
+#: tools/gdbmshell.c:2318
 msgid "show input history"
 msgstr "vis inddatahistorik"
 
-#: src/gdbmtool.c:1395
+#: tools/gdbmshell.c:2327
 msgid "query/set debug level"
 msgstr "forespørg/angiv fejlsøgningsniveau"
 
-#: src/gdbmtool.c:1525
+#: tools/gdbmshell.c:2335
+#, fuzzy
+msgid "invoke the shell"
+msgstr "vis denne hjælpeliste"
+
+#: tools/gdbmshell.c:2347
+msgid "describe GDBM error code"
+msgstr ""
+
+#: tools/gdbmshell.c:2492
 msgid "Invalid command. Try ? for help."
 msgstr "Ugyldig kommando. Prøv ? for hjælp."
 
-#: src/gdbmtool.c:1526
+#: tools/gdbmshell.c:2493
 msgid "Unknown command"
 msgstr "Ukendt kommando"
 
-#: src/gdbmtool.c:1534
-msgid "examine and/or modify a GDBM database"
-msgstr "undersøg og/eller ændr en GDBM-database"
-
-#: src/gdbmtool.c:1535
-msgid "DBFILE [COMMAND [ARG ...]]"
-msgstr ""
-
-#: src/gdbmtool.c:1543 src/gdbmtool.c:1544
-msgid "SIZE"
-msgstr "STR"
-
-#: src/gdbmtool.c:1543
-msgid "set block size"
-msgstr "angiv blokstørrelse"
-
-#: src/gdbmtool.c:1544
-msgid "set cache size"
-msgstr "angiv cache-str."
-
-#: src/gdbmtool.c:1545
-msgid "read commands from FILE"
-msgstr "læs kommandoer fra FIL"
-
-#: src/gdbmtool.c:1547
-msgid "disable file locking"
-msgstr "deaktiver fillåsning"
-
-#: src/gdbmtool.c:1548
-msgid "do not use mmap"
-msgstr "brug ikke mmap"
-
-#: src/gdbmtool.c:1549
-msgid "create database"
-msgstr "opret database"
-
-#: src/gdbmtool.c:1550
-msgid "do not read .gdbmtoolrc file"
-msgstr "læs ikke .gdmtoolrc-fil"
-
-#: src/gdbmtool.c:1551
-msgid "open database in read-only mode"
-msgstr "åbn database i skrivebeskyttet tilstand"
-
-#: src/gdbmtool.c:1552
-msgid "synchronize to disk after each write"
-msgstr "synkroniser til disk efter hver skrivning"
-
-#: src/gdbmtool.c:1553
-msgid "don't print initial banner"
-msgstr "udskriv ikke oprindelig banner"
-
-#: src/gdbmtool.c:1555
-msgid "enable lexical analyzer traces"
-msgstr ""
-
-#: src/gdbmtool.c:1556
-msgid "enable grammar traces"
-msgstr ""
-
-#: src/gdbmtool.c:1836
+#: tools/gdbmshell.c:2808
 #, c-format
 msgid "cannot coerce %s to %s"
 msgstr "kan ikke tvinge %s til %s"
 
-#: src/gdbmtool.c:1911
+#: tools/gdbmshell.c:2957
 #, c-format
 msgid "%s: not enough arguments"
 msgstr "%s: ikke nok argumenter"
 
-#: src/gdbmtool.c:1918
+#: tools/gdbmshell.c:2964
 msgid "unexpected eof"
 msgstr "uventet eof (filafslutning)"
 
-#: src/gdbmtool.c:1941
+#: tools/gdbmshell.c:2980
 #, c-format
 msgid "%s: too many arguments"
 msgstr "%s: for mange argumenter"
 
-#: src/gdbmtool.c:1969
+#: tools/gdbmshell.c:3041
 #, c-format
 msgid "cannot run pager `%s': %s"
 msgstr "kan ikke køre tekstviser »%s«: »%s«"
 
-#: src/gdbmtool.c:2018
-msgid "cannot find home directory"
-msgstr "kan ikke finde hjemmemappe"
-
-#: src/gdbmtool.c:2146
-#, c-format
-msgid "unknown option; try `%s -h' for more info"
-msgstr "ukendt tilvalg; prøv »%s -h« for yderligere information"
-
-#: src/gdbmtool.c:2170
-msgid "--file and command cannot be used together"
-msgstr ""
-
-#: src/gdbmtool.c:2192
+#: tools/gdbmshell.c:3146
 #, c-format
 msgid ""
 "\n"
@@ -1001,80 +1131,244 @@ msgstr ""
 "Velkommen til gdbm-værktøjet. Tast ? for hjælp.\n"
 "\n"
 
-#: src/gram.y:153
+#: tools/gdbmtool.c:48
+msgid "cannot find home directory"
+msgstr "kan ikke finde hjemmemappe"
+
+#: tools/gdbmtool.c:82
+msgid "examine and/or modify a GDBM database"
+msgstr "undersøg og/eller ændr en GDBM-database"
+
+#: tools/gdbmtool.c:83
+msgid "DBFILE [COMMAND [ARG ...]]"
+msgstr ""
+
+#: tools/gdbmtool.c:91 tools/gdbmtool.c:92
+msgid "SIZE"
+msgstr "STR"
+
+#: tools/gdbmtool.c:91
+msgid "set block size"
+msgstr "angiv blokstørrelse"
+
+#: tools/gdbmtool.c:92
+msgid "set cache size"
+msgstr "angiv cache-str."
+
+#: tools/gdbmtool.c:93
+msgid "read commands from FILE"
+msgstr "læs kommandoer fra FIL"
+
+#: tools/gdbmtool.c:95
+msgid "disable file locking"
+msgstr "deaktiver fillåsning"
+
+#: tools/gdbmtool.c:96
+msgid "do not use mmap"
+msgstr "brug ikke mmap"
+
+#: tools/gdbmtool.c:97
+msgid "create database"
+msgstr "opret database"
+
+#: tools/gdbmtool.c:98
+msgid "do not read .gdbmtoolrc file"
+msgstr "læs ikke .gdmtoolrc-fil"
+
+#: tools/gdbmtool.c:99
+msgid "open database in read-only mode"
+msgstr "åbn database i skrivebeskyttet tilstand"
+
+#: tools/gdbmtool.c:100
+msgid "synchronize to disk after each write"
+msgstr "synkroniser til disk efter hver skrivning"
+
+#: tools/gdbmtool.c:101
+msgid "don't print initial banner"
+msgstr "udskriv ikke oprindelig banner"
+
+#. TRANSLATORS: File Descriptor.
+#: tools/gdbmtool.c:104
+msgid "FD"
+msgstr ""
+
+#: tools/gdbmtool.c:105
+msgid "open database at the given file descriptor"
+msgstr ""
+
+#: tools/gdbmtool.c:106
+msgid "extended format (numsync)"
+msgstr ""
+
+#: tools/gdbmtool.c:108
+msgid "enable trace mode"
+msgstr ""
+
+#: tools/gdbmtool.c:109
+msgid "print timing after each command"
+msgstr ""
+
+#: tools/gdbmtool.c:111
+msgid "enable lexical analyzer traces"
+msgstr ""
+
+#: tools/gdbmtool.c:112
+msgid "enable grammar traces"
+msgstr ""
+
+#: tools/gdbmtool.c:149
+#, fuzzy, c-format
+msgid "invalid file descriptor: %s"
+msgstr "ugyldigt brugernavn: %s"
+
+#: tools/gdbmtool.c:226
+#, fuzzy, c-format
+msgid "unknown option %s; try `%s -h' for more info"
+msgstr "ukendt tilvalg; prøv »%s -h« for yderligere information"
+
+#: tools/gdbmtool.c:229
+#, fuzzy, c-format
+msgid "unknown option %c; try `%s -h' for more info"
+msgstr "ukendt tilvalg; prøv »%s -h« for yderligere information"
+
+#: tools/gdbmtool.c:253
+msgid "--file and command cannot be used together"
+msgstr ""
+
+#: tools/gram.y:172
 #, c-format
 msgid "duplicate tag: %s"
 msgstr ""
 
-#: src/gram.y:228
+#: tools/gram.y:253
 #, c-format
 msgid "expected \"key\" or \"content\", but found \"%s\""
 msgstr "forventede »key« eller »content«, men fandt »%s«"
 
-#: src/gram.y:299 src/gram.y:320 src/gram.y:352
+#: tools/gram.y:325 tools/gram.y:354 tools/gram.y:386
 #, c-format
 msgid "no such variable: %s"
 msgstr "ingen sådan variabel: %s"
 
-#: src/gram.y:303
+#: tools/gram.y:329
 #, c-format
 msgid "%s is not a boolean variable"
 msgstr "%s er ikke en boolesk variabel"
 
-#: src/gram.y:307 src/gram.y:332
+#: tools/gram.y:333
+#, fuzzy, c-format
+msgid "%s: setting is not allowed"
+msgstr "%s: værdi %s er ikke tilladt"
+
+#: tools/gram.y:337
+#, fuzzy
+msgid "can't set variable"
+msgstr "fjern variabler"
+
+#: tools/gram.y:341 tools/gram.y:366
 #, c-format
 msgid "unexpected error setting %s: %d"
 msgstr "uventet fejlindstilling %s: %d"
 
-#: src/gram.y:324
+#: tools/gram.y:358
 #, c-format
 msgid "%s: bad variable type"
 msgstr "%s: ugyldig variabeltype"
 
-#: src/gram.y:328
+#: tools/gram.y:362
 #, c-format
 msgid "%s: value %s is not allowed"
 msgstr "%s: værdi %s er ikke tilladt"
 
-#: src/gram.y:356
+#: tools/gram.y:390
 #, c-format
 msgid "%s: variable cannot be unset"
 msgstr "%s: variabel kan ikke fjernes"
 
-#: src/lex.l:96
+#: tools/input-file.c:60
+#, c-format
+msgid "cannot open `%s': %s"
+msgstr "kan ikke åbne »%s«: %s"
+
+#: tools/input-file.c:65
+#, c-format
+msgid "%s is not a regular file"
+msgstr "%s er ikke en normal fil"
+
+#: tools/input-file.c:72
+#, c-format
+msgid "cannot open %s for reading: %s"
+msgstr "kan ikke åbne %s for skrivning: %s"
+
+#: tools/lex.l:144
 msgid "recursive sourcing"
 msgstr "rekursiv sourcing"
 
-#: src/lex.l:98
+#: tools/lex.l:146
 #, c-format
 msgid "%s already sourced here"
 msgstr "%s allerede sourcet her"
 
-#: src/lex.l:204 src/lex.l:214
+#: tools/lex.l:257 tools/lex.l:267
 msgid "invalid #line statement"
 msgstr "ugyldig #line-udtryk"
 
-#: src/parseopt.c:49
+#: tools/parseopt.c:49
 msgid "give this help list"
 msgstr "vis denne hjælpeliste"
 
-#: src/parseopt.c:50
+#: tools/parseopt.c:50
 msgid "print program version"
 msgstr "vis programversion"
 
-#: src/parseopt.c:51
+#: tools/parseopt.c:51
 msgid "give a short usage message"
 msgstr "vis en kort brugsbesked"
 
-#: src/parseopt.c:346 src/parseopt.c:429
+#: tools/parseopt.c:289
+#, c-format
+msgid "error in ARGP_HELP_FMT: improper usage of [no-]%s\n"
+msgstr ""
+
+#: tools/parseopt.c:307
+#, c-format
+msgid "error in ARGP_HELP_FMT: bad value for %s"
+msgstr ""
+
+#: tools/parseopt.c:311
+#, c-format
+msgid " (near %s)"
+msgstr ""
+
+#: tools/parseopt.c:320
+#, c-format
+msgid "error in ARGP_HELP_FMT: %s value is out of range\n"
+msgstr ""
+
+#: tools/parseopt.c:331
+#, c-format
+msgid "%s: ARGP_HELP_FMT parameter requires a value\n"
+msgstr ""
+
+#: tools/parseopt.c:340
+#, c-format
+msgid "%s: Unknown ARGP_HELP_FMT parameter\n"
+msgstr ""
+
+#: tools/parseopt.c:367
+#, c-format
+msgid "ARGP_HELP_FMT: missing delimiter near %s\n"
+msgstr ""
+
+#: tools/parseopt.c:487 tools/parseopt.c:565
 msgid "Usage:"
 msgstr "Brug:"
 
-#: src/parseopt.c:348
+#: tools/parseopt.c:489
 msgid "OPTION"
 msgstr "TILVALG"
 
-#: src/parseopt.c:362
+#: tools/parseopt.c:510
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
@@ -1086,7 +1380,7 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: src/parseopt.c:373
+#: tools/parseopt.c:523
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr ""
@@ -1096,7 +1390,7 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk\n"
 
-#: src/parseopt.c:376
+#: tools/parseopt.c:526
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "%s hjemmeside: <%s>\n"
@@ -1104,48 +1398,84 @@ msgstr "%s hjemmeside: <%s>\n"
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
-#: src/parseopt.c:539
+#: tools/parseopt.c:667
 msgid "(C)"
 msgstr "(C)"
 
-#: src/recover.c:267
-#, fuzzy, c-format
-msgid "can't read bucket #%d: %s"
-msgstr "kan ikke konvertere værdi #%d: %s"
-
-#: src/recover.c:295
-#, c-format
-msgid "can't read key pair %d:%d (%lu:%d): %s"
-msgstr ""
-
-#: src/recover.c:325
-#, c-format
-msgid "ignoring duplicate key %d:%d (%lu:%d)"
-msgstr ""
-
-#: src/recover.c:335
-#, c-format
-msgid "fatal: can't store element %d:%d (%lu:%d): %s"
-msgstr ""
-
-#: src/util.c:99
+#. TRANSLATORS: Please, don't translate 'y' and 'n'.
+#: tools/util.c:100
 msgid "Please, reply 'y' or 'n'"
 msgstr ""
+
+#: tools/var.c:792
+#, fuzzy, c-format
+msgid "unrecognized error code: %s"
+msgstr "ukendt argument: %s"
+
+#~ msgid "couldn't init cache"
+#~ msgstr "kunne ikke initialisere mellemlager"
+
+#~ msgid "Illegal data"
+#~ msgstr "Illegale data"
+
+#~ msgid "Illegal option"
+#~ msgstr "Illegalt tilvalg"
 
 #~ msgid "Wrong file offset"
 #~ msgstr "Forkert filforskydning"
 
+#~ msgid "warning: using default database file %s"
+#~ msgstr "advarsel: bruger standarddatabasefilen %s"
+
+#~ msgid ""
+#~ "bits = %d\n"
+#~ "count= %d\n"
+#~ "Hash Table:\n"
+#~ msgstr ""
+#~ "bit  = %d\n"
+#~ "antal= %d\n"
+#~ "Hash-tabel:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "header block\n"
+#~ "size  = %d\n"
+#~ "count = %d\n"
+#~ msgstr ""
+#~ "\n"
+#~ "teksthovedblok\n"
+#~ "str.  = %d\n"
+#~ "antal = %d\n"
+
+#~ msgid "Current bucket"
+#~ msgstr "Nuværende spand"
+
+#~ msgid " current bucket address  = %lu.\n"
+#~ msgstr " nuværende spandadresse = %lu.\n"
+
+#~ msgid "Not a bucket."
+#~ msgstr "Ikke en spand."
+
+#~ msgid "  table size   = %d\n"
+#~ msgstr "  tabelstr.    = %d\n"
+
+#~ msgid "  table bits   = %d\n"
+#~ msgstr "  tabelbit     = %d\n"
+
 #~ msgid "cannot fetch data; the key was:"
 #~ msgstr "kan ikke hente data; nøglen var:"
 
+#~ msgid "cannot load from %s: %s"
+#~ msgstr "kan ikke indlæse fra %s: %s"
+
+#~ msgid "No database name"
+#~ msgstr "Intet databasenavn"
+
+#~ msgid "nextkey"
+#~ msgstr "næstenøgle"
+
+#~ msgid "firstkey"
+#~ msgstr "førstenøgle"
+
 #~ msgid "too many arguments"
 #~ msgstr "for mange argumenter"
-
-#~ msgid "cannot open `%s': %s"
-#~ msgstr "kan ikke åbne »%s«: %s"
-
-#~ msgid "%s is not a regular file"
-#~ msgstr "%s er ikke en normal fil"
-
-#~ msgid "cannot open %s for reading: %s"
-#~ msgstr "kan ikke åbne %s for skrivning: %s"

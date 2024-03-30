@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sed 4.7.13\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
 "PO-Revision-Date: 2020-01-06 10:40-0500\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
 msgstr "写入错误"
 
@@ -30,39 +30,76 @@ msgstr "写入错误"
 msgid "preserving permissions for %s"
 msgstr "保留 %s 的权限未改变"
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr "不对称的 ["
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 msgid "invalid character class"
 msgstr "非法的字符类型"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "字符类型语法是 [[:space:]]，不是 [:space:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr "未结束的 \\ 转义"
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+#, fuzzy
+msgid "? at start of expression"
+msgstr "非法的正则表达式"
+
+#: lib/dfa.c:1331
+#, fuzzy
+msgid "* at start of expression"
+msgstr "非法的正则表达式"
+
+#: lib/dfa.c:1345
+#, fuzzy
+msgid "+ at start of expression"
+msgstr "非法的正则表达式"
+
+#: lib/dfa.c:1400
+#, fuzzy
+msgid "{...} at start of expression"
+msgstr "非法的正则表达式"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
 msgstr "“\\{\\}”中内容非法"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 msgid "regular expression too big"
 msgstr "正则表达式过大"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr ""
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr ""
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr ""
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr ""
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr "不对称的 ("
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr "未指定语法"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr "不对称的 )"
 
@@ -70,42 +107,7 @@ msgstr "不对称的 )"
 msgid "Unknown system error"
 msgstr "未知的系统错误"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s：选项“%s%s”是不明确的\n"
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s：选项“%s%s”是不明确的；可能是："
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s：无法识别的选项“%s%s”\n"
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s：选项“%s%s”不允许带参数\n"
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s：选项“%s%s”需要一个参数\n"
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s：无效选项 -- “%c”\n"
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s：选项需要一个参数 -- '%c'\n"
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "内存耗尽"
 
@@ -130,83 +132,83 @@ msgstr "内存耗尽"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "“"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "”"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "成功"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "没有匹配项"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "非法的正则表达式"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "非法的收集字符"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "非法的字符类型名"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "尾端的反斜杠"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "非法回引用"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "未匹配的“[”、“[^”、“[:”、“[.”或“[=”"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "未匹配的“(”或者“\\(”"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "未匹配的“\\{”"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "“\\{\\}”中内容非法"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "非法的范围结束"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "内存耗尽"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "非法的正则表达式头"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "正则表达式不完整"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "正则表达式过大"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "未匹配的“)”或者“\\)”"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "前面没有正则表达式"
 
@@ -494,17 +496,17 @@ msgstr "不允许 \\c 后的递归转义"
 msgid "e/r/w commands disabled in sandbox mode"
 msgstr "e/r/w 命令在沙盒模式中被禁用"
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s：文件 %s 行号：%lu：%s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s：-e 表达式 #%lu，字符 %lu：%s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "无法为目的为“%s”的跳转找到标签"
@@ -514,49 +516,49 @@ msgstr "无法为目的为“%s”的跳转找到标签"
 msgid "case conversion produced an invalid character"
 msgstr "大小写转换产生了无效的字符"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s：无法读取 %s：%s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "无法编辑文件 %s: 这是一个终端"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "无法编辑文件 %s: 不是一个普通文件"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr "%s：警告：无法设置默认文件创建上下文环境为 %s：%s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr "%s：警告：无法获取 %s 的安全上下文环境：%s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "无法打开临时文件 %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "子进程出错"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "不支持选项“e”"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "不支持命令“e”"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "没有输入文件"
 
@@ -597,7 +599,7 @@ msgstr "Jim Meyering"
 msgid "Assaf Gordon"
 msgstr "Assaf Gordon"
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
@@ -606,28 +608,28 @@ msgstr ""
 "GNU sed 主页：<https://www.gnu.org/software/sed/>。\n"
 "使用 GNU 软件的一般性帮助：<https://www.gnu.org/gethelp/>。\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr "请将错误报告发送至：<%s>。\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
 msgstr "本 sed 程序构建时含有 SELinux 支持。"
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
 msgstr "此系统已启用 SELinux。"
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
 msgstr "此系统已禁用 SELinux。"
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
 msgstr "本 sed 程序构建时未包含 SELinux 支持。"
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -636,7 +638,7 @@ msgstr ""
 "用法: %s [选项]... {脚本(如果没有其他脚本)} [输入文件]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -645,7 +647,7 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "                 取消自动打印模式空间\n"
 
-#: sed/sed.c:160
+#: sed/sed.c:139
 #, c-format
 msgid ""
 "      --debug\n"
@@ -654,7 +656,7 @@ msgstr ""
 "      --debug\n"
 "                 对程序运行进行标注\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -663,7 +665,7 @@ msgstr ""
 "  -e 脚本, --expression=脚本\n"
 "                 添加“脚本”到程序的运行列表\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -673,7 +675,7 @@ msgstr ""
 "  -f 脚本文件, --file=脚本文件\n"
 "                 添加“脚本文件”到程序的运行列表\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -682,7 +684,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "                 直接修改文件时跟随软链接\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -691,7 +693,7 @@ msgstr ""
 "  -i[扩展名], --in-place[=扩展名]\n"
 "                 直接修改文件（如果指定扩展名则备份文件）\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -701,7 +703,7 @@ msgstr ""
 "  -b, --binary\n"
 "                 以二进制方式打开文件 (回车加换行不做特殊处理)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -710,7 +712,7 @@ msgstr ""
 "  -l N, --line-length=N\n"
 "                 指定“l”命令的换行期望长度\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -719,7 +721,7 @@ msgstr ""
 "  --posix\n"
 "                 关闭所有 GNU 扩展\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -730,7 +732,7 @@ msgstr ""
 "                 在脚本中使用扩展正则表达式\n"
 "                 （为保证可移植性使用 POSIX -E）。\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, c-format
 msgid ""
 "  -s, --separate\n"
@@ -741,7 +743,7 @@ msgstr ""
 "                 将输入文件视为各个独立的文件而不是单个\n"
 "                 长的连续输入流。\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
@@ -750,7 +752,7 @@ msgstr ""
 "      --sandbox\n"
 "                 在沙盒模式中进行操作（禁用 e/r/w 命令）。\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -761,7 +763,7 @@ msgstr ""
 "  -u, --unbuffered\n"
 "                 从输入文件读取最少的数据，更频繁的刷新输出\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
@@ -770,17 +772,17 @@ msgstr ""
 "  -z, --null-data\n"
 "                 使用 NUL 字符分隔各行\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "      --help     打印帮助并退出\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr "      --version  输出版本信息并退出\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -795,59 +797,90 @@ msgstr ""
 "sed脚本。其他非选项参数被视为输入文件，如果没有输入文件，那么程序将从标准\n"
 "输入读取数据。\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
 msgstr "无法对标准输入设置二进制模式"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
 msgstr "无法对标准输出设置二进制模式"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "无法移除 %s：%s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "无法打开文件 %s: %s"
 
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "无法绑定 %s: %s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, c-format
 msgid "failed to set binary mode on '%s'"
 msgstr "无法对“%s”设置二进制模式"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
 msgstr[0] "无法将 %llu 个项目写入 %s：%s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "读取 %s 出错：%s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, fuzzy, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "无法跟随软链接 %s: %s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "无法跟随软链接 %s: %s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "无法获取 %s 的状态: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "无法重命名 %s：%s"
+
+#, c-format
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "无法获取 %s 的状态: %s"
+
+#, c-format
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "无法移除 %s：%s"
+
+#, c-format
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s：选项“%s%s”是不明确的\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s：选项“%s%s”是不明确的；可能是："
+
+#, c-format
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s：无法识别的选项“%s%s”\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s：选项“%s%s”不允许带参数\n"
+
+#, c-format
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s：选项“%s%s”需要一个参数\n"
+
+#, c-format
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s：无效选项 -- “%c”\n"
+
+#, c-format
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s：选项需要一个参数 -- '%c'\n"
 
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "%s 项目主页：<https://www.gnu.org/software/%s/>\n"

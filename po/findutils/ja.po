@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: findutils 4.5.13\n"
 "Report-Msgid-Bugs-To: bug-findutils@gnu.org\n"
-"POT-Creation-Date: 2021-01-09 17:36+0100\n"
+"POT-Creation-Date: 2022-02-02 01:18+0100\n"
 "PO-Revision-Date: 2014-10-30 09:01+0100\n"
 "Last-Translator: Yasuaki Taniguchi <yasuakit@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
@@ -55,7 +55,7 @@ msgstr "マウントされているファイルシステム一覧を読み込め
 msgid "unknown"
 msgstr "不明"
 
-#: find/ftsfind.c:228 find/oldfind.c:1115
+#: find/ftsfind.c:231
 #, c-format
 msgid ""
 "Symbolic link %s is part of a loop in the directory hierarchy; we have "
@@ -64,7 +64,7 @@ msgstr ""
 "シンボリックリンク %s がディレクトリ階層内でループしています。シンボリックリ"
 "ンクが指している先のディレクトリは既に移動したことがあります。"
 
-#: find/ftsfind.c:242
+#: find/ftsfind.c:245
 #, c-format
 msgid ""
 "File system loop detected; %s is part of the same file system loop as %s."
@@ -72,108 +72,77 @@ msgstr ""
 "ファイルシステムのループが検出されました。 %s は %s のファイルシステムのルー"
 "プの一部になっています。"
 
-#: find/ftsfind.c:391 find/util.c:254
+#: find/ftsfind.c:394 find/util.c:259
 #, c-format
 msgid "WARNING: file %s appears to have mode 0000"
 msgstr "警告: ファイル %s のモードが 0000 になっています"
 
-#: find/ftsfind.c:506
+#: find/ftsfind.c:509
 #, c-format
 msgid "cannot search %s"
 msgstr "%s を探索できません"
 
-#: find/ftsfind.c:552
+#: find/ftsfind.c:555
 #, c-format
 msgid "failed to restore working directory after searching %s"
 msgstr "%s の探索後に作業ディレクトリを復元できませんでした"
 
-#: find/ftsfind.c:622 find/oldfind.c:179
+#: find/ftsfind.c:582
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: find/ftsfind.c:584
+msgid "file operands cannot be combined with -files0-from"
+msgstr ""
+
+#: find/ftsfind.c:595
+msgid ""
+"option -files0-from reading from standard input cannot be combined with -ok, "
+"-okdir"
+msgstr ""
+
+#: find/ftsfind.c:598
+#, fuzzy
+msgid "(standard input)"
+msgstr "標準出力"
+
+#: find/ftsfind.c:606
+#, fuzzy, c-format
+msgid "cannot open %s for reading"
+msgstr "/dev/tty を読み込むために開けませんでした"
+
+#: find/ftsfind.c:625
+msgid ""
+"option -files0-from: standard input must not refer to the same file when "
+"combined with -ok, -okdir"
+msgstr ""
+
+#: find/ftsfind.c:668
+#, fuzzy, c-format
+msgid "%s: read error"
+msgstr "標準エラー出力"
+
+#: find/ftsfind.c:695
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: find/ftsfind.c:719
+#, fuzzy, c-format
+msgid "error reading %s"
+msgstr "%s からの単語読み取り中にエラーが発生しました"
+
+#: find/ftsfind.c:754
 #, fuzzy
 msgid "Failed to initialize shared-file hash table"
 msgstr "共有ファイルハッシュテーブルの初期化に失敗しました"
 
-#: find/ftsfind.c:638 find/oldfind.c:195 locate/frcode.c:222
-#: locate/locate.c:1568 xargs/xargs.c:434
+#: find/ftsfind.c:770 locate/frcode.c:222 locate/locate.c:1568
+#: xargs/xargs.c:434
 msgid "The atexit library function failed"
 msgstr "atexit ライブラリ関数が失敗しました"
 
-#: find/oldfind.c:238
-msgid "cannot stat current directory"
-msgstr "カレントディレクトリの情報を取得 (stat) できません"
-
-#: find/oldfind.c:331
-msgid "Cannot read list of mounted devices."
-msgstr "マウントされたデバイスの一覧を読み込めません。"
-
-#: find/oldfind.c:420
-#, c-format
-msgid "WARNING: file system %s has recently been unmounted."
-msgstr "警告: ファイルシステム %s は最近アンマウントされました。"
-
-#: find/oldfind.c:430
-#, c-format
-msgid "WARNING: file system %s has recently been mounted."
-msgstr "警告: ファイルシステム %s は最近マウントされました。"
-
-#: find/oldfind.c:527
-#, c-format
-msgid ""
-"%s%s changed during execution of %s (old device number %ld, new device "
-"number %ld, file system type is %s) [ref %ld]"
-msgstr ""
-"%s%s は %s の実行中に変更されました (古いデバイス番号 %ld、新しいデバイス番"
-"号 %ld、ファイルシステムの種類 %s) [ref %ld]"
-
-#: find/oldfind.c:564
-#, c-format
-msgid ""
-"%s%s changed during execution of %s (old inode number %<PRIuMAX>, new inode "
-"number %<PRIuMAX>, file system type is %s) [ref %ld]"
-msgstr ""
-"%s%s は %s の実行中に変更されました (古い iノード番号 %<PRIuMAX>、新しい i"
-"ノード番号 %<PRIuMAX>、ファイルシステムの種類 %s) [ref %ld]"
-
-#: find/oldfind.c:729
-msgid "failed to return to parent directory"
-msgstr "親ディレクトリに戻ることができませんでした"
-
-#: find/oldfind.c:1015
-#, c-format
-msgid "Failed to safely change directory into %s"
-msgstr "ディレクトリ %s に安全に移動できませんでした"
-
-#: find/oldfind.c:1134
-#, c-format
-msgid ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d level higher in the file system hierarchy"
-msgid_plural ""
-"Filesystem loop detected; %s has the same device number and inode as a "
-"directory which is %d levels higher in the file system hierarchy"
-msgstr[0] ""
-"ファイルシステムのループが検出されました。%s はファイルシステム内の %d 階層上"
-"ディレクトリと同じデバイス番号および iノード番号です。"
-
-#: find/oldfind.c:1386
-#, c-format
-msgid "warning: not following the symbolic link %s"
-msgstr "警告: シンボリックリンク %s をたどれません"
-
-#: find/oldfind.c:1458
-#, c-format
-msgid ""
-"WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> but "
-"we already saw %<PRIuMAX> subdirectories): this may be a bug in your file "
-"system driver.  Automatically turning on find's -noleaf option.  Earlier "
-"results may have failed to include directories that should have been "
-"searched."
-msgstr ""
-"警告: %s のハードリンク数が誤っています (st_nlink=%<PRIuMAX> になっています"
-"が %<PRIuMAX> 個の子ディレクトリがあります): ファイルシステムドライバのバグか"
-"もしれません。 find の -noleaf オプションが自動的に有効になります。以前の結果"
-"は探索すべきディレクトリを含んでいないかもしれません。"
-
-#: find/parser.c:449
+#: find/parser.c:451
 #, fuzzy
 msgid ""
 "The -delete action automatically turns on -depth, but -prune does nothing "
@@ -184,7 +153,7 @@ msgstr ""
 "depth が有効なときには何も行いません。それでもこのまま実行したい場合は、明示"
 "的に -depth オプションを使用してください。"
 
-#: find/parser.c:608
+#: find/parser.c:609
 #, fuzzy, c-format
 msgid ""
 "warning: you have specified the global option %s after the argument %s, but "
@@ -196,7 +165,7 @@ msgstr ""
 "位置オプションではありません (%3$s は前に指定しても後に指定してもテストに影響"
 "を及ぼします)。オプションは他の引数の前に指定してください。\n"
 
-#: find/parser.c:911
+#: find/parser.c:912
 #, c-format
 msgid ""
 "warning: the -d option is deprecated; please use -depth instead, because the "
@@ -205,7 +174,7 @@ msgstr ""
 "警告: -d オプションは廃止されました。-depth を使用してください。 -depth は"
 "POSIX に適合しています。"
 
-#: find/parser.c:1154
+#: find/parser.c:1167
 #, c-format
 msgid ""
 "%s is not the name of an existing group and it does not look like a numeric "
@@ -214,20 +183,20 @@ msgstr ""
 "%s は存在しているグループ名ではありません。また予期しない接尾辞 %s があるため"
 "数値で指定したグループ ID でも無いようです。"
 
-#: find/parser.c:1169
+#: find/parser.c:1182
 #, c-format
 msgid "%s is not the name of an existing group"
 msgstr "%s は存在しているグループ名ではありません"
 
-#: find/parser.c:1175
+#: find/parser.c:1188
 msgid "argument to -group is empty, but should be a group name"
 msgstr "-group に引数がありません。グループ名を引数として指定してください"
 
-#: find/parser.c:1248
+#: find/parser.c:1261
 msgid "sanity check of the fnmatch() library function failed."
 msgstr "fnmatch() ライブラリ関数による精密な検査に失敗しました。"
 
-#: find/parser.c:1263
+#: find/parser.c:1276
 #, c-format
 msgid ""
 "warning: %s matches against basenames only, but the given pattern contains a "
@@ -235,42 +204,42 @@ msgid ""
 "time.  Did you mean %s?"
 msgstr ""
 
-#: find/parser.c:1386
+#: find/parser.c:1399
 #, c-format
 msgid "Expected a positive decimal integer argument to %s, but got %s"
 msgstr "%s の引数としては正の十進整数が予期されますが、 %s が指定されました"
 
-#: find/parser.c:1551
+#: find/parser.c:1564
 #, c-format
 msgid "This system does not provide a way to find the birth time of a file."
 msgstr "このシステムではファイルの生成日時を見つける方法を提供していません。"
 
-#: find/parser.c:1572
+#: find/parser.c:1585
 #, c-format
 msgid "The %s test needs an argument"
 msgstr "%s test には引数が必要です"
 
-#: find/parser.c:1609
+#: find/parser.c:1622
 #, c-format
 msgid "I cannot figure out how to interpret %s as a date or time"
 msgstr "%s を日付または時間として解釈することができません"
 
-#: find/parser.c:1626
+#: find/parser.c:1639
 #, c-format
 msgid "Cannot obtain birth time of file %s"
 msgstr "ファイル %s の生成日を取得できません"
 
-#: find/parser.c:1770
+#: find/parser.c:1783
 #, c-format
 msgid "warning: -%s %s will not match anything because it ends with /."
 msgstr "警告: -%s %s は / で終了しているため何に対しても一致しません。"
 
-#: find/parser.c:1865
+#: find/parser.c:1878
 #, c-format
 msgid "invalid mode %s"
 msgstr "無効なモードです: %s"
 
-#: find/parser.c:1883
+#: find/parser.c:1896
 #, c-format
 msgid ""
 "warning: you have specified a mode pattern %s (which is equivalent to /000). "
@@ -281,26 +250,26 @@ msgstr ""
 "perm /000 の意味は -perm -000 との一貫性を保つために変更されています。過去に"
 "はどのファイルにも一致しませんでしたが、今は全てのファイルに一致します。"
 
-#: find/parser.c:2056
+#: find/parser.c:2069
 #, c-format
 msgid "failed to compile regular expression '%s': %s"
 msgstr ""
 
-#: find/parser.c:2085
+#: find/parser.c:2098
 msgid "invalid null argument to -size"
 msgstr "-size に対する無効な空の引数です"
 
-#: find/parser.c:2135
+#: find/parser.c:2148
 #, c-format
 msgid "invalid -size type `%c'"
 msgstr "無効な -size タイプ `%c' です"
 
-#: find/parser.c:2145
+#: find/parser.c:2158
 #, fuzzy, c-format
 msgid "Invalid argument `%s%s' to -size"
 msgstr "`%s%s' は -size に対する無効な引数です"
 
-#: find/parser.c:2327
+#: find/parser.c:2340
 msgid ""
 "The -show-control-chars option takes a single argument which must be "
 "'literal' or 'safe'"
@@ -308,85 +277,85 @@ msgstr ""
 "-show-control-chars オプションは引数を一つだけ指定し、'literal' または "
 "'safe' でなければいけません"
 
-#: find/parser.c:2441
+#: find/parser.c:2454
 #, c-format
 msgid "Invalid argument %s to -used"
 msgstr "%s は -used に対する無効な引数です"
 
-#: find/parser.c:2482
+#: find/parser.c:2495
 #, c-format
 msgid "%s is not the name of a known user"
 msgstr "%s は存在しているユーザ名ではありません"
 
-#: find/parser.c:2489
+#: find/parser.c:2502
 msgid "The argument to -user should not be empty"
 msgstr "-user の引数は空であってはいけません"
 
-#: find/parser.c:2514
+#: find/parser.c:2527
 #, c-format
 msgid "Features enabled: "
 msgstr "有効になっている機能: "
 
-#: find/parser.c:2575
+#: find/parser.c:2588
 msgid "invalid predicate -context: SELinux is not enabled."
 msgstr "-context は無効な述語です: SELinux が有効ではありません。"
 
-#: find/parser.c:2639
+#: find/parser.c:2652
 #, fuzzy, c-format
 msgid "Arguments to %s should contain at least one letter"
 msgstr "-type の引数は単一の文字のみ含むことができます"
 
-#: find/parser.c:2704
+#: find/parser.c:2717
 #, c-format
 msgid ""
 "%s %c is not supported because symbolic links are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2716
+#: find/parser.c:2729
 #, c-format
 msgid ""
 "%s %c is not supported because FIFOs are not supported on the platform find "
 "was compiled on."
 msgstr ""
 
-#: find/parser.c:2728
+#: find/parser.c:2741
 #, c-format
 msgid ""
 "%s %c is not supported because named sockets are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2744
+#: find/parser.c:2757
 #, c-format
 msgid ""
 "%s %c is not supported because Solaris doors are not supported on the "
 "platform find was compiled on."
 msgstr ""
 
-#: find/parser.c:2752
+#: find/parser.c:2765
 #, fuzzy, c-format
 msgid "Unknown argument to %s: %c"
 msgstr "-type に対する不明な引数です: %c"
 
-#: find/parser.c:2760
+#: find/parser.c:2773
 #, c-format
 msgid "Duplicate file type '%c' in the argument list to %s."
 msgstr ""
 
-#: find/parser.c:2776
+#: find/parser.c:2789
 #, c-format
 msgid "Must separate multiple arguments to %s using: ','"
 msgstr ""
 
-#: find/parser.c:2785
+#: find/parser.c:2798
 #, c-format
 msgid ""
 "Last file type in list argument to %s is missing, i.e., list is ending on: "
 "','"
 msgstr ""
 
-#: find/parser.c:2844
+#: find/parser.c:2857
 #, fuzzy, c-format
 msgid ""
 "The current directory is included in the PATH environment variable, which is "
@@ -398,7 +367,7 @@ msgstr ""
 "組み合わせて使用すると安全ではありません。カレントディレクトリを $PATH から削"
 "除してください (\".\" または先頭、最後にある \":\" を削除します)。"
 
-#: find/parser.c:2856
+#: find/parser.c:2869
 #, c-format
 msgid ""
 "The relative path %s is included in the PATH environment variable, which is "
@@ -408,7 +377,7 @@ msgstr ""
 "PATH 環境変数に相対パス %s が含まれています。これは %s アクションと組み合わせ"
 "て使用すると安全ではありません。 $PATH から要素を削除してください。"
 
-#: find/parser.c:2965
+#: find/parser.c:2980
 msgid ""
 "You may not use {} within the utility name for -execdir and -okdir, because "
 "this is a potential security problem."
@@ -416,34 +385,34 @@ msgstr ""
 "-execdir および -okdir のユーティリティ名の中で {} を使用しないでください。潜"
 "在的なセキュリティの問題を引き起こします。"
 
-#: find/parser.c:2991
+#: find/parser.c:3006
 #, c-format
 msgid "Only one instance of {} is supported with -exec%s ... +"
 msgstr "-exec%s ... + ではただ一つの {} インスタンスのみサポートされます"
 
-#: find/parser.c:3001
+#: find/parser.c:3016
 #, c-format
 msgid "In %s the %s must appear by itself, but you specified %s"
 msgstr ""
 
-#: find/parser.c:3020
+#: find/parser.c:3035
 msgid "The environment is too large for exec()."
 msgstr "exec () を実行するには環境変数が大きすぎます"
 
-#: find/parser.c:3189
+#: find/parser.c:3204
 #, c-format
 msgid "arithmetic overflow while converting %s days to a number of seconds"
 msgstr "%s日を秒数に変換中に計算オーバーフローが発生しました"
 
-#: find/parser.c:3213
+#: find/parser.c:3228
 msgid "arithmetic overflow when trying to calculate the end of today"
 msgstr "本日の終了時間を計算中に計算オーバーフローが発生しました"
 
-#: find/parser.c:3372
+#: find/parser.c:3387
 msgid "standard error"
 msgstr "標準エラー出力"
 
-#: find/parser.c:3377
+#: find/parser.c:3392
 msgid "standard output"
 msgstr "標準出力"
 
@@ -452,22 +421,22 @@ msgstr "標準出力"
 msgid "cannot delete %s"
 msgstr "%s を削除できません"
 
-#: find/pred.c:652
+#: find/pred.c:650
 #, c-format
 msgid "WARNING: cannot determine birth time of file %s"
 msgstr "警告: ファイル %s の生成日時を決定できません"
 
-#: find/pred.c:700
+#: find/pred.c:698
 #, c-format
 msgid "< %s ... %s > ? "
 msgstr "< %s ... %s > ? "
 
-#: find/pred.c:702
+#: find/pred.c:700
 #, fuzzy
 msgid "Failed to write prompt for -ok"
 msgstr "標準出力への書き込みに失敗しました"
 
-#: find/pred.c:1175 find/print.c:1238
+#: find/pred.c:1173 find/print.c:1238
 #, c-format
 msgid "getfilecon failed: %s"
 msgstr "getfilecon に失敗しました: %s"
@@ -503,7 +472,7 @@ msgstr ""
 msgid "warning: unrecognized format directive `%%%c'"
 msgstr "警告:  `%%%c' は認識できない書式指定です"
 
-#: find/tree.c:115 find/tree.c:120 find/tree.c:212 find/tree.c:251
+#: find/tree.c:115 find/tree.c:120 find/tree.c:226 find/tree.c:265
 msgid "invalid expression"
 msgstr "無効な評価式です"
 
@@ -514,21 +483,27 @@ msgid ""
 "it."
 msgstr "無効な評価式です。二項演算子 '%s' を使用していますが、前項がありません"
 
-#: find/tree.c:137
+#: find/tree.c:135 find/tree.c:194
+#, fuzzy, c-format
+msgid ""
+"invalid expression: expected expression before closing parentheses '%s'."
+msgstr "無効な評価式です。空の小括弧は使用できません。"
+
+#: find/tree.c:145
 #, c-format
 msgid "expected an expression between '%s' and ')'"
 msgstr "'%s' および ')' の間に評価式が予期されます"
 
-#: find/tree.c:147
+#: find/tree.c:155
 #, c-format
 msgid "expected an expression after '%s'"
 msgstr "'%s' の後に評価式が予期されます"
 
-#: find/tree.c:152
+#: find/tree.c:160
 msgid "invalid expression; you have too many ')'"
 msgstr "無効な評価式です。')' が多すぎます"
 
-#: find/tree.c:175
+#: find/tree.c:183
 #, fuzzy, c-format
 msgid ""
 "invalid expression; expected to find a ')' but didn't see one. Perhaps you "
@@ -537,11 +512,11 @@ msgstr ""
 "無効な評価式です。')' が予期されますが、存在しません。多分 '%s' の後に追加の"
 "述語が必要です"
 
-#: find/tree.c:184
+#: find/tree.c:198
 msgid "invalid expression; empty parentheses are not allowed."
 msgstr "無効な評価式です。空の小括弧は使用できません。"
 
-#: find/tree.c:190
+#: find/tree.c:204
 msgid ""
 "invalid expression; I was expecting to find a ')' somewhere but did not see "
 "one."
@@ -549,66 +524,66 @@ msgstr ""
 "無効な評価式です。 ')' がどこかにあることが予期されますが、一つも見つかりませ"
 "ん。"
 
-#: find/tree.c:197 find/tree.c:821
+#: find/tree.c:211 find/tree.c:835
 msgid "oops -- invalid expression type!"
 msgstr "おおっと -- 無効な評価式の種類です!"
 
-#: find/tree.c:269
+#: find/tree.c:283
 #, c-format
 msgid "oops -- invalid expression type (%d)!"
 msgstr "おおっと -- 無効な評価式の種類 (%d) です!"
 
-#: find/tree.c:1098
+#: find/tree.c:1112
 #, c-format
 msgid ""
 "warning: there is no entry in the predicate evaluation cost table for "
 "predicate %s; please report this as a bug"
 msgstr ""
 
-#: find/tree.c:1272
+#: find/tree.c:1286
 #, fuzzy, c-format
 msgid "paths must precede expression: `%s'"
 msgstr "パス名は評価式の前に置かなければいけません: %s"
 
-#: find/tree.c:1274
+#: find/tree.c:1288
 #, c-format
 msgid "possible unquoted pattern after predicate `%s'?"
 msgstr ""
 
-#: find/tree.c:1284
+#: find/tree.c:1298
 #, c-format
 msgid "unknown predicate `%s'"
 msgstr "不明な述語です: `%s'"
 
-#: find/tree.c:1304
+#: find/tree.c:1318
 #, c-format
 msgid "invalid predicate `%s'"
 msgstr "無効な述語です: `%s'"
 
-#: find/tree.c:1308
+#: find/tree.c:1322
 #, c-format
 msgid "invalid argument `%s' to `%s'"
 msgstr "不正な引数 `%s' から `%s'"
 
-#: find/tree.c:1315
+#: find/tree.c:1329
 #, c-format
 msgid "missing argument to `%s'"
 msgstr "`%s' に引数がありません"
 
-#: find/tree.c:1391
+#: find/tree.c:1405
 msgid "you have too many ')'"
 msgstr "')' が多すぎます"
 
-#: find/tree.c:1397
+#: find/tree.c:1411
 #, c-format
 msgid "unexpected extra predicate '%s'"
 msgstr "予期しない余分な述語です: '%s'"
 
-#: find/tree.c:1399
+#: find/tree.c:1413
 msgid "unexpected extra predicate"
 msgstr "予期しない余分な述語です"
 
-#: find/tree.c:1520
+#: find/tree.c:1534
 msgid "oops -- invalid default insertion of and!"
 msgstr "おおっと -- 無効なデフォルトの AND 挿入です!"
 
@@ -629,10 +604,11 @@ msgid ""
 msgstr "使用法: %s [-H] [-L] [-P] [-Olevel] [-D "
 
 #: find/util.c:173
+#, fuzzy
 msgid ""
 "\n"
-"default path is the current directory; default expression is -print\n"
-"expression may consist of: operators, options, tests, and actions:\n"
+"Default path is the current directory; default expression is -print.\n"
+"Expression may consist of: operators, options, tests, and actions.\n"
 msgstr ""
 "\n"
 "デフォルトのパスはカレントディレクトリです。デフォルトの評価式 (expression) "
@@ -640,8 +616,10 @@ msgstr ""
 "ます。\n"
 
 #: find/util.c:176
+#, fuzzy
 msgid ""
-"operators (decreasing precedence; -and is implicit where no others are "
+"\n"
+"Operators (decreasing precedence; -and is implicit where no others are "
 "given):\n"
 "      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2\n"
 "      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2\n"
@@ -653,11 +631,18 @@ msgstr ""
 
 #: find/util.c:180
 msgid ""
-"positional options (always true): -daystart -follow -regextype\n"
 "\n"
-"normal options (always true, specified before other expressions):\n"
-"      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
-"      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
+"Positional options (always true):\n"
+"      -daystart -follow -nowarn -regextype -warn\n"
+msgstr ""
+
+#: find/util.c:183
+#, fuzzy
+msgid ""
+"\n"
+"Normal options (always true, specified before other expressions):\n"
+"      -depth -files0-from FILE -maxdepth LEVELS -mindepth LEVELS\n"
+"       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
 msgstr ""
 "位置オプション (常に真): -daystart -follow -regextype\n"
 "\n"
@@ -665,13 +650,20 @@ msgstr ""
 "      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf\n"
 "      --version -xdev -ignore_readdir_race -noignore_readdir_race\n"
 
-#: find/util.c:185
+#: find/util.c:187
+#, fuzzy
 msgid ""
-"tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N\n"
-"      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME\n"
-"      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex "
+"\n"
+"Tests (N can be +N or -N or N):\n"
+"      -amin N -anewer FILE -atime N -cmin N -cnewer FILE -context CONTEXT\n"
+"      -ctime N -empty -false -fstype TYPE -gid N -group NAME -ilname "
 "PATTERN\n"
-"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE"
+"      -iname PATTERN -inum N -iwholename PATTERN -iregex PATTERN\n"
+"      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE\n"
+"      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+"      -readable -writable -executable\n"
+"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+"      -used N -user NAME -xtype [bcdpfls]\n"
 msgstr ""
 "テスト (N は +N、-N または Nで指定します): -amin N -anewer FILE -atime N -"
 "cmin N\n"
@@ -680,33 +672,15 @@ msgstr ""
 "PATTERN\n"
 "      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE"
 
-#: find/util.c:190
-#, fuzzy
-msgid ""
-"\n"
-"      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
-"      -readable -writable -executable\n"
-"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NAME -xtype [bcdpfls]"
-msgstr ""
-"      -nouser -nogroup -path PATTERN -perm [+-]MODE -regex PATTERN\n"
-"      -readable -writable -executable\n"
-"      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
-"      -used N -user NAME -xtype [bcdpfls]"
-
-#: find/util.c:195
-msgid "      -context CONTEXT\n"
-msgstr "      -context CONTEXT\n"
-
 #: find/util.c:197
 #, fuzzy
 msgid ""
 "\n"
-"actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
+"Actions:\n"
+"      -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
 "      -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit\n"
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
-"\n"
 msgstr ""
 "\n"
 "アクション: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print \n"
@@ -714,47 +688,63 @@ msgstr ""
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
 
-#: find/util.c:205
+#: find/util.c:204
+msgid ""
+"\n"
+"Other common options:\n"
+msgstr ""
+
+#: find/util.c:206 xargs/xargs.c:1751
+msgid "      --help                   display this help and exit\n"
+msgstr ""
+
+#: find/util.c:207 xargs/xargs.c:1752
+msgid ""
+"      --version                output version information and exit\n"
+"\n"
+msgstr ""
+
+#: find/util.c:210
 msgid ""
 "\n"
 "Use '-D help' for a description of the options, or see find(1)\n"
 "\n"
 msgstr ""
 
-#: find/util.c:491
+#: find/util.c:475
 #, fuzzy, c-format
 msgid "Failed to save initial working directory%s%s"
 msgstr "初期作業ディレクトリの保存に失敗しました"
 
-#: find/util.c:510
+#: find/util.c:494
 #, fuzzy, c-format
 msgid "Failed to restore initial working directory%s%s"
 msgstr "初期作業ディレクトリの復元に失敗しました"
 
-#: find/util.c:848
+#: find/util.c:832
 #, c-format
 msgid "Ignoring unrecognised debug flag %s"
 msgstr "認識できないデバッグフラグ %s を無視しています"
 
-#: find/util.c:855
+#: find/util.c:839
 #, c-format
 msgid "Empty argument to the -D option."
 msgstr "-D オプションに引数がありません。"
 
-#: find/util.c:872
+#: find/util.c:856
 msgid "The -O option must be immediately followed by a decimal integer"
 msgstr "-O オプションには直後に十進整数を続けなければいけません"
 
-#: find/util.c:882 find/util.c:893
+#: find/util.c:866 find/util.c:877
 msgid "Please specify a decimal number immediately after -O"
 msgstr "-O の後には直後に十進整数を指定してください"
 
-#: find/util.c:898 find/util.c:903
+#: find/util.c:882 find/util.c:887
 #, c-format
 msgid "Invalid optimisation level %s"
 msgstr "無効な最適化レベルです: %s"
 
-#: find/util.c:911
+#: find/util.c:895
 #, c-format
 msgid ""
 "Optimisation level %lu is too high.  If you want to find files very quickly, "
@@ -763,12 +753,12 @@ msgstr ""
 "最適化レベル %lu は高すぎます。ファイル等を非常に素早く探したい場合は、GNU "
 "locate の使用を検討してください。"
 
-#: find/util.c:957
+#: find/util.c:941
 #, fuzzy, c-format
 msgid "Missing argument after the -D option."
 msgstr "-D オプションに引数がありません。"
 
-#: find/util.c:1060
+#: find/util.c:1044
 msgid ""
 "The environment variable FIND_BLOCK_SIZE is not supported, the only thing "
 "that affects the block size is the POSIXLY_CORRECT environment variable"
@@ -1494,15 +1484,88 @@ msgstr ""
 msgid "  -x, --exit                   exit if the size (see -s) is exceeded\n"
 msgstr ""
 
-#: xargs/xargs.c:1751
-msgid "      --help                   display this help and exit\n"
-msgstr ""
+#, c-format
+#~ msgid "cannot stat current directory"
+#~ msgstr "カレントディレクトリの情報を取得 (stat) できません"
 
-#: xargs/xargs.c:1752
-msgid ""
-"      --version                output version information and exit\n"
-"\n"
-msgstr ""
+#, c-format
+#~ msgid "Cannot read list of mounted devices."
+#~ msgstr "マウントされたデバイスの一覧を読み込めません。"
+
+#, c-format
+#~ msgid "WARNING: file system %s has recently been unmounted."
+#~ msgstr "警告: ファイルシステム %s は最近アンマウントされました。"
+
+#, c-format
+#~ msgid "WARNING: file system %s has recently been mounted."
+#~ msgstr "警告: ファイルシステム %s は最近マウントされました。"
+
+#, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old device number %ld, new device "
+#~ "number %ld, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "%s%s は %s の実行中に変更されました (古いデバイス番号 %ld、新しいデバイス"
+#~ "番号 %ld、ファイルシステムの種類 %s) [ref %ld]"
+
+#, c-format
+#~ msgid ""
+#~ "%s%s changed during execution of %s (old inode number %<PRIuMAX>, new "
+#~ "inode number %<PRIuMAX>, file system type is %s) [ref %ld]"
+#~ msgstr ""
+#~ "%s%s は %s の実行中に変更されました (古い iノード番号 %<PRIuMAX>、新しい i"
+#~ "ノード番号 %<PRIuMAX>、ファイルシステムの種類 %s) [ref %ld]"
+
+#, c-format
+#~ msgid "failed to return to parent directory"
+#~ msgstr "親ディレクトリに戻ることができませんでした"
+
+#, c-format
+#~ msgid "Failed to safely change directory into %s"
+#~ msgstr "ディレクトリ %s に安全に移動できませんでした"
+
+#, c-format
+#~ msgid ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d level higher in the file system hierarchy"
+#~ msgid_plural ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d levels higher in the file system hierarchy"
+#~ msgstr[0] ""
+#~ "ファイルシステムのループが検出されました。%s はファイルシステム内の %d 階"
+#~ "層上ディレクトリと同じデバイス番号および iノード番号です。"
+
+#, c-format
+#~ msgid "warning: not following the symbolic link %s"
+#~ msgstr "警告: シンボリックリンク %s をたどれません"
+
+#, c-format
+#~ msgid ""
+#~ "WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> "
+#~ "but we already saw %<PRIuMAX> subdirectories): this may be a bug in your "
+#~ "file system driver.  Automatically turning on find's -noleaf option.  "
+#~ "Earlier results may have failed to include directories that should have "
+#~ "been searched."
+#~ msgstr ""
+#~ "警告: %s のハードリンク数が誤っています (st_nlink=%<PRIuMAX> になっていま"
+#~ "すが %<PRIuMAX> 個の子ディレクトリがあります): ファイルシステムドライバの"
+#~ "バグかもしれません。 find の -noleaf オプションが自動的に有効になります。"
+#~ "以前の結果は探索すべきディレクトリを含んでいないかもしれません。"
+
+#, fuzzy
+#~ msgid ""
+#~ "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+#~ msgstr ""
+#~ "      -nouser -nogroup -path PATTERN -perm [+-]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+
+#~ msgid "      -context CONTEXT\n"
+#~ msgstr "      -context CONTEXT\n"
 
 #, c-format
 #~ msgid ""

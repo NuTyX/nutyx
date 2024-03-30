@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep 2.11.11-pre1\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
 "PO-Revision-Date: 2012-05-05 23:23+0100\n"
 "Last-Translator: Savvas Radevic <vicedar@gmail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -20,29 +20,29 @@ msgstr ""
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "άκυρη επιλογή %s για %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "διφορούμενη επιλογή %s για %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Έγκυρες επιλογές είναι οι εξής:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr ""
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr ""
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
 msgstr "σφάλμα εγγραφής"
 
@@ -50,60 +50,96 @@ msgstr "σφάλμα εγγραφής"
 # src/dfa.c:690 src/dfa.c:703 src/dfa.c:704
 # src/dfa.c:660 src/dfa.c:663 src/dfa.c:690 src/dfa.c:694 src/dfa.c:695
 # src/dfa.c:698 src/dfa.c:711 src/dfa.c:712
-#: lib/dfa.c:954
+#: lib/dfa.c:897
 #, fuzzy
 msgid "unbalanced ["
 msgstr "Μη ισορροπημένο ["
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
 msgstr "άκυρη κατηγορία χαρακτήρων"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "η σύνταξη κατηγορίας χαρακτήρων είναι [[:space:]], όχι [:space:]"
 
 # src/dfa.c:444
 # src/dfa.c:452
-#: lib/dfa.c:1268
+#: lib/dfa.c:1222
 #, fuzzy
 msgid "unfinished \\ escape"
 msgstr "Μη τερματισμένος χαρακτήρας διαφυγής \\"
 
+#: lib/dfa.c:1332
+#, fuzzy
+msgid "? at start of expression"
+msgstr "Άκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1344
+#, fuzzy
+msgid "* at start of expression"
+msgstr "Άκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1358
+#, fuzzy
+msgid "+ at start of expression"
+msgstr "Άκυρη κανονική έκφραση"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr ""
+
 # src/dfa.c:556 src/dfa.c:562 src/dfa.c:573 src/dfa.c:584
 # src/dfa.c:564 src/dfa.c:570 src/dfa.c:581 src/dfa.c:592
-#: lib/dfa.c:1429
+#: lib/dfa.c:1416
 #, fuzzy
 msgid "invalid content of \\{\\}"
 msgstr "μη έγκυρος μέγιστος μετρητής"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 #, fuzzy
 msgid "regular expression too big"
 msgstr "Υπερβολικά μεγάλη η κανονική έκφραση"
 
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr ""
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr ""
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr ""
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr ""
+
 # src/dfa.c:841
 # src/dfa.c:849
-#: lib/dfa.c:1916
+#: lib/dfa.c:1925
 #, fuzzy
 msgid "unbalanced ("
 msgstr "Μη ισορροπημένο ("
 
 # src/dfa.c:962
 # src/dfa.c:970
-#: lib/dfa.c:2033
+#: lib/dfa.c:2042
 #, fuzzy
 msgid "no syntax specified"
 msgstr "Δεν ορίστηκε συντακτικό"
 
 # src/dfa.c:970
 # src/dfa.c:978
-#: lib/dfa.c:2044
+#: lib/dfa.c:2053
 #, fuzzy
 msgid "unbalanced )"
 msgstr "Μη ισορροπημένο )"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Άγνωστο λάθος συστήματος"
 
@@ -160,7 +196,7 @@ msgstr "%s: η επιλογή απαιτεί ένα όρισμα -- %c\n"
 # src/kwset.c:190
 # src/grep.c:164 src/grep.c:181 src/grep.c:283 src/grep.c:338 src/kwset.c:184
 # src/kwset.c:190
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "η μνήμη εξαντλήθηκε"
 
@@ -174,7 +210,7 @@ msgstr "δεν είναι δυνατή η καταγραφή του τρέχον
 msgid "failed to return to initial working directory"
 msgstr "αποτυχία επιστροφής στον αρχικό φάκελο εργασίας"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
 msgstr ""
@@ -200,85 +236,85 @@ msgstr ""
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "«"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "»"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Επιτυχία"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Καμία αντιστοιχία"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Άκυρη κανονική έκφραση"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr ""
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr ""
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr ""
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr ""
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr ""
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr ""
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr ""
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr ""
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Άκυρο τέλος σειράς"
 
 # src/dfa.c:147 src/dfa.c:159 src/dfa.c:172
 # src/dfa.c:155 src/dfa.c:167 src/dfa.c:180 src/grep.c:827
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Η μνήμη εξαντλήθηκε"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Άκυρη προηγούμενης κανονικής έκφρασης"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Πρόωρο τέλος της κανονικής έκφρασης"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Υπερβολικά μεγάλη η κανονική έκφραση"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr ""
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Καμία προηγούμενη κανονική έκφραση"
 
@@ -449,59 +485,66 @@ msgstr "%s κεντρική σελίδα: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Γενική βοήθεια χρήσης λογισμικού GNU: <http://www.gnu.org/gethelp/>\n"
 
+# src/grep.c:293
+# src/grep.c:366
+#: src/dfasearch.c:59
+#, fuzzy, c-format
+msgid "warning: %s"
+msgstr "προειδοποίηση: %s: %s\n"
+
 # src/grep.c:964 src/grep.c:1015
 # src/grep.c:730
-#: src/grep.c:648
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(κανονική είσοδος)"
 
 # src/grep.c:785 src/grep.c:792
 # src/grep.c:1060 src/grep.c:1067 src/grep.c:1076
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
 msgstr "μη έγκυρο όρισμα μήκους περιεχομένου"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
 msgstr "η είσοδος είναι πολύ μεγάλη για να μετρηθεί"
 
 # src/grep.c:715
-#: src/grep.c:1646
+#: src/grep.c:1651
 #, fuzzy, c-format
 msgid "%s: binary file matches"
 msgstr "Το δυαδικό αρχείο %s ταιριάζει\n"
 
 # src/grep.c:844
-#: src/grep.c:1684
+#: src/grep.c:1689
 #, fuzzy, c-format
 msgid "%s: warning: recursive directory loop"
 msgstr "αναδρομική αλληλοδιαδοχή καταλόγων"
 
-#: src/grep.c:1904
+#: src/grep.c:1909
 #, fuzzy, c-format
 msgid "%s: input file is also the output"
 msgstr "το αρχείο εισαγωγής %s είναι επίσης το αρχείο εξόδου"
 
 # src/grep.c:597
 # src/grep.c:862
-#: src/grep.c:1966 src/grep.c:1973
+#: src/grep.c:1971 src/grep.c:1978
 #, fuzzy, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
 msgstr "Χρήση: %s [ΕΠΙΛΟΓΗ]... ΥΠΟΔΕΙΓΜΑ [ΑΡΧΕΙΟ]...\n"
 
 # src/grep.c:598
 # src/grep.c:863
-#: src/grep.c:1968
+#: src/grep.c:1973
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Δοκιμάστε «%s --help» για περισσότερες πληροφορίες.\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
 msgstr ""
 
-#: src/grep.c:1975
+#: src/grep.c:1980
 #, fuzzy, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -514,7 +557,7 @@ msgstr ""
 "\n"
 "Επιλογή κανονικής έκφρασης και ερμηνεία:\n"
 
-#: src/grep.c:1980
+#: src/grep.c:1985
 #, fuzzy, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
@@ -530,7 +573,7 @@ msgstr ""
 
 # src/grep.c:603
 # src/grep.c:868
-#: src/grep.c:1986
+#: src/grep.c:1991
 #, fuzzy, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
@@ -553,7 +596,7 @@ msgstr ""
 
 # src/grep.c:615
 # src/grep.c:880
-#: src/grep.c:1994
+#: src/grep.c:1999
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -572,7 +615,7 @@ msgstr ""
 "      --mmap                χρήση εισόδου απεικονισμένη-στη-μνήμη αν\n"
 "                              υπάρχει τέτοια δυνατότητα\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -587,7 +630,7 @@ msgid ""
 "prefix\n"
 msgstr ""
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -597,7 +640,7 @@ msgid ""
 "  -a, --text                equivalent to --binary-files=text\n"
 msgstr ""
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -609,7 +652,7 @@ msgid ""
 "  -R, --dereference-recursive  likewise, but follow all symlinks\n"
 msgstr ""
 
-#: src/grep.c:2028
+#: src/grep.c:2033
 #, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
@@ -620,7 +663,7 @@ msgid ""
 "      --exclude-dir=GLOB    skip directories that match GLOB\n"
 msgstr ""
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -631,7 +674,7 @@ msgid ""
 "  -Z, --null                print 0 byte after FILE name\n"
 msgstr ""
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -651,10 +694,12 @@ msgstr ""
 
 # src/grep.c:633
 # src/grep.c:902
-#: src/grep.c:2048
+#: src/grep.c:2053
 #, fuzzy, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -672,7 +717,7 @@ msgstr ""
 "                              χαρακτήρες CR (MSDOS)\n"
 "\n"
 
-#: src/grep.c:2055
+#: src/grep.c:2062
 #, fuzzy, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
@@ -687,11 +732,11 @@ msgstr ""
 
 # src/grep.c:829
 # src/grep.c:1112
-#: src/grep.c:2097
+#: src/grep.c:2104
 msgid "conflicting matchers specified"
 msgstr "ορίστηκαν αντικρουόμενα στοιχεία αναζήτησης"
 
-#: src/grep.c:2104
+#: src/grep.c:2111
 #, fuzzy
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr ""
@@ -700,52 +745,65 @@ msgstr ""
 
 # src/dfa.c:556 src/dfa.c:562 src/dfa.c:573 src/dfa.c:584
 # src/dfa.c:564 src/dfa.c:570 src/dfa.c:581 src/dfa.c:592
-#: src/grep.c:2106
+#: src/grep.c:2113
 #, fuzzy, c-format
 msgid "invalid matcher %s"
 msgstr "μη έγκυρος μέγιστος μετρητής"
 
 # src/grep.c:1133
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
 msgstr "άγνωστη μέθοδος συσκευών"
 
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr ""
+
 # src/dfa.c:556 src/dfa.c:562 src/dfa.c:573 src/dfa.c:584
 # src/dfa.c:564 src/dfa.c:570 src/dfa.c:581 src/dfa.c:592
-#: src/grep.c:2689
+#: src/grep.c:2688
 msgid "invalid max count"
 msgstr "μη έγκυρος μέγιστος μετρητής"
 
-#: src/grep.c:2747
+#: src/grep.c:2746
 msgid "unknown binary-files type"
 msgstr "άγνωστο είδος δυαδικών αρχείων"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
 #, fuzzy
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
 "άλλοι, κοιτάξτε τον σύνδεσμο <http://git.sv.gnu.org/cgit/grep.git/tree/"
 "AUTHORS>"
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
 msgstr ""
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+
+#: src/pcresearch.c:169
+msgid "-P supports only unibyte locales on this platform"
+msgstr ""
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
 msgstr ""
 
-#: src/pcresearch.c:143
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
 msgstr "Η επιλογή -P υποστηρίζει μόνο ένα υπόδειγμα"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr ""
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
 msgstr ""
 
@@ -753,36 +811,44 @@ msgstr ""
 # src/kwset.c:190
 # src/grep.c:164 src/grep.c:181 src/grep.c:283 src/grep.c:338 src/kwset.c:184
 # src/kwset.c:190
-#: src/pcresearch.c:306
+#: src/pcresearch.c:368
 #, fuzzy, c-format
 msgid "%s: memory exhausted"
 msgstr "η μνήμη εξαντλήθηκε"
 
-#: src/pcresearch.c:310
+#: src/pcresearch.c:371
 #, c-format
 msgid "%s: exhausted PCRE JIT stack"
 msgstr ""
 
-#: src/pcresearch.c:315
+#: src/pcresearch.c:375
 #, c-format
 msgid "%s: exceeded PCRE's backtracking limit"
 msgstr ""
 
-#: src/pcresearch.c:319
+#: src/pcresearch.c:380
 #, c-format
-msgid "%s: exceeded PCRE's recursion limit"
+msgid "%s: exceeded PCRE's nested backtracking limit"
 msgstr ""
 
-#: src/pcresearch.c:327
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr ""
+
+#: src/pcresearch.c:389
+#, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr ""
+
+#: src/pcresearch.c:398
 #, fuzzy, c-format
 msgid "%s: internal PCRE error: %d"
 msgstr "εσωτερικό σφάλμα"
 
-# src/grep.c:293
-# src/grep.c:366
 #, fuzzy, c-format
-#~ msgid "warning: %s: %s"
-#~ msgstr "προειδοποίηση: %s: %s\n"
+#~ msgid "JIT internal error: %d"
+#~ msgstr "εσωτερικό σφάλμα"
 
 #~ msgid "invalid %s%s argument '%s'"
 #~ msgstr "άκυρη %s%s επιλογή «%s»"
@@ -796,9 +862,6 @@ msgstr "εσωτερικό σφάλμα"
 #, fuzzy
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "%s κεντρική σελίδα: <http://www.gnu.org/software/%s/>\n"
-
-#~ msgid "internal error"
-#~ msgstr "εσωτερικό σφάλμα"
 
 #~ msgid "Mike Haertel"
 #~ msgstr "Mike Haertel"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Linux-PAM\n"
 "Report-Msgid-Bugs-To: https://github.com/linux-pam/linux-pam/issues\n"
-"POT-Creation-Date: 2021-07-20 20:00+0000\n"
+"POT-Creation-Date: 2024-01-16 21:11+0000\n"
 "PO-Revision-Date: 2013-04-30 07:58-0400\n"
 "Last-Translator: sudheesh001 <sudheesh1995@outlook.com>\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/fedora/language/"
@@ -22,54 +22,54 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 3.8.3\n"
 
-#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:181
-#: modules/pam_userdb/pam_userdb.c:53
+#: libpam/pam_get_authtok.c:40 modules/pam_exec/pam_exec.c:183
+#: modules/pam_userdb/pam_userdb.c:61
 msgid "Password: "
 msgstr "సంకేతపదము: "
 
-#: libpam/pam_get_authtok.c:41
+#: libpam/pam_get_authtok.c:42
 #, fuzzy, c-format
 msgid "Current %s password: "
 msgstr "కొత్త %s సంకేతపదము: "
 
-#: libpam/pam_get_authtok.c:42
+#: libpam/pam_get_authtok.c:43
 #, fuzzy
 msgid "Current password: "
 msgstr "కొత్త సంకేతపదము: "
 
-#: libpam/pam_get_authtok.c:44
+#: libpam/pam_get_authtok.c:45
 #, c-format
 msgid "New %s password: "
 msgstr "కొత్త %s సంకేతపదము: "
 
-#: libpam/pam_get_authtok.c:45
+#: libpam/pam_get_authtok.c:46
 msgid "New password: "
 msgstr "కొత్త సంకేతపదము: "
 
-#: libpam/pam_get_authtok.c:47
+#: libpam/pam_get_authtok.c:48
 #, c-format
 msgid "Retype new %s password: "
 msgstr "కొత్త %s సంకేతపదమును మరలాటైపుచేయుము: "
 
-#: libpam/pam_get_authtok.c:48
+#: libpam/pam_get_authtok.c:49
 msgid "Retype new password: "
 msgstr "కొత్త సంకేతపదమును మరలాటైపుచేయుము: "
 
-#: libpam/pam_get_authtok.c:49
+#: libpam/pam_get_authtok.c:50
 msgid "Sorry, passwords do not match."
 msgstr "క్షమించాలి, సంకేతపదము సరిపోలలేదు."
 
-#: libpam/pam_get_authtok.c:142 libpam/pam_get_authtok.c:240
+#: libpam/pam_get_authtok.c:143 libpam/pam_get_authtok.c:245
 #, c-format
 msgid "Retype %s"
 msgstr "తిరిగిటైపుచేయి %s"
 
-#: libpam/pam_get_authtok.c:178 libpam/pam_get_authtok.c:258
+#: libpam/pam_get_authtok.c:183 libpam/pam_get_authtok.c:263
 #, fuzzy
 msgid "Password change has been aborted."
 msgstr "సంకేతపదము మార్పు తప్పించబడింది"
 
-#: libpam/pam_item.c:311
+#: libpam/pam_item.c:310
 msgid "login:"
 msgstr "లాగిన్:"
 
@@ -205,11 +205,11 @@ msgstr "libpamను అనువర్తనము మరలా కాల్‌
 msgid "Unknown PAM error"
 msgstr "తెలియని PAM దోషము"
 
-#: libpam_misc/misc_conv.c:33
+#: libpam_misc/misc_conv.c:34
 msgid "...Time is running out...\n"
 msgstr "...సమయం అయిపోతోంది...\n"
 
-#: libpam_misc/misc_conv.c:34
+#: libpam_misc/misc_conv.c:35
 msgid "...Sorry, your time is up!\n"
 msgstr "...క్షమించాలి, మీ సమయం అయిపోయింది!\n"
 
@@ -218,35 +218,41 @@ msgstr "...క్షమించాలి, మీ సమయం అయిపో�
 msgid "erroneous conversation (%d)\n"
 msgstr "తప్పుడు సంభాషణలు (%d)\n"
 
-#: modules/pam_exec/pam_exec.c:279
+#: modules/pam_exec/pam_exec.c:299
 #, c-format
 msgid "%s failed: exit code %d"
 msgstr "%s విఫలమైంది: బహిష్కరణ కోడ్ %d"
 
-#: modules/pam_exec/pam_exec.c:289
+#: modules/pam_exec/pam_exec.c:309
 #, c-format
 msgid "%s failed: caught signal %d%s"
 msgstr "%s విఫలమైంది: సంకేతము %d%s పొదింది"
 
-#: modules/pam_exec/pam_exec.c:299
+#: modules/pam_exec/pam_exec.c:319
 #, c-format
 msgid "%s failed: unknown status 0x%x"
 msgstr "%s విఫలమైంది: తెలియని స్థితి 0x%x"
 
-#: modules/pam_faillock/main.c:103
+#: modules/pam_faillock/main.c:130
 #, fuzzy, c-format
 msgid ""
-"Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset]\n"
+"Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset] [--"
+"legacy-output]\n"
 msgstr ""
 "%s: [--file rooted-filename] [--user username] [--reset[=n]] [--quiet]\n"
 
-#: modules/pam_faillock/pam_faillock.c:618
+#: modules/pam_faillock/main.c:181
+#, fuzzy, c-format
+msgid "Login           Failures    Latest failure         From\n"
+msgstr "లాగిన్           విఫలమైంది సరికొత్త వైఫల్యం     దీనినుండి\n"
+
+#: modules/pam_faillock/pam_faillock.c:408
 #, fuzzy, c-format
 msgid "The account is locked due to %u failed logins."
 msgstr "%u లాగిన్‌ల వైఫల్యం కారణంగా ఖాతా లాక్అయింది"
 
-#: modules/pam_faillock/pam_faillock.c:627
-#: modules/pam_faillock/pam_faillock.c:633
+#: modules/pam_faillock/pam_faillock.c:417
+#: modules/pam_faillock/pam_faillock.c:423
 #, c-format
 msgid "(%d minute left to unlock)"
 msgid_plural "(%d minutes left to unlock)"
@@ -254,45 +260,45 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. TRANSLATORS: only used if dngettext is not supported.
-#: modules/pam_faillock/pam_faillock.c:636
+#: modules/pam_faillock/pam_faillock.c:426
 #, c-format
 msgid "(%d minutes left to unlock)"
 msgstr ""
 
 #. TRANSLATORS: "strftime options for date of last login"
-#: modules/pam_lastlog/pam_lastlog.c:318 modules/pam_lastlog/pam_lastlog.c:579
+#: modules/pam_lastlog/pam_lastlog.c:326 modules/pam_lastlog/pam_lastlog.c:595
 msgid " %a %b %e %H:%M:%S %Z %Y"
 msgstr " %a %b %e %H:%M:%S %Z %Y"
 
 #. TRANSLATORS: " from <host>"
-#: modules/pam_lastlog/pam_lastlog.c:327 modules/pam_lastlog/pam_lastlog.c:588
+#: modules/pam_lastlog/pam_lastlog.c:335 modules/pam_lastlog/pam_lastlog.c:604
 #, c-format
 msgid " from %.*s"
 msgstr " %.*s నుండి"
 
 #. TRANSLATORS: " on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:339 modules/pam_lastlog/pam_lastlog.c:600
+#: modules/pam_lastlog/pam_lastlog.c:347 modules/pam_lastlog/pam_lastlog.c:616
 #, c-format
 msgid " on %.*s"
 msgstr " %.*s పైన"
 
 #. TRANSLATORS: "Last login: <date> from <host> on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:349
+#: modules/pam_lastlog/pam_lastlog.c:357
 #, c-format
 msgid "Last login:%s%s%s"
 msgstr "చివరి లాగిన్:%s%s%s"
 
-#: modules/pam_lastlog/pam_lastlog.c:355
+#: modules/pam_lastlog/pam_lastlog.c:363
 msgid "Welcome to your new account!"
 msgstr "మీ కొత్త ఖాతాకు స్వాగతము!"
 
 #. TRANSLATORS: "Last failed login: <date> from <host> on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:610
+#: modules/pam_lastlog/pam_lastlog.c:626
 #, c-format
 msgid "Last failed login:%s%s%s"
 msgstr "చివరిగా విఫలమైన లాగిన్:%s%s%s"
 
-#: modules/pam_lastlog/pam_lastlog.c:619 modules/pam_lastlog/pam_lastlog.c:626
+#: modules/pam_lastlog/pam_lastlog.c:635 modules/pam_lastlog/pam_lastlog.c:642
 #, c-format
 msgid "There was %d failed login attempt since the last successful login."
 msgid_plural ""
@@ -301,19 +307,19 @@ msgstr[0] "చివరి సమర్ధవంతపు లాగిన్‌�
 msgstr[1] "చివరి సమర్ధవంతపు లాగిన్‌నుండి ఆక్కడ %d విఫల లాగిన్ ప్రయత్నాలు వున్నాయి."
 
 #. TRANSLATORS: only used if dngettext is not supported
-#: modules/pam_lastlog/pam_lastlog.c:631
+#: modules/pam_lastlog/pam_lastlog.c:647
 #, c-format
 msgid "There were %d failed login attempts since the last successful login."
 msgstr "చివరి సమర్ధవంతపు లాగిన్‌నుండి ఆక్కడ %d విఫల లాగిన్ ప్రయత్నాలు వున్నాయి."
 
-#: modules/pam_limits/pam_limits.c:1164
+#: modules/pam_limits/pam_limits.c:1317
 #, fuzzy, c-format
 msgid "There were too many logins for '%s'."
 msgstr "'%s' కొరకు మరీయెక్కువ లాగిన్‌లు"
 
 #: modules/pam_mail/pam_mail.c:289
 #, fuzzy
-msgid "You have no mail."
+msgid "You do not have any new mail."
 msgstr "మీరు కొత్త మెయిల్ కలిగివున్నారు."
 
 #: modules/pam_mail/pam_mail.c:292
@@ -358,38 +364,38 @@ msgstr "డెరెక్టరీ '%s' సృష్టించుట."
 msgid "Unable to create and initialize directory '%s'."
 msgstr "డైరెక్టరీ %sను సృష్టించలేక పోయింది మరియు సిద్దీకరించలేక పోయింది."
 
-#: modules/pam_pwhistory/pam_pwhistory.c:371
-#: modules/pam_unix/pam_unix_passwd.c:589
+#: modules/pam_pwhistory/pam_pwhistory.c:384
+#: modules/pam_unix/pam_unix_passwd.c:583
 msgid "Password has been already used. Choose another."
 msgstr "సంకేతపదము యిప్పటికే వుపయోగించబడింది. మరియొకదానిని యెంచుకొనుము."
 
-#: modules/pam_pwhistory/pam_pwhistory.c:378
+#: modules/pam_pwhistory/pam_pwhistory.c:391
 msgid "Password has been already used."
 msgstr "సంకేతపదము యిప్పటికే వుపయోగించబడింది."
 
-#: modules/pam_selinux/pam_selinux.c:172
+#: modules/pam_selinux/pam_selinux.c:173
 #, fuzzy, c-format
 msgid "The default security context is %s."
 msgstr "అప్రమేయ రక్షణ సందర్భము %s\n"
 
-#: modules/pam_selinux/pam_selinux.c:176
+#: modules/pam_selinux/pam_selinux.c:177
 msgid "Would you like to enter a different role or level?"
 msgstr "మీరు విభిన్న పాత్రను లేదా స్థాయిని ప్రవేశపెడదామని అనుకుంటున్నారా?"
 
-#: modules/pam_selinux/pam_selinux.c:189
+#: modules/pam_selinux/pam_selinux.c:190
 msgid "role:"
 msgstr "పాత్ర:"
 
-#: modules/pam_selinux/pam_selinux.c:193
+#: modules/pam_selinux/pam_selinux.c:194
 #, fuzzy, c-format
 msgid "There is no default type for role %s."
 msgstr "పాత్ర %sకొరకు యెటువంటి అప్రమేయ రకములేదు\n"
 
-#: modules/pam_selinux/pam_selinux.c:225
+#: modules/pam_selinux/pam_selinux.c:226
 msgid "level:"
 msgstr "స్థాయి:"
 
-#: modules/pam_selinux/pam_selinux.c:259
+#: modules/pam_selinux/pam_selinux.c:260
 #, fuzzy
 msgid "This is not a valid security context."
 msgstr "విలువైన రక్షణ సందర్భముకాదు"
@@ -424,7 +430,7 @@ msgstr "pam_set_item() విఫలమైంది\n"
 msgid "login: failure forking: %m"
 msgstr "login: failure forking: %m"
 
-#: modules/pam_timestamp/pam_timestamp.c:361
+#: modules/pam_timestamp/pam_timestamp.c:384
 #, fuzzy, c-format
 msgid "Access has been granted (last access was %ld seconds ago)."
 msgstr "యాక్సిస్ యివ్వబడింది (చివరిగా యాక్సిస్ చేసినది %ld సెకనుల క్రితం)."
@@ -460,38 +466,42 @@ msgstr[1] "హెచ్చరిక: మీ సంకేతపదము %d ర�
 msgid "Warning: your password will expire in %d days."
 msgstr "హెచ్చరిక: మీ సంకేతపదము %d రోజులలో కాలముతీరుతుంది"
 
-#: modules/pam_unix/pam_unix_passwd.c:465
+#: modules/pam_unix/pam_unix_passwd.c:458
 msgid "NIS password could not be changed."
 msgstr "NIS సంకేతపదము మార్చబడ లేకపోయింది."
 
-#: modules/pam_unix/pam_unix_passwd.c:563
+#: modules/pam_unix/pam_unix_passwd.c:556
 #, fuzzy
 msgid "No password has been supplied."
 msgstr "ఎటువంటి సంకేతపదము యివ్వలేదు"
 
-#: modules/pam_unix/pam_unix_passwd.c:564
+#: modules/pam_unix/pam_unix_passwd.c:557
 #, fuzzy
 msgid "The password has not been changed."
 msgstr "NIS సంకేతపదము మార్చబడ లేకపోయింది."
 
-#: modules/pam_unix/pam_unix_passwd.c:581
+#: modules/pam_unix/pam_unix_passwd.c:574
 msgid "You must choose a shorter password."
 msgstr "మీరు తప్పనిసరిగా తక్కువ పాస్‌వర్డ్‌ను ఎంచుకోవాలి."
 
-#: modules/pam_unix/pam_unix_passwd.c:585
+#: modules/pam_unix/pam_unix_passwd.c:578
 #, fuzzy
 msgid "You must choose a longer password."
 msgstr "మీరు తప్పక పొడవాటి సంకేతపదమును యెంచుకొనవలెను."
 
-#: modules/pam_unix/pam_unix_passwd.c:692
+#: modules/pam_unix/pam_unix_passwd.c:683
 #, c-format
 msgid "Changing password for %s."
 msgstr "%s కొరకు సంకేతపదమును మార్చుతోంది"
 
-#: modules/pam_unix/pam_unix_passwd.c:722
+#: modules/pam_unix/pam_unix_passwd.c:713
 #, fuzzy
 msgid "You must wait longer to change your password."
 msgstr "మీ సంకేతపదమును మార్చుటకు మీరు ఎక్కువసేపు వేచివుండాలి"
+
+#, fuzzy
+#~ msgid "You have no mail."
+#~ msgstr "మీరు కొత్త మెయిల్ కలిగివున్నారు."
 
 #~ msgid "is the same as the old one"
 #~ msgstr "ఇది పాతదేనా"
@@ -558,9 +568,6 @@ msgstr "మీ సంకేతపదమును మార్చుటకు మ
 
 #~ msgid "%s: Can't reset all users to non-zero\n"
 #~ msgstr "%s: వినియోగదారులనందరిని సున్నా-కానిదానికి తిరిగివుంచలేము\n"
-
-#~ msgid "Login           Failures Latest failure     From\n"
-#~ msgstr "లాగిన్           విఫలమైంది సరికొత్త వైఫల్యం     దీనినుండి\n"
 
 #~ msgid ""
 #~ "%s: [-f rooted-filename] [--file rooted-filename]\n"

@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cpio 2.12\n"
+"Project-Id-Version: cpio 2.14\n"
 "Report-Msgid-Bugs-To: bug-cpio@gnu.org\n"
-"POT-Creation-Date: 2019-11-06 09:58+0200\n"
-"PO-Revision-Date: 2015-10-10 17:30+0800\n"
+"POT-Creation-Date: 2024-01-14 13:56+0200\n"
+"PO-Revision-Date: 2023-06-02 15:28+0800\n"
 "Last-Translator: Tianze Wang <zwpwjwtz@126.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -19,181 +19,156 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: gnu/argmatch.c:134
+#: gnu/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "%2$s 的参数 %1$s 无效"
 
-#: gnu/argmatch.c:135
+#: gnu/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "%2$s 的参数 %1$s 有二义性"
 
-#: gnu/argmatch.c:154
+#: gnu/argmatch.c:165
 msgid "Valid arguments are:"
 msgstr "有效的参数是："
 
-#: gnu/argp-help.c:148
+#: gnu/argp-help.c:151
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT：%s 的值小于等于 %s"
 
-#: gnu/argp-help.c:224
+#: gnu/argp-help.c:227
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s：ARGP_HELP_FMT 需要一个数值作为参数"
 
-#: gnu/argp-help.c:234
+#: gnu/argp-help.c:237
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s：未知的 ARGP_HELP_FMT 参数"
 
-#: gnu/argp-help.c:247
+#: gnu/argp-help.c:250
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
 msgstr "ARGP_HELP_FMT 中有无效值：%s"
 
-#: gnu/argp-help.c:1227
+#: gnu/argp-help.c:1368
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
 msgstr "用于长选项的必选（或可选）选项，对于短选项也是必选（或可选）的。"
 
-#: gnu/argp-help.c:1614
+#: gnu/argp-help.c:1734
 msgid "Usage:"
 msgstr "用法："
 
-#: gnu/argp-help.c:1618
+#: gnu/argp-help.c:1738
 msgid "  or: "
 msgstr "  或者： "
 
-#: gnu/argp-help.c:1630
+#: gnu/argp-help.c:1750
 msgid " [OPTION...]"
 msgstr " [选项...]"
 
-#: gnu/argp-help.c:1657
+#: gnu/argp-help.c:1777
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
 msgstr "尝试“%s --help”或者“%s --usage”来获取更多信息。\n"
 
-#: gnu/argp-help.c:1685
+#: gnu/argp-help.c:1805
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr "向 %s 报告错误。\n"
 
-#: gnu/argp-help.c:1886 gnu/error.c:191
+#: gnu/argp-help.c:2006 gnu/error.c:194
 msgid "Unknown system error"
 msgstr "未知的系统错误"
 
-#: gnu/argp-parse.c:81
+#: gnu/argp-parse.c:80
 msgid "give this help list"
 msgstr "显示帮助信息"
 
-#: gnu/argp-parse.c:82
+#: gnu/argp-parse.c:81
 msgid "give a short usage message"
 msgstr "显示简短使用信息"
 
-#: gnu/argp-parse.c:83 tests/genfile.c:131
+#: gnu/argp-parse.c:82 tests/genfile.c:134
 msgid "NAME"
 msgstr "程序名"
 
-#: gnu/argp-parse.c:84
+#: gnu/argp-parse.c:83
 msgid "set the program name"
 msgstr "设置程序名"
 
-#: gnu/argp-parse.c:85
+#: gnu/argp-parse.c:84
 msgid "SECS"
 msgstr "秒数"
 
-#: gnu/argp-parse.c:86
+#: gnu/argp-parse.c:85
 msgid "hang for SECS seconds (default 3600)"
 msgstr "挂起一定秒数（缺省 3600）"
 
-#: gnu/argp-parse.c:143
+#: gnu/argp-parse.c:142
 msgid "print program version"
 msgstr "显示版本信息"
 
-#: gnu/argp-parse.c:160
+#: gnu/argp-parse.c:159
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "（程序错误）无法获取版本信息！"
 
-#: gnu/argp-parse.c:613
+#: gnu/argp-parse.c:612
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s：参数太多\n"
 
-#: gnu/argp-parse.c:756
+#: gnu/argp-parse.c:758
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "（程序错误）无法识别的选项！"
 
-#: gnu/closeout.c:112 src/util.c:93 src/util.c:96 src/util.c:146
+#: gnu/closeout.c:121 src/util.c:91 src/util.c:94 src/util.c:144
 #, c-format
 msgid "write error"
 msgstr "写错误"
 
-#: gnu/getopt.c:575 gnu/getopt.c:604
+#: gnu/getopt.c:282
 #, c-format
-msgid "%s: option '%s' is ambiguous; possibilities:"
-msgstr "%s：选项“%s”有二义性；可能为："
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s：选项“%s%s”有二义性\n"
 
-#: gnu/getopt.c:619
+#: gnu/getopt.c:288
 #, c-format
-msgid "%s: option '%s' is ambiguous\n"
-msgstr "%s：选项“%s”有二义性\n"
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s：选项“%s%s”有二义性；可能为："
 
-#: gnu/getopt.c:654 gnu/getopt.c:658
+#: gnu/getopt.c:322
 #, c-format
-msgid "%s: option '--%s' doesn't allow an argument\n"
-msgstr "%s：选项“--%s”不接受参数\n"
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s：无法识别的选项“%s%s”\n"
 
-#: gnu/getopt.c:667 gnu/getopt.c:672
+#: gnu/getopt.c:348
 #, c-format
-msgid "%s: option '%c%s' doesn't allow an argument\n"
-msgstr "%s：选项“%c%s”不接受参数\n"
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s：选项“%s%s”不接受参数\n"
 
-#: gnu/getopt.c:715 gnu/getopt.c:734
+#: gnu/getopt.c:363
 #, c-format
-msgid "%s: option '--%s' requires an argument\n"
-msgstr "%s：选项“--%s”需要一个参数\n"
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s：选项“%s%s”需要一个参数\n"
 
-#: gnu/getopt.c:772 gnu/getopt.c:775
-#, c-format
-msgid "%s: unrecognized option '--%s'\n"
-msgstr "%s：不可识别的选项“--%s”\n"
-
-#: gnu/getopt.c:783 gnu/getopt.c:786
-#, c-format
-msgid "%s: unrecognized option '%c%s'\n"
-msgstr "%s：无法识别的选项“%c%s”\n"
-
-#: gnu/getopt.c:835 gnu/getopt.c:838
+#: gnu/getopt.c:624
 #, c-format
 msgid "%s: invalid option -- '%c'\n"
 msgstr "%s：无效的选项 -- “%c”\n"
 
-#: gnu/getopt.c:891 gnu/getopt.c:908 gnu/getopt.c:1118 gnu/getopt.c:1136
+#: gnu/getopt.c:639 gnu/getopt.c:685
 #, c-format
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s：选项需要一个参数 -- “%c”\n"
 
-#: gnu/getopt.c:964 gnu/getopt.c:980
-#, c-format
-msgid "%s: option '-W %s' is ambiguous\n"
-msgstr "%s：选项“-W %s”有二义性\n"
-
-#: gnu/getopt.c:1004 gnu/getopt.c:1022
-#, c-format
-msgid "%s: option '-W %s' doesn't allow an argument\n"
-msgstr "%s：选项“-W %s”不接受参数\n"
-
-#: gnu/getopt.c:1043 gnu/getopt.c:1061
-#, c-format
-msgid "%s: option '-W %s' requires an argument\n"
-msgstr "%s：选项“-W %s”需要一个参数\n"
-
-#: gnu/obstack.c:338 gnu/obstack.c:340 gnu/xalloc-die.c:34
+#: gnu/obstack.c:317 gnu/obstack.c:319 gnu/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "内存已耗尽"
 
@@ -226,7 +201,7 @@ msgstr "返回初始工作目录失败"
 #. for your locale.
 #.
 #. If you don't know what to put here, please see
-#. <http://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
+#. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
 #: gnu/quotearg.c:354
 msgid "`"
@@ -236,12 +211,12 @@ msgstr "`"
 msgid "'"
 msgstr "\""
 
-#: gnu/version-etc.c:74
+#: gnu/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
 msgstr "由 %1$s 打包 （%2$s）\n"
 
-#: gnu/version-etc.c:77
+#: gnu/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
 msgstr "由 %1$s 打包\n"
@@ -249,40 +224,37 @@ msgstr "由 %1$s 打包\n"
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
-#: gnu/version-etc.c:84
+#: gnu/version-etc.c:83
 msgid "(C)"
 msgstr "©"
 
-#: gnu/version-etc.c:86
+#. TRANSLATORS: The %s placeholder is the web address of the GPL license.
+#: gnu/version-etc.c:88
+#, c-format
 msgid ""
-"\n"
-"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
-"html>.\n"
+"License GPLv3+: GNU GPL version 3 or later <%s>.\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
-"\n"
 msgstr ""
-"\n"
-"GPLv3+许可证：GNU 通用公共许可证第3 版或更新版本 <http://gnu.org/licenses/"
-"gpl.html>.\n"
+"GPLv3+许可证：GNU 通用公共许可证第3版或更新版本 <%s>.\n"
 "本软件是自由软件，您可以自由修改和重新发布它。\n"
 "在法律许可范围内，本软件不提供任何担保。\n"
 "\n"
 
 #. TRANSLATORS: %s denotes an author name.
-#: gnu/version-etc.c:102
+#: gnu/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
 msgstr "由%s 编写。\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:106
+#: gnu/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
 msgstr "由%s 和%s 编写。\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:110
+#: gnu/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
 msgstr "由%s、%s 和%s 编写。\n"
@@ -290,7 +262,7 @@ msgstr "由%s、%s 和%s 编写。\n"
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:117
+#: gnu/version-etc.c:120
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -302,7 +274,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:124
+#: gnu/version-etc.c:127
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -314,7 +286,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:131
+#: gnu/version-etc.c:134
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -326,7 +298,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:139
+#: gnu/version-etc.c:142
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -338,7 +310,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:147
+#: gnu/version-etc.c:150
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -352,7 +324,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:156
+#: gnu/version-etc.c:159
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -366,7 +338,7 @@ msgstr ""
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:167
+#: gnu/version-etc.c:170
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
@@ -381,33 +353,25 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: gnu/version-etc.c:245
+#: gnu/version-etc.c:249
 #, c-format
-msgid ""
-"\n"
-"Report bugs to: %s\n"
-msgstr ""
-"\n"
-"向 %s 报告错误。\n"
+msgid "Report bugs to: %s\n"
+msgstr "有关软件缺陷等问题，请咨询：%s\n"
 
-#: gnu/version-etc.c:247
+#: gnu/version-etc.c:251
 #, c-format
 msgid "Report %s bugs to: %s\n"
 msgstr "向 %s 报告有关 %s 的错误。\n"
 
-#: gnu/version-etc.c:251
+#: gnu/version-etc.c:255 gnu/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "%1$s 的主页：<%2$s>\n"
 
-#: gnu/version-etc.c:253
+#: gnu/version-etc.c:260
 #, c-format
-msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
-msgstr "%1$s 的主页：<http://www.gnu.org/software/%2$s/>\n"
-
-#: gnu/version-etc.c:256
-msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
-msgstr "GNU程序的通用帮助：<http://www.gnu.org/gethelp/>\n"
+msgid "General help using GNU software: <%s>\n"
+msgstr "GNU程序的通用帮助：<%s>\n"
 
 #. TRANSLATORS: %s after `Cannot' is a function name, e.g. `Cannot open'.
 #. Directly translating this to another language will not work, first because
@@ -432,48 +396,48 @@ msgstr "%s：警告：函数 %s 失败"
 msgid "%s: Cannot change mode to %s"
 msgstr "%s：无法更改模式为 %s"
 
-#: lib/paxerror.c:103
+#: lib/paxerror.c:104
 #, c-format
-msgid "%s: Cannot change ownership to uid %lu, gid %lu"
-msgstr "%s：无法更改所有权到用户ID %lu，组ID %lu"
+msgid "%s: Cannot change ownership to uid %ju, gid %ju"
+msgstr "%s：无法更改所有权到用户ID %ju，组ID %ju"
 
-#: lib/paxerror.c:129
+#: lib/paxerror.c:130
 #, c-format
 msgid "%s: Cannot hard link to %s"
 msgstr "%s：无法创建到 %s 的硬链接"
 
-#: lib/paxerror.c:181 lib/paxerror.c:213
+#: lib/paxerror.c:182 lib/paxerror.c:212
 #, c-format
-msgid "%s: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%s：在 %s 字节处发生读错误（读取 %lu 字节时）"
+msgid "%s: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%s：在 %jd 字节处发生读错误（读取 %zu 字节时）"
 
 #: lib/paxerror.c:194
 #, c-format
-msgid "%s: Warning: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Warning: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%s：警告：在 %s 字节处发生读错误（读取 %lu 字节时）"
+msgid "%s: Warning: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Warning: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%s：警告：在 %jd 字节处发生读错误（读取 %zu 字节时）"
 
-#: lib/paxerror.c:261
+#: lib/paxerror.c:259
 #, c-format
-msgid "%s: Cannot seek to %s"
-msgstr "%s：无法定位到 %s"
+msgid "%s: Cannot seek to %jd"
+msgstr "%s：无法定位到 %jd"
 
-#: lib/paxerror.c:277
+#: lib/paxerror.c:273
 #, c-format
-msgid "%s: Warning: Cannot seek to %s"
-msgstr "%s：警告：无法定位到 %s"
+msgid "%s: Warning: Cannot seek to %jd"
+msgstr "%s：警告：无法定位到 %jd"
 
-#: lib/paxerror.c:286
+#: lib/paxerror.c:281
 #, c-format
 msgid "%s: Cannot create symlink to %s"
 msgstr "%s：无法创建链接到 %s"
 
-#: lib/paxerror.c:351
+#: lib/paxerror.c:346
 #, c-format
-msgid "%s: Wrote only %lu of %lu byte"
-msgid_plural "%s: Wrote only %lu of %lu bytes"
-msgstr[0] "%s：仅写入 %lu 字节，共 %lu 字节"
+msgid "%s: Wrote only %zu of %zu byte"
+msgid_plural "%s: Wrote only %zu of %zu bytes"
+msgstr[0] "%s：仅写入 %zu 字节，共 %zu 字节"
 
 #: lib/paxnames.c:140
 #, c-format
@@ -493,316 +457,326 @@ msgstr "为空成员名替换“.”"
 msgid "Substituting `.' for empty hard link target"
 msgstr "为空硬链接目标替换“.”"
 
-#: lib/rtapelib.c:299
+#: lib/rtapelib.c:295
 #, c-format
 msgid "exec/tcp: Service not available"
 msgstr "exec/tcp：服务不可用"
 
-#: lib/rtapelib.c:303
+#: lib/rtapelib.c:299
 #, c-format
 msgid "stdin"
 msgstr "标准输入"
 
-#: lib/rtapelib.c:306
+#: lib/rtapelib.c:302
 #, c-format
 msgid "stdout"
 msgstr "标准输出"
 
-#: lib/rtapelib.c:429
+#: lib/rtapelib.c:450
 #, c-format
 msgid "Cannot connect to %s: resolve failed"
 msgstr "无法连接到 %s：解析主机名失败"
 
-#: lib/rtapelib.c:502
+#: lib/rtapelib.c:523
 #, c-format
 msgid "Cannot redirect files for remote shell"
 msgstr "无法为远程shell重定向文件"
 
-#: lib/rtapelib.c:516
+#: lib/rtapelib.c:528
+#, c-format
+msgid "Cannot reset uid and gid: %s"
+msgstr "无法重置用户ID和组ID：%s"
+
+#: lib/rtapelib.c:540
 #, c-format
 msgid "Cannot execute remote shell"
 msgstr "无法执行远程 shell"
 
-#: rmt/rmt.c:432
+#: rmt/rmt.c:434
 msgid "Seek direction out of range"
 msgstr "定位越界"
 
-#: rmt/rmt.c:438
+#: rmt/rmt.c:440
 msgid "Invalid seek direction"
 msgstr "定位方向无效"
 
-#: rmt/rmt.c:446
+#: rmt/rmt.c:448
 msgid "Invalid seek offset"
 msgstr "定位偏移值无效"
 
-#: rmt/rmt.c:452
+#: rmt/rmt.c:454
 msgid "Seek offset out of range"
 msgstr "定位偏移量越界"
 
-#: rmt/rmt.c:493 rmt/rmt.c:544 rmt/rmt.c:608
+#: rmt/rmt.c:495 rmt/rmt.c:546 rmt/rmt.c:610
 msgid "Invalid byte count"
 msgstr "无效的字节数"
 
-#: rmt/rmt.c:499 rmt/rmt.c:550 rmt/rmt.c:614 rmt/rmt.c:625
+#: rmt/rmt.c:501 rmt/rmt.c:552 rmt/rmt.c:616 rmt/rmt.c:627
 msgid "Byte count out of range"
 msgstr "字节数越界"
 
-#: rmt/rmt.c:558
+#: rmt/rmt.c:560
 msgid "Premature eof"
 msgstr "文件非正常终止"
 
-#: rmt/rmt.c:601
+#: rmt/rmt.c:603
 msgid "Invalid operation code"
 msgstr "无效的操作代码"
 
-#: rmt/rmt.c:636 rmt/rmt.c:680
+#: rmt/rmt.c:638 rmt/rmt.c:682
 msgid "Operation not supported"
 msgstr "不支持该操作"
 
-#: rmt/rmt.c:664
+#: rmt/rmt.c:666
 msgid "Unexpected arguments"
 msgstr "未预期参数"
 
-#: rmt/rmt.c:689
+#: rmt/rmt.c:691
 msgid "Manipulate a tape drive, accepting commands from a remote process"
 msgstr "操作一个磁带设备，并接受外来进程的命令"
 
-#: rmt/rmt.c:696 src/main.c:129 tests/genfile.c:167
+#: rmt/rmt.c:698 src/main.c:130 tests/genfile.c:179
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: rmt/rmt.c:697
+#: rmt/rmt.c:699
 msgid "set debug level"
 msgstr "设置调试级别"
 
-#: rmt/rmt.c:698 src/main.c:166 src/main.c:172 tests/genfile.c:133
-#: tests/genfile.c:181 tests/genfile.c:185 tests/genfile.c:188
-#: tests/genfile.c:194
+#: rmt/rmt.c:700 src/main.c:167 src/main.c:173 tests/genfile.c:136
+#: tests/genfile.c:193 tests/genfile.c:197 tests/genfile.c:200
+#: tests/genfile.c:206
 msgid "FILE"
 msgstr "文件"
 
-#: rmt/rmt.c:699
+#: rmt/rmt.c:701
 msgid "set debug output file name"
 msgstr "设置调试输出的文件名"
 
-#: rmt/rmt.c:715 rmt/rmt.c:783
+#: rmt/rmt.c:717 rmt/rmt.c:785
 #, c-format
 msgid "cannot open %s"
 msgstr "无法打开 %s"
 
-#: rmt/rmt.c:780 tests/genfile.c:953 tests/genfile.c:970
+#: rmt/rmt.c:782 tests/genfile.c:1036
 #, c-format
 msgid "too many arguments"
 msgstr "参数太多"
 
-#: rmt/rmt.c:822
+#: rmt/rmt.c:824
 msgid "Garbage command"
 msgstr "命令无效"
 
-#: src/copyin.c:45
+#: src/copyin.c:46
 #, c-format
 msgid "warning: skipped %ld byte of junk"
 msgid_plural "warning: skipped %ld bytes of junk"
 msgstr[0] "警告：跳过 %ld 个空字节"
 
-#: src/copyin.c:66
+#: src/copyin.c:68
 #, c-format
 msgid "rename %s -> "
 msgstr "将 %s 重命名为 -> "
 
-#: src/copyin.c:114
+#: src/copyin.c:116
 #, c-format
 msgid "%s: stored filename length is out of range"
 msgstr "%s：存储的文件名长度超过范围"
 
-#: src/copyin.c:173 src/copyin.c:519 src/copyin.c:534 src/copyin.c:1378
+#: src/copyin.c:175 src/copyin.c:521 src/copyin.c:536 src/copyin.c:1552
 #, c-format
 msgid "%s: checksum error (0x%x, should be 0x%x)"
 msgstr "%s：校验错误（0x%x，应为 0x%x）"
 
-#: src/copyin.c:200 src/copypass.c:135
+#: src/copyin.c:202 src/copypass.c:129
 #, c-format
 msgid "%s not created: newer or same age version exists"
 msgstr "未创建 %s：已有更新或同样新的版本存在"
 
-#: src/copyin.c:210 src/copypass.c:143
+#: src/copyin.c:212 src/copypass.c:137
 #, c-format
 msgid "cannot remove current %s"
 msgstr "无法删除当前 %s"
 
-#: src/copyin.c:271 src/copyin.c:467 src/copyin.c:582 src/copypass.c:391
+#: src/copyin.c:273 src/copyin.c:469 src/copyin.c:584 src/copypass.c:395
 #, c-format
 msgid "cannot link %s to %s"
 msgstr "无法将 %s 连接到 %s"
 
-#: src/copyin.c:500
+#: src/copyin.c:502
 #, c-format
 msgid "cannot swap halfwords of %s: odd number of halfwords"
 msgstr "无法交换 %s 的半字：半字值异常"
 
-#: src/copyin.c:508
+#: src/copyin.c:510
 #, c-format
 msgid "cannot swap bytes of %s: odd number of bytes"
 msgstr "无法交换 %s 的字节：字节值异常"
 
-#: src/copyin.c:659
-#, c-format
-msgid "%s: Cannot symlink to %s"
-msgstr "%s：无法链接到 %s"
-
-#: src/copyin.c:713 src/copyout.c:832 src/copypass.c:314
+#: src/copyin.c:858 src/copyout.c:826 src/copypass.c:315
 #, c-format
 msgid "%s: unknown file type"
 msgstr "%s：未知的文件类型"
 
-#: src/copyin.c:848 src/copyin.c:855
+#: src/copyin.c:1015 src/copyin.c:1022
 #, c-format
 msgid "Malformed number %.*s"
 msgstr "数字 %.*s 格式错误"
 
-#: src/copyin.c:865
+#: src/copyin.c:1032
 #, c-format
 msgid "Archive value %.*s is out of range"
 msgstr "存档值 %.*s 超出范围"
 
-#: src/copyin.c:904
+#: src/copyin.c:1071
 #, c-format
 msgid "premature end of archive"
 msgstr "归档非正常终止"
 
-#: src/copyin.c:1120
+#: src/copyin.c:1170
+#, c-format
+msgid "malformed header: file name of zero length"
+msgstr "头部格式有误：文件名为空"
+
+#: src/copyin.c:1178
+#, c-format
+msgid "malformed header: file name is not nul-terminated"
+msgstr "头部格式有误：文件名应当以NUL字符"
+
+#: src/copyin.c:1300
 #, c-format
 msgid "warning: archive header has reverse byte-order"
 msgstr "警告：归档头为反向字节序"
 
-#: src/copyin.c:1260
+#: src/copyin.c:1437
 #, c-format
 msgid "standard input is closed"
 msgstr "标准输入已关闭"
 
-#: src/copyin.c:1435 src/copyout.c:874 src/copypass.c:332
+#: src/copyin.c:1610 src/copyout.c:868 src/copypass.c:333
 #, c-format
 msgid "%lu block\n"
 msgid_plural "%lu blocks\n"
 msgstr[0] "%lu 块\n"
 
-#: src/copyout.c:51 src/copyout.c:60
+#: src/copyout.c:49 src/copyout.c:57
 #, c-format
 msgid "cannot read checksum for %s"
 msgstr "无法为 %s 读入校验和"
 
-#: src/copyout.c:293
-#, fuzzy, c-format
+#: src/copyout.c:290
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%s"
-msgstr "数值超出允许范围：%s"
+msgstr "%s: 值 %s %s 超出允许范围 0..%s"
 
-#: src/copyout.c:304
+#: src/copyout.c:301
 #, c-format
 msgid "%s: truncating %s"
 msgstr "%s：截取 %s"
 
-#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:476
+#: src/copyout.c:336 src/copyout.c:399 src/copyout.c:473
 msgid "inode number"
 msgstr "inode号"
 
-#: src/copyout.c:342 src/copyout.c:405 src/copyout.c:480
+#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:477
 msgid "file mode"
 msgstr "文件模式"
 
-#: src/copyout.c:345 src/copyout.c:407 src/copyout.c:484
+#: src/copyout.c:342 src/copyout.c:404 src/copyout.c:481
 msgid "uid"
 msgstr "UID"
 
-#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:488
+#: src/copyout.c:345 src/copyout.c:406 src/copyout.c:485
 msgid "gid"
 msgstr "GID"
 
-#: src/copyout.c:351 src/copyout.c:412 src/copyout.c:492
+#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:489
 msgid "number of links"
 msgstr "链接数量"
 
-#: src/copyout.c:354 src/copyout.c:417
+#: src/copyout.c:351 src/copyout.c:414
 msgid "modification time"
 msgstr "修改时间"
 
-#: src/copyout.c:357 src/copyout.c:424 src/copyout.c:516
+#: src/copyout.c:354 src/copyout.c:421 src/copyout.c:513
 msgid "file size"
 msgstr "文件大小"
 
-#: src/copyout.c:361
+#: src/copyout.c:358
 msgid "device major number"
 msgstr "主设备号"
 
-#: src/copyout.c:365
+#: src/copyout.c:362
 msgid "device minor number"
 msgstr "次设备号"
 
-#: src/copyout.c:369
+#: src/copyout.c:366
 msgid "rdev major"
 msgstr "rdev 主设备号"
 
-#: src/copyout.c:373
+#: src/copyout.c:370
 msgid "rdev minor"
 msgstr "rdev 次设备号"
 
-#: src/copyout.c:377 src/copyout.c:420 src/copyout.c:503
+#: src/copyout.c:374 src/copyout.c:417 src/copyout.c:500
 msgid "name size"
 msgstr "名字大小"
 
-#: src/copyout.c:399
+#: src/copyout.c:396
 msgid "device number"
 msgstr "设备号"
 
-#: src/copyout.c:414
+#: src/copyout.c:411
 msgid "rdev"
 msgstr "rdev"
 
-#: src/copyout.c:472
+#: src/copyout.c:469
 #, c-format
 msgid "%s: truncating inode number"
 msgstr "%s：截取inode编号"
 
-#: src/copyout.c:502
-#, fuzzy, c-format
+#: src/copyout.c:499
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%u"
-msgstr "数值超出允许范围：%s"
+msgstr "%s: 值 %s %s 超出允许范围 0..%u"
 
-#: src/copyout.c:515
-#, fuzzy, c-format
+#: src/copyout.c:512
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%lu"
-msgstr "数值超出允许范围：%s"
+msgstr "%s: 值 %s %s 超出允许范围 0..%lu"
 
-#: src/copyout.c:564
+#: src/copyout.c:561
 #, c-format
 msgid "%s: file name too long"
 msgstr "%s：文件名过长"
 
-#: src/copyout.c:621
+#: src/copyout.c:618
 #, c-format
 msgid "standard output is closed"
 msgstr "标准输出已关闭"
 
-#: src/copyout.c:644 src/copypass.c:99
+#: src/copyout.c:641 src/copypass.c:93
 #, c-format
 msgid "blank line ignored"
 msgstr "忽略空行"
 
-#: src/copyout.c:757
+#: src/copyout.c:751
 #, c-format
 msgid "%s not dumped: not a regular file"
 msgstr "%s 未输出：不是普通文件"
 
-#: src/copyout.c:808
+#: src/copyout.c:802
 #, c-format
 msgid "%s: symbolic link too long"
 msgstr "%s：符号连接过长"
 
-#: src/copypass.c:386
+#: src/copypass.c:390
 #, c-format
 msgid "%s linked to %s"
 msgstr "%s 连接到 %s"
 
-#: src/main.c:76
+#: src/main.c:77
 msgid ""
 "GNU `cpio' copies files to and from archives\n"
 "\n"
@@ -824,120 +798,120 @@ msgstr ""
 "  # 拷贝 name-list 中的文件到目标目录（destination-directory）\n"
 "  cpio -p destination-directory < name-list\n"
 
-#: src/main.c:92
+#: src/main.c:93
 #, c-format
 msgid "%s is meaningless with %s"
 msgstr "%s 与 %s 在一起时无意义"
 
-#: src/main.c:98
+#: src/main.c:99
 msgid "Main operation mode:"
 msgstr "主操作模式"
 
-#: src/main.c:100
+#: src/main.c:101
 msgid "Create the archive (run in copy-out mode)"
 msgstr "创建包（以 copy-out 模式运行）"
 
-#: src/main.c:102
+#: src/main.c:103
 msgid "Extract files from an archive (run in copy-in mode)"
 msgstr "从包中提取文件（以 copy-in 模式运行）"
 
-#: src/main.c:104
+#: src/main.c:105
 msgid "Run in copy-pass mode"
 msgstr "运行 copy-pass 模式"
 
-#: src/main.c:106
+#: src/main.c:107
 msgid "Print a table of contents of the input"
 msgstr "显示输入内容列表"
 
-#: src/main.c:112
+#: src/main.c:113
 msgid "Operation modifiers valid in any mode:"
 msgstr "应用于所有模式的选项："
 
-#: src/main.c:114
+#: src/main.c:115
 msgid "DIR"
 msgstr "目录"
 
-#: src/main.c:115
+#: src/main.c:116
 msgid "Change to directory DIR"
 msgstr "切换到指定目录"
 
-#: src/main.c:118
+#: src/main.c:119
 msgid "Archive file is local, even if its name contains colons"
 msgstr "包文件是本地的，尽管名字中含有冒号"
 
-#: src/main.c:119 tests/genfile.c:154
+#: src/main.c:120 tests/genfile.c:158
 msgid "FORMAT"
 msgstr "格式"
 
-#: src/main.c:120
+#: src/main.c:121
 msgid "Use given archive FORMAT"
 msgstr "使用指定的包格式"
 
-#: src/main.c:122
+#: src/main.c:123
 msgid "Set the I/O block size to 5120 bytes"
 msgstr "设置 I/O 块大小为 5120 字节"
 
-#: src/main.c:123
+#: src/main.c:124
 msgid "BLOCK-SIZE"
 msgstr "块大小"
 
-#: src/main.c:124
+#: src/main.c:125
 msgid "Set the I/O block size to BLOCK-SIZE * 512 bytes"
 msgstr "设置 I/O 块大小为 BLOCK-SIZE * 512 字节"
 
-#: src/main.c:126
+#: src/main.c:127
 msgid "Use the old portable (ASCII) archive format"
 msgstr "使用老的可移植的（ASCII）包格式"
 
-#: src/main.c:128
+#: src/main.c:129
 msgid "Print a \".\" for each file processed"
 msgstr "每处理一个文件就显示一个“.”"
 
-#: src/main.c:130
+#: src/main.c:131
 msgid "Set the I/O block size to the given NUMBER of bytes"
 msgstr "设置 I/O 块大小为指定的 NUMBER 字节"
 
-#: src/main.c:132
+#: src/main.c:133
 msgid "Do not print the number of blocks copied"
 msgstr "不要显示已拷贝的块数"
 
-#: src/main.c:134
+#: src/main.c:135
 msgid "Verbosely list the files processed"
 msgstr "详细列出已处理的文件"
 
-#: src/main.c:137
+#: src/main.c:138
 msgid "Enable debugging info"
 msgstr "启用调试信息"
 
-#: src/main.c:139
+#: src/main.c:140
 msgid "FLAG"
 msgstr "标志"
 
-#: src/main.c:140
+#: src/main.c:141
 msgid ""
 "Control warning display. Currently FLAG is one of 'none', 'truncate', 'all'. "
 "Multiple options accumulate."
 msgstr ""
 "控制警告信息显示。当前标志可以是“none”、“truncate”或“all”。多个选项可以累积。"
 
-#: src/main.c:141
+#: src/main.c:142
 msgid "[USER][:.][GROUP]"
 msgstr "[用户][:.][组]"
 
-#: src/main.c:142
+#: src/main.c:143
 msgid ""
 "Set the ownership of all files created to the specified USER and/or GROUP"
 msgstr "设置所有文件的所有权信息到指定的用户和/或组"
 
-#: src/main.c:147
+#: src/main.c:148
 msgid "Operation modifiers valid in copy-in and copy-out modes"
 msgstr "应用于 copy-in 及 copy-out 模式的操作修饰符"
 
-#: src/main.c:148 src/main.c:183 src/main.c:193
+#: src/main.c:149 src/main.c:184 src/main.c:194
 msgid "[[USER@]HOST:]FILE-NAME"
 msgstr "[[用户@]主机:]文件名"
 
-#: src/main.c:149
+#: src/main.c:150
 msgid ""
 "Use this FILE-NAME instead of standard input or output. Optional USER and "
 "HOST specify the user and host names in case of a remote archive"
@@ -945,172 +919,176 @@ msgstr ""
 "用“文件名”来替代标准输入和输出。如果是非本地的文件，则用可选的“用户”和“主"
 "机”来指定用户名和主机名。"
 
-#: src/main.c:150 tests/genfile.c:170
+#: src/main.c:151 tests/genfile.c:182
 msgid "STRING"
 msgstr "字符串"
 
-#: src/main.c:151
+#: src/main.c:152
 msgid "Print STRING when the end of a volume of the backup media is reached"
 msgstr "当到达备份介质的尾部的时候显示指定字符串"
 
-#: src/main.c:153 src/mt.c:182 tests/genfile.c:191
+#: src/main.c:154 src/mt.c:181 tests/genfile.c:203
 msgid "COMMAND"
 msgstr "命令"
 
-#: src/main.c:154
+#: src/main.c:155
 msgid "Use COMMAND instead of rsh"
 msgstr "用指定的命令替代 rsh"
 
-#: src/main.c:160
+#: src/main.c:161
 msgid "Operation modifiers valid only in copy-in mode:"
 msgstr "命令修饰仅在 copy-in 模式中有效："
 
-#: src/main.c:162
+#: src/main.c:163
 msgid "Only copy files that do not match any of the given patterns"
 msgstr "仅拷贝不匹配任意给定的模式的文件"
 
-#: src/main.c:164
+#: src/main.c:165
 msgid "In the verbose table of contents listing, show numeric UID and GID"
 msgstr "在内容列表的详表中，显示数字的 UID 和 GID"
 
-#: src/main.c:167
+#: src/main.c:168
 msgid ""
 "Read additional patterns specifying filenames to extract or list from FILE"
 msgstr "从指定文件中读取额外的用于指定提取或列表的文件名的模式"
 
-#: src/main.c:169
+#: src/main.c:170
 msgid ""
 "When reading a CRC format archive, only verify the CRC's of each file in the "
 "archive, don't actually extract the files"
 msgstr "当读取一个 CRC 格式的包，仅检验包中每个文件的 CRC，不提取文件"
 
-#: src/main.c:171
+#: src/main.c:172
 msgid "Interactively rename files"
 msgstr "交互式重命名文件"
 
-#: src/main.c:175
+#: src/main.c:176
 msgid ""
 "Swap both halfwords of words and bytes of halfwords in the data. Equivalent "
 "to -sS"
 msgstr "交换数据中每个字的两个半字以及每个半字中的两个字节。等价于 -sS"
 
-#: src/main.c:177
+#: src/main.c:178
 msgid "Swap the bytes of each halfword in the files"
 msgstr "交换文件中每个半字中的两个字节"
 
-#: src/main.c:179
+#: src/main.c:180
 msgid "Swap the halfwords of each word (4 bytes) in the files"
 msgstr "交换文件中每个字（即4个字节）中的两个半字"
 
-#: src/main.c:182
+#: src/main.c:183
 msgid "Extract files to standard output"
 msgstr "提取文件到标准输出"
 
-#: src/main.c:184
+#: src/main.c:185
 msgid ""
 "Archive filename to use instead of standard input. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
 msgstr ""
 "从文件读入而不是从标准输入读入。 如果文件在远程机器上， 则可指定用户和主机"
 
-#: src/main.c:190
+#: src/main.c:191
 msgid "Operation modifiers valid only in copy-out mode:"
 msgstr "应用于 copy-out 模式的选项"
 
-#: src/main.c:192
+#: src/main.c:193
 msgid "Append to an existing archive."
 msgstr "追加到已存在的归档文件。"
 
-#: src/main.c:194
+#: src/main.c:195
 msgid ""
 "Archive filename to use instead of standard output. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
 msgstr "使用包文件名而不是标准输出。如果文件在远程机器上，则可指定用户和主机"
 
-#: src/main.c:196
+#: src/main.c:197
 msgid "Renumber inodes"
 msgstr "为inode重新编号"
 
-#: src/main.c:198
+#: src/main.c:199
 msgid "Don't store device numbers"
 msgstr "不存储设备号"
 
-#: src/main.c:200
+#: src/main.c:201
+msgid "ignore number of links of a directory; always assume 2"
+msgstr "忽略目录的链接数（默认其为2）"
+
+#: src/main.c:203
 msgid "Create device-independent (reproducible) archives"
 msgstr "创建设备无关的（可重现的）归档"
 
-#: src/main.c:207
+#: src/main.c:210
 msgid "Operation modifiers valid only in copy-pass mode:"
 msgstr "应用于 copy-pass 模式的选项："
 
-#: src/main.c:209
+#: src/main.c:212
 msgid "Link files instead of copying them, when  possible"
 msgstr "在可行时链接文件而不是拷贝文件"
 
-#: src/main.c:216
+#: src/main.c:219
 msgid "Operation modifiers valid in copy-in and copy-out modes:"
 msgstr "应用于 copy-in 及 copy-out 模式的选项："
 
-#: src/main.c:218
+#: src/main.c:221
 msgid "Do not strip file system prefix components from the file names"
 msgstr "文件名不去除文件系统前缀"
 
-#: src/main.c:221
+#: src/main.c:224
 msgid "Create all files relative to the current directory"
 msgstr "相对于当前目录来创建所有文件"
 
-#: src/main.c:226
+#: src/main.c:229
 msgid "Operation modifiers valid in copy-out and copy-pass modes:"
 msgstr "应用于 copy-out 及 copy-pass 模式的选项："
 
-#: src/main.c:228
+#: src/main.c:231
 msgid ""
 "Filenames in the list are delimited by null characters instead of newlines"
 msgstr "列表中的文件名使用 NULL 而不是换行符作为分割符"
 
-#: src/main.c:230
+#: src/main.c:233
 msgid ""
 "Dereference  symbolic  links  (copy  the files that they point to instead of "
 "copying the links)."
 msgstr "跟随符号链接（拷贝符号链接指向的文件而不是拷贝链接本身）"
 
-#: src/main.c:232
+#: src/main.c:235
 msgid "Reset the access times of files after reading them"
 msgstr "文件读取后恢复文件的访问时间"
 
-#: src/main.c:238
+#: src/main.c:241
 msgid "Operation modifiers valid in copy-in and copy-pass modes:"
 msgstr "应用于 copy-in 和 copy-pass 模式的选项："
 
-#: src/main.c:240
+#: src/main.c:243
 msgid "Retain previous file modification times when creating files"
 msgstr "创建文件时保留以前文件的修改时间"
 
-#: src/main.c:242
+#: src/main.c:245
 msgid "Create leading directories where needed"
 msgstr "需要时创建目录"
 
-#: src/main.c:244
+#: src/main.c:247
 msgid "Do not change the ownership of the files"
 msgstr "不改变文件的所有权"
 
-#: src/main.c:246
+#: src/main.c:249
 msgid "Replace all files unconditionally"
 msgstr "无条件覆盖所有文件"
 
-#: src/main.c:248
+#: src/main.c:251
 msgid "Write files with large blocks of zeros as sparse files"
 msgstr "把含有大块零的文件以稀疏文件方式写出"
 
-#: src/main.c:324 src/main.c:341
+#: src/main.c:327 src/main.c:344
 msgid "invalid block size"
 msgstr "无效的块大小"
 
-#: src/main.c:330 src/main.c:366
+#: src/main.c:333 src/main.c:369
 msgid "Archive format multiply defined"
 msgstr "包格式被多次指定"
 
-#: src/main.c:384
+#: src/main.c:387
 #, c-format
 msgid ""
 "invalid archive format `%s'; valid formats are:\n"
@@ -1119,131 +1097,131 @@ msgstr ""
 "无效的归档格式“%s”；有效的格式有：\n"
 "crc、newc、odc、bin、ustar、tar （能识别各种大小写形式）"
 
-#: src/main.c:391 src/main.c:436 src/main.c:450
+#: src/main.c:394 src/main.c:439 src/main.c:453
 msgid "Mode already defined"
 msgstr "模式已定义"
 
-#: src/main.c:430
+#: src/main.c:433
 msgid "--no-preserve-owner cannot be used with --owner"
 msgstr "--no-preserve-owner 无法与 --owner 一起使用"
 
-#: src/main.c:485
+#: src/main.c:493
 msgid "--owner cannot be used with --no-preserve-owner"
 msgstr "--owner 无法与 --no-preserve-owner 一起使用"
 
-#: src/main.c:532
+#: src/main.c:541
 #, c-format
 msgid "Invalid value for --warning option: %s"
 msgstr "--warning 选项的不合理的值：%s"
 
-#: src/main.c:562
+#: src/main.c:571
 msgid "[destination-directory]"
 msgstr "[目标目录]"
 
-#: src/main.c:598
+#: src/main.c:607
 msgid "You must specify one of -oipt options."
-msgstr ""
+msgstr "您必须指定下列选项之一： -o、-i、-p 或 -t。"
 
-#: src/main.c:624
+#: src/main.c:633
 msgid "Both -I and -F are used in copy-in mode"
 msgstr "-I 和 -F 都被用于 copy-in 模式"
 
-#: src/main.c:636 src/main.c:676
+#: src/main.c:645 src/main.c:685
 msgid "Too many arguments"
 msgstr "参数太多"
 
-#: src/main.c:655
+#: src/main.c:664
 msgid ""
 "--append is used but no archive file name is given (use -F or -O options)"
 msgstr "有 --append 但没有指定包文件名（使用 -F 或 -O 选项）"
 
-#: src/main.c:662
+#: src/main.c:671
 msgid "Both -O and -F are used in copy-out mode"
 msgstr "-O 和 -F 都被用于 copy-out 模式"
 
-#: src/main.c:678
+#: src/main.c:687
 msgid "Not enough arguments"
 msgstr "参数不足"
 
-#: src/main.c:682
+#: src/main.c:691
 msgid "Archive format is not specified in copy-pass mode (use --format option)"
 msgstr "copy-pass 模式中未指定包格式（使用 --format 选项）"
 
-#: src/main.c:708
+#: src/main.c:717
 #, c-format
 msgid "-F can be used only with --create or --extract"
 msgstr "-F 只能与 --create 或 --extract 一起使用"
 
-#: src/main.c:711
+#: src/main.c:720
 #, c-format
 msgid "Cannot open %s"
 msgstr "无法打开 %s"
 
-#: src/main.c:783
+#: src/main.c:792
 #, c-format
 msgid "error closing archive"
 msgstr "关闭归档文件错误"
 
-#: src/makepath.c:82 src/makepath.c:129
+#: src/makepath.c:81 src/makepath.c:128
 #, c-format
 msgid "cannot make directory `%s'"
 msgstr "无法创建目录“%s”"
 
-#: src/makepath.c:105 src/makepath.c:155
+#: src/makepath.c:104 src/makepath.c:154
 #, c-format
 msgid "`%s' exists but is not a directory"
 msgstr "“%s”存在但不是目录"
 
-#: src/mt.c:166
+#: src/mt.c:165
 msgid "control magnetic tape drive operation"
 msgstr "磁带设备操作控制"
 
-#: src/mt.c:180
+#: src/mt.c:179
 msgid "DEVICE"
 msgstr "设备"
 
-#: src/mt.c:181
+#: src/mt.c:180
 msgid "use device as the file name of the tape drive to operate on"
 msgstr "使用设备名指定需要操作的磁带设备"
 
-#: src/mt.c:183
+#: src/mt.c:182
 msgid "use remote COMMAND instead of rsh"
 msgstr "用远程的命令替代 rsh"
 
-#: src/mt.c:204
+#: src/mt.c:203
 msgid "operation"
 msgstr "操作"
 
-#: src/mt.c:212
+#: src/mt.c:211
 #, c-format
 msgid "invalid count value"
 msgstr "无效的字节数"
 
-#: src/mt.c:231
+#: src/mt.c:230
 #, c-format
 msgid "no tape device specified"
 msgstr "未指定磁带设备"
 
-#: src/mt.c:254
+#: src/mt.c:253
 msgid "operation [count]"
 msgstr "操作 [计数]"
 
-#: src/mt.c:271
+#: src/mt.c:270
 #, c-format
 msgid "%s is not a character special file"
 msgstr "%s 不是字符设备文件"
 
-#: src/mt.c:282 src/mt.c:291
+#: src/mt.c:281 src/mt.c:290
 #, c-format
 msgid "%s: rmtioctl failed"
 msgstr "%s：mtioctl 失败"
 
-#: src/mt.c:344
+#: src/mt.c:343
 #, c-format
 msgid "%s: rmtopen failed"
 msgstr "%s：rmtopen 失败"
 
-#: src/mt.c:357
+#: src/mt.c:356
 #, c-format
 msgid "%s: rmtclose failed"
 msgstr "%s：rmtclose 失败"
@@ -1253,106 +1231,106 @@ msgstr "%s：rmtclose 失败"
 msgid "invalid header: checksum error"
 msgstr "无效的头：校验和错误"
 
-#: src/userspec.c:122
+#: src/userspec.c:123
 msgid "invalid user"
 msgstr "无效的用户"
 
-#: src/userspec.c:128
+#: src/userspec.c:129
 msgid "cannot get the login group of a numeric UID"
 msgstr "无法根据UID数值获取登录组"
 
-#: src/userspec.c:175
+#: src/userspec.c:172
 msgid "invalid group"
 msgstr "无效的组"
 
-#: src/util.c:148
+#: src/util.c:146
 #, c-format
 msgid "write error: partial write"
 msgstr "写错误：只写入了部分内容"
 
-#: src/util.c:210 src/util.c:376
+#: src/util.c:208 src/util.c:374
 #, c-format
 msgid "read error"
 msgstr "读错误"
 
-#: src/util.c:212
+#: src/util.c:210
 #, c-format
 msgid "premature end of file"
 msgstr "文件非正常终止"
 
-#: src/util.c:495 src/util.c:546
+#: src/util.c:493 src/util.c:544
 #, c-format
 msgid "File %s shrunk by %s byte, padding with zeros"
 msgid_plural "File %s shrunk by %s bytes, padding with zeros"
 msgstr[0] "文件 %s 被减少 %s 字节, 用 0 补齐"
 
-#: src/util.c:502 src/util.c:553
+#: src/util.c:500 src/util.c:551
 #, c-format
 msgid "Read error at byte %lld in file %s, padding with zeros"
 msgstr "在文件 %2$s 的 %1$lld 处发生读错误，用 0 补齐"
 
-#: src/util.c:588
+#: src/util.c:586
 #, c-format
 msgid "File %s grew, %<PRIuMAX> new byte not copied"
 msgid_plural "File %s grew, %<PRIuMAX> new bytes not copied"
 msgstr[0] "文件 %s 增长，%<PRIuMAX> 新字节未被拷贝"
 
-#: src/util.c:594
+#: src/util.c:592
 #, c-format
 msgid "File %s was modified while being copied"
 msgstr "文件 %s 在拷贝时有更改"
 
-#: src/util.c:608
+#: src/util.c:606
 #, c-format
 msgid "virtual memory exhausted"
 msgstr "虚拟内存耗尽"
 
-#: src/util.c:614
+#: src/util.c:612
 #, c-format
 msgid "Creating intermediate directory `%s'"
 msgstr "创建中介目录“%s”"
 
-#: src/util.c:651 src/util.c:657
+#: src/util.c:649 src/util.c:655
 #, c-format
 msgid "cannot seek on output"
 msgstr "无法在输出中执行 seek 操作"
 
-#: src/util.c:875
+#: src/util.c:871
 #, c-format
 msgid "Found end of tape.  Load next tape and press RETURN. "
 msgstr "磁带已结束。装入下一盒磁带并按 RETURN。"
 
-#: src/util.c:877
+#: src/util.c:873
 #, c-format
 msgid "Found end of tape.  To continue, type device/file name when ready.\n"
 msgstr "磁带已结束。要继续，在准备就绪时输入设备/文件名。\n"
 
-#: src/util.c:900
+#: src/util.c:896
 #, c-format
 msgid "To continue, type device/file name when ready.\n"
 msgstr "要继续，在准备就绪时输入设备/文件名。\n"
 
-#: src/util.c:925
+#: src/util.c:921
 #, c-format
 msgid "internal error: tape descriptor changed from %d to %d"
 msgstr "内部错误：磁带描述符从 %d 改为 %d"
 
-#: src/util.c:1487
+#: src/util.c:1492
 #, c-format
 msgid "%s is not a directory"
 msgstr "%s 不是目录"
 
-#: src/util.c:1507
+#: src/util.c:1512
 #, c-format
 msgid "Creating directory `%s'"
 msgstr "创建目录“%s”"
 
-#: src/util.c:1514
+#: src/util.c:1519
 #, c-format
 msgid "cannot change to directory `%s'"
 msgstr "无法切换到目录“%s”"
 
-#: tests/genfile.c:112
+#: tests/genfile.c:115
 msgid ""
 "genfile manipulates data files for GNU paxutils test suite.\n"
 "OPTIONS are:\n"
@@ -1360,246 +1338,305 @@ msgstr ""
 "genfile处理用于 GNU paxutils 测试套件的数据文件\n"
 "选项如下：\n"
 
-#: tests/genfile.c:128
+#: tests/genfile.c:131
 msgid "File creation options:"
 msgstr "文件选项："
 
-#: tests/genfile.c:129 tests/genfile.c:140
+#: tests/genfile.c:132 tests/genfile.c:143
 msgid "SIZE"
 msgstr "大小"
 
-#: tests/genfile.c:130
+#: tests/genfile.c:133
 msgid "Create file of the given SIZE"
 msgstr "根据给定大小创建文件"
 
-#: tests/genfile.c:132
+#: tests/genfile.c:135
 msgid "Write to file NAME, instead of standard output"
 msgstr "提取文件到标准输出"
 
-#: tests/genfile.c:134
+#: tests/genfile.c:137
 msgid "Read file names from FILE"
 msgstr "从指定文件中读取文件名"
 
-#: tests/genfile.c:136
+#: tests/genfile.c:139
 msgid "-T reads null-terminated names"
 msgstr "-T 选项将读取以NULL结尾的文件名"
 
-#: tests/genfile.c:137
+#: tests/genfile.c:140
 msgid "PATTERN"
 msgstr "样式"
 
-#: tests/genfile.c:138
+#: tests/genfile.c:141
 msgid "Fill the file with the given PATTERN. PATTERN is 'default' or 'zeros'"
 msgstr "使用给定的样式填充文件。样式可以为“default”或“zeros”"
 
-#: tests/genfile.c:141
+#: tests/genfile.c:144
 msgid "Size of a block for sparse file"
 msgstr "稀疏文件的块尺寸"
 
-#: tests/genfile.c:143
+#: tests/genfile.c:146
 msgid "Generate sparse file. Rest of the command line gives the file map."
 msgstr "创建稀疏文件。命令参数中的剩余部分指定文件映射表。"
 
-#: tests/genfile.c:145
+#: tests/genfile.c:148
 msgid "OFFSET"
 msgstr "偏移量"
 
-#: tests/genfile.c:146
+#: tests/genfile.c:149
 msgid "Seek to the given offset before writing data"
 msgstr "写入数据前，先seek到给定的偏移量"
 
 #: tests/genfile.c:152
+msgid "Suppress non-fatal diagnostic messages"
+msgstr "不显示非严重错误的诊断信息"
+
+#: tests/genfile.c:156
 msgid "File statistics options:"
 msgstr "文件统计选项："
 
-#: tests/genfile.c:155
+#: tests/genfile.c:159
 msgid "Print contents of struct stat for each given file. Default FORMAT is: "
 msgstr "显示每个文件关联的stat结构体的内容。默认格式是："
 
-#: tests/genfile.c:162
+#: tests/genfile.c:163
+msgid "stat symbolic links instead of referenced files"
+msgstr ""
+
+#: tests/genfile.c:167
+msgid ""
+"Set access and modification times of the files to the time supplied by --"
+"date option"
+msgstr ""
+
+#: tests/genfile.c:174
 msgid "Synchronous execution options:"
 msgstr "同步执行选项："
 
-#: tests/genfile.c:164
-msgid "OPTION"
-msgstr "选项"
+#: tests/genfile.c:176
+msgid "N"
+msgstr "N"
 
-#: tests/genfile.c:165
+#: tests/genfile.c:177
 msgid ""
-"Execute ARGS. Useful with --checkpoint and one of --cut, --append, --touch, "
-"--unlink"
+"Execute ARGS. Trigger checkpoints every Nth record (default 1). Useful with "
+"--checkpoint and one of --cut, --append, --touch, --unlink"
 msgstr ""
-"执行该参数。适合与 --checkpoint 选项和 --cut、--append、--touch 或 --unlink "
-"选项一同使用"
+"执行指定命令，并在每处理 N 条记录（N默认为1）后触发监控点。适合与 --"
+"checkpoint 选项和 --cut、--append、--touch 或 --unlink 选项一同使用"
 
-#: tests/genfile.c:168
+#: tests/genfile.c:180
 msgid "Perform given action (see below) upon reaching checkpoint NUMBER"
 msgstr "当遇到 NUMBER 所指定的监控点 时，执行给定的动作（见下）"
 
-#: tests/genfile.c:171
+#: tests/genfile.c:183
 msgid "Set date for next --touch option"
 msgstr "为下一个 --touch 选项设定日期"
 
-#: tests/genfile.c:174
+#: tests/genfile.c:186
 msgid "Display executed checkpoints and exit status of COMMAND"
 msgstr "显示已执行的监控点，以及相应命令的退出状态码"
 
-#: tests/genfile.c:179
+#: tests/genfile.c:191
 msgid ""
 "Synchronous execution actions. These are executed when checkpoint number "
 "given by --checkpoint option is reached."
 msgstr "同步执行命令。这些命令将在遇到监控点（由 --checkpoint 选项给出）时执行"
 
-#: tests/genfile.c:182
+#: tests/genfile.c:194
 msgid ""
 "Truncate FILE to the size specified by previous --length option (or 0, if it "
 "is not given)"
 msgstr "截取文件到 --length 选项所指定的大小（如果没有提供，则为0）"
 
-#: tests/genfile.c:186
+#: tests/genfile.c:198
 msgid "Append SIZE bytes to FILE. SIZE is given by previous --length option."
 msgstr "将指定大小的个字节追加到文件。大小由 --length 选项给出"
 
-#: tests/genfile.c:189
+#: tests/genfile.c:201
 msgid "Update the access and modification times of FILE"
 msgstr "更新文件的访问和修改时间"
 
-#: tests/genfile.c:192
+#: tests/genfile.c:204
 msgid "Execute COMMAND"
 msgstr "执行命令"
 
-#: tests/genfile.c:195
-msgid "Unlink FILE"
-msgstr "删除文件"
+#: tests/genfile.c:207
+msgid "Delete FILE"
+msgstr "删除指定文件"
 
-#: tests/genfile.c:245
+#: tests/genfile.c:258
 #, c-format
 msgid "Invalid size: %s"
 msgstr "无效的大小：%s"
 
-#: tests/genfile.c:250
+#: tests/genfile.c:263
 #, c-format
 msgid "Number out of allowed range: %s"
 msgstr "数值超出允许范围：%s"
 
-#: tests/genfile.c:253
+#: tests/genfile.c:266
 #, c-format
 msgid "Negative size: %s"
 msgstr "%s：不能为负值"
 
-#: tests/genfile.c:266 tests/genfile.c:630
+#: tests/genfile.c:279 tests/genfile.c:672
 #, c-format
 msgid "stat(%s) failed"
 msgstr "对 %s 执行stat操作失败"
 
-#: tests/genfile.c:269
+#: tests/genfile.c:284
 #, c-format
-msgid "requested file length %lu, actual %lu"
-msgstr "给定的文件长度 %1$lu 与实际长度 %2$lu 不符"
+msgid "requested file length %jd, actual %jd"
+msgstr "给定的文件长度 %jd 与实际长度 %jd 不符"
 
-#: tests/genfile.c:273
+#: tests/genfile.c:289
 #, c-format
 msgid "created file is not sparse"
 msgstr "创建的文件并非稀疏文件"
 
-#: tests/genfile.c:362
+#: tests/genfile.c:390
 #, c-format
 msgid "Error parsing number near `%s'"
 msgstr "解析“%s”中的数值时出错"
 
-#: tests/genfile.c:368
+#: tests/genfile.c:396
 #, c-format
 msgid "Unknown date format"
 msgstr "未知的日期格式"
 
-#: tests/genfile.c:392
+#: tests/genfile.c:420
 msgid "[ARGS...]"
 msgstr "[参数...]"
 
-#: tests/genfile.c:429 tests/genfile.c:469 tests/genfile.c:571
-#: tests/genfile.c:734 tests/genfile.c:748
+#: tests/genfile.c:457 tests/genfile.c:497 tests/genfile.c:598
+#: tests/genfile.c:787 tests/genfile.c:801
 #, c-format
 msgid "cannot open `%s'"
 msgstr "无法打开 %s"
 
-#: tests/genfile.c:435
+#: tests/genfile.c:463
 msgid "cannot seek"
 msgstr "无法执行 seek 操作"
 
-#: tests/genfile.c:452
+#: tests/genfile.c:480
 #, c-format
 msgid "file name contains null character"
 msgstr "文件名中含义NULL字符"
 
-#: tests/genfile.c:566
+#: tests/genfile.c:593
 #, c-format
 msgid "cannot generate sparse files on standard output, use --file option"
 msgstr "无法在标准输出上生成稀疏文件，请使用 --file 选项"
 
-#: tests/genfile.c:657
+#: tests/genfile.c:699
 #, c-format
 msgid "incorrect mask (near `%s')"
 msgstr "错误的掩码（在“%s”附近）"
 
-#: tests/genfile.c:663 tests/genfile.c:696
+#: tests/genfile.c:705 tests/genfile.c:738
 #, c-format
 msgid "Unknown field `%s'"
 msgstr "未知的字段“%s”"
 
-#: tests/genfile.c:723
+#: tests/genfile.c:756 tests/genfile.c:776
 #, c-format
 msgid "cannot set time on `%s'"
 msgstr "无法创建目录“%s”"
 
-#: tests/genfile.c:753
+#: tests/genfile.c:806
 #, c-format
 msgid "cannot truncate `%s'"
 msgstr "无法截取“%s”"
 
-#: tests/genfile.c:762
+#: tests/genfile.c:815
 #, c-format
 msgid "command failed: %s"
 msgstr "命令执行失败：%s"
 
-#: tests/genfile.c:767
+#: tests/genfile.c:822
+#, c-format
+msgid "cannot stat `%s'"
+msgstr "无法对“%s”执行stat命令"
+
+#: tests/genfile.c:826
+#, c-format
+msgid "cannot remove directory `%s'"
+msgstr "无法移除目录“%s”"
+
+#: tests/genfile.c:829
 #, c-format
 msgid "cannot unlink `%s'"
 msgstr "无法删除 “%s”"
 
-#: tests/genfile.c:894
+#: tests/genfile.c:969
 #, c-format
 msgid "Command exited successfully\n"
 msgstr "命令执行成功\n"
 
-#: tests/genfile.c:896
+#: tests/genfile.c:971
 #, c-format
 msgid "Command failed with status %d\n"
 msgstr "命令执行失败，退出状态码：%d\n"
 
-#: tests/genfile.c:900
+#: tests/genfile.c:975
 #, c-format
 msgid "Command terminated on signal %d\n"
 msgstr "命令收到信号 %d 后终止\n"
 
-#: tests/genfile.c:902
+#: tests/genfile.c:977
 #, c-format
 msgid "Command stopped on signal %d\n"
 msgstr "命令收到信号 %d 后停止\n"
 
-#: tests/genfile.c:905
+#: tests/genfile.c:980
 #, c-format
 msgid "Command dumped core\n"
 msgstr "命令已核心转储\n"
 
-#: tests/genfile.c:908
+#: tests/genfile.c:983
 #, c-format
 msgid "Command terminated\n"
 msgstr "命令已终止\n"
 
-#: tests/genfile.c:940
+#: tests/genfile.c:1015
 #, c-format
 msgid "--stat requires file names"
 msgstr "--stat 参数后缺少文件名"
+
+#: tests/genfile.c:1023
+#, fuzzy, c-format
+msgid "--set-times requires file names"
+msgstr "--stat 参数后缺少文件名"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s：选项“--%s”不接受参数\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s：不可识别的选项“--%s”\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s：选项“-W %s”有二义性\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s：选项“-W %s”不接受参数\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s：选项“-W %s”需要一个参数\n"
+
+#~ msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+#~ msgstr "%1$s 的主页：<http://www.gnu.org/software/%2$s/>\n"
+
+#~ msgid "%s: Cannot symlink to %s"
+#~ msgstr "%s：无法链接到 %s"
+
+#~ msgid "OPTION"
+#~ msgstr "选项"
+
+#~ msgid "Unlink FILE"
+#~ msgstr "删除文件"
+
+#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
+#~ msgstr "%.*s：ARGP_HELP_FMT 的参数必须为正值"
 
 #~ msgid "%s: field width not sufficient for storing %s"
 #~ msgstr "%s：域宽度不足以储存 %s"
@@ -1610,9 +1647,6 @@ msgstr "--stat 参数后缺少文件名"
 #~ msgstr ""
 #~ "你必须指定 -oipt 选项中的一个。\n"
 #~ "尝试“%s --help”或者“%s --usage”来寻找更多信息。\n"
-
-#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
-#~ msgstr "%.*s：ARGP_HELP_FMT 的参数必须为正值"
 
 #~ msgid "Print license and exit"
 #~ msgstr "打印授权信息并退出"

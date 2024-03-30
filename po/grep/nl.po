@@ -1,21 +1,21 @@
 # Dutch translations for GNU grep.
-# Copyright (C) 2019 Free Software Foundation, Inc.
+# Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the grep package.
 #
-# "To je zaista najmanje fer igra od svih koje postoje na svijetu."
+# "Keep your religious feelings to yourself."
 #
-# Benno Schulenberg <benno@vertaalt.nl>, 2005, 2007, 2008, 2010, 2011, 2012.
-# Benno Schulenberg <benno@vertaalt.nl>, 2013, 2014, 2015, 2016, 2018, 2019, 2020.
+# Benno Schulenberg <benno@vertaalt.nl>, 2005, 2007, 2008, 2010, 2011, 2012, 2013, 2014
+# Benno Schulenberg <benno@vertaalt.nl>, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
 # Erwin Poeze <erwin.poeze@gmail.com>, 2009.
 # Taco Witte <tcwitte@cs.uu.nl>, 2004.
 # Ivo Timmermans <itimmermans@bigfoot.com>, 2000.
 # Erick Branderhorst <branderh@debian.org>, 1996.
 msgid ""
 msgstr ""
-"Project-Id-Version: grep-3.4.31\n"
+"Project-Id-Version: grep-3.10.7\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
-"PO-Revision-Date: 2020-09-20 18:48+0200\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
+"PO-Revision-Date: 2023-04-10 17:00+0200\n"
 "Last-Translator: Benno Schulenberg <vertaling@coevern.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -25,69 +25,102 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "ongeldig argument %s van %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "argument %s van %s is niet eenduidig"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Geldige argumenten zijn:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "programmafout"
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "stack-overloop"
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
 msgstr "schrijffout"
 
-#: lib/dfa.c:954
+#: lib/dfa.c:897
 msgid "unbalanced ["
 msgstr "ongepaarde ["
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
 msgstr "ongeldige tekenklasse"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "syntax van tekenklasse is [[:space:]], niet [:space:]"
 
-#: lib/dfa.c:1268
+#: lib/dfa.c:1222
 msgid "unfinished \\ escape"
 msgstr "onafgemaakte \\-stuurcode"
 
-#: lib/dfa.c:1429
+#: lib/dfa.c:1332
+msgid "? at start of expression"
+msgstr "? aan begin van expressie"
+
+#: lib/dfa.c:1344
+msgid "* at start of expression"
+msgstr "* aan begin van expressie"
+
+#: lib/dfa.c:1358
+msgid "+ at start of expression"
+msgstr "+ aan begin van expressie"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr "{...} aan begin van expressie"
+
+#: lib/dfa.c:1416
 msgid "invalid content of \\{\\}"
 msgstr "ongeldige inhoud van \\{\\}"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 msgid "regular expression too big"
 msgstr "reguliere expressie is te groot"
 
-#: lib/dfa.c:1916
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr "verdwaalde \\ voor ontoonbaar teken"
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr "verdwaalde \\ voor witruimte"
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "verdwaalde \\ voor %lc"
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr "verdwaalde \\"
+
+#: lib/dfa.c:1925
 msgid "unbalanced ("
 msgstr "ongepaarde ("
 
-#: lib/dfa.c:2033
+#: lib/dfa.c:2042
 msgid "no syntax specified"
 msgstr "geen syntax opgegeven"
 
-#: lib/dfa.c:2044
+#: lib/dfa.c:2053
 msgid "unbalanced )"
 msgstr "ongepaarde )"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Onbekende systeemfout"
 
@@ -126,7 +159,7 @@ msgstr "%s: ongeldige optie -- '%c'\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: optie vereist een argument -- '%c'\n"
 
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "onvoldoende geheugen beschikbaar"
 
@@ -140,7 +173,7 @@ msgstr "kan de huidige werkmap niet vastleggen"
 msgid "failed to return to initial working directory"
 msgstr "kan niet terugkeren naar de oorspronkelijke werkmap"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
 msgstr "kan modus van bestandsdescriptor niet instellen op tekst of binair"
@@ -166,84 +199,84 @@ msgstr "kan modus van bestandsdescriptor niet instellen op tekst of binair"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "‘"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "’"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Gelukt"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Geen overeenkomsten"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Ongeldige reguliere expressie"
 
 # Zie http://mailman.vrijschrift.org/pipermail/vertaling/2005-August/004670.html
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Ongeldig samengesteld teken"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Ongeldige tekenklassenaam"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Backslash aan het eind"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Ongeldige terugverwijzing"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Ongepaarde [, [^, [:, [., of [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Ongepaarde ( of \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Ongepaarde \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Ongeldige inhoud van \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Ongeldig bereikeinde"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Onvoldoende geheugen beschikbaar"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Ongeldige voorafgaande reguliere expressie"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Voortijdig einde van reguliere expressie"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Reguliere expressie is te groot"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Ongepaarde ) of \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Geen eerdere reguliere expressie"
 
@@ -415,51 +448,56 @@ msgstr "Webpagina van %s: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Algemene hulp bij gebruik van GNU-software: <%s>\n"
 
-#: src/grep.c:648
+#: src/dfasearch.c:59
+#, c-format
+msgid "warning: %s"
+msgstr "waarschuwing: %s"
+
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(standaardinvoer)"
 
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
 msgstr "ongeldig argument voor contextlengte"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
 msgstr "invoer is te groot om te kunnen tellen"
 
-#: src/grep.c:1646
+#: src/grep.c:1651
 #, c-format
 msgid "%s: binary file matches"
 msgstr "%s: binair bestand bevat de gezochte tekst"
 
-#: src/grep.c:1684
+#: src/grep.c:1689
 #, c-format
 msgid "%s: warning: recursive directory loop"
 msgstr "%s: waarschuwing: recursieve lus in de mappen"
 
-#: src/grep.c:1904
+#: src/grep.c:1909
 #, c-format
 msgid "%s: input file is also the output"
 msgstr "%s: invoerbestand is gelijk aan het uitvoerbestand"
 
-#: src/grep.c:1966 src/grep.c:1973
+#: src/grep.c:1971 src/grep.c:1978
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
 msgstr "Gebruik:  %s [OPTIE...] PATRONEN [BESTAND...]\n"
 
-#: src/grep.c:1968
+#: src/grep.c:1973
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Typ '%s --help' voor meer informatie.\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
 msgstr ""
 "  \n"
 "Zoekt naar PATRONEN in ieder gegeven BESTAND.\n"
 
-#: src/grep.c:1975
+#: src/grep.c:1980
 #, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -474,7 +512,7 @@ msgstr ""
 "\n"
 "Keuze en interpretatie van PATRONEN:\n"
 
-#: src/grep.c:1980
+#: src/grep.c:1985
 #, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
@@ -487,7 +525,7 @@ msgstr ""
 "  -G, --basic-regexp        PATRONEN zijn gewone reguliere expressies\n"
 "  -P, --perl-regexp         PATRONEN zijn reguliere Perl-expressies\n"
 
-#: src/grep.c:1986
+#: src/grep.c:1991
 #, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
@@ -511,7 +549,7 @@ msgstr ""
 "regel\n"
 "  -z, --null-data           regels eindigen op 0-byte, niet op LF-teken\n"
 
-#: src/grep.c:1994
+#: src/grep.c:1999
 #, c-format
 msgid ""
 "\n"
@@ -528,7 +566,7 @@ msgstr ""
 "  -V, --version             programmaversie tonen en stoppen\n"
 "      --help                deze hulptekst tonen en stoppen\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -553,7 +591,7 @@ msgstr ""
 "      --label=LABEL         dit LABEL als naam voor standaardinvoer "
 "gebruiken\n"
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -573,7 +611,7 @@ msgstr ""
 "overeenkomsten)\n"
 "  -a, --text                hetzelfde als '--binary-files=text'\n"
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -597,7 +635,7 @@ msgstr ""
 "  -R, --dereference-recursive   idem, maar alle symbolische koppelingen "
 "volgen\n"
 
-#: src/grep.c:2028
+#: src/grep.c:2033
 #, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
@@ -617,7 +655,7 @@ msgstr ""
 "      --exclude-dir=BSTNDSPTRN   mappen overslaan die aan BSTNDSPTRN "
 "voldoen\n"
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -637,7 +675,7 @@ msgstr ""
 "invoegen)\n"
 "  -Z, --null                een 0-byte invoegen na iedere bestandsnaam\n"
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, c-format
 msgid ""
 "\n"
@@ -653,10 +691,12 @@ msgstr ""
 "  -A, --after-context=AANTAL    dit AANTAL regels nakomende context tonen\n"
 "  -C, --context=AANTAL          dit AANTAL regels context tonen\n"
 
-#: src/grep.c:2048
+#: src/grep.c:2053
 #, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -665,6 +705,9 @@ msgid ""
 "\n"
 msgstr ""
 "  -AANTAL                       hetzelfde als '--context=AANTAL'\n"
+"      --group-separator=TEKENS  contexten scheiden met regel met deze "
+"tekens\n"
+"      --no-group-separator      geen scheiding weergeven tussen contexten\n"
 "      --color[=WANNEER],\n"
 "      --colour[=WANNEER]    overeenkomende tekst gekleurd weergeven;\n"
 "                              WANNEER is 'always' (altijd), "
@@ -675,7 +718,7 @@ msgstr ""
 "Windows)\n"
 "\n"
 
-#: src/grep.c:2055
+#: src/grep.c:2062
 #, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
@@ -690,97 +733,125 @@ msgstr ""
 "De afsluitwaarde is 0 in geval van overeenkomsten, anders 1; als er\n"
 "een fout optreedt en '-q' is niet gegeven, dan is de afsluitwaarde 2.\n"
 
-#: src/grep.c:2097
+#: src/grep.c:2104
 msgid "conflicting matchers specified"
 msgstr "conflicterende expressiesoorten"
 
-#: src/grep.c:2104
+#: src/grep.c:2111
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr "Perl-expressies worden door deze programmaversie niet ondersteund"
 
-#: src/grep.c:2106
+#: src/grep.c:2113
 #, c-format
 msgid "invalid matcher %s"
 msgstr "ongeldige expressiesoort '%s'"
 
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
 msgstr "onbekende apparaten-actie"
 
-#: src/grep.c:2689
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr "waarschuwing: --unix-byte-offsets (-u) is verouderd"
+
+#: src/grep.c:2688
 msgid "invalid max count"
 msgstr "ongeldig maximum aantal"
 
-#: src/grep.c:2747
+#: src/grep.c:2746
 msgid "unknown binary-files type"
 msgstr "onbekend binair bestandstype"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
 "Geschreven door Mike Haertel en anderen; zie\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
-msgstr "onvoldoende geheugen beschikbaar voor de PCRE-JIT-stack"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
+msgstr ""
+"waarschuwing: GREP_COLOR='%s' is verouderd; gebruik GREP_COLORS='mt=%s'"
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+
+#: src/pcresearch.c:169
+msgid "-P supports only unibyte locales on this platform"
+msgstr "optie '-P' ondersteunt alleen enkelbyte-taalregio's op dit platform"
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
-msgstr "optie '-P' ondersteunt alleen enkelbytes- en UTF-8-taalregio's"
+msgstr "optie '-P' ondersteunt alleen enkelbyte- en UTF-8-taalregio's"
 
-#: src/pcresearch.c:143
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
 msgstr "optie '-P' accepteert slechts één patroon"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr "**interne programmafout** (zou nooit mogen gebeuren)"
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
 msgstr "de regellengtegrens van PCRE is overschreden"
 
-#: src/pcresearch.c:306
-#, fuzzy, c-format
+#: src/pcresearch.c:368
+#, c-format
 msgid "%s: memory exhausted"
-msgstr "onvoldoende geheugen beschikbaar"
+msgstr "%s: onvoldoende geheugen beschikbaar"
 
-#: src/pcresearch.c:310
-#, fuzzy, c-format
+#: src/pcresearch.c:371
+#, c-format
 msgid "%s: exhausted PCRE JIT stack"
-msgstr "de PCRE-JIT-stack is volledig gebruikt"
+msgstr "%s: de PCRE-JIT-stack is volledig gebruikt"
 
-#: src/pcresearch.c:315
-#, fuzzy, c-format
+#: src/pcresearch.c:375
+#, c-format
 msgid "%s: exceeded PCRE's backtracking limit"
-msgstr "de terugverwijzingsgrens van PCRE is overschreden"
+msgstr "%s: de terugverwijzingengrens van PCRE is overschreden"
 
-#: src/pcresearch.c:319
-#, fuzzy, c-format
-msgid "%s: exceeded PCRE's recursion limit"
-msgstr "de recursiegrens van PCRE is overschreden"
+#: src/pcresearch.c:380
+#, c-format
+msgid "%s: exceeded PCRE's nested backtracking limit"
+msgstr "%s: de genesteterugverwijzingengrens van PCRE is overschreden"
 
-#: src/pcresearch.c:327
-#, fuzzy, c-format
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr "%s: PCRE heeft een recursielus gedetecteerd"
+
+#: src/pcresearch.c:389
+#, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr "%s: de heap-geheugengrens van PCRE is overschreden"
+
+#: src/pcresearch.c:398
+#, c-format
 msgid "%s: internal PCRE error: %d"
-msgstr "**interne programmafout** in PCRE: %d"
+msgstr "%s: **interne programmafout** in PCRE: %d"
 
 #, c-format
+#~ msgid "JIT internal error: %d"
+#~ msgstr "**interne programmafout** in JIT: %d"
+
+#~ msgid ""
+#~ "\n"
+#~ "Built with PCRE "
+#~ msgstr ""
+#~ "\n"
+#~ "Gecompileerd met PCRE "
+
+#~ msgid "failed to allocate memory for the PCRE JIT stack"
+#~ msgstr "onvoldoende geheugen beschikbaar voor de PCRE-JIT-stack"
+
 #~ msgid "warning: GREP_OPTIONS is deprecated; please use an alias or script"
 #~ msgstr ""
 #~ "waarschuwing: GREP_OPTIONS is verouderd; gebruik een alias of een script"
-
-#~ msgid "warning: %s: %s"
-#~ msgstr "waarschuwing: %s: %s"
-
-#~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
-#~ msgstr "Webpagina van '%s': <https://www.gnu.org/software/%s/>\n"
-
-#~ msgid "invalid %s%s argument '%s'"
-#~ msgstr "ongeldig argument '%3$s' van %1$s%2$s"
 
 #~ msgid "invalid suffix in %s%s argument '%s'"
 #~ msgstr "ongeldig achtervoegsel in argument '%3$s' van %1$s%2$s"
@@ -788,43 +859,8 @@ msgstr "**interne programmafout** in PCRE: %d"
 #~ msgid "%s%s argument '%s' too large"
 #~ msgstr "argument '%3$s' van %1$s%2$s is te groot"
 
-#~ msgid "Mike Haertel"
-#~ msgstr "Mike Haertel"
-
-#~ msgid "internal error"
-#~ msgstr "**interne programmafout**"
-
-#~ msgid "%s: option '--%s' doesn't allow an argument\n"
-#~ msgstr "%s: optie '--%s' staat geen argument toe\n"
-
 #~ msgid "%s: unrecognized option '--%s'\n"
 #~ msgstr "%s: onbekende optie '--%s'\n"
-
-#~ msgid "%s: option '-W %s' is ambiguous\n"
-#~ msgstr "%s: optie '-W %s' is niet eenduidig\n"
-
-#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
-#~ msgstr "%s: optie '-W %s' staat geen argument toe\n"
-
-#~ msgid "%s: option '-W %s' requires an argument\n"
-#~ msgstr "%s: optie '-W %s' vereist een argument\n"
-
-#~ msgid "lseek failed"
-#~ msgstr "'lseek' is mislukt"
-
-#~ msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
-#~ msgstr "PATROON is standaard een gewone reguliere expressie (BRE).\n"
-
-#~ msgid ""
-#~ "'egrep' means 'grep -E'.  'fgrep' means 'grep -F'.\n"
-#~ "Direct invocation as either 'egrep' or 'fgrep' is deprecated.\n"
-#~ msgstr ""
-#~ "Het gebruik van 'egrep' en 'fgrep' wordt ontraden;\n"
-#~ "'egrep' betekent 'grep -E'; 'fgrep' betekent 'grep -F'.\n"
-#~ "\n"
-
-#~ msgid "unescaped ^ or $ not supported with -Pz"
-#~ msgstr "een naakte ^ of $ wordt niet ondersteund met optie '-Pz'"
 
 #~ msgid "GNU Grep home page: <%s>\n"
 #~ msgstr "Webpagina van GNU grep: <%s>\n"
@@ -832,19 +868,18 @@ msgstr "**interne programmafout** in PCRE: %d"
 #~ msgid "invalid UTF-8 byte sequence in input"
 #~ msgstr "ongeldige UTF-8-bytereeks in invoer"
 
-#~ msgid "PATTERN is an extended regular expression (ERE).\n"
-#~ msgstr "PATROON is een uitgebreide reguliere expressie (ERE).\n"
-
 #~ msgid "Invocation as 'egrep' is deprecated; use 'grep -E' instead.\n"
 #~ msgstr ""
 #~ "Gebruik van 'egrep' wordt ontraden; het is beter 'grep -E' te gebruiken.\n"
 
+#~ msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
+#~ msgstr "PATROON is standaard een gewone reguliere expressie (BRE).\n"
+
+#~ msgid "PATTERN is an extended regular expression (ERE).\n"
+#~ msgstr "PATROON is een uitgebreide reguliere expressie (ERE).\n"
+
 #~ msgid "PATTERN is a set of newline-separated fixed strings.\n"
 #~ msgstr "PATROON is een serie tekenreeksen, elk op een aparte regel.\n"
-
-#~ msgid "Invocation as 'fgrep' is deprecated; use 'grep -F' instead.\n"
-#~ msgstr ""
-#~ "Gebruik van 'fgrep' wordt ontraden; het is beter 'grep -F' te gebruiken.\n"
 
 #~ msgid "%s can only use the %s pattern syntax"
 #~ msgstr "%s kan alleen de patroonsyntax %s gebruiken"
@@ -860,32 +895,6 @@ msgstr "**interne programmafout** in PCRE: %d"
 
 #~ msgid "writing output"
 #~ msgstr "schrijven van uitvoer..."
-
-#~ msgid ""
-#~ "in GREP_COLORS=\"%s\", the \"%s\" capacity needs a value (\"=...\"); "
-#~ "skipped"
-#~ msgstr ""
-#~ "GREP_COLORS='%s' --\n"
-#~ "  Kenmerk '%s' vereist een waarde ('=...'); genegeerd."
-
-#~ msgid ""
-#~ "in GREP_COLORS=\"%s\", the \"%s\" capacity is boolean and cannot take a "
-#~ "value (\"=%s\"); skipped"
-#~ msgstr ""
-#~ "GREP_COLORS='%s' --\n"
-#~ "  Kenmerk '%s' is booleaans en verwacht geen waarde ('=%s'); genegeerd."
-
-#~ msgid "in GREP_COLORS=\"%s\", the \"%s\" capacity %s"
-#~ msgstr ""
-#~ "GREP_COLORS='%s' --\n"
-#~ "  Kenmerk '%s': %s."
-
-#~ msgid ""
-#~ "stopped processing of ill-formed GREP_COLORS=\"%s\" at remaining "
-#~ "substring \"%s\""
-#~ msgstr ""
-#~ "GREP_COLORS='%s' --\n"
-#~ "  Tekenreeks is onjuist; verwerking is gestopt voor subreeks '%s'."
 
 #~ msgid "unknown directories method"
 #~ msgstr "onbekende mappen-actie"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: diffutils 3.7.41\n"
 "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
-"POT-Creation-Date: 2021-08-01 18:56-0700\n"
+"POT-Creation-Date: 2023-05-21 01:51-0700\n"
 "PO-Revision-Date: 2021-07-20 12:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,29 +20,29 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "некоректний аргумент %s до %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "неоднозначний аргумент %s до %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Список коректних аргументів:"
 
-#: lib/c-stack.c:187
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "помилка програми"
 
-#: lib/c-stack.c:188
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "переповнення стеку"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Невідома системна помилка"
 
@@ -198,83 +198,83 @@ msgstr "%s: до параметра слід додати аргумент — �
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "`"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "'"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Успішно"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Немає відповідностей"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Неправильний регулярний вираз"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Некоректний символ для сортування"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Неправильна назва класу символу"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Зворотна коса риска стоїть останньою"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Неправильне посилання"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Непарна [, [^, [:, [. або [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Непарна ( чи \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Непарна \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Неправильний вміст \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Неправильна нижня межа"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Оперативну пам'ять вичерпано"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Неправильний попередній регулярний вираз"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Передчасний кінець регулярного виразу"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Регулярний вираз надто великий"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Непарна ) чи \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Регулярний вираз не було вказано раніше"
 
@@ -473,17 +473,17 @@ msgstr ""
 "Загальна довідкова інформація щодо використання програмного забезпечення "
 "GNU: <%s>\n"
 
-#: src/analyze.c:454 src/diff.c:1406
+#: src/analyze.c:455 src/diff.c:1478
 #, c-format
 msgid "Files %s and %s differ\n"
 msgstr "Файли %s та %s відрізняються\n"
 
-#: src/analyze.c:455
+#: src/analyze.c:456
 #, c-format
 msgid "Binary files %s and %s differ\n"
 msgstr "Двійкові файли %s та %s відрізняються\n"
 
-#: src/analyze.c:706 src/diff3.c:1470 src/util.c:1254
+#: src/analyze.c:707 src/diff3.c:1457 src/util.c:1354
 msgid "No newline at end of file"
 msgstr "Наприкінці файла немає нового рядка"
 
@@ -497,41 +497,42 @@ msgstr "Torbjorn Granlund"
 msgid "David MacKenzie"
 msgstr "David MacKenzie"
 
-#: src/cmp.c:120 src/diff.c:879 src/diff3.c:467 src/sdiff.c:160
+#: src/cmp.c:124 src/diff.c:939 src/diff3.c:465 src/sdiff.c:159
 #, c-format
 msgid "Try '%s --help' for more information."
 msgstr "Спробуйте «%s --help» для отримання докладнішого опису."
 
-#: src/cmp.c:138
+#: src/cmp.c:142
 #, c-format
 msgid "invalid --ignore-initial value '%s'"
 msgstr "неприпустиме значення --ignore-initial «%s»"
 
-#: src/cmp.c:148
+#: src/cmp.c:152
 #, c-format
 msgid "options -l and -s are incompatible"
 msgstr "параметри -l та -s несумісні"
 
-#: src/cmp.c:156 src/diff.c:887 src/diff3.c:474 src/sdiff.c:168 src/sdiff.c:316
-#: src/sdiff.c:323 src/sdiff.c:876 src/util.c:852 src/util.c:952 src/util.c:959
+#: src/cmp.c:160 src/diff.c:947 src/diff3.c:472 src/sdiff.c:167 src/sdiff.c:314
+#: src/sdiff.c:321 src/sdiff.c:873 src/util.c:952 src/util.c:1052
+#: src/util.c:1059
 msgid "write failed"
 msgstr "запис невдалий"
 
-#: src/cmp.c:158 src/diff.c:889 src/diff.c:1471 src/diff3.c:476 src/sdiff.c:170
+#: src/cmp.c:162 src/diff.c:949 src/diff.c:1543 src/diff3.c:474 src/sdiff.c:169
 msgid "standard output"
 msgstr "стандартний вивід"
 
-#: src/cmp.c:162
+#: src/cmp.c:166
 msgid "-b, --print-bytes          print differing bytes"
 msgstr "-b  --print-bytes          вивести байти, що відрізняються."
 
-#: src/cmp.c:163
+#: src/cmp.c:167
 msgid "-i, --ignore-initial=SKIP         skip first SKIP bytes of both inputs"
 msgstr ""
 "-i, --ignore-initial=Н            пропустити перші Н байтів у обох потоках "
 "вхідних даних"
 
-#: src/cmp.c:164
+#: src/cmp.c:168
 msgid ""
 "-i, --ignore-initial=SKIP1:SKIP2  skip first SKIP1 bytes of FILE1 and\n"
 "                                      first SKIP2 bytes of FILE2"
@@ -539,42 +540,42 @@ msgstr ""
 "-i, --ignore-initial=Н1:Н2        пропустити перші Н1 байтів у ФАЙЛ1 і\n"
 "                                      перші Н2 байтів у ФАЙЛ2"
 
-#: src/cmp.c:166
+#: src/cmp.c:170
 msgid ""
 "-l, --verbose              output byte numbers and differing byte values"
 msgstr ""
 "-l  --verbose              вивести номери та значення усіх різних байтів"
 
-#: src/cmp.c:167
+#: src/cmp.c:171
 msgid "-n, --bytes=LIMIT          compare at most LIMIT bytes"
 msgstr ""
 "-n, --bytes=МЕЖА           порівнювати не більше вказаної кількості байтів."
 
-#: src/cmp.c:168
+#: src/cmp.c:172
 msgid "-s, --quiet, --silent      suppress all normal output"
 msgstr "-s, --quiet, --silent      не показувати всі звичайні повідомлення"
 
-#: src/cmp.c:169
+#: src/cmp.c:173
 msgid "    --help                 display this help and exit"
 msgstr ""
 "    --help                 показати це довідкове повідомлення і завершити "
 "роботу"
 
-#: src/cmp.c:170
+#: src/cmp.c:174
 msgid "-v, --version              output version information and exit"
 msgstr ""
 "-v, --version              показати дані щодо версії і завершити роботу"
 
-#: src/cmp.c:179
+#: src/cmp.c:183
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
 msgstr "Використання: %s [ПАРАМЕТР]... ФАЙЛ1 [ФАЙЛ2 [Н1 [Н2]]]\n"
 
-#: src/cmp.c:181
+#: src/cmp.c:185
 msgid "Compare two files byte by byte."
 msgstr "Порівнює два файли по байтах."
 
-#: src/cmp.c:183
+#: src/cmp.c:187
 msgid ""
 "The optional SKIP1 and SKIP2 specify the number of bytes to skip\n"
 "at the beginning of each file (zero by default)."
@@ -582,14 +583,14 @@ msgstr ""
 "Додаткові аргументи Н1 та Н2 визначають кількість байтів, які слід\n"
 "пропустити на початку кожного файла (типово байти не пропускаються)."
 
-#: src/cmp.c:186 src/diff.c:999 src/diff3.c:514 src/sdiff.c:211
+#: src/cmp.c:190 src/diff.c:1059 src/diff3.c:512 src/sdiff.c:210
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
 "Обов’язкові аргументи для довгих форм запису параметрів є обов’язковими і "
 "для скорочених форм.\n"
 
-#: src/cmp.c:192
+#: src/cmp.c:196
 msgid ""
 "SKIP values may be followed by the following multiplicative suffixes:\n"
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
@@ -599,201 +600,201 @@ msgstr ""
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
 "GB 1,000,000,000, G 1,073,741,824, і так далі для T, P, E, Z, Y."
 
-#: src/cmp.c:195
+#: src/cmp.c:199
 msgid "If a FILE is '-' or missing, read standard input."
 msgstr ""
 "Якщо ФАЙЛ не вказано або вказано як «-», дані буде прочитано зі стандартного "
 "потоку введення."
 
-#: src/cmp.c:196 src/diff.c:987 src/sdiff.c:221
+#: src/cmp.c:200 src/diff.c:1047 src/sdiff.c:220
 msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
 msgstr ""
 "Код завершення дорівнює 0, якщо вхідні файли ідентичні, 1 -- якщо\n"
 "відрізняються, та 2 при виникненні помилок."
 
-#: src/cmp.c:243
+#: src/cmp.c:247
 #, c-format
 msgid "invalid --bytes value '%s'"
 msgstr "некоректне значення --bytes «%s»"
 
-#: src/cmp.c:269 src/diff.c:797 src/diff3.c:361 src/sdiff.c:567
+#: src/cmp.c:273 src/diff.c:857 src/diff3.c:368 src/sdiff.c:564
 #, c-format
 msgid "missing operand after '%s'"
 msgstr "пропущено операнд після «%s»"
 
-#: src/cmp.c:281 src/diff.c:799 src/diff3.c:363 src/sdiff.c:569
+#: src/cmp.c:285 src/diff.c:859 src/diff3.c:370 src/sdiff.c:566
 #, c-format
 msgid "extra operand '%s'"
 msgstr "зайвий операнд «%s»"
 
-#: src/cmp.c:507
+#: src/cmp.c:521
 #, c-format
 msgid "%s %s differ: byte %s, line %s\n"
 msgstr "%s %s відрізняються: байт %s, рядок %s\n"
 
-#: src/cmp.c:523
+#: src/cmp.c:537
 #, c-format
 msgid "%s %s differ: byte %s, line %s is %3o %s %3o %s\n"
 msgstr "%s %s відрізняються: байт %s, рядок %s дорівнює %3o %s %3o %s\n"
 
-#: src/cmp.c:580
+#: src/cmp.c:594
 #, c-format
 msgid "cmp: EOF on %s which is empty\n"
 msgstr "cmp: кінець файла у %s, який є порожнім\n"
 
-#: src/cmp.c:594
+#: src/cmp.c:608
 #, c-format
 msgid "cmp: EOF on %s after byte %s, line %s\n"
 msgstr "cmp: кінець файла у %s після байта %s, рядок %s\n"
 
-#: src/cmp.c:595
+#: src/cmp.c:609
 #, c-format
 msgid "cmp: EOF on %s after byte %s, in line %s\n"
 msgstr "cmp: кінець файла у %s після байта %s, у рядку %s\n"
 
-#: src/cmp.c:601
+#: src/cmp.c:615
 #, c-format
 msgid "cmp: EOF on %s after byte %s\n"
 msgstr "cmp: кінець файла у %s після байта %s\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:51
+#: src/diff.c:50
 msgid "Paul Eggert"
 msgstr "Paul Eggert"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:52
+#: src/diff.c:51
 msgid "Mike Haertel"
 msgstr "Mike Haertel"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:53
+#: src/diff.c:52
 msgid "David Hayes"
 msgstr "David Hayes"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:54
+#: src/diff.c:53
 msgid "Richard Stallman"
 msgstr "Richard Stallman"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:55
+#: src/diff.c:54
 msgid "Len Tower"
 msgstr "Len Tower"
 
-#: src/diff.c:355
+#: src/diff.c:365
 #, c-format
 msgid "invalid context length '%s'"
 msgstr "некоректна довжина контексту «%s»"
 
-#: src/diff.c:438
+#: src/diff.c:487
 #, c-format
 msgid "pagination not supported on this host"
 msgstr "розбиття на сторінки не підтримується на цій машині"
 
-#: src/diff.c:453 src/diff3.c:341
+#: src/diff.c:502 src/diff3.c:348
 #, c-format
 msgid "too many file label options"
 msgstr "надто багато параметрів, що вказують позначки файлів"
 
-#: src/diff.c:530
+#: src/diff.c:579
 #, c-format
 msgid "invalid width '%s'"
 msgstr "некоректна ширина «%s»"
 
-#: src/diff.c:534
+#: src/diff.c:583
 msgid "conflicting width options"
 msgstr "суперечливі параметри визначення ширини"
 
-#: src/diff.c:559
+#: src/diff.c:608
 #, c-format
 msgid "invalid horizon length '%s'"
 msgstr "некоректна довжина горизонту «%s»"
 
-#: src/diff.c:615
+#: src/diff.c:664
 #, c-format
 msgid "invalid tabsize '%s'"
 msgstr "неприпустима ширина табуляції «%s»"
 
-#: src/diff.c:619
+#: src/diff.c:668
 msgid "conflicting tabsize options"
 msgstr "суперечливі параметри визначення ширини табуляції"
 
-#: src/diff.c:774
+#: src/diff.c:834
 msgid "--from-file and --to-file both specified"
 msgstr "необхідно вказати як --from-file, так і --to-file"
 
-#: src/diff.c:893
+#: src/diff.c:953
 msgid "    --normal                  output a normal diff (the default)"
 msgstr ""
 "    --normal                  вивести дані у форматі звичайного diff (типово)"
 
-#: src/diff.c:894
+#: src/diff.c:954
 msgid "-q, --brief                   report only when files differ"
 msgstr "-q, --brief                   сповіщати лише про різні файли"
 
-#: src/diff.c:895
+#: src/diff.c:955
 msgid "-s, --report-identical-files  report when two files are the same"
 msgstr "-s  --report-identical-files  сповіщати про однакові файли"
 
-#: src/diff.c:896
+#: src/diff.c:956
 msgid ""
 "-c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context"
 msgstr ""
 "-c, -C КТЬ, --context[=КТЬ]   вивести КТЬ (типово 3) рядки скопійованого "
 "контексту"
 
-#: src/diff.c:897
+#: src/diff.c:957
 msgid ""
 "-u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context"
 msgstr ""
 "-u, -U ЧИСЛО, --unified[=ЧИСЛО] вивести ЧИСЛО (типово 3) рядків спільного "
 "контексту"
 
-#: src/diff.c:898
+#: src/diff.c:958
 msgid "-e, --ed                      output an ed script"
 msgstr "-e, --ed                      вивести дані у форматі запису ed"
 
-#: src/diff.c:899
+#: src/diff.c:959
 msgid "-n, --rcs                     output an RCS format diff"
 msgstr ""
 "-n, --rcs                     виводити у форматі diff систем керування "
 "версіями"
 
-#: src/diff.c:900
+#: src/diff.c:960
 msgid "-y, --side-by-side            output in two columns"
 msgstr "-y, --side-by-side            вивести дані у два стовпчики"
 
-#: src/diff.c:901
+#: src/diff.c:961
 msgid ""
 "-W, --width=NUM               output at most NUM (default 130) print columns"
 msgstr ""
 "-W, --width=ЧИСЛО             виводити текст не більше ніж у ЧИСЛО (типово "
 "130) позицій у рядок"
 
-#: src/diff.c:902
+#: src/diff.c:962
 msgid ""
 "    --left-column             output only the left column of common lines"
 msgstr ""
 "    --left-column             виводити спільні рядки лише у ліву колонку"
 
-#: src/diff.c:903
+#: src/diff.c:963
 msgid "    --suppress-common-lines   do not output common lines"
 msgstr "    --suppress-common-lines   не виводити однакові рядки"
 
-#: src/diff.c:905
+#: src/diff.c:965
 msgid "-p, --show-c-function         show which C function each change is in"
 msgstr ""
 "-p, --show-c-function         показати дані щодо функцій C у яких виявлено "
 "кожну зі змін"
 
-#: src/diff.c:906
+#: src/diff.c:966
 msgid "-F, --show-function-line=RE   show the most recent line matching RE"
 msgstr ""
 "-F, --show-function-line=RE   показати останній рядок, що відповідає "
 "формальному виразу RE"
 
-#: src/diff.c:907
+#: src/diff.c:967
 msgid ""
 "    --label LABEL             use LABEL instead of file name and timestamp\n"
 "                                (can be repeated)"
@@ -802,75 +803,75 @@ msgstr ""
 "часової позначки\n"
 "                                (можна використовувати декілька разів)"
 
-#: src/diff.c:910
+#: src/diff.c:970
 msgid "-t, --expand-tabs             expand tabs to spaces in output"
 msgstr ""
 "-t  --expand-tabs             замінювати символи табуляції пробілами у виводі"
 
-#: src/diff.c:911
+#: src/diff.c:971
 msgid "-T, --initial-tab             make tabs line up by prepending a tab"
 msgstr ""
 "-T  --initial-tab             вирівнювати табуляцію символами табуляції"
 
-#: src/diff.c:912
+#: src/diff.c:972
 msgid ""
 "    --tabsize=NUM             tab stops every NUM (default 8) print columns"
 msgstr ""
 "    --tabsize=ЧИСЛО           табуляція кожні ЧИСЛО позицій виведення "
 "(типово 8)"
 
-#: src/diff.c:913
+#: src/diff.c:973
 msgid ""
 "    --suppress-blank-empty    suppress space or tab before empty output lines"
 msgstr ""
 "    --suppress-blank-empty    не показувати пробіли або табуляції перед "
 "порожніми рядками"
 
-#: src/diff.c:914
+#: src/diff.c:974
 msgid "-l, --paginate                pass output through 'pr' to paginate it"
 msgstr ""
 "-l  --paginate                спрямувати дані до «pr» для розбиття на "
 "сторінки."
 
-#: src/diff.c:916
+#: src/diff.c:976
 msgid ""
 "-r, --recursive                 recursively compare any subdirectories found"
 msgstr ""
 "-r, --recursive                 рекурсивно порівняти всі знайдені підкаталоги"
 
-#: src/diff.c:917
+#: src/diff.c:977
 msgid "    --no-dereference            don't follow symbolic links"
 msgstr ""
 "    --no-dereference            не переходити за символічними посиланнями"
 
-#: src/diff.c:918
+#: src/diff.c:978
 msgid "-N, --new-file                  treat absent files as empty"
 msgstr "-N, --new-file                  вважати незнайдені файли порожніми"
 
-#: src/diff.c:919
+#: src/diff.c:979
 msgid "    --unidirectional-new-file   treat absent first files as empty"
 msgstr ""
 "    --unidirectional-new-file   вважати незнайдені у першому джерелі файли "
 "порожніми"
 
-#: src/diff.c:920
+#: src/diff.c:980
 msgid "    --ignore-file-name-case     ignore case when comparing file names"
 msgstr ""
 "    --ignore-file-name-case     ігнорувати регістр назв файлів під час "
 "порівняння"
 
-#: src/diff.c:921
+#: src/diff.c:981
 msgid "    --no-ignore-file-name-case  consider case when comparing file names"
 msgstr ""
 "    --no-ignore-file-name-case  враховувати регістр символів назв файлів"
 
-#: src/diff.c:922
+#: src/diff.c:982
 msgid "-x, --exclude=PAT               exclude files that match PAT"
 msgstr ""
 "-x --exclude=ЗРАЗОК             виключити файли, назви яких відповідають "
 "ЗРАЗКУ"
 
-#: src/diff.c:923
+#: src/diff.c:983
 msgid ""
 "-X, --exclude-from=FILE         exclude files that match any pattern in FILE"
 msgstr ""
@@ -878,13 +879,13 @@ msgstr ""
 "зразкам\n"
 "                                 з файла."
 
-#: src/diff.c:924
+#: src/diff.c:984
 msgid ""
 "-S, --starting-file=FILE        start with FILE when comparing directories"
 msgstr ""
 "-S, --starting-file=ФАЙЛ        починати порівняння каталогів на файлі ФАЙЛ"
 
-#: src/diff.c:925
+#: src/diff.c:985
 msgid ""
 "    --from-file=FILE1           compare FILE1 to all operands;\n"
 "                                  FILE1 can be a directory"
@@ -892,7 +893,7 @@ msgstr ""
 "    --from-file=ФАЙЛ1           порівняти ФАЙЛ1 з усіма операндами;\n"
 "                                  ФАЙЛ1 може бути каталогом"
 
-#: src/diff.c:927
+#: src/diff.c:987
 msgid ""
 "    --to-file=FILE2             compare all operands to FILE2;\n"
 "                                  FILE2 can be a directory"
@@ -900,84 +901,84 @@ msgstr ""
 "    --to-file=ФАЙЛ2             порівняти всі операнди з ФАЙЛОМ "
 "2;                                   ФАЙЛ2 може бути каталогом."
 
-#: src/diff.c:930
+#: src/diff.c:990
 msgid ""
 "-i, --ignore-case               ignore case differences in file contents"
 msgstr ""
 "-i  --ignore-case               ігнорувати регістр літер у вмісті файлів"
 
-#: src/diff.c:931
+#: src/diff.c:991
 msgid "-E, --ignore-tab-expansion      ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion      ігнорувати зміни, викликані заміною "
 "табуляції пробілами"
 
-#: src/diff.c:932
+#: src/diff.c:992
 msgid "-Z, --ignore-trailing-space     ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space     ігнорувати пробіли наприкінці рядка"
 
-#: src/diff.c:933
+#: src/diff.c:993
 msgid ""
 "-b, --ignore-space-change       ignore changes in the amount of white space"
 msgstr "-b  --ignore-space-change       ігнорувати зміни у кількості пробілів"
 
-#: src/diff.c:934
+#: src/diff.c:994
 msgid "-w, --ignore-all-space          ignore all white space"
 msgstr "-w  --ignore-all-space          ігнорувати усі пробіли"
 
-#: src/diff.c:935
+#: src/diff.c:995
 msgid ""
 "-B, --ignore-blank-lines        ignore changes where lines are all blank"
 msgstr ""
 "-B  --ignore-blank-lines        ігнорувати зміни кількості порожніх рядків"
 
-#: src/diff.c:936
+#: src/diff.c:996
 msgid "-I, --ignore-matching-lines=RE  ignore changes where all lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=RE  ігнорувати зміни, які відповідають "
 "формальному виразу RE"
 
-#: src/diff.c:938
+#: src/diff.c:998
 msgid "-a, --text                      treat all files as text"
 msgstr "-a, --text                      вважати всі файли текстовими"
 
-#: src/diff.c:939
+#: src/diff.c:999
 msgid "    --strip-trailing-cr         strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr         вилучити з виведених даних всі завершальні "
 "символи нового рядка"
 
-#: src/diff.c:941
+#: src/diff.c:1001
 msgid "    --binary                    read and write data in binary mode"
 msgstr ""
 "    --binary                    читати та записувати файли у двійковій формі"
 
-#: src/diff.c:944
+#: src/diff.c:1004
 msgid ""
 "-D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs"
 msgstr ""
 "-D, --ifdef=НАЗВА               виводити diff-блоки, що використовують "
 "конструкцію «#ifdef НАЗВА»."
 
-#: src/diff.c:945
+#: src/diff.c:1005
 msgid "    --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT"
 msgstr ""
 "    --ГТИП-group-format=ГФМТ    форматувати вхідні групи типу ГТИП\n"
 "                                  у відповідності до формату ГФМТ."
 
-#: src/diff.c:946
+#: src/diff.c:1006
 msgid "    --line-format=LFMT          format all input lines with LFMT"
 msgstr ""
 "    --line-format=СФМТ          форматувати всі вхідні рядки за допомогою "
 "СФМТ."
 
-#: src/diff.c:947
+#: src/diff.c:1007
 msgid "    --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT"
 msgstr ""
 "    --CТИП-group-format=СФМТ     форматувати вхідні рядки типу СТИП\n"
 "                                   у відповідності до формату СФМТ"
 
-#: src/diff.c:948
+#: src/diff.c:1008
 msgid ""
 "  These format options provide fine-grained control over the output\n"
 "    of diff, generalizing -D/--ifdef."
@@ -985,12 +986,12 @@ msgstr ""
 "  За допомогою цих параметрів форматування можна точно налаштувати\n"
 "    вивід diff, з узагальненням -D/--ifdef."
 
-#: src/diff.c:950
+#: src/diff.c:1010
 msgid "  LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'."
 msgstr ""
 "  СТИП може бути «old», «new» чи «unchanged», ГТИП — те саме або «changed»."
 
-#: src/diff.c:951
+#: src/diff.c:1011
 msgid ""
 "  GFMT (only) may contain:\n"
 "    %<  lines from FILE1\n"
@@ -1018,7 +1019,7 @@ msgstr ""
 "        M  L+1\n"
 "    %(A=B?T:E)  якщо A дорівнює B, T, інакше E"
 
-#: src/diff.c:963
+#: src/diff.c:1023
 msgid ""
 "  LFMT (only) may contain:\n"
 "    %L  contents of line\n"
@@ -1030,7 +1031,7 @@ msgstr ""
 "    %l  вміст рядка без символу нового рядка наприкінці\n"
 "    %[-][ШИРИНА][.[ТОЧН]]{doxX}n  формат номеру вхідного рядка у стилі printf"
 
-#: src/diff.c:967
+#: src/diff.c:1027
 msgid ""
 "  Both GFMT and LFMT may contain:\n"
 "    %%  %\n"
@@ -1044,23 +1045,23 @@ msgstr ""
 "    %c'\\OOO'  один символ з вісімковим кодом OOO\n"
 "    C    символ C (інші символи не оброблятимуться)"
 
-#: src/diff.c:973
+#: src/diff.c:1033
 msgid "-d, --minimal            try hard to find a smaller set of changes"
 msgstr "-d  --minimal            намагатись знайти найменший набір змін"
 
-#: src/diff.c:974
+#: src/diff.c:1034
 msgid "    --horizon-lines=NUM  keep NUM lines of the common prefix and suffix"
 msgstr ""
 "    --horizon-lines=ЧИСЛО  зберегти ЧИСЛО спільних рядків, до та після різних"
 
-#: src/diff.c:975
+#: src/diff.c:1035
 msgid ""
 "    --speed-large-files  assume large files and many scattered small changes"
 msgstr ""
 "    --speed-large-files  вважати файли великими з багатьма розкиданими\n"
 "                           дрібними змінами."
 
-#: src/diff.c:976
+#: src/diff.c:1036
 msgid ""
 "    --color[=WHEN]       color output; WHEN is 'never', 'always', or "
 "'auto';\n"
@@ -1070,7 +1071,7 @@ msgstr ""
 "'never', 'always',\n"
 "                           або 'auto'; просто --color означає --color='auto'"
 
-#: src/diff.c:978
+#: src/diff.c:1038
 msgid ""
 "    --palette=PALETTE    the colors to use when --color is active; PALETTE "
 "is\n"
@@ -1081,116 +1082,116 @@ msgstr ""
 "                           ПАЛІТРА — відокремлений двокрапками список "
 "можливостей terminfo"
 
-#: src/diff.c:981
+#: src/diff.c:1041
 msgid "    --help               display this help and exit"
 msgstr ""
 "    --help               показати це довідкове повідомлення і завершити "
 "роботу"
 
-#: src/diff.c:982
+#: src/diff.c:1042
 msgid "-v, --version            output version information and exit"
 msgstr "-v, --version            показати дані щодо версії і завершити роботу"
 
-#: src/diff.c:984
+#: src/diff.c:1044
 msgid "FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE' or 'FILE DIR'."
 msgstr ""
 "ФАЙЛИ — це «ФАЙЛ1 ФАЙЛ2», чи «КАТАЛОГ1 КАТАЛОГ2», чи «КАТАЛОГ ФАЙЛ»,\n"
 "чи «ФАЙЛ КАТАЛОГ»."
 
-#: src/diff.c:985
+#: src/diff.c:1045
 msgid ""
 "If --from-file or --to-file is given, there are no restrictions on FILE(s)."
 msgstr "Якщо вказано --from-file чи --to-file, на ФАЙЛИ обмежень немає."
 
-#: src/diff.c:986 src/diff3.c:533 src/sdiff.c:220
+#: src/diff.c:1046 src/diff3.c:531 src/sdiff.c:219
 msgid "If a FILE is '-', read standard input."
 msgstr ""
 "Якщо ФАЙЛ вказано як «-», дані буде прочитано зі стандартного потоку "
 "введення."
 
-#: src/diff.c:996
+#: src/diff.c:1056
 #, c-format
 msgid "Usage: %s [OPTION]... FILES\n"
 msgstr "Використання: %s [КЛЮЧ]... ФАЙЛИ\n"
 
-#: src/diff.c:997
+#: src/diff.c:1057
 msgid "Compare FILES line by line."
 msgstr "Порівнює два файли за рядками."
 
-#: src/diff.c:1034
+#: src/diff.c:1094
 #, c-format
 msgid "conflicting %s option value '%s'"
 msgstr "суперечливі значення %s для ключа «%s»"
 
-#: src/diff.c:1047
+#: src/diff.c:1107
 #, c-format
 msgid "conflicting output style options"
 msgstr "суперечливі ключі визначення стилю виводу"
 
-#: src/diff.c:1063
+#: src/diff.c:1123
 #, c-format
 msgid "invalid color '%s'"
 msgstr "некоректний колір «%s»"
 
-#: src/diff.c:1119 src/diff.c:1329
+#: src/diff.c:1197 src/diff.c:1401
 #, c-format
 msgid "Only in %s: %s\n"
 msgstr "Лише у %s: %s\n"
 
-#: src/diff.c:1253
+#: src/diff.c:1325
 msgid "cannot compare '-' to a directory"
 msgstr "не можна порівнювати «-» з каталогом"
 
-#: src/diff.c:1288
+#: src/diff.c:1360
 msgid "-D option not supported with directories"
 msgstr "-D параметр не підтримується для каталогів"
 
-#: src/diff.c:1297
+#: src/diff.c:1369
 #, c-format
 msgid "Common subdirectories: %s and %s\n"
 msgstr "Спільні підкаталоги: %s та %s\n"
 
-#: src/diff.c:1339 src/diff.c:1389
+#: src/diff.c:1411 src/diff.c:1461
 #, c-format
 msgid "File %s is a %s while file %s is a %s\n"
 msgstr "Файл %s це %s, тоді як файл %s -- %s\n"
 
-#: src/diff.c:1375
+#: src/diff.c:1447
 #, c-format
 msgid "Symbolic links %s and %s differ\n"
 msgstr "Символічні посилання %s і %s є різними\n"
 
-#: src/diff.c:1462
+#: src/diff.c:1534
 #, c-format
 msgid "Files %s and %s are identical\n"
 msgstr "Файли %s та %s ідентичні\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff3.c:43
+#: src/diff3.c:51
 msgid "Randy Smith"
 msgstr "Randy Smith"
 
-#: src/diff3.c:356
+#: src/diff3.c:363
 #, c-format
 msgid "incompatible options"
 msgstr "несумісні ключі"
 
-#: src/diff3.c:396
+#: src/diff3.c:403
 msgid "'-' specified for more than one input file"
 msgstr "«-» вказано для більш ніж одного вхідного файла"
 
-#: src/diff3.c:447 src/diff3.c:1295 src/diff3.c:1698 src/diff3.c:1753
-#: src/sdiff.c:308 src/sdiff.c:846 src/sdiff.c:857
+#: src/diff3.c:445 src/diff3.c:1284 src/diff3.c:1683 src/diff3.c:1738
+#: src/sdiff.c:306 src/sdiff.c:843 src/sdiff.c:854
 msgid "read failed"
 msgstr "помилка читання"
 
-#: src/diff3.c:480
+#: src/diff3.c:478
 msgid "-A, --show-all              output all changes, bracketing conflicts"
 msgstr ""
 "-A  --show-all              вивести всі зміни, беручи конфліктні місця у "
 "дужки."
 
-#: src/diff3.c:482
+#: src/diff3.c:480
 msgid ""
 "-e, --ed                    output ed script incorporating changes\n"
 "                                from OLDFILE to YOURFILE into MYFILE"
@@ -1198,13 +1199,13 @@ msgstr ""
 "-e  --ed                    вивести необ'єднані зміни у СТАРОМУ-ФАЙЛІ\n"
 "                              порівняно з ВАШИМ-ФАЙЛОМ до МОГО-ФАЙЛА."
 
-#: src/diff3.c:484
+#: src/diff3.c:482
 msgid "-E, --show-overlap          like -e, but bracket conflicts"
 msgstr ""
 "-E  --show-overlap          подібно до -e, але з взяттям конфліктних місць у "
 "дужки"
 
-#: src/diff3.c:485
+#: src/diff3.c:483
 msgid ""
 "-3, --easy-only             like -e, but incorporate only nonoverlapping "
 "changes"
@@ -1212,25 +1213,25 @@ msgstr ""
 "-3, --easy-only             подібно до -e, але включити лише зміни без "
 "перекриття"
 
-#: src/diff3.c:486
+#: src/diff3.c:484
 msgid ""
 "-x, --overlap-only          like -e, but incorporate only overlapping changes"
 msgstr ""
 "-x, --overlap-only          подібно до -e, але включати лише зміни з "
 "перекриттям"
 
-#: src/diff3.c:487
+#: src/diff3.c:485
 msgid "-X                          like -x, but bracket conflicts"
 msgstr ""
 "-X                          подібно до -x, але з взяттям розбіжностей у дужки"
 
-#: src/diff3.c:488
+#: src/diff3.c:486
 msgid "-i                          append 'w' and 'q' commands to ed scripts"
 msgstr ""
 "-i                          дописувати команди «w» і «q» в кінець сценарію "
 "ed."
 
-#: src/diff3.c:490
+#: src/diff3.c:488
 msgid ""
 "-m, --merge                 output actual merged file, according to\n"
 "                                -A if no other options are given"
@@ -1239,28 +1240,28 @@ msgstr ""
 "до\n"
 "                                -A, якщо не вказано інших параметрів"
 
-#: src/diff3.c:493
+#: src/diff3.c:491
 msgid "-a, --text                  treat all files as text"
 msgstr "-a, --text                  вважати всі файли текстовими"
 
-#: src/diff3.c:494
+#: src/diff3.c:492
 msgid "    --strip-trailing-cr     strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr     вилучити з виведених даних всі завершальні "
 "символи нового рядка"
 
-#: src/diff3.c:495
+#: src/diff3.c:493
 msgid "-T, --initial-tab           make tabs line up by prepending a tab"
 msgstr ""
 "-T  --initial-tab           вирівнювати табуляцію додаючи на початок символ "
 "табуляції"
 
-#: src/diff3.c:496
+#: src/diff3.c:494
 msgid "    --diff-program=PROGRAM  use PROGRAM to compare files"
 msgstr ""
 "    --diff-program=ПРОГРАМА використовувати для порівняння вказану ПРОГРАМУ"
 
-#: src/diff3.c:497
+#: src/diff3.c:495
 msgid ""
 "-L, --label=LABEL           use LABEL instead of file name\n"
 "                                (can be repeated up to three times)"
@@ -1268,27 +1269,27 @@ msgstr ""
 "-L, --label=МІТКА           використовувати МІТКУ замість назви файла\n"
 "                                (можна використовувати не більше трьох разів)"
 
-#: src/diff3.c:500
+#: src/diff3.c:498
 msgid "    --help                  display this help and exit"
 msgstr ""
 "    --help                  показати це довідкове повідомлення і завершити "
 "роботу"
 
-#: src/diff3.c:501
+#: src/diff3.c:499
 msgid "-v, --version               output version information and exit"
 msgstr ""
 "-v, --version               показати дані щодо версії і завершити роботу"
 
-#: src/diff3.c:510
+#: src/diff3.c:508
 #, c-format
 msgid "Usage: %s [OPTION]... MYFILE OLDFILE YOURFILE\n"
 msgstr "Використання: %s [КЛЮЧ]... МІЙ-ФАЙЛ СТАРИЙ-ФАЙЛ ВАШ-ФАЙЛ\n"
 
-#: src/diff3.c:512
+#: src/diff3.c:510
 msgid "Compare three files line by line."
 msgstr "Порівняння трьох файлів рядками."
 
-#: src/diff3.c:522
+#: src/diff3.c:520
 msgid ""
 "\n"
 "The default output format is a somewhat human-readable representation of\n"
@@ -1312,57 +1313,57 @@ msgstr ""
 "diff3 з виводом їх до об’єднаного файла. Для нетипових вхідних даних\n"
 "такий варіант працює краще за варіант з використанням ed.\n"
 
-#: src/diff3.c:534
+#: src/diff3.c:532
 msgid "Exit status is 0 if successful, 1 if conflicts, 2 if trouble."
 msgstr ""
 "Код завершення дорівнює 0 при нормальному завершенні, 1 при конфліктах\n"
 " та 2 при несправностях."
 
-#: src/diff3.c:727
+#: src/diff3.c:725
 msgid "internal error: screwup in format of diff blocks"
 msgstr "внутрішня помилка: пошкоджений формат diff-блоків"
 
-#: src/diff3.c:1022
+#: src/diff3.c:1015
 #, c-format
 msgid "%s: diff failed: "
 msgstr "%s: помилка при пошуку відмінностей: "
 
-#: src/diff3.c:1044
+#: src/diff3.c:1037
 msgid "internal error: invalid diff type in process_diff"
 msgstr ""
 "внутрішня помилка: неправильний тип diff-блоку у функції `process_diff'"
 
-#: src/diff3.c:1069
+#: src/diff3.c:1060
 msgid "invalid diff format; invalid change separator"
 msgstr "неправильний формат diff-файла; неправильний розділювач змін"
 
-#: src/diff3.c:1305
+#: src/diff3.c:1294
 msgid "invalid diff format; incomplete last line"
 msgstr "неправильний формат diff-файла; неповний останній рядок"
 
-#: src/diff3.c:1329 src/sdiff.c:276 src/util.c:969
+#: src/diff3.c:1318 src/sdiff.c:274 src/util.c:1069
 #, c-format
 msgid "subsidiary program '%s' could not be invoked"
 msgstr "не вдається запустити допоміжну програму «%s»"
 
-#: src/diff3.c:1354
+#: src/diff3.c:1343
 msgid "invalid diff format; incorrect leading line chars"
 msgstr "неправильний diff-формат; неправильні перші символи рядка"
 
-#: src/diff3.c:1427
+#: src/diff3.c:1416
 msgid "internal error: invalid diff type passed to output"
 msgstr "внутрішня помилка: на вхід подано неправильний тип diff-файла"
 
-#: src/diff3.c:1700 src/diff3.c:1757
+#: src/diff3.c:1685 src/diff3.c:1742
 msgid "input file shrank"
 msgstr "вхідний файл зменшився"
 
-#: src/dir.c:156
+#: src/dir.c:154
 #, c-format
 msgid "cannot compare file names '%s' and '%s'"
 msgstr "неможливо порівняти назви файлів «%s» та «%s»"
 
-#: src/dir.c:225
+#: src/dir.c:223
 #, c-format
 msgid "%s: recursive directory loop"
 msgstr "%s: зациклення рекурсивного проходу каталогів"
@@ -1372,131 +1373,131 @@ msgstr "%s: зациклення рекурсивного проходу кат�
 msgid "Thomas Lord"
 msgstr "Thomas Lord"
 
-#: src/sdiff.c:174
+#: src/sdiff.c:173
 msgid ""
 "-o, --output=FILE            operate interactively, sending output to FILE"
 msgstr ""
 "-o, --output=ФАЙЛ            інтерактивний режим із записом виводу до ФАЙЛА"
 
-#: src/sdiff.c:176
+#: src/sdiff.c:175
 msgid ""
 "-i, --ignore-case            consider upper- and lower-case to be the same"
 msgstr "-i  --ignore-case            ігнорувати регістр літер"
 
-#: src/sdiff.c:177
+#: src/sdiff.c:176
 msgid "-E, --ignore-tab-expansion   ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion   ігнорувати зміни, викликані заміною табуляції "
 "пробілами"
 
-#: src/sdiff.c:178
+#: src/sdiff.c:177
 msgid "-Z, --ignore-trailing-space  ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space  ігнорувати пробіли наприкінці рядка"
 
-#: src/sdiff.c:179
+#: src/sdiff.c:178
 msgid ""
 "-b, --ignore-space-change    ignore changes in the amount of white space"
 msgstr "-b  --ignore-space-change    ігнорувати зміни у кількості пробілів"
 
-#: src/sdiff.c:180
+#: src/sdiff.c:179
 msgid "-W, --ignore-all-space       ignore all white space"
 msgstr "-W  --ignore-all-space       ігнорувати усі пробіли"
 
-#: src/sdiff.c:181
+#: src/sdiff.c:180
 msgid "-B, --ignore-blank-lines     ignore changes whose lines are all blank"
 msgstr ""
 "-B  --ignore-blank-lines     ігнорувати зміни кількості порожніх рядків"
 
-#: src/sdiff.c:182
+#: src/sdiff.c:181
 msgid "-I, --ignore-matching-lines=RE  ignore changes all whose lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=RE  ігнорувати зміни, які відповідають "
 "формальному виразу RE"
 
-#: src/sdiff.c:183
+#: src/sdiff.c:182
 msgid "    --strip-trailing-cr      strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr      вилучити з виведених даних всі завершальні "
 "символи нового рядка"
 
-#: src/sdiff.c:184
+#: src/sdiff.c:183
 msgid "-a, --text                   treat all files as text"
 msgstr "-a, --text                   вважати всі файли текстовими"
 
-#: src/sdiff.c:186
+#: src/sdiff.c:185
 msgid ""
 "-w, --width=NUM              output at most NUM (default 130) print columns"
 msgstr ""
 "-w, --width=ЧИСЛО            виводити текст не більше ніж у ЧИСЛО (типово "
 "130) позицій у рядок"
 
-#: src/sdiff.c:187
+#: src/sdiff.c:186
 msgid ""
 "-l, --left-column            output only the left column of common lines"
 msgstr ""
 "-l, -left-column             виводити спільні рядки лише у ліву колонку"
 
-#: src/sdiff.c:188
+#: src/sdiff.c:187
 msgid "-s, --suppress-common-lines  do not output common lines"
 msgstr "-s  --suppress-common-lines  не виводити спільні рядки"
 
-#: src/sdiff.c:190
+#: src/sdiff.c:189
 msgid "-t, --expand-tabs            expand tabs to spaces in output"
 msgstr ""
 "-t  --expand-tabs             замінювати символи табуляції пробілами у виводі"
 
-#: src/sdiff.c:191
+#: src/sdiff.c:190
 msgid ""
 "    --tabsize=NUM            tab stops at every NUM (default 8) print columns"
 msgstr ""
 "    --tabsize=ЧИСЛО          табуляція кожні ЧИСЛО позицій виведення (типово "
 "8)"
 
-#: src/sdiff.c:193
+#: src/sdiff.c:192
 msgid "-d, --minimal                try hard to find a smaller set of changes"
 msgstr "-d  --minimal                намагатись знайти найменший набір змін"
 
-#: src/sdiff.c:194
+#: src/sdiff.c:193
 msgid ""
 "-H, --speed-large-files      assume large files, many scattered small changes"
 msgstr ""
 "-H, -speed-large-files       вважати файли великими з багатьма розкиданими\n"
 "                               дрібними змінами."
 
-#: src/sdiff.c:195
+#: src/sdiff.c:194
 msgid "    --diff-program=PROGRAM   use PROGRAM to compare files"
 msgstr ""
 "    --diff-program=ПРОГРАМА  використовувати для порівняння вказану ПРОГРАМУ"
 
-#: src/sdiff.c:197
+#: src/sdiff.c:196
 msgid "    --help                   display this help and exit"
 msgstr ""
 "    --help                   показати це довідкове повідомлення і завершити "
 "роботу"
 
-#: src/sdiff.c:198
+#: src/sdiff.c:197
 msgid "-v, --version                output version information and exit"
 msgstr ""
 "-v, --version                показати дані щодо версії і завершити роботу"
 
-#: src/sdiff.c:207
+#: src/sdiff.c:206
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
 msgstr "Використання: %s [КЛЮЧ]... ФАЙЛ1 ФАЙЛ2\n"
 
-#: src/sdiff.c:209
+#: src/sdiff.c:208
 msgid "Side-by-side merge of differences between FILE1 and FILE2."
 msgstr "Паралельне об’єднання файлів ФАЙЛ1 і ФАЙЛ2."
 
-#: src/sdiff.c:330
+#: src/sdiff.c:328
 msgid "cannot interactively merge standard input"
 msgstr "не можна інтерактивно об'єднувати стандартний потік вводу"
 
-#: src/sdiff.c:597
+#: src/sdiff.c:594
 msgid "both files to be compared are directories"
 msgstr "обидва файли, що порівнюються є каталогами"
 
-#: src/sdiff.c:820
+#: src/sdiff.c:817
 msgid ""
 "ed:\tEdit then use both versions, each decorated with a header.\n"
 "eb:\tEdit then use both versions.\n"
@@ -1520,12 +1521,12 @@ msgstr ""
 "v:\tВключати спільні рядки, виводячи повідомлення.\n"
 "q:\tВийти.\n"
 
-#: src/util.c:662
+#: src/util.c:755
 #, c-format
 msgid "unrecognized prefix: %s"
 msgstr "невідомий префікс: %s"
 
-#: src/util.c:692
+#: src/util.c:785
 #, c-format
 msgid "unparsable value for --palette"
 msgstr "непридатне до обробки значення для --palette"

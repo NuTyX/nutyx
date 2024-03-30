@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acl-2.2.43.1\n"
 "Report-Msgid-Bugs-To: acl-devel@nongnu.org\n"
-"POT-Creation-Date: 2021-03-16 07:43+0100\n"
+"POT-Creation-Date: 2024-01-23 23:58-0500\n"
 "PO-Revision-Date: 2007-03-16 23:25+0100\n"
 "Last-Translator: Antonio Trueba <atrueba@users.sourceforge.net>\n"
 "Language-Team: Spanish\n"
@@ -29,32 +29,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Spanish\n"
 
-#: libacl/acl_error.c:33
+#: libacl/acl_error.c:32
 msgid "Multiple entries of same type"
 msgstr "Múltiples entradas del mismo tipo"
 
-#: libacl/acl_error.c:35
+#: libacl/acl_error.c:34
 msgid "Duplicate entries"
 msgstr "Entradas duplicadas"
 
-#: libacl/acl_error.c:37
+#: libacl/acl_error.c:36
 msgid "Missing or wrong entry"
 msgstr "Falta una posición o es errónea"
 
-#: libacl/acl_error.c:39
+#: libacl/acl_error.c:38
 msgid "Invalid entry type"
 msgstr "Tipo de posición inválido"
 
-#: libacl/perm_copy_fd.c:124 libacl/perm_copy_fd.c:136
-#: libacl/perm_copy_fd.c:198 libacl/perm_copy_file.c:124
-#: libacl/perm_copy_file.c:139 libacl/perm_copy_file.c:150
-#: libacl/perm_copy_file.c:235
+#: libacl/perm_copy_fd.c:123 libacl/perm_copy_fd.c:135
+#: libacl/perm_copy_fd.c:197 libacl/perm_copy_file.c:123
+#: libacl/perm_copy_file.c:138 libacl/perm_copy_file.c:149
+#: libacl/perm_copy_file.c:234
 #, c-format
 msgid "setting permissions for %s"
 msgstr "estableciendo permisos a %s"
 
-#: libacl/perm_copy_fd.c:186 libacl/perm_copy_file.c:199
-#: libacl/perm_copy_file.c:224
+#: libacl/perm_copy_fd.c:185 libacl/perm_copy_file.c:198
+#: libacl/perm_copy_file.c:223
 #, c-format
 msgid "preserving permissions for %s"
 msgstr "manteniendo permisos a %s"
@@ -159,149 +159,20 @@ msgstr "%s: falló la apertura: %s\n"
 msgid "%s: malloc failed: %s\n"
 msgstr "%s: falló la asignación de memoria: %s\n"
 
-#: tools/do_set.c:410
+#: tools/do_set.c:409
 #, c-format
 msgid "%s: %s: Malformed access ACL `%s': %s at entry %d\n"
 msgstr "%s: %s: ACL incorrecto `%s': %s en posición %d\n"
 
-#: tools/do_set.c:437
+#: tools/do_set.c:436
 #, c-format
 msgid "%s: %s: Malformed default ACL `%s': %s at entry %d\n"
 msgstr "%s: %s: ACL predeterminado incorrecto `%s': %s en posición %d\n"
 
-#: tools/do_set.c:508
+#: tools/do_set.c:507
 #, c-format
 msgid "%s: %s: Only directories can have default ACLs\n"
 msgstr "%s: %s: Sólo los directorios pueden tener ACLs predeterminados\n"
-
-#: tools/setfacl.c:147
-#, c-format
-msgid "%s: %s: No filename found in line %d, aborting\n"
-msgstr "%s: %s: No se encontró nombre de archivo en línea %d, abortando\n"
-
-#: tools/setfacl.c:152
-#, c-format
-msgid "%s: No filename found in line %d of standard input, aborting\n"
-msgstr ""
-"%s: No se encontró nombre de archivo en línea %d de entrada estándar, "
-"abortando\n"
-
-#: tools/setfacl.c:173
-#, c-format
-msgid "%s: %s: %s in line %d\n"
-msgstr "%s: %s: %s en línea %d\n"
-
-#: tools/setfacl.c:205
-#, c-format
-msgid "%s: %s: Cannot change owner/group: %s\n"
-msgstr "%s: %s: No se pudo cambiar el propietario/grupo: %s\n"
-
-#: tools/setfacl.c:224
-#, fuzzy, c-format
-msgid "%s: %s: Cannot change mode: %s\n"
-msgstr "%s: %s: No se pudo cambiar el propietario/grupo: %s\n"
-
-#: tools/setfacl.c:266
-#, c-format
-msgid "%s %s -- set file access control lists\n"
-msgstr "%s %s -- establecer listas de control de acceso a archivo\n"
-
-#: tools/setfacl.c:268 tools/setfacl.c:653
-#, c-format
-msgid "Usage: %s %s\n"
-msgstr "Uso: %s %s\n"
-
-#: tools/setfacl.c:271
-#, c-format
-msgid ""
-"  -m, --modify=acl        modify the current ACL(s) of file(s)\n"
-"  -M, --modify-file=file  read ACL entries to modify from file\n"
-"  -x, --remove=acl        remove entries from the ACL(s) of file(s)\n"
-"  -X, --remove-file=file  read ACL entries to remove from file\n"
-"  -b, --remove-all        remove all extended ACL entries\n"
-"  -k, --remove-default    remove the default ACL\n"
-msgstr ""
-"  -m, --modify=acl         modificar ACL actual(es) de archivo(s)\n"
-"  -M, --modify-file=arch   leer entradas ACL desde \"arch\"\n"
-"  -x, --remove=acl         eliminar entradas desde ACL(s) de archivo(s)\n"
-"  -X, --remove-file=arch   leer entradas de ACL a borrar desde \"arch\"\n"
-"  -b, --remove-all         eliminar todas las entradas ACL extendidas\n"
-"  -k, --remove-default     eliminar el ACL predeterminado\n"
-
-#: tools/setfacl.c:280
-#, c-format
-msgid ""
-"      --set=acl           set the ACL of file(s), replacing the current ACL\n"
-"      --set-file=file     read ACL entries to set from file\n"
-"      --mask              do recalculate the effective rights mask\n"
-msgstr ""
-"      --set=acl        establecer ACL(s) de archivo(s), reemplazando el "
-"actual\n"
-"      --set-file=arch  leer entradas ACL a establecer desde \"arch\"\n"
-"      --mask           recalcular la máscara de permisos efectivos\n"
-
-#: tools/setfacl.c:286
-#, c-format
-msgid ""
-"  -n, --no-mask           don't recalculate the effective rights mask\n"
-"  -d, --default           operations apply to the default ACL\n"
-msgstr ""
-"  -n, --no-mask           no recalcular la máscara de derechos efectivos\n"
-"  -d, --default           las operaciones afectal al ACL predeterminado\n"
-
-#: tools/setfacl.c:291
-#, c-format
-msgid ""
-"  -R, --recursive         recurse into subdirectories\n"
-"  -L, --logical           logical walk, follow symbolic links\n"
-"  -P, --physical          physical walk, do not follow symbolic links\n"
-"      --restore=file      restore ACLs (inverse of `getfacl -R')\n"
-"      --test              test mode (ACLs are not modified)\n"
-msgstr ""
-"  -R, --recursive         recorrer subdirectorios recursivamente\n"
-"  -L, --logical           recorrido lógico, siguiendo enlaces simbólicos\n"
-"  -P, --physical          recorrido físico, sin seguir enlaces simbólicos\n"
-"      --restore=file      restaurar ACLs (inverso de `getfacl -R')\n"
-"      --test              modo de prueba (los ACLs no se modifican)\n"
-
-#: tools/setfacl.c:299 tools/getfacl.c:597
-#, fuzzy, c-format
-msgid ""
-"  -v, --version           print version and exit\n"
-"  -h, --help              this help text\n"
-msgstr ""
-"      --version           escribir versión y salir\n"
-"      --help              este texto de ayuda\n"
-
-#: tools/setfacl.c:316 tools/getfacl.c:743
-#, c-format
-msgid "%s: Standard input: %s\n"
-msgstr "%s: Entrada estándar: %s\n"
-
-#: tools/setfacl.c:452
-#, c-format
-msgid "%s: Option -%c incomplete\n"
-msgstr "%s: Opción -%c incompleta\n"
-
-#: tools/setfacl.c:457
-#, c-format
-msgid "%s: Option -%c: %s near character %d\n"
-msgstr "%s: Opción -%c: %s cerca del carácter %d\n"
-
-#: tools/setfacl.c:533
-#, c-format
-msgid "%s: %s in line %d of file %s\n"
-msgstr "%s: %s en línea %d de archivo %s\n"
-
-#: tools/setfacl.c:541
-#, c-format
-msgid "%s: %s in line %d of standard input\n"
-msgstr "%s: %s en línea %d de entrada estándar\n"
-
-#: tools/setfacl.c:655 tools/getfacl.c:758
-#, c-format
-msgid "Try `%s --help' for more information.\n"
-msgstr "Escriba `%s --help' para más información.\n"
 
 #: tools/getfacl.c:498
 #, c-format
@@ -357,3 +228,132 @@ msgstr ""
 "      --numeric           mostrar identificadores numéricos de usuario/"
 "grupo\n"
 "      --absolute-names    no eliminar '/' inicial en nombres de ruta\n"
+
+#: tools/getfacl.c:597 tools/setfacl.c:298
+#, fuzzy, c-format
+msgid ""
+"  -v, --version           print version and exit\n"
+"  -h, --help              this help text\n"
+msgstr ""
+"      --version           escribir versión y salir\n"
+"      --help              este texto de ayuda\n"
+
+#: tools/getfacl.c:743 tools/setfacl.c:315
+#, c-format
+msgid "%s: Standard input: %s\n"
+msgstr "%s: Entrada estándar: %s\n"
+
+#: tools/getfacl.c:758 tools/setfacl.c:658
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Escriba `%s --help' para más información.\n"
+
+#: tools/setfacl.c:146
+#, c-format
+msgid "%s: %s: No filename found in line %d, aborting\n"
+msgstr "%s: %s: No se encontró nombre de archivo en línea %d, abortando\n"
+
+#: tools/setfacl.c:151
+#, c-format
+msgid "%s: No filename found in line %d of standard input, aborting\n"
+msgstr ""
+"%s: No se encontró nombre de archivo en línea %d de entrada estándar, "
+"abortando\n"
+
+#: tools/setfacl.c:172
+#, c-format
+msgid "%s: %s: %s in line %d\n"
+msgstr "%s: %s: %s en línea %d\n"
+
+#: tools/setfacl.c:204
+#, c-format
+msgid "%s: %s: Cannot change owner/group: %s\n"
+msgstr "%s: %s: No se pudo cambiar el propietario/grupo: %s\n"
+
+#: tools/setfacl.c:223
+#, fuzzy, c-format
+msgid "%s: %s: Cannot change mode: %s\n"
+msgstr "%s: %s: No se pudo cambiar el propietario/grupo: %s\n"
+
+#: tools/setfacl.c:265
+#, c-format
+msgid "%s %s -- set file access control lists\n"
+msgstr "%s %s -- establecer listas de control de acceso a archivo\n"
+
+#: tools/setfacl.c:267 tools/setfacl.c:656
+#, c-format
+msgid "Usage: %s %s\n"
+msgstr "Uso: %s %s\n"
+
+#: tools/setfacl.c:270
+#, c-format
+msgid ""
+"  -m, --modify=acl        modify the current ACL(s) of file(s)\n"
+"  -M, --modify-file=file  read ACL entries to modify from file\n"
+"  -x, --remove=acl        remove entries from the ACL(s) of file(s)\n"
+"  -X, --remove-file=file  read ACL entries to remove from file\n"
+"  -b, --remove-all        remove all extended ACL entries\n"
+"  -k, --remove-default    remove the default ACL\n"
+msgstr ""
+"  -m, --modify=acl         modificar ACL actual(es) de archivo(s)\n"
+"  -M, --modify-file=arch   leer entradas ACL desde \"arch\"\n"
+"  -x, --remove=acl         eliminar entradas desde ACL(s) de archivo(s)\n"
+"  -X, --remove-file=arch   leer entradas de ACL a borrar desde \"arch\"\n"
+"  -b, --remove-all         eliminar todas las entradas ACL extendidas\n"
+"  -k, --remove-default     eliminar el ACL predeterminado\n"
+
+#: tools/setfacl.c:279
+#, c-format
+msgid ""
+"      --set=acl           set the ACL of file(s), replacing the current ACL\n"
+"      --set-file=file     read ACL entries to set from file\n"
+"      --mask              do recalculate the effective rights mask\n"
+msgstr ""
+"      --set=acl        establecer ACL(s) de archivo(s), reemplazando el "
+"actual\n"
+"      --set-file=arch  leer entradas ACL a establecer desde \"arch\"\n"
+"      --mask           recalcular la máscara de permisos efectivos\n"
+
+#: tools/setfacl.c:285
+#, c-format
+msgid ""
+"  -n, --no-mask           don't recalculate the effective rights mask\n"
+"  -d, --default           operations apply to the default ACL\n"
+msgstr ""
+"  -n, --no-mask           no recalcular la máscara de derechos efectivos\n"
+"  -d, --default           las operaciones afectal al ACL predeterminado\n"
+
+#: tools/setfacl.c:290
+#, c-format
+msgid ""
+"  -R, --recursive         recurse into subdirectories\n"
+"  -L, --logical           logical walk, follow symbolic links\n"
+"  -P, --physical          physical walk, do not follow symbolic links\n"
+"      --restore=file      restore ACLs (inverse of `getfacl -R')\n"
+"      --test              test mode (ACLs are not modified)\n"
+msgstr ""
+"  -R, --recursive         recorrer subdirectorios recursivamente\n"
+"  -L, --logical           recorrido lógico, siguiendo enlaces simbólicos\n"
+"  -P, --physical          recorrido físico, sin seguir enlaces simbólicos\n"
+"      --restore=file      restaurar ACLs (inverso de `getfacl -R')\n"
+"      --test              modo de prueba (los ACLs no se modifican)\n"
+
+#: tools/setfacl.c:451
+#, c-format
+msgid "%s: Option -%c incomplete\n"
+msgstr "%s: Opción -%c incompleta\n"
+
+#: tools/setfacl.c:456
+#, c-format
+msgid "%s: Option -%c: %s near character %d\n"
+msgstr "%s: Opción -%c: %s cerca del carácter %d\n"
+
+#: tools/setfacl.c:532
+#, c-format
+msgid "%s: %s in line %d of file %s\n"
+msgstr "%s: %s en línea %d de archivo %s\n"
+
+#: tools/setfacl.c:540
+#, c-format
+msgid "%s: %s in line %d of standard input\n"
+msgstr "%s: %s en línea %d de entrada estándar\n"

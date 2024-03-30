@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: diffutils-3.7.41\n"
 "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
-"POT-Creation-Date: 2021-08-01 18:56-0700\n"
+"POT-Creation-Date: 2023-05-21 01:51-0700\n"
 "PO-Revision-Date: 2021-07-20 14:10+0200\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -20,29 +20,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.3\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "argumentet %s er ugyldig for %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "argumentet %s er flertydig for %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "Følgende argumenter kan brukes:"
 
-#: lib/c-stack.c:187
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "programfeil"
 
-#: lib/c-stack.c:188
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "stabel er full"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Ukjent systemfeil"
 
@@ -198,83 +198,83 @@ msgstr "%s: valget -- «%c» krever et argument\n"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "«"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "»"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Fullført"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "Ingen treff"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Ugyldig regulært uttrykk"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Ugyldig sorteringstegn"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Ugyldig tegnklassenavn"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Etterfølgende omvendt skråstrek"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Ugyldig tilbakereferanse"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "Ingen treff på «[», «[^», «[:», «[.» eller «[=»"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "Ingen treff på «(» eller «\\(»"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "Ingen treff på «\\{{»"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Ugyldig innhold i «\\{\\}»"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Ugyldig slutt på rekkevidde"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Minnet er fullt"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Ugyldig foregående regulært uttrykk"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "For tidlig slutt på regulært uttrykk"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Regulært uttrykk er for stort"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "Ingen treff på «)» eller «\\)»"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "Intet tidligere regulært uttrykk"
 
@@ -472,17 +472,17 @@ msgstr "Nettside for %s: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "Generell hjelp til bruk av GNU-programvare: <%s>\n"
 
-#: src/analyze.c:454 src/diff.c:1406
+#: src/analyze.c:455 src/diff.c:1478
 #, c-format
 msgid "Files %s and %s differ\n"
 msgstr "Filene %s og %s er ulike\n"
 
-#: src/analyze.c:455
+#: src/analyze.c:456
 #, c-format
 msgid "Binary files %s and %s differ\n"
 msgstr "Binærfilene %s og %s er ulike\n"
 
-#: src/analyze.c:706 src/diff3.c:1470 src/util.c:1254
+#: src/analyze.c:707 src/diff3.c:1457 src/util.c:1354
 msgid "No newline at end of file"
 msgstr "Intet linjeskift i slutten av fila"
 
@@ -496,41 +496,42 @@ msgstr "Torbjörn Granlund"
 msgid "David MacKenzie"
 msgstr "David MacKenzie"
 
-#: src/cmp.c:120 src/diff.c:879 src/diff3.c:467 src/sdiff.c:160
+#: src/cmp.c:124 src/diff.c:939 src/diff3.c:465 src/sdiff.c:159
 #, c-format
 msgid "Try '%s --help' for more information."
 msgstr "Prøv «%s --help» for ytterligere informasjon."
 
-#: src/cmp.c:138
+#: src/cmp.c:142
 #, c-format
 msgid "invalid --ignore-initial value '%s'"
 msgstr "«%s» er en ugyldig verdi for «--ignore-initial»"
 
-#: src/cmp.c:148
+#: src/cmp.c:152
 #, c-format
 msgid "options -l and -s are incompatible"
 msgstr "valgene «-l» og «-s» kan ikke brukes samtidig"
 
-#: src/cmp.c:156 src/diff.c:887 src/diff3.c:474 src/sdiff.c:168 src/sdiff.c:316
-#: src/sdiff.c:323 src/sdiff.c:876 src/util.c:852 src/util.c:952 src/util.c:959
+#: src/cmp.c:160 src/diff.c:947 src/diff3.c:472 src/sdiff.c:167 src/sdiff.c:314
+#: src/sdiff.c:321 src/sdiff.c:873 src/util.c:952 src/util.c:1052
+#: src/util.c:1059
 msgid "write failed"
 msgstr "skriving mislyktes"
 
-#: src/cmp.c:158 src/diff.c:889 src/diff.c:1471 src/diff3.c:476 src/sdiff.c:170
+#: src/cmp.c:162 src/diff.c:949 src/diff.c:1543 src/diff3.c:474 src/sdiff.c:169
 msgid "standard output"
 msgstr "standardutdata"
 
-#: src/cmp.c:162
+#: src/cmp.c:166
 msgid "-b, --print-bytes          print differing bytes"
 msgstr "-b, --print-bytes          skriv ut byte som er ulike"
 
-#: src/cmp.c:163
+#: src/cmp.c:167
 msgid "-i, --ignore-initial=SKIP         skip first SKIP bytes of both inputs"
 msgstr ""
 "-i, --ignore-initial=ANT         hopp over første valgt ANTall byte begge "
 "FILer"
 
-#: src/cmp.c:164
+#: src/cmp.c:168
 msgid ""
 "-i, --ignore-initial=SKIP1:SKIP2  skip first SKIP1 bytes of FILE1 and\n"
 "                                      first SKIP2 bytes of FILE2"
@@ -538,38 +539,38 @@ msgstr ""
 "-i, --ignore-initial=ANT1:ANT2  hopp over første valgt ANT1 byte i FIL1 og\n"
 "                                      ANT2 byte i FIL2"
 
-#: src/cmp.c:166
+#: src/cmp.c:170
 msgid ""
 "-l, --verbose              output byte numbers and differing byte values"
 msgstr ""
 "-l, --verbose              skriv ut byte-nummer og avvikende byte-verdier"
 
-#: src/cmp.c:167
+#: src/cmp.c:171
 msgid "-n, --bytes=LIMIT          compare at most LIMIT bytes"
 msgstr "-n, --bytes=ANT          ikke sammenlikn flere enn valgt ANTall byte"
 
-#: src/cmp.c:168
+#: src/cmp.c:172
 msgid "-s, --quiet, --silent      suppress all normal output"
 msgstr "-s, --quiet, --silent      ikke skriv ut vanlig utdata"
 
-#: src/cmp.c:169
+#: src/cmp.c:173
 msgid "    --help                 display this help and exit"
 msgstr "    --help                 vis denne hjelpeteksten og avslutt"
 
-#: src/cmp.c:170
+#: src/cmp.c:174
 msgid "-v, --version              output version information and exit"
 msgstr "-v, --version              skriv ut versjonsinformasjon og avslutt"
 
-#: src/cmp.c:179
+#: src/cmp.c:183
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
 msgstr "Bruk: %s [VALG] … FIL1 [FIL2 [ANT1 [ANT2]]]\n"
 
-#: src/cmp.c:181
+#: src/cmp.c:185
 msgid "Compare two files byte by byte."
 msgstr "Sammenlikn to filer byte for byte."
 
-#: src/cmp.c:183
+#: src/cmp.c:187
 msgid ""
 "The optional SKIP1 and SKIP2 specify the number of bytes to skip\n"
 "at the beginning of each file (zero by default)."
@@ -577,14 +578,14 @@ msgstr ""
 "Du kan hoppe over valgfritt ANT1 og ANT2 byte i begynnelsen\n"
 "av henholdsvis første og andre fil (standard er null)."
 
-#: src/cmp.c:186 src/diff.c:999 src/diff3.c:514 src/sdiff.c:211
+#: src/cmp.c:190 src/diff.c:1059 src/diff3.c:512 src/sdiff.c:210
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
 "Argumenter som er obligatoriske for lange valg, er også obligatoriske for "
 "korte valg.\n"
 
-#: src/cmp.c:192
+#: src/cmp.c:196
 msgid ""
 "SKIP values may be followed by the following multiplicative suffixes:\n"
 "kB 1000, K 1024, MB 1,000,000, M 1,048,576,\n"
@@ -594,194 +595,194 @@ msgstr ""
 "kB (1000), K (1024), MB (1 000 000), M (1 048 576),\n"
 "GB (1 000 000 000), G (1 073 741 824), og så videre (T, P, E, Z, Y)."
 
-#: src/cmp.c:195
+#: src/cmp.c:199
 msgid "If a FILE is '-' or missing, read standard input."
 msgstr "Hvis FIL er tom eller «-», leser programmet standard inndata."
 
-#: src/cmp.c:196 src/diff.c:987 src/sdiff.c:221
+#: src/cmp.c:200 src/diff.c:1047 src/sdiff.c:220
 msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
 msgstr ""
 "Avsluttende status er 0 hvis inndata er like, 1 hvis ulike og 2 hvis det "
 "oppstår problemer."
 
-#: src/cmp.c:243
+#: src/cmp.c:247
 #, c-format
 msgid "invalid --bytes value '%s'"
 msgstr "«%s» er en ugyldig verdi for «--bytes»"
 
-#: src/cmp.c:269 src/diff.c:797 src/diff3.c:361 src/sdiff.c:567
+#: src/cmp.c:273 src/diff.c:857 src/diff3.c:368 src/sdiff.c:564
 #, c-format
 msgid "missing operand after '%s'"
 msgstr "operand mangler etter «%s»"
 
-#: src/cmp.c:281 src/diff.c:799 src/diff3.c:363 src/sdiff.c:569
+#: src/cmp.c:285 src/diff.c:859 src/diff3.c:370 src/sdiff.c:566
 #, c-format
 msgid "extra operand '%s'"
 msgstr "ekstra operand «%s»"
 
-#: src/cmp.c:507
+#: src/cmp.c:521
 #, c-format
 msgid "%s %s differ: byte %s, line %s\n"
 msgstr "%s %s er ulike: byte %s, linje %s\n"
 
-#: src/cmp.c:523
+#: src/cmp.c:537
 #, c-format
 msgid "%s %s differ: byte %s, line %s is %3o %s %3o %s\n"
 msgstr "%s %s er ulike: byte %s, linje %s er %3o %s %3o %s\n"
 
-#: src/cmp.c:580
+#: src/cmp.c:594
 #, c-format
 msgid "cmp: EOF on %s which is empty\n"
 msgstr "cmp: EOF på %s, som er tom\n"
 
-#: src/cmp.c:594
+#: src/cmp.c:608
 #, c-format
 msgid "cmp: EOF on %s after byte %s, line %s\n"
 msgstr "cmp: EOF på %s etter byte %s, linje %s\n"
 
-#: src/cmp.c:595
+#: src/cmp.c:609
 #, c-format
 msgid "cmp: EOF on %s after byte %s, in line %s\n"
 msgstr "cmp: EOF på %s etter byte %s, på linje %s\n"
 
-#: src/cmp.c:601
+#: src/cmp.c:615
 #, c-format
 msgid "cmp: EOF on %s after byte %s\n"
 msgstr "cmp: EOF på %s etter byte %s\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:51
+#: src/diff.c:50
 msgid "Paul Eggert"
 msgstr "Paul Eggert"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:52
+#: src/diff.c:51
 msgid "Mike Haertel"
 msgstr "Mike Haertel"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:53
+#: src/diff.c:52
 msgid "David Hayes"
 msgstr "David Hayes"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:54
+#: src/diff.c:53
 msgid "Richard Stallman"
 msgstr "Richard Stallman"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:55
+#: src/diff.c:54
 msgid "Len Tower"
 msgstr "Len Tower"
 
-#: src/diff.c:355
+#: src/diff.c:365
 #, c-format
 msgid "invalid context length '%s'"
 msgstr "«%s» er en ugyldig kontekstlengde"
 
-#: src/diff.c:438
+#: src/diff.c:487
 #, c-format
 msgid "pagination not supported on this host"
 msgstr "sidedeling støttes ikke på denne verten"
 
-#: src/diff.c:453 src/diff3.c:341
+#: src/diff.c:502 src/diff3.c:348
 #, c-format
 msgid "too many file label options"
 msgstr "for mange filetikett-valg"
 
-#: src/diff.c:530
+#: src/diff.c:579
 #, c-format
 msgid "invalid width '%s'"
 msgstr "«%s» er en ugyldig bredde"
 
-#: src/diff.c:534
+#: src/diff.c:583
 msgid "conflicting width options"
 msgstr "breddevalg i konflikt"
 
-#: src/diff.c:559
+#: src/diff.c:608
 #, c-format
 msgid "invalid horizon length '%s'"
 msgstr "«%s» er en ugyldig horisontlengde"
 
-#: src/diff.c:615
+#: src/diff.c:664
 #, c-format
 msgid "invalid tabsize '%s'"
 msgstr "«%s» er en ugyldig tabulatorstørrelse"
 
-#: src/diff.c:619
+#: src/diff.c:668
 msgid "conflicting tabsize options"
 msgstr "tabulatorvalg i konflikt"
 
-#: src/diff.c:774
+#: src/diff.c:834
 msgid "--from-file and --to-file both specified"
 msgstr "du har valgt både «--from-file» og «--to-file»"
 
-#: src/diff.c:893
+#: src/diff.c:953
 msgid "    --normal                  output a normal diff (the default)"
 msgstr ""
 "    --normal                  skriv ut en normal diff (dette er standard)"
 
-#: src/diff.c:894
+#: src/diff.c:954
 msgid "-q, --brief                   report only when files differ"
 msgstr "-q, --brief                   bare rapporter når filer er ulike"
 
-#: src/diff.c:895
+#: src/diff.c:955
 msgid "-s, --report-identical-files  report when two files are the same"
 msgstr "-s, --report-identical-files  rapporter når to filer er like"
 
-#: src/diff.c:896
+#: src/diff.c:956
 msgid ""
 "-c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context"
 msgstr ""
 "-c, -C ANT, --context[=ANT]   skriv ut valgt ANTall linjer med kopiert "
 "kontekst (standard: 3)"
 
-#: src/diff.c:897
+#: src/diff.c:957
 msgid ""
 "-u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context"
 msgstr ""
 "-u, -U ANT, --unified[=ANT]   skriv ut valgt ANTall linjer med sammenslått "
 "kontekst (standard: 3)"
 
-#: src/diff.c:898
+#: src/diff.c:958
 msgid "-e, --ed                      output an ed script"
 msgstr "-e, --ed                      skriv ut et ed-skript"
 
-#: src/diff.c:899
+#: src/diff.c:959
 msgid "-n, --rcs                     output an RCS format diff"
 msgstr "-n, --rcs                     skriv ut diff i RCS-format"
 
-#: src/diff.c:900
+#: src/diff.c:960
 msgid "-y, --side-by-side            output in two columns"
 msgstr "-y, --side-by-side            skriv ut i to kolonner"
 
-#: src/diff.c:901
+#: src/diff.c:961
 msgid ""
 "-W, --width=NUM               output at most NUM (default 130) print columns"
 msgstr ""
 "-W, --width=ANT               skriv ut maks valgt ANTall kolonner (standard: "
 "130)"
 
-#: src/diff.c:902
+#: src/diff.c:962
 msgid ""
 "    --left-column             output only the left column of common lines"
 msgstr ""
 "    --left-column             bare skriv ut venstre kolonne med felles linjer"
 
-#: src/diff.c:903
+#: src/diff.c:963
 msgid "    --suppress-common-lines   do not output common lines"
 msgstr "    --suppress-common-lines   ikke skriv ut felles linjer"
 
-#: src/diff.c:905
+#: src/diff.c:965
 msgid "-p, --show-c-function         show which C function each change is in"
 msgstr ""
 "-p, --show-c-function         vis hvilken C-funksjon hver endring ligger i"
 
-#: src/diff.c:906
+#: src/diff.c:966
 msgid "-F, --show-function-line=RE   show the most recent line matching RE"
 msgstr "-F, --show-function-line=RE   vis nyeste linje som samsvarer med RE"
 
-#: src/diff.c:907
+#: src/diff.c:967
 msgid ""
 "    --label LABEL             use LABEL instead of file name and timestamp\n"
 "                                (can be repeated)"
@@ -790,84 +791,84 @@ msgstr ""
 "tidsstempel\n"
 "                                (dette kan gjentas)"
 
-#: src/diff.c:910
+#: src/diff.c:970
 msgid "-t, --expand-tabs             expand tabs to spaces in output"
 msgstr ""
 "-t, --expand-tabs             utvid tabulatorer til mellomrom på utskrift"
 
-#: src/diff.c:911
+#: src/diff.c:971
 msgid "-T, --initial-tab             make tabs line up by prepending a tab"
 msgstr ""
 "-T, --initial-tab             still opp tabulatorer ved å legge til en "
 "tabulator først"
 
-#: src/diff.c:912
+#: src/diff.c:972
 msgid ""
 "    --tabsize=NUM             tab stops every NUM (default 8) print columns"
 msgstr ""
 "    --tabsize=NUM             tabulatorer stopper for hvert valgte "
 "utskriftskolonne-NUMmer (standard: 8)"
 
-#: src/diff.c:913
+#: src/diff.c:973
 msgid ""
 "    --suppress-blank-empty    suppress space or tab before empty output lines"
 msgstr ""
 "    --suppress-blank-empty    ikke skriv ut mellomrom eller tabulator før "
 "tomme linjer"
 
-#: src/diff.c:914
+#: src/diff.c:974
 msgid "-l, --paginate                pass output through 'pr' to paginate it"
 msgstr "-l, --paginate                del utdata i sider via «pr»"
 
-#: src/diff.c:916
+#: src/diff.c:976
 msgid ""
 "-r, --recursive                 recursively compare any subdirectories found"
 msgstr "-r, --recursive                 sammenlikn evt. undermapper rekursivt"
 
-#: src/diff.c:917
+#: src/diff.c:977
 msgid "    --no-dereference            don't follow symbolic links"
 msgstr "    --no-dereference            ikke følg symbolske lenker"
 
-#: src/diff.c:918
+#: src/diff.c:978
 msgid "-N, --new-file                  treat absent files as empty"
 msgstr "-N, --new-file                  behandle fraværende filer som tomme"
 
-#: src/diff.c:919
+#: src/diff.c:979
 msgid "    --unidirectional-new-file   treat absent first files as empty"
 msgstr "    --unidirectional-new-file   behandle fraværende førstefil som tom"
 
-#: src/diff.c:920
+#: src/diff.c:980
 msgid "    --ignore-file-name-case     ignore case when comparing file names"
 msgstr ""
 "    --ignore-file-name-case     skill mellom store og små bokstaver ved "
 "sammenlikning av filnavn"
 
-#: src/diff.c:921
+#: src/diff.c:981
 msgid "    --no-ignore-file-name-case  consider case when comparing file names"
 msgstr ""
 "    --no-ignore-file-name-case  skill mellom store og små bokstaver ved "
 "sammenlikning av filnavn"
 
-#: src/diff.c:922
+#: src/diff.c:982
 msgid "-x, --exclude=PAT               exclude files that match PAT"
 msgstr ""
 "-x, --exclude=MØN               utelat filer som samsvarer med valgt MØNster"
 
-#: src/diff.c:923
+#: src/diff.c:983
 msgid ""
 "-X, --exclude-from=FILE         exclude files that match any pattern in FILE"
 msgstr ""
 "-X, --exclude-from=FIL         utelat filer som samsvarer med mønster(e) i "
 "valgt FIL"
 
-#: src/diff.c:924
+#: src/diff.c:984
 msgid ""
 "-S, --starting-file=FILE        start with FILE when comparing directories"
 msgstr ""
 "-S, --starting-file=FIL        begynn med valgt FIL ved sammenlikning av "
 "mapper"
 
-#: src/diff.c:925
+#: src/diff.c:985
 msgid ""
 "    --from-file=FILE1           compare FILE1 to all operands;\n"
 "                                  FILE1 can be a directory"
@@ -875,7 +876,7 @@ msgstr ""
 "    --from-file=FIL1           sammenlikn FIL1 med alle operand-er\n"
 "                                  (FIL1 kan være en mappe)"
 
-#: src/diff.c:927
+#: src/diff.c:987
 msgid ""
 "    --to-file=FILE2             compare all operands to FILE2;\n"
 "                                  FILE2 can be a directory"
@@ -883,78 +884,78 @@ msgstr ""
 "    --to-file=FIL2             sammenlikn alle operand-er med FIL2\n"
 "                                  (FIL2 kan være en mappe)"
 
-#: src/diff.c:930
+#: src/diff.c:990
 msgid ""
 "-i, --ignore-case               ignore case differences in file contents"
 msgstr ""
 "-i, --ignore-case               ikke skill mellom små og store bokstaver i "
 "fil-innhold"
 
-#: src/diff.c:931
+#: src/diff.c:991
 msgid "-E, --ignore-tab-expansion      ignore changes due to tab expansion"
 msgstr ""
 "-E, --ignore-tab-expansion      ignorer endringer som skyldes tabulator-"
 "utvidelse"
 
-#: src/diff.c:932
+#: src/diff.c:992
 msgid "-Z, --ignore-trailing-space     ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space     ignorer blanktegn i slutten av linjer"
 
-#: src/diff.c:933
+#: src/diff.c:993
 msgid ""
 "-b, --ignore-space-change       ignore changes in the amount of white space"
 msgstr "-b, --ignore-space-change       ignorer endringer i antall blanktegn"
 
-#: src/diff.c:934
+#: src/diff.c:994
 msgid "-w, --ignore-all-space          ignore all white space"
 msgstr "-w, --ignore-all-space          ignorer alle blanktegn"
 
-#: src/diff.c:935
+#: src/diff.c:995
 msgid ""
 "-B, --ignore-blank-lines        ignore changes where lines are all blank"
 msgstr ""
 "-B, --ignore-blank-lines        ignorer endringer når alle linjer er tomme"
 
-#: src/diff.c:936
+#: src/diff.c:996
 msgid "-I, --ignore-matching-lines=RE  ignore changes where all lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=RE  ignorer endringer når alle linjer samsvarer "
 "med RE"
 
-#: src/diff.c:938
+#: src/diff.c:998
 msgid "-a, --text                      treat all files as text"
 msgstr "-a, --text                      behandle filer som tekst"
 
-#: src/diff.c:939
+#: src/diff.c:999
 msgid "    --strip-trailing-cr         strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr         fjern etterfølgende linjeskift-tegn fra "
 "inndata"
 
-#: src/diff.c:941
+#: src/diff.c:1001
 msgid "    --binary                    read and write data in binary mode"
 msgstr "    --binary                    les og skriv data i binærmodus"
 
-#: src/diff.c:944
+#: src/diff.c:1004
 msgid ""
 "-D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs"
 msgstr ""
 "-D, --ifdef=NAVN                skriv ut sammenslått fil med ulikheter i "
 "«#ifdef NAVN»"
 
-#: src/diff.c:945
+#: src/diff.c:1005
 msgid "    --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT"
 msgstr "    --GTYPE-group-format=GFMT   formater GTYPE-inndatagrupper med GFMT"
 
-#: src/diff.c:946
+#: src/diff.c:1006
 msgid "    --line-format=LFMT          format all input lines with LFMT"
 msgstr "    --line-format=LFMT          formater inndatalinjer med LFMT"
 
-#: src/diff.c:947
+#: src/diff.c:1007
 msgid "    --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT"
 msgstr "    --LTYPE-line-format=LFMT    formater LTYPE-inndatalinjer med LFMT"
 
-#: src/diff.c:948
+#: src/diff.c:1008
 msgid ""
 "  These format options provide fine-grained control over the output\n"
 "    of diff, generalizing -D/--ifdef."
@@ -962,13 +963,13 @@ msgstr ""
 "  Disse formatvalgene gjør det mulig å detaljstyre utdata\n"
 "    fra diff, og generaliserer -D/--ifdef."
 
-#: src/diff.c:950
+#: src/diff.c:1010
 msgid "  LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'."
 msgstr ""
 "  LTYPE er enten «old», «new» eller «unchanged». GTYPE er enten LTYPE eller "
 "«changed»."
 
-#: src/diff.c:951
+#: src/diff.c:1011
 msgid ""
 "  GFMT (only) may contain:\n"
 "    %<  lines from FILE1\n"
@@ -998,7 +999,7 @@ msgstr ""
 "        M  L+1\n"
 "    %(A=B?T:E)  hvis A er lik B, så T eller E"
 
-#: src/diff.c:963
+#: src/diff.c:1023
 msgid ""
 "  LFMT (only) may contain:\n"
 "    %L  contents of line\n"
@@ -1011,7 +1012,7 @@ msgstr ""
 "    %[-][BREDDE][.[PREC]]{doxX}n  spesifikasjon av inndata-linjenummer i "
 "printf-stil"
 
-#: src/diff.c:967
+#: src/diff.c:1027
 msgid ""
 "  Both GFMT and LFMT may contain:\n"
 "    %%  %\n"
@@ -1025,21 +1026,21 @@ msgstr ""
 "    %c'\\OOO'  tegnet med oktalkode OOO\n"
 "    C    tegnet C (andre tegn representerer seg selv)"
 
-#: src/diff.c:973
+#: src/diff.c:1033
 msgid "-d, --minimal            try hard to find a smaller set of changes"
 msgstr "-d, --minimal            prøv hardt å finne en mindre rekke endringer"
 
-#: src/diff.c:974
+#: src/diff.c:1034
 msgid "    --horizon-lines=NUM  keep NUM lines of the common prefix and suffix"
 msgstr ""
 "    --horizon-lines=ANT  behold valgt ANTall linjer av felles pre- og suffiks"
 
-#: src/diff.c:975
+#: src/diff.c:1035
 msgid ""
 "    --speed-large-files  assume large files and many scattered small changes"
 msgstr "    --speed-large-files  forvent store filer og små, spredte endringer"
 
-#: src/diff.c:976
+#: src/diff.c:1036
 msgid ""
 "    --color[=WHEN]       color output; WHEN is 'never', 'always', or "
 "'auto';\n"
@@ -1049,7 +1050,7 @@ msgstr ""
 "eller\n"
 "                           «auto»; kun --color betyr --color=«auto»"
 
-#: src/diff.c:978
+#: src/diff.c:1038
 msgid ""
 "    --palette=PALETTE    the colors to use when --color is active; PALETTE "
 "is\n"
@@ -1059,112 +1060,112 @@ msgstr ""
 "                           PALETT er en kolon-delt liste over terminfo-"
 "muligheter"
 
-#: src/diff.c:981
+#: src/diff.c:1041
 msgid "    --help               display this help and exit"
 msgstr "    --help               vis denne hjelpeteksten og avslutt"
 
-#: src/diff.c:982
+#: src/diff.c:1042
 msgid "-v, --version            output version information and exit"
 msgstr "-v, --version            vis versjonsinformasjon og avslutt"
 
-#: src/diff.c:984
+#: src/diff.c:1044
 msgid "FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE' or 'FILE DIR'."
 msgstr "FILER er «FIL1 FIL2», «MAPPE1 MAPPE2», «MAPPE FIL» eller «FIL MAPPE»."
 
-#: src/diff.c:985
+#: src/diff.c:1045
 msgid ""
 "If --from-file or --to-file is given, there are no restrictions on FILE(s)."
 msgstr ""
 "Programmet bruker ingen restriksjoner på FIL(er) hvis «--from-file» eller «--"
 "to-file» er valgt."
 
-#: src/diff.c:986 src/diff3.c:533 src/sdiff.c:220
+#: src/diff.c:1046 src/diff3.c:531 src/sdiff.c:219
 msgid "If a FILE is '-', read standard input."
 msgstr "Programmet leser fra standard inndata hvis FIL er «-»."
 
-#: src/diff.c:996
+#: src/diff.c:1056
 #, c-format
 msgid "Usage: %s [OPTION]... FILES\n"
 msgstr "Bruk: %s [VALG] … FILER\n"
 
-#: src/diff.c:997
+#: src/diff.c:1057
 msgid "Compare FILES line by line."
 msgstr "Sammenlikn FILER linje for linje."
 
-#: src/diff.c:1034
+#: src/diff.c:1094
 #, c-format
 msgid "conflicting %s option value '%s'"
 msgstr "valget %s er i konflikt med verdien «%s»"
 
-#: src/diff.c:1047
+#: src/diff.c:1107
 #, c-format
 msgid "conflicting output style options"
 msgstr "utdata-stilvalg er i konflikt med hverandre"
 
-#: src/diff.c:1063
+#: src/diff.c:1123
 #, c-format
 msgid "invalid color '%s'"
 msgstr "«%s» er en ugyldig farge"
 
-#: src/diff.c:1119 src/diff.c:1329
+#: src/diff.c:1197 src/diff.c:1401
 #, c-format
 msgid "Only in %s: %s\n"
 msgstr "Bare i %s: %s\n"
 
-#: src/diff.c:1253
+#: src/diff.c:1325
 msgid "cannot compare '-' to a directory"
 msgstr "du kan ikke sammenlikne «-» med en mappe"
 
-#: src/diff.c:1288
+#: src/diff.c:1360
 msgid "-D option not supported with directories"
 msgstr "valget «-D» støttes ikke for mapper"
 
-#: src/diff.c:1297
+#: src/diff.c:1369
 #, c-format
 msgid "Common subdirectories: %s and %s\n"
 msgstr "Felles undermapper: %s og %s\n"
 
-#: src/diff.c:1339 src/diff.c:1389
+#: src/diff.c:1411 src/diff.c:1461
 #, c-format
 msgid "File %s is a %s while file %s is a %s\n"
 msgstr "Fila %s er en %s, og fila %s er en %s\n"
 
-#: src/diff.c:1375
+#: src/diff.c:1447
 #, c-format
 msgid "Symbolic links %s and %s differ\n"
 msgstr "De symbolske lenkene %s og %s er ulike\n"
 
-#: src/diff.c:1462
+#: src/diff.c:1534
 #, c-format
 msgid "Files %s and %s are identical\n"
 msgstr "Filene %s og %s er identiske\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff3.c:43
+#: src/diff3.c:51
 msgid "Randy Smith"
 msgstr "Randy Smith"
 
-#: src/diff3.c:356
+#: src/diff3.c:363
 #, c-format
 msgid "incompatible options"
 msgstr "gjeldende valg kan ikke brukes samtidig"
 
-#: src/diff3.c:396
+#: src/diff3.c:403
 msgid "'-' specified for more than one input file"
 msgstr "«-» er valgt for flere enn én inndatafil"
 
-#: src/diff3.c:447 src/diff3.c:1295 src/diff3.c:1698 src/diff3.c:1753
-#: src/sdiff.c:308 src/sdiff.c:846 src/sdiff.c:857
+#: src/diff3.c:445 src/diff3.c:1284 src/diff3.c:1683 src/diff3.c:1738
+#: src/sdiff.c:306 src/sdiff.c:843 src/sdiff.c:854
 msgid "read failed"
 msgstr "lesing mislyktes"
 
-#: src/diff3.c:480
+#: src/diff3.c:478
 msgid "-A, --show-all              output all changes, bracketing conflicts"
 msgstr ""
 "-A, --show-all              skriv ut alle endringer, med konflikter i "
 "parentes"
 
-#: src/diff3.c:482
+#: src/diff3.c:480
 msgid ""
 "-e, --ed                    output ed script incorporating changes\n"
 "                                from OLDFILE to YOURFILE into MYFILE"
@@ -1172,12 +1173,12 @@ msgstr ""
 "-e, --ed                    skriv ut ed-skript med endringer\n"
 "                                mellom GAMMELFIL og NYFIL til FIL"
 
-#: src/diff3.c:484
+#: src/diff3.c:482
 msgid "-E, --show-overlap          like -e, but bracket conflicts"
 msgstr ""
 "-E, --show-overlap          likner «-e», men viser konflikter i parentes"
 
-#: src/diff3.c:485
+#: src/diff3.c:483
 msgid ""
 "-3, --easy-only             like -e, but incorporate only nonoverlapping "
 "changes"
@@ -1185,24 +1186,24 @@ msgstr ""
 "-3, --easy-only             likner «-e», men tar ikke med endringer som "
 "overlapper hverandre"
 
-#: src/diff3.c:486
+#: src/diff3.c:484
 msgid ""
 "-x, --overlap-only          like -e, but incorporate only overlapping changes"
 msgstr ""
 "-x, --overlap-only          likner «-e», men tar bare med endringer som "
 "overlapper hverandre"
 
-#: src/diff3.c:487
+#: src/diff3.c:485
 msgid "-X                          like -x, but bracket conflicts"
 msgstr ""
 "-X                          likner «-x», men viser også konflikter i parentes"
 
-#: src/diff3.c:488
+#: src/diff3.c:486
 msgid "-i                          append 'w' and 'q' commands to ed scripts"
 msgstr ""
 "-i                          legg til kommandoene «w» og «q» i ed-skript"
 
-#: src/diff3.c:490
+#: src/diff3.c:488
 msgid ""
 "-m, --merge                 output actual merged file, according to\n"
 "                                -A if no other options are given"
@@ -1210,26 +1211,26 @@ msgstr ""
 "-m, --merge                 skriv ut sammenslått fil ihht. «-A»,\n"
 "                                med mindre noe annet er valgt"
 
-#: src/diff3.c:493
+#: src/diff3.c:491
 msgid "-a, --text                  treat all files as text"
 msgstr "-a, --text                  behandle filer som tekst"
 
-#: src/diff3.c:494
+#: src/diff3.c:492
 msgid "    --strip-trailing-cr     strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr     fjern etterfølgende linjeskift-tegn fra inndata"
 
-#: src/diff3.c:495
+#: src/diff3.c:493
 msgid "-T, --initial-tab           make tabs line up by prepending a tab"
 msgstr ""
 "-T, --initial-tab           still opp tabulatorer på rekke ved å legge til "
 "en ekstra tab foran"
 
-#: src/diff3.c:496
+#: src/diff3.c:494
 msgid "    --diff-program=PROGRAM  use PROGRAM to compare files"
 msgstr "    --diff-program=PROGRAM  bruk valgt PROGRAM til å sammenlikne filer"
 
-#: src/diff3.c:497
+#: src/diff3.c:495
 msgid ""
 "-L, --label=LABEL           use LABEL instead of file name\n"
 "                                (can be repeated up to three times)"
@@ -1237,24 +1238,24 @@ msgstr ""
 "-L, --label=ETIKETT           bruk valgt ETIKETT i stedet for filnavn\n"
 "                                (dette kan gjentas opptil tre ganger)"
 
-#: src/diff3.c:500
+#: src/diff3.c:498
 msgid "    --help                  display this help and exit"
 msgstr "    --help                  vis denne hjelpeteksten og avslutt"
 
-#: src/diff3.c:501
+#: src/diff3.c:499
 msgid "-v, --version               output version information and exit"
 msgstr "-v, --version               vis versjonsinformasjon og avslutt"
 
-#: src/diff3.c:510
+#: src/diff3.c:508
 #, c-format
 msgid "Usage: %s [OPTION]... MYFILE OLDFILE YOURFILE\n"
 msgstr "Usage: %s [VALG] … FIL GAMMELFIL NYFIL\n"
 
-#: src/diff3.c:512
+#: src/diff3.c:510
 msgid "Compare three files line by line."
 msgstr "Sammenlikn tre filer, linje for linje."
 
-#: src/diff3.c:522
+#: src/diff3.c:520
 msgid ""
 "\n"
 "The default output format is a somewhat human-readable representation of\n"
@@ -1278,56 +1279,56 @@ msgstr ""
 "og skrive ut sammenslått fil. Dette er sikrere for behandling av\n"
 "uvanlig inndata enn å bruke ed.\n"
 
-#: src/diff3.c:534
+#: src/diff3.c:532
 msgid "Exit status is 0 if successful, 1 if conflicts, 2 if trouble."
 msgstr ""
 "Avsluttende status er 0 hvis alt er i orden, 1 ved konflikter og 2 ved "
 "problemer."
 
-#: src/diff3.c:727
+#: src/diff3.c:725
 msgid "internal error: screwup in format of diff blocks"
 msgstr "intern feil: rot i diff-blokkformat"
 
-#: src/diff3.c:1022
+#: src/diff3.c:1015
 #, c-format
 msgid "%s: diff failed: "
 msgstr "%s: diff mislyktes: "
 
-#: src/diff3.c:1044
+#: src/diff3.c:1037
 msgid "internal error: invalid diff type in process_diff"
 msgstr "intern feil: ugyldig diff-type i process_diff"
 
-#: src/diff3.c:1069
+#: src/diff3.c:1060
 msgid "invalid diff format; invalid change separator"
 msgstr "ugyldig diff-format. Ugyldig endringsskilletegn"
 
-#: src/diff3.c:1305
+#: src/diff3.c:1294
 msgid "invalid diff format; incomplete last line"
 msgstr "ugyldig diff-format. Siste linje er ufullstendig"
 
-#: src/diff3.c:1329 src/sdiff.c:276 src/util.c:969
+#: src/diff3.c:1318 src/sdiff.c:274 src/util.c:1069
 #, c-format
 msgid "subsidiary program '%s' could not be invoked"
 msgstr "klarte ikke å starte hjelpeprogrammet «%s»"
 
-#: src/diff3.c:1354
+#: src/diff3.c:1343
 msgid "invalid diff format; incorrect leading line chars"
 msgstr "ugyldig diff-format. Feil ledende linjetegn"
 
-#: src/diff3.c:1427
+#: src/diff3.c:1416
 msgid "internal error: invalid diff type passed to output"
 msgstr "intern feil: ugyldig diff-type sendt til utdata"
 
-#: src/diff3.c:1700 src/diff3.c:1757
+#: src/diff3.c:1685 src/diff3.c:1742
 msgid "input file shrank"
 msgstr "inndata-fila er krympet"
 
-#: src/dir.c:156
+#: src/dir.c:154
 #, c-format
 msgid "cannot compare file names '%s' and '%s'"
 msgstr "klarte ikke å sammenlikne filnavn «%s» med «%s»"
 
-#: src/dir.c:225
+#: src/dir.c:223
 #, c-format
 msgid "%s: recursive directory loop"
 msgstr "%s: rekursiv mappesløyfe"
@@ -1337,125 +1338,125 @@ msgstr "%s: rekursiv mappesløyfe"
 msgid "Thomas Lord"
 msgstr "Thomas Lord"
 
-#: src/sdiff.c:174
+#: src/sdiff.c:173
 msgid ""
 "-o, --output=FILE            operate interactively, sending output to FILE"
 msgstr "-o, --output=FIL            jobb interaktivt, og send utdata til FIL"
 
-#: src/sdiff.c:176
+#: src/sdiff.c:175
 msgid ""
 "-i, --ignore-case            consider upper- and lower-case to be the same"
 msgstr "-i, --ignore-case            ikke skill mellom store og små bokstaver"
 
-#: src/sdiff.c:177
+#: src/sdiff.c:176
 msgid "-E, --ignore-tab-expansion   ignore changes due to tab expansion"
 msgstr ""
 "-E, --ignore-tab-expansion   ikke regn tabulator-forskjeller som endringer"
 
-#: src/sdiff.c:178
+#: src/sdiff.c:177
 msgid "-Z, --ignore-trailing-space  ignore white space at line end"
 msgstr "-Z, --ignore-trailing-space  ignorer blanktegn i slutten av linjer"
 
-#: src/sdiff.c:179
+#: src/sdiff.c:178
 msgid ""
 "-b, --ignore-space-change    ignore changes in the amount of white space"
 msgstr ""
 "-b, --ignore-space-change    ikke regn ulikt antall blanktegn som endringer"
 
-#: src/sdiff.c:180
+#: src/sdiff.c:179
 msgid "-W, --ignore-all-space       ignore all white space"
 msgstr "-W, --ignore-all-space       ignorer alle blanktegn"
 
-#: src/sdiff.c:181
+#: src/sdiff.c:180
 msgid "-B, --ignore-blank-lines     ignore changes whose lines are all blank"
 msgstr ""
 "-B, --ignore-blank-lines     ignorer endringer hvis linjer er fullstendig "
 "tomme"
 
-#: src/sdiff.c:182
+#: src/sdiff.c:181
 msgid "-I, --ignore-matching-lines=RE  ignore changes all whose lines match RE"
 msgstr ""
 "-I, --ignore-matching-lines=RE  ignorer endringer hvis linjer samsvarer med "
 "RE"
 
-#: src/sdiff.c:183
+#: src/sdiff.c:182
 msgid "    --strip-trailing-cr      strip trailing carriage return on input"
 msgstr ""
 "    --strip-trailing-cr      fjern etterfølgende linjeskift-tegn fra inndata"
 
-#: src/sdiff.c:184
+#: src/sdiff.c:183
 msgid "-a, --text                   treat all files as text"
 msgstr "-a, --text                   behandle filer som tekst"
 
-#: src/sdiff.c:186
+#: src/sdiff.c:185
 msgid ""
 "-w, --width=NUM              output at most NUM (default 130) print columns"
 msgstr ""
 "-w, --width=ANT              ikke skriv ut flere enn valgt ANTall kolonner "
 "(standard: 130)"
 
-#: src/sdiff.c:187
+#: src/sdiff.c:186
 msgid ""
 "-l, --left-column            output only the left column of common lines"
 msgstr ""
 "-l, --left-column            bare skriv ut venstre kolonne med felles linjer"
 
-#: src/sdiff.c:188
+#: src/sdiff.c:187
 msgid "-s, --suppress-common-lines  do not output common lines"
 msgstr "-s, --suppress-common-lines  ikke skriv ut felles linjer"
 
-#: src/sdiff.c:190
+#: src/sdiff.c:189
 msgid "-t, --expand-tabs            expand tabs to spaces in output"
 msgstr "-t, --expand-tabs            utvid tabulatorer til mellomrom i utdata"
 
-#: src/sdiff.c:191
+#: src/sdiff.c:190
 msgid ""
 "    --tabsize=NUM            tab stops at every NUM (default 8) print columns"
 msgstr ""
 "    --tabsize=NUM            tabulatorer slutter ved hvert valgte "
 "kolonneNUMmer (standard: 8)"
 
-#: src/sdiff.c:193
+#: src/sdiff.c:192
 msgid "-d, --minimal                try hard to find a smaller set of changes"
 msgstr "-d, --minimal                prøv hardt å finne små endringer"
 
-#: src/sdiff.c:194
+#: src/sdiff.c:193
 msgid ""
 "-H, --speed-large-files      assume large files, many scattered small changes"
 msgstr ""
 "-H, --speed-large-files      forvent store filer med små, spredte endringer"
 
-#: src/sdiff.c:195
+#: src/sdiff.c:194
 msgid "    --diff-program=PROGRAM   use PROGRAM to compare files"
 msgstr ""
 "    --diff-program=PROGRAM   bruk valgt PROGRAM til å sammenlikne filer"
 
-#: src/sdiff.c:197
+#: src/sdiff.c:196
 msgid "    --help                   display this help and exit"
 msgstr "    --help                   vis denne hjelpeteksten og avslutt"
 
-#: src/sdiff.c:198
+#: src/sdiff.c:197
 msgid "-v, --version                output version information and exit"
 msgstr "-v, --version                vis versjonsinformasjon og avslutt"
 
-#: src/sdiff.c:207
+#: src/sdiff.c:206
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
 msgstr "Bruk: %s [VALG] … FIL1 FIL2\n"
 
-#: src/sdiff.c:209
+#: src/sdiff.c:208
 msgid "Side-by-side merge of differences between FILE1 and FILE2."
 msgstr "Sammenslåing av forskjeller mellom FIL1 og FIL2, side ved side."
 
-#: src/sdiff.c:330
+#: src/sdiff.c:328
 msgid "cannot interactively merge standard input"
 msgstr "du kan ikke slå sammen standard inndata interaktivt"
 
-#: src/sdiff.c:597
+#: src/sdiff.c:594
 msgid "both files to be compared are directories"
 msgstr "begge filer som skal sammenliknes er mapper"
 
-#: src/sdiff.c:820
+#: src/sdiff.c:817
 msgid ""
 "ed:\tEdit then use both versions, each decorated with a header.\n"
 "eb:\tEdit then use both versions.\n"
@@ -1479,12 +1480,12 @@ msgstr ""
 "v:\tTa med felles linjer og gi beskjed.\n"
 "q:\tAvslutt.\n"
 
-#: src/util.c:662
+#: src/util.c:755
 #, c-format
 msgid "unrecognized prefix: %s"
 msgstr "ukjent prefiks: %s"
 
-#: src/util.c:692
+#: src/util.c:785
 #, c-format
 msgid "unparsable value for --palette"
 msgstr "«--palette» har uforståelig verdi"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: attr 2.4.25-1\n"
 "Report-Msgid-Bugs-To: acl-devel@nongnu.org\n"
-"POT-Creation-Date: 2021-03-16 07:49+0100\n"
+"POT-Creation-Date: 2024-01-13 21:39-0500\n"
 "PO-Revision-Date: 2006-01-21 18:46+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -51,121 +51,6 @@ msgstr "sätter attribut för %s"
 #, c-format
 msgid "setting attribute %s for %s"
 msgstr "sätter attribut %s för %s"
-
-#: tools/setfattr.c:75 tools/getfattr.c:100
-msgid "No such attribute"
-msgstr "Inget sådant attribut"
-
-#: tools/setfattr.c:129
-#, c-format
-msgid "%s: %s: No filename found in line %d, aborting\n"
-msgstr "%s: %s: Inget filnamn hittades på rad %d, avbryter\n"
-
-#: tools/setfattr.c:133
-#, c-format
-msgid "%s: No filename found in line %d of standard input, aborting\n"
-msgstr "%s: Inget filnamn hittades på rad %d i standard in, avbryter\n"
-
-#: tools/setfattr.c:180
-#, c-format
-msgid "%s %s -- set extended attributes\n"
-msgstr "%s %s -- sätt utökade attribut\n"
-
-#: tools/setfattr.c:181 tools/getfattr.c:385
-#, c-format
-msgid "Usage: %s %s\n"
-msgstr "Användning: %s %s\n"
-
-#: tools/setfattr.c:182
-#, c-format
-msgid "       %s %s\n"
-msgstr ""
-
-#: tools/setfattr.c:184
-#, fuzzy, c-format
-msgid ""
-"  -n, --name=name         set the value of the named extended attribute\n"
-"  -x, --remove=name       remove the named extended attribute\n"
-"  -v, --value=value       use value as the attribute value\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --restore=file      restore extended attributes\n"
-"      --raw               attribute value is not encoded\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=namn         sätt värdet för angivet utökat attribut\n"
-"  -x, --remove=namn       ta bort angivet utökat attribut\n"
-"  -v, --value=värde       använd värde som attributvärde\n"
-"  -h, --no-dereference    behåll referenser i symboliska länkar\n"
-"      --restore=fil       restore extended attributes\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-
-#: tools/setfattr.c:264
-#, fuzzy, c-format
-msgid ""
-"Usage: %s %s\n"
-"       %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Användning: %s %s\n"
-"Försök med \"%s --help\" för mer information.\n"
-
-#: tools/getfattr.c:265
-#, c-format
-msgid "%s: Removing leading '/' from absolute path names\n"
-msgstr "%s: Ta bort inledande \"/\" från absoluta sökvägar\n"
-
-#: tools/getfattr.c:383
-#, c-format
-msgid "%s %s -- get extended attributes\n"
-msgstr "%s %s -- hämta utökade attribut\n"
-
-#: tools/getfattr.c:388
-#, fuzzy, c-format
-msgid ""
-"  -n, --name=name         get the named extended attribute value\n"
-"  -d, --dump              get all extended attribute values\n"
-"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
-"      --match=pattern     only get attributes with names matching pattern\n"
-"      --only-values       print the bare values only\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --one-file-system   skip files on different filesystems\n"
-"      --absolute-names    don't strip leading '/' in pathnames\n"
-"  -R, --recursive         recurse into subdirectories\n"
-"  -L, --logical           logical walk, follow symbolic links\n"
-"  -P  --physical          physical walk, do not follow symbolic links\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=namn         hämta angivet utökat attributvärde\n"
-"  -d, --dump              hämta alla utökade attributvärden\n"
-"  -e, --encoding=...      koda värden (som \"text\", \"hex\" eller "
-"\"base64\")\n"
-"      --match=mönster     hämta endast attribut med namn som matchar "
-"mönster\n"
-"      --only-values       skriv endast ut värden\n"
-"  -h, --no-dereference    behåll referenser i symboliska länkar\n"
-"      --absolute-names    ta inte bort inledande \"/\" i sökvägar\n"
-"  -R, --recursive         rekursiv in i underkataloger\n"
-"  -L, --logical           logisk gång, följ symboliska länkar\n"
-"  -P  --physical          fysisk gång, följ inte symboliska länkar\n"
-"      --version           skriv ut version och avsluta\n"
-"      --help              den här hjälptexten\n"
-
-#: tools/getfattr.c:489
-#, c-format
-msgid "%s: invalid regular expression \"%s\"\n"
-msgstr "%s: ogiltigt reguljärt uttryck \"%s\"\n"
-
-#: tools/getfattr.c:503
-#, c-format
-msgid ""
-"Usage: %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Användning: %s %s\n"
-"Försök med \"%s --help\" för mer information.\n"
 
 #: tools/attr.c:49
 #, fuzzy, c-format
@@ -241,3 +126,118 @@ msgstr "Attribut \"%s\" har ett %d bytevärde för %s:\n"
 #, fuzzy, c-format
 msgid "At least one of -s, -g, -r, or -l is required\n"
 msgstr "Åtminstone en av -s, -g eller -r krävs\n"
+
+#: tools/getfattr.c:100 tools/setfattr.c:75
+msgid "No such attribute"
+msgstr "Inget sådant attribut"
+
+#: tools/getfattr.c:265
+#, c-format
+msgid "%s: Removing leading '/' from absolute path names\n"
+msgstr "%s: Ta bort inledande \"/\" från absoluta sökvägar\n"
+
+#: tools/getfattr.c:383
+#, c-format
+msgid "%s %s -- get extended attributes\n"
+msgstr "%s %s -- hämta utökade attribut\n"
+
+#: tools/getfattr.c:385 tools/setfattr.c:181
+#, c-format
+msgid "Usage: %s %s\n"
+msgstr "Användning: %s %s\n"
+
+#: tools/getfattr.c:388
+#, fuzzy, c-format
+msgid ""
+"  -n, --name=name         get the named extended attribute value\n"
+"  -d, --dump              get all extended attribute values\n"
+"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
+"  -m, --match=pattern     only get attributes with names matching pattern\n"
+"      --only-values       print the bare values only\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --one-file-system   skip files on different filesystems\n"
+"      --absolute-names    don't strip leading '/' in pathnames\n"
+"  -R, --recursive         recurse into subdirectories\n"
+"  -L, --logical           logical walk, follow symbolic links\n"
+"  -P  --physical          physical walk, do not follow symbolic links\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=namn         hämta angivet utökat attributvärde\n"
+"  -d, --dump              hämta alla utökade attributvärden\n"
+"  -e, --encoding=...      koda värden (som \"text\", \"hex\" eller "
+"\"base64\")\n"
+"      --match=mönster     hämta endast attribut med namn som matchar "
+"mönster\n"
+"      --only-values       skriv endast ut värden\n"
+"  -h, --no-dereference    behåll referenser i symboliska länkar\n"
+"      --absolute-names    ta inte bort inledande \"/\" i sökvägar\n"
+"  -R, --recursive         rekursiv in i underkataloger\n"
+"  -L, --logical           logisk gång, följ symboliska länkar\n"
+"  -P  --physical          fysisk gång, följ inte symboliska länkar\n"
+"      --version           skriv ut version och avsluta\n"
+"      --help              den här hjälptexten\n"
+
+#: tools/getfattr.c:489
+#, c-format
+msgid "%s: invalid regular expression \"%s\"\n"
+msgstr "%s: ogiltigt reguljärt uttryck \"%s\"\n"
+
+#: tools/getfattr.c:503
+#, c-format
+msgid ""
+"Usage: %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"Användning: %s %s\n"
+"Försök med \"%s --help\" för mer information.\n"
+
+#: tools/setfattr.c:129
+#, c-format
+msgid "%s: %s: No filename found in line %d, aborting\n"
+msgstr "%s: %s: Inget filnamn hittades på rad %d, avbryter\n"
+
+#: tools/setfattr.c:133
+#, c-format
+msgid "%s: No filename found in line %d of standard input, aborting\n"
+msgstr "%s: Inget filnamn hittades på rad %d i standard in, avbryter\n"
+
+#: tools/setfattr.c:180
+#, c-format
+msgid "%s %s -- set extended attributes\n"
+msgstr "%s %s -- sätt utökade attribut\n"
+
+#: tools/setfattr.c:182
+#, c-format
+msgid "       %s %s\n"
+msgstr ""
+
+#: tools/setfattr.c:184
+#, fuzzy, c-format
+msgid ""
+"  -n, --name=name         set the value of the named extended attribute\n"
+"  -x, --remove=name       remove the named extended attribute\n"
+"  -v, --value=value       use value as the attribute value\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --restore=file      restore extended attributes\n"
+"      --raw               attribute value is not encoded\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=namn         sätt värdet för angivet utökat attribut\n"
+"  -x, --remove=namn       ta bort angivet utökat attribut\n"
+"  -v, --value=värde       använd värde som attributvärde\n"
+"  -h, --no-dereference    behåll referenser i symboliska länkar\n"
+"      --restore=fil       restore extended attributes\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+
+#: tools/setfattr.c:264
+#, fuzzy, c-format
+msgid ""
+"Usage: %s %s\n"
+"       %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"Användning: %s %s\n"
+"Försök med \"%s --help\" för mer information.\n"

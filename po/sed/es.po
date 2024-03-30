@@ -1,16 +1,16 @@
 # Mensajes en español para GNU sed.
-# Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2018, 2020 Free Software Foundation, Inc.
+# Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2018, 2020, 2022 Free Software Foundation, Inc.
 # This file is distributed under the same license as the sed package.
-# Cristian Othón Martínez Vera <cfuga@cfuga.mx>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
 # Antonio Ceballos Roa <aceballos@gmail.com>, 2018, 2020
+# Cristian Othón Martínez Vera <cfuga@cfuga.mx>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2022
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: sed 4.7.13\n"
+"Project-Id-Version: sed 4.8.44\n"
 "Report-Msgid-Bugs-To: bug-gnu-utils@gnu.org\n"
-"POT-Creation-Date: 2020-01-14 20:01-0800\n"
-"PO-Revision-Date: 2020-01-06 11:45+0100\n"
-"Last-Translator: Antonio Ceballos Roa <aceballos@gmail.com>\n"
+"POT-Creation-Date: 2022-11-06 13:50-0800\n"
+"PO-Revision-Date: 2022-10-18 09:01-0500\n"
+"Last-Translator: Cristian Othón Martínez Vera <cfuga@cfuga.mx>\n"
 "Language-Team: Spanish <es@tp.org.es>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/closeout.c:122
+#: lib/closeout.c:121
 msgid "write error"
 msgstr "error de escritura"
 
@@ -28,39 +28,72 @@ msgstr "error de escritura"
 msgid "preserving permissions for %s"
 msgstr "se preservan los permisos de %s"
 
-#: lib/dfa.c:923
+#: lib/dfa.c:894
 msgid "unbalanced ["
 msgstr "[ descompensado"
 
-#: lib/dfa.c:1044
+#: lib/dfa.c:1015
 msgid "invalid character class"
-msgstr "clase de carácter no válida"
+msgstr "clase de carácter inválida"
 
-#: lib/dfa.c:1170
+#: lib/dfa.c:1143
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "la sintaxis de esta clase de carácter es [[:space:]], no [:space:]"
 
-#: lib/dfa.c:1237
+#: lib/dfa.c:1209
 msgid "unfinished \\ escape"
 msgstr "escape \\ sin acabar"
 
-#: lib/dfa.c:1398
+#: lib/dfa.c:1319
+msgid "? at start of expression"
+msgstr "? al inicio de la expresión"
+
+#: lib/dfa.c:1331
+msgid "* at start of expression"
+msgstr "* al inicio de la expresión"
+
+#: lib/dfa.c:1345
+msgid "+ at start of expression"
+msgstr "+ al inicio de la expresión"
+
+#: lib/dfa.c:1400
+msgid "{...} at start of expression"
+msgstr "{...} al inicio de la expresión"
+
+#: lib/dfa.c:1403
 msgid "invalid content of \\{\\}"
 msgstr "contenido inválido de \\{\\}"
 
-#: lib/dfa.c:1401
+#: lib/dfa.c:1405
 msgid "regular expression too big"
 msgstr "expresión regular demasiado grande"
 
-#: lib/dfa.c:1872
+#: lib/dfa.c:1555
+msgid "stray \\ before unprintable character"
+msgstr "sobra \\ antes de un carácter no imprimible"
+
+#: lib/dfa.c:1557
+msgid "stray \\ before white space"
+msgstr "sobra \\ antes de un espacio en blanco"
+
+#: lib/dfa.c:1561
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "sobra \\ antes de %lc"
+
+#: lib/dfa.c:1562
+msgid "stray \\"
+msgstr "sobra \\"
+
+#: lib/dfa.c:1917
 msgid "unbalanced ("
 msgstr "( descompensado"
 
-#: lib/dfa.c:1989
+#: lib/dfa.c:2034
 msgid "no syntax specified"
 msgstr "sintaxis no especificada"
 
-#: lib/dfa.c:2000
+#: lib/dfa.c:2045
 msgid "unbalanced )"
 msgstr ") descompensado"
 
@@ -68,42 +101,7 @@ msgstr ") descompensado"
 msgid "Unknown system error"
 msgstr "Error del sistema desconocido"
 
-#: lib/getopt.c:278
-#, c-format
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: la opción '%s%s' es ambigua\n"
-
-#: lib/getopt.c:284
-#, c-format
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: la opción '%s%s' es ambigua: posibilidades:"
-
-#: lib/getopt.c:319
-#, c-format
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: no se reconoce la opción '%s%s'\n"
-
-#: lib/getopt.c:345
-#, c-format
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: la opción '%s%s' no admite argumento\n"
-
-#: lib/getopt.c:360
-#, c-format
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: la opción '%s%s' requiere argumento\n"
-
-#: lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: la opción no es válida -- '%c'\n"
-
-#: lib/getopt.c:636 lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: la opción requiere argumento -- '%c'\n"
-
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "memoria agotada"
 
@@ -128,83 +126,83 @@ msgstr "memoria agotada"
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:362
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "«"
 
-#: lib/quotearg.c:363
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "»"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "Éxito"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "No hay coincidencia"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "Expresion regular inválida"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "Carácter de ordenamiento inválido"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "Carácter de nombre de clase inválido"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "Diagonal invertida al final"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "Referencia hacia atrás inválida"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "[, [^, [:, [. o [= sin pareja"
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "( ó \\( sin pareja"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "\\{ sin pareja"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "Contenido inválido de \\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "Final de rango inválido"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Memoria agotada"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "Expresión regular precedente inválida"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "Final prematuro de la expresión regular"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "Expresión regular demasiado grande"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr ") ó \\) sin pareja"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "No hay una expresión regular previa"
 
@@ -487,23 +485,23 @@ msgstr "\":\" carece de etiqueta"
 
 #: sed/compile.c:191
 msgid "recursive escaping after \\c not allowed"
-msgstr "el escape recursivo detrás de \\c no está permitido"
+msgstr "no se permite el escape recursivo después de \\c"
 
 #: sed/compile.c:193
 msgid "e/r/w commands disabled in sandbox mode"
 msgstr "las órdenes e/r/w están desactivadas en el modo «sandbox»"
 
-#: sed/compile.c:215
+#: sed/compile.c:218
 #, c-format
 msgid "%s: file %s line %lu: %s\n"
 msgstr "%s: fichero %s línea %lu: %s\n"
 
-#: sed/compile.c:218
+#: sed/compile.c:221
 #, c-format
 msgid "%s: -e expression #%lu, char %lu: %s\n"
 msgstr "%s: -e expresión #%lu, carácter %lu: %s\n"
 
-#: sed/compile.c:1607
+#: sed/compile.c:1623
 #, c-format
 msgid "can't find label for jump to `%s'"
 msgstr "no se puede encontrar la etiqueta para saltar a `%s'"
@@ -512,54 +510,54 @@ msgstr "no se puede encontrar la etiqueta para saltar a `%s'"
 #, c-format
 msgid "case conversion produced an invalid character"
 msgstr ""
-"se ha obtenido un carácter no válido al convertir de mayúsculas a minúsculas "
+"se ha obtenido un carácter inválido al convertir de mayúsculas a minúsculas "
 "o viceversa"
 
-#: sed/execute.c:561
+#: sed/execute.c:565
 #, c-format
 msgid "%s: can't read %s: %s\n"
 msgstr "%s: no se puede leer %s: %s\n"
 
-#: sed/execute.c:587
+#: sed/execute.c:591
 #, c-format
 msgid "couldn't edit %s: is a terminal"
 msgstr "no se puede editar %s: es una terminal"
 
-#: sed/execute.c:592
+#: sed/execute.c:596
 #, c-format
 msgid "couldn't edit %s: not a regular file"
 msgstr "no se puede editar %s: no es un fichero regular"
 
-#: sed/execute.c:603
+#: sed/execute.c:607
 #, c-format
 msgid "%s: warning: failed to set default file creation context to %s: %s"
 msgstr ""
 "%s: aviso: falló al establecer el contexto de creación de fichero por "
 "omisión a %s: %s"
 
-#: sed/execute.c:611
+#: sed/execute.c:615
 #, c-format
 msgid "%s: warning: failed to get security context of %s: %s"
 msgstr "%s: aviso: falló al obtener el contexto de seguridad de %s: %s"
 
-#: sed/execute.c:630 sed/utils.c:188
+#: sed/execute.c:633 sed/utils.c:215
 #, c-format
 msgid "couldn't open temporary file %s: %s"
 msgstr "no se puede abrir el fichero temporal %s: %s"
 
-#: sed/execute.c:1167 sed/execute.c:1366
+#: sed/execute.c:1170 sed/execute.c:1369
 msgid "error in subprocess"
 msgstr "error en el subproceso"
 
-#: sed/execute.c:1169
+#: sed/execute.c:1172
 msgid "option `e' not supported"
 msgstr "no hay soporte para la opción `e'"
 
-#: sed/execute.c:1347
+#: sed/execute.c:1350
 msgid "`e' command not supported"
 msgstr "no hay soporte para la orden `e'"
 
-#: sed/execute.c:1662
+#: sed/execute.c:1672
 msgid "no input files"
 msgstr "no hay ficheros de entrada"
 
@@ -602,7 +600,7 @@ msgstr "Jim Meyering"
 msgid "Assaf Gordon"
 msgstr "Assaf Gordon"
 
-#: sed/sed.c:124
+#: sed/sed.c:103
 #, c-format
 msgid ""
 "GNU sed home page: <https://www.gnu.org/software/sed/>.\n"
@@ -611,28 +609,28 @@ msgstr ""
 "Página web de sed de GNU: <https://www.gnu.org/software/sed/>.\n"
 "Ayuda general para usar software GNU: <https://www.gnu.org/gethelp/>.\n"
 
-#: sed/sed.c:130
+#: sed/sed.c:109
 #, c-format
 msgid "E-mail bug reports to: <%s>.\n"
 msgstr "E-mail para informar de errores: <%s>.\n"
 
-#: sed/sed.c:138
+#: sed/sed.c:117
 msgid "This sed program was built with SELinux support."
 msgstr "Este programa sed está construido con soporte para SELinux."
 
-#: sed/sed.c:140
+#: sed/sed.c:119
 msgid "SELinux is enabled on this system."
 msgstr "SELinux está activado en este sistema."
 
-#: sed/sed.c:142
+#: sed/sed.c:121
 msgid "SELinux is disabled on this system."
 msgstr "SELinux está desactivado en este sistema."
 
-#: sed/sed.c:144
+#: sed/sed.c:123
 msgid "This sed program was built without SELinux support."
 msgstr "Este programa sed está construido sin soporte para SELinux."
 
-#: sed/sed.c:154
+#: sed/sed.c:133
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... {script-only-if-no-other-script} [input-file]...\n"
@@ -641,7 +639,7 @@ msgstr ""
 "Uso: %s [OPCIÓN]... {guión-sólo-si-no-hay-otro-guión} [fichero-entrada]...\n"
 "\n"
 
-#: sed/sed.c:158
+#: sed/sed.c:137
 #, c-format
 msgid ""
 "  -n, --quiet, --silent\n"
@@ -650,7 +648,7 @@ msgstr ""
 "  -n, --quiet, --silent\n"
 "                 suprime la muestra automática del espacio de patrones\n"
 
-#: sed/sed.c:160
+#: sed/sed.c:139
 #, c-format
 msgid ""
 "      --debug\n"
@@ -659,7 +657,7 @@ msgstr ""
 "      --debug\n"
 "                 ejecución del programa con notas\n"
 
-#: sed/sed.c:162
+#: sed/sed.c:141
 #, c-format
 msgid ""
 "  -e script, --expression=script\n"
@@ -668,7 +666,7 @@ msgstr ""
 "  -e guión, --expression=guión\n"
 "                 agrega el guión a la lista de órdenes para ejecutar\n"
 
-#: sed/sed.c:164
+#: sed/sed.c:143
 #, c-format
 msgid ""
 "  -f script-file, --file=script-file\n"
@@ -680,7 +678,7 @@ msgstr ""
 "órdenes\n"
 "                 para ejecutar\n"
 
-#: sed/sed.c:168
+#: sed/sed.c:147
 #, c-format
 msgid ""
 "  --follow-symlinks\n"
@@ -689,7 +687,7 @@ msgstr ""
 "  --follow-symlinks\n"
 "                 sigue los enlaces simbólicos al procesar en el lugar\n"
 
-#: sed/sed.c:171
+#: sed/sed.c:150
 #, c-format
 msgid ""
 "  -i[SUFFIX], --in-place[=SUFFIX]\n"
@@ -699,7 +697,7 @@ msgstr ""
 "                 edita ficheros en el lugar (crea un respaldo si se da\n"
 "                 un SUFIJO)\n"
 
-#: sed/sed.c:174
+#: sed/sed.c:153
 #, c-format
 msgid ""
 "  -b, --binary\n"
@@ -710,7 +708,7 @@ msgstr ""
 "                 abre ficheros en modo binario (los RC+FLs no se procesan\n"
 "                 especialmente)\n"
 
-#: sed/sed.c:178
+#: sed/sed.c:157
 #, c-format
 msgid ""
 "  -l N, --line-length=N\n"
@@ -720,7 +718,7 @@ msgstr ""
 "                 especifica la longitud de corte de línea deseado para\n"
 "                 la orden `l'\n"
 
-#: sed/sed.c:180
+#: sed/sed.c:159
 #, c-format
 msgid ""
 "  --posix\n"
@@ -729,7 +727,7 @@ msgstr ""
 "  --posix\n"
 "                 desactiva todas las extensiones de GNU.\n"
 
-#: sed/sed.c:182
+#: sed/sed.c:161
 #, c-format
 msgid ""
 "  -E, -r, --regexp-extended\n"
@@ -740,7 +738,7 @@ msgstr ""
 "                 utiliza expresiones regulares extendidas en el guión\n"
 "                 (para que sea portable utilice POSIX -E).\n"
 
-#: sed/sed.c:185
+#: sed/sed.c:164
 #, c-format
 msgid ""
 "  -s, --separate\n"
@@ -751,7 +749,7 @@ msgstr ""
 "                 considera los ficheros como separados en lugar de un solo\n"
 "                 flujo, largo y continuo.\n"
 
-#: sed/sed.c:188
+#: sed/sed.c:167
 #, c-format
 msgid ""
 "      --sandbox\n"
@@ -760,7 +758,7 @@ msgstr ""
 "      --sandbox\n"
 "                 opera en modo «sandbox» (desactiva las órdenes e/r/w).\n"
 
-#: sed/sed.c:190
+#: sed/sed.c:169
 #, c-format
 msgid ""
 "  -u, --unbuffered\n"
@@ -774,7 +772,7 @@ msgstr ""
 "                 y vacía los almacenamientos temporales de salida con más\n"
 "                 frecuencia\n"
 
-#: sed/sed.c:193
+#: sed/sed.c:172
 #, c-format
 msgid ""
 "  -z, --null-data\n"
@@ -783,17 +781,17 @@ msgstr ""
 "  -z, --null-data\n"
 "                 separa con caracteres NUL las líneas\n"
 
-#: sed/sed.c:195
+#: sed/sed.c:174
 #, c-format
 msgid "      --help     display this help and exit\n"
 msgstr "      --help     muestra esta ayuda y termina\n"
 
-#: sed/sed.c:196
+#: sed/sed.c:175
 #, c-format
 msgid "      --version  output version information and exit\n"
 msgstr "      --version  muestra la información de la versión y termina\n"
 
-#: sed/sed.c:197
+#: sed/sed.c:176
 #, c-format
 msgid ""
 "\n"
@@ -811,62 +809,84 @@ msgstr ""
 "la entrada estándard.\n"
 "\n"
 
-#: sed/sed.c:390
+#: sed/sed.c:369
 msgid "failed to set binary mode on STDIN"
 msgstr "falló al establecer el modo binario en STDIN"
 
-#: sed/sed.c:392
+#: sed/sed.c:371
 msgid "failed to set binary mode on STDOUT"
 msgstr "falló al establecer el modo binario en STDOUT"
 
-#: sed/utils.c:77 sed/utils.c:395
-#, c-format
-msgid "cannot remove %s: %s"
-msgstr "no se puede eliminar %s: %s"
-
-#: sed/utils.c:146
+#: sed/utils.c:129
 #, c-format
 msgid "couldn't open file %s: %s"
 msgstr "no se puede abrir el fichero %s: %s"
 
 #  FIXME: verificar con el código fuente para saber si es 'conectar' o
 #         'adjuntar'. cfuga
-#: sed/utils.c:165
+#: sed/utils.c:148
 #, c-format
 msgid "couldn't attach to %s: %s"
 msgstr "no se puede conectar a %s: %s"
 
-#: sed/utils.c:192
+#: sed/utils.c:207
 #, c-format
 msgid "failed to set binary mode on '%s'"
 msgstr "falló al establecer el modo binario en '%s'"
 
-#: sed/utils.c:207
+#: sed/utils.c:228
 #, c-format
 msgid "couldn't write %llu item to %s: %s"
 msgid_plural "couldn't write %llu items to %s: %s"
 msgstr[0] "no se pudo escribir %llu elemento a %s: %s"
 msgstr[1] "no se pudieron escribir %llu elementos a %s: %s"
 
-#: sed/utils.c:219 sed/utils.c:238
+#: sed/utils.c:240 sed/utils.c:259
 #, c-format
 msgid "read error on %s: %s"
 msgstr "error al leer de %s: %s"
 
-#: sed/utils.c:336
+#: sed/utils.c:358
+#, c-format
+msgid "couldn't readlink %s: %s"
+msgstr "no se puede leer el enlace %s: %s"
+
+#: sed/utils.c:361
 #, c-format
 msgid "couldn't follow symlink %s: %s"
 msgstr "no se puede seguir el enlace simbólico %s: %s"
 
-#: sed/utils.c:370
-#, c-format
-msgid "cannot stat %s: %s"
-msgstr "no se puede obtener la información de stat de %s: %s"
-
-#: sed/utils.c:400
+#: sed/utils.c:408
 #, c-format
 msgid "cannot rename %s: %s"
 msgstr "no se puede renombrar %s: %s"
+
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s: la opción '%s%s' es ambigua\n"
+
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s: la opción '%s%s' es ambigua: posibilidades:"
+
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s: no se reconoce la opción '%s%s'\n"
+
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s: la opción '%s%s' no admite argumento\n"
+
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s: la opción '%s%s' requiere argumento\n"
+
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: la opción no es válida -- '%c'\n"
+
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: la opción requiere argumento -- '%c'\n"
+
+#~ msgid "cannot remove %s: %s"
+#~ msgstr "no se puede eliminar %s: %s"
+
+#~ msgid "cannot stat %s: %s"
+#~ msgstr "no se puede obtener la información de stat de %s: %s"
 
 #~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
 #~ msgstr "%s página de inicio: <https://www.gnu.org/software/%s/>\n"

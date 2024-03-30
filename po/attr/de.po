@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: attr-2.2.0\n"
 "Report-Msgid-Bugs-To: acl-devel@nongnu.org\n"
-"POT-Creation-Date: 2021-03-16 07:49+0100\n"
+"POT-Creation-Date: 2024-01-13 21:39-0500\n"
 "PO-Revision-Date: 2003-01-23 01:31+0100\n"
 "Last-Translator: Andreas Grünbacher <a.gruenbacher@computer.org>\n"
 "Language-Team:  <de@li.org>\n"
@@ -51,122 +51,6 @@ msgstr "Setzen von Attributen für %s"
 #, c-format
 msgid "setting attribute %s for %s"
 msgstr "Setzen von Attribut %s für %s"
-
-#: tools/setfattr.c:75 tools/getfattr.c:100
-msgid "No such attribute"
-msgstr "Kein solches Attribut"
-
-#: tools/setfattr.c:129
-#, c-format
-msgid "%s: %s: No filename found in line %d, aborting\n"
-msgstr "%s: %s: Kein Dateiname in Zeile %d gefunden, Abbruch\n"
-
-#: tools/setfattr.c:133
-#, c-format
-msgid "%s: No filename found in line %d of standard input, aborting\n"
-msgstr "%s: Kein Dateiname in Zeile %d der Standardeingabe gefunden, Abbruch\n"
-
-#: tools/setfattr.c:180
-#, c-format
-msgid "%s %s -- set extended attributes\n"
-msgstr "%s %s -- Erweiterte Attribute setzen\n"
-
-#: tools/setfattr.c:181 tools/getfattr.c:385
-#, c-format
-msgid "Usage: %s %s\n"
-msgstr "Verwendung: %s %s\n"
-
-#: tools/setfattr.c:182
-#, c-format
-msgid "       %s %s\n"
-msgstr ""
-
-#: tools/setfattr.c:184
-#, c-format
-msgid ""
-"  -n, --name=name         set the value of the named extended attribute\n"
-"  -x, --remove=name       remove the named extended attribute\n"
-"  -v, --value=value       use value as the attribute value\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --restore=file      restore extended attributes\n"
-"      --raw               attribute value is not encoded\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=name         Name des Attributs, das gesetzt werden soll\n"
-"  -x, --remove=name       Entfernt das angegebene erweiterte Attribut\n"
-"  -v, --value=wert        Wert für das erweiterte Attribut\n"
-"  -h, --no-dereference    Symbolische Links nicht dereferenzieren\n"
-"      --restore=datei     Erweiterte Attribute wiederhestellen\n"
-"      --raw               Wert des Attributs ist nicht codiert\n"
-"      --version           Die Version ausgeben\n"
-"      --help              Diese Hilfe\n"
-
-#: tools/setfattr.c:264
-#, c-format
-msgid ""
-"Usage: %s %s\n"
-"       %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Verwendung: %s %s\n"
-"       %s %s\n"
-"Weiterführende Informationen mit `%s --help'.\n"
-
-#: tools/getfattr.c:265
-#, c-format
-msgid "%s: Removing leading '/' from absolute path names\n"
-msgstr "%s: Entferne führenden '/' von absoluten Pfadnamen\n"
-
-#: tools/getfattr.c:383
-#, c-format
-msgid "%s %s -- get extended attributes\n"
-msgstr "%s %s -- erweiterte Attribute lesen\n"
-
-#: tools/getfattr.c:388
-#, c-format
-msgid ""
-"  -n, --name=name         get the named extended attribute value\n"
-"  -d, --dump              get all extended attribute values\n"
-"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
-"      --match=pattern     only get attributes with names matching pattern\n"
-"      --only-values       print the bare values only\n"
-"  -h, --no-dereference    do not dereference symbolic links\n"
-"      --one-file-system   skip files on different filesystems\n"
-"      --absolute-names    don't strip leading '/' in pathnames\n"
-"  -R, --recursive         recurse into subdirectories\n"
-"  -L, --logical           logical walk, follow symbolic links\n"
-"  -P  --physical          physical walk, do not follow symbolic links\n"
-"      --version           print version and exit\n"
-"      --help              this help text\n"
-msgstr ""
-"  -n, --name=name         Das angegebene erweiterte Attribut lesen\n"
-"  -d, --dump              Alle erweiterten Attribute lesen\n"
-"  -e, --encoding=...      Wert codieren (als 'text', 'hex' oder 'base64')\n"
-"      --match=muster      Nur Attribute, die mit muster übereinstimmen\n"
-"      --only-values       Die Attributwerte ohne Codierung ausgeben\n"
-"  -h, --no-dereference    Symbolische Links nicht dereferenzieren\n"
-"      --one-file-system   Dateien auf anderen Dateisystemen überspringen\n"
-"      --absolute-names    Führende '/' in Pfadnamen nicht entfernen\n"
-"  -R, --recursive         In Unterverzeichnisse wechseln\n"
-"  -L, --logical           Alle symbolischen Links verfolgen\n"
-"  -P  --physical          Symbolische Links nicht verfolgen\n"
-"      --version           Die Version ausgeben\n"
-"      --help              Diese Hilfe\n"
-
-#: tools/getfattr.c:489
-#, c-format
-msgid "%s: invalid regular expression \"%s\"\n"
-msgstr "%s: ungültiger regulärer Ausdruck \"%s\"\n"
-
-#: tools/getfattr.c:503
-#, c-format
-msgid ""
-"Usage: %s %s\n"
-"Try `%s --help' for more information.\n"
-msgstr ""
-"Verwendung: %s %s\n"
-"Weiterführende Informationen mit `%s --help'.\n"
 
 #: tools/attr.c:49
 #, c-format
@@ -245,3 +129,119 @@ msgstr "Attribut \"%1$s\" von %3$s hat einen %2$d-Byte-Wert\n"
 #, c-format
 msgid "At least one of -s, -g, -r, or -l is required\n"
 msgstr "Eine der Optionen -s, -g, -r oder -l ist erforderlich\n"
+
+#: tools/getfattr.c:100 tools/setfattr.c:75
+msgid "No such attribute"
+msgstr "Kein solches Attribut"
+
+#: tools/getfattr.c:265
+#, c-format
+msgid "%s: Removing leading '/' from absolute path names\n"
+msgstr "%s: Entferne führenden '/' von absoluten Pfadnamen\n"
+
+#: tools/getfattr.c:383
+#, c-format
+msgid "%s %s -- get extended attributes\n"
+msgstr "%s %s -- erweiterte Attribute lesen\n"
+
+#: tools/getfattr.c:385 tools/setfattr.c:181
+#, c-format
+msgid "Usage: %s %s\n"
+msgstr "Verwendung: %s %s\n"
+
+#: tools/getfattr.c:388
+#, fuzzy, c-format
+msgid ""
+"  -n, --name=name         get the named extended attribute value\n"
+"  -d, --dump              get all extended attribute values\n"
+"  -e, --encoding=...      encode values (as 'text', 'hex' or 'base64')\n"
+"  -m, --match=pattern     only get attributes with names matching pattern\n"
+"      --only-values       print the bare values only\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --one-file-system   skip files on different filesystems\n"
+"      --absolute-names    don't strip leading '/' in pathnames\n"
+"  -R, --recursive         recurse into subdirectories\n"
+"  -L, --logical           logical walk, follow symbolic links\n"
+"  -P  --physical          physical walk, do not follow symbolic links\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=name         Das angegebene erweiterte Attribut lesen\n"
+"  -d, --dump              Alle erweiterten Attribute lesen\n"
+"  -e, --encoding=...      Wert codieren (als 'text', 'hex' oder 'base64')\n"
+"      --match=muster      Nur Attribute, die mit muster übereinstimmen\n"
+"      --only-values       Die Attributwerte ohne Codierung ausgeben\n"
+"  -h, --no-dereference    Symbolische Links nicht dereferenzieren\n"
+"      --one-file-system   Dateien auf anderen Dateisystemen überspringen\n"
+"      --absolute-names    Führende '/' in Pfadnamen nicht entfernen\n"
+"  -R, --recursive         In Unterverzeichnisse wechseln\n"
+"  -L, --logical           Alle symbolischen Links verfolgen\n"
+"  -P  --physical          Symbolische Links nicht verfolgen\n"
+"      --version           Die Version ausgeben\n"
+"      --help              Diese Hilfe\n"
+
+#: tools/getfattr.c:489
+#, c-format
+msgid "%s: invalid regular expression \"%s\"\n"
+msgstr "%s: ungültiger regulärer Ausdruck \"%s\"\n"
+
+#: tools/getfattr.c:503
+#, c-format
+msgid ""
+"Usage: %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"Verwendung: %s %s\n"
+"Weiterführende Informationen mit `%s --help'.\n"
+
+#: tools/setfattr.c:129
+#, c-format
+msgid "%s: %s: No filename found in line %d, aborting\n"
+msgstr "%s: %s: Kein Dateiname in Zeile %d gefunden, Abbruch\n"
+
+#: tools/setfattr.c:133
+#, c-format
+msgid "%s: No filename found in line %d of standard input, aborting\n"
+msgstr "%s: Kein Dateiname in Zeile %d der Standardeingabe gefunden, Abbruch\n"
+
+#: tools/setfattr.c:180
+#, c-format
+msgid "%s %s -- set extended attributes\n"
+msgstr "%s %s -- Erweiterte Attribute setzen\n"
+
+#: tools/setfattr.c:182
+#, c-format
+msgid "       %s %s\n"
+msgstr ""
+
+#: tools/setfattr.c:184
+#, c-format
+msgid ""
+"  -n, --name=name         set the value of the named extended attribute\n"
+"  -x, --remove=name       remove the named extended attribute\n"
+"  -v, --value=value       use value as the attribute value\n"
+"  -h, --no-dereference    do not dereference symbolic links\n"
+"      --restore=file      restore extended attributes\n"
+"      --raw               attribute value is not encoded\n"
+"      --version           print version and exit\n"
+"      --help              this help text\n"
+msgstr ""
+"  -n, --name=name         Name des Attributs, das gesetzt werden soll\n"
+"  -x, --remove=name       Entfernt das angegebene erweiterte Attribut\n"
+"  -v, --value=wert        Wert für das erweiterte Attribut\n"
+"  -h, --no-dereference    Symbolische Links nicht dereferenzieren\n"
+"      --restore=datei     Erweiterte Attribute wiederhestellen\n"
+"      --raw               Wert des Attributs ist nicht codiert\n"
+"      --version           Die Version ausgeben\n"
+"      --help              Diese Hilfe\n"
+
+#: tools/setfattr.c:264
+#, c-format
+msgid ""
+"Usage: %s %s\n"
+"       %s %s\n"
+"Try `%s --help' for more information.\n"
+msgstr ""
+"Verwendung: %s %s\n"
+"       %s %s\n"
+"Weiterführende Informationen mit `%s --help'.\n"

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the grep package.
 # Copyright (C) 1996, 1997, 2019 Free Software Foundation, Inc.
 # Bang Jun-Young <bangjy@geocities.com>, 1996-1997.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019, 2020.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019-2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU grep 3.3.42\n"
+"Project-Id-Version: GNU grep 3.10.12\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
-"PO-Revision-Date: 2020-07-12 00:45+0900\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
+"PO-Revision-Date: 2023-04-22 16:05+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
@@ -19,69 +19,102 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Generator: Poedit 2.3.1\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
 msgstr "%2$s 대상 잘못된 인자 %1$s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
 msgstr "%2$s 대상 모호한 인자 %1$s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
 msgstr "유효한 인자는 다음과 같습니다:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
 msgstr "프로그램 오류"
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
 msgstr "스택 오버플로우"
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
 msgstr "기록 오류"
 
-#: lib/dfa.c:954
+#: lib/dfa.c:897
 msgid "unbalanced ["
 msgstr "짝이 맞지 않는 [ 괄호"
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
 msgstr "잘못된 문자 클래스"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr "문자 클래스 표기 방식은 [:space:]가 아닌 [[:space:]]입니다"
 
-#: lib/dfa.c:1268
+#: lib/dfa.c:1222
 msgid "unfinished \\ escape"
 msgstr "끝나지 않은 \\ 이스케이프 문자"
 
-#: lib/dfa.c:1429
+#: lib/dfa.c:1332
+msgid "? at start of expression"
+msgstr "정규 표현식 시작 부분에 ? 연산자"
+
+#: lib/dfa.c:1344
+msgid "* at start of expression"
+msgstr "정규 표현식 시작 부분에 * 연산자"
+
+#: lib/dfa.c:1358
+msgid "+ at start of expression"
+msgstr "정규 표현식 시작 부분에 + 연산자"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr "정규 표현식 시작 부분에 {..}"
+
+#: lib/dfa.c:1416
 msgid "invalid content of \\{\\}"
 msgstr "잘못된 \\{\\} 내용"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 msgid "regular expression too big"
 msgstr "정규 표현식이 너무 깁니다"
 
-#: lib/dfa.c:1916
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr "출력할 수 없는 문자 이전 위치를 벗어난 \\ 문자"
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr "공백 문자 이전 위치를 벗어난 \\ 문자"
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "%lc 전 위치를 벗어난 \\ 문자"
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr "위치를 벗어난 \\ 문자"
+
+#: lib/dfa.c:1925
 msgid "unbalanced ("
 msgstr "짝이 맞지 않는 ( 괄호"
 
-#: lib/dfa.c:2033
+#: lib/dfa.c:2042
 msgid "no syntax specified"
 msgstr "문법을 지정하지 않았습니다"
 
-#: lib/dfa.c:2044
+#: lib/dfa.c:2053
 msgid "unbalanced )"
 msgstr "짝이 맞지 않는 ) 괄호"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "알 수 없는 시스템 오류"
 
@@ -120,7 +153,7 @@ msgstr "%s: 잘못된 옵션 -- '%c'\n"
 msgid "%s: option requires an argument -- '%c'\n"
 msgstr "%s: 이 옵션은 인자가 필요합니다 -- '%c'\n"
 
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "메모리가 바닥남"
 
@@ -134,7 +167,7 @@ msgstr "현재 작업 디렉터리를 기록할 수 없습니다"
 msgid "failed to return to initial working directory"
 msgstr "초기 작업 디렉터리 반환에 실패했습니다"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
 msgstr "텍스트/바이너리 모드 파일 서술자 설정에 실패했습니다"
@@ -160,83 +193,83 @@ msgstr "텍스트/바이너리 모드 파일 서술자 설정에 실패했습니
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
 msgstr "`"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
 msgstr "'"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
 msgstr "성공"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
 msgstr "일치 항목 없음"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
 msgstr "잘못된 정규 표현식"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
 msgstr "잘못된 조합 문자"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
 msgstr "잘못된 문자 클래스 이름"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
 msgstr "백 슬래시 문자가 따라옴"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
 msgstr "잘못된 후위 참조"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
 msgstr "일치하지 않는 [, [^, [:, [., [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
 msgstr "일치하지 않는 ( 또는 \\( 괄호"
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
 msgstr "일치하지 않는 \\{ 괄호"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
 msgstr "잘못된 \\{\\} 내용"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
 msgstr "잘못된 범위 끝"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "메모리가 바닥남"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
 msgstr "잘못된 선행 정규 표현식"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
 msgstr "정규 표현식 마감 표현이 앞서있습니다"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
 msgstr "정규 표현식이 너무 깁니다"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
 msgstr "일치하지 않는 ) 또는 \\) 괄호"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
 msgstr "이전 정규 표현식 없음"
 
@@ -404,49 +437,54 @@ msgstr "%s 홈 페이지: <%s>\n"
 msgid "General help using GNU software: <%s>\n"
 msgstr "GNU 소프트웨어 활용 일반 도움말: <%s>\n"
 
-#: src/grep.c:648
+#: src/dfasearch.c:59
+#, c-format
+msgid "warning: %s"
+msgstr "경고: %s"
+
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(표준 입력)"
 
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
 msgstr "잘못된 내용 길이 인자"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
 msgstr "입력 행 수를 세기에 너무 많습니다"
 
-#: src/grep.c:1646
-#, fuzzy, c-format
+#: src/grep.c:1651
+#, c-format
 msgid "%s: binary file matches"
-msgstr "%s 바이너리 파일 일치함\n"
+msgstr "%s: 바이너리 파일 일치함"
 
-#: src/grep.c:1684
-#, fuzzy, c-format
+#: src/grep.c:1689
+#, c-format
 msgid "%s: warning: recursive directory loop"
-msgstr "재귀 디렉터리 순환"
+msgstr "%s: 경고: 재귀 디렉터리 순환"
 
-#: src/grep.c:1904
-#, fuzzy, c-format
+#: src/grep.c:1909
+#, c-format
 msgid "%s: input file is also the output"
-msgstr "%s 입력 파일은 출력 대상이기도 합니다"
+msgstr "%s: 입력 파일은 출력 대상이기도 합니다"
 
-#: src/grep.c:1966 src/grep.c:1973
+#: src/grep.c:1971 src/grep.c:1978
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
 msgstr "사용법: %s [<옵션>]... <패턴> [<파일>]...\n"
 
-#: src/grep.c:1968
+#: src/grep.c:1973
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "자세한 정보는 '%s --help'를 입력하십시오.\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
 msgstr "각 <파일>에서 <패턴>에 일치하는 행을 검색합니다.\n"
 
-#: src/grep.c:1975
+#: src/grep.c:1980
 #, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -460,7 +498,7 @@ msgstr ""
 "패턴 선택 및 해석:\n"
 "\n"
 
-#: src/grep.c:1980
+#: src/grep.c:1985
 #, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
@@ -473,7 +511,7 @@ msgstr ""
 "  -G, --basic-regexp        <패턴>은 기본 정규 표현식입니다\n"
 "  -P, --perl-regexp         <패턴>은 펄 정규 표현식입니다\n"
 
-#: src/grep.c:1986
+#: src/grep.c:1991
 #, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
@@ -484,8 +522,8 @@ msgid ""
 "  -x, --line-regexp         match only whole lines\n"
 "  -z, --null-data           a data line ends in 0 byte, not newline\n"
 msgstr ""
-"  -e, --regexp=<패턴>     일치하는 부분을 찾을 <패턴> 기준을 활용합니다\n"
-"  -f, --file=<파일>           <파일>에서 <패턴>에 일치하는 부분을 취합니다\n"
+"  -e, --regexp=<패턴>       일치하는 부분을 찾을 <패턴> 기준을 활용합니다\n"
+"  -f, --file=<파일>         <파일>에서 <패턴>에 일치하는 부분을 취합니다\n"
 "  -i, --ignore-case         대소문자 구분을 무시합니다\n"
 "      --no-ignore-case      대소문자 구분을 유지합니다(기본값)\n"
 "  -w, --word-regexp         주어진 단어와 완벽하게 일치하는 부분만\n"
@@ -493,7 +531,7 @@ msgstr ""
 "  -z, --null-data           데이터 행의 끝은 개행 문자가 아닌 0바이트 값으로 "
 "끝납니다\n"
 
-#: src/grep.c:1994
+#: src/grep.c:1999
 #, c-format
 msgid ""
 "\n"
@@ -510,7 +548,7 @@ msgstr ""
 "  -V, --version             버전 정보를 나타내고 빠져 나갑니다\n"
 "      --help                이 도움말 텍스트를 나타내고 빠져 나갑니다\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -526,16 +564,16 @@ msgid ""
 msgstr ""
 "\n"
 "출력 제어:\n"
-"  -m, --max-count=<횟수>       <횟수> 만큼 행을 찾아내고 나면 멈춤\n"
+"  -m, --max-count=<횟수>    <횟수> 만큼 행을 찾아내고 나면 멈춤\n"
 "  -b, --byte-offset         출력 행의 바이트 오프셋을 출력합니다\n"
 "  -n, --line-number         출력 행의 행 번호를 출력합니다\n"
 "      --line-buffered       모든 행의 출력을 플러싱합니다\n"
 "  -H, --with-filename       출력 행에 파일 이름을 출력합니다\n"
 "  -h, --no-filename         출력 행 앞부분의 파일 이름 표시를 생략합니다 \n"
-"      --label=<레이블>         <레이블>을 표준 입력 앞부분의 파일 이름으로 사"
-"용합니다\n"
+"      --label=<레이블>      <레이블>을 표준 입력 앞부분의 파일 이름으로 사용"
+"합니다\n"
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -552,7 +590,7 @@ msgstr ""
 "하나입니다\n"
 "  -a, --text                --binary-files=text 옵션과 동일\n"
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -573,8 +611,8 @@ msgstr ""
 "  -R, --dereference-recursive  위 옵션과 비슷하지만 모든 심볼릭 링크를 따라갑"
 "니다\n"
 
-#: src/grep.c:2028
-#, fuzzy, c-format
+#: src/grep.c:2033
+#, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
 "pattern)\n"
@@ -585,13 +623,12 @@ msgid ""
 msgstr ""
 "      --include=<글롭>        <글롭>(파일 패턴)에 일치하는 파일만 검색합니"
 "다\n"
-"      --exclude=<글롭>        <글롭>에 일치하는 파일과 디렉터리는 건너뜁니"
+"      --exclude=<글롭>        <글롭>에 일치하는 파일을 건너뜁니다\n"
+"      --exclude-from=<파일>   <파일>과 파일 패턴이 일치하는 파일을 건너뜁니"
 "다\n"
-"      --exclude-from=<파일>   <파일>과 파일 패턴이 일치하는 파일은 건너뜁니"
-"다\n"
-"      --exclude-dir=<글롭>    <글롭>과 일치하는 디렉터리는 건너뜁니다\n"
+"      --exclude-dir=<글롭>    <글롭>과 일치하는 디렉터리를 건너뜁니다\n"
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -601,14 +638,13 @@ msgid ""
 "  -T, --initial-tab         make tabs line up (if needed)\n"
 "  -Z, --null                print 0 byte after FILE name\n"
 msgstr ""
-"  -L, --files-without-match  일치하는 행이 없으면 <파일>의 이름만 출력합니"
-"다\n"
+"  -L, --files-without-match 일치하는 행이 없으면 <파일>의 이름만 출력합니다\n"
 "  -l, --files-with-matches  일치하는 행이 있는 <파일>의 이름만 출력합니다\n"
 "  -c, --count               <파일>에 일치하는 행 갯수만 출력합니다\n"
 "  -T, --initial-tab         (필요한 경우) 행 별로 탭을 표시합니다\n"
 "  -Z, --null                <파일> 이름 뒤에 0 바이트 값을 출력합니다\n"
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, c-format
 msgid ""
 "\n"
@@ -626,10 +662,12 @@ msgstr ""
 "  -C, --context=<갯수>         <갯수> 줄 수 만큼 출력 내용 앞 뒤 부분을 모두 "
 "출력합니다 \n"
 
-#: src/grep.c:2048
+#: src/grep.c:2053
 #, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -637,17 +675,20 @@ msgid ""
 "Windows)\n"
 "\n"
 msgstr ""
-"  -NUM                      --context=NUM과 동일\n"
+"  -NUM                      --context=<갯수>와 동일\n"
+"      --group-separator=<구분자>  문맥상 일치하는 행을 <구분자> 출력으로 구"
+"분\n"
+"      --no-group-separator  일치 문맥에 대한 구분자를 출력하지 않습니다\n"
 "      --color[=<시기>],\n"
-"      --colour[=<시기>]       는 일치하는 문자열 강조시 마커를 활용합니다\n"
+"      --colour[=<시기>]     일치하는 문자열 강조시 마커를 활용합니다\n"
 "                            <시기>의 값은 'always', 'never', 'auto' 중 하나입"
 "니다\n"
 "  -U, --binary              개행 문자에서 CR 문자를 빼내지 않음(MSDOS/윈도"
 "우)\n"
 "\n"
 
-#: src/grep.c:2055
-#, fuzzy, c-format
+#: src/grep.c:2062
+#, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
 "recursive, '-' otherwise.  With fewer than two FILEs, assume -h.\n"
@@ -655,316 +696,131 @@ msgid ""
 "if any error occurs and -q is not given, the exit status is 2.\n"
 msgstr ""
 "<파일> 값이 '-' 이면, 표준 입력을 읽습니다.  <파일>에 아무런 값이 없다면,\n"
-"재귀 탐색 옵션을 주었을 경우 현재 디렉터리를, 그렇지 않으면 '-' 값을 설정함\n"
+"재귀 탐색 옵션을 주었을 경우 현재 디렉터리를,  그렇지 않으면 '-' 값을 설정"
+"함\n"
 "으로 가정합니다. <파일> 갯수가 한개일 경우 -h 옵션을 준 것으로 가정합니다.\n"
 "조건 일치 행이 나오면, 끝내기 상태 값은 0을, 그렇지 않으면 1을 반환합니다.\n"
 "오류가 나타났거나 -q 옵션을 주지 않았다면, 2를 반환합니다.\n"
 
-#: src/grep.c:2097
+#: src/grep.c:2104
 msgid "conflicting matchers specified"
 msgstr "비교 기준을 중복 지정했습니다"
 
-#: src/grep.c:2104
+#: src/grep.c:2111
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr ""
 "--disable-perl-regexp 빌드에서는 Perl 문자열 일치 기능을 지원하지 않습니다"
 
-#: src/grep.c:2106
+#: src/grep.c:2113
 #, c-format
 msgid "invalid matcher %s"
 msgstr "잘못된 비교 기준 %s"
 
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
 msgstr "알 수 없는 장치 방식"
 
-#: src/grep.c:2689
-msgid "invalid max count"
-msgstr "찰못된 최대 갯수"
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr "경고: --unix-byte-offsets (-u) 옵션은 오래되었습니다"
 
-#: src/grep.c:2747
+#: src/grep.c:2688
+msgid "invalid max count"
+msgstr "잘못된 최대 갯수"
+
+#: src/grep.c:2746
 msgid "unknown binary-files type"
 msgstr "알 수 없는 바이너리 파일 형식"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
-"기타 작성자 정보는\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS> 링크를 참고하십시오."
+"Mike Haertel 등이 작성함. 기타 작성자 정보는\n"
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS> 링크를 참고하십시"
+"오."
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
-msgstr "PCRE JIT 스택의 메모리 할당에 실패했습니다"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
+msgstr ""
+"경고: GREP_COLOR='%s' 환경 변수는 더 이상 사용하지 않습니다. "
+"GREP_COLORS='mt=%s' 변수를 사용하십시오."
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+"\n"
+"grep -P 옵션은 PCRE2 %s을(를) 활용합니다\n"
+
+#: src/pcresearch.c:169
+msgid "-P supports only unibyte locales on this platform"
+msgstr "-P 옵션은 이 플랫폼에서 유니바이트 로캘만 지원합니다"
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
 msgstr "-P 유니바이트, UTF-8 로캘만 지원합니다"
 
-#: src/pcresearch.c:143
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
 msgstr "-P 옵션은 단일 패턴만 지원합니다"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr "내부 오류 (나타나면 안됨)"
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
 msgstr "PCRE 행 길이 한계 초과"
 
-#: src/pcresearch.c:306
-#, fuzzy, c-format
+#: src/pcresearch.c:368
+#, c-format
 msgid "%s: memory exhausted"
-msgstr "메모리가 바닥남"
+msgstr "%s: 메모리가 바닥남"
 
-#: src/pcresearch.c:310
-#, fuzzy, c-format
+#: src/pcresearch.c:371
+#, c-format
 msgid "%s: exhausted PCRE JIT stack"
-msgstr "PCRE JIT 스택 가득 참"
+msgstr "%s: PCRE JIT 스택 가득 참"
 
-#: src/pcresearch.c:315
-#, fuzzy, c-format
+#: src/pcresearch.c:375
+#, c-format
 msgid "%s: exceeded PCRE's backtracking limit"
-msgstr "PCRE 후위 추적 한계 초과"
+msgstr "%s: PCRE 후위 추적 한계 초과"
 
-#: src/pcresearch.c:319
-#, fuzzy, c-format
-msgid "%s: exceeded PCRE's recursion limit"
-msgstr "PCRE 후위 추적 한계 초과"
+#: src/pcresearch.c:380
+#, c-format
+msgid "%s: exceeded PCRE's nested backtracking limit"
+msgstr "%s: PCRE 중첩 후위 추적 한계 초과"
 
-#: src/pcresearch.c:327
-#, fuzzy, c-format
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr "%s: PCRE에서 재귀 순환 발견"
+
+#: src/pcresearch.c:389
+#, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr "%s: PCRE 힙 영역 한계 초과"
+
+#: src/pcresearch.c:398
+#, c-format
 msgid "%s: internal PCRE error: %d"
-msgstr "내부 PCRE 오류: %d"
+msgstr "%s: 내부 PCRE 오류: %d"
 
-#, c-format
-#~ msgid "warning: GREP_OPTIONS is deprecated; please use an alias or script"
-#~ msgstr ""
-#~ "경고: GREP_OPTIONS 변수는 더이상 지원하지 않습니다. alias 또는 스크립트를 "
-#~ "활용하십시오"
-
-#, c-format
-#~ msgid "warning: %s: %s"
-#~ msgstr "경고: %s: %s"
-
-#~ msgid "%s home page: <https://www.gnu.org/software/%s/>\n"
-#~ msgstr "%s 홈 페이지: <https://www.gnu.org/software/%s/>\n"
-
-#~ msgid "invalid %s%s argument '%s'"
-#~ msgstr "잘못된 %s%s의 인자 '%s'"
-
-#~ msgid "invalid suffix in %s%s argument '%s'"
-#~ msgstr "%s%s의 인자 '%s'에 잘못된 접미부"
-
-#~ msgid "%s%s argument '%s' too large"
-#~ msgstr "%s%s의 인자 '%s'이(가) 너무 큽니다"
-
-#~ msgid "Mike Haertel"
-#~ msgstr "Mike Haertel"
-
-#~ msgid "internal error"
-#~ msgstr "내부 오류"
-
-#~ msgid "malformed repeat count"
-#~ msgstr "잘못 주어진 반복 회수"
-
-#~ msgid "out of memory"
-#~ msgstr "메모리 부족"
-
-#~ msgid "%s: option `--%s' doesn't allow an argument\n"
-#~ msgstr "%s: `--%s' 옵션은 인수를 허용하지 않습니다\n"
-
-#~ msgid "%s: unrecognized option `--%s'\n"
-#~ msgstr "%s: 인식할 수 없는 옵션 `--%s'\n"
-
-#~ msgid "%s: illegal option -- %c\n"
-#~ msgstr "%s: 잘못된 옵션 -- %c\n"
-
-#~ msgid "%s: option `-W %s' is ambiguous\n"
-#~ msgstr "%s: `-W %s'는 모호한 옵션입니다\n"
-
-#~ msgid "%s: option `-W %s' doesn't allow an argument\n"
-#~ msgstr "%s: `-W %s' 옵션은 인수를 허용하지 않습니다\n"
-
-#~ msgid "option %s"
-#~ msgstr "%s 옵션"
-
-#~ msgid " with arg %s"
-#~ msgstr " %s 인수를 가짐"
-
-#~ msgid "digits occur in two different argv-elements.\n"
-#~ msgstr "숫자가 서로 다른 두 군데의 argv 원소에서 발견되었습니다.\n"
-
-#~ msgid "option %c\n"
-#~ msgstr "%c 옵션\n"
-
-#~ msgid "option a\n"
-#~ msgstr "a 옵션\n"
-
-#~ msgid "option b\n"
-#~ msgstr "b 옵션\n"
-
-#~ msgid "option c with value `%s'\n"
-#~ msgstr "`%s'를 값으로 갖는 c 옵션\n"
-
-#~ msgid "option d with value `%s'\n"
-#~ msgstr "`%s'를 값으로 갖는 d 옵션\n"
-
-#~ msgid "?? getopt returned character code 0%o ??\n"
-#~ msgstr "?? getopt가 문자 코드 0%o를 돌려주었습니다 ??\n"
-
-#~ msgid "non-option ARGV-elements: "
-#~ msgstr "비옵션 ARGV 원소: "
-
-#~ msgid "writing output"
-#~ msgstr "출력을 기록하고 있습니다"
-
-#~ msgid "Usage: %s [OPTION]... PATTERN [FILE] ...\n"
-#~ msgstr "사용법: %s [옵션]... 패턴 [파일] ...\n"
-
-#, fuzzy
 #~ msgid ""
 #~ "\n"
-#~ "Report bugs to <bug-gnu-utils@gnu.org>.\n"
-#~ msgstr "문제점은 <bug0gnu-utils@prep.ai.mit.edu>로 보고해 주십시오.\n"
-
-#~ msgid "you may specify only one of -E, -F, or -G"
-#~ msgstr "-E, -F, -G 중에서 하나만 지정할 수 있습니다"
-
-#~ msgid "grep (GNU grep) %s\n"
-#~ msgstr "grep (GNU grep) %s\n"
-
-#, fuzzy
-#~ msgid "Copyright (C) 1988, 1992-1997, 1998 Free Software Foundation, Inc.\n"
+#~ "Built with PCRE "
 #~ msgstr ""
-#~ "저작권 (C) 1988, 92, 93, 94, 95, 96, 97 Free Software Foundation, Inc.\n"
+#~ "\n"
+#~ "PCRE를 함께 빌드함 "
 
-#~ msgid ""
-#~ "This is free software; see the source for copying conditions. There is "
-#~ "NO\n"
-#~ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-#~ "PURPOSE.\n"
-#~ msgstr ""
-#~ "이 프로그램은 공개 소프트웨어입니다. 복사에 관한 조건은 소스를 참조하십시"
-#~ "오.\n"
-#~ "상품성이나 특정 목적에 대한 적합성을 비롯하여, 어떠한 보증도 하지 않습니"
-#~ "다.\n"
+#~ msgid "JIT internal error: %d"
+#~ msgstr "JIT 내부 오류: %d"
 
-#~ msgid "memory exhausted\n"
-#~ msgstr "메모리가 바닥남\n"
+#~ msgid "failed to allocate memory for the PCRE JIT stack"
+#~ msgstr "PCRE JIT 스택의 메모리 할당에 실패했습니다"
 
-#~ msgid "Regexp selection and interpretation:\n"
-#~ msgstr "정규식 선택과 해석:\n"
-
-#~ msgid ""
-#~ "  -E, --extended-regexp     PATTERN is an extended regular expression\n"
-#~ msgstr "  -E, --extended-regexp     패턴은 확장 정규식이 됩니다\n"
-
-#~ msgid ""
-#~ "  -F, --fixed-strings       PATTERN is a fixed string separated by "
-#~ "newlines\n"
-#~ msgstr ""
-#~ "  -F, --fixed-strings       패턴은 줄바꿈 문자로 분리된 고정 문자열이 됩니"
-#~ "다\n"
-
-#~ msgid "  -G, --basic-regexp        PATTERN is a basic regular expression\n"
-#~ msgstr "  -G, --basic-regexp        패턴은 기본 정규식이 됩니다\n"
-
-#~ msgid "  -e, --regexp=PATTERN      use PATTERN as a regular expression\n"
-#~ msgstr "  -e, --regexp=패턴         패턴을 정규식으로 사용합니다\n"
-
-#~ msgid "  -f, --file=FILE         obtain PATTERN from FILE\n"
-#~ msgstr "  -f, --file=파일           패턴을 파일에서 가져옵니다\n"
-
-#~ msgid "  -i, --ignore-case         ignore case distinctions\n"
-#~ msgstr "  -i, --ignore-case         대소문자 구별을 무시합니다\n"
-
-#~ msgid ""
-#~ "  -w, --word-regexp         force PATTERN to match only whole words\n"
-#~ msgstr ""
-#~ "  -w, --word-regexp         패턴을 전체 단어와 일치하는 것으로만 제한합니"
-#~ "다\n"
-
-#~ msgid ""
-#~ "  -x, --line-regexp         force PATTERN to match only whole lines\n"
-#~ msgstr ""
-#~ "  -x, --line-regexp         패턴을 전체 행과 일치하는 것으로만 제한합니"
-#~ "다\n"
-
-#~ msgid "Miscellaneous:\n"
-#~ msgstr "기타:\n"
-
-#~ msgid "  -s, --no-messages         suppress error messages\n"
-#~ msgstr "  -s, --no-messages         오류 메시지를 표시하지 않습니다\n"
-
-#~ msgid "  -v, --revert-match        select non-matching lines\n"
-#~ msgstr "  -v, --revert-match        일치하지 않는 행들을 선택합니다\n"
-
-#~ msgid "  -V, --version             print version information and exit\n"
-#~ msgstr "  -V, --version             버전 정보를 표시하고 종료합니다\n"
-
-#~ msgid "      --help                display this help and exit\n"
-#~ msgstr "      --help                이 도움말을 표시하고 종료합니다\n"
-
-#~ msgid "Output control:\n"
-#~ msgstr "출력 제어:\n"
-
-#~ msgid ""
-#~ "  -b, --byte-offset         print the byte offset with output lines\n"
-#~ msgstr ""
-#~ "  -b, --byte-offset         출력되는 행에 바이트 오프셋을 표시합니다\n"
-
-#~ msgid "  -n, --line-number         print line number with output lines\n"
-#~ msgstr "  -n, --line-number         출력되는 행에 행번호를 표시합니다\n"
-
-#~ msgid "  -H, --with-filename       print the filename for each match\n"
-#~ msgstr ""
-#~ "  -H, --with-filename       각각의 일치 결과에 대해 파일명을 표시합니다\n"
-
-#~ msgid "  -q, --quiet, --silent     suppress all normal output\n"
-#~ msgstr ""
-#~ "  -q, --quiet, --silent     일반적인 모든 출력을 표시하지 않습니다\n"
-
-#~ msgid ""
-#~ "  -L, --files-without-match only print FILE names containing no match\n"
-#~ msgstr ""
-#~ "  -L, --files-without-match 일치 결과가 없는 파일 이름만 표시합니다\n"
-
-#~ msgid ""
-#~ "  -l, --files-with-matches  only print FILE names containing matches\n"
-#~ msgstr ""
-#~ "  -l, --files-with-matches  일치 결과가 포함된 파일 이름만 표시합니다\n"
-
-#~ msgid ""
-#~ "  -c, --count               only print a count of matching lines per "
-#~ "FILE\n"
-#~ msgstr ""
-#~ "  -c, --count               파일당 일치하는 행의 개수만을 표시합니다\n"
-
-#~ msgid "Context control:\n"
-#~ msgstr "문맥 제어:\n"
-
-#~ msgid "  -NUM                      same as both -B NUM and -A NUM\n"
-#~ msgstr "  -숫자                     -B 숫자나 -A 숫자와 같음\n"
-
-#~ msgid "  -C, --context             same as -2\n"
-#~ msgstr "  -C, --context             -2와 같음\n"
-
-#~ msgid "  -U, --binary              do not strip CR characters at EOL\n"
-#~ msgstr "  -U, --binary              행끝의 CR 문자를 잘라내지 않습니다\n"
-
-#~ msgid ""
-#~ "  -u, --unix-byte-offsets   report offsets as if CRs were not there\n"
-#~ msgstr "  -u, --unix-byte-offsets   CR을 제외하고 오프셋을 산출합니다\n"
-
-#~ msgid "If call as `egrep', this implies -E and `fgrep' for -F.\n"
-#~ msgstr ""
-#~ "`egrep'으로 호출되면 -E로 가정되고 `fgrep'일 때에는 -F가 가정됩니다.\n"
-
-#~ msgid "If no -[GEF], then -G is assumed.\n"
-#~ msgstr "-[GEF]가 주어지지 않으면 -G로 가정합니다.\n"
-
-#~ msgid "(standard input)\n"
-#~ msgstr "(표준 입력)\n"
+#~ msgid "internal error (should never happen)"
+#~ msgstr "내부 오류 (나타나면 안됨)"

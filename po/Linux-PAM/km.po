@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Linux-PAM\n"
 "Report-Msgid-Bugs-To: https://github.com/linux-pam/linux-pam/issues\n"
-"POT-Creation-Date: 2021-07-20 20:00+0000\n"
+"POT-Creation-Date: 2024-01-16 21:11+0000\n"
 "PO-Revision-Date: 2011-11-29 07:00-0500\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,54 +21,54 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: Zanata 3.8.3\n"
 
-#: libpam/pam_get_authtok.c:39 modules/pam_exec/pam_exec.c:181
-#: modules/pam_userdb/pam_userdb.c:53
+#: libpam/pam_get_authtok.c:40 modules/pam_exec/pam_exec.c:183
+#: modules/pam_userdb/pam_userdb.c:61
 msgid "Password: "
 msgstr "ពាក្យសម្ងាត់ ៖ "
 
-#: libpam/pam_get_authtok.c:41
+#: libpam/pam_get_authtok.c:42
 #, fuzzy, c-format
 msgid "Current %s password: "
 msgstr "ពាក្យ​សម្ងាត់ %s ថ្មី ៖"
 
-#: libpam/pam_get_authtok.c:42
+#: libpam/pam_get_authtok.c:43
 #, fuzzy
 msgid "Current password: "
 msgstr "ពាក្យ​សម្ងាត់ ថ្មី ៖"
 
-#: libpam/pam_get_authtok.c:44
+#: libpam/pam_get_authtok.c:45
 #, c-format
 msgid "New %s password: "
 msgstr "ពាក្យ​សម្ងាត់ %s ថ្មី ៖"
 
-#: libpam/pam_get_authtok.c:45
+#: libpam/pam_get_authtok.c:46
 msgid "New password: "
 msgstr "ពាក្យ​សម្ងាត់ ថ្មី ៖"
 
-#: libpam/pam_get_authtok.c:47
+#: libpam/pam_get_authtok.c:48
 #, c-format
 msgid "Retype new %s password: "
 msgstr "វាយ​ពាក្យ​សម្ងាត់ %s ថ្មី​ឡើង​វិញ ៖"
 
-#: libpam/pam_get_authtok.c:48
+#: libpam/pam_get_authtok.c:49
 msgid "Retype new password: "
 msgstr "វាយ​ពាក្យ​សម្ងាត់ ថ្មី​ឡើង​វិញ ៖"
 
-#: libpam/pam_get_authtok.c:49
+#: libpam/pam_get_authtok.c:50
 msgid "Sorry, passwords do not match."
 msgstr "សូម​ទោស ពាក្យ​សម្ងាត់​មិន​ដូច​គ្នា​ឡើយ ។"
 
-#: libpam/pam_get_authtok.c:142 libpam/pam_get_authtok.c:240
+#: libpam/pam_get_authtok.c:143 libpam/pam_get_authtok.c:245
 #, c-format
 msgid "Retype %s"
 msgstr ""
 
-#: libpam/pam_get_authtok.c:178 libpam/pam_get_authtok.c:258
+#: libpam/pam_get_authtok.c:183 libpam/pam_get_authtok.c:263
 #, fuzzy
 msgid "Password change has been aborted."
 msgstr "ពាក្យសម្ងាត់​ត្រូវ​បាន​ប្រើ​រួច​ហើយ ។ សូម​ជ្រើស​មួយ​ទៀត ។"
 
-#: libpam/pam_item.c:311
+#: libpam/pam_item.c:310
 msgid "login:"
 msgstr "ចូល ៖"
 
@@ -204,11 +204,11 @@ msgstr "កម្មវិធី​ត្រូវ​តែ​ហៅ libpam ម�
 msgid "Unknown PAM error"
 msgstr "មិន​ស្គាល់​កំហុស PAM"
 
-#: libpam_misc/misc_conv.c:33
+#: libpam_misc/misc_conv.c:34
 msgid "...Time is running out...\n"
 msgstr "...អស់​ពេល...\n"
 
-#: libpam_misc/misc_conv.c:34
+#: libpam_misc/misc_conv.c:35
 msgid "...Sorry, your time is up!\n"
 msgstr "...សូម​ទោស អ្នក​អស់​ពេល​ហើយ !\n"
 
@@ -217,80 +217,86 @@ msgstr "...សូម​ទោស អ្នក​អស់​ពេល​ហើ�
 msgid "erroneous conversation (%d)\n"
 msgstr "សន្ទនាច្រឡំ (%d)\n"
 
-#: modules/pam_exec/pam_exec.c:279
+#: modules/pam_exec/pam_exec.c:299
 #, c-format
 msgid "%s failed: exit code %d"
 msgstr ""
 
-#: modules/pam_exec/pam_exec.c:289
+#: modules/pam_exec/pam_exec.c:309
 #, c-format
 msgid "%s failed: caught signal %d%s"
 msgstr ""
 
-#: modules/pam_exec/pam_exec.c:299
+#: modules/pam_exec/pam_exec.c:319
 #, c-format
 msgid "%s failed: unknown status 0x%x"
 msgstr ""
 
-#: modules/pam_faillock/main.c:103
+#: modules/pam_faillock/main.c:130
 #, fuzzy, c-format
 msgid ""
-"Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset]\n"
+"Usage: %s [--dir /path/to/tally-directory] [--user username] [--reset] [--"
+"legacy-output]\n"
 msgstr ""
 "%s ៖ [--file rooted-filename] [--user username] [--reset[=n]] [--quiet]\n"
 
-#: modules/pam_faillock/pam_faillock.c:618
+#: modules/pam_faillock/main.c:181
+#, c-format
+msgid "Login           Failures    Latest failure         From\n"
+msgstr ""
+
+#: modules/pam_faillock/pam_faillock.c:408
 #, c-format
 msgid "The account is locked due to %u failed logins."
 msgstr ""
 
-#: modules/pam_faillock/pam_faillock.c:627
-#: modules/pam_faillock/pam_faillock.c:633
+#: modules/pam_faillock/pam_faillock.c:417
+#: modules/pam_faillock/pam_faillock.c:423
 #, c-format
 msgid "(%d minute left to unlock)"
 msgid_plural "(%d minutes left to unlock)"
 msgstr[0] ""
 
 #. TRANSLATORS: only used if dngettext is not supported.
-#: modules/pam_faillock/pam_faillock.c:636
+#: modules/pam_faillock/pam_faillock.c:426
 #, c-format
 msgid "(%d minutes left to unlock)"
 msgstr ""
 
 #. TRANSLATORS: "strftime options for date of last login"
-#: modules/pam_lastlog/pam_lastlog.c:318 modules/pam_lastlog/pam_lastlog.c:579
+#: modules/pam_lastlog/pam_lastlog.c:326 modules/pam_lastlog/pam_lastlog.c:595
 msgid " %a %b %e %H:%M:%S %Z %Y"
 msgstr " %a %b %e %H:%M:%S %Z %Y"
 
 #. TRANSLATORS: " from <host>"
-#: modules/pam_lastlog/pam_lastlog.c:327 modules/pam_lastlog/pam_lastlog.c:588
+#: modules/pam_lastlog/pam_lastlog.c:335 modules/pam_lastlog/pam_lastlog.c:604
 #, c-format
 msgid " from %.*s"
 msgstr " ពី %.*s"
 
 #. TRANSLATORS: " on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:339 modules/pam_lastlog/pam_lastlog.c:600
+#: modules/pam_lastlog/pam_lastlog.c:347 modules/pam_lastlog/pam_lastlog.c:616
 #, c-format
 msgid " on %.*s"
 msgstr " លើ %.*s"
 
 #. TRANSLATORS: "Last login: <date> from <host> on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:349
+#: modules/pam_lastlog/pam_lastlog.c:357
 #, c-format
 msgid "Last login:%s%s%s"
 msgstr "ចូល​ចុងក្រោយ ៖%s%s%s"
 
-#: modules/pam_lastlog/pam_lastlog.c:355
+#: modules/pam_lastlog/pam_lastlog.c:363
 msgid "Welcome to your new account!"
 msgstr "សូម​ស្វាគមន៍​មក​កាន់​គណនី​ថ្មី​របស់​អ្នក !"
 
 #. TRANSLATORS: "Last failed login: <date> from <host> on <terminal>"
-#: modules/pam_lastlog/pam_lastlog.c:610
+#: modules/pam_lastlog/pam_lastlog.c:626
 #, c-format
 msgid "Last failed login:%s%s%s"
 msgstr ""
 
-#: modules/pam_lastlog/pam_lastlog.c:619 modules/pam_lastlog/pam_lastlog.c:626
+#: modules/pam_lastlog/pam_lastlog.c:635 modules/pam_lastlog/pam_lastlog.c:642
 #, c-format
 msgid "There was %d failed login attempt since the last successful login."
 msgid_plural ""
@@ -298,19 +304,19 @@ msgid_plural ""
 msgstr[0] ""
 
 #. TRANSLATORS: only used if dngettext is not supported
-#: modules/pam_lastlog/pam_lastlog.c:631
+#: modules/pam_lastlog/pam_lastlog.c:647
 #, c-format
 msgid "There were %d failed login attempts since the last successful login."
 msgstr ""
 
-#: modules/pam_limits/pam_limits.c:1164
+#: modules/pam_limits/pam_limits.c:1317
 #, fuzzy, c-format
 msgid "There were too many logins for '%s'."
 msgstr "មាន​ការ​ចូល​ច្រើន​ពេក​សម្រាប់ '%s' ។"
 
 #: modules/pam_mail/pam_mail.c:289
 #, fuzzy
-msgid "You have no mail."
+msgid "You do not have any new mail."
 msgstr "អ្នក​មាន​សំបុត្រ​ថ្មី ។"
 
 #: modules/pam_mail/pam_mail.c:292
@@ -355,39 +361,39 @@ msgstr ""
 msgid "Unable to create and initialize directory '%s'."
 msgstr ""
 
-#: modules/pam_pwhistory/pam_pwhistory.c:371
-#: modules/pam_unix/pam_unix_passwd.c:589
+#: modules/pam_pwhistory/pam_pwhistory.c:384
+#: modules/pam_unix/pam_unix_passwd.c:583
 msgid "Password has been already used. Choose another."
 msgstr "ពាក្យសម្ងាត់​ត្រូវ​បាន​ប្រើ​រួច​ហើយ ។ សូម​ជ្រើស​មួយ​ទៀត ។"
 
-#: modules/pam_pwhistory/pam_pwhistory.c:378
+#: modules/pam_pwhistory/pam_pwhistory.c:391
 #, fuzzy
 msgid "Password has been already used."
 msgstr "ពាក្យសម្ងាត់​ត្រូវ​បាន​ប្រើ​រួច​ហើយ ។ សូម​ជ្រើស​មួយ​ទៀត ។"
 
-#: modules/pam_selinux/pam_selinux.c:172
+#: modules/pam_selinux/pam_selinux.c:173
 #, fuzzy, c-format
 msgid "The default security context is %s."
 msgstr "មិន​មែន​ជា​បរិបទ​សុវត្ថិភាព​ត្រឹមត្រូវ​មួយឡើយ"
 
-#: modules/pam_selinux/pam_selinux.c:176
+#: modules/pam_selinux/pam_selinux.c:177
 msgid "Would you like to enter a different role or level?"
 msgstr ""
 
-#: modules/pam_selinux/pam_selinux.c:189
+#: modules/pam_selinux/pam_selinux.c:190
 msgid "role:"
 msgstr ""
 
-#: modules/pam_selinux/pam_selinux.c:193
+#: modules/pam_selinux/pam_selinux.c:194
 #, c-format
 msgid "There is no default type for role %s."
 msgstr ""
 
-#: modules/pam_selinux/pam_selinux.c:225
+#: modules/pam_selinux/pam_selinux.c:226
 msgid "level:"
 msgstr ""
 
-#: modules/pam_selinux/pam_selinux.c:259
+#: modules/pam_selinux/pam_selinux.c:260
 #, fuzzy
 msgid "This is not a valid security context."
 msgstr "មិន​មែន​ជា​បរិបទ​សុវត្ថិភាព​ត្រឹមត្រូវ​មួយឡើយ"
@@ -422,7 +428,7 @@ msgstr "បាន​បរាជ័យ pam_set_item()\n"
 msgid "login: failure forking: %m"
 msgstr "ចូល ៖ ចម្លង​ខ្លួន​ឯង​មិន​បាន​ជោគជ័យ ៖ %m"
 
-#: modules/pam_timestamp/pam_timestamp.c:361
+#: modules/pam_timestamp/pam_timestamp.c:384
 #, c-format
 msgid "Access has been granted (last access was %ld seconds ago)."
 msgstr ""
@@ -457,38 +463,42 @@ msgstr[0] ""
 msgid "Warning: your password will expire in %d days."
 msgstr ""
 
-#: modules/pam_unix/pam_unix_passwd.c:465
+#: modules/pam_unix/pam_unix_passwd.c:458
 msgid "NIS password could not be changed."
 msgstr "មិន​អាច​ផ្លាស់ប្ដូរ​ពាក្យសម្ងាត់ NIS បាន​ឡើយ ។"
 
-#: modules/pam_unix/pam_unix_passwd.c:563
+#: modules/pam_unix/pam_unix_passwd.c:556
 #, fuzzy
 msgid "No password has been supplied."
 msgstr "មិន​បាន​ផ្ដល់​ពាក្យសម្ងាត់"
 
-#: modules/pam_unix/pam_unix_passwd.c:564
+#: modules/pam_unix/pam_unix_passwd.c:557
 #, fuzzy
 msgid "The password has not been changed."
 msgstr "មិន​អាច​ផ្លាស់ប្ដូរ​ពាក្យសម្ងាត់ NIS បាន​ឡើយ ។"
 
-#: modules/pam_unix/pam_unix_passwd.c:581
+#: modules/pam_unix/pam_unix_passwd.c:574
 msgid "You must choose a shorter password."
 msgstr "អ្នកត្រូវតែជ្រើសរើសពាក្យសម្ងាត់ខ្លី។"
 
-#: modules/pam_unix/pam_unix_passwd.c:585
+#: modules/pam_unix/pam_unix_passwd.c:578
 #, fuzzy
 msgid "You must choose a longer password."
 msgstr "អ្នក​ត្រូវ​តែ​ជ្រើស​ពាក្យសម្ងាត់​វែង​ជាង​នេះ"
 
-#: modules/pam_unix/pam_unix_passwd.c:692
+#: modules/pam_unix/pam_unix_passwd.c:683
 #, c-format
 msgid "Changing password for %s."
 msgstr ""
 
-#: modules/pam_unix/pam_unix_passwd.c:722
+#: modules/pam_unix/pam_unix_passwd.c:713
 #, fuzzy
 msgid "You must wait longer to change your password."
 msgstr "អ្នក​ត្រូវ​តែ​រង់ចាំ​បន្តិច ដើម្បី​ផ្លាស់ប្ដូរ​ពាក្យសម្ងាត់​របស់​អ្នក"
+
+#, fuzzy
+#~ msgid "You have no mail."
+#~ msgstr "អ្នក​មាន​សំបុត្រ​ថ្មី ។"
 
 #~ msgid "is the same as the old one"
 #~ msgstr "ដូច​គ្នា​នឹង​ពាក្យ​សម្ងាត់​ចាស់"

@@ -1,0 +1,1690 @@
+# Bulgarian translation of cpio po-file.
+# Copyright (C) 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the cpio package.
+# Alexander Shopov <ash@kambanaria.org>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cpio 2.14\n"
+"Report-Msgid-Bugs-To: bug-cpio@gnu.org\n"
+"POT-Creation-Date: 2024-01-14 13:56+0200\n"
+"PO-Revision-Date: 2023-06-18 17:53+0300\n"
+"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
+"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: gnu/argmatch.c:145
+#, c-format
+msgid "invalid argument %s for %s"
+msgstr "аргументът „%s“ на опцията „%s“ е неправилен"
+
+#: gnu/argmatch.c:146
+#, c-format
+msgid "ambiguous argument %s for %s"
+msgstr "аргументът „%s“ на опцията „%s“ не е еднозначен"
+
+#: gnu/argmatch.c:165
+msgid "Valid arguments are:"
+msgstr "Възможните аргументи са:"
+
+#: gnu/argp-help.c:151
+#, c-format
+msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
+msgstr "„ARGP_HELP_FMT“: стойността %s е по-малка или равна на %s"
+
+#: gnu/argp-help.c:227
+#, c-format
+msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
+msgstr "%.*s: параметърът „ARGP_HELP_FMT“ изисква стойност"
+
+#: gnu/argp-help.c:237
+#, c-format
+msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
+msgstr "%.*s: непознат параметър „ARGP_HELP_FMT“"
+
+#: gnu/argp-help.c:250
+#, c-format
+msgid "Garbage in ARGP_HELP_FMT: %s"
+msgstr "Грешки в „ARGP_HELP_FMT“: %s"
+
+#: gnu/argp-help.c:1368
+msgid ""
+"Mandatory or optional arguments to long options are also mandatory or "
+"optional for any corresponding short options."
+msgstr ""
+"Аргументите, задължителните или незадължителни за дългите опции, са "
+"съответно задължителни или незадължителни и за кратките опции."
+
+#: gnu/argp-help.c:1734
+msgid "Usage:"
+msgstr "Използване:"
+
+#: gnu/argp-help.c:1738
+msgid "  or: "
+msgstr "  или: "
+
+#: gnu/argp-help.c:1750
+msgid " [OPTION...]"
+msgstr " [ОПЦИЯ…]"
+
+#: gnu/argp-help.c:1777
+#, c-format
+msgid "Try '%s --help' or '%s --usage' for more information.\n"
+msgstr "За повече информация използвайте „%s --help“ или „%s --usage“.\n"
+
+#: gnu/argp-help.c:1805
+#, c-format
+msgid "Report bugs to %s.\n"
+msgstr ""
+"Съобщавайте за програмни грешки на %s.\n"
+"За грешки в българския превод на <dict@fsa-bg.org>.\n"
+
+#: gnu/argp-help.c:2006 gnu/error.c:194
+msgid "Unknown system error"
+msgstr "Неизвестна системна грешка"
+
+#: gnu/argp-parse.c:80
+msgid "give this help list"
+msgstr "извеждане на тази справка"
+
+#: gnu/argp-parse.c:81
+msgid "give a short usage message"
+msgstr "извеждане на кратко съобщение за използването"
+
+#: gnu/argp-parse.c:82 tests/genfile.c:134
+msgid "NAME"
+msgstr "ИМЕ"
+
+#: gnu/argp-parse.c:83
+msgid "set the program name"
+msgstr "задаване на името на програмата"
+
+#: gnu/argp-parse.c:84
+msgid "SECS"
+msgstr "СЕКУНДИ"
+
+#: gnu/argp-parse.c:85
+msgid "hang for SECS seconds (default 3600)"
+msgstr "спиране за толкова СЕКУНДИ (стандартно е 3600)"
+
+#: gnu/argp-parse.c:142
+msgid "print program version"
+msgstr "извеждане на версията на програмата"
+
+#: gnu/argp-parse.c:159
+msgid "(PROGRAM ERROR) No version known!?"
+msgstr "(ДЕФЕКТ В ПРОГРАМАТА) Неизвестна версия!"
+
+#: gnu/argp-parse.c:612
+#, c-format
+msgid "%s: Too many arguments\n"
+msgstr "%s: Твърде много аргументи\n"
+
+#: gnu/argp-parse.c:758
+msgid "(PROGRAM ERROR) Option should have been recognized!?"
+msgstr "(ДЕФЕКТ В ПРОГРАМАТА) Опцията би трябвало да е била разпозната!"
+
+#: gnu/closeout.c:121 src/util.c:91 src/util.c:94 src/util.c:144
+#, c-format
+msgid "write error"
+msgstr "грешка при запис"
+
+#: gnu/getopt.c:282
+#, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: опцията „%s%s“ не е еднозначна\n"
+
+#: gnu/getopt.c:288
+#, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: опцията „%s%s“ не е еднозначна.  Възможности:"
+
+#: gnu/getopt.c:322
+#, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: непозната опция „%s%s“\n"
+
+#: gnu/getopt.c:348
+#, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: опцията „%s%s“ се използва без аргументи\n"
+
+#: gnu/getopt.c:363
+#, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: опцията „%s%s“ изисква аргумент\n"
+
+#: gnu/getopt.c:624
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: неправилна опция — „%c“\n"
+
+#: gnu/getopt.c:639 gnu/getopt.c:685
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: опцията изисква аргумент — „%c“\n"
+
+#: gnu/obstack.c:317 gnu/obstack.c:319 gnu/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr "паметта е изчерпана"
+
+#: gnu/openat-die.c:38
+#, c-format
+msgid "unable to record current working directory"
+msgstr "не може да се запише коя е текущата работна директория"
+
+#: gnu/openat-die.c:57
+#, c-format
+msgid "failed to return to initial working directory"
+msgstr "не може да се върне към първоначалната работна директория"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  For example, a French Unicode local should translate
+#. these to U+00AB (LEFT-POINTING DOUBLE ANGLE
+#. QUOTATION MARK), and U+00BB (RIGHT-POINTING DOUBLE ANGLE
+#. QUOTATION MARK), respectively.
+#.
+#. If the catalog has no translation, we will try to
+#. use Unicode U+2018 (LEFT SINGLE QUOTATION MARK) and
+#. Unicode U+2019 (RIGHT SINGLE QUOTATION MARK).  If the
+#. current locale is not Unicode, locale_quoting_style
+#. will quote 'like this', and clocale_quoting_style will
+#. quote "like this".  You should always include translations
+#. for "`" and "'" even if U+2018 and U+2019 are appropriate
+#. for your locale.
+#.
+#. If you don't know what to put here, please see
+#. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
+#. and use glyphs suitable for your language.
+#: gnu/quotearg.c:354
+msgid "`"
+msgstr "„"
+
+#: gnu/quotearg.c:355
+msgid "'"
+msgstr "“"
+
+#: gnu/version-etc.c:73
+#, c-format
+msgid "Packaged by %s (%s)\n"
+msgstr "Пакетирано от %s (%s)\n"
+
+#: gnu/version-etc.c:76
+#, c-format
+msgid "Packaged by %s\n"
+msgstr "Пакетирано от %s\n"
+
+#. TRANSLATORS: Translate "(C)" to the copyright symbol
+#. (C-in-a-circle), if this symbol is available in the user's
+#. locale.  Otherwise, do not translate "(C)"; leave it as-is.
+#: gnu/version-etc.c:83
+msgid "(C)"
+msgstr "©"
+
+#. TRANSLATORS: The %s placeholder is the web address of the GPL license.
+#: gnu/version-etc.c:88
+#, c-format
+msgid ""
+"License GPLv3+: GNU GPL version 3 or later <%s>.\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"Лиценз GPLv3+: GNU GPL — версия 3 или по-късна версия <%s>.\n"
+"Тази програма е свободен софтуер. Може да я променяте и/или "
+"разпространявате.\n"
+"Тя се разпространява БЕЗ НИКАКВИ ГАРАНЦИИ доколкото е позволено от закона.\n"
+
+#. TRANSLATORS: %s denotes an author name.
+#: gnu/version-etc.c:105
+#, c-format
+msgid "Written by %s.\n"
+msgstr "Създадено от %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#: gnu/version-etc.c:109
+#, c-format
+msgid "Written by %s and %s.\n"
+msgstr "Създадено от %s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#: gnu/version-etc.c:113
+#, c-format
+msgid "Written by %s, %s, and %s.\n"
+msgstr "Създадено от %s, %s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:120
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s\n"
+"и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:127
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:134
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s, %s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:142
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s, %s, %s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:150
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s, %s, %s, %s\n"
+"и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:159
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, and %s.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s и %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: gnu/version-etc.c:170
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s, and others.\n"
+msgstr ""
+"Създадено от %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s и др.\n"
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying
+#. "Report translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email address).
+#: gnu/version-etc.c:249
+#, c-format
+msgid "Report bugs to: %s\n"
+msgstr ""
+"Докладвайте грешки в програмата на адрес: %s\n"
+"Докладвайте грешки в превода на адрес: <dict@ludost.net>\n"
+
+#: gnu/version-etc.c:251
+#, c-format
+msgid "Report %s bugs to: %s\n"
+msgstr "Докладвайте грешки в „%s“ на адрес: %s\n"
+
+#: gnu/version-etc.c:255 gnu/version-etc.c:257
+#, c-format
+msgid "%s home page: <%s>\n"
+msgstr "Уеб страница на „%s“: <%s>\n"
+
+#: gnu/version-etc.c:260
+#, c-format
+msgid "General help using GNU software: <%s>\n"
+msgstr "Обща помощ за програмите на GNU: <%s>\n"
+
+#. TRANSLATORS: %s after `Cannot' is a function name, e.g. `Cannot open'.
+#. Directly translating this to another language will not work, first because
+#. %s itself is not translated.
+#. Translate it as `%s: Function %s failed'.
+#: lib/paxerror.c:60 lib/paxerror.c:73
+#, c-format
+msgid "%s: Cannot %s"
+msgstr "%s: неуспешно изпълнение на функцията „%s“"
+
+#. TRANSLATORS: %s after `Cannot' is a function name, e.g. `Cannot open'.
+#. Directly translating this to another language will not work, first because
+#. %s itself is not translated.
+#. Translate it as `%s: Function %s failed'.
+#: lib/paxerror.c:86
+#, c-format
+msgid "%s: Warning: Cannot %s"
+msgstr "%s: ВНИМАНИЕ: неуспешно изпълнение на функцията „%s“"
+
+#: lib/paxerror.c:95
+#, c-format
+msgid "%s: Cannot change mode to %s"
+msgstr "%s: неуспешна смяна на режима за достъп на %s"
+
+#: lib/paxerror.c:104
+#, c-format
+msgid "%s: Cannot change ownership to uid %ju, gid %ju"
+msgstr "%s: неуспешна смяна на собствеността на потребител %ju, група %ju"
+
+#: lib/paxerror.c:130
+#, c-format
+msgid "%s: Cannot hard link to %s"
+msgstr "%s: неуспешно създаване на твърда връзка към „%s“"
+
+#: lib/paxerror.c:182 lib/paxerror.c:212
+#, c-format
+msgid "%s: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%s: грешка при четене при байт %jd, при четенето на %zu байт"
+msgstr[1] "%s: грешка при четене при байт %jd, при четенето на %zu байта"
+
+#: lib/paxerror.c:194
+#, c-format
+msgid "%s: Warning: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Warning: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] ""
+"%s: ВНИМАНИЕ: грешка при четене при байт %jd, при четенето на %zu байт"
+msgstr[1] ""
+"%s: ВНИМАНИЕ: грешка при четене при байт %jd, при четенето на %zu байта"
+
+#: lib/paxerror.c:259
+#, c-format
+msgid "%s: Cannot seek to %jd"
+msgstr "%s: неуспешно позициониране към отместване %jd"
+
+#: lib/paxerror.c:273
+#, c-format
+msgid "%s: Warning: Cannot seek to %jd"
+msgstr "%s: ВНИМАНИЕ: неуспешно позициониране към отместване %jd"
+
+#: lib/paxerror.c:281
+#, c-format
+msgid "%s: Cannot create symlink to %s"
+msgstr "%s: неуспешно създаване на символна връзка към %s"
+
+#: lib/paxerror.c:346
+#, c-format
+msgid "%s: Wrote only %zu of %zu byte"
+msgid_plural "%s: Wrote only %zu of %zu bytes"
+msgstr[0] "%s: записани са само %zu от %zu байт"
+msgstr[1] "%s: записани са само %zu от %zu байта"
+
+#: lib/paxnames.c:140
+#, c-format
+msgid "Removing leading `%s' from member names"
+msgstr "Премахване на началния префикс „%s“ от имената на членовете"
+
+#: lib/paxnames.c:141
+#, c-format
+msgid "Removing leading `%s' from hard link targets"
+msgstr "Премахване на началния префикс „%s“ от целите на твърдите връзки"
+
+#: lib/paxnames.c:154
+msgid "Substituting `.' for empty member name"
+msgstr "Използване на „.“ вместо празно име на член"
+
+#: lib/paxnames.c:155
+msgid "Substituting `.' for empty hard link target"
+msgstr "Използване на „.“ вместо празна цел на твърда връзка"
+
+#: lib/rtapelib.c:295
+#, c-format
+msgid "exec/tcp: Service not available"
+msgstr "exec/tcp: услугата не е достъпна"
+
+#: lib/rtapelib.c:299
+#, c-format
+msgid "stdin"
+msgstr "стандартен вход"
+
+#: lib/rtapelib.c:302
+#, c-format
+msgid "stdout"
+msgstr "стандартен изход"
+
+#: lib/rtapelib.c:450
+#, c-format
+msgid "Cannot connect to %s: resolve failed"
+msgstr "Неуспешно свързване към „%s“: адресът не може да се открие"
+
+#: lib/rtapelib.c:523
+#, c-format
+msgid "Cannot redirect files for remote shell"
+msgstr "Неуспешно пренасочване на файлове за отдалечена командна обвивка"
+
+#: lib/rtapelib.c:528
+#, c-format
+msgid "Cannot reset uid and gid: %s"
+msgstr ""
+"Идентификаторите за потребител и група (uid, gid) не може да се променят: %s"
+
+#: lib/rtapelib.c:540
+#, c-format
+msgid "Cannot execute remote shell"
+msgstr "Неуспешно стартиране на отдалечена командна обвивка"
+
+#: rmt/rmt.c:434
+msgid "Seek direction out of range"
+msgstr "Посоката за отместване е извън допустимия диапазон"
+
+#: rmt/rmt.c:440
+msgid "Invalid seek direction"
+msgstr "Неправилна посока за търсене"
+
+#: rmt/rmt.c:448
+msgid "Invalid seek offset"
+msgstr "Неправилно отместване при търсене"
+
+#: rmt/rmt.c:454
+msgid "Seek offset out of range"
+msgstr "Мястото за позициониране е извън допустимия диапазон"
+
+#: rmt/rmt.c:495 rmt/rmt.c:546 rmt/rmt.c:610
+msgid "Invalid byte count"
+msgstr "Неправилен брой байтове"
+
+#: rmt/rmt.c:501 rmt/rmt.c:552 rmt/rmt.c:616 rmt/rmt.c:627
+msgid "Byte count out of range"
+msgstr "Броят байтове е извън допустимия диапазон"
+
+#: rmt/rmt.c:560
+msgid "Premature eof"
+msgstr "Преждевременен край (EOF)"
+
+#: rmt/rmt.c:603
+msgid "Invalid operation code"
+msgstr "Неправилен код на действие"
+
+#: rmt/rmt.c:638 rmt/rmt.c:682
+msgid "Operation not supported"
+msgstr "Действието не се поддържа"
+
+#: rmt/rmt.c:666
+msgid "Unexpected arguments"
+msgstr "Неочаквани аргументи"
+
+#: rmt/rmt.c:691
+msgid "Manipulate a tape drive, accepting commands from a remote process"
+msgstr ""
+"Управление на устройство за магнитна лента, като се приемат команди от "
+"отдалечен процес"
+
+#: rmt/rmt.c:698 src/main.c:130 tests/genfile.c:179
+msgid "NUMBER"
+msgstr "N"
+
+#: rmt/rmt.c:699
+msgid "set debug level"
+msgstr "ниво за изчистване на грешки"
+
+#: rmt/rmt.c:700 src/main.c:167 src/main.c:173 tests/genfile.c:136
+#: tests/genfile.c:193 tests/genfile.c:197 tests/genfile.c:200
+#: tests/genfile.c:206
+msgid "FILE"
+msgstr "ФАЙЛ"
+
+#: rmt/rmt.c:701
+msgid "set debug output file name"
+msgstr "задаване на файл за изхода за изчистване на грешки"
+
+#: rmt/rmt.c:717 rmt/rmt.c:785
+#, c-format
+msgid "cannot open %s"
+msgstr "„%s“ не може да се отвори"
+
+#: rmt/rmt.c:782 tests/genfile.c:1036
+#, c-format
+msgid "too many arguments"
+msgstr "прекалено много аргументи"
+
+#: rmt/rmt.c:824
+msgid "Garbage command"
+msgstr "Непозната команда"
+
+#: src/copyin.c:46
+#, c-format
+msgid "warning: skipped %ld byte of junk"
+msgid_plural "warning: skipped %ld bytes of junk"
+msgstr[0] "ПРЕДУПРЕЖДЕНИЕ: прескочен е %ld байт неправилни данни"
+msgstr[1] "ПРЕДУПРЕЖДЕНИЕ: прескочени са %ld байта неправилни данни"
+
+#: src/copyin.c:68
+#, c-format
+msgid "rename %s -> "
+msgstr "преименуване „%s“ → "
+
+#: src/copyin.c:116
+#, c-format
+msgid "%s: stored filename length is out of range"
+msgstr "%s: името на съхранения файл е прекалено дълго"
+
+#: src/copyin.c:175 src/copyin.c:521 src/copyin.c:536 src/copyin.c:1552
+#, c-format
+msgid "%s: checksum error (0x%x, should be 0x%x)"
+msgstr "%s: грешка в контролната сума (0x%x, а трябва да е 0x%x)"
+
+#: src/copyin.c:202 src/copypass.c:129
+#, c-format
+msgid "%s not created: newer or same age version exists"
+msgstr "%s не е създаден: вече го има със същото или по-ново време"
+
+#: src/copyin.c:212 src/copypass.c:137
+#, c-format
+msgid "cannot remove current %s"
+msgstr "„%s“ не може да се изтрие"
+
+#: src/copyin.c:273 src/copyin.c:469 src/copyin.c:584 src/copypass.c:395
+#, c-format
+msgid "cannot link %s to %s"
+msgstr "неуспешно създаване на връзка „%s“ към „%s“"
+
+#: src/copyin.c:502
+#, c-format
+msgid "cannot swap halfwords of %s: odd number of halfwords"
+msgstr "не може да се разменят половин думи от %s: нечетен брой половин думи"
+
+#: src/copyin.c:510
+#, c-format
+msgid "cannot swap bytes of %s: odd number of bytes"
+msgstr "не може да се разменят байтовете от %s: нечетен брой байтове"
+
+#: src/copyin.c:858 src/copyout.c:826 src/copypass.c:315
+#, c-format
+msgid "%s: unknown file type"
+msgstr "„%s“: непознат вид файл"
+
+#: src/copyin.c:1015 src/copyin.c:1022
+#, c-format
+msgid "Malformed number %.*s"
+msgstr "Неправилно число %.*s"
+
+#: src/copyin.c:1032
+#, c-format
+msgid "Archive value %.*s is out of range"
+msgstr "Стойността %.*s в архива е извън диапазона"
+
+#: src/copyin.c:1071
+#, c-format
+msgid "premature end of archive"
+msgstr "ранен край на архив"
+
+#: src/copyin.c:1170
+#, c-format
+msgid "malformed header: file name of zero length"
+msgstr "неправилен заглавен запис: името на файла е с нулева дължина"
+
+#: src/copyin.c:1178
+#, c-format
+msgid "malformed header: file name is not nul-terminated"
+msgstr "неправилен заглавен запис: името на файла не завършва с нулев байт"
+
+#: src/copyin.c:1300
+#, c-format
+msgid "warning: archive header has reverse byte-order"
+msgstr "предупреждение: заглавната част на архива е с обратен ред на байтовете"
+
+#: src/copyin.c:1437
+#, c-format
+msgid "standard input is closed"
+msgstr "стандартният вход е затворен"
+
+#: src/copyin.c:1610 src/copyout.c:868 src/copypass.c:333
+#, c-format
+msgid "%lu block\n"
+msgid_plural "%lu blocks\n"
+msgstr[0] "%lu блок\n"
+msgstr[1] "%lu блока\n"
+
+#: src/copyout.c:49 src/copyout.c:57
+#, c-format
+msgid "cannot read checksum for %s"
+msgstr "контролната сума на „%s“ не може да се прочете"
+
+#: src/copyout.c:290
+#, c-format
+msgid "%s: value %s %s out of allowed range 0..%s"
+msgstr "%s: стойността %s %s е извън диапазона: 0…%s"
+
+#: src/copyout.c:301
+#, c-format
+msgid "%s: truncating %s"
+msgstr "%s: отсичане на „%s“"
+
+#: src/copyout.c:336 src/copyout.c:399 src/copyout.c:473
+msgid "inode number"
+msgstr "число на i-възел"
+
+#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:477
+msgid "file mode"
+msgstr "режим за достъп"
+
+#: src/copyout.c:342 src/copyout.c:404 src/copyout.c:481
+msgid "uid"
+msgstr "ид. потр."
+
+#: src/copyout.c:345 src/copyout.c:406 src/copyout.c:485
+msgid "gid"
+msgstr "ид. гр."
+
+#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:489
+msgid "number of links"
+msgstr "брой връзки"
+
+#: src/copyout.c:351 src/copyout.c:414
+msgid "modification time"
+msgstr "време на промяна"
+
+#: src/copyout.c:354 src/copyout.c:421 src/copyout.c:513
+msgid "file size"
+msgstr "размер на файл"
+
+#: src/copyout.c:358
+msgid "device major number"
+msgstr "главен номер на устройство"
+
+#: src/copyout.c:362
+msgid "device minor number"
+msgstr "допълнителен номер на устройство"
+
+#: src/copyout.c:366
+msgid "rdev major"
+msgstr "главен номер на кореново устройство (rdev)"
+
+#: src/copyout.c:370
+msgid "rdev minor"
+msgstr "допълнителен номер на кореново устройство (rdev)"
+
+#: src/copyout.c:374 src/copyout.c:417 src/copyout.c:500
+msgid "name size"
+msgstr "размер на името"
+
+#: src/copyout.c:396
+msgid "device number"
+msgstr "номер на устройство"
+
+#: src/copyout.c:411
+msgid "rdev"
+msgstr "номер на кореново устройство (rdev)"
+
+#: src/copyout.c:469
+#, c-format
+msgid "%s: truncating inode number"
+msgstr "%s: отсичане на номер на i-възел"
+
+#: src/copyout.c:499
+#, c-format
+msgid "%s: value %s %s out of allowed range 0..%u"
+msgstr "%s: стойността %s %s е извън диапазона: 0…%u"
+
+#: src/copyout.c:512
+#, c-format
+msgid "%s: value %s %s out of allowed range 0..%lu"
+msgstr "%s: стойността %s %s е извън диапазона: 0…%lu"
+
+#: src/copyout.c:561
+#, c-format
+msgid "%s: file name too long"
+msgstr "%s: твърде дълго име на файл"
+
+#: src/copyout.c:618
+#, c-format
+msgid "standard output is closed"
+msgstr "стандартният изход е затворен"
+
+#: src/copyout.c:641 src/copypass.c:93
+#, c-format
+msgid "blank line ignored"
+msgstr "празният ред се прескача"
+
+#: src/copyout.c:751
+#, c-format
+msgid "%s not dumped: not a regular file"
+msgstr "%s не е изведен, защото не е обикновен файл"
+
+#: src/copyout.c:802
+#, c-format
+msgid "%s: symbolic link too long"
+msgstr "%s: твърде дълга символна връзка"
+
+#: src/copypass.c:390
+#, c-format
+msgid "%s linked to %s"
+msgstr "„%s“ е свързан към „%s“"
+
+#: src/main.c:77
+msgid ""
+"GNU `cpio' copies files to and from archives\n"
+"\n"
+"Examples:\n"
+"  # Copy files named in name-list to the archive\n"
+"  cpio -o < name-list [> archive]\n"
+"  # Extract files from the archive\n"
+"  cpio -i [< archive]\n"
+"  # Copy files named in name-list to destination-directory\n"
+"  cpio -p destination-directory < name-list\n"
+msgstr ""
+"Командата „cpio“ на GNU копира файлове от и в архиви\n"
+"\n"
+"Примери:\n"
+"  # Копиране на файловете изброени в СПИСЪКа към АРХИВа\n"
+"  cpio -o < СПИСЪК [> АРХИВ]\n"
+"  # Извличане на файлове от АРХИВ\n"
+"  cpio -i [< АРХИВ]\n"
+"  # Копиране на файловете изброени в СПИСЪКа към ЦЕЛЕВАта_ДИРЕКТОРИЯ\n"
+"  cpio -p ЦЕЛЕВА_ДИРЕКТОРИЯ < СПИСЪК\n"
+
+#: src/main.c:93
+#, c-format
+msgid "%s is meaningless with %s"
+msgstr "опцията „%s“ е несъвместима с „%s“"
+
+#: src/main.c:99
+msgid "Main operation mode:"
+msgstr "Основно действие:"
+
+#: src/main.c:101
+msgid "Create the archive (run in copy-out mode)"
+msgstr "Създаване на архив (режим на извеждане)"
+
+#: src/main.c:103
+msgid "Extract files from an archive (run in copy-in mode)"
+msgstr "Извличане на файлове от архив (режим на четене)"
+
+#: src/main.c:105
+msgid "Run in copy-pass mode"
+msgstr "Режим на канал"
+
+#: src/main.c:107
+msgid "Print a table of contents of the input"
+msgstr "Извеждане на таблица със съдържението на входа"
+
+#: src/main.c:113
+msgid "Operation modifiers valid in any mode:"
+msgstr "Модификатори на действия, които работят във всички режими:"
+
+#: src/main.c:115
+msgid "DIR"
+msgstr "ДИРЕКТОРИЯ"
+
+#: src/main.c:116
+msgid "Change to directory DIR"
+msgstr "Преминаване към ДИРЕКТОРИЯта"
+
+#: src/main.c:119
+msgid "Archive file is local, even if its name contains colons"
+msgstr "Архивният файл е локален дори името да съдържа „:“"
+
+#: src/main.c:120 tests/genfile.c:158
+msgid "FORMAT"
+msgstr "ФОРМАТ"
+
+#: src/main.c:121
+msgid "Use given archive FORMAT"
+msgstr "Използване на този ФОРМАТ на архив"
+
+#: src/main.c:123
+msgid "Set the I/O block size to 5120 bytes"
+msgstr "Задаване на размера на входно-изходните блокове да е 5120"
+
+#: src/main.c:124
+msgid "BLOCK-SIZE"
+msgstr "РАЗМЕР_НА_БЛОКОВЕте"
+
+#: src/main.c:125
+msgid "Set the I/O block size to BLOCK-SIZE * 512 bytes"
+msgstr ""
+"Задаване размера на входно-изходните блокове да е РАЗМЕР_НА_БЛОКОВЕте * 512 "
+"байта"
+
+#: src/main.c:127
+msgid "Use the old portable (ASCII) archive format"
+msgstr "Ползване на стария преносим (ASCII) формат на архиви"
+
+#: src/main.c:129
+msgid "Print a \".\" for each file processed"
+msgstr "Отпечатване на „.“ за всеки обработен файл"
+
+#: src/main.c:131
+msgid "Set the I/O block size to the given NUMBER of bytes"
+msgstr "Задаване на размера на входно-изходните блокове да е този БРОЙ байтове"
+
+#: src/main.c:133
+msgid "Do not print the number of blocks copied"
+msgstr "Без извеждане на броя на копираните блокове"
+
+#: src/main.c:135
+msgid "Verbosely list the files processed"
+msgstr "Подробно изреждане на обработените файлове"
+
+#: src/main.c:138
+msgid "Enable debugging info"
+msgstr "Включване на информацията за изчистване на грешки"
+
+#: src/main.c:140
+msgid "FLAG"
+msgstr "ФЛАГ"
+
+#: src/main.c:141
+msgid ""
+"Control warning display. Currently FLAG is one of 'none', 'truncate', 'all'. "
+"Multiple options accumulate."
+msgstr ""
+"Управление на извеждане на предупрежденията.  В момента ФЛАГът е някой от "
+"„none“ (без извеждане), „truncate“ (при отсичане), „all“ (всички).  "
+"Задаването на опцията много пъти води до комбинирането на стойностите."
+
+#: src/main.c:142
+msgid "[USER][:.][GROUP]"
+msgstr "[ПОТРЕБИТЕЛ][:.][ГРУПА]"
+
+#: src/main.c:143
+msgid ""
+"Set the ownership of all files created to the specified USER and/or GROUP"
+msgstr ""
+"Задаването на всички създадени файлове да се притежават от зададения "
+"ПОТРЕБИТЕЛ и/или ГРУПА"
+
+#: src/main.c:148
+msgid "Operation modifiers valid in copy-in and copy-out modes"
+msgstr ""
+"Модификатори на действията, които работят и в режим на четене, и в режим на "
+"извеждане"
+
+#: src/main.c:149 src/main.c:184 src/main.c:194
+msgid "[[USER@]HOST:]FILE-NAME"
+msgstr "[[ПОТРЕБИТЕЛ@]ХОСТ:]ИМЕ_НА_ФАЙЛ"
+
+#: src/main.c:150
+msgid ""
+"Use this FILE-NAME instead of standard input or output. Optional USER and "
+"HOST specify the user and host names in case of a remote archive"
+msgstr ""
+"Изполване на това ИМЕ_НА_ФАЙЛ вместо стандартния вход/изход.  "
+"Незадължителните параметри ПОТРЕБИТЕЛ и ХОСТ указват стойностите, които се "
+"използват при отдалечен архив"
+
+#: src/main.c:151 tests/genfile.c:182
+msgid "STRING"
+msgstr "НИЗ"
+
+#: src/main.c:152
+msgid "Print STRING when the end of a volume of the backup media is reached"
+msgstr "Извеждане на този НИЗ при достигане на края на архива"
+
+#: src/main.c:154 src/mt.c:181 tests/genfile.c:203
+msgid "COMMAND"
+msgstr "КОМАНДА"
+
+#: src/main.c:155
+msgid "Use COMMAND instead of rsh"
+msgstr "Ползване на посочената КОМАНДА вместо „rsh“"
+
+#: src/main.c:161
+msgid "Operation modifiers valid only in copy-in mode:"
+msgstr "Тези модификатори на действия работят само в режим на четене на входа:"
+
+#: src/main.c:163
+msgid "Only copy files that do not match any of the given patterns"
+msgstr ""
+"Копиране само на файловете, които не съвпадат с никой от указаните шаблони"
+
+#: src/main.c:165
+msgid "In the verbose table of contents listing, show numeric UID and GID"
+msgstr ""
+"При извеждането на подробното съдържание, да се извеждат и идентификаторите "
+"на потребител и група"
+
+#: src/main.c:168
+msgid ""
+"Read additional patterns specifying filenames to extract or list from FILE"
+msgstr ""
+"Изчитане на допълнителни щаблони, които указват имената на файловете, които "
+"да се ичетат или изброят от ФАЙЛа"
+
+#: src/main.c:170
+msgid ""
+"When reading a CRC format archive, only verify the CRC's of each file in the "
+"archive, don't actually extract the files"
+msgstr ""
+"При изчитане на архив във формат с поддръжка на контролни суми, те да се "
+"проверят, без да се извличат файлове"
+
+#: src/main.c:172
+msgid "Interactively rename files"
+msgstr "Интерактивно преименуване на файлове"
+
+#: src/main.c:176
+msgid ""
+"Swap both halfwords of words and bytes of halfwords in the data. Equivalent "
+"to -sS"
+msgstr ""
+"Замяна както на половините на думите, така и на байтовете в тях в данните.  "
+"Същото като „-sS“"
+
+#: src/main.c:178
+msgid "Swap the bytes of each halfword in the files"
+msgstr "Размяна на байтове във всяка половина на думите във файловете"
+
+#: src/main.c:180
+msgid "Swap the halfwords of each word (4 bytes) in the files"
+msgstr "Размяна на половините на думите във всяка дума (4 байта) във файловете"
+
+#: src/main.c:183
+msgid "Extract files to standard output"
+msgstr "Извличане на файловете на стандартния изход"
+
+#: src/main.c:185
+msgid ""
+"Archive filename to use instead of standard input. Optional USER and HOST "
+"specify the user and host names in case of a remote archive"
+msgstr ""
+"Име на файл за архив вместо стандартния вход.  Незадължителните стойности "
+"ПОТРЕБИТЕЛ и ХОСТ важат при отдалечени архиви"
+
+#: src/main.c:191
+msgid "Operation modifiers valid only in copy-out mode:"
+msgstr "Модификатори на действия, които работят само в режим на извеждане:"
+
+#: src/main.c:193
+msgid "Append to an existing archive."
+msgstr "Добавяне към съществуващ архив."
+
+#: src/main.c:195
+msgid ""
+"Archive filename to use instead of standard output. Optional USER and HOST "
+"specify the user and host names in case of a remote archive"
+msgstr ""
+"Име на файл за архив вместо стандартния изход.  Незадължителните стойности "
+"ПОТРЕБИТЕЛ и ХОСТ важат при отдалечени архиви"
+
+#: src/main.c:197
+msgid "Renumber inodes"
+msgstr "Нови номера на i-възлите"
+
+#: src/main.c:199
+msgid "Don't store device numbers"
+msgstr "Без запазване на номерата на устройствата"
+
+#: src/main.c:201
+msgid "ignore number of links of a directory; always assume 2"
+msgstr ""
+"прескачане на броя на връзките в директория, винаги да се приемат, че са 2"
+
+#: src/main.c:203
+msgid "Create device-independent (reproducible) archives"
+msgstr "Създаване на апаратно независими (възпроизведими) архиви"
+
+#: src/main.c:210
+msgid "Operation modifiers valid only in copy-pass mode:"
+msgstr "Модификатори на действия, които работят само в режим на филтър:"
+
+#: src/main.c:212
+msgid "Link files instead of copying them, when  possible"
+msgstr "Връзки към файловете вместо копиране, когато това е възможно"
+
+#: src/main.c:219
+msgid "Operation modifiers valid in copy-in and copy-out modes:"
+msgstr ""
+"Модификатори на действия, които работят и в режим на четене, и в режим на "
+"извеждане:"
+
+#: src/main.c:221
+msgid "Do not strip file system prefix components from the file names"
+msgstr ""
+"Оставяне на компонентите на системните префикси в началото на имената на "
+"файлове"
+
+#: src/main.c:224
+msgid "Create all files relative to the current directory"
+msgstr "Създаване на всички файлове спрямо текущата работна директория"
+
+#: src/main.c:229
+msgid "Operation modifiers valid in copy-out and copy-pass modes:"
+msgstr ""
+"Модификатори на действия, които работят и в режим на извеждане, и в режим на "
+"филтър:"
+
+#: src/main.c:231
+msgid ""
+"Filenames in the list are delimited by null characters instead of newlines"
+msgstr ""
+"Имената на файлове в списъка са разделени с нулеви знаци, а не нови редове"
+
+#: src/main.c:233
+msgid ""
+"Dereference  symbolic  links  (copy  the files that they point to instead of "
+"copying the links)."
+msgstr ""
+"Следване на символните връзки — копиране на сочените от тях файлове, а не на "
+"самите връзки."
+
+#: src/main.c:235
+msgid "Reset the access times of files after reading them"
+msgstr "Задаване на времето на достъп до файла при четенето им"
+
+#: src/main.c:241
+msgid "Operation modifiers valid in copy-in and copy-pass modes:"
+msgstr ""
+"Модификатори на действията, които работят и в режим на четене, и на "
+"извеждане:"
+
+#: src/main.c:243
+msgid "Retain previous file modification times when creating files"
+msgstr ""
+"Запазване на предишното време на промяна на файла при създаването на файлове"
+
+#: src/main.c:245
+msgid "Create leading directories where needed"
+msgstr "Създаване на водещите директории при необходимост"
+
+#: src/main.c:247
+msgid "Do not change the ownership of the files"
+msgstr "Без промяна на собствеността на файловете"
+
+#: src/main.c:249
+msgid "Replace all files unconditionally"
+msgstr "Безусловна замяна на всички файлове"
+
+#: src/main.c:251
+msgid "Write files with large blocks of zeros as sparse files"
+msgstr ""
+"Запазване на файловете с големи последователност от нулеви байтове като "
+"рехави файлове"
+
+#: src/main.c:327 src/main.c:344
+msgid "invalid block size"
+msgstr "неправилен размер на блок"
+
+#: src/main.c:333 src/main.c:369
+msgid "Archive format multiply defined"
+msgstr "Многократно указан формат на архива"
+
+#: src/main.c:387
+#, c-format
+msgid ""
+"invalid archive format `%s'; valid formats are:\n"
+"crc newc odc bin ustar tar (all-caps also recognized)"
+msgstr ""
+"неправилен формат на архив „%s“.  Валидни са следните:\n"
+"„crc“, „newc“, „odc“, „bin“, „ustar“, „tar“.\n"
+"Вариантите изцяло с главни букви също се приемат."
+
+#: src/main.c:394 src/main.c:439 src/main.c:453
+msgid "Mode already defined"
+msgstr "Режимът вече е указан"
+
+#: src/main.c:433
+msgid "--no-preserve-owner cannot be used with --owner"
+msgstr "опциите „--no-preserve-owner“ и „--owner“ са несъвместими"
+
+#: src/main.c:493
+msgid "--owner cannot be used with --no-preserve-owner"
+msgstr "опциите „--owner“ и „--no-preserve-owner“ са несъвместими"
+
+#: src/main.c:541
+#, c-format
+msgid "Invalid value for --warning option: %s"
+msgstr "Неправилна стойност за „--warning“: %s"
+
+#: src/main.c:571
+msgid "[destination-directory]"
+msgstr "[ЦЕЛЕВА_ДИРЕКТОРИЯ]"
+
+#: src/main.c:607
+msgid "You must specify one of -oipt options."
+msgstr "Трябва да укажете някоя от опциите „-o“/„-i“/„-p“/„-t“"
+
+#: src/main.c:633
+msgid "Both -I and -F are used in copy-in mode"
+msgstr "Опциите „-I“ и „-F“ изискват режим на четене на входа"
+
+#: src/main.c:645 src/main.c:685
+msgid "Too many arguments"
+msgstr "Прекалено много аргументи"
+
+#: src/main.c:664
+msgid ""
+"--append is used but no archive file name is given (use -F or -O options)"
+msgstr ""
+"опцията „--append“ изисква име на архив, ползвайте някоя от опциите „-F“ или "
+"„-O“"
+
+#: src/main.c:671
+msgid "Both -O and -F are used in copy-out mode"
+msgstr "В режим на извеждане се ползат и опцията „-O“, и „-F“"
+
+#: src/main.c:687
+msgid "Not enough arguments"
+msgstr "Недостатъчно аргументи"
+
+#: src/main.c:691
+msgid "Archive format is not specified in copy-pass mode (use --format option)"
+msgstr ""
+"В режим на филтър не е указан форматът на архива, ползвайте опцията „--"
+"format“"
+
+#: src/main.c:717
+#, c-format
+msgid "-F can be used only with --create or --extract"
+msgstr "„--F“ изисква опцията „--create“ или „--extract“"
+
+#: src/main.c:720
+#, c-format
+msgid "Cannot open %s"
+msgstr "„%s“ не може да се отвори"
+
+#: src/main.c:792
+#, c-format
+msgid "error closing archive"
+msgstr "грешка при затваряне на архив"
+
+#: src/makepath.c:81 src/makepath.c:128
+#, c-format
+msgid "cannot make directory `%s'"
+msgstr "директорията „%s“ не може да се създаде"
+
+#: src/makepath.c:104 src/makepath.c:154
+#, c-format
+msgid "`%s' exists but is not a directory"
+msgstr "„%s“ съществува, но не е директория"
+
+#: src/mt.c:165
+msgid "control magnetic tape drive operation"
+msgstr "управление на устройство с магнитна лента"
+
+#: src/mt.c:179
+msgid "DEVICE"
+msgstr "УСТРОЙСТВО"
+
+#: src/mt.c:180
+msgid "use device as the file name of the tape drive to operate on"
+msgstr ""
+"използвоне на УСТРОЙСТВОто като име на лентово устройство, с което да се "
+"работи"
+
+#: src/mt.c:182
+msgid "use remote COMMAND instead of rsh"
+msgstr "ползване на посочената КОМАНДА вместо „rsh“"
+
+#: src/mt.c:203
+msgid "operation"
+msgstr "действие"
+
+#: src/mt.c:211
+#, c-format
+msgid "invalid count value"
+msgstr "неправилен брой"
+
+#: src/mt.c:230
+#, c-format
+msgid "no tape device specified"
+msgstr "не е указано лентово устройство"
+
+#: src/mt.c:253
+msgid "operation [count]"
+msgstr "операция [брой]"
+
+#: src/mt.c:270
+#, c-format
+msgid "%s is not a character special file"
+msgstr "„%s“ не е знаков специален файл"
+
+#: src/mt.c:281 src/mt.c:290
+#, c-format
+msgid "%s: rmtioctl failed"
+msgstr "%s: неуспешно изпълнение на „rmtioctl“"
+
+#: src/mt.c:343
+#, c-format
+msgid "%s: rmtopen failed"
+msgstr "%s: неуспешно изпълнение на „rmtopen“"
+
+#: src/mt.c:356
+#, c-format
+msgid "%s: rmtclose failed"
+msgstr "%s: неуспешно изпълнение на „rmtclose“"
+
+#: src/tar.c:303
+#, c-format
+msgid "invalid header: checksum error"
+msgstr "неправилна заглавна част: грешна контролна сума"
+
+#: src/userspec.c:123
+msgid "invalid user"
+msgstr "несъществуващ потребител"
+
+#: src/userspec.c:129
+msgid "cannot get the login group of a numeric UID"
+msgstr "групата за вход с числов идентификатор не бе открита"
+
+#: src/userspec.c:172
+msgid "invalid group"
+msgstr "несъществуваща група"
+
+#: src/util.c:146
+#, c-format
+msgid "write error: partial write"
+msgstr "грешка при запис: частичен запис"
+
+#: src/util.c:208 src/util.c:374
+#, c-format
+msgid "read error"
+msgstr "грешка при четене"
+
+#: src/util.c:210
+#, c-format
+msgid "premature end of file"
+msgstr "ранен край на файл"
+
+#: src/util.c:493 src/util.c:544
+#, c-format
+msgid "File %s shrunk by %s byte, padding with zeros"
+msgid_plural "File %s shrunk by %s bytes, padding with zeros"
+msgstr[0] "Файлът „%s“ намаля̀ с %s байт, допълва се с нула"
+msgstr[1] "Файлът „%s“ намаля̀ с %s байта, допълва се с нули"
+
+#: src/util.c:500 src/util.c:551
+#, c-format
+msgid "Read error at byte %lld in file %s, padding with zeros"
+msgstr ""
+"Грешка при четене при байт %lld във файл „%s“, заместване с нулеви байтове"
+
+#: src/util.c:586
+#, c-format
+msgid "File %s grew, %<PRIuMAX> new byte not copied"
+msgid_plural "File %s grew, %<PRIuMAX> new bytes not copied"
+msgstr[0] "Файлът „%s“ се увеличи, %<PRIuMAX> байт не е копиран"
+msgstr[1] "Файлът „%s“ се увеличи, %<PRIuMAX> байта не са копирани"
+
+#: src/util.c:592
+#, c-format
+msgid "File %s was modified while being copied"
+msgstr "Файлът „%s“ бе променен докато се копираше"
+
+#: src/util.c:606
+#, c-format
+msgid "virtual memory exhausted"
+msgstr "виртуалната памет е изчерпана"
+
+#: src/util.c:612
+#, c-format
+msgid "Creating intermediate directory `%s'"
+msgstr "Създаване на междинната директория „%s“"
+
+#: src/util.c:649 src/util.c:655
+#, c-format
+msgid "cannot seek on output"
+msgstr "в изхода не може да се търси"
+
+#: src/util.c:871
+#, c-format
+msgid "Found end of tape.  Load next tape and press RETURN. "
+msgstr ""
+"Достигнат е краят на лентата.  Заредете следващата и натиснете RETURN. "
+
+#: src/util.c:873
+#, c-format
+msgid "Found end of tape.  To continue, type device/file name when ready.\n"
+msgstr ""
+"Достигнат е краят на лентата.  За да продължите, когато сте готови, въведете "
+"името на устройството/файла.\n"
+
+#: src/util.c:896
+#, c-format
+msgid "To continue, type device/file name when ready.\n"
+msgstr ""
+"За да продължите, когато сте готови, въведете името на устройството/файла.\n"
+
+#: src/util.c:921
+#, c-format
+msgid "internal error: tape descriptor changed from %d to %d"
+msgstr "вътрешна грешка: дескрипторът на лентата се смени от %d на %d"
+
+#: src/util.c:1492
+#, c-format
+msgid "%s is not a directory"
+msgstr "%s: не е директория"
+
+#: src/util.c:1512
+#, c-format
+msgid "Creating directory `%s'"
+msgstr "Директорията „%s“ се създава"
+
+#: src/util.c:1519
+#, c-format
+msgid "cannot change to directory `%s'"
+msgstr "не може да се влезе в директорията „%s“"
+
+#: tests/genfile.c:115
+msgid ""
+"genfile manipulates data files for GNU paxutils test suite.\n"
+"OPTIONS are:\n"
+msgstr ""
+"„genfile“ борави с файловете с данни за тестовия пакет GNU paxutils.\n"
+"ОПЦИите са:\n"
+
+#: tests/genfile.c:131
+msgid "File creation options:"
+msgstr "Опции за създаването на файл:"
+
+#: tests/genfile.c:132 tests/genfile.c:143
+msgid "SIZE"
+msgstr "РАЗМЕР"
+
+#: tests/genfile.c:133
+msgid "Create file of the given SIZE"
+msgstr "Създаване на файл с посочения РАЗМЕР"
+
+#: tests/genfile.c:135
+msgid "Write to file NAME, instead of standard output"
+msgstr "Запис във файл с това ИМЕ вместо на стандартния изход"
+
+#: tests/genfile.c:137
+msgid "Read file names from FILE"
+msgstr "Четене на файловите имена от ФАЙЛ"
+
+#: tests/genfile.c:139
+msgid "-T reads null-terminated names"
+msgstr "„-T“ — четене на имена, завършващи с нулев байт"
+
+#: tests/genfile.c:140
+msgid "PATTERN"
+msgstr "ШАБЛОН"
+
+#: tests/genfile.c:141
+msgid "Fill the file with the given PATTERN. PATTERN is 'default' or 'zeros'"
+msgstr ""
+"Попълва файла с посочения ОБРАЗЕЦ, който е или „default“ (стандартно) или "
+"„zeros“ (нули)"
+
+#: tests/genfile.c:144
+msgid "Size of a block for sparse file"
+msgstr "Размер на блок за рехав файл"
+
+#: tests/genfile.c:146
+msgid "Generate sparse file. Rest of the command line gives the file map."
+msgstr ""
+"Генериране на рехав файл.  Останалата част от командния ред дава карта на "
+"файла."
+
+#: tests/genfile.c:148
+msgid "OFFSET"
+msgstr "ОТМЕСТВАНЕ"
+
+#: tests/genfile.c:149
+msgid "Seek to the given offset before writing data"
+msgstr "Позициониране при зададеното ОТМЕСТВАНЕ преди запис на данни"
+
+#: tests/genfile.c:152
+msgid "Suppress non-fatal diagnostic messages"
+msgstr "Без извеждане на диагностичните съобщения"
+
+#: tests/genfile.c:156
+msgid "File statistics options:"
+msgstr "Опции за файлови статистики:"
+
+#: tests/genfile.c:159
+msgid "Print contents of struct stat for each given file. Default FORMAT is: "
+msgstr ""
+"Извеждане съдържанието на структурата „stat“ за всеки файл. Стандартно "
+"ФОРМАТът е: "
+
+#: tests/genfile.c:163
+msgid "stat symbolic links instead of referenced files"
+msgstr ""
+
+#: tests/genfile.c:167
+msgid ""
+"Set access and modification times of the files to the time supplied by --"
+"date option"
+msgstr ""
+
+#: tests/genfile.c:174
+msgid "Synchronous execution options:"
+msgstr "Опции за синхронно изпълнение:"
+
+#: tests/genfile.c:176
+msgid "N"
+msgstr "БРОЙ"
+
+#: tests/genfile.c:177
+msgid ""
+"Execute ARGS. Trigger checkpoints every Nth record (default 1). Useful with "
+"--checkpoint and one of --cut, --append, --touch, --unlink"
+msgstr ""
+"Изпълняване на посочените АРГУМЕНТИ.  Включване на контролна точка след "
+"всеки такъв БРОЙ записи (стандартно 1).  Полезно с опцията „--checkpoint“ и "
+"някоя от „--cut“, „--append“, „--touch“, „--unlink“"
+
+#: tests/genfile.c:180
+msgid "Perform given action (see below) upon reaching checkpoint NUMBER"
+msgstr ""
+"Изпълняване на посоченото действие (вж. по-долу) до достигането на контролна "
+"точка N"
+
+#: tests/genfile.c:183
+msgid "Set date for next --touch option"
+msgstr "Посочване на дата за следващата опция „--touch“"
+
+#: tests/genfile.c:186
+msgid "Display executed checkpoints and exit status of COMMAND"
+msgstr ""
+"Извеждане на изпълнените контролни точки и кода на завършване на КОМАНДА"
+
+#: tests/genfile.c:191
+msgid ""
+"Synchronous execution actions. These are executed when checkpoint number "
+"given by --checkpoint option is reached."
+msgstr ""
+"Синхронно изпълнение на действията.  Те се изпълняват когато се достигне "
+"контролната точка с номер, посочен с „--checkpoint“."
+
+#: tests/genfile.c:194
+msgid ""
+"Truncate FILE to the size specified by previous --length option (or 0, if it "
+"is not given)"
+msgstr ""
+"Отсичане на ФАЙЛа до размера, определен с предходна опция „--"
+"length“ (стандартно е 0)"
+
+#: tests/genfile.c:198
+msgid "Append SIZE bytes to FILE. SIZE is given by previous --length option."
+msgstr ""
+"Добавяне на този РАЗМЕР байтове към ФАЙЛ.  РАЗМЕРът се определя от предходна "
+"опция „--length“."
+
+#: tests/genfile.c:201
+msgid "Update the access and modification times of FILE"
+msgstr "Обновяване на времето на достъп и промяна на ФАЙЛа"
+
+#: tests/genfile.c:204
+msgid "Execute COMMAND"
+msgstr "Изпълняване на КОМАНДА"
+
+#: tests/genfile.c:207
+msgid "Delete FILE"
+msgstr "Изтриване на ФАЙЛ"
+
+#: tests/genfile.c:258
+#, c-format
+msgid "Invalid size: %s"
+msgstr "Неправилен размер: %s"
+
+#: tests/genfile.c:263
+#, c-format
+msgid "Number out of allowed range: %s"
+msgstr "Номер извън допустимия диапазон: %s"
+
+#: tests/genfile.c:266
+#, c-format
+msgid "Negative size: %s"
+msgstr "Отрицателен размер: %s"
+
+#: tests/genfile.c:279 tests/genfile.c:672
+#, c-format
+msgid "stat(%s) failed"
+msgstr "неуспешно изпълнение на stat(%s)"
+
+#: tests/genfile.c:284
+#, c-format
+msgid "requested file length %jd, actual %jd"
+msgstr "заявената дължина на файл е %jd, а действителната е %jd"
+
+#: tests/genfile.c:289
+#, c-format
+msgid "created file is not sparse"
+msgstr "създаденият файл не е рехав"
+
+#: tests/genfile.c:390
+#, c-format
+msgid "Error parsing number near `%s'"
+msgstr "Грешка при анализа на число до „%s“"
+
+#: tests/genfile.c:396
+#, c-format
+msgid "Unknown date format"
+msgstr "Непознат формат за дата"
+
+#: tests/genfile.c:420
+msgid "[ARGS...]"
+msgstr "[АРГУМЕНТ…]"
+
+#: tests/genfile.c:457 tests/genfile.c:497 tests/genfile.c:598
+#: tests/genfile.c:787 tests/genfile.c:801
+#, c-format
+msgid "cannot open `%s'"
+msgstr "„%s“ не може да се отвори"
+
+#: tests/genfile.c:463
+msgid "cannot seek"
+msgstr "не може да се търси"
+
+#: tests/genfile.c:480
+#, c-format
+msgid "file name contains null character"
+msgstr "името на файла съдържа нулев байт"
+
+#: tests/genfile.c:593
+#, c-format
+msgid "cannot generate sparse files on standard output, use --file option"
+msgstr ""
+"рехави файлове не може да се създават на стандартния изход, използвайте "
+"опцията „--file“"
+
+#: tests/genfile.c:699
+#, c-format
+msgid "incorrect mask (near `%s')"
+msgstr "неправилна маска (до „%s“)"
+
+#: tests/genfile.c:705 tests/genfile.c:738
+#, c-format
+msgid "Unknown field `%s'"
+msgstr "Непознато поле „%s“"
+
+#: tests/genfile.c:756 tests/genfile.c:776
+#, c-format
+msgid "cannot set time on `%s'"
+msgstr "времето не може да се смени на „%s“"
+
+#: tests/genfile.c:806
+#, c-format
+msgid "cannot truncate `%s'"
+msgstr "„%s“ не може да се отсече с „truncate“"
+
+#: tests/genfile.c:815
+#, c-format
+msgid "command failed: %s"
+msgstr "командата „%s“ не успя"
+
+#: tests/genfile.c:822
+#, c-format
+msgid "cannot stat `%s'"
+msgstr "не може да се получи информация със „stat“ за „%s“"
+
+#: tests/genfile.c:826
+#, c-format
+msgid "cannot remove directory `%s'"
+msgstr "директорията „%s“ не може да се изтрие"
+
+#: tests/genfile.c:829
+#, c-format
+msgid "cannot unlink `%s'"
+msgstr "„%s“ не може да се изтрие"
+
+#: tests/genfile.c:969
+#, c-format
+msgid "Command exited successfully\n"
+msgstr "Командата завърши успешно\n"
+
+#: tests/genfile.c:971
+#, c-format
+msgid "Command failed with status %d\n"
+msgstr "Командата завърши неуспешно с код %d\n"
+
+#: tests/genfile.c:975
+#, c-format
+msgid "Command terminated on signal %d\n"
+msgstr "Командата бе прекратена със сигнал %d\n"
+
+#: tests/genfile.c:977
+#, c-format
+msgid "Command stopped on signal %d\n"
+msgstr "Командата бе спряна със сигнал %d\n"
+
+#: tests/genfile.c:980
+#, c-format
+msgid "Command dumped core\n"
+msgstr "Командата генерира „core“\n"
+
+#: tests/genfile.c:983
+#, c-format
+msgid "Command terminated\n"
+msgstr "Командата бе прекратена\n"
+
+#: tests/genfile.c:1015
+#, c-format
+msgid "--stat requires file names"
+msgstr "„--stat“ изисква файлови имена"
+
+#: tests/genfile.c:1023
+#, fuzzy, c-format
+msgid "--set-times requires file names"
+msgstr "„--stat“ изисква файлови имена"

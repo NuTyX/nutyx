@@ -1,146 +1,177 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001, 2002, 2003 Free Software Foundation, Inc.
+# Belarusian messages for GNU grep.
+# Copyright (C) 2001, 2002, 2003, 2022, 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the grep package.
+#
 # Ales Nyakhaychyk <nab@mail.by>, 2001-2003.
+# Viachaslau Khalikin <viachaslau.vinegret@outlook.com>, 2022, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: grep 2.5g\n"
+"Project-Id-Version: GNU grep 3.10.12\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2020-11-08 20:37-0800\n"
-"PO-Revision-Date: 2003-07-22 17:18+0300\n"
-"Last-Translator: Ales Nyakhaychyk <nab@mail.by>\n"
-"Language-Team: Belarusian <i18n@mova.org>\n"
+"POT-Creation-Date: 2023-05-13 01:14-0700\n"
+"PO-Revision-Date: 2023-05-13 03:04+0300\n"
+"Last-Translator: Viachaslau Khalikin <viachaslau.vinegret@outlook.com>\n"
+"Language-Team: Belarusian <debian-l10n-belarusian@lists.debian.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: Emacs 28.2, po mode 2.27\n"
 
-#: lib/argmatch.c:132
+#: lib/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
-msgstr ""
+msgstr "няправільны аргумэнт %s для %s"
 
-#: lib/argmatch.c:133
+#: lib/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
-msgstr ""
+msgstr "неадназначны аргумэнт %s для %s"
 
-#: lib/argmatch.c:152 lib/argmatch.h:223
+#: lib/argmatch.c:165 lib/argmatch.h:242
 msgid "Valid arguments are:"
-msgstr ""
+msgstr "Сапраўдныя аргумэнты:"
 
-#: lib/c-stack.c:225 lib/c-stack.c:338
+#: lib/c-stack.c:186
 msgid "program error"
-msgstr ""
+msgstr "праграмная памылка"
 
-#: lib/c-stack.c:226 lib/c-stack.c:339
+#: lib/c-stack.c:187
 msgid "stack overflow"
-msgstr ""
+msgstr "перапаўненьне стэка"
 
-#: lib/closeout.c:122 src/grep.c:1341
+#: lib/closeout.c:121 src/grep.c:1346
 msgid "write error"
-msgstr ""
+msgstr "памылка запісу"
 
-#: lib/dfa.c:954
-#, fuzzy
+#: lib/dfa.c:897
 msgid "unbalanced ["
-msgstr "Неўраўнаважаная ["
+msgstr "неўраўнаважаная ["
 
-#: lib/dfa.c:1075
+#: lib/dfa.c:1018
 msgid "invalid character class"
-msgstr ""
+msgstr "няправільная кляса сымбаляў"
 
-#: lib/dfa.c:1201
+#: lib/dfa.c:1146
 msgid "character class syntax is [[:space:]], not [:space:]"
-msgstr ""
+msgstr "сынтаксіс клясы сымбаляў [[:space:]], а не [:space:]"
 
-#: lib/dfa.c:1268
-#, fuzzy
+#: lib/dfa.c:1222
 msgid "unfinished \\ escape"
-msgstr "Незавершаная \\ кіруючая пасьлядоўнасьць"
+msgstr "незавершаная \\ экраніруючая пасьлядоўнасьць"
 
-#: lib/dfa.c:1429
-#, fuzzy
+#: lib/dfa.c:1332
+msgid "? at start of expression"
+msgstr "? у пачатку выразу"
+
+#: lib/dfa.c:1344
+msgid "* at start of expression"
+msgstr "* у пачатку выразу"
+
+#: lib/dfa.c:1358
+msgid "+ at start of expression"
+msgstr "+ у пачатку выразу"
+
+#: lib/dfa.c:1413
+msgid "{...} at start of expression"
+msgstr "{...} у пачатку выразу"
+
+#: lib/dfa.c:1416
 msgid "invalid content of \\{\\}"
-msgstr "недапушчальны найбольшы лічыльнік"
+msgstr "няправільнае зьмесьціва ў \\{\\}"
 
-#: lib/dfa.c:1432
+#: lib/dfa.c:1418
 msgid "regular expression too big"
-msgstr ""
+msgstr "занадта вялікі рэгулярны выраз"
 
-#: lib/dfa.c:1916
-#, fuzzy
+#: lib/dfa.c:1568
+msgid "stray \\ before unprintable character"
+msgstr "залішні \\ перад недрукаваным сымбалем"
+
+#: lib/dfa.c:1570
+msgid "stray \\ before white space"
+msgstr "залішні \\ перад прагалам"
+
+#: lib/dfa.c:1574
+#, c-format
+msgid "stray \\ before %lc"
+msgstr "залішні \\ перад %lc"
+
+#: lib/dfa.c:1575
+msgid "stray \\"
+msgstr "залішні \\"
+
+#: lib/dfa.c:1925
 msgid "unbalanced ("
-msgstr "Неўраважаная ("
+msgstr "неўраўнаважаная ("
 
-#: lib/dfa.c:2033
-#, fuzzy
+#: lib/dfa.c:2042
 msgid "no syntax specified"
-msgstr "Сынтаксіс нявызначаны"
+msgstr "сынтаксіс нявызначаны"
 
-#: lib/dfa.c:2044
-#, fuzzy
+#: lib/dfa.c:2053
 msgid "unbalanced )"
-msgstr "Неўраўнаважаная )"
+msgstr "неўраўнаважаная )"
 
-#: lib/error.c:195
+#: lib/error.c:193
 msgid "Unknown system error"
 msgstr "Невядомая сыстэмная памылка"
 
 #: lib/getopt.c:278
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: выбар \"%s\" неадназначны\n"
+msgstr "%s: опцыя «%s%s» неадназначная\n"
 
 #: lib/getopt.c:284
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: выбар \"%s\" неадназначны\n"
+msgstr "%s: опцыя «%s%s» неадназначная; магчымыя варыянты:"
 
 #: lib/getopt.c:319
-#, fuzzy, c-format
+#, c-format
 msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: нераспазнаны выбар \"%c%s\n"
+msgstr "%s: нераспазнаная опцыя «%s%s»\n"
 
 #: lib/getopt.c:345
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: выбар \"%c%s\" не дазваляе довад\n"
+msgstr "%s: опцыя «%s%s» не дапускае аргумэнтаў\n"
 
 #: lib/getopt.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: выбар \"%s\" патрабуе довад\n"
+msgstr "%s: опцыя «%s%s» патрабуе аргумэнт\n"
 
 #: lib/getopt.c:621
-#, fuzzy, c-format
+#, c-format
 msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: нерэчаісны выбар -- %c\n"
+msgstr "%s: няправільная опцыя -- «%c»\n"
 
 #: lib/getopt.c:636 lib/getopt.c:682
-#, fuzzy, c-format
+#, c-format
 msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: выбар патрабуе довад -- %c\n"
+msgstr "%s: опцыя патрабуе аргумэнт -- «%c»\n"
 
-#: lib/obstack.c:338 lib/obstack.c:340 lib/xalloc-die.c:34
+#: lib/obstack.c:337 lib/obstack.c:339 lib/xalloc-die.c:34
 msgid "memory exhausted"
 msgstr "памяць вычарпана"
 
 #: lib/openat-die.c:38
 #, c-format
 msgid "unable to record current working directory"
-msgstr ""
+msgstr "нельга захаваць бягучы рабочы каталёг"
 
 #: lib/openat-die.c:57
 #, c-format
 msgid "failed to return to initial working directory"
-msgstr ""
+msgstr "не атрымалася вярнуцца ў пачатковы рабочы каталёг"
 
-#: lib/xbinary-io.c:37
+#: lib/xbinary-io.c:36
 #, c-format
 msgid "failed to set file descriptor text/binary mode"
-msgstr ""
+msgstr "не атрымалася задаць тэкставы або двайковы рэжым дэскрыптара файла"
 
 #. TRANSLATORS:
 #. Get translations for open and closing quotation marks.
@@ -163,102 +194,102 @@ msgstr ""
 #. If you don't know what to put here, please see
 #. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:355
+#: lib/quotearg.c:354
 msgid "`"
-msgstr "\""
+msgstr "«"
 
-#: lib/quotearg.c:356
+#: lib/quotearg.c:355
 msgid "'"
-msgstr "\""
+msgstr "»"
 
-#: lib/regcomp.c:135
+#: lib/regcomp.c:122
 msgid "Success"
-msgstr ""
+msgstr "Посьпех"
 
-#: lib/regcomp.c:138
+#: lib/regcomp.c:125
 msgid "No match"
-msgstr ""
+msgstr "Няма супадзеньняў"
 
-#: lib/regcomp.c:141
+#: lib/regcomp.c:128
 msgid "Invalid regular expression"
-msgstr ""
+msgstr "Памылковы рэгулярны выраз"
 
-#: lib/regcomp.c:144
+#: lib/regcomp.c:131
 msgid "Invalid collation character"
-msgstr ""
+msgstr "Няправільны сымбаль параўнаньня"
 
-#: lib/regcomp.c:147
+#: lib/regcomp.c:134
 msgid "Invalid character class name"
-msgstr ""
+msgstr "Няправільная назва клясы сымбаляў"
 
-#: lib/regcomp.c:150
+#: lib/regcomp.c:137
 msgid "Trailing backslash"
-msgstr ""
+msgstr "Канчатковая адваротная косая рыска"
 
-#: lib/regcomp.c:153
+#: lib/regcomp.c:140
 msgid "Invalid back reference"
-msgstr ""
+msgstr "Памылковая зваротная спасылка"
 
-#: lib/regcomp.c:156
+#: lib/regcomp.c:143
 msgid "Unmatched [, [^, [:, [., or [="
-msgstr ""
+msgstr "Несупастаўляльны [, [^, [:, [. ці [="
 
-#: lib/regcomp.c:159
+#: lib/regcomp.c:146
 msgid "Unmatched ( or \\("
-msgstr ""
+msgstr "Несупастаўляльны ( ці \\("
 
-#: lib/regcomp.c:162
+#: lib/regcomp.c:149
 msgid "Unmatched \\{"
-msgstr ""
+msgstr "Несупастаўляльны \\{"
 
-#: lib/regcomp.c:165
+#: lib/regcomp.c:152
 msgid "Invalid content of \\{\\}"
-msgstr ""
+msgstr "Няправільнае зьмесьціва ў\\{\\}"
 
-#: lib/regcomp.c:168
+#: lib/regcomp.c:155
 msgid "Invalid range end"
-msgstr ""
+msgstr "Няправільны канец дыяпазону"
 
-#: lib/regcomp.c:171
+#: lib/regcomp.c:158
 msgid "Memory exhausted"
 msgstr "Памяць вычарпана"
 
-#: lib/regcomp.c:174
+#: lib/regcomp.c:161
 msgid "Invalid preceding regular expression"
-msgstr ""
+msgstr "Памылковы папярэдні рэгулярны выраз"
 
-#: lib/regcomp.c:177
+#: lib/regcomp.c:164
 msgid "Premature end of regular expression"
-msgstr ""
+msgstr "Заўчаснае завяршэньне рэгулярнага выразу"
 
-#: lib/regcomp.c:180
+#: lib/regcomp.c:167
 msgid "Regular expression too big"
-msgstr ""
+msgstr "Рэгулярны выраз занадта вялікі"
 
-#: lib/regcomp.c:183
+#: lib/regcomp.c:170
 msgid "Unmatched ) or \\)"
-msgstr ""
+msgstr "Несупастаўляльны ) ці \\)"
 
-#: lib/regcomp.c:676
+#: lib/regcomp.c:650
 msgid "No previous regular expression"
-msgstr ""
+msgstr "Няма папярэдняга рэгулярнага выраза"
 
 #: lib/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
-msgstr ""
+msgstr "Пакавальнік: %s (%s)\n"
 
 #: lib/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
-msgstr ""
+msgstr "Пакавальнік: %s\n"
 
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
 #: lib/version-etc.c:83
 msgid "(C)"
-msgstr ""
+msgstr "©"
 
 #. TRANSLATORS: The %s placeholder is the web address of the GPL license.
 #: lib/version-etc.c:88
@@ -268,24 +299,28 @@ msgid ""
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 msgstr ""
+"Ліцэнзія GPLv3+: GNU GPL вэрсіі 3 або навей <%s>.\n"
+"Гэта свабоднае праграмнае забесьпячэньне: вы можаце вольна зьмяняць і "
+"распаўсюджваць яго.\n"
+"Няма НІЯКІХ ГАРАНТЫЙ у межах дзеючага заканадаўства.\n"
 
 #. TRANSLATORS: %s denotes an author name.
 #: lib/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
-msgstr ""
+msgstr "Аўтар: %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
-msgstr ""
+msgstr "Аўтары: %s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #: lib/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
-msgstr ""
+msgstr "Аўтары: %s, %s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -296,6 +331,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s\n"
+"і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -306,6 +343,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -316,6 +355,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s, %s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -326,6 +367,8 @@ msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s, %s, %s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -337,6 +380,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s, %s, %s, %s\n"
+"і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -348,6 +394,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s і %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
@@ -359,6 +408,9 @@ msgid ""
 "%s, %s, %s, %s,\n"
 "%s, %s, and others.\n"
 msgstr ""
+"Аўтары: %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s і іншыя.\n"
 
 #. TRANSLATORS: The placeholder indicates the bug-reporting address
 #. for this package.  Please add _another line_ saying
@@ -368,93 +420,101 @@ msgstr ""
 #, c-format
 msgid "Report bugs to: %s\n"
 msgstr ""
+"Паведамляйце пра памылкі на: %s\n"
+"Паведамляйце пра памылкі перакладу на: debian-l10n-belarusian@lists.debian."
+"org\n"
 
 #: lib/version-etc.c:251
 #, c-format
 msgid "Report %s bugs to: %s\n"
-msgstr ""
+msgstr "Паведамляйце пра памылкі ў %s на: %s\n"
 
 #: lib/version-etc.c:255 lib/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
-msgstr ""
+msgstr "Хатняя старонка %s: <%s>\n"
 
 #: lib/version-etc.c:260
 #, c-format
 msgid "General help using GNU software: <%s>\n"
 msgstr ""
+"Агульная даведка па выкарыстаньні праграмнага забесьпячэньня GNU: <%s>\n"
 
-#: src/grep.c:648
+#: src/dfasearch.c:59
+#, c-format
+msgid "warning: %s"
+msgstr "папярэджаньне: %s"
+
+#: src/grep.c:656
 msgid "(standard input)"
 msgstr "(стандартны ўвод)"
 
-#: src/grep.c:828
+#: src/grep.c:837
 msgid "invalid context length argument"
-msgstr "недапушчальны довад даўжыні кантэксту"
+msgstr "памылковы аргумэнт даўжыні кантэксту"
 
-#: src/grep.c:893
+#: src/grep.c:902
 msgid "input is too large to count"
-msgstr "увод занадта вялікі для падліку"
+msgstr "увод занадта вялікі да падліку"
 
-#: src/grep.c:1646
-#, fuzzy, c-format
+#: src/grep.c:1651
+#, c-format
 msgid "%s: binary file matches"
-msgstr "Супадзеньні двайковага файла %s\n"
+msgstr "%s: двайковы файл супадае"
 
-#: src/grep.c:1684
-#, fuzzy, c-format
+#: src/grep.c:1689
+#, c-format
 msgid "%s: warning: recursive directory loop"
-msgstr "тэчкі зацыклены"
+msgstr "%s: папярэджаньне: зацыклены рэкурсіўны абход каталёгаў"
 
-#: src/grep.c:1904
+#: src/grep.c:1909
 #, c-format
 msgid "%s: input file is also the output"
-msgstr ""
+msgstr "%s: уваходны файл таксама выкарыстоўваецца для вываду"
 
-#: src/grep.c:1966 src/grep.c:1973
-#, fuzzy, c-format
+#: src/grep.c:1971 src/grep.c:1978
+#, c-format
 msgid "Usage: %s [OPTION]... PATTERNS [FILE]...\n"
-msgstr "Выкарыстаньне: %s [ВЫБАР]... УЗОР [ФАЙЛ]...\n"
+msgstr "Выкарыстаньне: %s [ОПЦЫЯ]... УЗОРЫ [ФАЙЛ]...\n"
 
-#: src/grep.c:1968
-#, fuzzy, c-format
+#: src/grep.c:1973
+#, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Паспрабуйце \"%s --help\" для больш падрабязных зьвестак.\n"
+msgstr "Паспрабуйце «%s --help» для атрыманьня больш падрабязных зьвестак.\n"
 
-#: src/grep.c:1974
+#: src/grep.c:1979
 #, c-format
 msgid "Search for PATTERNS in each FILE.\n"
-msgstr ""
+msgstr "Шукаць УЗОРЫ ў кожным ФАЙЛе.\n"
 
-#: src/grep.c:1975
-#, fuzzy, c-format
+#: src/grep.c:1980
+#, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
 "PATTERNS can contain multiple patterns separated by newlines.\n"
 "\n"
 "Pattern selection and interpretation:\n"
 msgstr ""
-"    Шукае ўзор у файле ці ў стандартным уводзе.\n"
-"Напрыклад: %s -i 'hello world' menu.h main.c\n"
+"Прыклад: %s -i 'hello world' menu.h main.c\n"
+"УЗОРЫ могуць зьмяшчаць некалькі ўзораў, падзеленых сымбалямі новага радка.\n"
 "\n"
-"Выбар і тлумачэньне выразаў:\n"
+"Выбар узору й інтэрпрэтацыя:\n"
 
-#: src/grep.c:1980
-#, fuzzy, c-format
+#: src/grep.c:1985
+#, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERNS are extended regular expressions\n"
 "  -F, --fixed-strings       PATTERNS are strings\n"
 "  -G, --basic-regexp        PATTERNS are basic regular expressions\n"
 "  -P, --perl-regexp         PATTERNS are Perl regular expressions\n"
 msgstr ""
-"  -E, --extended-regexp     УЗОР - гэта пашыраны сталы выраз.\n"
-"  -F, --fixed-strings       УЗОР - гэта набор радкоў, падзеленых між сабой\n"
-"                            пераходамі на новы радок.\n"
-"  -G, --basic-regexp        УЗОР - гэта асноўны сталы выраз.\n"
-"  -P, --perl-regexp         УЗОР - гэта сталы выраз на Perl.\n"
+"  -E, --extended-regexp     УЗОРЫ — пашыраныя рэгулярныя выразы\n"
+"  -F, --fixed-strings       УЗОРЫ — звычайныя радкі\n"
+"  -G, --basic-regexp        УЗОРЫ — базавыя рэгулярныя выразы\n"
+"  -P, --perl-regexp         УЗОРЫ — рэгулярныя выразы Perl\n"
 
-#: src/grep.c:1986
-#, fuzzy, c-format
+#: src/grep.c:1991
+#, c-format
 msgid ""
 "  -e, --regexp=PATTERNS     use PATTERNS for matching\n"
 "  -f, --file=FILE           take PATTERNS from FILE\n"
@@ -464,17 +524,17 @@ msgid ""
 "  -x, --line-regexp         match only whole lines\n"
 "  -z, --null-data           a data line ends in 0 byte, not newline\n"
 msgstr ""
-"  -e, --regexp=УЗОР         Выкарыстоваць УЗОР як сталы выраз.\n"
-"  -f, --file=ФАЙЛ           Атрымліваць узор з файла.\n"
-"  -i, --ignore-case         Не зьвяртаць увагу на розьніцу між вялікімі й\n"
-"                            маленькімі літарамі.\n"
-"  -w, --word-regexp         Прымушае каб узор цалкам адпавядаў слову.\n"
-"  -x, --line-regexp         Прымушае каб узор цалкам адпавядаў радку.\n"
-"  -z, --null-data           Радок даньняў павінен мець канчатак ў выглядзе\n"
-"                            нулявога байта, замест знака новага радка.\n"
+"  -e, --regexp=УЗОРЫ        выкарыстоўваць УЗОРЫ для супастаўленьня\n"
+"  -f, --file=ФАЙЛ           прымаць УЗОРЫ з ФАЙЛа\n"
+"  -i, --ignore-case         ігнараваць рэгістар літар ва ўзорах і даных\n"
+"      --no-ignore-case      не ігнараваць рэгістар літар (прадвызначана)\n"
+"  -w, --word-regexp         супастаўляць цэламу слову\n"
+"  -x, --line-regexp         супастаўляць цэламу радку\n"
+"  -z, --null-data           радок даных падзелены нулявым байтам,\n"
+"                            а ня сымбалем пераводу радка\n"
 
-#: src/grep.c:1994
-#, fuzzy, c-format
+#: src/grep.c:1999
+#, c-format
 msgid ""
 "\n"
 "Miscellaneous:\n"
@@ -485,14 +545,12 @@ msgid ""
 msgstr ""
 "\n"
 "Разнастайныя:\n"
-"  -s, --no-messages         Падаўляць паведамленьні пра памылкі.\n"
-"  -v, --invert-match        Выбіраць нясупаўшыя радкі.\n"
-"  -V, --version             Надрукаваць зьвесткі пра вэрсыю й выйсьці.\n"
-"      --help                Адлюстраваць гэтую даведку й выйсьці.\n"
-"      --mmap                Выкарыстоўваць memory-mapped, калі гэта "
-"магчыма.\n"
+"  -s, --no-messages         заглушаць паведамленьні аб памылках\n"
+"  -v, --invert-match        выбіраць несупастаўныя радкі\n"
+"  -V, --version             адлюстраваць зьвесткі аб вэрсіі ды выйсьці\n"
+"      --help                адлюстраваць гэтую даведку ды выйсьці\n"
 
-#: src/grep.c:2001
+#: src/grep.c:2006
 #, c-format
 msgid ""
 "\n"
@@ -506,8 +564,18 @@ msgid ""
 "      --label=LABEL         use LABEL as the standard input file name "
 "prefix\n"
 msgstr ""
+"\n"
+"Кіраваньне вывадам:\n"
+"  -m, --max-count=ЛІК       спыніцца пасьля ЛІК радкоў\n"
+"  -b, --byte-offset         друкаваць байтавае зрушэньне з радкамі вываду\n"
+"  -n, --line-number         друкаваць нумар радка з радкамі вываду\n"
+"      --line-buffered       скідваць буфэр пасьля кожнага радка\n"
+"  -H, --with-filename       друкаваць назву файла разам з радкамі вываду\n"
+"  -h, --no-filename         заглушаць назвы файлаў на вывадзе\n"
+"      --label=МЕТКА         выкарыстоўваць МЕТКА ў якасьці назвы файла для\n"
+"                            стандартнага ўводу\n"
 
-#: src/grep.c:2012
+#: src/grep.c:2017
 #, c-format
 msgid ""
 "  -o, --only-matching       show only nonempty parts of lines that match\n"
@@ -516,8 +584,15 @@ msgid ""
 "                            TYPE is 'binary', 'text', or 'without-match'\n"
 "  -a, --text                equivalent to --binary-files=text\n"
 msgstr ""
+"  -o, --only-matching       паказваць толькі адпаведныя непустыя часткі "
+"радкоў\n"
+"  -q, --quiet, --silent     заглушаць увесь звычайны вывад\n"
+"      --binary-files=ТЫП    лічыць, што двайковыя файлы маюць ТЫП;\n"
+"                            ТЫП можа быць «binary», «text» ці «without-"
+"match»\n"
+"  -a, --text                раўназначна --binary-files=text\n"
 
-#: src/grep.c:2019
+#: src/grep.c:2024
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -528,8 +603,20 @@ msgid ""
 "  -r, --recursive           like --directories=recurse\n"
 "  -R, --dereference-recursive  likewise, but follow all symlinks\n"
 msgstr ""
+"  -I                        раўназначна --binary-files=without-match\n"
+"  -d, --directories=ДЗЕЯНЬНЕ  як апрацоўваць каталёгі;\n"
+"                              ДЗЕЯНЬНЕ можа быць  «read» (чытаць),\n"
+"                              «recurse» (рэкурсіўна абходзіць)\n"
+"                              ці  «skip» (абмінаць)\n"
+"  -D, --devices=ДЗЕЯНЬНЕ    як апрацоўваць файлы прылад, FIFO й сокеты;\n"
+"                            ДЗЕЯНЬНЕ можа быць  «read» (чытаць)\n"
+"                            ці  «skip» (абмінаць)\n"
+"  -r, --recursive           тое ж, што й --directories=recurse\n"
+"  -R, --dereference-recursive  гэтак жа, але з пераходам па ўсім "
+"сымбалічным\n"
+"                               спасылкам\n"
 
-#: src/grep.c:2028
+#: src/grep.c:2033
 #, c-format
 msgid ""
 "      --include=GLOB        search only files that match GLOB (a file "
@@ -539,8 +626,14 @@ msgid ""
 "FILE\n"
 "      --exclude-dir=GLOB    skip directories that match GLOB\n"
 msgstr ""
+"      --include=ГЛАБ        шукаць толькі тыя файлы, якія адпавядаюць ГЛАБ\n"
+"                            (файлаваму ўзору)\n"
+"      --exclude=ГЛАБ        абмінаць файлы, якія адпавядаюць ГЛАБ\n"
+"      --exclude-from=ФАЙЛ   абмінаць файлы, якія адпавядаюць любому\n"
+"                            файлаваму ўзору з ФАЙЛа\n"
+"      --exclude-dir=ГЛАБ    абмінаць каталёгі, якія адпавядаюць ГЛАБ\n"
 
-#: src/grep.c:2035
+#: src/grep.c:2040
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs with no selected "
@@ -550,8 +643,16 @@ msgid ""
 "  -T, --initial-tab         make tabs line up (if needed)\n"
 "  -Z, --null                print 0 byte after FILE name\n"
 msgstr ""
+"  -L, --files-without-match  надрукаваць назвы толькі тых ФАЙЛаў,\n"
+"                             у якіх няма выбраных радкоў\n"
+"  -l, --files-with-matches  надрукаваць толькі назвы ФАЙЛаў з выбранымі\n"
+"                            радкамі\n"
+"  -c, --count               надрукаваць толькі колькасьць выбраных радкоў\n"
+"                            да ФАЙЛа\n"
+"  -T, --initial-tab         выраўнаваць табуляцыяй (калі патрэбна)\n"
+"  -Z, --null                друкаваць байт «0» пасьля назвы ФАЙЛа\n"
 
-#: src/grep.c:2041
+#: src/grep.c:2046
 #, c-format
 msgid ""
 "\n"
@@ -560,11 +661,18 @@ msgid ""
 "  -A, --after-context=NUM   print NUM lines of trailing context\n"
 "  -C, --context=NUM         print NUM lines of output context\n"
 msgstr ""
+"\n"
+"Кіраваньне кантэкстам:\n"
+"  -B, --before-context=ЛІК  надрукаваць ЛІК радкоў папярэдняга кантэксту\n"
+"  -A, --after-context=ЛІК   надрукаваць ЛІК радкоў наступнага кантэксту\n"
+"  -C, --context=ЛІК         надрукаваць ЛІК выходнага кантэксту\n"
 
-#: src/grep.c:2048
-#, fuzzy, c-format
+#: src/grep.c:2053
+#, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
+"      --group-separator=SEP  print SEP on line between matches with context\n"
+"      --no-group-separator  do not print separator for matches with context\n"
 "      --color[=WHEN],\n"
 "      --colour[=WHEN]       use markers to highlight the matching strings;\n"
 "                            WHEN is 'always', 'never', or 'auto'\n"
@@ -572,27 +680,21 @@ msgid ""
 "Windows)\n"
 "\n"
 msgstr ""
-"\n"
-"Кіраваньне падтэкстам:\n"
-"  -B, --before-context=N    Друкаваць N радкоў папярэдняга падтэксту.\n"
-"  -A, --after-context=N     Друкаваць N радкоў наступнага падтэксту.\n"
-"  -C, --context=N           Друкаваць N радкоў падтэксту.\n"
-"  -N                        Раўназначна --context=N\n"
+"  -NUM                      тое ж, што й --context=ЛІК\n"
+"      --group-separator=РАЗ  надрукаваць РАЗ у радку паміж супадзеньнямі\n"
+"                             з кантэкстам\n"
+"      --no-group-separator  не друкаваць разьдзяляльнік паміж\n"
+"                            супадзеньнямі з кантэкстам\n"
 "      --color[=КАЛІ],\n"
-"      --colour[=КАЛІ]       Выкарыстоўваць пазначальнікі, каб адрозьніваць\n"
-"                            супаўшыя радкі. КАЛІ можа быць: \"always\"\n"
-"                            (заўсёды), \"never\" (ніколі)  ці \"auto\".\n"
-"  -U, --binary              Не абразаць знакі CR на прыканцы радка (MSDOS).\n"
-"  -u, --unix-byte-offsets   Паведамляць пра адлегласьці такім чынам, нібыта\n"
-"                            знакі CR адсутнічаюць наагул (MSDOS).\n"
+"      --colour[=КАЛІ]       выкарыстоўваць маркеры да падсьветкі адпаведных\n"
+"                            радкоў;\n"
+"                            КАЛІ можа быць «always» (заўсёды),\n"
+"                            «never» (ніколі) ці «auto» (аўтаматычна)\n"
+"  -U, --binary              не выдаляць сымбалі CR у канцы радка\n"
+"                            (MSDOS/Windows)\n"
 "\n"
-"\"egrep\" азначае \"grep -E\".  \"fgrep\" азначае \"grep -F\".\n"
-"Бяз ФАЙЛа, ці калі замест назвы ФАЙЛа працяжнік -, чытае стандартны ўвод.\n"
-"Калі заданы менш чым два файла, працуе як у выпадку выбара -h.  Стан выхаду\n"
-"роўны 0, калі ё супадзеньні, 1, калі супадзеньняў няма й 2 у выпадку "
-"памылкі.\n"
 
-#: src/grep.c:2055
+#: src/grep.c:2062
 #, c-format
 msgid ""
 "When FILE is '-', read standard input.  With no FILE, read '.' if\n"
@@ -600,107 +702,128 @@ msgid ""
 "Exit status is 0 if any line is selected, 1 otherwise;\n"
 "if any error occurs and -q is not given, the exit status is 2.\n"
 msgstr ""
-
-#: src/grep.c:2097
-msgid "conflicting matchers specified"
-msgstr "заданы супярэчлівыя супадальнікі"
+"Калі ў якасьці ФАЙЛа пазначаны сымбаль «-», тады чытаецца стандартны ўвод.\n"
+"Калі ФАЙЛ ня вызначаны, то чытаецца «.» у рэкурсіўным рэжыме, інакш «-». \n"
+"Калі вызначана менш чым два ФАЙЛы, тады мяркуецца -h.\n"
+"Код завяршэньня 0 — калі знойдзены супадзеньні любога радка, 1 - калі іх "
+"няма,\n"
+"2 - калі адбылася памылка й не выкарыстоўвалася опцыя -q .\n"
 
 #: src/grep.c:2104
+msgid "conflicting matchers specified"
+msgstr "зададзены супярэчлівыя ўмовы супастаўленьня"
+
+#: src/grep.c:2111
 msgid "Perl matching not supported in a --disable-perl-regexp build"
 msgstr ""
+"Супастаўленьні Perl не падтрымліваюцца ў зборцы з --disable-perl-regexp"
 
-#: src/grep.c:2106
-#, fuzzy, c-format
+#: src/grep.c:2113
+#, c-format
 msgid "invalid matcher %s"
-msgstr "недапушчальны найбольшы лічыльнік"
+msgstr "няправільны параўнальны выраз %s"
 
-#: src/grep.c:2541
+#: src/grep.c:2534
 msgid "unknown devices method"
-msgstr "невядомы мэтад пралад"
+msgstr "невядомы мэтад прыладаў"
 
-#: src/grep.c:2689
+#: src/grep.c:2576
+#, c-format
+msgid "warning: --unix-byte-offsets (-u) is obsolete"
+msgstr "папярэджаньне: --unix-byte-offsets (-u) зьяўляецца састарэлым"
+
+#: src/grep.c:2688
 msgid "invalid max count"
-msgstr "недапушчальны найбольшы лічыльнік"
+msgstr "памылковая максымальная колькасць"
 
-#: src/grep.c:2747
+#: src/grep.c:2746
 msgid "unknown binary-files type"
-msgstr "невядомы від дваічнага файла"
+msgstr "невядомы тып двайковых файлаў"
 
-#: src/grep.c:2832
+#: src/grep.c:2831
 msgid ""
 "Written by Mike Haertel and others; see\n"
-"<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>."
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 msgstr ""
+"Аўтары праграмы: Mike Haertel і іншыя; глядзіце\n"
+"<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>."
 
-#: src/pcresearch.c:85
-msgid "failed to allocate memory for the PCRE JIT stack"
+#: src/grep.c:2937
+#, c-format
+msgid "warning: GREP_COLOR='%s' is deprecated; use GREP_COLORS='mt=%s'"
 msgstr ""
+"папярэджаньне: GREP_COLOR=«%s» састарэла;\n"
+"               выкарыстоўвайце GREP_COLORS=«mt=%s»"
 
-#: src/pcresearch.c:137
+#: src/pcresearch.c:92
+#, c-format
+msgid ""
+"\n"
+"grep -P uses PCRE2 %s\n"
+msgstr ""
+"\n"
+"grep -P ужывае PCRE2 %s\n"
+
+#: src/pcresearch.c:169
+msgid "-P supports only unibyte locales on this platform"
+msgstr "-P падтрымлівае толькі аднабайтавыя лякалі на гэтай плятформе"
+
+#: src/pcresearch.c:171
 msgid "-P supports only unibyte and UTF-8 locales"
-msgstr ""
+msgstr "-P падтрымлівае толькі аднабайтавыя ды UTF-8 лякалі"
 
-#: src/pcresearch.c:143
-#, fuzzy
+#: src/pcresearch.c:194
 msgid "the -P option only supports a single pattern"
-msgstr "Выбар -P непадтрымліваецца"
+msgstr "опцыя -P падтрымлівае толькі адзін узор"
 
-#: src/pcresearch.c:187
-msgid "internal error (should never happen)"
-msgstr ""
-
-#: src/pcresearch.c:230
+#: src/pcresearch.c:290
 msgid "exceeded PCRE's line length limit"
-msgstr ""
+msgstr "перавышана абмежаваньне даўжыні радка PCRE"
 
-#: src/pcresearch.c:306
-#, fuzzy, c-format
+#: src/pcresearch.c:368
+#, c-format
 msgid "%s: memory exhausted"
-msgstr "памяць вычарпана"
+msgstr "%s: памяць вычарпана"
 
-#: src/pcresearch.c:310
+#: src/pcresearch.c:371
 #, c-format
 msgid "%s: exhausted PCRE JIT stack"
-msgstr ""
+msgstr "%s: вычарпаны стэк JIT PCRE"
 
-#: src/pcresearch.c:315
+#: src/pcresearch.c:375
 #, c-format
 msgid "%s: exceeded PCRE's backtracking limit"
-msgstr ""
+msgstr "%s: перавышаны ліміт пошуку зь вяртаньнем у PCRE"
 
-#: src/pcresearch.c:319
+#: src/pcresearch.c:380
 #, c-format
-msgid "%s: exceeded PCRE's recursion limit"
-msgstr ""
+msgid "%s: exceeded PCRE's nested backtracking limit"
+msgstr "%s: перавышаны ліміт укладзенага пошуку зь вяртаньнем у PCRE"
 
-#: src/pcresearch.c:327
+#: src/pcresearch.c:384
+#, c-format
+msgid "%s: PCRE detected recurse loop"
+msgstr "%s: выяўлены рэкурсіўны цыкл у PCRE"
+
+#: src/pcresearch.c:389
+#, c-format
+msgid "%s: exceeded PCRE's heap limit"
+msgstr "%s: перавышаны ліміт кучы ў PCRE"
+
+#: src/pcresearch.c:398
 #, c-format
 msgid "%s: internal PCRE error: %d"
-msgstr ""
+msgstr "%s: унутраная памылка PCRE: %d"
 
-#, fuzzy, c-format
-#~ msgid "warning: %s: %s"
-#~ msgstr "Увага! %s: %s\n"
+#~ msgid ""
+#~ "\n"
+#~ "Built with PCRE "
+#~ msgstr ""
+#~ "\n"
+#~ "Сабраны з PCRE "
 
-#, fuzzy
-#~ msgid "%s: option '--%s' doesn't allow an argument\n"
-#~ msgstr "%s: выбар \"--%s\" не дазваляе довад\n"
-
-#, fuzzy
-#~ msgid "%s: unrecognized option '--%s'\n"
-#~ msgstr "%s: нераспазнаны выбар \"--%s\"\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' is ambiguous\n"
-#~ msgstr "%s: выбар \"-W %s\" неадназначны\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
-#~ msgstr "%s: выбар \"-W %s\" не дазваляе довады\n"
-
-#, fuzzy
-#~ msgid "%s: option '-W %s' requires an argument\n"
-#~ msgstr "%s: выбар \"%s\" патрабуе довад\n"
+#~ msgid "JIT internal error: %d"
+#~ msgstr "Унутраная памылка JIT: %d"
 
 #~ msgid "unfinished repeat count"
 #~ msgstr "незавершаная колькасьць паўтарэньняў"
@@ -716,6 +839,17 @@ msgstr ""
 
 #~ msgid "Usage: %s [OPTION]... PATTERN [FILE] ...\n"
 #~ msgstr "Выкарыстаньне: %s [ВЫБАР]... УЗОР [ФАЙЛ] ...\n"
+
+#~ msgid ""
+#~ "Search for PATTERN in each FILE or standard input.\n"
+#~ "Example: %s -i 'hello world' menu.h main.c\n"
+#~ "\n"
+#~ "Regexp selection and interpretation:\n"
+#~ msgstr ""
+#~ "    Шукае ўзор у файле ці ў стандартным уводзе.\n"
+#~ "Напрыклад: %s -i 'hello world' menu.h main.c\n"
+#~ "\n"
+#~ "Выбар і тлумачэньне выразаў:\n"
 
 #~ msgid ""
 #~ "\n"
@@ -794,6 +928,51 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
+#~ "Context control:\n"
+#~ "  -B, --before-context=NUM  print NUM lines of leading context\n"
+#~ "  -A, --after-context=NUM   print NUM lines of trailing context\n"
+#~ "  -C, --context=NUM         print NUM lines of output context\n"
+#~ "  -NUM                      same as --context=NUM\n"
+#~ "      --color[=WHEN],\n"
+#~ "      --colour[=WHEN]       use markers to distinguish the matching "
+#~ "string\n"
+#~ "                            WHEN may be `always', `never' or `auto'.\n"
+#~ "  -U, --binary              do not strip CR characters at EOL (MSDOS)\n"
+#~ "  -u, --unix-byte-offsets   report offsets as if CRs were not there "
+#~ "(MSDOS)\n"
+#~ "\n"
+#~ "`egrep' means `grep -E'.  `fgrep' means `grep -F'.\n"
+#~ "With no FILE, or when FILE is -, read standard input.  If less than\n"
+#~ "two FILEs given, assume -h.  Exit status is 0 if match, 1 if no match,\n"
+#~ "and 2 if trouble.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Кіраваньне падтэкстам:\n"
+#~ "  -B, --before-context=N    Друкаваць N радкоў папярэдняга падтэксту.\n"
+#~ "  -A, --after-context=N     Друкаваць N радкоў наступнага падтэксту.\n"
+#~ "  -C, --context=N           Друкаваць N радкоў падтэксту.\n"
+#~ "  -N                        Раўназначна --context=N\n"
+#~ "      --color[=КАЛІ],\n"
+#~ "      --colour[=КАЛІ]       Выкарыстоўваць пазначальнікі, каб "
+#~ "адрозьніваць\n"
+#~ "                            супаўшыя радкі. КАЛІ можа быць: \"always\"\n"
+#~ "                            (заўсёды), \"never\" (ніколі)  ці \"auto\".\n"
+#~ "  -U, --binary              Не абразаць знакі CR на прыканцы радка "
+#~ "(MSDOS).\n"
+#~ "  -u, --unix-byte-offsets   Паведамляць пра адлегласьці такім чынам, "
+#~ "нібыта\n"
+#~ "                            знакі CR адсутнічаюць наагул (MSDOS).\n"
+#~ "\n"
+#~ "\"egrep\" азначае \"grep -E\".  \"fgrep\" азначае \"grep -F\".\n"
+#~ "Бяз ФАЙЛа, ці калі замест назвы ФАЙЛа працяжнік -, чытае стандартны "
+#~ "ўвод.\n"
+#~ "Калі заданы менш чым два файла, працуе як у выпадку выбара -h.  Стан "
+#~ "выхаду\n"
+#~ "роўны 0, калі ё супадзеньні, 1, калі супадзеньняў няма й 2 у выпадку "
+#~ "памылкі.\n"
+
+#~ msgid ""
+#~ "\n"
 #~ "Report bugs to <bug-gnu-utils@gnu.org>.\n"
 #~ msgstr ""
 #~ "\n"
@@ -823,5 +1002,17 @@ msgstr ""
 #~ msgid "The -P and -z options cannot be combined"
 #~ msgstr "Выбары -P і -z ня могуць ісьці разам"
 
+#~ msgid "%s: option `--%s' doesn't allow an argument\n"
+#~ msgstr "%s: выбар \"--%s\" не дазваляе довад\n"
+
+#~ msgid "%s: unrecognized option `--%s'\n"
+#~ msgstr "%s: нераспазнаны выбар \"--%s\"\n"
+
 #~ msgid "%s: illegal option -- %c\n"
 #~ msgstr "%s: недапушчальны выбар -- %c\n"
+
+#~ msgid "%s: option `-W %s' is ambiguous\n"
+#~ msgstr "%s: выбар \"-W %s\" неадназначны\n"
+
+#~ msgid "%s: option `-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: выбар \"-W %s\" не дазваляе довады\n"

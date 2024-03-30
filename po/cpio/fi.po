@@ -1,15 +1,16 @@
 # Finnish messages for cpio.
-# Copyright © 2010, 2015 Free Software Foundation, Inc.
+# Copyright © 2010, 2015, 2019 Free Software Foundation, Inc.
 # This file is distributed under the same license as the cpio package.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2009, 2015.
+# Lauri Nurmi <lanurmi@iki.fi>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU cpio 2.12\n"
+"Project-Id-Version: GNU cpio 2.13\n"
 "Report-Msgid-Bugs-To: bug-cpio@gnu.org\n"
-"POT-Creation-Date: 2019-11-06 09:58+0200\n"
-"PO-Revision-Date: 2015-09-19 10:27+0300\n"
-"Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
+"POT-Creation-Date: 2024-01-14 13:56+0200\n"
+"PO-Revision-Date: 2019-12-02 21:54+0200\n"
+"Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -17,67 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: gnu/argmatch.c:134
+#: gnu/argmatch.c:145
 #, c-format
 msgid "invalid argument %s for %s"
-msgstr "virheellinen argumentti %s kohteelle %s"
+msgstr "virheellinen argumentti %s %s:lle"
 
-#: gnu/argmatch.c:135
+#: gnu/argmatch.c:146
 #, c-format
 msgid "ambiguous argument %s for %s"
-msgstr "moniselitteinen argumentti %s kohteelle %s"
+msgstr "moniselitteinen argumentti %s %s:lle"
 
-#: gnu/argmatch.c:154
+#: gnu/argmatch.c:165
 msgid "Valid arguments are:"
-msgstr "Oikeat argumentit ovat:"
+msgstr "Kelvolliset argumentit ovat:"
 
-#: gnu/argp-help.c:148
+#: gnu/argp-help.c:151
 #, c-format
 msgid "ARGP_HELP_FMT: %s value is less than or equal to %s"
 msgstr "ARGP_HELP_FMT: %s-arvo on pienempi tai yhtäsuuri kuin %s"
 
-#: gnu/argp-help.c:224
+#: gnu/argp-help.c:227
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
 msgstr "%.*s: ARGP_HELP_FMT-parametri vaatii arvon"
 
-#: gnu/argp-help.c:234
+#: gnu/argp-help.c:237
 #, c-format
 msgid "%.*s: Unknown ARGP_HELP_FMT parameter"
 msgstr "%.*s: Tuntematon ARGP_HELP_FMT-parametri"
 
-#: gnu/argp-help.c:247
+#: gnu/argp-help.c:250
 #, c-format
 msgid "Garbage in ARGP_HELP_FMT: %s"
-msgstr "Roskaa parametrissä ARGP_HELP_FMT: %s"
+msgstr "Roskaa ARGP_HELP_FMT:ssä: %s"
 
-#: gnu/argp-help.c:1227
+#: gnu/argp-help.c:1368
 msgid ""
 "Mandatory or optional arguments to long options are also mandatory or "
 "optional for any corresponding short options."
 msgstr ""
-"Pakolliset tai valinnaiset argumentit pitkille valitsimille ovat myös "
-"pakollisia tai valinnaisia vastaaville lyhyille valitsimille."
+"Pitkien valitsinten pakolliset tai valinnaiset argumentit ovat pakollisia "
+"tai valinnaisia myös vastaaville lyhyille."
 
-#: gnu/argp-help.c:1614
+#: gnu/argp-help.c:1734
 msgid "Usage:"
 msgstr "Käyttö:"
 
-#: gnu/argp-help.c:1618
+#: gnu/argp-help.c:1738
 msgid "  or: "
 msgstr "  tai: "
 
-#: gnu/argp-help.c:1630
+#: gnu/argp-help.c:1750
 msgid " [OPTION...]"
-msgstr "[VALITSIN...]"
+msgstr " [VALITSIN...]"
 
-#: gnu/argp-help.c:1657
+#: gnu/argp-help.c:1777
 #, c-format
 msgid "Try '%s --help' or '%s --usage' for more information.\n"
-msgstr "Lisätietoja komennolla ’%s --help’ tai ’%s --usage’.\n"
+msgstr "Lisätietoja komennolla ”%s --help” tai ”%s --usage”.\n"
 
-#: gnu/argp-help.c:1685
+#: gnu/argp-help.c:1805
 #, c-format
 msgid "Report bugs to %s.\n"
 msgstr ""
@@ -85,129 +87,104 @@ msgstr ""
 "Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge."
 "net>.\n"
 
-#: gnu/argp-help.c:1886 gnu/error.c:191
+#: gnu/argp-help.c:2006 gnu/error.c:194
 msgid "Unknown system error"
 msgstr "Tuntematon järjestelmävirhe"
 
-#: gnu/argp-parse.c:81
+#: gnu/argp-parse.c:80
 msgid "give this help list"
 msgstr "anna tämä opasteluettelo"
 
-#: gnu/argp-parse.c:82
+#: gnu/argp-parse.c:81
 msgid "give a short usage message"
 msgstr "anna lyhyt käyttöohje"
 
-#: gnu/argp-parse.c:83 tests/genfile.c:131
+#: gnu/argp-parse.c:82 tests/genfile.c:134
 msgid "NAME"
 msgstr "NIMI"
 
-#: gnu/argp-parse.c:84
+#: gnu/argp-parse.c:83
 msgid "set the program name"
 msgstr "aseta ohjelman nimi"
 
-#: gnu/argp-parse.c:85
+#: gnu/argp-parse.c:84
 msgid "SECS"
 msgstr "S"
 
-#: gnu/argp-parse.c:86
+#: gnu/argp-parse.c:85
 msgid "hang for SECS seconds (default 3600)"
 msgstr "odota S sekuntia (oletus 3600)"
 
-#: gnu/argp-parse.c:143
+#: gnu/argp-parse.c:142
 msgid "print program version"
 msgstr "tulosta ohjelmaversio"
 
-#: gnu/argp-parse.c:160
+#: gnu/argp-parse.c:159
 msgid "(PROGRAM ERROR) No version known!?"
 msgstr "(OHJELMAVIRHE) Tuntematon versio!?"
 
-#: gnu/argp-parse.c:613
+#: gnu/argp-parse.c:612
 #, c-format
 msgid "%s: Too many arguments\n"
 msgstr "%s: Liian monta argumenttia\n"
 
-#: gnu/argp-parse.c:756
+#: gnu/argp-parse.c:758
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
-msgstr "(OHJELMAVIRHE) Valitsimen pitäisi olla tunnistettava!?"
+msgstr "(OHJELMAVIRHE) Valitsin olisi pitänyt tunnistaa‽"
 
-#: gnu/closeout.c:112 src/util.c:93 src/util.c:96 src/util.c:146
+#: gnu/closeout.c:121 src/util.c:91 src/util.c:94 src/util.c:144
 #, c-format
 msgid "write error"
 msgstr "kirjoitusvirhe"
 
-#: gnu/getopt.c:575 gnu/getopt.c:604
-#, c-format
-msgid "%s: option '%s' is ambiguous; possibilities:"
-msgstr "%s: valitsin ’%s’ ei ole yksiselitteinen; vaihtoehdot:"
+#: gnu/getopt.c:282
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous\n"
+msgstr "%s: valitsin ”%s” on moniselitteinen\n"
 
-#: gnu/getopt.c:619
-#, c-format
-msgid "%s: option '%s' is ambiguous\n"
-msgstr "%s: valitsin ’%s’ ei ole yksiselitteinen\n"
+#: gnu/getopt.c:288
+#, fuzzy, c-format
+msgid "%s: option '%s%s' is ambiguous; possibilities:"
+msgstr "%s: valitsin ”%s” on moniselitteinen; vaihtoehdot:"
 
-#: gnu/getopt.c:654 gnu/getopt.c:658
-#, c-format
-msgid "%s: option '--%s' doesn't allow an argument\n"
-msgstr "%s: valitsin ’--%s’ ei salli argumenttia\n"
+#: gnu/getopt.c:322
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%s%s'\n"
+msgstr "%s: tunnistamaton valitsin ”%c%s”\n"
 
-#: gnu/getopt.c:667 gnu/getopt.c:672
-#, c-format
-msgid "%s: option '%c%s' doesn't allow an argument\n"
-msgstr "%s: valitsin ’%c%s’ ei salli argumenttia\n"
+#: gnu/getopt.c:348
+#, fuzzy, c-format
+msgid "%s: option '%s%s' doesn't allow an argument\n"
+msgstr "%s: valitsin ”%c%s” ei salli argumenttia\n"
 
-#: gnu/getopt.c:715 gnu/getopt.c:734
-#, c-format
-msgid "%s: option '--%s' requires an argument\n"
-msgstr "%s: valitsin ’--%s’ vaatii argumentin\n"
+#: gnu/getopt.c:363
+#, fuzzy, c-format
+msgid "%s: option '%s%s' requires an argument\n"
+msgstr "%s: valitsin ”--%s” vaatii argumentin\n"
 
-#: gnu/getopt.c:772 gnu/getopt.c:775
-#, c-format
-msgid "%s: unrecognized option '--%s'\n"
-msgstr "%s: tunnistamaton valitsin ’--%s’\n"
-
-#: gnu/getopt.c:783 gnu/getopt.c:786
-#, c-format
-msgid "%s: unrecognized option '%c%s'\n"
-msgstr "%s: tunnistamaton valitsin ’%c%s’\n"
-
-#: gnu/getopt.c:835 gnu/getopt.c:838
+#: gnu/getopt.c:624
 #, c-format
 msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: virheellinen valitsin -- ’%c’\n"
+msgstr "%s: virheellinen valitsin -- ”%c”\n"
 
-#: gnu/getopt.c:891 gnu/getopt.c:908 gnu/getopt.c:1118 gnu/getopt.c:1136
+#: gnu/getopt.c:639 gnu/getopt.c:685
 #, c-format
 msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: valitsin vaatii argumentin -- ’%c’\n"
+msgstr "%s: valitsin vaatii argumentin -- ”%c”\n"
 
-#: gnu/getopt.c:964 gnu/getopt.c:980
-#, c-format
-msgid "%s: option '-W %s' is ambiguous\n"
-msgstr "%s: valitsin ’-W %s’ ei ole yksimerkityksellinen\n"
-
-#: gnu/getopt.c:1004 gnu/getopt.c:1022
-#, c-format
-msgid "%s: option '-W %s' doesn't allow an argument\n"
-msgstr "%s: valitsin ’-W %s’ ei salli argumenttia\n"
-
-#: gnu/getopt.c:1043 gnu/getopt.c:1061
-#, c-format
-msgid "%s: option '-W %s' requires an argument\n"
-msgstr "%s: valitsin ’-W %s’ vaatii argumentin\n"
-
-#: gnu/obstack.c:338 gnu/obstack.c:340 gnu/xalloc-die.c:34
+#: gnu/obstack.c:317 gnu/obstack.c:319 gnu/xalloc-die.c:34
 msgid "memory exhausted"
-msgstr "muisti loppui"
+msgstr "muisti lopussa"
 
 #: gnu/openat-die.c:38
 #, c-format
 msgid "unable to record current working directory"
-msgstr "nykyisen työhakemiston tallentaminen epäonnistui"
+msgstr "nykyisen työhakemiston kirjaaminen ei onnistu"
 
 #: gnu/openat-die.c:57
 #, c-format
 msgid "failed to return to initial working directory"
-msgstr "alkuperäiseen työhakemistoon palaaminen epäonnistui"
+msgstr "palaaminen alkuperäiseen työhakemistoon epäonnistui"
 
 #. TRANSLATORS:
 #. Get translations for open and closing quotation marks.
@@ -228,7 +205,7 @@ msgstr "alkuperäiseen työhakemistoon palaaminen epäonnistui"
 #. for your locale.
 #.
 #. If you don't know what to put here, please see
-#. <http://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
+#. <https://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
 #: gnu/quotearg.c:354
 msgid "`"
@@ -238,182 +215,172 @@ msgstr "”"
 msgid "'"
 msgstr "”"
 
-#: gnu/version-etc.c:74
+#: gnu/version-etc.c:73
 #, c-format
 msgid "Packaged by %s (%s)\n"
-msgstr "Pakkaaja: %s (%s)\n"
+msgstr "Paketoinut %s (%s)\n"
 
-#: gnu/version-etc.c:77
+#: gnu/version-etc.c:76
 #, c-format
 msgid "Packaged by %s\n"
-msgstr "Pakkaaja: %s\n"
+msgstr "Paketoinut %s\n"
 
 #. TRANSLATORS: Translate "(C)" to the copyright symbol
 #. (C-in-a-circle), if this symbol is available in the user's
 #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
-#: gnu/version-etc.c:84
+#: gnu/version-etc.c:83
 msgid "(C)"
 msgstr "©"
 
-#: gnu/version-etc.c:86
+#. TRANSLATORS: The %s placeholder is the web address of the GPL license.
+#: gnu/version-etc.c:88
+#, fuzzy, c-format
 msgid ""
-"\n"
-"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
-"html>.\n"
+"License GPLv3+: GNU GPL version 3 or later <%s>.\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
-"\n"
 msgstr ""
 "\n"
-"Lisenssi GPLv3+: GNU GPL versio 3 tai myöhäisempi <http://gnu.org/licenses/"
-"gpl.html>.\n"
-"Tämä on ilmainen ohjelmisto: saat vapaasti muuttaa sitä ja jakaa sitä "
-"edelleen.\n"
-"Ohjelmalla EI OLE TAKUUTA, siinä laajuudessa kuin laki sallii sen.\n"
+"Lisenssi GPLv3+: GNU GPL versio 3 tai myöhempi <http://gnu.org/licenses/gpl."
+"html>.\n"
+"Tämä on vapaa ohjelmisto; sitä saa vapaasti muuttaa ja levittää edelleen.\n"
+"Siinä määrin kuin laki sallii, TAKUUTA EI OLE.\n"
 "\n"
 
 #. TRANSLATORS: %s denotes an author name.
-#: gnu/version-etc.c:102
+#: gnu/version-etc.c:105
 #, c-format
 msgid "Written by %s.\n"
-msgstr "Kirjoittaja: %s.\n"
+msgstr "Kirjoittanut %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:106
+#: gnu/version-etc.c:109
 #, c-format
 msgid "Written by %s and %s.\n"
-msgstr "Kirjoittajat: %s ja %s.\n"
+msgstr "Kirjoittaneet %s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
-#: gnu/version-etc.c:110
+#: gnu/version-etc.c:113
 #, c-format
 msgid "Written by %s, %s, and %s.\n"
-msgstr "Kirjoittajat: %s, %s, ja %s.\n"
+msgstr "Kirjoittaneet %s, %s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:117
+#: gnu/version-etc.c:120
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
-"ja %s.\n"
+"Kirjoittaneet %s, %s,\n"
+"%s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:124
+#: gnu/version-etc.c:127
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
-"%s, ja %s.\n"
+"Kirjoittaneet %s, %s, %s,\n"
+"%s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:131
+#: gnu/version-etc.c:134
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, and %s.\n"
 msgstr ""
-"Kirjoittajat %s, %s, %s,\n"
-"%s, %s, ja %s.\n"
+"Kirjoittaneet %s, %s, %s,\n"
+"%s, %s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:139
+#: gnu/version-etc.c:142
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, and %s.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
-"%s, %s, %s, ja %s.\n"
+"Kirjoittaneet %s, %s, %s,\n"
+"%s, %s, %s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:147
+#: gnu/version-etc.c:150
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
 "and %s.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
+"Kirjoittaneet %s, %s,\n"
 "%s, %s, %s, %s,\n"
-"ja %s.\n"
+"%s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:156
+#: gnu/version-etc.c:159
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
 "%s, and %s.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
+"Kirjoittaneet %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
-"%s, ja %s.\n"
+"%s ja %s.\n"
 
 #. TRANSLATORS: Each %s denotes an author name.
 #. You can use line breaks, estimating that each author name occupies
 #. ca. 16 screen columns and that a screen line has ca. 80 columns.
-#: gnu/version-etc.c:167
+#: gnu/version-etc.c:170
 #, c-format
 msgid ""
 "Written by %s, %s, %s,\n"
 "%s, %s, %s, %s,\n"
 "%s, %s, and others.\n"
 msgstr ""
-"Kirjoittajat: %s, %s, %s,\n"
+"Kirjoittaneet %s, %s,\n"
 "%s, %s, %s, %s,\n"
-"%s, %s, ja muut.\n"
+"%s, %s, %s ja muut.\n"
 
 #. TRANSLATORS: The placeholder indicates the bug-reporting address
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: gnu/version-etc.c:245
-#, c-format
-msgid ""
-"\n"
-"Report bugs to: %s\n"
+#: gnu/version-etc.c:249
+#, fuzzy, c-format
+msgid "Report bugs to: %s\n"
 msgstr ""
 "\n"
-"Ilmoita virheistä (englanniksi) osoitteeseen: %s\n"
-"Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge."
-"net>\n"
-
-#: gnu/version-etc.c:247
-#, c-format
-msgid "Report %s bugs to: %s\n"
-msgstr "Ilmoita %s virheestä osoitteeseen: %s\n"
+"Ilmoita ohjelmistovioista (englanniksi) osoitteeseen: %s\n"
 
 #: gnu/version-etc.c:251
+#, c-format
+msgid "Report %s bugs to: %s\n"
+msgstr "Ilmoita %s-vioista (englanniksi) osoitteeseen %s.\n"
+
+#: gnu/version-etc.c:255 gnu/version-etc.c:257
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "%s-kotisivu: <%s>\n"
 
-#: gnu/version-etc.c:253
-#, c-format
-msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
-msgstr "%s-kotisivu: <http://www.gnu.org/software/%s/>\n"
-
-#: gnu/version-etc.c:256
-msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
+#: gnu/version-etc.c:260
+#, fuzzy, c-format
+msgid "General help using GNU software: <%s>\n"
 msgstr ""
-"Yleinen opaste GNU-ohjelmistojen käytöstä: <http://www.gnu.org/gethelp/>\n"
+"Yleisohjeita GNU-ohjelmistojen käyttöön: <http://www.gnu.org/gethelp/>\n"
 
 #. TRANSLATORS: %s after `Cannot' is a function name, e.g. `Cannot open'.
 #. Directly translating this to another language will not work, first because
@@ -436,389 +403,399 @@ msgstr "%s: Varoitus: Funktio %s epäonnistui"
 #: lib/paxerror.c:95
 #, c-format
 msgid "%s: Cannot change mode to %s"
-msgstr "%s: Vaihtaminen tilaan %s epäonnistui"
+msgstr "%s: Oikeuksien muuttaminen tilaan %s ei onnistu"
 
-#: lib/paxerror.c:103
-#, c-format
-msgid "%s: Cannot change ownership to uid %lu, gid %lu"
-msgstr "%s: Muuttaminen omistajuudeksi uid %lu epäonnistui, gid %lu"
+#: lib/paxerror.c:104
+#, fuzzy, c-format
+msgid "%s: Cannot change ownership to uid %ju, gid %ju"
+msgstr "%s: Tiedoston omistusta ei voi muuttaa arvoon uid=%lu, gid=%lu"
 
-#: lib/paxerror.c:129
+#: lib/paxerror.c:130
 #, c-format
 msgid "%s: Cannot hard link to %s"
-msgstr "%s: Kovalinkin tekeminen kohteeseen %s epäonnistui"
+msgstr "%s: Kovaa linkkiä tiedostoon %s ei voi luoda"
 
 #  ...luettaessa yksi tavu
-#: lib/paxerror.c:181 lib/paxerror.c:213
-#, c-format
-msgid "%s: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%s: Lukuvirhe tavussa %s luettaessa %lu tavu"
+#: lib/paxerror.c:182 lib/paxerror.c:212
+#, fuzzy, c-format
+msgid "%s: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%s: Lukuvirhe tavun %s kohdalla luettaessa %lu tavua"
 msgstr[1] "%s: Lukuvirhe tavussa %s luettaessa %lu tavua"
 
 #  ...luettaessa yksi tavu
 #: lib/paxerror.c:194
-#, c-format
-msgid "%s: Warning: Read error at byte %s, while reading %lu byte"
-msgid_plural "%s: Warning: Read error at byte %s, while reading %lu bytes"
-msgstr[0] "%s: Varoitus: Lukuvirhe tavussa %s luettaessa %lu tavu"
+#, fuzzy, c-format
+msgid "%s: Warning: Read error at byte %jd, while reading %zu byte"
+msgid_plural "%s: Warning: Read error at byte %jd, while reading %zu bytes"
+msgstr[0] "%s: Varoitus: Lukuvirhe tavun %s kohdalla luettaessa %lu tavua"
 msgstr[1] "%s: Varoitus: Lukuvirhe tavussa %s luettaessa %lu tavua"
 
-#: lib/paxerror.c:261
-#, c-format
-msgid "%s: Cannot seek to %s"
-msgstr "%s: Etsiminen kohtaan %s epäonnistui"
+#: lib/paxerror.c:259
+#, fuzzy, c-format
+msgid "%s: Cannot seek to %jd"
+msgstr "%s: Siirtyminen kohtaan %s ei onnistu"
 
-#: lib/paxerror.c:277
-#, c-format
-msgid "%s: Warning: Cannot seek to %s"
+#: lib/paxerror.c:273
+#, fuzzy, c-format
+msgid "%s: Warning: Cannot seek to %jd"
 msgstr "%s: Varoitus: Etsiä kohtaan %s epäonnistui"
 
-#: lib/paxerror.c:286
+#: lib/paxerror.c:281
 #, c-format
 msgid "%s: Cannot create symlink to %s"
-msgstr "%s: Symbolisen linkin luominen kohteeseen %s epäonnistui"
+msgstr "%s: Tiedostoon %s ei voida luoda symlinkkiä"
 
-#: lib/paxerror.c:351
-#, c-format
-msgid "%s: Wrote only %lu of %lu byte"
-msgid_plural "%s: Wrote only %lu of %lu bytes"
-msgstr[0] "%s: Kirjoitti vain %lu/%lu tavun"
+#: lib/paxerror.c:346
+#, fuzzy, c-format
+msgid "%s: Wrote only %zu of %zu byte"
+msgid_plural "%s: Wrote only %zu of %zu bytes"
+msgstr[0] "%s: Kirjoitettiin vain %lu tavua %lu tavusta"
 msgstr[1] "%s: Kirjoitti vain %lu/%lu tavua"
 
 #: lib/paxnames.c:140
 #, c-format
 msgid "Removing leading `%s' from member names"
-msgstr "Poistetaan edeltävä ”%s” jäsennimistä"
+msgstr "Poistetaan ”%s” tiedostonimien alusta"
 
 #: lib/paxnames.c:141
 #, c-format
 msgid "Removing leading `%s' from hard link targets"
-msgstr "Poistetaan edeltävä ”%s” kovalinkkikohteista"
+msgstr "Poistetaan ”%s” kovien linkkien kohdenimien alusta"
 
 #: lib/paxnames.c:154
 msgid "Substituting `.' for empty member name"
-msgstr "Korvataan ”.” tyhjälle jäsennimelle"
+msgstr "Tyhjän tiedostonimen korvaa ”.”"
 
 #: lib/paxnames.c:155
 msgid "Substituting `.' for empty hard link target"
-msgstr "Korvataan ”.” tyhjälle kovalinkkikohteelle"
+msgstr "Tyhjän kovien linkkien kohdenimen korvaa ”.”"
 
-#: lib/rtapelib.c:299
+#: lib/rtapelib.c:295
 #, c-format
 msgid "exec/tcp: Service not available"
-msgstr "exec/tcp: Palvelu ei ole saatavilla"
+msgstr "exec/tcp: Palvelu ei ole käytettävissä"
 
-#: lib/rtapelib.c:303
+#: lib/rtapelib.c:299
 #, c-format
 msgid "stdin"
 msgstr "vakiosyöte"
 
-#: lib/rtapelib.c:306
+#: lib/rtapelib.c:302
 #, c-format
 msgid "stdout"
 msgstr "vakiotuloste"
 
-#: lib/rtapelib.c:429
+#: lib/rtapelib.c:450
 #, c-format
 msgid "Cannot connect to %s: resolve failed"
-msgstr "Kohteeseen %s yhdistäminen epäonnistui: ratkaiseminen epäonnistui"
+msgstr "Ei voi yhdistää kohteeseen %s: nimenselvitys epäonnistui"
 
-#: lib/rtapelib.c:502
+#: lib/rtapelib.c:523
 #, c-format
 msgid "Cannot redirect files for remote shell"
-msgstr "Tiedostojen ohjaaminen edelleen etäpääteikkunaan epäonnistui"
+msgstr "Tiedostoja ei voida uudelleenohjata etäkuorelle"
 
-#: lib/rtapelib.c:516
+#: lib/rtapelib.c:528
+#, fuzzy, c-format
+msgid "Cannot reset uid and gid: %s"
+msgstr "tiedoston ”%s” aikaa ei voi asettaa"
+
+#: lib/rtapelib.c:540
 #, c-format
 msgid "Cannot execute remote shell"
-msgstr "Etäpääteikkunan suorittaminen epäonnistui"
+msgstr "Etäkuorta ei voi käynnistää"
 
-#: rmt/rmt.c:432
+#: rmt/rmt.c:434
 msgid "Seek direction out of range"
-msgstr "Hakusuunta on lukualueen ulkopuolella"
+msgstr "Siirtymän suunta sallitun välin ulkopuolella"
 
-#: rmt/rmt.c:438
+#: rmt/rmt.c:440
 msgid "Invalid seek direction"
-msgstr "Virheellinen hakusuunta"
+msgstr "Virheellinen siirtymän suunta"
 
-#: rmt/rmt.c:446
+#: rmt/rmt.c:448
 msgid "Invalid seek offset"
-msgstr "Virheellinen hakusiirros"
+msgstr "Virheellinen siirtymän arvo"
 
-#: rmt/rmt.c:452
+#: rmt/rmt.c:454
 msgid "Seek offset out of range"
-msgstr "Hakusiirros lukualueen ulkopuolella"
+msgstr "Siirtymä sallitun välin ulkopuolella"
 
-#: rmt/rmt.c:493 rmt/rmt.c:544 rmt/rmt.c:608
+#: rmt/rmt.c:495 rmt/rmt.c:546 rmt/rmt.c:610
 msgid "Invalid byte count"
-msgstr "Virheellinen tavulukumäärä"
+msgstr "Virheellinen tavumäärä"
 
-#: rmt/rmt.c:499 rmt/rmt.c:550 rmt/rmt.c:614 rmt/rmt.c:625
+#: rmt/rmt.c:501 rmt/rmt.c:552 rmt/rmt.c:616 rmt/rmt.c:627
 msgid "Byte count out of range"
-msgstr "Tavulukumäärä lukualueen ulkopuolella"
+msgstr "Tavumäärä sallitun välin ulkopuolella"
 
-#: rmt/rmt.c:558
+#: rmt/rmt.c:560
 msgid "Premature eof"
-msgstr "Ennenaikainen tiedostonloppumerkki"
+msgstr "Ennenaikainen tiedoston loppu"
 
-#: rmt/rmt.c:601
+#: rmt/rmt.c:603
 msgid "Invalid operation code"
 msgstr "Virheellinen toimintokoodi"
 
-#: rmt/rmt.c:636 rmt/rmt.c:680
+#: rmt/rmt.c:638 rmt/rmt.c:682
 msgid "Operation not supported"
-msgstr "Toimintoa ei tueta"
+msgstr "Toiminto ei ole tuettu"
 
-#: rmt/rmt.c:664
+#: rmt/rmt.c:666
 msgid "Unexpected arguments"
-msgstr "Odottamattomia argumentteja"
+msgstr "Odottamattomat argumentit"
 
-#: rmt/rmt.c:689
+#: rmt/rmt.c:691
 msgid "Manipulate a tape drive, accepting commands from a remote process"
-msgstr "Käsittele nauha-asemaa hyväksyen komentoja etäprosessista"
+msgstr "Ohjaa nauha-asemaa, hyväksyen komentoja etäprosessilta"
 
-#: rmt/rmt.c:696 src/main.c:129 tests/genfile.c:167
+#: rmt/rmt.c:698 src/main.c:130 tests/genfile.c:179
 msgid "NUMBER"
-msgstr "NUMERO"
+msgstr "LUKU"
 
-#: rmt/rmt.c:697
+#: rmt/rmt.c:699
 msgid "set debug level"
-msgstr "aseta vianjäljitystaso"
+msgstr "aseta vianjäljityksen taso"
 
-#: rmt/rmt.c:698 src/main.c:166 src/main.c:172 tests/genfile.c:133
-#: tests/genfile.c:181 tests/genfile.c:185 tests/genfile.c:188
-#: tests/genfile.c:194
+#: rmt/rmt.c:700 src/main.c:167 src/main.c:173 tests/genfile.c:136
+#: tests/genfile.c:193 tests/genfile.c:197 tests/genfile.c:200
+#: tests/genfile.c:206
 msgid "FILE"
 msgstr "TIEDOSTO"
 
-#: rmt/rmt.c:699
+#: rmt/rmt.c:701
 msgid "set debug output file name"
-msgstr "aseta vianjäljitystulostetiedostonimi"
+msgstr "aseta vianjäljityksen tulostetiedoston nimi"
 
-#: rmt/rmt.c:715 rmt/rmt.c:783
+#: rmt/rmt.c:717 rmt/rmt.c:785
 #, c-format
 msgid "cannot open %s"
-msgstr "kohteen %s avaaminen epäonnistui"
+msgstr "tiedostoa %s ei voi avata"
 
-#: rmt/rmt.c:780 tests/genfile.c:953 tests/genfile.c:970
+#: rmt/rmt.c:782 tests/genfile.c:1036
 #, c-format
 msgid "too many arguments"
 msgstr "liian monta argumenttia"
 
-#: rmt/rmt.c:822
+#: rmt/rmt.c:824
 msgid "Garbage command"
 msgstr "Roskakomento"
 
-#: src/copyin.c:45
+#: src/copyin.c:46
 #, c-format
 msgid "warning: skipped %ld byte of junk"
 msgid_plural "warning: skipped %ld bytes of junk"
-msgstr[0] "varoitus: hypättiin %ld roskatavun ylitse"
-msgstr[1] "varoitus: hypättiin %ld roskatavun ylitse"
+msgstr[0] "varoitus: ohitettiin %ld tavu roskaa"
+msgstr[1] "varoitus: ohitettiin %ld tavua roskaa"
 
-#: src/copyin.c:66
+#: src/copyin.c:68
 #, c-format
 msgid "rename %s -> "
 msgstr "nimeä uudelleen %s -> "
 
-#: src/copyin.c:114
+#: src/copyin.c:116
 #, c-format
 msgid "%s: stored filename length is out of range"
-msgstr "%s: tallennettu tiedostonimipituus on lukualueen ulkopuolella"
+msgstr "%s: tallennettu tiedostonimen pituus on sallitun välin ulkopuolella"
 
-#: src/copyin.c:173 src/copyin.c:519 src/copyin.c:534 src/copyin.c:1378
+#: src/copyin.c:175 src/copyin.c:521 src/copyin.c:536 src/copyin.c:1552
 #, c-format
 msgid "%s: checksum error (0x%x, should be 0x%x)"
 msgstr "%s: tarkistussummavirhe (0x%x, pitäisi olla 0x%x)"
 
-#: src/copyin.c:200 src/copypass.c:135
+#: src/copyin.c:202 src/copypass.c:129
 #, c-format
 msgid "%s not created: newer or same age version exists"
 msgstr "%s ei luotu: uudempi tai samanikäinen versio on olemassa"
 
-#: src/copyin.c:210 src/copypass.c:143
+#: src/copyin.c:212 src/copypass.c:137
 #, c-format
 msgid "cannot remove current %s"
 msgstr "nykyisen %s poistaminen epäonnistui"
 
-#: src/copyin.c:271 src/copyin.c:467 src/copyin.c:582 src/copypass.c:391
+#: src/copyin.c:273 src/copyin.c:469 src/copyin.c:584 src/copypass.c:395
 #, c-format
 msgid "cannot link %s to %s"
 msgstr "kohteen %s linkittäminen kohteeseen %s epäonnistui"
 
-#: src/copyin.c:500
+#: src/copyin.c:502
 #, c-format
 msgid "cannot swap halfwords of %s: odd number of halfwords"
 msgstr ""
 "%s-puolisanojen vaihtaminen keskenään epäonnistui: pariton puolisanojen "
 "lukumäärä"
 
-#: src/copyin.c:508
+#: src/copyin.c:510
 #, c-format
 msgid "cannot swap bytes of %s: odd number of bytes"
 msgstr ""
 "%s-tavujen vaihtaminen keskenään epäonnistui: pariton tavujen lukumäärä"
 
-#: src/copyin.c:659
-#, c-format
-msgid "%s: Cannot symlink to %s"
-msgstr "%s: Symbolisen linkin luominen kohteeseen %s epäonnistui"
-
-#: src/copyin.c:713 src/copyout.c:832 src/copypass.c:314
+#: src/copyin.c:858 src/copyout.c:826 src/copypass.c:315
 #, c-format
 msgid "%s: unknown file type"
 msgstr "%s: tuntematon tiedostotyyppi"
 
-#: src/copyin.c:848 src/copyin.c:855
+#: src/copyin.c:1015 src/copyin.c:1022
 #, c-format
 msgid "Malformed number %.*s"
-msgstr "Vääränmuotoinen numero %.*s"
+msgstr "Vääränmuotoinen luku %.*s"
 
-#: src/copyin.c:865
+#: src/copyin.c:1032
 #, c-format
 msgid "Archive value %.*s is out of range"
-msgstr "Arkistoarvo %.*s on lukualueen ulkopuolella"
+msgstr "Arkistoarvo %.*s on sallitun välin ulkopuolella"
 
-#: src/copyin.c:904
+#: src/copyin.c:1071
 #, c-format
 msgid "premature end of archive"
 msgstr "arkiston ennenaikainen loppu"
 
-#: src/copyin.c:1120
+#: src/copyin.c:1170
+#, c-format
+msgid "malformed header: file name of zero length"
+msgstr ""
+
+#: src/copyin.c:1178
+#, c-format
+msgid "malformed header: file name is not nul-terminated"
+msgstr ""
+
+#: src/copyin.c:1300
 #, c-format
 msgid "warning: archive header has reverse byte-order"
 msgstr "varoitus: arkisto-otsakkeella on käänteinen tavujärjestys"
 
-#: src/copyin.c:1260
+#: src/copyin.c:1437
 #, c-format
 msgid "standard input is closed"
 msgstr "vakiosyöte on suljettu"
 
-#: src/copyin.c:1435 src/copyout.c:874 src/copypass.c:332
+#: src/copyin.c:1610 src/copyout.c:868 src/copypass.c:333
 #, c-format
 msgid "%lu block\n"
 msgid_plural "%lu blocks\n"
 msgstr[0] "%lu lohko\n"
 msgstr[1] "%lu lohkoa\n"
 
-#: src/copyout.c:51 src/copyout.c:60
+#: src/copyout.c:49 src/copyout.c:57
 #, c-format
 msgid "cannot read checksum for %s"
 msgstr "tarkistussumman lukeminen kohteelle %s epäonnistui"
 
-#: src/copyout.c:293
-#, fuzzy, c-format
+#: src/copyout.c:290
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%s"
-msgstr "Numero sallitun lukualueen ulkopuolella: %s"
+msgstr "%s: arvo %s %s on sallitun välin 0..%s ulkopuolella"
 
-#: src/copyout.c:304
+#: src/copyout.c:301
 #, c-format
 msgid "%s: truncating %s"
 msgstr "%s: typistetään %s"
 
-#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:476
+#: src/copyout.c:336 src/copyout.c:399 src/copyout.c:473
 msgid "inode number"
 msgstr "inode-numero"
 
-#: src/copyout.c:342 src/copyout.c:405 src/copyout.c:480
+#: src/copyout.c:339 src/copyout.c:402 src/copyout.c:477
 msgid "file mode"
 msgstr "tiedostotila"
 
-#: src/copyout.c:345 src/copyout.c:407 src/copyout.c:484
+#: src/copyout.c:342 src/copyout.c:404 src/copyout.c:481
 msgid "uid"
 msgstr "uid"
 
-#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:488
+#: src/copyout.c:345 src/copyout.c:406 src/copyout.c:485
 msgid "gid"
 msgstr "gid"
 
-#: src/copyout.c:351 src/copyout.c:412 src/copyout.c:492
+#: src/copyout.c:348 src/copyout.c:409 src/copyout.c:489
 msgid "number of links"
 msgstr "linkkien lukumäärä"
 
-#: src/copyout.c:354 src/copyout.c:417
+#: src/copyout.c:351 src/copyout.c:414
 msgid "modification time"
 msgstr "muokkausaika"
 
-#: src/copyout.c:357 src/copyout.c:424 src/copyout.c:516
+#: src/copyout.c:354 src/copyout.c:421 src/copyout.c:513
 msgid "file size"
 msgstr "tiedostokoko"
 
-#: src/copyout.c:361
+#: src/copyout.c:358
 msgid "device major number"
-msgstr "laitteen pääversionumero"
+msgstr "laitteen päänumero"
 
-#: src/copyout.c:365
+#: src/copyout.c:362
 msgid "device minor number"
-msgstr "laitteen aliversionumero"
+msgstr "laitteen alinumero"
 
-#: src/copyout.c:369
+#: src/copyout.c:366
 msgid "rdev major"
-msgstr "rdev-pääversionumero"
+msgstr "rdev-päänumero"
 
-#: src/copyout.c:373
+#: src/copyout.c:370
 msgid "rdev minor"
-msgstr "rdev-aliversionumero"
+msgstr "rdev-alinumero"
 
-#: src/copyout.c:377 src/copyout.c:420 src/copyout.c:503
+#: src/copyout.c:374 src/copyout.c:417 src/copyout.c:500
 msgid "name size"
 msgstr "nimikoko"
 
-#: src/copyout.c:399
+#: src/copyout.c:396
 msgid "device number"
 msgstr "laitenumero"
 
-#: src/copyout.c:414
+#: src/copyout.c:411
 msgid "rdev"
 msgstr "rdev"
 
-#: src/copyout.c:472
+#: src/copyout.c:469
 #, c-format
 msgid "%s: truncating inode number"
 msgstr "%s: typistetään inode-numero"
 
-#: src/copyout.c:502
-#, fuzzy, c-format
+#: src/copyout.c:499
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%u"
-msgstr "Numero sallitun lukualueen ulkopuolella: %s"
+msgstr "%s: arvo %s %s on sallitun välin 0..%u ulkopuolella"
 
-#: src/copyout.c:515
-#, fuzzy, c-format
+#: src/copyout.c:512
+#, c-format
 msgid "%s: value %s %s out of allowed range 0..%lu"
-msgstr "Numero sallitun lukualueen ulkopuolella: %s"
+msgstr "%s: arvo %s %s on sallitun välin 0..%lu ulkopuolella"
 
-#: src/copyout.c:564
+#: src/copyout.c:561
 #, c-format
 msgid "%s: file name too long"
 msgstr "%s: tiedostonimi on liian pitkä"
 
-#: src/copyout.c:621
+#: src/copyout.c:618
 #, c-format
 msgid "standard output is closed"
 msgstr "vakiotuloste on suljettu"
 
-#: src/copyout.c:644 src/copypass.c:99
+#: src/copyout.c:641 src/copypass.c:93
 #, c-format
 msgid "blank line ignored"
 msgstr "tyhjää riviä ei oteta huomioon"
 
-#: src/copyout.c:757
+#: src/copyout.c:751
 #, c-format
 msgid "%s not dumped: not a regular file"
-msgstr "%s ei ole vedostettu:  ei ole tavallinen tiedosto"
+msgstr "%s: ei vedostettu: ei ole tavallinen tiedosto"
 
-#: src/copyout.c:808
+#: src/copyout.c:802
 #, c-format
 msgid "%s: symbolic link too long"
 msgstr "%s: symbolinen linkki on liian pitkä"
 
-#: src/copypass.c:386
+#: src/copypass.c:390
 #, c-format
 msgid "%s linked to %s"
 msgstr "%s linkitetty kohteeseen %s"
 
-#: src/main.c:76
+#: src/main.c:77
 msgid ""
 "GNU `cpio' copies files to and from archives\n"
 "\n"
@@ -840,458 +817,451 @@ msgstr ""
 "  # Kopioi nimiluettelossa nimetyt tiedostot kohdehakemistoon\n"
 "  cpio -p kohdehakemisto < nimiluettelo\n"
 
-#: src/main.c:92
+#: src/main.c:93
 #, c-format
 msgid "%s is meaningless with %s"
-msgstr "%s on merkityksetön kohteen %s kanssa"
+msgstr "%s on merkityksetön kun %s on annettu"
 
-#: src/main.c:98
+#: src/main.c:99
 msgid "Main operation mode:"
 msgstr "Päätoimintatila:"
 
-#: src/main.c:100
+#: src/main.c:101
 msgid "Create the archive (run in copy-out mode)"
-msgstr "Luo arkisto (suorita kopioi-arkistosta-tilassa)"
+msgstr "Luo arkisto (suorita kopion-vienti-tilassa)"
 
-#: src/main.c:102
+#: src/main.c:103
 msgid "Extract files from an archive (run in copy-in mode)"
-msgstr "Poimi tiedostot arkistosta (suorita kopioi-arkistoon tilassa)"
+msgstr "Pura tiedostot arkistosta (suorita kopion-tuonti-tilassa)"
 
-#: src/main.c:104
+#: src/main.c:105
 msgid "Run in copy-pass mode"
-msgstr "Suorita kopioi-ilman-arkistoa-tilassa"
+msgstr "Suorita kopion-välitys-tilassa"
 
-#: src/main.c:106
+#: src/main.c:107
 msgid "Print a table of contents of the input"
-msgstr "Tulosta syötteen sisältötaulu"
+msgstr "Tulosta syötteen sisällysluettelo"
 
-#: src/main.c:112
+#: src/main.c:113
 msgid "Operation modifiers valid in any mode:"
-msgstr "Toimintomääreet ovat kelvollisia kaikissa tiloissa:"
-
-#: src/main.c:114
-msgid "DIR"
-msgstr "DIR"
+msgstr "Kaikissa tiloissa kelvolliset toimintomääreet:"
 
 #: src/main.c:115
-msgid "Change to directory DIR"
-msgstr "Vaihda hakemistoon DIR"
+msgid "DIR"
+msgstr "HAK"
 
-#: src/main.c:118
+#: src/main.c:116
+msgid "Change to directory DIR"
+msgstr "Siirry hakemistoon HAK"
+
+#: src/main.c:119
 msgid "Archive file is local, even if its name contains colons"
 msgstr ""
-"Arkistotiedosto on paikallinen, vaikka sen nimi sisältää kaksoispisteitä"
+"Arkistotiedosto on paikallinen, vaikka sen nimi sisältäisi kaksoispisteitä"
 
-#: src/main.c:119 tests/genfile.c:154
+#: src/main.c:120 tests/genfile.c:158
 msgid "FORMAT"
 msgstr "MUOTO"
 
-#: src/main.c:120
+#: src/main.c:121
 msgid "Use given archive FORMAT"
 msgstr "Käytä annettua arkistoMUOTOa"
 
-#: src/main.c:122
+#: src/main.c:123
 msgid "Set the I/O block size to 5120 bytes"
 msgstr "Aseta siirräntälohkon kooksi 5120 tavua"
 
-#: src/main.c:123
+#: src/main.c:124
 msgid "BLOCK-SIZE"
 msgstr "LOHKOKOKO"
 
-#: src/main.c:124
+#: src/main.c:125
 msgid "Set the I/O block size to BLOCK-SIZE * 512 bytes"
 msgstr "Aseta siirräntälohkon kooksi LOHKOKOKO * 512 tavua"
 
-#: src/main.c:126
+#: src/main.c:127
 msgid "Use the old portable (ASCII) archive format"
 msgstr "Käytä vanhaa siirrettävää (ASCII)-arkistomuotoa"
 
-#: src/main.c:128
+#: src/main.c:129
 msgid "Print a \".\" for each file processed"
 msgstr "Tulosta ”.” jokaiselle prosessoidulle tiedostolle"
 
-#: src/main.c:130
+#: src/main.c:131
 msgid "Set the I/O block size to the given NUMBER of bytes"
 msgstr "Aseta siirräntälohkon kooksi annettu NUMERO tavua"
 
-#: src/main.c:132
+#: src/main.c:133
 msgid "Do not print the number of blocks copied"
-msgstr "Älä tulosta kopioitujen lohkojen lukumäärää"
+msgstr "Älä näytä kopioitujen lohkojen lukumäärää"
 
-#: src/main.c:134
+#: src/main.c:135
 msgid "Verbosely list the files processed"
 msgstr "Luettele laveasti käsitellyt tiedostot"
 
-#: src/main.c:137
+#: src/main.c:138
 msgid "Enable debugging info"
-msgstr "Ota käyttöön virheenjäljitystiedot"
+msgstr "Ota käyttöön vianjäljitystiedot"
 
-#: src/main.c:139
+#: src/main.c:140
 msgid "FLAG"
 msgstr "LIPPU"
 
-#: src/main.c:140
+#: src/main.c:141
 msgid ""
 "Control warning display. Currently FLAG is one of 'none', 'truncate', 'all'. "
 "Multiple options accumulate."
 msgstr ""
-"Valvontavaroitusnäyttö. Nykyään LIPPU on yksi lipuista ”none, ”truncate”, "
-"”all”. Monivalitsimet karttuvat."
+"Ohjaa varoitusten näyttämistä. LIPPU on nykyisin ”none, ”truncate” tai "
+"”all”. Useampi valitsin karttuu."
 
-#: src/main.c:141
+#: src/main.c:142
 msgid "[USER][:.][GROUP]"
 msgstr "[KÄYTTÄJÄ][:.][RYHMÄ]"
 
-#: src/main.c:142
+#: src/main.c:143
 msgid ""
 "Set the ownership of all files created to the specified USER and/or GROUP"
 msgstr ""
 "Aseta omistajuus kaikille tiedostoille, jotka luotiin KÄYTTÄJÄ ja/tai RYHMÄ-"
 "määritellyillä"
 
-#: src/main.c:147
+#: src/main.c:148
 msgid "Operation modifiers valid in copy-in and copy-out modes"
-msgstr ""
-"Toimintomääreet ovat kelvollisia kopioi-arkistoon- ja kopioi-arkistosta-"
-"tiloissa"
+msgstr "Kopion-tuonti- ja kopion-vienti-tiloissa kelvolliset toimintomääreet"
 
-#: src/main.c:148 src/main.c:183 src/main.c:193
+#: src/main.c:149 src/main.c:184 src/main.c:194
 msgid "[[USER@]HOST:]FILE-NAME"
-msgstr "[[KÄYTTÄJÄ@]ISÄNTÄ:]TIEDOSTONIMI"
+msgstr "[[KÄYTTÄJÄ@]KONE:]TIEDOSTONIMI"
 
-#: src/main.c:149
+#: src/main.c:150
 msgid ""
 "Use this FILE-NAME instead of standard input or output. Optional USER and "
 "HOST specify the user and host names in case of a remote archive"
 msgstr ""
 "Käytä tätä TIEDOSTONIMI-tiedostoa eikä vakiosyötettä tai -tulostetta. "
-"Valinnainen KÄYTTÄJÄ ja ISÄNTÄ määrittelevät käyttäjän ja tietokoneen nimen "
+"Valinnainen KÄYTTÄJÄ ja KONE määrittelevät käyttäjän ja konenimen "
 "käytettäessä etäarkistoa"
 
-#: src/main.c:150 tests/genfile.c:170
+#: src/main.c:151 tests/genfile.c:182
 msgid "STRING"
 msgstr "MERKKIJONO"
 
-#: src/main.c:151
+#: src/main.c:152
 msgid "Print STRING when the end of a volume of the backup media is reached"
-msgstr ""
-"Tulosta MERKKIJONO kun varmuuskopiomedian tilavuuden loppu on saavutettu"
+msgstr "Tulosta MERKKIJONO kun varmuuskopiomedia-osan loppu on saavutettu"
 
-#: src/main.c:153 src/mt.c:182 tests/genfile.c:191
+#: src/main.c:154 src/mt.c:181 tests/genfile.c:203
 msgid "COMMAND"
 msgstr "KOMENTO"
 
-#: src/main.c:154
+#: src/main.c:155
 msgid "Use COMMAND instead of rsh"
 msgstr "Käytä etäKOMENTOja eikä rsh:tä"
 
-#: src/main.c:160
+#: src/main.c:161
 msgid "Operation modifiers valid only in copy-in mode:"
-msgstr "Toimintomääreet ovat kelvollisia vain kopioi-arkistoon-tilassa:"
+msgstr "Toimintomääreet ovat kelvollisia vain kopion-tuonti-tilassa:"
 
-#: src/main.c:162
+#: src/main.c:163
 msgid "Only copy files that do not match any of the given patterns"
-msgstr "Kopioi vain tiedostoja, jotka eivät täsmää mihinkään annettuun malliin"
+msgstr "Kopioi vain tiedostot, jotka eivät täsmää mihinkään annettuun hahmoon"
 
-#: src/main.c:164
+#: src/main.c:165
 msgid "In the verbose table of contents listing, show numeric UID and GID"
-msgstr "Laveassa sisältöluettelotaulussa, näytä numeerinen UID ja GID"
+msgstr "Näytä laveassa sisällysluettelossa numeerinen UID ja GID"
 
-#: src/main.c:167
+#: src/main.c:168
 msgid ""
 "Read additional patterns specifying filenames to extract or list from FILE"
 msgstr ""
-"Lue TIEDOSTOsta lisämallit, jotka määrittelevät poimittavat tai lueteltavat "
+"Lue TIEDOSTOsta lisähahmot, jotka määrittelevät purettavat tai lueteltavat "
 "tiedostonimet"
 
-#: src/main.c:169
+#: src/main.c:170
 msgid ""
 "When reading a CRC format archive, only verify the CRC's of each file in the "
 "archive, don't actually extract the files"
 msgstr ""
-"Kun luetaan CRC-muotoinen arkisto, todentaa vain jokaisen arkiston tiedoston "
-"CRC-tiivistealgoritmin, ei todella poimi tiedostoja"
+"Luettaessa CRC-muotoista arkistoa, todenna vain jokaisen arkiston tiedoston "
+"CRC, älä oikeasti pura tiedostoja"
 
-#: src/main.c:171
+#: src/main.c:172
 msgid "Interactively rename files"
 msgstr "Nimeä tiedostoja uudelleen vuorovaikutteisesti"
 
-#: src/main.c:175
+#: src/main.c:176
 msgid ""
 "Swap both halfwords of words and bytes of halfwords in the data. Equivalent "
 "to -sS"
 msgstr "Vaihda keskenään sekä puolisanoja että tavuja datassa. Sama kuin -sS"
 
-#: src/main.c:177
+#: src/main.c:178
 msgid "Swap the bytes of each halfword in the files"
-msgstr ""
-"Vaihda keskenään jokaisen kahden tavun pituisen puolisanan tavuja tiedostossa"
+msgstr "Vaihda tiedostoissa keskenään jokaisen puolisanan tavut"
 
-#: src/main.c:179
+#: src/main.c:180
 msgid "Swap the halfwords of each word (4 bytes) in the files"
-msgstr ""
-"Vaihda keskenään jokaisen neljän tavun pituisen sanan kahden tavun pituisia "
-"puolitavuja tiedostossa"
+msgstr "Vaihda tiedostoissa keskenään jokaisen sanan (4 tavua) puolisanat"
 
-#: src/main.c:182
+#: src/main.c:183
 msgid "Extract files to standard output"
-msgstr "Poimi tiedostot vakiotulosteeseen"
+msgstr "Pura tiedostot vakiotulosteeseen"
 
-#: src/main.c:184
+#: src/main.c:185
 msgid ""
 "Archive filename to use instead of standard input. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
 msgstr ""
-"Vakiosyötteen sijasta käytettävä arkistonimi. Valinnainen KÄYTTÄJÄ ja ISÄNTÄ "
-"määrittelevät käyttäjän ja tietokoneen nimet etäarkistoa käytettäessä"
+"Vakiosyötteen sijasta käytettävä arkistonimi. Valinnaiset KÄYTTÄJÄ ja KONE "
+"määrittelevät käyttäjän ja koneen nimet etäarkistoa käytettäessä"
 
-#: src/main.c:190
+#: src/main.c:191
 msgid "Operation modifiers valid only in copy-out mode:"
-msgstr "Toimintomääreet ovat kelvollisia vain kopioi-arkistosta-tilassa:"
+msgstr "Vain kopion-vienti-tilassa kelvolliset toimintomääreet:"
 
-#: src/main.c:192
+#: src/main.c:193
 msgid "Append to an existing archive."
-msgstr "Liitä olemassaolevaan arkistoon."
+msgstr "Lisää olemassa olevaan arkistoon."
 
-#: src/main.c:194
+#: src/main.c:195
 msgid ""
 "Archive filename to use instead of standard output. Optional USER and HOST "
 "specify the user and host names in case of a remote archive"
 msgstr ""
 "Arkistotiedostonimi, jota käytetään vakiotulosteen sijasta. Valinnainen "
-"KÄYTTÄJÄ ja ISÄNTÄ määrittelevät käyttäjän ja tietokoneen nimen etäarkistoa "
+"KÄYTTÄJÄ ja KONE määrittelevät käyttäjän ja koneen nimen etäarkistoa "
 "käytettäessä"
 
-#: src/main.c:196
+#: src/main.c:197
 msgid "Renumber inodes"
-msgstr "Numeroi inodes-solmut uudelleen"
+msgstr "Numeroi i-solmut uudelleen"
 
-#: src/main.c:198
+#: src/main.c:199
 msgid "Don't store device numbers"
-msgstr "Älä tallenna laitenumeroa"
+msgstr "Älä tallenna laitenumeroita"
 
-#: src/main.c:200
+#: src/main.c:201
+msgid "ignore number of links of a directory; always assume 2"
+msgstr ""
+
+#: src/main.c:203
 msgid "Create device-independent (reproducible) archives"
 msgstr "Luo laiteriippumattomia (toistettavia) arkistoja"
 
-#: src/main.c:207
+#: src/main.c:210
 msgid "Operation modifiers valid only in copy-pass mode:"
-msgstr "Toimintomääreet ovat kelvollisia vain kopioi-ilman-arkistoa-tilassa:"
+msgstr "Vain kopion-välitys-tilassa kelvolliset toimintomääreet:"
 
-#: src/main.c:209
+#: src/main.c:212
 msgid "Link files instead of copying them, when  possible"
-msgstr "Linkitä tiedostot kopioimisen sijasta, milloin mahdollista"
+msgstr "Linkitä tiedostot kopioimisen sijasta, kun mahdollista"
 
-#: src/main.c:216
+#: src/main.c:219
 msgid "Operation modifiers valid in copy-in and copy-out modes:"
-msgstr ""
-"Toimintomääreet ovat kelvollisia kopioi-arkistoon- ja kopioi-arkistosta-"
-"tiloissa:"
-
-#: src/main.c:218
-msgid "Do not strip file system prefix components from the file names"
-msgstr "Älä riisu tiedostojärjestelmän etuliitekomponentteja tiedostonimistä"
+msgstr "Kopion-tuonti- ja kopion-vienti-tiloissa kelvolliset toimintomääreet:"
 
 #: src/main.c:221
+msgid "Do not strip file system prefix components from the file names"
+msgstr "Älä poista tiedostojärjestelmän etuliitekomponentteja tiedostonimistä"
+
+#: src/main.c:224
 msgid "Create all files relative to the current directory"
 msgstr "Luo kaikki tiedostot suhteessa nykyiseen hakemistoon"
 
-#: src/main.c:226
+#: src/main.c:229
 msgid "Operation modifiers valid in copy-out and copy-pass modes:"
-msgstr ""
-"Toimintomääreet ovat kelvollisia kopioi-arkistosta- ja kopioi-ilman-arkistoa-"
-"tiloissa:"
+msgstr "Kopion-vienti- ja kopion-välitys-tiloissa kelvolliset toimintomääreet:"
 
-#: src/main.c:228
+#: src/main.c:231
 msgid ""
 "Filenames in the list are delimited by null characters instead of newlines"
-msgstr "Tiedostonimien luettelo päättyy null-merkkiin eikä rivinvaihtoihin"
+msgstr ""
+"Luettelon tiedostonimet on eroteltu null-merkeillä eikä rivinvaihdoilla"
 
-#: src/main.c:230
+#: src/main.c:233
 msgid ""
 "Dereference  symbolic  links  (copy  the files that they point to instead of "
 "copying the links)."
 msgstr ""
-"Pura symboliset linkit (kopioi tiedostot, mihin ne osoittavat eikä linkkejä)."
+"Seuraa symbolisia linkkejä (kopioi linkkien osoittamat tiedostot eikä itse "
+"linkkejä)."
 
-#: src/main.c:232
+#: src/main.c:235
 msgid "Reset the access times of files after reading them"
-msgstr "Palauta tiedostojen oletuskäyttöajat lukemisen jälkeen"
+msgstr "Palauta tiedostojen käyttöajat lukemisen jälkeen"
 
-#: src/main.c:238
+#: src/main.c:241
 msgid "Operation modifiers valid in copy-in and copy-pass modes:"
-msgstr ""
-"Toimintomääreet ovat kelvollisia kopioi-arkistoon- ja kopioi-ilman-arkistoa-"
-"tiloissa:"
+msgstr "Kopion-tuonti- ja kopion-välitys-tiloissa kelvolliset toimintomääreet:"
 
-#: src/main.c:240
+#: src/main.c:243
 msgid "Retain previous file modification times when creating files"
-msgstr "Säilytä edelliset tiedoston muokkausajat tiedostoja luotaessa"
+msgstr "Säilytä edelliset tiedostojen muokkausajat tiedostoja luotaessa"
 
-#: src/main.c:242
+#: src/main.c:245
 msgid "Create leading directories where needed"
-msgstr "Luo hakemistopolut, milloin niitä tarvitaan"
+msgstr "Luo hakemistopolut tarvittaessa"
 
-#: src/main.c:244
+#: src/main.c:247
 msgid "Do not change the ownership of the files"
-msgstr "Älä vaihda tiedostojen omistajuutta"
+msgstr "Älä muuta tiedostojen omistajuutta"
 
-#: src/main.c:246
+#: src/main.c:249
 msgid "Replace all files unconditionally"
-msgstr "Korvaa kaikki tiedostot ehdottomasti"
+msgstr "Korvaa kaikki tiedostot ehdoitta"
 
-#: src/main.c:248
+#: src/main.c:251
 msgid "Write files with large blocks of zeros as sparse files"
 msgstr ""
-"Kirjoita laajoja nollalohkoja sisältävät tiedostot siroteltuina "
-"(sparse-)tiedostoina"
+"Kirjoita laajoja nollalohkoja sisältävät tiedostot hajanaisina tiedostoina"
 
-#: src/main.c:324 src/main.c:341
+#: src/main.c:327 src/main.c:344
 msgid "invalid block size"
 msgstr "virheellinen lohkokoko"
 
-#: src/main.c:330 src/main.c:366
+#: src/main.c:333 src/main.c:369
 msgid "Archive format multiply defined"
 msgstr "Arkistomuoto on määritelty useita kertoja"
 
-#: src/main.c:384
+#: src/main.c:387
 #, c-format
 msgid ""
 "invalid archive format `%s'; valid formats are:\n"
 "crc newc odc bin ustar tar (all-caps also recognized)"
 msgstr ""
-"virheellinen arkistomuoto ”%s”; kelvollisia muotoja ovat:\n"
-"crc newc odc bin ustar tar (tunnistetaan myös samat isoilla kirjaimilla)"
+"virheellinen arkistomuoto ”%s”; kelvolliset muodot ovat:\n"
+"crc newc odc bin ustar tar (myös samat kokonaan isoilla kirjaimilla)"
 
-#: src/main.c:391 src/main.c:436 src/main.c:450
+#: src/main.c:394 src/main.c:439 src/main.c:453
 msgid "Mode already defined"
 msgstr "Tila on jo määritelty"
 
-#: src/main.c:430
+#: src/main.c:433
 msgid "--no-preserve-owner cannot be used with --owner"
-msgstr "--no-preserve-owner ei voida käyttää valitsimen --owner kanssa"
+msgstr "--no-preserve-owner ja --owner ovat yhteensopimattomia"
 
-#: src/main.c:485
+#: src/main.c:493
 msgid "--owner cannot be used with --no-preserve-owner"
-msgstr "--owner ei voida käyttää valitsimen --no-preserve-owner kanssa"
+msgstr "--owner ja --no-preserve-owner ovat yhteensopimattomia"
 
-#: src/main.c:532
+#: src/main.c:541
 #, c-format
 msgid "Invalid value for --warning option: %s"
 msgstr "Virheellinen arvo --warning-valitsimelle: %s"
 
-#: src/main.c:562
+#: src/main.c:571
 msgid "[destination-directory]"
 msgstr "[kohdehakemisto]"
 
-#: src/main.c:598
+#: src/main.c:607
 msgid "You must specify one of -oipt options."
-msgstr ""
+msgstr "Yksi valitsimista -oipt on annettava."
 
-#: src/main.c:624
+#: src/main.c:633
 msgid "Both -I and -F are used in copy-in mode"
-msgstr "Sekä -I että -F on käytetty kopioi-kirjastoon-tilassa"
+msgstr "Sekä -I että -F annettu kopion-tuonti-tilassa"
 
-#: src/main.c:636 src/main.c:676
+#: src/main.c:645 src/main.c:685
 msgid "Too many arguments"
 msgstr "Liian monta argumenttia"
 
-#: src/main.c:655
+#: src/main.c:664
 msgid ""
 "--append is used but no archive file name is given (use -F or -O options)"
 msgstr ""
-"--append käytetään, mutta mitään arkistotiedostonimeä ei ole annettu (käytä -"
-"F tai -O -valitsimia)"
+"--append käytössä, mutta arkiston tiedostonimeä ei ole annettu (käytä "
+"valitsimia -F tai -O)"
 
-#: src/main.c:662
+#: src/main.c:671
 msgid "Both -O and -F are used in copy-out mode"
-msgstr "Sekä -O että -F on käytetty kopioi-kirjastosta-tilassa"
+msgstr "Sekä -I että -F annettu kopion-vienti-tilassa"
 
-#: src/main.c:678
+#: src/main.c:687
 msgid "Not enough arguments"
 msgstr "Liian vähän argumentteja"
 
-#: src/main.c:682
+#: src/main.c:691
 msgid "Archive format is not specified in copy-pass mode (use --format option)"
 msgstr ""
-"Arkistomuoto ei ole määritelty kopioi-ilman-kirjastoa-tilassa (käytä --"
-"format-valitsinta)"
+"Arkistomuoto määrittelemättä kopion-välitys-tilassa (käytä valitsinta --"
+"format)"
 
-#: src/main.c:708
+#: src/main.c:717
 #, c-format
 msgid "-F can be used only with --create or --extract"
-msgstr "-F voidaan käyttää vain valitsimen --create tai --extract kanssa"
+msgstr "-F sopii käytettäväksi valitsimien --create tai --extract kanssa"
 
-#: src/main.c:711
+#: src/main.c:720
 #, c-format
 msgid "Cannot open %s"
-msgstr "Kohteen %s avaaminen epäonnistui"
+msgstr "Tiedostoa %s ei voi avata"
 
-#: src/main.c:783
+#: src/main.c:792
 #, c-format
 msgid "error closing archive"
 msgstr "virhe suljettaessa arkistoa"
 
-#: src/makepath.c:82 src/makepath.c:129
+#: src/makepath.c:81 src/makepath.c:128
 #, c-format
 msgid "cannot make directory `%s'"
 msgstr "hakemiston ”%s” luominen epäonnistui"
 
-#: src/makepath.c:105 src/makepath.c:155
+#: src/makepath.c:104 src/makepath.c:154
 #, c-format
 msgid "`%s' exists but is not a directory"
 msgstr "”%s” on olemassa, mutta ei ole hakemisto"
 
-#: src/mt.c:166
+#: src/mt.c:165
 msgid "control magnetic tape drive operation"
-msgstr "ohjaa magneettisen nauha-aseman toimintaa"
+msgstr "ohjaa magneettinauha-aseman toimintaa"
 
-#: src/mt.c:180
+#: src/mt.c:179
 msgid "DEVICE"
 msgstr "LAITE"
 
-#: src/mt.c:181
+#: src/mt.c:180
 msgid "use device as the file name of the tape drive to operate on"
-msgstr "käytä laitetta toimivan nauha-aseman tiedostonimenä"
+msgstr "käytä laitetta ohjattavan nauha-aseman tiedostonimenä"
 
-#: src/mt.c:183
+#: src/mt.c:182
 msgid "use remote COMMAND instead of rsh"
-msgstr "käytä etäKOMENTOja eikä rsh-yhteyskäytäntöä"
+msgstr "käytä etäKOMENTOa rsh:n sijaan"
 
-#: src/mt.c:204
+#: src/mt.c:203
 msgid "operation"
 msgstr "toiminta"
 
-#: src/mt.c:212
+#: src/mt.c:211
 #, c-format
 msgid "invalid count value"
 msgstr "virheellinen lukumääräarvo"
 
-#: src/mt.c:231
+#: src/mt.c:230
 #, c-format
 msgid "no tape device specified"
 msgstr "nauhalaitetta ei ole määritelty"
 
-#: src/mt.c:254
+#: src/mt.c:253
 msgid "operation [count]"
 msgstr "toiminto [lukumäärä]"
 
-#: src/mt.c:271
+#: src/mt.c:270
 #, c-format
 msgid "%s is not a character special file"
 msgstr "%s ei ole merkkierikoistiedosto"
 
-#: src/mt.c:282 src/mt.c:291
+#: src/mt.c:281 src/mt.c:290
 #, c-format
 msgid "%s: rmtioctl failed"
 msgstr "%s: rmtioctl epäonnistui"
 
-#: src/mt.c:344
+#: src/mt.c:343
 #, c-format
 msgid "%s: rmtopen failed"
 msgstr "%s: rmtopen epäonnistui"
 
-#: src/mt.c:357
+#: src/mt.c:356
 #, c-format
 msgid "%s: rmtclose failed"
 msgstr "%s: rmtclose epäonnistui"
@@ -1301,486 +1271,428 @@ msgstr "%s: rmtclose epäonnistui"
 msgid "invalid header: checksum error"
 msgstr "virheellinen otsake: tarkistussummavirhe"
 
-#: src/userspec.c:122
+#: src/userspec.c:123
 msgid "invalid user"
-msgstr "väärä käyttäjä"
+msgstr "virheellinen käyttäjä"
 
-#: src/userspec.c:128
+#: src/userspec.c:129
 msgid "cannot get the login group of a numeric UID"
-msgstr "numeerisen UID:n login-ryhmän hakeminen epäonnistui"
+msgstr "numeerisen UID:n kirjautumisryhmän selvitys epäonnistui"
 
-#: src/userspec.c:175
+#: src/userspec.c:172
 msgid "invalid group"
-msgstr "väärä ryhmä"
+msgstr "virheellinen ryhmä"
 
-#: src/util.c:148
+#: src/util.c:146
 #, c-format
 msgid "write error: partial write"
 msgstr "kirjoitusvirhe: osittainen kirjoitus"
 
-#: src/util.c:210 src/util.c:376
+#: src/util.c:208 src/util.c:374
 #, c-format
 msgid "read error"
 msgstr "lukuvirhe"
 
-#: src/util.c:212
+#: src/util.c:210
 #, c-format
 msgid "premature end of file"
 msgstr "ennenaikainen tiedoston loppu"
 
-#: src/util.c:495 src/util.c:546
+#: src/util.c:493 src/util.c:544
 #, c-format
 msgid "File %s shrunk by %s byte, padding with zeros"
 msgid_plural "File %s shrunk by %s bytes, padding with zeros"
 msgstr[0] "Tiedosto %s kutistui %s tavun, täytetään nollilla"
 msgstr[1] "Tiedosto %s kutistui %s tavua, täytetään nollilla"
 
-#: src/util.c:502 src/util.c:553
+#: src/util.c:500 src/util.c:551
 #, c-format
 msgid "Read error at byte %lld in file %s, padding with zeros"
 msgstr "Lukuvirhe tavussa %lld tiedostossa %s, täytetään nollilla"
 
-#: src/util.c:588
+#: src/util.c:586
 #, c-format
 msgid "File %s grew, %<PRIuMAX> new byte not copied"
 msgid_plural "File %s grew, %<PRIuMAX> new bytes not copied"
-msgstr[0] "Tiedosto %s kasvoi, %<PRIuMAX> uusi tavu ei kopioitu"
+msgstr[0] "Tiedosto %s kasvoi, %<PRIuMAX> uutta tavua ei kopioitu"
 msgstr[1] "Tiedosto %s kasvoi, %<PRIuMAX> uutta tavua ei kopioitu"
 
-#: src/util.c:594
+#: src/util.c:592
 #, c-format
 msgid "File %s was modified while being copied"
-msgstr "Tiedostoa %s muokattiin kopioinnin aikana"
+msgstr "Tiedostoa %s muutettiin kopioinnin aikana"
 
-#: src/util.c:608
+#: src/util.c:606
 #, c-format
 msgid "virtual memory exhausted"
 msgstr "virtuaalimuisti loppui"
 
-#: src/util.c:614
+#: src/util.c:612
 #, c-format
 msgid "Creating intermediate directory `%s'"
 msgstr "Luodaan välittäjähakemisto ”%s”"
 
-#: src/util.c:651 src/util.c:657
+#: src/util.c:649 src/util.c:655
 #, c-format
 msgid "cannot seek on output"
 msgstr "tulosteesta etsiminen epäonnistui"
 
-#: src/util.c:875
+#: src/util.c:871
 #, c-format
 msgid "Found end of tape.  Load next tape and press RETURN. "
 msgstr ""
 "Nauhan loppu löytyi. Lataa seuraavaa nauha ja paina RETURN-painiketta. "
 
-#: src/util.c:877
+#: src/util.c:873
 #, c-format
 msgid "Found end of tape.  To continue, type device/file name when ready.\n"
 msgstr ""
-"Löytyi nauhan loppu. Jatkaaksesi, kirjoita laitteen/tiedoston nimi, kun olet "
-"valmis.\n"
+"Löytyi nauhan loppu. Jatkaaksesi kirjoita laitteen/tiedoston nimi, kun on "
+"valmista.\n"
 
-#: src/util.c:900
+#: src/util.c:896
 #, c-format
 msgid "To continue, type device/file name when ready.\n"
-msgstr "Jatkaaksesi, kirjoita laite-/tiedostonimi, kun olet valmis.\n"
+msgstr "Jatkaaksesi kirjoita laitteen/tiedoston nimi, kun on valmista.\n"
 
-#: src/util.c:925
+#: src/util.c:921
 #, c-format
 msgid "internal error: tape descriptor changed from %d to %d"
-msgstr "sisäinen virhe: nauhamäärittelijä vaihtui arvosta %d arvoon %d"
+msgstr "sisäinen virhe: nauhan kahva vaihtui arvosta %d arvoon %d"
 
-#: src/util.c:1487
+#: src/util.c:1492
 #, c-format
 msgid "%s is not a directory"
 msgstr "%s ei ole hakemisto"
 
-#: src/util.c:1507
+#: src/util.c:1512
 #, c-format
 msgid "Creating directory `%s'"
 msgstr "Luodaan hakemisto ”%s”"
 
-#: src/util.c:1514
+#: src/util.c:1519
 #, c-format
 msgid "cannot change to directory `%s'"
-msgstr "hakemistoon ”%s” vaihtaminen epäonnistui"
+msgstr "hakemistoon ”%s” siirtyminen epäonnistui"
 
-#: tests/genfile.c:112
+#: tests/genfile.c:115
 msgid ""
 "genfile manipulates data files for GNU paxutils test suite.\n"
 "OPTIONS are:\n"
 msgstr ""
-"genfile käsittelee data-tiedostoja GNU paxutils-testausohjelmistolle.\n"
+"genfile muokkaa datatiedostoja GNU paxutils -testausta varten.\n"
 "VALITSIMET ovat:\n"
+"\n"
 
-#: tests/genfile.c:128
+#: tests/genfile.c:131
 msgid "File creation options:"
 msgstr "Tiedostonluontivalitsimet:"
 
-#: tests/genfile.c:129 tests/genfile.c:140
+#: tests/genfile.c:132 tests/genfile.c:143
 msgid "SIZE"
 msgstr "KOKO"
 
-#: tests/genfile.c:130
+#: tests/genfile.c:133
 msgid "Create file of the given SIZE"
 msgstr "Luo annetun KOKOinen tiedosto"
 
-#: tests/genfile.c:132
+#: tests/genfile.c:135
 msgid "Write to file NAME, instead of standard output"
 msgstr "Kirjoita tiedostoon NIMI, eikä vakiotulosteeseen"
 
-#: tests/genfile.c:134
+#: tests/genfile.c:137
 msgid "Read file names from FILE"
 msgstr "Lue tiedostonimet TIEDOSTOsta"
 
-#: tests/genfile.c:136
+#: tests/genfile.c:139
 msgid "-T reads null-terminated names"
-msgstr "-T lukee null-päätteiset nimet"
+msgstr "-T lukee null-päätteisiä nimiä"
 
-#: tests/genfile.c:137
+#: tests/genfile.c:140
 msgid "PATTERN"
-msgstr "MALLI"
-
-#: tests/genfile.c:138
-msgid "Fill the file with the given PATTERN. PATTERN is 'default' or 'zeros'"
-msgstr "Täytä tiedosto annetulla MALLIlla. MALLI on ”default” tai ”zeroes”"
+msgstr "HAHMO"
 
 #: tests/genfile.c:141
+msgid "Fill the file with the given PATTERN. PATTERN is 'default' or 'zeros'"
+msgstr "Täytä tiedosto annetulla HAHMOlla. HAHMO on ”default” tai ”zeroes”"
+
+#: tests/genfile.c:144
 msgid "Size of a block for sparse file"
-msgstr "Lohkon koko sirotellulle sparse-tiedostolle"
+msgstr "Hajanaisen tiedoston lohkon koko"
 
-#: tests/genfile.c:143
+#: tests/genfile.c:146
 msgid "Generate sparse file. Rest of the command line gives the file map."
-msgstr ""
-"Tuota sparse-sirotetiedosto. Loput komentorivistä antavat tiedostokartan."
+msgstr "Luo hajanainen tiedosto. Komentorivin loppuosa määrää tiedostokartan."
 
-#: tests/genfile.c:145
+#: tests/genfile.c:148
 msgid "OFFSET"
 msgstr "SIIRROS"
 
-#: tests/genfile.c:146
+#: tests/genfile.c:149
 msgid "Seek to the given offset before writing data"
-msgstr "Etsi annettu siirros ennen datan kirjoittamista"
+msgstr "Siirry annettuun kohtaan ennen datan kirjoittamista"
 
 #: tests/genfile.c:152
+msgid "Suppress non-fatal diagnostic messages"
+msgstr ""
+
+#: tests/genfile.c:156
 msgid "File statistics options:"
 msgstr "Tiedostotilaston valitsimet:"
 
-#: tests/genfile.c:155
+#: tests/genfile.c:159
 msgid "Print contents of struct stat for each given file. Default FORMAT is: "
 msgstr ""
-"Tulosta jokaisen annetun tiedoston struct stat-sisältö. Oletus MUOTO on: "
+"Tulosta jokaisen annetun tiedoston struct stat -sisältö. OletusMUOTO on: "
 
-#: tests/genfile.c:162
-msgid "Synchronous execution options:"
-msgstr "Synkronoi suoritusvalitsimet:"
+#: tests/genfile.c:163
+msgid "stat symbolic links instead of referenced files"
+msgstr ""
 
-#: tests/genfile.c:164
-msgid "OPTION"
-msgstr "VALITSIN"
-
-#: tests/genfile.c:165
+#: tests/genfile.c:167
 msgid ""
-"Execute ARGS. Useful with --checkpoint and one of --cut, --append, --touch, "
-"--unlink"
+"Set access and modification times of the files to the time supplied by --"
+"date option"
+msgstr ""
+
+#: tests/genfile.c:174
+msgid "Synchronous execution options:"
+msgstr "Synkronisen suorituksen valitsimet:"
+
+#: tests/genfile.c:176
+msgid "N"
+msgstr ""
+
+#: tests/genfile.c:177
+#, fuzzy
+msgid ""
+"Execute ARGS. Trigger checkpoints every Nth record (default 1). Useful with "
+"--checkpoint and one of --cut, --append, --touch, --unlink"
 msgstr ""
 "Suorita ARGUMENTIT. Hyödyllinen valitsimen --checkpoint ja yhden "
 "valitsimista --cut, --append, --touch, --unlink kanssa"
 
-#: tests/genfile.c:168
+#: tests/genfile.c:180
 msgid "Perform given action (see below) upon reaching checkpoint NUMBER"
 msgstr ""
-"Suorita annettu toiminto (katso alla) kun tavoitetaan tarkistuspiste NUMERO"
+"Suorita annettu toiminto (katso alta) kun kohdataan tarkistuspiste NUMERO"
 
-#: tests/genfile.c:171
+#: tests/genfile.c:183
 msgid "Set date for next --touch option"
-msgstr "Aseta päivämäärä seuraavalle valitsimelle --touch"
+msgstr "Aseta päivämäärä seuraavalle --touch-valitsimelle"
 
-#: tests/genfile.c:174
+#: tests/genfile.c:186
 msgid "Display executed checkpoints and exit status of COMMAND"
-msgstr "Näytä suoritetut tarkistupisteet ja KOMENTO-komennon poistumistila"
+msgstr "Näytä suoritetut tarkistupisteet ja KOMENTO-komennon paluuarvo"
 
-#: tests/genfile.c:179
+#: tests/genfile.c:191
 msgid ""
 "Synchronous execution actions. These are executed when checkpoint number "
 "given by --checkpoint option is reached."
 msgstr ""
-"Synkroinoi suoritustoiminnot. Ne suoritetaan kun tavoitetaan valitsimella --"
-"checkpoint annettu tarkistusnumero."
+"Synkronisen suorituksen toiminnot. Nämä suoritetaan, kun kohdataan --"
+"checkpoint-valitsimella annettu numero."
 
-#: tests/genfile.c:182
+#: tests/genfile.c:194
 msgid ""
 "Truncate FILE to the size specified by previous --length option (or 0, if it "
 "is not given)"
 msgstr ""
-"Lyhennä TIEDOSTO aikaisemmin valitsimella --length määriteltyyn kokoon (tai "
-"0, jos kokoa ei ole annettu)"
+"Typistä TIEDOSTO aiemmalla --length-valitsimella määriteltyyn kokoon (tai 0:"
+"aan, jos kokoa ei ole annettu)"
 
-#: tests/genfile.c:186
+#: tests/genfile.c:198
 msgid "Append SIZE bytes to FILE. SIZE is given by previous --length option."
 msgstr ""
-"Lisää KOKO tavua TIEDOSTOon. KOKO on annettu aikaisemmin valitsimella --"
-"length."
+"Lisää KOKO tavua TIEDOSTOon. KOKO on annettu aiemmin --length-valitsimella."
 
-#: tests/genfile.c:189
+#: tests/genfile.c:201
 msgid "Update the access and modification times of FILE"
-msgstr "Päivitä TIEDOSTOn kutsumis- ja muokkausajat"
+msgstr "Päivitä TIEDOSTOn käyttö- ja muokkausajat"
 
-#: tests/genfile.c:192
+#: tests/genfile.c:204
 msgid "Execute COMMAND"
 msgstr "Suorita KOMENTO"
 
-#: tests/genfile.c:195
-msgid "Unlink FILE"
-msgstr "Pura TIEDOSTOn linkitys"
+#: tests/genfile.c:207
+msgid "Delete FILE"
+msgstr ""
 
-#: tests/genfile.c:245
+#: tests/genfile.c:258
 #, c-format
 msgid "Invalid size: %s"
 msgstr "Virheellinen koko: %s"
 
-#: tests/genfile.c:250
+#: tests/genfile.c:263
 #, c-format
 msgid "Number out of allowed range: %s"
-msgstr "Numero sallitun lukualueen ulkopuolella: %s"
+msgstr "Numero sallitun välin ulkopuolella: %s"
 
-#: tests/genfile.c:253
+#: tests/genfile.c:266
 #, c-format
 msgid "Negative size: %s"
 msgstr "Negatiivinen koko: %s"
 
-#: tests/genfile.c:266 tests/genfile.c:630
+#: tests/genfile.c:279 tests/genfile.c:672
 #, c-format
 msgid "stat(%s) failed"
 msgstr "stat(%s) epäonnistui"
 
-#: tests/genfile.c:269
-#, c-format
-msgid "requested file length %lu, actual %lu"
-msgstr "vaadittu tiedostopituus %lu, todellinen %lu"
+#: tests/genfile.c:284
+#, fuzzy, c-format
+msgid "requested file length %jd, actual %jd"
+msgstr "pyydetty tiedoston pituus %lu, todellinen %lu"
 
-#: tests/genfile.c:273
+#: tests/genfile.c:289
 #, c-format
 msgid "created file is not sparse"
-msgstr "luotu tiedosto ei ole ”sparse”-sirontatiedosto"
+msgstr "luotu tiedosto ei ole hajanainen"
 
-#: tests/genfile.c:362
+#: tests/genfile.c:390
 #, c-format
 msgid "Error parsing number near `%s'"
-msgstr "Virhe jäsennettäessä numeroa lähellä ”%s”"
+msgstr "Virhe lukuarvon jäsentämisessä lähellä kohtaa ”%s”"
 
-#: tests/genfile.c:368
+#: tests/genfile.c:396
 #, c-format
 msgid "Unknown date format"
-msgstr "Tuntematon päivämäärämuoto"
+msgstr "Tuntematon päiväyksen muoto"
 
-#: tests/genfile.c:392
+#: tests/genfile.c:420
 msgid "[ARGS...]"
 msgstr "[ARGUMENTIT...]"
 
-#: tests/genfile.c:429 tests/genfile.c:469 tests/genfile.c:571
-#: tests/genfile.c:734 tests/genfile.c:748
+#: tests/genfile.c:457 tests/genfile.c:497 tests/genfile.c:598
+#: tests/genfile.c:787 tests/genfile.c:801
 #, c-format
 msgid "cannot open `%s'"
-msgstr "kohteen ”%s” avaaminen epäonnistui"
+msgstr "tiedostoa ”%s” ei voi avata"
 
-#: tests/genfile.c:435
+#: tests/genfile.c:463
 msgid "cannot seek"
-msgstr "etsintä epäonnistui"
+msgstr "ei voi siirtyä"
 
-#: tests/genfile.c:452
+#: tests/genfile.c:480
 #, c-format
 msgid "file name contains null character"
-msgstr "tiedostonimi sisältää null-merkin"
+msgstr "tiedostonimi sisältää nollatavun"
 
-#: tests/genfile.c:566
+#: tests/genfile.c:593
 #, c-format
 msgid "cannot generate sparse files on standard output, use --file option"
 msgstr ""
-"sparse-sirontatiedostojen tuottaminen vakiotulosteeseen epäonnistui, käytä "
-"valitsinta --file"
+"hajanaisia tiedostoja ei voi luoda vakiotulosteeseen, käytä valitsinta --file"
 
-#: tests/genfile.c:657
+#: tests/genfile.c:699
 #, c-format
 msgid "incorrect mask (near `%s')"
-msgstr "virheellinen peitto (lähellä ”%s”)"
+msgstr "virheellinen peite (lähellä kohtaa ”%s”)"
 
-#: tests/genfile.c:663 tests/genfile.c:696
+#: tests/genfile.c:705 tests/genfile.c:738
 #, c-format
 msgid "Unknown field `%s'"
 msgstr "Tuntematon kenttä ”%s”"
 
-#: tests/genfile.c:723
+#: tests/genfile.c:756 tests/genfile.c:776
 #, c-format
 msgid "cannot set time on `%s'"
-msgstr "asetus ajaksi ”%s” epäonnistui"
+msgstr "tiedoston ”%s” aikaa ei voi asettaa"
 
-#: tests/genfile.c:753
+#: tests/genfile.c:806
 #, c-format
 msgid "cannot truncate `%s'"
-msgstr "kohteen ”%s” typistys epäonnistui"
+msgstr "tiedostoa ”%s” ei voi typistää"
 
-#: tests/genfile.c:762
+#: tests/genfile.c:815
 #, c-format
 msgid "command failed: %s"
 msgstr "komento epäonnistui: %s"
 
-#: tests/genfile.c:767
+#: tests/genfile.c:822
+#, fuzzy, c-format
+msgid "cannot stat `%s'"
+msgstr "tiedostoa ”%s” ei voi typistää"
+
+#: tests/genfile.c:826
+#, fuzzy, c-format
+msgid "cannot remove directory `%s'"
+msgstr "hakemiston ”%s” luominen epäonnistui"
+
+#: tests/genfile.c:829
 #, c-format
 msgid "cannot unlink `%s'"
-msgstr "kohteen ”%s” linkityksen purkaminen epäonnistui"
+msgstr "tiedoston ”%s” linkitystä ei voi poistaa"
 
-#: tests/genfile.c:894
+#: tests/genfile.c:969
 #, c-format
 msgid "Command exited successfully\n"
-msgstr "Komento päättyi onnistuneesti\n"
+msgstr "Komennon suoritus päättyi onnistuneesti\n"
 
-#: tests/genfile.c:896
+#: tests/genfile.c:971
 #, c-format
 msgid "Command failed with status %d\n"
-msgstr "Komento epäonnistui tilassa %d\n"
+msgstr "Komento epäonnistui paluuarvolla %d\n"
 
-#: tests/genfile.c:900
+#: tests/genfile.c:975
 #, c-format
 msgid "Command terminated on signal %d\n"
-msgstr "Komento päättyi signaaliin %d\n"
+msgstr "Komento keskeytyi signaaliin %d\n"
 
-#: tests/genfile.c:902
+#: tests/genfile.c:977
 #, c-format
 msgid "Command stopped on signal %d\n"
-msgstr "Komento pysähtyi signaalin %d\n"
+msgstr "Komento pysähtyi signaaliin %d\n"
 
-#: tests/genfile.c:905
+#: tests/genfile.c:980
 #, c-format
 msgid "Command dumped core\n"
-msgstr "Komento vedosti ytimen\n"
+msgstr "Komento loi core-tiedoston\n"
 
-#: tests/genfile.c:908
+#: tests/genfile.c:983
 #, c-format
 msgid "Command terminated\n"
-msgstr "Komento päättynyt\n"
+msgstr "Komento keskeytyi\n"
 
-#: tests/genfile.c:940
+#: tests/genfile.c:1015
 #, c-format
 msgid "--stat requires file names"
-msgstr "”--stat”-komento vaatii tiedostonimet"
+msgstr "--stat vaatii tiedostonimiä"
 
-#~ msgid "%s: field width not sufficient for storing %s"
-#~ msgstr "%s: kenttäleveys ei ole riittävä kohteen %s tallentamiseen"
+#: tests/genfile.c:1023
+#, fuzzy, c-format
+msgid "--set-times requires file names"
+msgstr "--stat vaatii tiedostonimiä"
 
-#~ msgid ""
-#~ "You must specify one of -oipt options.\n"
-#~ "Try `%s --help' or `%s --usage' for more information.\n"
-#~ msgstr ""
-#~ "On määriteltävä yksi -oipt-valitsimista.\n"
-#~ "Lisätietoja komennoilla ”%s --help” tai ”%s --usage”.\n"
+#, c-format
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: valitsin ”--%s” ei salli argumenttia\n"
 
-#~ msgid "%.*s: ARGP_HELP_FMT parameter must be positive"
-#~ msgstr "%.*s: ARGP_HELP_FMT-parametrin on oltava positiivinen"
+#, c-format
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: tunnistamaton valitsin ”--%s”\n"
 
-#~ msgid "Cannot resolve hostname %s"
-#~ msgstr "Ei voi ratkaista isäntänimeä %s"
+#, c-format
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: valitsin ”-W %s” on moniselitteinen\n"
 
-#~ msgid "%s: illegal option -- %c\n"
-#~ msgstr "%s: virheellinen valitsin -- %c\n"
+#, c-format
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: valitsin ”-W %s” ei salli argumenttia\n"
 
-#~ msgid ""
-#~ "\n"
-#~ "Report bugs to <%s>.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Ilmoita virheistä osoitteeseen <%s>.\n"
+#, c-format
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: valitsin ”-W %s” vaatii argumentin\n"
 
-#~ msgid "Input string too long"
-#~ msgstr "Syöttömerkkijono on liian pitkä"
+#, c-format
+#~ msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+#~ msgstr "%s-kotisivu: <https://www.gnu.org/software/%s/>\n"
 
-#~ msgid "Number syntax error"
-#~ msgstr "Numerosyntaksivirhe"
+#, c-format
+#~ msgid "%s: Cannot symlink to %s"
+#~ msgstr "%s: Symbolisen linkin luominen kohteeseen %s epäonnistui"
 
-#~ msgid "rmtd: Cannot allocate buffer space\n"
-#~ msgstr "rmtd: Puskuritilan varaus epäonnistui\n"
+#~ msgid "OPTION"
+#~ msgstr "VALITSIN"
 
-#~ msgid "Cannot allocate buffer space"
-#~ msgstr "Puskuritilan varaus epäonnistui"
-
-#~ msgid "Try `%s --help' for more information.\n"
-#~ msgstr "Lisätietoja komennolla ”%s --help”.\n"
-
-#~ msgid ""
-#~ "Usage: %s [OPTION]\n"
-#~ "Manipulate a tape drive, accepting commands from a remote process.\n"
-#~ "\n"
-#~ "  --version  Output version info.\n"
-#~ "  --help     Output this help.\n"
-#~ msgstr ""
-#~ "Käyttö: %s [VALITSIN]\n"
-#~ "Käsitellään nauha-asemaa, hyväksytään komennot etäprosessista.\n"
-#~ "\n"
-#~ "  --version  Tulosta versiotiedot.\n"
-#~ "  --help     Tulosta tämä opaste.\n"
-
-#~ msgid "Seek offset error"
-#~ msgstr "Etsintäsiirrosvirhe"
-
-#~ msgid "Premature end of file"
-#~ msgstr "Ennenaikainen tiedoston loppu"
-
-#~ msgid "Informative options:"
-#~ msgstr "Informatiiviset valitsimet:"
-
-#~ msgid "Give this help list"
-#~ msgstr "Anna tämä opasteluettelo"
-
-#~ msgid "Give a short usage message"
-#~ msgstr "Anna lyhyt käyttöohje"
-
-#~ msgid "Print license and exit"
-#~ msgstr "Tulosta lisenssi ja poistu"
-
-#~ msgid "Print program version"
-#~ msgstr "Tulosta ohjelmaversio"
-
-#~ msgid ""
-#~ "   GNU cpio is free software; you can redistribute it and/or modify\n"
-#~ "   it under the terms of the GNU General Public License as published by\n"
-#~ "   the Free Software Foundation; either version 3 of the License, or\n"
-#~ "   (at your option) any later version.\n"
-#~ "\n"
-#~ "   GNU cpio is distributed in the hope that it will be useful,\n"
-#~ "   but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-#~ "   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-#~ "   GNU General Public License for more details.\n"
-#~ "\n"
-#~ "   You should have received a copy of the GNU General Public License\n"
-#~ "   along with GNU cpio; if not, write to the Free Software Foundation,\n"
-#~ "   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
-#~ "\n"
-#~ msgstr ""
-#~ "   GNU cpio on vapaa ohjelmisto; voit jakaa sitä edelleen ja/tai muokata "
-#~ "sitä\n"
-#~ "   Free Software Foundationin julkaiseman GNU General Public License-"
-#~ "ehtojen\n"
-#~ "   alla; joko Lisenssin version 3, tai (valintasi mukaan)\n"
-#~ "   minkä tahansa myöhäisemmän version alla.\n"
-#~ "\n"
-#~ "   GNU cpio jaellaan toivossa, että se on hyödyllinen,\n"
-#~ "   mutta ILMAN MITÄÄN TAKUUTA; ei edes KAUPALLISESTI\n"
-#~ "   HYVÄKSYTTÄVÄSTÄ LAADUSTA tai SOPIVUUDESTA\n"
-#~ "   TIETTYYN TARKOITUKSEEN.  Lisätietoja GNU General\n"
-#~ "   Public License.\n"
-#~ "\n"
-#~ "   Sinun pitäisi vastaanottaa GNU General Public License-kopion\n"
-#~ "   GNU cpio-ohjelman mukana; jos näin ei ole, kirjoita osoitteeseen\n"
-#~ "   Free Software Foundation,  Inc., 51 Franklin Street, Fifth Floor,\n"
-#~ "   Boston, MA 02110-1301 USA\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "Usage: %s [-V] [-f device] [--file=device] [--rsh-command=command]\n"
-#~ "\t[--help] [--version] operation [count]\n"
-#~ msgstr ""
-#~ "Käyttö: %s [-V] [-f laite] [--file=laite] [--rsh-command=komento]\n"
-#~ "\t[--help] [--version] toiminto [lukumäärä]\n"
-
-#~ msgid "%s: Unexpected inconsistency when making directory"
-#~ msgstr "%s: Odottamaton epäjohdonmukaisuus tehtäessä hakemistoa"
+#~ msgid "Unlink FILE"
+#~ msgstr "Poista TIEDOSTOn linkitys"
