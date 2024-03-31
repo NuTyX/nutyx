@@ -1125,7 +1125,7 @@ fi
 	CHROOT="$CR util-linux"
 unset CR
 
-[ -z "$URL" ] && URL="https://downloads.nutyx.org"
+[ -z "$URL" ] && URL="https://download.nutyx.org"
 
 [ -z "$VERSION" ] && VERSION="rolling"
 if [ "$VERSION" == "development" ]; then
@@ -1235,10 +1235,10 @@ umount $DEPOT"
 exit 0"
 fi
 
-HOMEPAGE="${URL}"                           ## https://downloads.nutyx.org
+HOMEPAGE="${URL}"                           ## https://download.nutyx.org
 INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/rolling
-DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://downloads.nutyx.org/x86_64/rolling
-DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://downloads.nutyx.org/x86_64/rolling/base
+DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/rolling
+DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/rolling/base
 
 LOCAL_DEPOT_PACKAGES="$DEPOT/${BASE_COLLECTION}"
 DEPOT_CD="/media/cdrom"
