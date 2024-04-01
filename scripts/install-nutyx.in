@@ -1144,23 +1144,21 @@ systemd wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
 [ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
-ttf-croscore ttf-carlito vlc"
+ttf-croscore ttf-carlito vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
 gnome-themes-extra"
 
-[ -z "$GUI_EXTRA" ] && GUI_EXTRA="firefox gparted scrot"
-[ -z "$GNOME_EXTRA" ] && GNOME_EXTRA="epiphany seahorse-nautilus \
-simple-scan gnome-weather gnome-chess"
 [ -z "$CDE" ] && CDE="cde"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
 [ -z "$JWM" ] && JWM="lxdm jwm jwm-miyolinux-theme"
 [ -z "$LXDE" ] && LXDE="lxdm lxde"
+[ -z "$LXQT" ] && LXQT="breeze-gtk lxqt"
 [ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lightdm enlightenment"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
 [ -z "$CINNAMON" ] && CINNAMON="lightdm cinnamon"
 [ -z "$MATE" ] && MATE="lightdm mate"
-[ -z "$GNOME" ] && GNOME="gnome"
+[ -z "$GNOME" ] && GNOME="gnome gnome-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
 [ -z "$BUDGIE" ] && BUDGIE="lxdm budgie"
 
@@ -1204,20 +1202,20 @@ if [ ! -z $ISO ]; then
 		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
 		GUI) CORE+="$STRICT $MINI $BASE $CLI $GUI";;
 		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
-		GUI_EXTRA) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA}";;
-		CDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $CDE";;
-		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI ${GUI_EXTRA} $XORG $OPENBOX";;
-		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $JWM";;
-		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $LXDE";;
-		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $XFCE4";;
-		CINNAMON) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $CINNAMON";;
-		ENLIGHTENMENT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $ENLIGHTENMENT";;
-		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $MATE";;
-		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $GNOME ${GNOME_EXTRA}";;
-		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GUI_EXTRA $KDE6";;
-                BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG ${GUI_EXTRA} $BUDGIE";;
-		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, gui_extra, \
-cde, openbox, jwm, lxde, enlightenment, cinnamon, xfce4, budgie, mate, gnome, kde6" && exit 1;;
+		CDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $CDE";;
+		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $OPENBOX";;
+		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $JWM";;
+		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $LXDE";;
+		LXQT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $LXQT";;
+		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
+		CINNAMON) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $CINNAMON";;
+		ENLIGHTENMENT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $ENLIGHTENMENT";;
+		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $MATE";;
+		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
+		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
+                BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $XORG $BUDGIE";;
+		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, cde, openbox, \
+jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, budgie, mate, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1443,13 +1441,12 @@ MINI         : $MINI
 BASE         : $BASE
 CLI          : $CLI
 GUI          : $GUI
-GUI_EXTRA    : $GUI_EXTRA
 XORG         : $XORG
-GNOME_EXTRA  : ${GNOME_EXTRA}
 CDE          : $CDE
 OPENBOX      : $OPENBOX
 JWM          : $JWM
 LXDE         : $LXDE
+LXQT         : $LXQT
 CINNAMON     : $CINNAMON
 ENLIGHTENMENT: $ENLIGHTENMENT
 XFCE4        : $XFCE4
