@@ -1890,6 +1890,7 @@ setup_grub() {
 	GRUB_CONFIG_DIR=""
 	GRUB_DESTINATION_DIR=""
 	GRUB_LOG_FILE=$TMP/grub.log
+	TARGET="--target=i386-pc"
 
 	[ "$CHECK_HD_OK" == "no" ] && check_available_disk
 	[ "$CHECK_HD_OK" == "no" ] && return
