@@ -235,8 +235,12 @@ find_media() {
 				break
 			fi
 		done
-		printf "."
-		sleep 1
+		if [ -L /dev/${ISOLABEL} ]; then
+			printf "%s" ${DEV}
+		else
+			printf "."
+			sleep 1
+		fi
 	done
 	printf "\n"
 }
@@ -343,7 +347,7 @@ exec "$init" "$@" > /dev/null 2>&1
 # **********
 # Begin here
 # **********
-printf "Starting initrd...\n"
+printf "Starting initrd : "
 
 init=/sbin/init
 overlayroot=
@@ -361,6 +365,8 @@ ISOLABEL="nutyxcd"
 . /lib/lsb/init-functions
 
 do_mount_virtualfs
+
+printf "\n"
 
 read -r cmdline < /proc/cmdline
 
