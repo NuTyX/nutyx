@@ -48,32 +48,32 @@ boot_mesg() {
 	${ECHO} ${ECHOPARM} -e "${2}${1}"
 }
 boot_mesg_flush() {
-	# Reset STRING_LENGTH for next message
-	STRING_LENGTH="0"
+    # Reset STRING_LENGTH for next message
+    STRING_LENGTH="0"
 }
 echo_ok() {
-	${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${SUCCESS}  OK  ${BRACKET}]"
-	${ECHO} -e "${NORMAL}"
-	boot_mesg_flush
+    ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${SUCCESS}  OK  ${BRACKET}]"
+    ${ECHO} -e "${NORMAL}"
+    boot_mesg_flush
 }
 echo_info() {
-	${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${INFO} INFO ${BRACKET}]"
-	${ECHO} -e "${NORMAL}"
-	boot_mesg_flush
+    ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${INFO} INFO ${BRACKET}]"
+    ${ECHO} -e "${NORMAL}"
+    boot_mesg_flush
 }
 echo_failure() {
-	${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${FAILURE} FAIL ${BRACKET}]"
-	${ECHO} -e "${NORMAL}"
-	boot_mesg_flush
+    ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${FAILURE} FAIL ${BRACKET}]"
+    ${ECHO} -e "${NORMAL}"
+    boot_mesg_flush
 }
 #***********************************************************************
 # Function - unmountall
 #
-# Purpose:	unmount all the mounted disks and partitions
+# Purpose: unmount all the mounted disks and partitions
 #
-# Inputs:	$1 the full path of the Distro
+# Inputs:	 $1 the full path of the Distro
 #
-# Outputs:	Standard Output
+# Outputs: Standard Output
 #
 # Dependencies: chroot
 #
@@ -93,11 +93,11 @@ mountpoint ${LFS}/sys > /dev/null && umount -R ${LFS}/sys
 #***********************************************************************
 # Function - setup_chroot
 #
-# Purpose:	Enter the NuTyX Distribution
+# Purpose: Enter the NuTyX Distribution
 #
 # Inputs:	$1 the full path of the Distro
 #
-# Outputs:	Standard Output
+# Outputs: Standard Output
 #
 # Dependencies: chroot
 #
@@ -151,17 +151,17 @@ ${CHROOT_SHELL}
 # Todo:
 #***********************************************************************
 download_pkg() {
-	getPackageFileName ${1}
-	if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/${1}/$PackageFileName ]; then
-		boot_mesg "Downloading $1..."
-		echo_info
-		curl -LC - -# --create-dirs \
-		${DEPOT_BASE}/${1}/$PackageFileName \
-		-o $LFS/$DEPOT/${BASE_COLLECTION}/${1}/$PackageFileName || \
-			error "Cannot download ${DEPOT_BASE}/${1}/$PackageFileName ..., check URL"
-		chmod -R 755 $LFS/$DEPOT
-		echo_ok
-	fi
+    getPackageFileName ${1}
+    if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
+        boot_mesg "Downloading $1..."
+        echo_info
+        curl -LC - -# --create-dirs ${DEPOT_BASE}/$PackageFileName \
+            -o $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName || \
+            error "Cannot download ${DEPOT_BASE}/$PackageFileName ..., check URL"
+
+        chmod -R 755 $LFS/$DEPOT
+        echo_ok
+    fi
 }
 #***********************************************************************
 # Function - install_pkg()
@@ -183,10 +183,10 @@ install_pkg() {
 		boot_mesg "$1 is already install on $LFS..."
 		echo_info
 	fi
-	if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/${1}/$PackageFileName ]; then
+	if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
 		# Installing the package
 		$TMP/$PKGADD -r $LFS -i \
-		$LFS/$DEPOT/${BASE_COLLECTION}/${1}/$PackageFileName \
+		$LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
 			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
 		echo_ok
@@ -219,33 +219,31 @@ end() {
 #***********************************************************************
 # Function getPackageFileName
 #
-# Purpose:	Get the fullname of the package
+# Purpose: Get the fullname of the package
 #		directory
-# Inputs:	$1 is the package name
+# Inputs: $1 is the package name
 #
 # Dependencies: - curl
 #
-# Output:       PackageFileName= cpio1414074943i686.cards.tar.xz
+# Output: PackageFileName=cpio.cards-2.15-1
 #
 #***********************************************************************
 getPackageFileName() {
-	local BUILD_DATE EXT HEAD
-	if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/${1}/.PKGREPO ]; then
-		curl -LC - -sS --create-dirs \
-		${DEPOT_BASE}/${1}/.PKGREPO -o \
-		$LFS/$DEPOT/${BASE_COLLECTION}/${1}/.PKGREPO || \
-		error "Cannot download ${DEPOT_BASE}/${1}/.PKGREPO ..., check URL"
-		chmod -R 755 $LFS/$DEPOT
-	fi
-	if [ $(wc -l $LFS/$DEPOT/${BASE_COLLECTION}/${1}/.PKGREPO|cut -d " " -f1) -eq 0 ]; then
-		error "${DEPOT_BASE}/${1} not reacheable.."
-	fi
-	HEAD=$(head -1 $LFS/$DEPOT/${BASE_COLLECTION}/${1}/.PKGREPO)
-	if [ "${HEAD:10:1}" == "#" ]; then
-		BUILD_DATE="$(echo $HEAD|cut -d "#" -f1)"
-		EXT="$(echo $HEAD|cut -d "#" -f2)"
-		PackageFileName="${1}${BUILD_DATE}${ARCH}${EXT}"
-	fi
+    local v r REPO
+    REPO=".REPO"
+    if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$REPO ]; then
+        curl -LC - -sS --create-dirs \
+        ${DEPOT_BASE}/$REPO -o \
+        $LFS/$DEPOT/${BASE_COLLECTION}/$REPO || \
+        error "Cannot download ${DEPOT_BASE}/$REPO ..., check URL"
+        chmod -R 755 $LFS/$DEPOT
+    fi
+    [ $(wc -l $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|cut -d " " -f1) -eq 0 ] &&
+        error "${DEPOT_BASE}/${1} not reacheable.."
+
+    v=$(grep "^$1 : Version" $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|sed "s/ //g"|cut -d ":" -f3)
+    r=$(grep "^$1 : Release" $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|sed "s/ //g"|cut -d ":" -f3)
+    PackageFileName="$1.cards-$v-$r"
 }
 install_chroot() {
 for i in $CHROOT
@@ -1791,38 +1789,37 @@ cd ${LFS}
 isohybrid -u ${ISO_FILE} || error "isohybrid ${ISO_FILE}"
 }
 main() {
-	config
-	check_variables  "$@"
-	check_arch
-	parse_options "$@"
-	mount_depot
-	show_variables
-	check_root
+    config
+    check_variables  "$@"
+    check_arch
+    parse_options "$@"
+    mount_depot
+    show_variables
+    check_root
 
-	TMP=$(mktemp -d)
-	check_tools
-	mkdir -p $LFS
+    TMP=$(mktemp -d)
+    check_tools
+    mkdir -p $LFS
 
-	download_pkgadd
-	mkdir -p ${LFS}/var/lib/pkg/DB
-	install_chroot
+    download_pkgadd
+    mkdir -p ${LFS}/var/lib/pkg/DB
+    install_chroot
 
-	create_locale_link
-	make_directories
-	install_configuration_files
-	install_resolv_conf
-	generate_setupfile
-	setup_chroot
-	enter_chroot
-	unmountall
-	if [ ! -z "$ISO" ]; then
-		generate_squashfs
-		generate_iso
-	else
-		successfull_installation
-	fi
-	end
-
+    create_locale_link
+    make_directories
+    install_configuration_files
+    install_resolv_conf
+    generate_setupfile
+    setup_chroot
+    enter_chroot
+    unmountall
+    if [ ! -z "$ISO" ]; then
+        generate_squashfs
+        generate_iso
+    else
+        successfull_installation
+    fi
+    end
 }
 readonly BASE_COLLECTION=base
 readonly VERSION_NUTYX=#VERSION#
