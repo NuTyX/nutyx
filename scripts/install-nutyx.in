@@ -225,11 +225,11 @@ end() {
 #
 # Dependencies: - curl
 #
-# Output: PackageFileName=cpio.cards-2.15-1
+# Output: PackageFileName=cpio.cards-2.15-1.xz
 #
 #***********************************************************************
 getPackageFileName() {
-    local v r REPO
+    local name REPO
     REPO=".REPO"
     if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$REPO ]; then
         curl -LC - -sS --create-dirs \
@@ -240,10 +240,8 @@ getPackageFileName() {
     fi
     [ $(wc -l $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|cut -d " " -f1) -eq 0 ] &&
         error "${DEPOT_BASE}/${1} not reacheable.."
-
-    v=$(grep "^$1 : Version" $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|sed "s/ //g"|cut -d ":" -f3)
-    r=$(grep "^$1 : Release" $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|sed "s/ //g"|cut -d ":" -f3)
-    PackageFileName="$1.cards-$v-$r"
+    name=$(grep @$1.cards-  $LFS/$DEPOT/${BASE_COLLECTION}/$REPO)
+    PackageFileName="${name#@*}"
 }
 install_chroot() {
 for i in $CHROOT
