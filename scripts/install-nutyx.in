@@ -1000,27 +1000,25 @@ fi
 
 [ "$DEPOT" == "$MOUNT" ] || echo "
 # Default server URL
-url ${URL}" >> ${LFS}/etc/cards.conf
-
-echo "
+url ${URL}
 #
 ## For all the graphical applications and desktops
-dir ${DEPOT}/gui-extra
+# dir ${DEPOT}/gui-extra
 #
 ## For a minimal graphical interface
-dir ${DEPOT}/gui
+# dir ${DEPOT}/gui
 #
 ## For all the console applications
-dir ${DEPOT}/cli-extra
+# dir ${DEPOT}/cli-extra
 #
 ## For a minimal console interface
-dir ${DEPOT}/cli
+# dir ${DEPOT}/cli
 #
 ## Chroot system without reboot possibilities for a chroot
-dir ${DEPOT}/base
+# dir ${DEPOT}/base
 #
 ## Normaly you want to keep base and
-base ${DEPOT}/base
+# base ${DEPOT}/base
 #
 #
 ## If you want to keep more collections remove comments below
@@ -1038,7 +1036,13 @@ FILE="nutyx-version"
 [ -f ${LFS}/var/lib/pkg/$FILE ] && return
 [ ! -d ${LFS}/var/lib/pkg ] && mkdir -pv ${LFS}/var/lib/pkg
 echo "name ${CODE_NAME}
-version $VERSION" > ${LFS}/var/lib/pkg/$FILE
+version $VERSION
+depot ${DEPOT}
+collection gui-extra
+collection gui
+collection cli-extra
+collection cli
+collection base" > ${LFS}/var/lib/pkg/$FILE
 }
 generate_lsb() {
 echo "DISTRIB_ID=\"NuTyX\"
@@ -1121,7 +1125,7 @@ fi
 	CHROOT="$CR util-linux"
 unset CR
 
-[ -z "$URL" ] && URL="https://download.nutyx.org"
+[ -z "$URL" ] && URL="http://localhost"
 
 [ -z "$VERSION" ] && VERSION="rolling"
 if [ "$VERSION" == "development" ]; then
