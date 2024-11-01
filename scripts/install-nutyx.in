@@ -1379,7 +1379,7 @@ else
 	 > $LFS/$SETUP_FILE
 	[ -z $MOUNT ] && echo "cards sync" >> \
 	$LFS/$SETUP_FILE
-	echo "cards install -n $CORE $DEVEL
+	echo "cards install --nolog $CORE $DEVEL
 which genfstab > /dev/null && genfstab >> /etc/fstab
 exit" >> $LFS/$SETUP_FILE
 fi
