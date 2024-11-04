@@ -185,7 +185,7 @@ install_pkg() {
 	fi
 	if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
 		# Installing the package
-		$TMP/$PKGADD -r $LFS -i \
+		$TMP/$PKGADD -f -r $LFS -i \
 		$LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
 			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
@@ -1799,6 +1799,7 @@ main() {
 
     download_pkgadd
     mkdir -p ${LFS}/var/lib/pkg/DB
+    touch ${LFS}/var/lib/pkg/pkgadd.conf
     install_chroot
 
     create_locale_link
