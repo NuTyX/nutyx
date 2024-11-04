@@ -1024,6 +1024,7 @@ FILE="nutyx-version"
 [ -f ${LFS}/var/lib/pkg/$FILE ] && return
 [ ! -d ${LFS}/var/lib/pkg ] && mkdir -pv ${LFS}/var/lib/pkg
 echo "name ${CODE_NAME}
+depot /var/lib/pkg/depot
 version $VERSION" > ${LFS}/var/lib/pkg/$FILE
 }
 generate_lsb() {
