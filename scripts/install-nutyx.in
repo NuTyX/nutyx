@@ -1003,32 +1003,20 @@ fi
 url ${URL}
 #
 ## For all the graphical applications and desktops
-# dir ${DEPOT}/gui-extra
+collection gui-extra
 #
 ## For a minimal graphical interface
-# dir ${DEPOT}/gui
+collection gui
 #
 ## For all the console applications
-# dir ${DEPOT}/cli-extra
+collection cli-extra
 #
 ## For a minimal console interface
-# dir ${DEPOT}/cli
+collection cli
 #
 ## Chroot system without reboot possibilities for a chroot
-# dir ${DEPOT}/base
-#
-## Normaly you want to keep base and
-# base ${DEPOT}/base
-#
-#
-## If you want to keep more collections remove comments below
-# Adjust to your needs
-#
-# base ${DEPOT}/cli
-# base ${DEPOT}/cli-extra
-# base ${DEPOT}/gui
-# base ${DEPOT}/gui-extra
-# base ${DEPOT}/..." >> ${LFS}/etc/cards.conf
+collection base
+#" >> ${LFS}/etc/cards.conf
 }
 generate_nutyx_version() {
 local FILE
