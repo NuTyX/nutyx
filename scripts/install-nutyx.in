@@ -1362,13 +1362,15 @@ if [ "$SHELL" == "/bin/bash" ]; then
   fi
 fi
 if [[ -z "$CORE" && -z "$DEVEL" ]];then
-	echo "exit" > $LFS/$SETUP_FILE
+    echo "exit" > $LFS/$SETUP_FILE
 else
-	echo "source /etc/profile" \
-	 > $LFS/$SETUP_FILE
-	[ -z $MOUNT ] && echo "cards sync" >> \
-	$LFS/$SETUP_FILE
-	echo "cards install --nolog $CORE $DEVEL
+    echo "source /etc/profile" \
+    > $LFS/$SETUP_FILE
+    [ -z $MOUNT ] && echo "cards sync" >> \
+    $LFS/$SETUP_FILE
+    [ -z "$CORE" ] || echo "cards install --nolog $CORE" >> \
+    $LFS/$SETUP_FILE
+    echo "$DEVEL
 which genfstab > /dev/null && genfstab >> /etc/fstab
 exit" >> $LFS/$SETUP_FILE
 fi
