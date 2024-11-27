@@ -185,7 +185,7 @@ install_pkg() {
 	fi
 	if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
 		# Installing the package
-		$TMP/$PKGADD -f -r $LFS -i \
+		$TMP/$PKGADD -p -r $LFS -i \
 		$LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
 			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
@@ -1126,7 +1126,7 @@ fi
 systemd wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
-[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
+[ -z "$GUI" ] && GUI="gvfs network-manager-applet \
 ttf-croscore ttf-carlito vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
@@ -1792,7 +1792,6 @@ main() {
     mkdir -p ${LFS}/var/lib/pkg/DB
     touch ${LFS}/var/lib/pkg/DB/.files
     touch ${LFS}/var/lib/pkg/DB/.meta
-    touch ${LFS}/var/lib/pkg/pkgadd.conf
     install_chroot
 
     create_locale_link
