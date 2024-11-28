@@ -1126,7 +1126,7 @@ fi
 systemd wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
-[ -z "$GUI" ] && GUI="gvfs network-manager-applet \
+[ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
 ttf-croscore ttf-carlito vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
