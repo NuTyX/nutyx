@@ -9,10 +9,10 @@
 #             : DJ Lucas - dj@linuxfromscratch.org                     #
 # Update      : Bruce Dubbs - bdubbs@linuxfromscratch.org              #
 #             : Thierry Nuttens - tnut@nutyx.org                       #
-#                                                                      #
+#               Remove kernel log daemon (now intergrated into syslogd #
 # Version     : LFS 7.0                                                #
 #             : NuTyX saravane                                         #
-#                                                                      #
+#             : NuTyX houaphan                                         #
 # Notes       : With code based on Matthias Benkmann's simpleinit-msb  #
 #               http://winterdrache.de/linux/newboot/index.html        #
 #                                                                      #
@@ -78,7 +78,6 @@ BOOTLOG=/run/bootlog
 KILLDELAY=0
 ECHOCMD="echo"
 SYSLOGDCMD="/usr/sbin/syslogd"
-KLOGDCMD="/usr/sbin/klogd"
 SEDCMD="sed"
 MODPROBECMD="$(which modprobe)"
 
@@ -1624,23 +1623,16 @@ do_start_sysklogd()
 	parms=${SYSKLOGD_PARMS-'-m 0'}
 	start_daemon $SYSLOGDCMD $parms
 	evaluate_retval
-
-	log_info_msg "Starting kernel log daemon..."
-	start_daemon $KLOGDCMD
-	evaluate_retval
 }
 do_stop_sysklogd()
 {
-	log_info_msg "Stopping kernel log daemon..."
-	killproc $KLOGDCMD
+	log_info_msg "Stopping system log daemon..."
+	killproc $SYSLOGDCMD
 	evaluate_retval
 	mv /var/log/kern.log \
 	/var/log/kern.log.old
 	touch /var/log/kern.log
 
-	log_info_msg "Stopping system log daemon..."
-	killproc $SYSLOGDCMD
-	evaluate_retval
 	mv /var/log/sys.log \
 	/var/log/sys.log.old
 	touch /var/log/sys.log
@@ -1664,7 +1656,6 @@ do_stop_sysklogd()
 do_status_sysklogd()
 {
 	statusproc $SYSLOGDCMD
-	statusproc $KLOGDCMD
 }
 do_reload_sysklogd()
 {
