@@ -150,6 +150,9 @@ msgstr " option manquante"
 msgid ": to many options"
 msgstr ": trop d'options"
 
+msgid " this command should not be used under root."
+msgstr " cette commande ne peut pas être utilisée en root."
+
 msgid " only root can install / upgrade / remove packages"
 msgstr " seul l'utilisateur root peut installer / mettre à jour / supprimer des paquets"
 
@@ -219,6 +222,9 @@ msgstr "Utilisation: "
 msgid " packages: "
 msgstr " paquets: "
 
+msgid "Collection"
+msgstr "Collection"
+
 msgid "Package"
 msgstr "Paquet"
 
@@ -227,6 +233,12 @@ msgstr "<paquet>"
 
 msgid "Packages"
 msgstr "Paquets"
+
+msgid "Package: "
+msgstr "Paquet: "
+
+msgid " have a wrong signature."
+msgstr " a une fausse signature."
 
 msgid "<package> | <collection>"
 msgstr "<paquet> | <collection>"
@@ -312,20 +324,20 @@ msgstr "\t   Affiche cet aide"
 msgid "Name           : "
 msgstr "Nom                 : "
 
-msgid "Alias          : "
-msgstr "Aussi appelé        : "
+msgid "Alias          :"
+msgstr "Aussi appelé        :"
 
-msgid "Set            : "
-msgstr "Jeux de paquets     : "
+msgid "Sets           :"
+msgstr "Jeux de paquets     :"
 
-msgid "Categories     : "
-msgstr "Catégories          : "
+msgid "Categories     :"
+msgstr "Catégories          :"
 
 msgid "Group          : "
 msgstr "Groupe              : "
 
-msgid "Groups         : "
-msgstr "Groupes             : "
+msgid "Groups         :"
+msgstr "Groupes             :"
 
 msgid "Collection     : "
 msgstr "Collection          : "
@@ -345,6 +357,17 @@ msgstr "Date du Pkgfile     : "
 msgid "Local folder   : "
 msgstr "Dossier local       : "
 
+msgid "Archive name   : "
+msgstr "Nom de l'archive    : "
+
+msgid "Hashsum        : "
+msgstr "Somme hash          : "
+
+msgid "Archive Size   : "
+msgstr "Taille de l'archive : "
+
+msgid "Signature      : "
+msgstr "Signature           : "
 
 msgid "Contributor(s) : "
 msgstr "Contributeur(s)     : "
@@ -464,6 +487,9 @@ msgstr "affiche cet aide"
 msgid "Available binaries in depot."
 msgstr "Binaires disponibles dans les dépots."
 
+msgid "Available sets of packages."
+msgstr "Jeux de paquets disponibles."
+
 msgid "Available ports."
 msgstr "Ports disponibles."
 
@@ -482,6 +508,12 @@ msgstr "Si -I il ignore les WARNING à propos des dépendances non trouvées du 
 msgid "show dependencies for the port in compilation order."
 msgstr "affiche les dépendances du port par ordre de compilation"
 
+msgid "show reverse dependencies list that needs the port."
+msgstr "affiche la liste des dépendances inverses qui utilisent le port."
+
+msgid "generates the keys pair for the signature of the packages."
+msgstr "génère la paire de clés pour la signature des paquets"
+
 msgid "If -i it will shows the installed dependencies as well."
 msgstr "Si -i affiche également les dépendances déjà installées."
 
@@ -493,6 +525,9 @@ msgstr "compile et installe le port et ses dependances."
 
 msgid "install all the dependencies from binaries and then compile the port."
 msgstr "installe toutes les dépendances depuis les binaires et compile le port à la fin."
+
+msgid "check or signing a collection of packages depending if a private key is present."
+msgstr "vérifie ou signe une collection de paquets en fonction de la présence d'une clé privée."
 
 msgid "list outdated packages."
 msgstr "liste les paquets obsolètes."
@@ -529,15 +564,6 @@ msgstr "supprime le paquet installé."
 
 msgid "If -a it will remove the sub-package as well."
 msgstr "Si -a, supprime également les sous-paquets."
-
-msgid "return to a base system."
-msgstr "retourne sur un système de base"
-
-msgid "You need to have a valid 'base' directory"
-msgstr "Vous devez avoir un dosssier 'base' valide"
-
-msgid "configured in the /etc/cards.conf file otherwise the command will abort."
-msgstr "configuré dans le fichier /etc/cards.conf sinon la commande sera avortée."
 
 msgid "shows help about cards."
 msgstr "affiche l'aide de cards."
@@ -595,6 +621,18 @@ msgstr "Cette commmande est utilisée par l'empaqueteur.\n\
 Elle affiche la liste des dépendances du paquet.\n\
 Elle est utilisée pour la compilation d'un port."
 
+msgid "verify/generate locale repositories meta data."
+msgstr "vérifie/génère les méta données des dépots."
+
+msgid "Without private key: this command is used to verify signatures of all the packages.\n\
+With a found private key: It will generate repositories meta data.\n\
+Location of the keys is defined in cards.conf file.\n\
+As for the generation, a private key is needed, it is used by the packager only."
+msgstr "Sans clé privée: cette commande est utilisée pour vérifier la signature de tous les paquets.\n\
+Avec une clé privée trouvée: elle va générer les méta données des dépots.\n\
+L'emplacement des clés est définie dans le fichier cards.conf.\n\
+Puisque la génération necessite une clé privée, elle est utilisée par l'empaqueteur uniquement."
+
 msgid "If -p is passed as optional argument, it will list the local available ports.\n\
 If -b is passed as optional argument, it will list the remote available binaries.\n\
 If -F is passed as optional argument, it will list the automatically installed \n\
@@ -632,13 +670,28 @@ It will delete all the downloads binaries which are located in the binaries sect
 msgstr "Cette commande peut-être utilisée si vous souhaitez récupérer de l'espace disque.\n\
 Elle va effacer toutes les archives téléchargées se trouvant dans les dossiers caches."
 
-msgid "This command is used for the packager.\n\
-All the dependencies include the final package will be compiled."
-msgstr "Cette commande est utilisée par l'empaqueteur.\n\
-Toutes les dépendances ainsi que le paquet final seront compilées."
-
 msgid "create a package from the recipe found in the port."
 msgstr "crée un paquet unique depuis la recette trouvée dans le port."
+
+msgid "list of ports using this port."
+msgstr "liste les ports utilisant ce port."
+
+msgid "This command is used for the packager.\n\
+It shows the list of the reversed dependencies of the package.\n\
+It is used when checking which port is using this port."
+msgstr "Cette commande sert à l'empaqueteur.\n\
+Elle montre la liste des dépendances inversées du paquet.\n\
+Elle est utilisée pour vérifier quel port utilise ce port."
+
+msgid "generate the keys pair."
+msgstr "génère la paire de clés."
+
+msgid "This command is used to generate the keys needed for\n\
+signing and verifying the packages.\n\
+This command is normally used by the packager only."
+msgstr "Cette commande génère les clés pour la signature et \n\
+la vérification des paquets.\n\
+Cette commande est normalement utilisée uniquement par le empaqueteur."
 
 msgid "remove archives from installed packages."
 msgstr "supprime les archives des paquets qui ont été installés."
@@ -729,6 +782,9 @@ msgstr "\t   Vérifie si il y a des mise à jour disponible."
 msgid "\t   Only check if all binaries that are needed are downloaded."
 msgstr "\t   Vérifie uniquement si tous les binaires nécessaires sont téléchargés."
 
+msgid "\t   Search only in the name of the package."
+msgstr "\t   Recherche uniquement dans le nom du paquet."
+
 msgid "Only download the binaries that are needed to be upgraded."
 msgstr "Télécharge uniquement les binaires nécessaires pour la mise à jour."
 
@@ -747,8 +803,8 @@ msgstr "<config>"
 msgid "This command can upgrade at onces alls your installed out of date packages."
 msgstr "Cette commande permet de mettre à jour tous vos paquets installés et obsolètes."
 
-msgid "\nPORTS SPECIFIC SCENARIO"
-msgstr "\nSCENARIO SPECIFIQUE AUX PORTS"
+msgid "\nBUILDING PACKAGES SPECIFIC SCENARIO"
+msgstr "\nSCENARIO SPECIFIQUE A LA CONSTRUCTION DES PAQUETS"
 
 msgid "\nSEARCHING"
 msgstr "\nRECHERCHE"
@@ -761,9 +817,6 @@ msgstr "\nDIFFERENCES / MISE A JOUR / NETTOYAGE"
 
 msgid "\nINSTALL, UPDATE and REMOVAL"
 msgstr "\nINSTALLER, REMPLACER et SUPPRIMER"
-
-msgid "\nBASE SYSTEM"
-msgstr "\nSYSTEME DE BASE"
 
 msgid "Your system is up to date."
 msgstr "Votre système est à jour."
