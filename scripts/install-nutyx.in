@@ -103,6 +103,8 @@ mountpoint ${LFS}/sys > /dev/null && umount -R ${LFS}/sys
 #
 #***********************************************************************
 setup_chroot() {
+local OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 cp /etc/resolv.conf ${LFS}/etc/resolv.conf
 mountpoint ${LFS}/dev > /dev/null || mount --bind /dev ${LFS}/dev
 mountpoint ${LFS}/dev/pts > /dev/null || mount -t devpts devpts ${LFS}/dev/pts
@@ -115,8 +117,8 @@ if [ -h ${LFS}/dev/shm ]; then
    mkdir -p ${LFS}/$(readlink ${LFS}/dev/shm)
 fi
 if [ ! -L ${LFS}/bin/sh ];then
-  ln -sv ../sbin/busybox ${LFS}/bin/bash
-  ln -sv bash ${LFS}/bin/sh
+  ln -s $OPTION ../sbin/busybox ${LFS}/bin/bash
+  ln -s $OPTION bash ${LFS}/bin/sh
 fi
 [ -d /sys/firmware/efi/efivars ] && \
 mount -t efivarfs efivarfs ${LFS}/sys/firmware/efi/efivars
@@ -127,7 +129,7 @@ if [ -f $LFS/$SETUP_FILE ]; then
 else
 	CHROOT_SHELL="$SHELL -l"
 fi
-echo "
+[ -z $QUIET ] && echo "
 ******************************
 Chroot path: $LFS
 ******************************"
@@ -151,11 +153,18 @@ ${CHROOT_SHELL}
 # Todo:
 #***********************************************************************
 download_pkg() {
+	local CURL_OPTION
     getPackageFileName ${1}
     if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
-        boot_mesg "Downloading $1..."
-        echo_info
-        curl -LC - -# --create-dirs ${DEPOT_BASE}/$PackageFileName \
+        if [ -z $QUIET ]; then
+			boot_mesg "Downloading $1..."
+			echo_info
+			CURL_OPTION+="-LC - -# --create-dirs"
+        else
+			CURL_OPTION="-LC - -s --create-dirs"
+        fi
+        
+        curl ${CURL_OPTION} ${DEPOT_BASE}/$PackageFileName \
             -o $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName || \
             error "Cannot download ${DEPOT_BASE}/$PackageFileName ..., check URL"
 
@@ -177,6 +186,7 @@ download_pkg() {
 #               pkgadd
 #***********************************************************************
 install_pkg() {
+	local OPTION
 	getPackageFileName ${1}
 	if $TMP/$(dirname $PKGADD)/pkginfo -r $LFS -i| grep "^$1 " \
 		> /dev/null; then
@@ -185,7 +195,8 @@ install_pkg() {
 	fi
 	if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
 		# Installing the package
-		$TMP/$PKGADD -p -r $LFS -i \
+		[ -z $QUIET ] && OPTION="-p"
+		$TMP/$PKGADD $OPTION -r  $LFS -i \
 		$LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
 			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
@@ -254,10 +265,11 @@ do
 done
 }
 generate_etc_bashrc() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="bashrc"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
   ${LFS}/etc/$FILE
@@ -335,10 +347,12 @@ fi
 EOF
 }
 generate_udev_retry() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
+
 FILE="udev_retry"
 [ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -pv ${LFS}/etc/sysconfig
+[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/sysconfig/$FILE \
    ${LFS}/etc/sysconfig/$FILE
@@ -371,7 +385,7 @@ generate_xdm() {
 local FILE
 FILE="xdm"
 [ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -pv ${LFS}/etc/sysconfig
+[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/sysconfig/$FILE \
    ${LFS}/etc/sysconfig/$FILE
@@ -392,10 +406,11 @@ DM_OPTIONS=""
 EOF
 }
 generate_createfiles() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="createfiles"
 [ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -pv ${LFS}/etc/sysconfig
+[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/sysconfig/$FILE
@@ -438,10 +453,11 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 EOF
 }
 generate_modules() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="modules"
 [ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -pv ${LFS}/etc/sysconfig
+[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/sysconfig/$FILE
@@ -469,10 +485,11 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 EOF
 }
 generate_mouse() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="mouse"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -pv ${LFS}/etc/sysconfig
+[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/sysconfig/$FILE
@@ -484,10 +501,11 @@ PROTOCOL="imps2"
 EOF
 }
 generate_inputrc() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="inputrc"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/$FILE
@@ -538,10 +556,11 @@ set bell-style none
 EOF
 }
 generate_hosts() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="hosts"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
   ${LFS}/etc/$FILE
@@ -552,10 +571,11 @@ cat > ${LFS}/etc/$FILE << "EOF"
 EOF
 }
 generate_shells() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="shells"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
   ${LFS}/etc/$FILE
@@ -568,10 +588,11 @@ cat > ${LFS}/etc/$FILE << "EOF"
 EOF
 }
 generate_umask_sh() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="umask.sh"
 [ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -pv ${LFS}/etc/profile.d
+[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/profile.d/$FILE
@@ -587,10 +608,11 @@ fi
 EOF
 }
 generate_readline_sh() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="readline.sh"
 [ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -pv ${LFS}/etc/profile.d
+[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/profile.d/$FILE
@@ -605,10 +627,11 @@ export INPUTRC
 EOF
 }
 generate_extrapaths_sh() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="extrapaths.sh"
 [ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -pv ${LFS}/etc/profile.d
+[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/profile.d/$FILE
@@ -634,10 +657,11 @@ fi
 EOF
 }
 generate_dircolors_sh() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="dircolors.sh"
 [ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -pv ${LFS}/etc/profile.d
+[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/profile.d/$FILE
@@ -656,10 +680,11 @@ alias ls='ls --color=auto'
 EOF
 }
 generate_profile() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="profile"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/$FILE
@@ -745,10 +770,11 @@ unset script RED GREEN NORMAL
 EOF
 }
 generate_group() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="group"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 cat > ${LFS}/etc/$FILE << "EOF"
 root:x:0:
 bin:x:1:daemon
@@ -784,10 +810,11 @@ nogroup:x:65534:
 EOF
 }
 generate_passwd() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="passwd"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 cat > ${LFS}/etc/$FILE << "EOF"
 root::0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/bin/false
@@ -803,10 +830,11 @@ nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
 EOF
 }
 generate_fstab() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="fstab"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/$FILE
@@ -822,10 +850,11 @@ cat > ${LFS}/etc/$FILE << "EOF"
 EOF
 }
 generate_bashrc() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE=".bashrc"
 [ -f ${LFS}/etc/skel/$FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -pv ${LFS}/etc/skel
+[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/skel/$FILE
@@ -872,14 +901,15 @@ $(which neofetch)
 EOF
 [ -f ${LFS}/root/$FILE ] && return
 [ ! -d ${LFS}/root ] && install -dv -m0750 ${LFS}/root
-cp -v ${LFS}/etc/skel/$FILE \
+cp $OPTION ${LFS}/etc/skel/$FILE \
 ${LFS}/root
 }
 generate_bash_profile() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE=".bash_profile"
 [ -f ${LFS}/etc/skel/$FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -pv ${LFS}/etc/skel
+[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/skel/$FILE
@@ -893,6 +923,8 @@ cat > ${LFS}/etc/skel/$FILE << "EOF"
 # System wide aliases and functions are in /etc/bashrc.
 
 append () {
+ local OPTION
+ [ -z $QUIET ] && OPTION="--verbose"
   # First remove the directory
   local IFS=':'
   local NEWPATH
@@ -915,14 +947,16 @@ fi
 EOF
 [ ! -d ${LFS}/root ] && install -dv -m0750 ${LFS}/root
 [ -f ${LFS}/root/$FILE ] && return
-cp -v ${LFS}/etc/skel/$FILE \
+cp $OPTION ${LFS}/etc/skel/$FILE \
 ${LFS}/root
 }
 generate_gtkrc() {
-local FILE
+
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE=".gtkrc-2.0"
 [ -f ${LFS}/etc/skel/$FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -pv ${LFS}/etc/skel
+[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/skel/$FILE
@@ -947,11 +981,12 @@ gtk-xft-rgba="rgb"
 EOF
 }
 generate_settings_ini(){
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="settings.ini"
 [ -f ${LFS}/etc/skel/.config/gtk-3.0/$FILE ] && return
 [ ! -d ${LFS}/etc/skel/.config/gtk-3.0 ] \
-&& mkdir -pv ${LFS}/etc/skel/.config/gtk-3.0
+&& mkdir -p $OPTION ${LFS}/etc/skel/.config/gtk-3.0
 
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
@@ -978,20 +1013,22 @@ gtk-xft-rgba=rgb
 EOF
 }
 generate_pkgmk_conf() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="pkgmk.conf"
 [ -f ${LFS}/etc/$FILE ] && return
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-  [ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+  [ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
   ${LFS}/etc/$FILE
 fi
 }
 generate_cards_conf() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="cards.conf"
 [ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -pv ${LFS}/etc
+[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
    cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
    ${LFS}/etc/$FILE
@@ -1019,10 +1056,11 @@ collection base
 #" >> ${LFS}/etc/cards.conf
 }
 generate_nutyx_version() {
-local FILE
+local FILE OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 FILE="nutyx-version"
 [ -f ${LFS}/var/lib/pkg/$FILE ] && return
-[ ! -d ${LFS}/var/lib/pkg ] && mkdir -pv ${LFS}/var/lib/pkg
+[ ! -d ${LFS}/var/lib/pkg ] && mkdir -p $OPTION ${LFS}/var/lib/pkg
 echo "name ${CODE_NAME}
 depot /var/lib/pkg/depot
 version $VERSION" > ${LFS}/var/lib/pkg/$FILE
@@ -1035,13 +1073,15 @@ DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
+local OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 mkdir -p ${LFS}/usr/lib
 echo "NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
 ID=nutyx
 PRETTY_NAME=\"NuTyX GNU/Linux\"
 VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
-ln -svf ../usr/lib/os-release ${LFS}/etc/os-release
+ln -sf $OPTION ../usr/lib/os-release ${LFS}/etc/os-release
 }
 
 
@@ -1096,6 +1136,7 @@ check_variables() {
 local CR
 CR="nutyx busybox gcc bzip2 glibc \
 zlib lz4 xz zstd libarchive openssl \
+ncurses readline bash \
 libunistring libidn2 libpsl curl cards"
 
 if [ -z "$CHROOT" ]; then
@@ -1151,8 +1192,8 @@ if [ "$KERNEL" != "none"  ]; then
 	if [ ! -z $ISO ]; then
 		[ -z $KERNEL ] && KERNEL=kernel
 	fi
-	CORE="acl attr bash coreutils readline \
-expat ncurses gmp flex file gzip mpc mpfr \
+	CORE="acl attr coreutils \
+expat gmp flex file gzip mpc mpfr \
 grep sed findutils binutils \
 inetutils diffutils shadow \
 bc less libcap util-linux \
@@ -1309,10 +1350,12 @@ fi
 }
 
 create_locale_link() {
+local OPTION
+[ -z $QUIET ] && OPTION="--verbose"
 [ ! -d ${LFS}/etc/locale ] && mkdir -p ${LFS}/etc/locale
 if [ -d ${LFS}/usr/lib/locale ]; then
    rm -r ${LFS}/usr/lib/locale
-   ln -sv /etc/locale/ ${LFS}/usr/lib/locale
+   ln -s $OPTION /etc/locale/ ${LFS}/usr/lib/locale
 fi
 }
 make_directories() {
@@ -1490,6 +1533,8 @@ exit 0" > $LFS/$SETUP_FILE
 
 	while [ "$1" ]; do
 		case $1 in
+			-q|--quiet)
+				QUIET="yes";;
 			-h|--help)
 				print_help
 				exit 0;;
@@ -1781,7 +1826,7 @@ main() {
     check_arch
     parse_options "$@"
     mount_depot
-    show_variables
+    [ -z $QUIET ] && show_variables
     check_root
 
     TMP=$(mktemp -d)
@@ -1806,7 +1851,7 @@ main() {
         generate_squashfs
         generate_iso
     else
-        successfull_installation
+        [ -z $QUIET ] && successfull_installation
     fi
     end
 }
