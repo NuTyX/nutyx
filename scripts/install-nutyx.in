@@ -21,31 +21,31 @@
 # Todo:
 #***********************************************************************
 boot_mesg() {
-	local ECHOPARM=""
+    local ECHOPARM=""
 
-	while true
-	do
-		case "${1}" in
-			-n)
-				ECHOPARM=" -n "
-				shift 1
-				;;
-			-*)
-				echo "Unknown Option: ${1}"
-				return 1
-				;;
-			*)
-				break
-				;;
-		esac
-	done
+    while true
+    do
+	case "${1}" in
+	    -n)
+		ECHOPARM=" -n "
+		shift 1
+		;;
+	    -*)
+		echo "Unknown Option: ${1}"
+		return 1
+		;;
+	    *)
+		break
+		;;
+	esac
+    done
 
-	## Figure out the length of what is to be printed to be used
-	## for warning messages.
-	STRING_LENGTH=$((${#1} + 1))
+    ## Figure out the length of what is to be printed to be used
+    ## for warning messages.
+    STRING_LENGTH=$((${#1} + 1))
 
-	# Print the message to the screen
-	${ECHO} ${ECHOPARM} -e "${2}${1}"
+    # Print the message to the screen
+    ${ECHO} ${ECHOPARM} -e "${2}${1}"
 }
 boot_mesg_flush() {
     # Reset STRING_LENGTH for next message
@@ -153,15 +153,15 @@ ${CHROOT_SHELL}
 # Todo:
 #***********************************************************************
 download_pkg() {
-	local CURL_OPTION
+    local CURL_OPTION
     getPackageFileName ${1}
     if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
         if [ -z $QUIET ]; then
-			boot_mesg "Downloading $1..."
-			echo_info
-			CURL_OPTION+="-LC - -# --create-dirs"
+	    boot_mesg "Downloading $1..."
+	    echo_info
+	    CURL_OPTION+="-LC - -# --create-dirs"
         else
-			CURL_OPTION="-LC - -s --create-dirs"
+	    CURL_OPTION="-LC - -s --create-dirs"
         fi
         
         curl ${CURL_OPTION} ${DEPOT_BASE}/$PackageFileName \
@@ -169,7 +169,7 @@ download_pkg() {
             error "Cannot download ${DEPOT_BASE}/$PackageFileName ..., check URL"
 
         chmod -R 755 $LFS/$DEPOT
-        echo_ok
+        [ -z $QUIET ] && echo_ok
     fi
 }
 #***********************************************************************
@@ -200,7 +200,7 @@ install_pkg() {
 		$LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
 			|| error "Cannot install $PackageFileName"
 		rm -f $LFS/.{PRE,POST,README}
-		echo_ok
+		[ -z $QUIET ] && echo_ok
 	else
 		error "$PackageFileName not found"
 	fi
@@ -588,17 +588,11 @@ cat > ${LFS}/etc/$FILE << "EOF"
 EOF
 }
 generate_umask_sh() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="umask.sh"
-[ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/profile.d/$FILE
-   return
-fi
-cat > ${LFS}/etc/profile.d/$FILE << "EOF"
+FILE="${LFS}/etc/profile.d/umask.sh"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/profile.d
+
+cat > $FILE << "EOF"
 # By default we want the umask to get set.
 if [ "$(id -gn)" = "$(id -un)" -a $EUID -gt 99 ] ; then
   umask 002
@@ -608,17 +602,11 @@ fi
 EOF
 }
 generate_readline_sh() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="readline.sh"
-[ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/profile.d/$FILE
-   return
-fi
-cat > ${LFS}/etc/profile.d/$FILE << "EOF"
+FILE="${LFS}/etc/profile.d/readline.sh"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/profile.d
+
+cat > $FILE << "EOF"
 # Setup the INPUTRC environment variable.
 if [ -z "$INPUTRC" -a ! -f "$HOME/.inputrc" ] ; then
         INPUTRC=/etc/inputrc
@@ -626,18 +614,12 @@ fi
 export INPUTRC
 EOF
 }
+
 generate_extrapaths_sh() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="extrapaths.sh"
-[ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/profile.d/$FILE
-   return
-fi
-cat > ${LFS}/etc/profile.d/$FILE << "EOF"
+FILE="${LFS}/etc/profile.d/extrapaths.sh"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/profile.d
+cat > $FILE << "EOF"
 if [ -d /usr/local/lib/pkgconfig ] ; then
         pathappend /usr/local/lib/pkgconfig PKG_CONFIG_PATH
 fi
@@ -657,17 +639,11 @@ fi
 EOF
 }
 generate_dircolors_sh() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="dircolors.sh"
-[ -f ${LFS}/etc/profile.d/$FILE ] && return
-[ ! -d ${LFS}/etc/profile.d ] && mkdir -p $OPTION ${LFS}/etc/profile.d
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/profile.d/$FILE
-   return
-fi
-cat > ${LFS}/etc/profile.d/$FILE << "EOF"
+
+FILE="${LFS}/etc/profile.d/dircolors.sh"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/profile.d
+cat > $FILE << "EOF"
 # Setup for /bin/ls to support color, the alias is in /etc/bashrc.
 if [ -f "/etc/dircolors" ] ; then
         eval $(dircolors -b /etc/dircolors)
@@ -679,18 +655,12 @@ fi
 alias ls='ls --color=auto'
 EOF
 }
+
 generate_profile() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="profile"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/$FILE
-   return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/profile"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc
+cat > $FILE << "EOF"
 # Begin /etc/profile
 # Written for Beyond Linux From Scratch
 # by James Robertson <jameswrobertson@earthlink.net>
@@ -770,12 +740,9 @@ unset script RED GREEN NORMAL
 EOF
 }
 generate_group() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="group"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/group"
+mkdir -p $OPTION ${LFS}/etc
+cat > $FILE << "EOF"
 root:x:0:
 bin:x:1:daemon
 sys:x:2:
@@ -810,12 +777,10 @@ nogroup:x:65534:
 EOF
 }
 generate_passwd() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="passwd"
-[ -f ${LFS}/etc/$FILE ] && return
+FILE="${LFS}/etc/passwd"
+[ -f $FILE ] && return
 [ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-cat > ${LFS}/etc/$FILE << "EOF"
+cat > $FILE << "EOF"
 root::0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/bin/false
@@ -830,17 +795,9 @@ nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
 EOF
 }
 generate_fstab() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="fstab"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/$FILE
-   return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/fstab"
+[ -f $FILE ] && return
+cat > $FILE << "EOF"
 # Begin /etc/fstab
 
 # filesystem  mount-point                  type       options                        dump  fsck
@@ -849,18 +806,13 @@ cat > ${LFS}/etc/$FILE << "EOF"
 # 192.168.254.254:/home/thierry /home/thierry nfs rw,vers=3,_netdev,rsize=8192,wsize=8192 0 0
 EOF
 }
+
 generate_bashrc() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE=".bashrc"
-[ -f ${LFS}/etc/skel/$FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/skel/$FILE
-   return
-fi
-cat > ${LFS}/etc/skel/$FILE << "EOF"
+FILE="${LFS}/etc/skel/.bashrc"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/skel
+
+cat > $FILE << "EOF"
 # Personal aliases and functions.
 
 # Personal environment variables and startup programs should go in
@@ -869,24 +821,24 @@ cat > ${LFS}/etc/skel/$FILE << "EOF"
 # in /etc/bashrc.
 
 if [ -f "/etc/bashrc" ] ; then
-  source /etc/bashrc
+    source /etc/bashrc
 fi
 if [ $EUID -eq 0 ] ; then
-        alias nu='setup-nutyx -cu'
-        alias del='cards remove'
-        alias get='cards install'
-        alias up='cards install -u'
-        alias check='cards diff'
-        alias sysup='cards upgrade'
-	alias upcheck='cards sync && cards upgrade -s'
+    alias nu='setup-nutyx -cu'
+    alias del='cards remove'
+    alias get='cards install'
+    alias up='cards install -u'
+    alias check='cards diff'
+    alias sysup='cards upgrade'
+    alias upcheck='cards sync && cards upgrade -s'
 else
-        alias nu='sudo setup-nutyx -cu'
-        alias del='sudo cards remove'
-        alias get='sudo cards install'
-        alias up='sudo cards install -u'
-        alias check='sudo cards diff'
-        alias sysup='sudo cards upgrade'
-	alias upcheck='sudo cards sync && sudo cards upgrade -s'
+    alias nu='sudo setup-nutyx -cu'
+    alias del='sudo cards remove'
+    alias get='sudo cards install'
+    alias up='sudo cards install -u'
+    alias check='sudo cards diff'
+    alias sysup='sudo cards upgrade'
+    alias upcheck='sudo cards sync && sudo cards upgrade -s'
 fi
 alias search='cards search'
 alias ll='ls -l'
@@ -904,18 +856,12 @@ EOF
 cp $OPTION ${LFS}/etc/skel/$FILE \
 ${LFS}/root
 }
+
 generate_bash_profile() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE=".bash_profile"
-[ -f ${LFS}/etc/skel/$FILE ] && return
+FILE="${LFS}/etc/skel/.bash_profile"
+[ -f $FILE ] && return
 [ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/skel/$FILE
-   return
-fi
-cat > ${LFS}/etc/skel/$FILE << "EOF"
+cat > $FILE << "EOF"
 # Personal environment variables and startup programs.
 
 # Personal aliases and functions should go in ~/.bashrc.  System wide
@@ -937,32 +883,24 @@ append () {
   export PATH=$NEWPATH:$1
 }
 
-if [ -f "$HOME/.bashrc" ] ; then
-  source $HOME/.bashrc
+if [ -f "$HOME/.bashrc" ]; then
+    source $HOME/.bashrc
 fi
 
 # unset append
 
 # End ~/.bash_profile
 EOF
-[ ! -d ${LFS}/root ] && install -dv -m0750 ${LFS}/root
-[ -f ${LFS}/root/$FILE ] && return
-cp $OPTION ${LFS}/etc/skel/$FILE \
+[ ! -d ${LFS}/root ] && install -d $OPTION -m0750 ${LFS}/root
+cp $OPTION $FILE \
 ${LFS}/root
 }
 generate_gtkrc() {
 
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE=".gtkrc-2.0"
-[ -f ${LFS}/etc/skel/$FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/skel/$FILE
-   return
-fi
-cat > ${LFS}/etc/skel/$FILE << "EOF"
+FILE="${LFS}/etc/skel/.gtkrc-2.0"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/skel
+cat > $FILE << "EOF"
 gtk-theme-name="Adwaita"
 gtk-icon-theme-name="Adwaita"
 gtk-font-name="DejaVu Sans 10"
@@ -980,20 +918,13 @@ gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
 EOF
 }
-generate_settings_ini(){
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="settings.ini"
-[ -f ${LFS}/etc/skel/.config/gtk-3.0/$FILE ] && return
-[ ! -d ${LFS}/etc/skel/.config/gtk-3.0 ] \
-&& mkdir -p $OPTION ${LFS}/etc/skel/.config/gtk-3.0
 
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/skel/.config/gtk-3.0/$FILE
-   return
-fi
-cat > ${LFS}/etc/skel/.config/gtk-3.0/$FILE << "EOF"
+generate_settings_ini(){
+FILE="${LFS}/etc/skel/.config/gtk-3.0/settings.ini"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/skel/.config/gtk-3.0
+
+cat > $FILE << "EOF"
 [Settings]
 gtk-theme-name=Adwaita
 gtk-icon-theme-name=Adwaita
@@ -1012,28 +943,10 @@ gtk-xft-hintstyle=hintslight
 gtk-xft-rgba=rgb
 EOF
 }
-generate_pkgmk_conf() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="pkgmk.conf"
-[ -f ${LFS}/etc/$FILE ] && return
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-  [ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-  cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-  ${LFS}/etc/$FILE
-fi
-}
 generate_cards_conf() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="cards.conf"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/$FILE
-   return
-fi
+FILE="$LFS/etc/cards.conf"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc
 
 [ "$DEPOT" == "$MOUNT" ] || echo "
 # Default server URL
@@ -1053,17 +966,15 @@ collection cli
 #
 ## Chroot system without reboot possibilities for a chroot
 collection base
-#" >> ${LFS}/etc/cards.conf
+#" >> $FILE
 }
 generate_nutyx_version() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="nutyx-version"
-[ -f ${LFS}/var/lib/pkg/$FILE ] && return
-[ ! -d ${LFS}/var/lib/pkg ] && mkdir -p $OPTION ${LFS}/var/lib/pkg
+FILE="${LFS}/var/lib/pkg/nutyx-version"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/var/lib/pkg
 echo "name ${CODE_NAME}
 depot /var/lib/pkg/depot
-version $VERSION" > ${LFS}/var/lib/pkg/$FILE
+version $VERSION" > $FILE
 }
 generate_lsb() {
 echo "DISTRIB_ID=\"NuTyX\"
@@ -1073,9 +984,7 @@ DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
-local OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-mkdir -p ${LFS}/usr/lib
+mkdir -p $OPTION ${LFS}/usr/lib
 echo "NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
 ID=nutyx
@@ -1119,17 +1028,17 @@ local FILE
 
 for FILE in libutil.c32 libcom32.c32 ldlinux.c32 vesamenu.c32 isolinux.bin
 do
-	[ ! -f /usr/lib/syslinux/$FILE ] && \
-		error "syslinux not properly installed"
+    [ ! -f /usr/lib/syslinux/$FILE ] && \
+	error "syslinux not properly installed"
 done
 
 }
 check_root() {
 if [ "$UID" -ne 0 ]; then
-	echo "
+    echo "
 You are not root, cannot continue...
 "
-	exit 1
+    exit 1
 fi
 }
 check_variables() {
@@ -1140,22 +1049,22 @@ ncurses readline bash \
 libunistring libidn2 libpsl curl cards"
 
 if [ -z "$CHROOT" ]; then
-	CHROOT="$CR"
+    CHROOT="$CR"
 else
-	CHROOT="$CR $CHROOT"
+    CHROOT="$CR $CHROOT"
 fi
 
 [ "$ARCH" = "i686" -a "$HOST_ARCH" = "x86_64" ] && \
-	CHROOT="$CR util-linux"
+    CHROOT="$CR util-linux"
 unset CR
 
 [ -z "$URL" ] && URL="http://localhost"
 
 [ -z "$VERSION" ] && VERSION="rolling"
 if [ "$VERSION" == "development" ]; then
-	CODE_NAME="$(date +%Y%m%d)"
+    CODE_NAME="$(date +%Y%m%d)"
 else
-	CODE_NAME="Houaphan"
+    CODE_NAME="Houaphan"
 fi
 
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
@@ -1173,40 +1082,20 @@ ttf-croscore ttf-carlito vlc firefox gparted scrot"
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
 gnome-themes-extra"
 
-[ -z "$CDE" ] && CDE="cde"
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
 [ -z "$JWM" ] && JWM="lxdm jwm jwm-miyolinux-theme"
-[ -z "$LXDE" ] && LXDE="lxdm lxde"
-[ -z "$LXQT" ] && LXQT="breeze-gtk lxqt"
-[ -z "$ENLIGHTENMENT" ] && ENLIGHTENMENT="lightdm enlightenment"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
-[ -z "$CINNAMON" ] && CINNAMON="lightdm cinnamon"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
-[ -z "$BUDGIE" ] && BUDGIE="lxdm budgie"
 
 [ "$KERNEL" = "NONE" ] && KERNEL="none"
 
 if [ "$KERNEL" != "none"  ]; then
-	if [ ! -z $ISO ]; then
-		[ -z $KERNEL ] && KERNEL=kernel
-	fi
-	CORE="acl attr coreutils \
-expat gmp flex file gzip mpc mpfr \
-grep sed findutils binutils \
-inetutils diffutils shadow \
-bc less libcap util-linux \
-kmod kbd pam \
-gdbm e2fsprogs libpipeline \
-gettext procps-ng \
-psmisc sudo tzdata \
-iproute2 iana-etc \
-groff man-db \
-cards.man nutyx.man \
-dialog cpio \
-lsb-release grub eudev \
-sysklogd sysvinit $KERNEL "
+    if [ ! -z $ISO ]; then
+	[ -z $KERNEL ] && KERNEL=kernel
+    fi
+    CORE="core $KERNEL "
 fi
 
 if [ -d $LFS/lib/modules ];then
@@ -1226,34 +1115,28 @@ if [ ! -z $ISO ]; then
 		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
 		GUI) CORE+="$STRICT $MINI $BASE $CLI $GUI";;
 		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
-		CDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $CDE";;
 		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $OPENBOX";;
 		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $JWM";;
-		LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $LXDE";;
-		LXQT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $LXQT";;
 		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
-		CINNAMON) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $CINNAMON";;
-		ENLIGHTENMENT) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $ENLIGHTENMENT";;
 		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $MATE";;
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
-                BUDGIE) CORE+="$STRICT $MINI $BASE $CLI $XORG $BUDGIE";;
-		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, cde, openbox, \
-jwm, lxde, lxqt, enlightenment, cinnamon, xfce4, budgie, mate, gnome, kde6" && exit 1;;
+		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, openbox, \
+jwm, xfce4, mate, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
 	DEVEL+="
 mkinitramfs \$(basename /lib/modules/*)
 mv boot/initrd-* boot/initrd-${VERSION_KERNEL}"
-	if [ -z $MOUNT ]; then
-		DEVEL+="
-cards purge"
-	else
-		DEVEL+="
-umount $DEPOT"
-	fi
+    if [ -z $MOUNT ]; then
 	DEVEL+="
+cards purge"
+    else
+	DEVEL+="
+umount $DEPOT"
+    fi
+    DEVEL+="
 exit 0"
 fi
 
@@ -1270,12 +1153,12 @@ ISO_FILE="NuTyX_${ARCH}-$VERSION_NUTYX-$ISO.iso"
 }
 config() {
 [ -f /etc/$(basename $INSTALL_COMMAND).conf ] && \
-		source /etc/$(basename $INSTALL_COMMAND).conf
+    source /etc/$(basename $INSTALL_COMMAND).conf
 
 HOST_ARCH=$(uname -m)
 [ -z "$ARCH" ] && ARCH=$(uname -m)
 [ "$ARCH" = "i686" -a "$HOST_ARCH" = "x86_64" ] && LINUX_ARCH="linux32" \
-	|| LINUX_ARCH=""
+    || LINUX_ARCH=""
 
 # Number of seconds between STOPSIG and FALLBACK when stopping processes
 KILLDELAY="3"
@@ -1331,21 +1214,21 @@ STRING_LENGTH="0"            # the length of the current message
 }
 mount_depot() {
 if [ ! -z $MOUNT ]; then
-	mkdir -p $LFS/$DEPOT
-	[ -d $MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} ] \
-		|| error "$MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} not exist"
+    mkdir -p $LFS/$DEPOT
+    [ -d $MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} ] \
+	|| error "$MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} not exist"
 
-	mount --bind $MOUNT/$ARCH/$VERSION  $LFS/$DEPOT \
-		|| error "cannot mount $MOUNT on $LFS/$DEPOT"
+    mount --bind $MOUNT/$ARCH/$VERSION  $LFS/$DEPOT \
+	|| error "cannot mount $MOUNT on $LFS/$DEPOT"
 fi
 }
 check_arch() {
 if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ] \
-	&& [ "$ARCH" != "aarch64" ]; then
-	boot_mesg "
+    && [ "$ARCH" != "aarch64" ]; then
+    boot_mesg "
  >>> This arch ($ARCH) is not supported"
-	echo_failure
-	exit 1
+    echo_failure
+    exit 1
 fi
 }
 
@@ -1401,7 +1284,7 @@ generate_setupfile() {
 if [ "$SHELL" == "/bin/bash" ]; then
   SHELL=/bin/ash
   if [ -f $LFS/bin/bash ]; then
-	SHELL=/bin/bash
+    SHELL=/bin/bash
   fi
 fi
 if [[ -z "$CORE" && -z "$DEVEL" ]];then
@@ -1420,32 +1303,33 @@ fi
 chmod 177 $LFS/$SETUP_FILE
 }
 install_configuration_files() {
-	generate_cards_conf
-	generate_pkgmk_conf
-	generate_fstab
-	generate_passwd
-	generate_group
-	generate_bash_profile
-	generate_bashrc
-	generate_gtkrc
-	generate_settings_ini
-	generate_hosts
-	generate_inputrc
-	generate_shells
-	generate_dircolors_sh
-	generate_extrapaths_sh
-	generate_readline_sh
-	generate_umask_sh
-	generate_profile
-	generate_inputrc
-	generate_modules
-	generate_createfiles
-	generate_mouse
-	generate_udev_retry
-	generate_etc_bashrc
-	generate_lsb
-	generate_osr
-	generate_nutyx_version
+    local FILE OPTION
+    [ -z $QUIET ] && OPTION="--verbose"
+    generate_cards_conf
+    generate_fstab
+    generate_passwd
+    generate_group
+    generate_bash_profile
+    generate_bashrc
+    generate_gtkrc
+    generate_settings_ini
+    generate_hosts
+    generate_inputrc
+    generate_shells
+    generate_dircolors_sh
+    generate_extrapaths_sh
+    generate_readline_sh
+    generate_umask_sh
+    generate_profile
+    generate_inputrc
+    generate_modules
+    generate_createfiles
+    generate_mouse
+    generate_udev_retry
+    generate_etc_bashrc
+    generate_lsb
+    generate_osr
+    generate_nutyx_version
 }
 show_variables() {
 echo "
@@ -1576,8 +1460,8 @@ cd $LFS
 mkdir -p ISO/boot
 for d in opt bin etc lib lib64 root run sbin usr var home
 do
-  [ ! -d $d ] && continue
-  DIRS+="$d "
+    [ ! -d $d ] && continue
+    DIRS+="$d "
 done
 mksquashfs $DIRS ISO/boot/NuTyX.squashfs
 }
@@ -1599,17 +1483,16 @@ SCRIPTDIR=$(pwd -P)
 
 cd $LFS
 
-
 cp -va boot ISO/
 
 cd ${ISODIR} || error "cd ${ISODIR}"
 
 for FILE in libutil.c32 libcom32.c32 ldlinux.c32 vesamenu.c32 isolinux.bin
 do
-	cp /usr/lib/syslinux/$FILE isolinux/
+    cp /usr/lib/syslinux/$FILE isolinux/
 done
 
-	echo "
+    echo "
 menu hshift 7
 menu width 80
 
@@ -1644,7 +1527,7 @@ menu tabmsgrow 18
 menu tabmsg Press ENTER to boot or TAB to edit a menu entry
 
 EOF
-	echo "label live
+    echo "label live
  menu label ^Live
  kernel /boot/kernel-${VERSION_KERNEL}
  append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet live
@@ -1667,7 +1550,7 @@ label live-debug-toram
 " > isolinux/live.cfg
 
 
-	echo "default install
+    echo "default install
 label install
  menu label ^Install
  kernel /boot/kernel-${VERSION_KERNEL}
@@ -1706,16 +1589,16 @@ mkdir -p {iso/EFI,boot/grub/{fonts,${GRUB_EFI_ARCH}-efi}}
 
 # grub
 [ -f /usr/share/grub/unicode.pf2 ] && \
-	cp /usr/share/grub/unicode.pf2 boot/grub/fonts
+    cp /usr/share/grub/unicode.pf2 boot/grub/fonts
 
 [ -f /usr/share/grub/splash.png ] && \
-	cp /usr/share/grub/splash.png boot/grub/splash.png
+    cp /usr/share/grub/splash.png boot/grub/splash.png
 
 echo "set prefix=/boot/grub" > iso/grub-early.cfg
 
 cp -a /usr/lib/grub/${GRUB_EFI_ARCH}-efi/*.mod \
-	/usr/lib/grub/${GRUB_EFI_ARCH}-efi/*.lst \
-	boot/grub/${GRUB_EFI_ARCH}-efi
+    /usr/lib/grub/${GRUB_EFI_ARCH}-efi/*.lst \
+    boot/grub/${GRUB_EFI_ARCH}-efi
 
 
 echo "set default=0
@@ -1726,22 +1609,22 @@ set timeout=99
 
 insmod all_video
 if loadfont /boot/grub/fonts/unicode.pf2; then
-  set gfxmode=800x600
-  insmod efi_gop
-  insmod efi_uga
-  insmod video_bochs
-  insmod video_cirrus
-  insmod gfxterm
-  insmod png
-  terminal_output gfxterm
+    set gfxmode=800x600
+    insmod efi_gop
+    insmod efi_uga
+    insmod video_bochs
+    insmod video_cirrus
+    insmod gfxterm
+    insmod png
+    terminal_output gfxterm
 fi
 
 if background_image /boot/grub/splash.png; then
-  set color_normal=light-gray/black
-  set color_highlight=white/black
+    set color_normal=light-gray/black
+    set color_highlight=white/black
 else
-  set color_normal=cyan/blue
-  set color_highlight=white/blue
+    set color_normal=cyan/blue
+    set color_highlight=white/blue
 fi
 
 menuentry \"$VERSION_NUTYX $ISO (UEFI) normal\" {
@@ -1784,14 +1667,14 @@ menuentry \"$VERSION_NUTYX $ISO (UEFI) debug live copied to RAM\" {
 
 for FILE in kernel-stable initrd-stable
 do
-	[ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
+    [ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
 done
 
 mkdir -p iso/efiboot EFI/boot
 
 grub-mkimage -c iso/grub-early.cfg -o EFI/boot/${GRUB_EFI_IMG} \
-	-O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
-	search search_fs_file || error "grub-mkimage"
+    -O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
+    search search_fs_file || error "grub-mkimage"
 
 # efiboot.img
 modprobe loop
