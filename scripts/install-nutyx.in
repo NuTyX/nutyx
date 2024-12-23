@@ -265,17 +265,9 @@ do
 done
 }
 generate_etc_bashrc() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="bashrc"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-  ${LFS}/etc/$FILE
-  return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/bashrc"
+[ -f $FILE ] && return
+cat > $FILE << "EOF"
 # Begin /etc/bashrc
 # Written for Beyond Linux From Scratch
 # by James Robertson <jameswrobertson@earthlink.net>
@@ -346,19 +338,13 @@ fi
 # End /etc/bashrc
 EOF
 }
-generate_udev_retry() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
 
-FILE="udev_retry"
-[ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/sysconfig/$FILE \
-   ${LFS}/etc/sysconfig/$FILE
-   return
-fi
-cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
+generate_udev_retry() {
+FILE="${LFS}/etc/sysconfig/udev_retry"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/sysconfig
+
+cat > $FILE << "EOF"
 ########################################################################
 # Begin /etc/sysconfig/udev_retry
 #
@@ -382,16 +368,11 @@ rtc
 EOF
 }
 generate_xdm() {
-local FILE
-FILE="xdm"
-[ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/sysconfig/$FILE \
-   ${LFS}/etc/sysconfig/$FILE
-   return
-fi
-cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
+FILE="${LFS}/etc/sysconfig/xdm"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/sysconfig
+
+cat > $FILE << "EOF"
 # Which display manager to use (full path):
 # DISPLAY_MANAGER=/usr/sbin/lxdm
 # DISPLAY_MANAGER=/usr/sbin/xdm
@@ -406,17 +387,11 @@ DM_OPTIONS=""
 EOF
 }
 generate_createfiles() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="createfiles"
-[ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/sysconfig/$FILE
-   return
-fi
-cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
+FILE="${LFS}/etc/sysconfig/createfiles"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/sysconfig
+
+cat > $FILE << "EOF"
 ########################################################################
 # Begin /etc/sysconfig/createfiles
 #
@@ -453,17 +428,12 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 EOF
 }
 generate_modules() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="modules"
-[ -f ${LFS}/etc/sysconfig/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/sysconfig/$FILE
-   return
-fi
-cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
+FILE="${LFS}/etc/sysconfig/modules"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/sysconfig
+
+
+cat > $FILE << "EOF"
 ########################################################################
 # Begin /etc/sysconfig/modules
 #
@@ -484,34 +454,21 @@ cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
 # End /etc/sysconfig/modules
 EOF
 }
+
 generate_mouse() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="mouse"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc/sysconfig ] && mkdir -p $OPTION ${LFS}/etc/sysconfig
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/sysconfig/$FILE
-   return
-fi
-cat > ${LFS}/etc/sysconfig/$FILE << "EOF"
+FILE="${LFS}/etc/mouse"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc/sysconfig
+cat > $FILE << "EOF"
 MDEVICE="/dev/input/mice"
 PROTOCOL="imps2"
 EOF
 }
 generate_inputrc() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="inputrc"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-   cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-   ${LFS}/etc/$FILE
-   return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/inputrc"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc
+cat > $FILE << "EOF"
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
 
@@ -555,33 +512,22 @@ set bell-style none
 # End /etc/inputrc
 EOF
 }
+
 generate_hosts() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="hosts"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-  cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-  ${LFS}/etc/$FILE
-  return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/hosts"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc
+
+cat > $FILE << "EOF"
 127.0.0.1 localhost.localdomain localhost
 EOF
 }
+
 generate_shells() {
-local FILE OPTION
-[ -z $QUIET ] && OPTION="--verbose"
-FILE="shells"
-[ -f ${LFS}/etc/$FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
-if [ -f /etc/${INSTALL_COMMAND}.conf.d/$FILE ]; then
-  cp /etc/${INSTALL_COMMAND}.conf.d/$FILE \
-  ${LFS}/etc/$FILE
-  return
-fi
-cat > ${LFS}/etc/$FILE << "EOF"
+FILE="${LFS}/etc/shells"
+[ -f $FILE ] && return
+mkdir -p $OPTION ${LFS}/etc
+cat > $FILE << "EOF"
 # Begin /etc/shells
 /bin/sh
 /bin/bash
@@ -851,9 +797,9 @@ alias paste-nutyx='curl -F '\''f:1=<-'\'' http://sprunge.us'
 $(which neofetch)
 # End ~/.bashrc
 EOF
-[ -f ${LFS}/root/$FILE ] && return
-[ ! -d ${LFS}/root ] && install -dv -m0750 ${LFS}/root
-cp $OPTION ${LFS}/etc/skel/$FILE \
+[ -f ${LFS}/root/.bashrc ] && return
+install -dv -m0750 ${LFS}/root
+cp $OPTION $FILE \
 ${LFS}/root
 }
 
@@ -1073,7 +1019,7 @@ fi
 [ -z "$STRICT" ] && STRICT="$KERNEL"
 [ -z "$MINI" ] && MINI="dhcpcd"
 [ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
-systemd wireless-tools wpa-supplicant"
+wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm gpm.service make-ca xdg-user-dirs \
 sound-theme-freedesktop ntp ntp.service nano neofetch"
 [ -z "$GUI" ] && GUI="flcards gvfs network-manager-applet \
@@ -1321,7 +1267,6 @@ install_configuration_files() {
     generate_readline_sh
     generate_umask_sh
     generate_profile
-    generate_inputrc
     generate_modules
     generate_createfiles
     generate_mouse
