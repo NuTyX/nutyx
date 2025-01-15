@@ -243,8 +243,8 @@ msgstr "Paquet: "
 msgid " have a wrong signature."
 msgstr " a une fausse signature."
 
-msgid "<package> | <collection>"
-msgstr "<paquet> | <collection>"
+msgid "<package> | <collection> | <set>"
+msgstr "<paquet> | <collection> | <jeu>"
 
 msgid "File"
 msgstr "Fichier"
@@ -323,6 +323,27 @@ msgstr "Pas trouvé"
 
 msgid "\t   Print this help message"
 msgstr "\t   Affiche cet aide"
+
+msgid "Name:"
+msgstr "Nom:"
+
+msgid "Installed:"
+msgstr "Interne:"
+
+msgid "Available:"
+msgstr "Disponible:"
+
+msgid "To remove:"
+msgstr "A supprimer:"
+
+msgid "Status:"
+msgstr "Etat:"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid " day(s)"
+msgstr " jour(s)"
 
 msgid "Name           : "
 msgstr "Nom                 : "
@@ -532,8 +553,11 @@ msgstr "installe toutes les dépendances depuis les binaires et compile le port 
 msgid "check or signing a collection of packages depending if a private key is present."
 msgstr "vérifie ou signe une collection de paquets en fonction de la présence d'une clé privée."
 
-msgid "list outdated packages."
-msgstr "liste les paquets obsolètes."
+msgid "shows available updates."
+msgstr "affiche les mise à jour disponibles."
+
+msgid "Shows Out of date, Obsolet, Rebuild, Conflict, Replace packages available."
+msgstr "Affiche les paquets disponibles qu'ils soient périmés, Obsolètes, reconstruits, en conflit ou remplaçables."
 
 msgid "upgrade outdated packages."
 msgstr "met à jour les paquets obsolètes."
@@ -555,6 +579,9 @@ msgstr "synchronise les metadonnées locales et distantes "
 
 msgid "install the binary found on the mirror."
 msgstr "installe le binaire trouvé sur le serveur."
+
+msgid "If -b it will search in the repository cache."
+msgstr "Si -b, la recherche se fait dans les paquets disponibles sur le serveur."
 
 msgid "If -n it will search in the name of the available packages only."
 msgstr "Si -n, la recherche se fait dans le nom des paquets disponibles uniquement."
@@ -580,23 +607,30 @@ msgstr "Vous pouvez aussi lire 'man cards', 'man cards.conf', 'man pkgmk', 'man 
 msgid "print info about cards configuration."
 msgstr "affiche les informations de la configuration de cards."
 
-msgid "It can show the defined Directories where alls the packages are located. The locale which are going to be installed, the architecture of your machine, the base system directory and the logfile directory."
-msgstr "Il peut afficher les répertoires défini dans lesquels les paquets sont stockés. La locale qui sera installée, l'architecture de la machine, le répertoire contenant la liste des paquets pour revenir à un système de base et le répertoire contenant les logs de compilation."
+msgid "It can show the defined Directories where alls the packages are located.\n\
+The locale which are going to be installed, the architecture of your machine."
+msgstr "Il peut afficher les répertoires défini dans lesquels les paquets sont stockés. La locale qui sera installée, l'architecture de la machine et le répertoire contenant les logs de compilation."
 
-msgid "return to a basic system."
-msgstr "retour à un système de base."
-
-msgid "It will REMOVE ALL THE PACKAGES not listed in the base system list directory."
-msgstr "Va SUPPRIMER TOUS LES PAQUETS qui ne sont pas dans la liste des dossiers définis dans le répertoire de base."
-
-msgid "list the file(s) of the installed <package>."
-msgstr "Affiche le(s) fichier(s) du <paquet> installé."
+msgid "list the file(s) of the <package>."
+msgstr "Affiche le(s) fichier(s) du <paquet>."
 
 msgid "synchronize local and remote metadatas."
 msgstr "synchronise les metadonnées locales et distantes."
 
 msgid "print info about a package."
 msgstr "affiche les informations d'un paquet"
+
+msgid "print all details of a package like version, size, description, etc."
+msgstr "affiche tous les détails d'un paquet tel que la version, la taille, la description, etc."
+
+msgid "list all packages."
+msgstr "affiche une liste de tous les paquets"
+
+msgid "It will list available packages."
+msgstr "Affiche une liste de tous les paquets disponibles."
+
+msgid "     Available sets of packages in depot server."
+msgstr "     Jeux de paquets disponibles sur le serveur de dépot."
 
 msgid "If -p or -b are passed as optional arguments, it will be the info of a port or the info of a binary available in the depot."
 msgstr "Si un argument -p ou -b est utilisé, ce seront les informations d'un port ou les informations d'un binaire disponible sur le dépot."
@@ -723,15 +757,11 @@ Si l'option -u est passée, le paquet sera mis à jour.\n\
 Si l'option -f est passée, l'installation sera forcée et les fichiers en conflits seront écrasés."
 
 msgid "It can remove one or more packages.\n\
-If you want to remove a package from the base list, \
-you should pass the -a argument. \n\
-If you specify an existing collection, all packages  \
-that belong to this collection will be deleted."
+If you specify an existing collection/set, all packages \
+that belong to this collection/set will be deleted."
 msgstr "Peut supprimer un ou plusieurs paquets. \n\
-Si vous souhaitez supprimer un paquet de la liste de base, \
-vous devez passer l'argument -a. \n\
-Si vous spécifiez une collection existante, tous les paquets \n\
-appartenant à cette collection seront supprimés."
+Si vous spécifiez une collection/jeu, tous les paquets \
+appartenant à cette collection/jeu seront supprimés."
 
 msgid "It's mainly use to know if they are no duplicate call of any dependency."
 msgstr "Principalement utilisé pour savoir si il n'y a pas certaines dépendances en double."
@@ -791,6 +821,9 @@ msgstr "\t   Vérifie uniquement si tous les binaires nécessaires sont téléch
 msgid "\t   Search only in the name of the package."
 msgstr "\t   Recherche uniquement dans le nom du paquet."
 
+msgid "\t   Don't upgrade local metadata (not recommended)."
+msgstr "\t   Ne pas mettre les metadonnées locales à jour (déconseillé)."
+
 msgid "Only download the binaries that are needed to be upgraded."
 msgstr "Télécharge uniquement les binaires nécessaires pour la mise à jour."
 
@@ -844,3 +877,60 @@ msgstr "La collection "
 
 msgid " is part of the minimal system and cannot be removed !!!"
 msgstr " fait parti du système minimum et ne peut pas être supprimée !!!"
+
+msgid "  Proceed with upgrade and bypass details information."
+msgstr "  Procède à la mise à jour sans montrer les détails."
+
+msgid "Summary: "
+msgstr "Résumé: "
+
+msgid "Percentage of obsoletes packages: "
+msgstr "Percentage de paquets obsolètes: "
+
+msgid "Use the command: "
+msgstr "Utilisez la commande: "
+
+msgid "to see all the details about the upgrade."
+msgstr "pour voir tous les détails concernant cette mise à jour."
+
+msgid "when you're ready to upgrade your system."
+msgstr "quand vous êtes prêt pour lancer la mise à jour de votre système."
+
+msgid "Number of Packages:                       "
+msgstr "Nombre de Paquets:                                "
+
+msgid "Unchanged Packages:                       "
+msgstr "Paquets inchangés:                                "
+
+msgid "Out of Date Packages (different version): "
+msgstr "Paquets périmés (versions différentes):           "
+
+msgid "Rebuild Packages (newer build date):      "
+msgstr "Paquets reconstruits (construction plus récente): "
+
+msgid "Obsoletes Packages (will be removed):     "
+msgstr "Paquets obsolètes (seront supprimés):             "
+
+msgid "Unmaintained Packages (should be remove): "
+msgstr "Paquets non maintenus                             "
+
+msgid "Conflict Packages (will be removed):      "
+msgstr "Paquets en conflit (seront supprimés):            "
+
+msgid "Total download size:                      "
+msgstr "Taille totale du téléchargement:                  "
+
+msgid "Total size of reinstalled packages:       "
+msgstr "Taille totale des paquets reinstallés:            "
+
+msgid "Total size of remove packages:            "
+msgstr "Taille totale des paquets supprimé:               "
+
+msgid "Total amount of added bytes:              "
+msgstr "Nombre d'octets ajoutés:                          "
+
+msgid "Total amount of removed bytes:            "
+msgstr "Nombre d'octets supprimés:                        "
+
+msgid "Available space on your system:           "
+msgstr "Espace disponible sur votre système:              "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU gettext-runtime 0.19.4.73\n"
 "Report-Msgid-Bugs-To: bug-gettext@gnu.org\n"
-"POT-Creation-Date: 2023-11-17 22:40+0100\n"
+"POT-Creation-Date: 2024-12-31 12:44+0100\n"
 "PO-Revision-Date: 2015-06-28 10:38+0200\n"
 "Last-Translator: Primoz PETERLIN <primozz.peterlin@gmail.com>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -21,59 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
 
-#: gnulib-lib/closeout.c:66
-msgid "write error"
-msgstr "napaka pri pisanju"
-
-#: gnulib-lib/error.c:194
-msgid "Unknown system error"
-msgstr "Neznana sistemska napaka"
-
-#: gnulib-lib/getopt.c:278
-#, fuzzy, c-format
-#| msgid "%s: option '%s' is ambiguous\n"
-msgid "%s: option '%s%s' is ambiguous\n"
-msgstr "%s: izbira '%s' ni enopomenska\n"
-
-#: gnulib-lib/getopt.c:284
-#, fuzzy, c-format
-#| msgid "%s: option '%s' is ambiguous; possibilities:"
-msgid "%s: option '%s%s' is ambiguous; possibilities:"
-msgstr "%s: izbira '%s ni enopomenska; možnosti so:"
-
-#: gnulib-lib/getopt.c:319
-#, fuzzy, c-format
-#| msgid "%s: unrecognized option '%c%s'\n"
-msgid "%s: unrecognized option '%s%s'\n"
-msgstr "%s: neprepoznana izbira '%c%s'\n"
-
-#: gnulib-lib/getopt.c:345
-#, fuzzy, c-format
-#| msgid "%s: option '%c%s' doesn't allow an argument\n"
-msgid "%s: option '%s%s' doesn't allow an argument\n"
-msgstr "%s: izbira '%c%s' ne dovoljuje argumenta\n"
-
-#: gnulib-lib/getopt.c:360
-#, fuzzy, c-format
-#| msgid "%s: option '--%s' requires an argument\n"
-msgid "%s: option '%s%s' requires an argument\n"
-msgstr "%s: izbira '--%s' zahteva argument\n"
-
-#: gnulib-lib/getopt.c:621
-#, c-format
-msgid "%s: invalid option -- '%c'\n"
-msgstr "%s: neveljavna izbira -- '%c'\n"
-
-#: gnulib-lib/getopt.c:636 gnulib-lib/getopt.c:682
-#, c-format
-msgid "%s: option requires an argument -- '%c'\n"
-msgstr "%s: izbira zahteva argument -- '%c'\n"
-
-#: gnulib-lib/xalloc-die.c:34
-msgid "memory exhausted"
-msgstr "zmanjkalo pomnilnika"
-
-#: src/envsubst.c:110 src/gettext.c:135 src/ngettext.c:125
+#: src/envsubst.c:113 src/gettext.c:136 src/ngettext.c:126
 #, fuzzy, c-format, no-wrap
 #| msgid ""
 #| "Copyright (C) %s Free Software Foundation, Inc.\n"
@@ -91,67 +39,67 @@ msgstr ""
 "To je prost program; smete ga spreminjati in deliti z drugimi.\n"
 "Za program ni NOBENEGA JAMSTVA do zakonsko podanih omejitev.\n"
 
-#: src/envsubst.c:116 src/gettext.c:141 src/ngettext.c:131
+#: src/envsubst.c:119 src/gettext.c:142 src/ngettext.c:132
 #, c-format
 msgid "Written by %s.\n"
 msgstr "Avtor %s.\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/envsubst.c:116
+#: src/envsubst.c:119
 msgid "Bruno Haible"
 msgstr "Bruno Haible"
 
-#: src/envsubst.c:125 src/gettext.c:159 src/ngettext.c:143
+#: src/envsubst.c:128 src/gettext.c:160 src/ngettext.c:144
 #, c-format
 msgid "too many arguments"
 msgstr "preveč argumentov"
 
-#: src/envsubst.c:136 src/gettext.c:169 src/ngettext.c:155
+#: src/envsubst.c:139 src/gettext.c:170 src/ngettext.c:156
 #, c-format
 msgid "missing arguments"
 msgstr "argumenti manjkajo"
 
-#: src/envsubst.c:174 src/gettext.c:246 src/ngettext.c:212
+#: src/envsubst.c:177 src/gettext.c:247 src/ngettext.c:213
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Poskusite »%s --help« za izčrpnejša navodila\n"
 
-#: src/envsubst.c:179
+#: src/envsubst.c:182
 #, c-format, no-wrap
 msgid "Usage: %s [OPTION] [SHELL-FORMAT]\n"
 msgstr "Uporaba: %s [IZBIRA] [UKAZNA-LUPINA]\n"
 
-#: src/envsubst.c:184
+#: src/envsubst.c:187
 #, c-format, no-wrap
 msgid "Substitutes the values of environment variables.\n"
 msgstr "Zamenja vrednosti spremenljivk okolja.\n"
 
-#: src/envsubst.c:188
+#: src/envsubst.c:191
 #, c-format, no-wrap
 msgid "Operation mode:\n"
 msgstr "Način delovanja:\n"
 
-#: src/envsubst.c:191
+#: src/envsubst.c:194
 #, c-format, no-wrap
 msgid "  -v, --variables             output the variables occurring in SHELL-FORMAT\n"
 msgstr "  -v, --variables             izpiši spremenljivke v OBLIKI-SPREMENLJIVKE-OKOLJA\n"
 
-#: src/envsubst.c:195 src/gettext.c:275 src/ngettext.c:242
+#: src/envsubst.c:198 src/gettext.c:276 src/ngettext.c:243
 #, c-format, no-wrap
 msgid "Informative output:\n"
 msgstr "Informativni izpis:\n"
 
-#: src/envsubst.c:198
+#: src/envsubst.c:201
 #, c-format, no-wrap
 msgid "  -h, --help                  display this help and exit\n"
 msgstr "  -h, --help                  ta navodila\n"
 
-#: src/envsubst.c:201
+#: src/envsubst.c:204
 #, c-format, no-wrap
 msgid "  -V, --version               output version information and exit\n"
 msgstr "  -V, --version               različica programa\n"
 
-#: src/envsubst.c:205
+#: src/envsubst.c:208
 #, c-format, no-wrap
 msgid ""
 "In normal operation mode, standard input is copied to standard output,\n"
@@ -167,7 +115,7 @@ msgstr ""
 "se z vrednostmi nadomestijo le spremenljivke, navedene v njej, sicer pa se\n"
 "s svojimi vrednostmi nadomestijo vse spremenljivke na standardnem vhodu.\n"
 
-#: src/envsubst.c:214
+#: src/envsubst.c:217
 #, c-format, no-wrap
 msgid ""
 "When --variables is used, standard input is ignored, and the output consists\n"
@@ -181,28 +129,28 @@ msgstr ""
 #. email address for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: src/envsubst.c:223 src/gettext.c:299 src/ngettext.c:263
+#: src/envsubst.c:226 src/gettext.c:300 src/ngettext.c:264
 #, c-format
 msgid ""
 "Report bugs in the bug tracker at <%s>\n"
 "or by email to <%s>.\n"
 msgstr ""
 
-#: src/envsubst.c:451
+#: src/envsubst.c:454
 #, c-format
 msgid "error while reading \"%s\""
 msgstr "napaka pri branju \"%s\""
 
-#: src/envsubst.c:451
+#: src/envsubst.c:454
 msgid "standard input"
 msgstr "standardni vhod"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/gettext.c:141 src/ngettext.c:131
+#: src/gettext.c:142 src/ngettext.c:132
 msgid "Ulrich Drepper"
 msgstr "Ulrich Drepper"
 
-#: src/gettext.c:251
+#: src/gettext.c:252
 #, c-format, no-wrap
 msgid ""
 "Usage: %s [OPTION] [[TEXTDOMAIN] MSGID]\n"
@@ -211,56 +159,56 @@ msgstr ""
 "Uporaba: %s [IZBIRA] [[DOMENA] MSGID]\n"
 "ali:     %s [IZBIRA] -s [MSGID]...\n"
 
-#: src/gettext.c:257
+#: src/gettext.c:258
 #, c-format, no-wrap
 msgid "Display native language translation of a textual message.\n"
 msgstr "Prikaz prevoda tekstovnega sporočila.\n"
 
-#: src/gettext.c:261
+#: src/gettext.c:262
 #, c-format, no-wrap
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated messages from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/gettext.c:263 src/ngettext.c:229
+#: src/gettext.c:264 src/ngettext.c:230
 #, c-format
 msgid "  -c, --context=CONTEXT     specify context for MSGID\n"
 msgstr ""
 
-#: src/gettext.c:265 src/ngettext.c:231
+#: src/gettext.c:266 src/ngettext.c:232
 #, c-format
 msgid "  -e                        enable expansion of some escape sequences\n"
 msgstr ""
 
-#: src/gettext.c:267
+#: src/gettext.c:268
 #, c-format
 msgid "  -n                        suppress trailing newline\n"
 msgstr ""
 
-#: src/gettext.c:269 src/ngettext.c:233
+#: src/gettext.c:270 src/ngettext.c:234
 #, c-format
 msgid "  -E                        (ignored for compatibility)\n"
 msgstr ""
 
-#: src/gettext.c:271
+#: src/gettext.c:272
 #, c-format
 msgid ""
 "  [TEXTDOMAIN] MSGID        retrieve translated message corresponding\n"
 "                            to MSGID from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/gettext.c:277 src/ngettext.c:244
+#: src/gettext.c:278 src/ngettext.c:245
 #, fuzzy, c-format
 #| msgid "  -h, --help                  display this help and exit\n"
 msgid "  -h, --help                display this help and exit\n"
 msgstr "  -h, --help                  ta navodila\n"
 
-#: src/gettext.c:279 src/ngettext.c:246
+#: src/gettext.c:280 src/ngettext.c:247
 #, fuzzy, c-format
 #| msgid "  -V, --version               output version information and exit\n"
 msgid "  -V, --version             display version information and exit\n"
 msgstr "  -V, --version               različica programa\n"
 
-#: src/gettext.c:283
+#: src/gettext.c:284
 #, c-format, no-wrap
 msgid ""
 "If the TEXTDOMAIN parameter is not given, the domain is determined from the\n"
@@ -280,12 +228,12 @@ msgstr ""
 "kataloga sporočil.\n"
 "Privzet imenik s katalogom sporočil: %s\n"
 
-#: src/ngettext.c:217
+#: src/ngettext.c:218
 #, c-format, no-wrap
 msgid "Usage: %s [OPTION] [TEXTDOMAIN] MSGID MSGID-PLURAL COUNT\n"
 msgstr "Uporaba: %s [IZBIRA] [DOMENA] MSGID MSGID-PLURAL ŠTEVEC\n"
 
-#: src/ngettext.c:222
+#: src/ngettext.c:223
 #, c-format, no-wrap
 msgid ""
 "Display native language translation of a textual message whose grammatical\n"
@@ -294,31 +242,31 @@ msgstr ""
 "Prikaz prevoda besedilnega sporočila, katerega slovnična oblika je odvisna\n"
 "od števila.\n"
 
-#: src/ngettext.c:227
+#: src/ngettext.c:228
 #, c-format, no-wrap
 msgid "  -d, --domain=TEXTDOMAIN   retrieve translated message from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/ngettext.c:235
+#: src/ngettext.c:236
 #, c-format
 msgid ""
 "  [TEXTDOMAIN]              retrieve translated message from TEXTDOMAIN\n"
 msgstr ""
 
-#: src/ngettext.c:237
+#: src/ngettext.c:238
 #, c-format
 msgid ""
 "  MSGID MSGID-PLURAL        translate MSGID (singular) / MSGID-PLURAL "
 "(plural)\n"
 msgstr ""
 
-#: src/ngettext.c:239
+#: src/ngettext.c:240
 #, c-format
 msgid ""
 "  COUNT                     choose singular/plural form based on this value\n"
 msgstr ""
 
-#: src/ngettext.c:250
+#: src/ngettext.c:251
 #, c-format, no-wrap
 msgid ""
 "If the TEXTDOMAIN parameter is not given, the domain is determined from the\n"
@@ -331,6 +279,48 @@ msgstr ""
 "iz okolja. Če kataloga sporočil ni moč najti na običajnem mestu, lahko \n"
 "določimo alternativno lokacijo s spremenljivko TEXTDOMAINDIR.\n"
 "Privzet imenik s katalogom sporočil: %s\n"
+
+#~ msgid "write error"
+#~ msgstr "napaka pri pisanju"
+
+#~ msgid "Unknown system error"
+#~ msgstr "Neznana sistemska napaka"
+
+#, fuzzy, c-format
+#~| msgid "%s: option '%s' is ambiguous\n"
+#~ msgid "%s: option '%s%s' is ambiguous\n"
+#~ msgstr "%s: izbira '%s' ni enopomenska\n"
+
+#, fuzzy, c-format
+#~| msgid "%s: option '%s' is ambiguous; possibilities:"
+#~ msgid "%s: option '%s%s' is ambiguous; possibilities:"
+#~ msgstr "%s: izbira '%s ni enopomenska; možnosti so:"
+
+#, fuzzy, c-format
+#~| msgid "%s: unrecognized option '%c%s'\n"
+#~ msgid "%s: unrecognized option '%s%s'\n"
+#~ msgstr "%s: neprepoznana izbira '%c%s'\n"
+
+#, fuzzy, c-format
+#~| msgid "%s: option '%c%s' doesn't allow an argument\n"
+#~ msgid "%s: option '%s%s' doesn't allow an argument\n"
+#~ msgstr "%s: izbira '%c%s' ne dovoljuje argumenta\n"
+
+#, fuzzy, c-format
+#~| msgid "%s: option '--%s' requires an argument\n"
+#~ msgid "%s: option '%s%s' requires an argument\n"
+#~ msgstr "%s: izbira '--%s' zahteva argument\n"
+
+#, c-format
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: neveljavna izbira -- '%c'\n"
+
+#, c-format
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: izbira zahteva argument -- '%c'\n"
+
+#~ msgid "memory exhausted"
+#~ msgstr "zmanjkalo pomnilnika"
 
 #, c-format
 #~ msgid "%s: option '--%s' doesn't allow an argument\n"
@@ -844,8 +834,8 @@ msgstr ""
 
 #~ msgid ""
 #~ "Operation modifiers:\n"
-#~ "  -m, --multi-domain          apply ref.pot to each of the domains in def."
-#~ "po\n"
+#~ "  -m, --multi-domain          apply ref.pot to each of the domains in "
+#~ "def.po\n"
 #~ msgstr ""
 #~ "Modifikatorji delovanja:\n"
 #~ "  -m, --multi-domain          ref.po uporabimo na vseh domenah iz def.po\n"
@@ -1243,8 +1233,8 @@ msgstr ""
 #~ "                                ResourceBundle\n"
 #~ "      --java2                 kot --java, privzeta je java2 (JDK 1.2 ali "
 #~ "več)\n"
-#~ "      --tcl                   način tcl: ustvarimo datoteko tcl/msgcat ."
-#~ "msg\n"
+#~ "      --tcl                   način tcl: ustvarimo datoteko tcl/"
+#~ "msgcat .msg\n"
 
 #~ msgid ""
 #~ "Output file location:\n"
@@ -1850,8 +1840,8 @@ msgstr ""
 #~ "Merges two Uniforum style .po files together.  The def.po file is an\n"
 #~ "existing PO file with translations which will be taken over to the newly\n"
 #~ "created file as long as they still match; comments will be preserved,\n"
-#~ "but extracted comments and file positions will be discarded.  The ref."
-#~ "pot\n"
+#~ "but extracted comments and file positions will be discarded.  The "
+#~ "ref.pot\n"
 #~ "file is the last created PO file with up-to-date source references but\n"
 #~ "old translations, or a PO Template file (generally created by xgettext);\n"
 #~ "any translations or comments in the file will be discarded, however dot\n"
@@ -1977,8 +1967,8 @@ msgstr ""
 #~ "Način delovanja:\n"
 #~ "  -j, --java                  javanski način: ustvarimo javanski razred\n"
 #~ "                                ResourceBundle\n"
-#~ "      --tcl                   način tcl: vhod je datoteka tcl/msgcat ."
-#~ "msg\n"
+#~ "      --tcl                   način tcl: vhod je datoteka tcl/"
+#~ "msgcat .msg\n"
 
 #~ msgid ""
 #~ "Input file location:\n"
@@ -2326,8 +2316,8 @@ msgstr ""
 #~ "If output file is -, output is written to standard output.\n"
 #~ msgstr ""
 #~ "Izbira izhodne datoteke:\n"
-#~ "  -d, --default-domain=DOMENA    namesto messages.po je privzeta  DOMENA."
-#~ "po\n"
+#~ "  -d, --default-domain=DOMENA    namesto messages.po je privzeta  "
+#~ "DOMENA.po\n"
 #~ "  -o, --output-file=DATOTEKA     izhod zapisujemo v navedeno DATOTEKO\n"
 #~ "  -p, --output-dir=IMENIK        izhodne datoteke pišemo v navedeni "
 #~ "IMENIK\n"
@@ -2664,8 +2654,8 @@ msgstr ""
 #~ "se\n"
 #~ "                                 izpišejo\n"
 #~ "  -C, --c++                      okrajšava za --language=C++\n"
-#~ "  -d, --default-domain=IME       izhod na IME.po (namesto na messages."
-#~ "po)\n"
+#~ "  -d, --default-domain=IME       izhod na IME.po (namesto na "
+#~ "messages.po)\n"
 #~ "  -D, --directory=IMENIK         vhodne datoteke iščemo tudi v imeniku "
 #~ "IMENIK\n"
 #~ "  -e, --no-escape                brez ubežnih sekvenc v stilu C "
@@ -2734,8 +2724,8 @@ msgstr ""
 #~ "\n"
 #~ "If INPUTFILE is -, standard input is read.\n"
 #~ msgstr ""
-#~ "  -n, --add-location             z vrsticami '#: filename:"
-#~ "line' (privzeto)\n"
+#~ "  -n, --add-location             z vrsticami '#: filename:line' "
+#~ "(privzeto)\n"
 #~ "      --omit-header              brez glave z ,msgid \"\"'\n"
 #~ "  -o, --output=DATOTEKA          izhod zapišemo na podano DATOTEKO\n"
 #~ "  -p, --output-dir=IMENIK        izhodne datoteke zapisane v IMENIK\n"

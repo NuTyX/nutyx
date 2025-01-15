@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadowutils\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2017-02-07 17:09+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -81,9 +81,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "шифрлеу тәсіліне libcrypt-тан қолдау жоқ па? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Орындалу орта айнымалыларының шектен көп саны\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1621,10 +1618,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h хост] [-f аты]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r хост\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "баптау қатесі - %s мәнің өндеу мүмкін емес: '%d'"
 
@@ -2340,10 +2333,6 @@ msgstr "%s: жаңа defaults файлын жасау мүмкін емес\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: жаңа defaults файлын жасау мүмкін емес\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: жаңа defaults файлын жасау мүмкін емес\n"
 
 #, c-format
@@ -3155,6 +3144,9 @@ msgstr "%s: %s қайтару мүмкін емес: %s (сіздің өзгер
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: %s үшін tcb бумасын табу сәтсіз\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Орындалу орта айнымалыларының шектен көп саны\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: NIS клиентінде '%s' пайдаланушыны ауыстыруға мүмкін емес.\n"
@@ -3174,6 +3166,14 @@ msgstr "%s: %s үшін tcb бумасын табу сәтсіз\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: %s тобы NIS тобы болып тұр\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r хост\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: жаңа defaults файлын жасау мүмкін емес\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

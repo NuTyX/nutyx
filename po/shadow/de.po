@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow 4.2-2\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2020-09-22 15:10+0200\n"
 "Last-Translator: Björn Esser <besser82@fedoraproject.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -82,9 +82,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "Verschlüsselungsmethode von libcrypt nicht unterstützt? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Umgebungsüberlauf\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1657,10 +1654,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h Rechner] [-f Name]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r Rechner\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "Konfigurationsfehler - Wert für %s kann nicht ausgewertet werden: »%d«"
 
@@ -2375,10 +2368,6 @@ msgstr "%s: Neue defaults-Datei kann nicht erzeugt werden.\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: Neue defaults-Datei kann nicht erzeugt werden.\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: Neue defaults-Datei kann nicht erzeugt werden.\n"
 
 #, c-format
@@ -3228,6 +3217,9 @@ msgstr ""
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: tcb-Verzeichnis für %s konnte nicht gefunden werden\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Umgebungsüberlauf\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr ""
@@ -3248,6 +3240,14 @@ msgstr "%s: tcb-Verzeichnis für %s konnte nicht gefunden werden\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: Gruppe %s ist eine NIS-Gruppe.\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r Rechner\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: Neue defaults-Datei kann nicht erzeugt werden.\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

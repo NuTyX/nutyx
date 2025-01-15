@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow 4.1.1\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2011-11-25 22:08+0100\n"
 "Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -80,9 +80,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "krypteringsmetoden stöds inte av libcrypt? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Överskott av miljövariabler\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1602,10 +1599,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h värd] [-f namn]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r värd\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "konfigurationsfel - kan inte tolka %s-värde: \"%d\""
 
@@ -2317,10 +2310,6 @@ msgstr "%s: kan inte skapa ny standardfil\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: kan inte skapa ny standardfil\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: kan inte skapa ny standardfil\n"
 
 #, c-format
@@ -3132,6 +3121,9 @@ msgstr "%s: kan inte återställa %s: %s (dina ändringar finns i %s)\n"
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: misslyckades med att hitta tcb-katalog för %s\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Överskott av miljövariabler\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: kan inte ändra användare \"%s\" på en NIS-klient.\n"
@@ -3151,6 +3143,14 @@ msgstr "%s: misslyckades med att hitta tcb-katalog för %s\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: gruppen %s är en NIS-grupp\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r värd\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: kan inte skapa ny standardfil\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

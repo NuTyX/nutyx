@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow master\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2016-10-04 07:07+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
@@ -83,9 +83,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "Phương pháp mã hóa không được thư viện libcrypt hỗ trợ? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Tràn môi trường\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1633,10 +1630,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h máy] [-f tên]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r máy\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "lỗi cấu hình — không thể phân tích cú pháp của giá trị %s: “%d”"
 
@@ -2359,10 +2352,6 @@ msgstr "%s: không thể tạo tập tin mặc định mới\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: không thể tạo tập tin mặc định mới\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: không thể tạo tập tin mặc định mới\n"
 
 #, c-format
@@ -3174,6 +3163,9 @@ msgstr "%s: không thể phục hồi %s: %s (các thay đổi của bạn nằm
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: gặp lỗi khi tìm thư mục tcb cho %s\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Tràn môi trường\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: không thể thay đổi người dùng “%s” trên ứng dụng khách NIS.\n"
@@ -3193,6 +3185,14 @@ msgstr "%s: gặp lỗi khi tìm thư mục tcb cho %s\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: nhóm %s là một nhóm kiểu NIS\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r máy\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: không thể tạo tập tin mặc định mới\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

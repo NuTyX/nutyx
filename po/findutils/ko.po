@@ -1,147 +1,172 @@
-# findutils�� �ѱ��� �޽���
+# Korean translation of the findutils
 # Copyright (C) 1996 Free Software Foundation, Inc.
+# This file is distributed under the same license as the findutils package.
 # Bang Jun-Young <bangjy@nownuri.nowcom.co.kr>, 1996.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: findutils 4.1\n"
+"Project-Id-Version: findutils 4.9.0\n"
 "Report-Msgid-Bugs-To: bug-findutils@gnu.org\n"
-"POT-Creation-Date: 2022-02-02 01:18+0100\n"
-"PO-Revision-Date: 1996-10-07 22:13+0900\n"
-"Last-Translator: Bang Jun-Young <bangjy@nownuri.nowcom.co.kr>\n"
-"Language-Team: Korean <ko@li.org>\n"
+"POT-Creation-Date: 2024-06-01 18:18+0200\n"
+"PO-Revision-Date: 2022-11-02 19:41+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=EUC-KR\n"
-"Content-Transfer-Encoding: 8-bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
-#: find/exec.c:123
+#: find/exec.c:121
 #, c-format
 msgid "Failed to save working directory in order to run a command on %s"
-msgstr ""
+msgstr "%s 에서 명령을 실행할 작업 디렉터리 저장에 실패했습니다"
 
-#: find/exec.c:243
+#: find/exec.c:241
 #, c-format
 msgid "Cannot close standard input"
-msgstr ""
+msgstr "표준 입력을 닫을 수 없습니다"
 
-#: find/exec.c:272
+#: find/exec.c:270
 #, c-format
 msgid "Failed to change directory%s%s"
-msgstr ""
+msgstr "%s%s디렉터리 전환 실패"
 
-#: find/exec.c:317 xargs/xargs.c:1322
+#: find/exec.c:315 xargs/xargs.c:1337
+#, c-format
 msgid "cannot fork"
-msgstr ""
+msgstr "포킹할 수 없음"
 
-#: find/exec.c:348
+#: find/exec.c:346
 #, c-format
 msgid "error waiting for %s"
-msgstr "%s�� ��ٸ��� ���� ���� �߻�"
+msgstr "%s을(를) 기다리는 중 오류 발생"
 
-#: find/exec.c:357
+#: find/exec.c:355
 #, c-format
 msgid "%s terminated by signal %d"
-msgstr "%s�� ��ȣ %d�� ���� �����"
+msgstr "%s이(가) 시그널 %d번으로 중단함"
 
-#: find/fstype.c:240
+#: find/fstype.c:239
+#, c-format
 msgid "Cannot read mounted file system list"
-msgstr ""
+msgstr "마운트한 파일 시스템 목록을 읽을 수 없습니다"
 
-#: find/fstype.c:270
+#: find/fstype.c:269
 msgid "unknown"
-msgstr "�� �� ����"
+msgstr "알 수 없음"
 
-#: find/ftsfind.c:231
+#: find/ftsfind.c:229
 #, c-format
 msgid ""
 "Symbolic link %s is part of a loop in the directory hierarchy; we have "
 "already visited the directory to which it points."
 msgstr ""
+"%s 심볼릭 링크는 디렉터리 계층 순환의 일부입니다. 이미 가리키는 디렉터리에 들"
+"어갔습니다."
 
-#: find/ftsfind.c:245
+#: find/ftsfind.c:243
 #, c-format
 msgid ""
 "File system loop detected; %s is part of the same file system loop as %s."
 msgstr ""
+"파일 시스템 순환 발견. %s은(는) %s와 동일한 파일 시스템 순환의 일부입니다."
 
-#: find/ftsfind.c:394 find/util.c:259
+#: find/ftsfind.c:392 find/util.c:257
 #, c-format
 msgid "WARNING: file %s appears to have mode 0000"
-msgstr ""
+msgstr "경고: %s 파일의 모드가 0000으로 보입니다"
 
-#: find/ftsfind.c:509
+#: find/ftsfind.c:507
 #, c-format
 msgid "cannot search %s"
-msgstr ""
+msgstr "%s 검색할 수 없음"
 
-#: find/ftsfind.c:555
+#: find/ftsfind.c:553
 #, c-format
 msgid "failed to restore working directory after searching %s"
-msgstr ""
+msgstr "%s 검색 후 작업 디렉터리 복원 실패"
+
+#: find/ftsfind.c:580
+#, c-format
+msgid "extra operand %s"
+msgstr "추가 피연산자 %s"
 
 #: find/ftsfind.c:582
 #, c-format
-msgid "extra operand %s"
-msgstr ""
-
-#: find/ftsfind.c:584
 msgid "file operands cannot be combined with -files0-from"
-msgstr ""
+msgstr "파일 피연산자에 -files0-from 옵션을 함께 쓸 수 없습니다"
 
-#: find/ftsfind.c:595
+#: find/ftsfind.c:593
+#, c-format
 msgid ""
 "option -files0-from reading from standard input cannot be combined with -ok, "
 "-okdir"
 msgstr ""
+"표준 입력에서 읽는 -files0-from 옵션은 -ok, -okdir 옵션을 함께 쓸 수 없습니다"
 
-#: find/ftsfind.c:598
+#: find/ftsfind.c:596
 msgid "(standard input)"
-msgstr ""
+msgstr "(표준 입력)"
 
-#: find/ftsfind.c:606
+#: find/ftsfind.c:605
 #, c-format
 msgid "cannot open %s for reading"
-msgstr ""
+msgstr "읽기용 %s 열기 실패"
 
 #: find/ftsfind.c:625
+#, fuzzy, c-format
+#| msgid ""
+#| "option -files0-from: standard input must not refer to the same file when "
+#| "combined with -ok, -okdir"
 msgid ""
 "option -files0-from: standard input must not refer to the same file when "
-"combined with -ok, -okdir"
+"combined with -ok, -okdir: %s"
 msgstr ""
+"-files0-from 옵션: 표준 입력은 -ok, -okdir 옵션을 함께 쓸 경우 동일한 파일을 "
+"참조하면 안됩니다"
 
-#: find/ftsfind.c:668
+#: find/ftsfind.c:669
 #, c-format
 msgid "%s: read error"
-msgstr ""
+msgstr "%s: 읽기 오류"
 
-#: find/ftsfind.c:695
+#: find/ftsfind.c:696
 msgid "invalid zero-length file name"
-msgstr ""
+msgstr "부적절한 0 길이 파일 이름"
 
-#: find/ftsfind.c:719
-#, fuzzy, c-format
+#: find/ftsfind.c:720
+#, c-format
 msgid "error reading %s"
-msgstr "%s�� ��ٸ��� ���� ���� �߻�"
+msgstr "%s 읽는 중 오류"
 
-#: find/ftsfind.c:754
+#: find/ftsfind.c:755
+#, c-format
 msgid "Failed to initialize shared-file hash table"
-msgstr ""
+msgstr "공유 파일 해시 테이블 초기화에 실패했습니다"
 
-#: find/ftsfind.c:770 locate/frcode.c:222 locate/locate.c:1568
-#: xargs/xargs.c:434
+#: find/ftsfind.c:770 locate/frcode.c:220 locate/locate.c:1566
+#: xargs/xargs.c:435
+#, c-format
 msgid "The atexit library function failed"
-msgstr ""
+msgstr "atexit 라이브러리 함수 실행에 실패했습니다"
 
-#: find/parser.c:451
+#: find/parser.c:456
+#, c-format
 msgid ""
 "The -delete action automatically turns on -depth, but -prune does nothing "
 "when -depth is in effect.  If you want to carry on anyway, just explicitly "
 "use the -depth option."
 msgstr ""
+"-delete 동작은 자동으로 -depth 동작을 켭니다만 -depth 옵션이 동작할 경우 -"
+"prune 옵션은 동작하지 않습니다.   어쨌든 동작하게 하려면 -depth 옵션을 분명하"
+"게 적으십시오."
 
-#: find/parser.c:609
+#: find/parser.c:614
 #, c-format
 msgid ""
 "warning: you have specified the global option %s after the argument %s, but "
@@ -149,189 +174,195 @@ msgid ""
 "it as well as those specified after it.  Please specify global options "
 "before other arguments."
 msgstr ""
+"경고: %s 전역 옵션을 %s 인자 다음에 지정했습니다만, 전역 옵션은 위치에 따라 "
+"동작하지 않습니다 예: %s 옵션은 이 옵션 전에 지정하면 다음에 지정할 때와 마찬"
+"가지로 테스트에 영향을 줍니다.  다른 인자를 지정하기 전 전역 옵션을 지정하십"
+"시오."
 
-#: find/parser.c:912
+#: find/parser.c:917
 #, c-format
 msgid ""
 "warning: the -d option is deprecated; please use -depth instead, because the "
 "latter is a POSIX-compliant feature."
 msgstr ""
+"경고: -d 옵션은 오래되어 더이상 사용하지 않습니다. 대신 -depth 옵션이 POSIX "
+"호환 동작을 취하므로 이 옵션을 사용하십시오."
 
-#: find/parser.c:1167
+#: find/parser.c:1161
+#, fuzzy, c-format
+#| msgid "invalid null argument to -size"
+msgid "invalid group name or GID argument to -group: %s"
+msgstr "-size에 부적절한 널 인자 값이 주어짐"
+
+#: find/parser.c:1234
 #, c-format
-msgid ""
-"%s is not the name of an existing group and it does not look like a numeric "
-"group ID because it has the unexpected suffix %s"
-msgstr ""
-
-#: find/parser.c:1182
-#, c-format
-msgid "%s is not the name of an existing group"
-msgstr ""
-
-#: find/parser.c:1188
-msgid "argument to -group is empty, but should be a group name"
-msgstr ""
-
-#: find/parser.c:1261
 msgid "sanity check of the fnmatch() library function failed."
-msgstr ""
+msgstr "fnmatch() 라이브러리 함수의 무결성 검사에 실패했습니다."
 
-#: find/parser.c:1276
+#: find/parser.c:1249
 #, c-format
 msgid ""
 "warning: %s matches against basenames only, but the given pattern contains a "
 "directory separator (%s), thus the expression will evaluate to false all the "
 "time.  Did you mean %s?"
 msgstr ""
+"경고 %s은(는) 파일 이름에만 일치하지만, 주어진 패턴에는 디렉터리 구분 문자"
+"(%s)가 들어있어 모든 경우에 경우 거짓 결과를 반환합니다.  %s을(를) 의미합니"
+"까?"
 
-#: find/parser.c:1399
+#: find/parser.c:1363
 #, c-format
 msgid "Expected a positive decimal integer argument to %s, but got %s"
-msgstr ""
+msgstr "양의 정수 인자 값으로 %s이(가) 필요하나 %s 값이 나왔습니다"
 
-#: find/parser.c:1564
+#: find/parser.c:1522
 #, c-format
 msgid "This system does not provide a way to find the birth time of a file."
-msgstr ""
+msgstr "이 시스템에서는 파일 생성 일시로 찾는 수단을 제공하지 않습니다."
 
-#: find/parser.c:1585
+#: find/parser.c:1543
 #, c-format
 msgid "The %s test needs an argument"
-msgstr ""
+msgstr "%s 시험에 인자가 필요합니다"
 
-#: find/parser.c:1622
+#: find/parser.c:1580
 #, c-format
 msgid "I cannot figure out how to interpret %s as a date or time"
-msgstr ""
+msgstr "%s을(를) 날짜 또는 시간으로 해석하는 방식을 알아낼 수 없습니다"
 
-#: find/parser.c:1639
+#: find/parser.c:1597
 #, c-format
 msgid "Cannot obtain birth time of file %s"
-msgstr ""
+msgstr "%s 파일의 생성 일시를 가져올 수 없습니다"
 
-#: find/parser.c:1783
+#: find/parser.c:1741
 #, c-format
 msgid "warning: -%s %s will not match anything because it ends with /."
 msgstr ""
+"경고: -%s %s은(는) / 문자로 끝나기 때문에 그 어떤 대상과도 일치하지 않습니다."
 
-#: find/parser.c:1878
-#, fuzzy, c-format
+#: find/parser.c:1837
+#, c-format
 msgid "invalid mode %s"
-msgstr "�������� ��� `%s'"
+msgstr "부적절한 모드 %s"
 
-#: find/parser.c:1896
+#: find/parser.c:1856
 #, c-format
 msgid ""
 "warning: you have specified a mode pattern %s (which is equivalent to /000). "
 "The meaning of -perm /000 has now been changed to be consistent with -perm "
 "-000; that is, while it used to match no files, it now matches all files."
 msgstr ""
+"경고: %s 모드 패턴(/000과 동일)을 지정했습니다. -perm /000 의미는 이제 -perm "
+"-000; 으로 상수 값으로 바뀌었으며, 그 동안에는 일치하지 않는 파일에 활용했으"
+"나 이제는 일치하는 모든 파일을 대상으로 활용합니다."
 
-#: find/parser.c:2069
+#: find/parser.c:2030
 #, c-format
 msgid "failed to compile regular expression '%s': %s"
-msgstr ""
+msgstr "'%s' 정규 표현식 컴파일 실패: %s"
 
-#: find/parser.c:2098
+#: find/parser.c:2060
+#, c-format
 msgid "invalid null argument to -size"
-msgstr "-size�� �������� �� �μ��� �־���"
+msgstr "-size에 부적절한 널 인자 값이 주어짐"
 
-#: find/parser.c:2148
+#: find/parser.c:2110
 #, c-format
 msgid "invalid -size type `%c'"
-msgstr "�������� -size �� `%c'"
+msgstr "부적절한 -size 형 `%c'"
 
-#: find/parser.c:2158
-#, fuzzy, c-format
-msgid "Invalid argument `%s%s' to -size"
-msgstr "-size�� �������� �� �μ��� �־���"
-
-#: find/parser.c:2340
-msgid ""
-"The -show-control-chars option takes a single argument which must be "
-"'literal' or 'safe'"
-msgstr ""
-
-#: find/parser.c:2454
-#, fuzzy, c-format
-msgid "Invalid argument %s to -used"
-msgstr "-size�� �������� �� �μ��� �־���"
-
-#: find/parser.c:2495
+#: find/parser.c:2120
 #, c-format
-msgid "%s is not the name of a known user"
-msgstr ""
+msgid "Invalid argument `%s%s' to -size"
+msgstr "-size에 부적절한 인자값 `%s%s'"
 
-#: find/parser.c:2502
-msgid "The argument to -user should not be empty"
-msgstr ""
+#: find/parser.c:2369
+#, c-format
+msgid "Invalid argument %s to -used"
+msgstr "-used에 부적절한 인자값 %s"
 
-#: find/parser.c:2527
+#: find/parser.c:2402
+#, fuzzy, c-format
+#| msgid "invalid null argument to -size"
+msgid "invalid user name or UID argument to -user: %s"
+msgstr "-size에 부적절한 널 인자 값이 주어짐"
+
+#: find/parser.c:2424
 #, c-format
 msgid "Features enabled: "
-msgstr ""
+msgstr "사용하는 기능: "
 
-#: find/parser.c:2588
+#: find/parser.c:2470
+#, c-format
 msgid "invalid predicate -context: SELinux is not enabled."
-msgstr ""
+msgstr "부적절한 -context 서술: SELinux 를 사용하고 있지 않습니다."
 
-#: find/parser.c:2652
+#: find/parser.c:2534
 #, c-format
 msgid "Arguments to %s should contain at least one letter"
-msgstr ""
+msgstr "%s 인자 값에는 단일 문자가 들어가야합니다"
 
-#: find/parser.c:2717
+#: find/parser.c:2599
 #, c-format
 msgid ""
 "%s %c is not supported because symbolic links are not supported on the "
 "platform find was compiled on."
 msgstr ""
+"find를 컴파일한 플랫폼에서 심볼릭 링크를 지원하지 않아 %s %c 옵션을 지원하지 "
+"않습니다."
 
-#: find/parser.c:2729
+#: find/parser.c:2611
 #, c-format
 msgid ""
 "%s %c is not supported because FIFOs are not supported on the platform find "
 "was compiled on."
 msgstr ""
+"find를 컴파일한 플랫폼에서 FIFO를 지원하지 않아 %s %c 값을 지원하지 않습니다."
 
-#: find/parser.c:2741
+#: find/parser.c:2623
 #, c-format
 msgid ""
 "%s %c is not supported because named sockets are not supported on the "
 "platform find was compiled on."
 msgstr ""
+"find를 컴파일한 플랫폼에서 명명 소켓을 지원하지 않아 %s %c 값을 지원하지 않습"
+"니다."
 
-#: find/parser.c:2757
+#: find/parser.c:2639
 #, c-format
 msgid ""
 "%s %c is not supported because Solaris doors are not supported on the "
 "platform find was compiled on."
 msgstr ""
+"find를 컴파일한 플랫폼에서 솔라리스 도어 형식을 지원하지 않아 %s %c 값을 지원"
+"하지 않습니다."
 
-#: find/parser.c:2765
+#: find/parser.c:2647
 #, c-format
 msgid "Unknown argument to %s: %c"
-msgstr ""
+msgstr "알 수 없는 %s 인자 값: %c"
 
-#: find/parser.c:2773
+#: find/parser.c:2655
 #, c-format
 msgid "Duplicate file type '%c' in the argument list to %s."
-msgstr ""
+msgstr "인자 목록의 '%c' 중복 파일 형식이 %s에 있습니다."
 
-#: find/parser.c:2789
+#: find/parser.c:2671
 #, c-format
 msgid "Must separate multiple arguments to %s using: ','"
-msgstr ""
+msgstr "다중 인자를 다음 문자로 %s(으)로 구분해야 합니다: ','"
 
-#: find/parser.c:2798
+#: find/parser.c:2680
 #, c-format
 msgid ""
 "Last file type in list argument to %s is missing, i.e., list is ending on: "
 "','"
 msgstr ""
+"%s에 대한 목록 인자의 최종 파일 형식이 빠졌습니다. 예: 목록이 다음 문자로 끝"
+"납니다: ','"
 
-#: find/parser.c:2857
+#: find/parser.c:2739
 #, c-format
 msgid ""
 "The current directory is included in the PATH environment variable, which is "
@@ -339,251 +370,290 @@ msgid ""
 "current directory from your $PATH (that is, remove \".\", doubled colons, or "
 "leading or trailing colons)"
 msgstr ""
+"현재 디렉터리가 find의 %s 동작 조합으로 찾기에 안전하지 않은 PATH 환경 변수"
+"에 들어있습니다. 현재 디렉터리를 $PATH 환경 변수에서 제거하십시오( \".\", 이"
+"중 콜론 또는 앞 뒤 인접 콜론을 제거하라는 의미입니다)"
 
-#: find/parser.c:2869
+#: find/parser.c:2751
 #, c-format
 msgid ""
 "The relative path %s is included in the PATH environment variable, which is "
 "insecure in combination with the %s action of find.  Please remove that "
 "entry from $PATH"
 msgstr ""
+"%s 상대 경로가 find의 %s 동작 조합으로 찾기에 안전하지 않은 PATH 환경 변수에 "
+"들어있습니다.  이 항목을 $PATH 환경 변수에서 제거하십시오"
 
-#: find/parser.c:2980
+#: find/parser.c:2863
+#, c-format
 msgid ""
 "You may not use {} within the utility name for -execdir and -okdir, because "
 "this is a potential security problem."
 msgstr ""
+"잠재적 보안 문제가 있으므로 -execdir과 -okdir의 유틸리티 이름에 {} 표시를 활"
+"용하지 않는게 좋습니다."
 
-#: find/parser.c:3006
+#: find/parser.c:2889
 #, c-format
 msgid "Only one instance of {} is supported with -exec%s ... +"
-msgstr ""
+msgstr "-exec%s ... + 옵션으로 {}의 유일 인스턴스를 지원합니다"
 
-#: find/parser.c:3016
+#: find/parser.c:2899
 #, c-format
 msgid "In %s the %s must appear by itself, but you specified %s"
-msgstr ""
+msgstr "%s에서 %s 자체를 지정해야 하나, %s을(를) 지정했습니다"
 
-#: find/parser.c:3035
-#, fuzzy
+#: find/parser.c:2918
+#, c-format
 msgid "The environment is too large for exec()."
-msgstr "ȯ���� ����(exec)�ϱ⿡ �ʹ� Ů�ϴ�"
+msgstr "exec()를 호출하기에 환경이 너무 큽니다."
 
-#: find/parser.c:3204
+#: find/parser.c:3028
+#, fuzzy, c-format
+#| msgid "invalid %s%s argument '%s'"
+msgid "invalid not-a-number argument: `%s'"
+msgstr "부적절한 %s%s 인자값 '%s'"
+
+#: find/parser.c:3093
 #, c-format
 msgid "arithmetic overflow while converting %s days to a number of seconds"
-msgstr ""
+msgstr "%s일을 초 단위로 변환하다가 산술 오버플로우가 발생했습니다"
 
-#: find/parser.c:3228
+#: find/parser.c:3117
+#, c-format
 msgid "arithmetic overflow when trying to calculate the end of today"
-msgstr ""
+msgstr "금일의 마지막 시점을 계산하다가 산술 오버플로우가 발생했습니다"
 
-#: find/parser.c:3387
+#: find/parser.c:3267
+#, fuzzy, c-format
+#| msgid "Unknown argument to %s: %c"
+msgid "non-numeric argument to %s: %s"
+msgstr "알 수 없는 %s 인자 값: %c"
+
+#: find/parser.c:3286
 msgid "standard error"
-msgstr ""
+msgstr "표준 오류"
 
-#: find/parser.c:3392
+#: find/parser.c:3291
 msgid "standard output"
-msgstr ""
+msgstr "표준 출력"
 
-#: find/pred.c:260
+#: find/pred.c:258
 #, c-format
 msgid "cannot delete %s"
-msgstr ""
+msgstr "%s을(를) 삭제할 수 없음"
 
-#: find/pred.c:650
+#: find/pred.c:648
 #, c-format
 msgid "WARNING: cannot determine birth time of file %s"
-msgstr ""
+msgstr "경고: %s 파일 생성 일시를 알 수 없습니다"
+
+#: find/pred.c:696
+#, c-format
+msgid "< %s ... %s > ? "
+msgstr "< %s ... %s > ? "
 
 #: find/pred.c:698
 #, c-format
-msgid "< %s ... %s > ? "
-msgstr ""
-
-#: find/pred.c:700
 msgid "Failed to write prompt for -ok"
-msgstr ""
+msgstr "-ok에 대한 프롬프트 기록 실패"
 
-#: find/pred.c:1173 find/print.c:1238
+#: find/pred.c:1198 find/print.c:1236
 #, c-format
 msgid "getfilecon failed: %s"
-msgstr ""
+msgstr "getfilecon 실패: %s"
 
-#: find/print.c:335
+#: find/print.c:333
 #, c-format
 msgid "warning: escape `\\' followed by nothing at all"
-msgstr ""
+msgstr "경고: `\\' 이스케이프 문자 다음에 따라오는 문자가 없습니다"
 
-#: find/print.c:354
+#: find/print.c:352
 #, c-format
 msgid "warning: unrecognized escape `\\%c'"
-msgstr "���: �ν��� �� ���� �̽������� `\\%c'"
+msgstr "경고: 인식할 수 없는 이스케이프 `\\%c'"
 
-#: find/print.c:374 find/print.c:1260
+#: find/print.c:372 find/print.c:1258
 #, c-format
 msgid "error: %s at end of format string"
-msgstr ""
+msgstr "오류: %s이(가) 형식 문자열 끝에 있습니다"
 
-#: find/print.c:398
+#: find/print.c:396
 #, c-format
 msgid "error: the format directive `%%%c' is reserved for future use"
-msgstr ""
+msgstr "오류: `%%%c' 형식 지정자는 나중에 활용할 예약 요소입니다"
 
-#: find/print.c:406
+#: find/print.c:404
 #, c-format
 msgid ""
 "warning: format directive `%%%c' should be followed by another character"
-msgstr ""
+msgstr "경고: `%%%c' 형식 지정자 다음 다른 문자가 와야 합니다"
 
-#: find/print.c:414
+#: find/print.c:412
 #, c-format
 msgid "warning: unrecognized format directive `%%%c'"
-msgstr "���: �ν��� �� ���� ���� ������ `%%%c'"
+msgstr "경고: 인식할 수 없는 형식 지시자 `%%%c'"
 
-#: find/tree.c:115 find/tree.c:120 find/tree.c:226 find/tree.c:265
+#: find/tree.c:113 find/tree.c:118 find/tree.c:224 find/tree.c:263
+#, c-format
 msgid "invalid expression"
-msgstr "�������� ����"
+msgstr "부적절한 수식"
 
-#: find/tree.c:126
+#: find/tree.c:124
 #, c-format
 msgid ""
 "invalid expression; you have used a binary operator '%s' with nothing before "
 "it."
 msgstr ""
+"부적절한 표현식입니다. 사용한 '%s' 이항 연산자 앞에 피연산자가 없습니다."
 
-#: find/tree.c:135 find/tree.c:194
+#: find/tree.c:133 find/tree.c:192
 #, c-format
 msgid ""
 "invalid expression: expected expression before closing parentheses '%s'."
-msgstr ""
+msgstr "부적절한 표현식입니다. '%s' 닫는 괄호 전 표현식이 필요합니다."
 
-#: find/tree.c:145
+#: find/tree.c:143
 #, c-format
 msgid "expected an expression between '%s' and ')'"
-msgstr ""
+msgstr "'%s'와 ')' 사이 표현식이 필요합니다"
 
-#: find/tree.c:155
+#: find/tree.c:153
 #, c-format
 msgid "expected an expression after '%s'"
-msgstr ""
+msgstr "'%s' 다음 표현식이 필요합니다"
 
-#: find/tree.c:160
-#, fuzzy
+#: find/tree.c:158
+#, c-format
 msgid "invalid expression; you have too many ')'"
-msgstr "�������� ����"
+msgstr "부적절한 표현식입니다. ')' 문자가 너무 많습니다"
 
-#: find/tree.c:183
+#: find/tree.c:181
 #, c-format
 msgid ""
 "invalid expression; expected to find a ')' but didn't see one. Perhaps you "
 "need an extra predicate after '%s'"
 msgstr ""
+"부적절한 표현식입니다. ')' 문자가 필요하지만, 없습니다. 아마도 '%s' 다음 추"
+"가 식 내용이 필요할 지도 모릅니다"
 
-#: find/tree.c:198
+#: find/tree.c:196
+#, c-format
 msgid "invalid expression; empty parentheses are not allowed."
-msgstr ""
+msgstr "부적절한 표현식입니다. 빈 괄호는 허용하지 않습니다."
 
-#: find/tree.c:204
+#: find/tree.c:202
+#, c-format
 msgid ""
 "invalid expression; I was expecting to find a ')' somewhere but did not see "
 "one."
 msgstr ""
+"부적절한 표현식입니다. ')' 문자를 어딘가에서 계속 찾아봤지만 어디에도 없었습"
+"니다."
 
-#: find/tree.c:211 find/tree.c:835
+#: find/tree.c:209 find/tree.c:837
+#, c-format
 msgid "oops -- invalid expression type!"
-msgstr "�� -- �������� ���� ���Դϴ�!"
+msgstr "이런 -- 부적절한 수식 형이군요!"
 
-#: find/tree.c:283
-#, fuzzy, c-format
+#: find/tree.c:281
+#, c-format
 msgid "oops -- invalid expression type (%d)!"
-msgstr "�� -- �������� ���� ���Դϴ�!"
+msgstr "이런 -- 부적절한 표현식 형식이군요(?) (%d)!"
 
-#: find/tree.c:1112
+#: find/tree.c:1092
+#, fuzzy, c-format
+#| msgid "Failed to write to stderr"
+msgid "failed to sort the costlookup array"
+msgstr "표준 오류에 기록 실패"
+
+#: find/tree.c:1114
 #, c-format
 msgid ""
 "warning: there is no entry in the predicate evaluation cost table for "
 "predicate %s; please report this as a bug"
 msgstr ""
-
-#: find/tree.c:1286
-#, c-format
-msgid "paths must precede expression: `%s'"
-msgstr ""
+"경고: %s 서술부에 대한 서술 평가 비용 테이블에 항목이 없습니다. 버그로 보고하"
+"십시오"
 
 #: find/tree.c:1288
 #, c-format
-msgid "possible unquoted pattern after predicate `%s'?"
-msgstr ""
+msgid "paths must precede expression: `%s'"
+msgstr "경로가 표현식보다 앞서야 합니다: `%s'"
 
-#: find/tree.c:1298
+#: find/tree.c:1290
+#, c-format
+msgid "possible unquoted pattern after predicate `%s'?"
+msgstr "서술부 '%s' 다음 따옴표가 빠진 패턴을 넣을 수 있습니까?"
+
+#: find/tree.c:1300
 #, c-format
 msgid "unknown predicate `%s'"
-msgstr ""
+msgstr "알 수 없는 서술부 `%s'"
 
-#: find/tree.c:1318
-#, fuzzy, c-format
-msgid "invalid predicate `%s'"
-msgstr "�������� ��� `%s'"
-
-#: find/tree.c:1322
-#, fuzzy, c-format
-msgid "invalid argument `%s' to `%s'"
-msgstr "-size�� �������� �� �μ��� �־���"
-
-#: find/tree.c:1329
-#, fuzzy, c-format
-msgid "missing argument to `%s'"
-msgstr "-size�� �������� �� �μ��� �־���"
-
-#: find/tree.c:1405
-msgid "you have too many ')'"
-msgstr ""
-
-#: find/tree.c:1411
+#: find/tree.c:1320
 #, c-format
-msgid "unexpected extra predicate '%s'"
-msgstr ""
+msgid "invalid predicate `%s'"
+msgstr "부적절한 서술부 `%s'"
+
+#: find/tree.c:1324
+#, c-format
+msgid "invalid argument `%s' to `%s'"
+msgstr "부적절한 `%s' 인자 값을 `%s'에 부여했습니다"
+
+#: find/tree.c:1331
+#, c-format
+msgid "missing argument to `%s'"
+msgstr "`%s'에 인자 값이 빠졌습니다"
+
+#: find/tree.c:1407
+#, c-format
+msgid "you have too many ')'"
+msgstr "')' 문자를 너무 많이 입력했습니다"
 
 #: find/tree.c:1413
+#, c-format
+msgid "unexpected extra predicate '%s'"
+msgstr "예기치 못한 추가 서술부 '%s'"
+
+#: find/tree.c:1415
+#, c-format
 msgid "unexpected extra predicate"
-msgstr ""
+msgstr "예기치 못한 추가 서술부"
 
-#: find/tree.c:1534
+#: find/tree.c:1538
+#, c-format
 msgid "oops -- invalid default insertion of and!"
-msgstr "�� -- and�� ����ġ�� �������ϰ� �����߽��ϴ�!"
+msgstr "이런 -- 부적절한 and 기본 추가 동작입니다!"
 
-#: find/util.c:139
-#, fuzzy
+#: find/util.c:137
 msgid "Valid arguments for -D:\n"
-msgstr "-size�� �������� �� �μ��� �־���"
+msgstr "-D의 적절한 인자 값:\n"
 
-#: find/util.c:163 locate/frcode.c:142 locate/locate.c:1365 xargs/xargs.c:1702
+#: find/util.c:161 locate/frcode.c:140 locate/locate.c:1363 xargs/xargs.c:1745
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr ""
+msgstr "자세한 내용은 '%s --help'를 입력하십시오.\n"
 
-#: find/util.c:169
-#, fuzzy, c-format
+#: find/util.c:167
+#, c-format
 msgid ""
 "Usage: %s [-H] [-L] [-P] [-Olevel] [-D debugopts] [path...] [expression]\n"
-msgstr "����: %s [���...] [����]\n"
+msgstr ""
+"사용법: %s [-H] [-L] [-P] [-O<수준>] [-D <디버깅옵션>] [<경로>...] [<표현식"
+">]\n"
 
-#: find/util.c:173
-#, fuzzy
+#: find/util.c:171
 msgid ""
 "\n"
 "Default path is the current directory; default expression is -print.\n"
 "Expression may consist of: operators, options, tests, and actions.\n"
 msgstr ""
-"�⺻ ��δ� ���� ���丮�Դϴ�; �⺻ ������ -print�Դϴ�\n"
-"������ ������ ���� �̷���� �� �ֽ��ϴ�:\n"
-"������(�����ϴ� �켱����; �ٸ� ���� �־����� ������ -and�� ���������� ���"
-"��)\n"
-"      ( EXPR ) | EXPR -not EXPR EXPR1 -a EXPR2 EXPR1 -and EXPR2\n"
+"\n"
+"기본 경로는 현재 디렉터리입니다. 기본 표현식은 -print 입니다.\n"
+"표현식에는 연산자, 옵션, 테스트식, 동작이 들어갑니다.\n"
 
-#: find/util.c:176
-#, fuzzy
+#: find/util.c:174
 msgid ""
 "\n"
 "Operators (decreasing precedence; -and is implicit where no others are "
@@ -591,28 +661,43 @@ msgid ""
 "      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2\n"
 "      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2\n"
 msgstr ""
-"�⺻ ��δ� ���� ���丮�Դϴ�; �⺻ ������ -print�Դϴ�\n"
-"������ ������ ���� �̷���� �� �ֽ��ϴ�:\n"
-"������(�����ϴ� �켱����; �ٸ� ���� �־����� ������ -and�� ���������� ���"
-"��)\n"
-"      ( EXPR ) | EXPR -not EXPR EXPR1 -a EXPR2 EXPR1 -and EXPR2\n"
+"\n"
+"연산자 (중요도 내림차순. -and 은 다른 옵션이 별도로 주어지지 않으면 자동으로 "
+"붙습니다):\n"
+"      ( <표현식> )   ! <표현식>   -not <표현식>\n"
+"      <표현식1> -a <표현식2>   <표현식1> -and <표현식2>\n"
+"      <표현식1> -o <표현식2>   <표현식1> -or <표현식2>   <표현식1> , <표현식"
+"2>\n"
 
-#: find/util.c:180
+#: find/util.c:178
 msgid ""
 "\n"
 "Positional options (always true):\n"
 "      -daystart -follow -nowarn -regextype -warn\n"
 msgstr ""
+"\n"
+"위치 옵션 (항상 참):\n"
+"      -daystart -follow -nowarn -regextype -warn\n"
 
-#: find/util.c:183
+#: find/util.c:181
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Normal options (always true, specified before other expressions):\n"
+#| "      -depth -files0-from FILE -maxdepth LEVELS -mindepth LEVELS\n"
+#| "       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
 msgid ""
 "\n"
 "Normal options (always true, specified before other expressions):\n"
 "      -depth -files0-from FILE -maxdepth LEVELS -mindepth LEVELS\n"
-"       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
+"      -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
 msgstr ""
+"\n"
+"일반 옵션 (항상 참, 다른 표현식 이전에 지정):\n"
+"      -depth --help -maxdepth <수준값> -mindepth <수준값>\n"
+"       -mount -noleaf -xdev -ignore_readdir_race -noignore_readdir_race\n"
 
-#: find/util.c:187
+#: find/util.c:185
 msgid ""
 "\n"
 "Tests (N can be +N or -N or N):\n"
@@ -626,8 +711,22 @@ msgid ""
 "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
 "      -used N -user NAME -xtype [bcdpfls]\n"
 msgstr ""
+"\n"
+"테스트 (N는 +N, -N, N 가능):\n"
+"      -amin N -anewer <파일> -atime N -cmin N -cnewer <파일> -context <컨텍스"
+"트>\n"
+"      -ctime N -empty -false -fstype <형식> -gid N -group <이름> -ilname <이"
+"름패턴>\n"
+"      -iname <이름패턴> -inum N -iwholename <이름패턴> -iregex <정규식패턴>\n"
+"      -links N -lname <이름패턴> -mmin N -mtime N -name <이름패턴> -newer <파"
+"일>\n"
+"      -nouser -nogroup -path <경로패턴> -perm [-/]<권한패턴> -regex <정규표현"
+"식>\n"
+"      -readable -writable -executable\n"
+"      -wholename <이름패턴> -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+"      -used N -user <이름> -xtype [bcdpfls]\n"
 
-#: find/util.c:197
+#: find/util.c:195
 msgid ""
 "\n"
 "Actions:\n"
@@ -636,80 +735,100 @@ msgid ""
 "      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;\n"
 "      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;\n"
 msgstr ""
+"\n"
+"동작: -delete -print0 -printf <형식> -fprintf <파일> <형식> -print \n"
+"      -fprint0 <파일> -fprint <파일> -ls -fls <파일> -prune -quit\n"
+"      -exec <명령> ; -exec <명령> {} + -ok <명령> ;\n"
+"      -execdir <명령> ; -execdir <명령> {} + -okdir <명령> ;\n"
 
-#: find/util.c:204
+#: find/util.c:202
 msgid ""
 "\n"
 "Other common options:\n"
 msgstr ""
+"\n"
+"기타 일반 옵션:\n"
 
-#: find/util.c:206 xargs/xargs.c:1751
+#: find/util.c:204 xargs/xargs.c:1794
 msgid "      --help                   display this help and exit\n"
-msgstr ""
+msgstr "      --help                   이 도움말을 표시하고 나갑니다\n"
 
-#: find/util.c:207 xargs/xargs.c:1752
+#: find/util.c:205 xargs/xargs.c:1795
 msgid ""
 "      --version                output version information and exit\n"
 "\n"
 msgstr ""
+"      --version                버전 정보를 출력하고 나갑니다\n"
+"\n"
+"\n"
 
-#: find/util.c:210
+#: find/util.c:208
 msgid ""
 "\n"
 "Use '-D help' for a description of the options, or see find(1)\n"
 "\n"
 msgstr ""
+"\n"
+"옵션 설명을 보려면 '-D help' 명령 또는 find(1) 문서를 보십시오\n"
+"\n"
 
-#: find/util.c:475
+#: find/util.c:474
 #, c-format
 msgid "Failed to save initial working directory%s%s"
-msgstr ""
+msgstr "%s%s초기 작업 디렉터리 저장 실패"
 
-#: find/util.c:494
+#: find/util.c:493
 #, c-format
 msgid "Failed to restore initial working directory%s%s"
-msgstr ""
+msgstr "%s%s초기 작업 디렉터리 복원 실패"
 
-#: find/util.c:832
-#, fuzzy, c-format
+#: find/util.c:831
+#, c-format
 msgid "Ignoring unrecognised debug flag %s"
-msgstr "���: �ν��� �� ���� �̽������� `\\%c'"
+msgstr "인식할 수 없는 %s 디버깅 플래그 무시"
 
-#: find/util.c:839
+#: find/util.c:838
 #, c-format
 msgid "Empty argument to the -D option."
-msgstr ""
+msgstr "-D 옵션의 인자 값이 없습니다."
 
-#: find/util.c:856
+#: find/util.c:855
+#, c-format
 msgid "The -O option must be immediately followed by a decimal integer"
-msgstr ""
+msgstr "-O 옵션에는 십진수가 따라와야 합니다."
 
-#: find/util.c:866 find/util.c:877
+#: find/util.c:865 find/util.c:876
+#, c-format
 msgid "Please specify a decimal number immediately after -O"
-msgstr ""
+msgstr "-O 옵션 다음 십진수를 바로 붙여서 지정하십시오"
 
-#: find/util.c:882 find/util.c:887
+#: find/util.c:881 find/util.c:886
 #, c-format
 msgid "Invalid optimisation level %s"
-msgstr ""
+msgstr "부적절한 최적화 수준 %s"
 
-#: find/util.c:895
+#: find/util.c:894
 #, c-format
 msgid ""
 "Optimisation level %lu is too high.  If you want to find files very quickly, "
 "consider using GNU locate."
 msgstr ""
+"최적화 수준 %lu 단계 값이 너무 큽니다.  파일을 매우 빠르게 찾으려면 GNU "
+"locate 사용을 고려하십시오."
 
-#: find/util.c:941
+#: find/util.c:940
 #, c-format
 msgid "Missing argument after the -D option."
-msgstr ""
+msgstr "-D 옵션 다음 인자 값이 없습니다."
 
-#: find/util.c:1044
+#: find/util.c:1043
+#, c-format
 msgid ""
 "The environment variable FIND_BLOCK_SIZE is not supported, the only thing "
 "that affects the block size is the POSIXLY_CORRECT environment variable"
 msgstr ""
+"FIND_BLOCK_SIZE 환경 변수를 지원하지 않습니다. 블록 크기에 영향을 주는 변수"
+"는 POSIXLY_CORRECT 환경 변수입니다."
 
 #: lib/bugreports.c:28
 #, c-format
@@ -720,156 +839,170 @@ msgid ""
 "%s or, if\n"
 "you have no web access, by sending email to <%s>.\n"
 msgstr ""
+"%1$s의 문서도 참고하십시오.\n"
+"\"%2$s\"의 버그는 %4$s의 %3$s 버그 보고 페이지, 또는\n"
+"웹에 접근할 수 없다면, <%5$s>에 전자메일을 보내어\n"
+"보고(하고 수정 과정을 지켜보기)할 수 있습니다.\n"
 
-#: lib/buildcmd.c:144
+#: lib/buildcmd.c:143
+#, c-format
 msgid "command too long"
-msgstr "������ �ʹ� ��ϴ�"
+msgstr "명령이 너무 깁니다"
 
-#: lib/buildcmd.c:284
+#: lib/buildcmd.c:283
+#, c-format
 msgid "can't call exec() due to argument size restrictions"
-msgstr ""
+msgstr "인자 크기 제한으로 인해 exec()를 호출할 수 없습니다"
 
 #: lib/buildcmd.c:349
-#, fuzzy
+#, c-format
 msgid "cannot fit single argument within argument list size limit"
-msgstr "�μ� ���� ���� ���ѿ� ���� �μ��� ���� �� �����ϴ�"
+msgstr "단일 인자 값이 인자 목록 크기 제한에 맞지 않습니다"
 
-#: lib/buildcmd.c:355
+#: lib/buildcmd.c:357
+#, c-format
 msgid "argument list too long"
-msgstr "�μ� ������ �ʹ� ��ϴ�"
+msgstr "인자 목록이 너무 깁니다"
 
-#: lib/buildcmd.c:612
+#: lib/buildcmd.c:615
 #, c-format
 msgid "Environment variable %s is not set to a valid decimal number"
-msgstr ""
+msgstr "%s 환경 변수에 적절한 정수 값을 설정하지 않았습니다"
 
-#: lib/fdleak.c:391
+#: lib/fdleak.c:390
 #, c-format
 msgid ""
 "File descriptor %d will leak; please report this as a bug, remembering to "
 "include a detailed description of the simplest way to reproduce this problem."
 msgstr ""
+"%d 파일 서술자 정보가 다른 곳으로 샙니다. 버그로 보고하시고, 문자를 재현할 가"
+"장 간단한 방법을 자세하게 설명하십시오."
 
 #: lib/findutils-version.c:49
 msgid "Eric B. Decker"
-msgstr ""
+msgstr "Eric B. Decker"
 
 #: lib/findutils-version.c:50
 msgid "James Youngman"
-msgstr ""
+msgstr "James Youngman"
 
 #: lib/findutils-version.c:51
 msgid "Kevin Dalley"
-msgstr ""
+msgstr "Kevin Dalley"
 
-#: lib/listfile.c:454
+#: lib/listfile.c:452
 #, c-format
 msgid "Failed to write output (at stage %d)"
-msgstr ""
+msgstr "출력 쓰기 실패 (스테이지 %d번)"
 
-#: lib/regextype.c:98
+#: lib/regextype.c:97
 #, c-format
 msgid "Unknown regular expression type %s; valid types are %s."
-msgstr ""
+msgstr "알 수 없는 정규 표현식 형식 %s. 적절한 형식은 %s 입니다."
 
-#: lib/safe-atoi.c:68
+#: lib/safe-atoi.c:67
 #, c-format
 msgid "Unexpected suffix %s on %s"
-msgstr ""
+msgstr "예상치 못한 접두사 %s (%s 에서)"
 
-#: lib/safe-atoi.c:74
+#: lib/safe-atoi.c:73
 #, c-format
 msgid "Expected an integer: %s"
-msgstr ""
+msgstr "정수 값이 필요합니다: %s"
 
-#: locate/frcode.c:147
-#, fuzzy, c-format
+#: locate/frcode.c:145
+#, c-format
 msgid "Usage: %s [-0 | --null] [--version] [--help]\n"
-msgstr "����: %s [-d ���] [--database=���] [--version] [--help] ����...\n"
+msgstr "사용법: %s [-0 | --null] [--version] [--help]\n"
 
-#: locate/frcode.c:169
+#: locate/frcode.c:167
+#, c-format
 msgid "You need to specify a security level as a decimal integer."
-msgstr ""
+msgstr "보안 수준을 정수로 지정해야합니다."
 
-#: locate/frcode.c:177
+#: locate/frcode.c:175
 #, c-format
 msgid "Security level %s is outside the convertible range."
-msgstr ""
+msgstr "%s단계 보안 수준이 변환 가능 범위 밖에 있습니다."
 
-#: locate/frcode.c:185
+#: locate/frcode.c:183
 #, c-format
 msgid "Security level %s has unexpected suffix %s."
-msgstr ""
+msgstr "%s단계 보안 수준에 예기치 않은 접두사 %s."
 
-#: locate/frcode.c:199
+#: locate/frcode.c:197
+#, c-format
 msgid "write error"
-msgstr ""
+msgstr "기록 오류"
 
-#: locate/frcode.c:246
+#: locate/frcode.c:244
 #, c-format
 msgid "slocate security level %ld is unsupported."
-msgstr ""
+msgstr "%ld 단계 slocate 보안 수준은 지원하지 않습니다."
 
-#: locate/frcode.c:265
+#: locate/frcode.c:263
 #, c-format
 msgid "no argument expected."
-msgstr ""
+msgstr "필요한 인자 값이 없습니다."
 
-#: locate/frcode.c:282
+#: locate/frcode.c:280
+#, c-format
 msgid "Failed to write to standard output"
-msgstr ""
+msgstr "표준 출력 기록 실패"
 
-#: locate/frcode.c:291
+#: locate/frcode.c:289
 #, c-format
 msgid "The input file should end with the delimiter"
-msgstr ""
+msgstr "입력 파일이 구분 문자로 끝나야 합니다"
 
-#: locate/locate.c:112
+#: locate/locate.c:110
 msgid "days"
-msgstr ""
+msgstr "일"
 
-#: locate/locate.c:160
+#: locate/locate.c:158
+#, c-format
 msgid "The argument for option --max-database-age must not be empty"
-msgstr ""
+msgstr "--max-database-age 옵션의 인자 값이 비어있으면 안됩니다"
 
-#: locate/locate.c:176 locate/locate.c:183
+#: locate/locate.c:174 locate/locate.c:181
 #, c-format
 msgid "Invalid argument %s for option --max-database-age"
-msgstr ""
+msgstr "--max-database-age 옵션의 부적절한 인자 값 %s"
 
-#: locate/locate.c:433
+#: locate/locate.c:431
 #, c-format
 msgid "locate database %s contains a filename longer than locate can handle"
 msgstr ""
+"%s locate 데이터베이스에 locate에서 처리할 수 있는 파일 이름 길이보다 더 긴 "
+"파일 이름이 있습니다"
 
-#: locate/locate.c:544 locate/locate.c:563
+#: locate/locate.c:542 locate/locate.c:561
 #, c-format
 msgid "locate database %s is corrupt or invalid"
-msgstr ""
+msgstr "%s locate 데이터베이스가 깨졌거나 부적절한 상태입니다"
 
-#: locate/locate.c:848
+#: locate/locate.c:846
 #, c-format
 msgid "Database was last modified at %s.%09ld"
-msgstr ""
+msgstr "데이터베이스 최종 수정일: %s.%09ld"
 
-#: locate/locate.c:856
+#: locate/locate.c:854
 #, c-format
 msgid "Locate database size: %s byte\n"
 msgid_plural "Locate database size: %s bytes\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "locate 데이터베이스 크기: %s 바이트\n"
 
-#: locate/locate.c:862
+#: locate/locate.c:860
 #, c-format
 msgid "Matching Filenames: %s\n"
-msgstr ""
+msgstr "일치하는 파일 이름: %s\n"
 
-#: locate/locate.c:863
+#: locate/locate.c:861
 #, c-format
 msgid "All Filenames: %s\n"
-msgstr ""
+msgstr "모든 파일 이름: %s\n"
 
-#: locate/locate.c:869
+#: locate/locate.c:867
 #, c-format
 msgid ""
 "File names have a cumulative length of %s bytes.\n"
@@ -879,74 +1012,87 @@ msgid ""
 "\t%s contain newline characters, \n"
 "\tand %s contain characters with the high bit set.\n"
 msgstr ""
+"파일 이름이 %s 바이트 누적 길이를 가지고 있습니다.\n"
+"파일 이름에는\n"
+"\n"
+"\t%s 공백 문자가 있고,\n"
+"\t%s 개행 문자가 있으며,\n"
+"\t%s 상위 비트 세트 문자가 있습니다.\n"
 
-#: locate/locate.c:883
+#: locate/locate.c:881
 #, c-format
 msgid ""
 "Some filenames may have been filtered out, so we cannot compute the "
 "compression ratio.\n"
-msgstr ""
+msgstr "일부 파일 이름은 가려졌습니다. 따라서 압축율을 계산할 수 없습니다.\n"
 
-#: locate/locate.c:896
+#: locate/locate.c:894
 #, c-format
 msgid "Compression ratio %4.2f%% (higher is better)\n"
-msgstr ""
+msgstr "압축율: %4.2f%% (클 수록 좋음)\n"
 
-#: locate/locate.c:903
+#: locate/locate.c:901
 #, c-format
 msgid "Compression ratio is undefined\n"
-msgstr ""
+msgstr "압축율을 지정하지 않았습니다\n"
 
-#: locate/locate.c:958
+#: locate/locate.c:956
 #, c-format
 msgid ""
 "locate database %s looks like an slocate database but it seems to have "
 "security level %c, which GNU findutils does not currently support"
 msgstr ""
+"%s locate 데이터베이스는 slocate 데이터베이스 같지만, 현재 GNU findutils에서 "
+"지원하지 않는 %c 단계 보안 수준인 것 같습니다."
 
-#: locate/locate.c:1080
+#: locate/locate.c:1078
 #, c-format
 msgid ""
 "%s is an slocate database of unsupported security level %d; skipping it."
 msgstr ""
+"%s은(는) 지원하지 않는 %d단계 보안 수준을 지닌 slocate 데이터베이스입니다. 건"
+"너뜁니다."
 
-#: locate/locate.c:1097
+#: locate/locate.c:1095
 #, c-format
 msgid ""
 "You specified the -E option, but that option cannot be used with slocate-"
 "format databases with a non-zero security level.  No results will be "
 "generated for this database.\n"
 msgstr ""
+"-E 옵션을 지정했습니다만, 0단계가 아닌 보안 수준의 slocate 형식 데이터베이스"
+"를 이 옵션으로 활용할 수 없습니다.   이 데이터베이스로부터 어떤 결과도 나오"
+"지 않습니다.\n"
 
-#: locate/locate.c:1108
+#: locate/locate.c:1106
 #, c-format
 msgid "%s is an slocate database.  Turning on the '-e' option."
-msgstr ""
+msgstr "%s은(는) slocate 데이터베이스입니다.   `-e' 옵션을 켜십시오."
 
-#: locate/locate.c:1146
+#: locate/locate.c:1144
 #, c-format
 msgid "Old-format locate database %s is too short to be valid"
-msgstr ""
+msgstr "이전 형식 %s locate 데이터베이스가 적절하다고 보기에는 너무 짧습니다"
 
-#: locate/locate.c:1298
+#: locate/locate.c:1296
 #, c-format
 msgid "Database %s is in the %s format.\n"
-msgstr ""
+msgstr "%s 데이터베이스는 %s 형식입니다.\n"
+
+#: locate/locate.c:1323
+msgid "The database has little-endian machine-word encoding.\n"
+msgstr "데이터베이스를 리틀엔디안 머신워드 인코딩으로 구성했습니다.\n"
 
 #: locate/locate.c:1325
-msgid "The database has little-endian machine-word encoding.\n"
-msgstr ""
-
-#: locate/locate.c:1327
 msgid "The database has big-endian machine-word encoding.\n"
-msgstr ""
+msgstr "데이터베이스를 빅엔디안 머신워드 인코딩으로 구성했습니다.\n"
 
-#: locate/locate.c:1340
+#: locate/locate.c:1338
 #, c-format
 msgid "The database machine-word encoding order is not obvious.\n"
-msgstr ""
+msgstr "데이터베이스 머신워드 인코딩 순서가 분명하지 않습니다.\n"
 
-#: locate/locate.c:1369
+#: locate/locate.c:1367
 #, c-format
 msgid ""
 "Usage: %s [-d path | --database=path] [-e | -E | --[non-]existing]\n"
@@ -957,169 +1103,192 @@ msgid ""
 "      [--max-database-age D] [--version] [--help]\n"
 "      pattern...\n"
 msgstr ""
+"사용법: %s [-d path | --database=<경로>] [-e | -E | --[non-]existing]\n"
+"      [-i | --ignore-case] [-w | --wholename] [-b | --basename] \n"
+"      [--limit=N | -l N] [-S | --statistics] [-0 | --null] [-c | --count]\n"
+"      [-P | -H | --nofollow] [-L | --follow] [-m | --mmap] [-s | --stdio]\n"
+"      [-A | --all] [-p | --print] [-r | --regex] [--regextype=<형식>]\n"
+"      [--max-database-age <양의정수>] [--version] [--help]\n"
+"      <패턴...>\n"
 
-#: locate/locate.c:1435
+#: locate/locate.c:1433
 msgid "failed to drop group privileges"
-msgstr ""
+msgstr "그룹 권한 철회 실패"
 
-#: locate/locate.c:1453
+#: locate/locate.c:1451
 msgid "failed to drop setuid privileges"
-msgstr ""
+msgstr "setuid 권한 철회 실패"
 
-#: locate/locate.c:1467
+#: locate/locate.c:1465
 msgid "Failed to fully drop privileges"
-msgstr ""
+msgstr "권한 완전 철회 실패"
 
-#: locate/locate.c:1485
+#: locate/locate.c:1483
 msgid "failed to drop setgid privileges"
-msgstr ""
+msgstr "setgid 권한 철회 실패"
 
-#: locate/locate.c:1722
+#: locate/locate.c:1720
 #, c-format
 msgid "pattern argument expected"
-msgstr ""
+msgstr "패턴 인자가 필요합니다"
 
-#: locate/locate.c:1763
+#: locate/locate.c:1761
 #, c-format
 msgid "warning: the locate database can only be read from stdin once."
-msgstr ""
+msgstr "경고: locate 데이터베이스는 표준 입력을 한번만 읽을 수 있습니다."
 
-#: locate/locate.c:1836
+#: locate/locate.c:1834
 #, c-format
 msgid "time system call failed"
-msgstr ""
+msgstr "time 시스템 콜 호출 실패"
 
-#: locate/locate.c:1847
-#, fuzzy, c-format
+#: locate/locate.c:1845
+#, c-format
 msgid "warning: database %s is more than %u %s old (actual age is %.1f %s)"
-msgstr "���: �����ͺ��̽� `%s'�� %s �̻� �����Ǿ����ϴ�"
+msgstr ""
+"경고: %s 데이터베이스는 %u %s 보다 오래되었습니다(실제 경과 기간: %.1f %s)"
 
-#: locate/word_io.c:77
+#: locate/word_io.c:75
 #, c-format
 msgid "WARNING: locate database %s was built with a different byte order"
-msgstr ""
+msgstr "경고: %s locate 데이터베이스 다른 바이트 순서로 구성했습니다"
 
-#: locate/word_io.c:123
+#: locate/word_io.c:121
 #, c-format
 msgid "unexpected EOF in %s"
-msgstr ""
+msgstr "%s에 예기치 않은 파일 끝 문자"
 
-#: locate/word_io.c:126
-#, fuzzy, c-format
+#: locate/word_io.c:124
+#, c-format
 msgid "error reading a word from %s"
-msgstr "%s�� ��ٸ��� ���� ���� �߻�"
+msgstr "%s에서 워드 읽는 중 오류"
 
-#: xargs/xargs.c:254
+#: xargs/xargs.c:255
 #, c-format
 msgid "Invalid escape sequence %s in input delimiter specification."
-msgstr ""
+msgstr "입력 구분 지정에서 부적절한 %s 이스케이스 시퀀스."
 
-#: xargs/xargs.c:272
+#: xargs/xargs.c:273
 #, c-format
 msgid ""
 "Invalid escape sequence %s in input delimiter specification; character "
 "values must not exceed %lx."
 msgstr ""
+"입력 구분 지정에서 부적절한 %s 이스케이스 시퀀스. 문자 값이 %lx 값을 넘으면 "
+"안됩니다."
 
-#: xargs/xargs.c:279
+#: xargs/xargs.c:280
 #, c-format
 msgid ""
 "Invalid escape sequence %s in input delimiter specification; character "
 "values must not exceed %lo."
 msgstr ""
+"입력 구분 지정에서 부적절한 %s 이스케이스 시퀀스. 문자 값이 %lo 값을 넘으면 "
+"안됩니다."
 
-#: xargs/xargs.c:289
+#: xargs/xargs.c:290
 #, c-format
 msgid ""
 "Invalid escape sequence %s in input delimiter specification; trailing "
 "characters %s not recognised."
 msgstr ""
+"입력 구분 지정에서 부적절한 %s 이스케이스 시퀀스. 뒤따라오는 %s 문자를 인식"
+"할 수 없습니다."
 
-#: xargs/xargs.c:335
+#: xargs/xargs.c:336
 #, c-format
 msgid ""
 "Invalid input delimiter specification %s: the delimiter must be either a "
 "single character or an escape sequence starting with \\."
 msgstr ""
+"부적절한 입력 구분자 지정 %s: 구분자는 단일 문자이거나 \\ 문자로 시작하는 이"
+"스케이스 시퀀스여야 합니다."
 
-#: xargs/xargs.c:354
+#: xargs/xargs.c:355
+#, c-format
 msgid "environment is too large for exec"
-msgstr "ȯ���� ����(exec)�ϱ⿡ �ʹ� Ů�ϴ�"
+msgstr "exec를 호출하기에 환경이 너무 큽니다"
 
-#: xargs/xargs.c:391
+#: xargs/xargs.c:392
 #, c-format
 msgid ""
 "warning: options %s and %s are mutually exclusive, ignoring previous %s value"
-msgstr ""
+msgstr "경고: %s 및 %s 옵션을 함께 사용할 수 없어, 앞의 %s 값을 무시합니다"
 
-#: xargs/xargs.c:636
+#: xargs/xargs.c:637
 #, c-format
 msgid "warning: value %ld for -s option is too large, using %ld instead"
+msgstr "경고: -s 옵션의 %ld값이 너무 큽니다. 대신 %ld 값을 활용합니다"
+
+#: xargs/xargs.c:677
+#, c-format
+msgid ""
+"SIGUSR1 and SIGUSR2 are not both defined, so the -P option does nothing."
 msgstr ""
 
-#: xargs/xargs.c:687
+#: xargs/xargs.c:694
 #, c-format
 msgid "option --%s may not be set to a value which includes `='"
-msgstr ""
+msgstr "--%s 옵션에 `=' 기호가 들어간 값을 지정하지 않은 것 같습니다"
 
-#: xargs/xargs.c:699
+#: xargs/xargs.c:706
 #, c-format
 msgid "failed to unset environment variable %s"
-msgstr ""
+msgstr "%s 환경 변수 지정 해제 실패"
 
-#: xargs/xargs.c:712
+#: xargs/xargs.c:719
 #, c-format
 msgid "warning: the -E option has no effect if -0 or -d is used.\n"
-msgstr ""
+msgstr "경고: -0 또는 -d 옵션을 사용하면 -E 옵션은 동작하지 않습니다.\n"
 
-#: xargs/xargs.c:734
+#: xargs/xargs.c:745
 #, c-format
 msgid "Cannot set SIGUSR1 signal handler"
-msgstr ""
+msgstr "SIGUSR1 시그널 핸들러를 설정할 수 없습니다"
 
-#: xargs/xargs.c:740
+#: xargs/xargs.c:751
 #, c-format
 msgid "Cannot set SIGUSR2 signal handler"
-msgstr ""
+msgstr "SIGUSR2 시그널 핸들러를 설정할 수 없습니다"
 
-#: xargs/xargs.c:756
+#: xargs/xargs.c:767
 #, c-format
 msgid "Cannot open input file %s"
-msgstr ""
+msgstr "%s 입력 파일을 열 수 없습니다"
 
-#: xargs/xargs.c:775
+#: xargs/xargs.c:786
 #, c-format
 msgid "Your environment variables take up %<PRIuMAX> bytes\n"
-msgstr ""
+msgstr "환경 변수가 %<PRIuMAX> 바이트를 차지합니다\n"
 
-#: xargs/xargs.c:778
+#: xargs/xargs.c:789
 #, c-format
 msgid "POSIX upper limit on argument length (this system): %<PRIuMAX>\n"
-msgstr ""
+msgstr "(이 시스템의) POSIX 인자 길이 상한: %<PRIuMAX>\n"
 
-#: xargs/xargs.c:781
+#: xargs/xargs.c:792
 #, c-format
 msgid ""
 "POSIX smallest allowable upper limit on argument length (all systems): "
 "%<PRIuMAX>\n"
-msgstr ""
+msgstr "(모든 시스템의) POSIX 최소 허용 인자 길이 상한: %<PRIuMAX>\n"
 
-#: xargs/xargs.c:784
+#: xargs/xargs.c:795
 #, c-format
 msgid "Maximum length of command we could actually use: %<PRIuMAX>\n"
-msgstr ""
+msgstr "실제로 활용할 수 있는 명령 최대 길이: %<PRIuMAX>\n"
 
-#: xargs/xargs.c:787
+#: xargs/xargs.c:798
 #, c-format
 msgid "Size of command buffer we are actually using: %<PRIuMAX>\n"
-msgstr ""
+msgstr "실제로 활용 중인 명령 버퍼 크기: %<PRIuMAX>\n"
 
-#: xargs/xargs.c:790
+#: xargs/xargs.c:801
 #, c-format
 msgid "Maximum parallelism (--max-procs must be no greater): %<PRIuMAX>\n"
-msgstr ""
+msgstr "최대 병렬 파이프 갯수 (--max-procs 값이 더 크면 안됨): %<PRIuMAX>\n"
 
-#: xargs/xargs.c:796
+#: xargs/xargs.c:807
 #, c-format
 msgid ""
 "\n"
@@ -1127,136 +1296,161 @@ msgid ""
 "run commands; if this is not what you wanted to happen, please type the end-"
 "of-file keystroke.\n"
 msgstr ""
+"\n"
+"xargs 실행을 계속하며, 입력을 읽어 명령 실행을 시도합니다. 원하는 동작이 아니"
+"라면 파일 끝 키를 입력하십시오.\n"
 
-#: xargs/xargs.c:804
+#: xargs/xargs.c:815
 #, c-format
 msgid ""
 "Warning: %s will be run at least once.  If you do not want that to happen, "
 "then press the interrupt keystroke.\n"
 msgstr ""
+"경고: %s을 최소 한 번 이상 실행합니다.   이런 일이 일어나지 않게 하려면, 중"
+"단 키를 입력하십시오.\n"
 
-#: xargs/xargs.c:933 xargs/xargs.c:1028
+#: xargs/xargs.c:946 xargs/xargs.c:1041
 #, c-format
 msgid ""
 "unmatched %s quote; by default quotes are special to xargs unless you use "
 "the -0 option"
 msgstr ""
+"일치하지 않는 %s 따옴표. 기본적으로 따옴표는 -0 옵션을 활용하지 않는 이상 "
+"xargs에 대해 개별 역할을 수행합니다"
 
-#: xargs/xargs.c:935 xargs/xargs.c:1030
+#: xargs/xargs.c:948 xargs/xargs.c:1043
 msgid "double"
-msgstr "�ι�"
+msgstr "이중"
 
-#: xargs/xargs.c:935 xargs/xargs.c:1030
+#: xargs/xargs.c:948 xargs/xargs.c:1043
 msgid "single"
-msgstr "����"
+msgstr "단일"
 
-#: xargs/xargs.c:1049
+#: xargs/xargs.c:1062
 #, c-format
 msgid ""
 "WARNING: a NUL character occurred in the input.  It cannot be passed through "
 "in the argument list.  Did you mean to use the --null option?"
 msgstr ""
+"경고: 입력에 널 문자가 있습니다.   인자 목록으로 전달할 수 없습니다.   --"
+"null 옵션 사용을 의미했습니까?"
 
-#: xargs/xargs.c:1059 xargs/xargs.c:1124
+#: xargs/xargs.c:1072 xargs/xargs.c:1139
+#, c-format
 msgid "argument line too long"
-msgstr "�μ� ���� �ʹ� ��ϴ�"
+msgstr "인자 값 행이 너무 깁니다"
 
-#: xargs/xargs.c:1146 xargs/xargs.c:1163
+#: xargs/xargs.c:1161 xargs/xargs.c:1178
+#, c-format
 msgid "Failed to write to stderr"
-msgstr ""
+msgstr "표준 오류에 기록 실패"
 
-#: xargs/xargs.c:1159
+#: xargs/xargs.c:1174
+#, c-format
 msgid "failed to open /dev/tty for reading"
-msgstr ""
+msgstr "읽기용 /dev/tty 열기 실패"
 
-#: xargs/xargs.c:1169
+#: xargs/xargs.c:1184
+#, c-format
 msgid "Failed to read from stdin"
-msgstr ""
+msgstr "stdin에서 읽기 실패"
 
-#: xargs/xargs.c:1205
+#: xargs/xargs.c:1220
 #, c-format
 msgid "failed to set environment variable %s"
-msgstr ""
+msgstr "%s 환경 변수 설정 실패"
 
-#: xargs/xargs.c:1259
+#: xargs/xargs.c:1274
+#, c-format
 msgid "failed to redirect standard input of the child process"
-msgstr ""
+msgstr "하위 프로세스의 표준 입력 방향 재지정 실패"
 
-#: xargs/xargs.c:1311
+#: xargs/xargs.c:1326
+#, c-format
 msgid "could not create pipe before fork"
-msgstr ""
+msgstr "포킹 전 파이프를 만들 수 없습니다"
 
-#: xargs/xargs.c:1382
+#: xargs/xargs.c:1397
 #, c-format
 msgid ""
 "errno-buffer safe_read failed in xargs_do_exec (this is probably a bug, "
 "please report it)"
 msgstr ""
+"xargs_do_exec에서 errno-buffer safe_read 실패(버그인 것 같습니다. 보고하십시"
+"오)"
 
-#: xargs/xargs.c:1435
+#: xargs/xargs.c:1450
 #, c-format
 msgid ""
 "read returned unexpected value %<PRIuMAX>; this is probably a bug, please "
 "report it"
 msgstr ""
+"읽기 과정에서 예상치 못한 %<PRIuMAX> 값을 반환했습니다. 버그 같습니다. 보고하"
+"십시오."
 
-#: xargs/xargs.c:1528
+#: xargs/xargs.c:1544
+#, c-format
 msgid "error waiting for child process"
-msgstr "�ڽ� ���μ����� ��ٸ��� ���� ���� �߻�"
+msgstr "자식 프로세스를 기다리는 도중 오류 발생"
 
-#: xargs/xargs.c:1561
+#: xargs/xargs.c:1577
 #, c-format
 msgid "WARNING: Lost track of %lu child processes"
-msgstr ""
+msgstr "경고: %lu 하위 프로세스 추적 분실"
 
-#: xargs/xargs.c:1580
+#: xargs/xargs.c:1605
 #, c-format
 msgid "%s: exited with status 255; aborting"
-msgstr "%s: ���� 255�� ������ �����; �ߴ���"
+msgstr "%s: 255 상태 코드로 빠져나왔습니다. 중단"
 
-#: xargs/xargs.c:1583
+#: xargs/xargs.c:1610
 #, c-format
 msgid "%s: stopped by signal %d"
-msgstr "%s: ��ȣ %d�� ���� ������"
+msgstr "%s: %d 시그널로 멈춤"
 
-#: xargs/xargs.c:1586
+#: xargs/xargs.c:1616
 #, c-format
 msgid "%s: terminated by signal %d"
-msgstr "%s: ��ȣ %d�� ���� �����"
+msgstr "%s: %d 시그널로 중단함"
 
-#: xargs/xargs.c:1671
-#, fuzzy, c-format
+#: xargs/xargs.c:1714
+#, c-format
 msgid "%s: invalid number \"%s\" for -%c option\n"
-msgstr "%s: -%c �ɼǿ� �������� ���ڰ� �־���\n"
+msgstr "%1$s: -%3$c 옵션에 부적절한 숫자 \"%2$s\"\n"
 
-#: xargs/xargs.c:1678
-#, fuzzy, c-format
+#: xargs/xargs.c:1721
+#, c-format
 msgid "%s: value %s for -%c option should be >= %ld\n"
-msgstr "%s: -%c �ɼ��� ���� %ld���� ũ�ų� ���ƾ� �մϴ�\n"
+msgstr "%1$s: -%3$c의 %2$s 값은 %4$ld보다 크거나 같아야 합니다\n"
 
-#: xargs/xargs.c:1687
-#, fuzzy, c-format
+#: xargs/xargs.c:1730
+#, c-format
 msgid "%s: value %s for -%c option should be <= %ld\n"
-msgstr "%s: -%c �ɼ��� ���� %ld���� �۾ƾ� �մϴ�\n"
+msgstr "%1$s: -%3$c의 %2$s 값은 %4$ld보다 작거나 같아야 합니다\n"
 
-#: xargs/xargs.c:1707
+#: xargs/xargs.c:1750
 #, c-format
 msgid "Usage: %s [OPTION]... COMMAND [INITIAL-ARGS]...\n"
-msgstr ""
+msgstr "사용법: %s [<옵션>]... <명령> [<초기-인자값>]...\n"
 
-#: xargs/xargs.c:1712
+#: xargs/xargs.c:1755
 msgid ""
 "Run COMMAND with arguments INITIAL-ARGS and more arguments read from input.\n"
 "\n"
 msgstr ""
+"<초기-인자값>과 입력에서 읽은 더 많은 인자 값을 동원하여 지정한 <명령>을 실행"
+"합니다.\n"
+"\n"
 
-#: xargs/xargs.c:1714
+#: xargs/xargs.c:1757
 msgid ""
 "Mandatory and optional arguments to long options are also\n"
 "mandatory or optional for the corresponding short option.\n"
 msgstr ""
+"긴 옵션의 필수 또는 선택 인자 값은 관련 단축 옵션에 대해서도\n"
+"필수 또는 선택입니다.\n"
 
-#: xargs/xargs.c:1716
+#: xargs/xargs.c:1759
 msgid ""
 "  -0, --null                   items are separated by a null, not "
 "whitespace;\n"
@@ -1264,13 +1458,19 @@ msgid ""
 "and\n"
 "                                 logical EOF processing\n"
 msgstr ""
+"  -0, --null                   항목을 공백 문자가 아닌 널 문자로 구분합니"
+"다.\n"
+"                                 따옴표와 역슬래시, 논리 EOF 처리를 하지 않습"
+"니다\n"
 
-#: xargs/xargs.c:1719
+#: xargs/xargs.c:1762
 msgid ""
 "  -a, --arg-file=FILE          read arguments from FILE, not standard input\n"
 msgstr ""
+"  -a, --arg-file=<파일>        표준 입력이 아닌 <파일>에서 인자 값을 읽습니"
+"다\n"
 
-#: xargs/xargs.c:1720
+#: xargs/xargs.c:1763
 msgid ""
 "  -d, --delimiter=CHARACTER    items in input stream are separated by "
 "CHARACTER,\n"
@@ -1278,54 +1478,80 @@ msgid ""
 "backslash\n"
 "                                 processing and logical EOF processing\n"
 msgstr ""
+"  -d, --delimiter=<문자>       입력 스트림 항목을 공백이 아닌 <문자>로 구분합"
+"니다.\n"
+"                                 따옴표, 역슬래시, 논리 EOF 처리를 하지 않습"
+"니다.\n"
 
-#: xargs/xargs.c:1723
+#: xargs/xargs.c:1766
 msgid ""
 "  -E END                       set logical EOF string; if END occurs as a "
 "line\n"
 "                                 of input, the rest of the input is ignored\n"
 "                                 (ignored if -0 or -d was specified)\n"
 msgstr ""
+"  -E <끝>                      논리 파일 끝 문자열을 설정합니다.\n"
+"                                 <끝>이 입력 행에 있다면, 나머지는 무시합니"
+"다.\n"
+"                                 (-0 또는 -d 를 지정해도 무시)\n"
 
-#: xargs/xargs.c:1726
+#: xargs/xargs.c:1769
 msgid ""
 "  -e, --eof[=END]              equivalent to -E END if END is specified;\n"
 "                                 otherwise, there is no end-of-file string\n"
 msgstr ""
+"  -e, --eof[=<끝>]             <끝>을 지정하면 -E <끝>과 같습니다\n"
+"                                 지정하지 않으면 파일 끝 문자열은\n"
+"                                 없다고 간주합니다.\n"
+"\n"
 
-#: xargs/xargs.c:1728
+#: xargs/xargs.c:1771
 msgid "  -I R                         same as --replace=R\n"
-msgstr ""
+msgstr "  -I R                         --replace=R과 동일\n"
 
-#: xargs/xargs.c:1729
+#: xargs/xargs.c:1772
 msgid ""
 "  -i, --replace[=R]            replace R in INITIAL-ARGS with names read\n"
 "                                 from standard input, split at newlines;\n"
 "                                 if R is unspecified, assume {}\n"
 msgstr ""
+"  -i, --replace[=<R>]            <초기-인자값>의 <R> 값을 표준 입력에서\n"
+"                                 읽은 이름으로 바꾸고, 줄바꿈 문자로\n"
+"                                 나눕니다. <R> 값이 없다면 {} 괄호로\n"
+"                                 간주합니다.\n"
+"\n"
 
-#: xargs/xargs.c:1732
+#: xargs/xargs.c:1775
 msgid ""
 "  -L, --max-lines=MAX-LINES    use at most MAX-LINES non-blank input lines "
 "per\n"
 "                                 command line\n"
 msgstr ""
+"  -L, --max-lines=<최대-행수>    명령 행에 입력 행을 채울 때 <최대-행수>를 활"
+"용\n"
+"                                 합니다\n"
 
-#: xargs/xargs.c:1734
+#: xargs/xargs.c:1777
 msgid ""
 "  -l[MAX-LINES]                similar to -L but defaults to at most one "
 "non-\n"
 "                                 blank input line if MAX-LINES is not "
 "specified\n"
 msgstr ""
+"  -l[<최대-행수>]              -L과 비슷하지만 <최대-행수>를 지정하지 않으"
+"면\n"
+"                                 비어있지 않은 입력 최대 행 수를 기본값으로 "
+"다룹니다\n"
 
-#: xargs/xargs.c:1736
+#: xargs/xargs.c:1779
 msgid ""
 "  -n, --max-args=MAX-ARGS      use at most MAX-ARGS arguments per command "
 "line\n"
 msgstr ""
+"  -n, --max-args=<최대-인자수>      명령행에 <최대-인자수>만큼의 인자를 활용"
+"합니다\n"
 
-#: xargs/xargs.c:1737
+#: xargs/xargs.c:1780
 msgid ""
 "  -o, --open-tty               Reopen stdin as /dev/tty in the child "
 "process\n"
@@ -1333,23 +1559,30 @@ msgid ""
 "an\n"
 "                                 interactive application.\n"
 msgstr ""
+"  -o, --open-tty               명령 실행 전 하위 프로세스에서 /dev/tty 로 표"
+"준\n"
+"                                 입력을 엽니다. 대화식 프로그램 실행시 유용\n"
+"                                 합니다.\n"
 
-#: xargs/xargs.c:1740
+#: xargs/xargs.c:1783
 msgid ""
 "  -P, --max-procs=MAX-PROCS    run at most MAX-PROCS processes at a time\n"
 msgstr ""
+"  -P, --max-procs=<최대-프로세스>    한번에 <최대-프로세스> 만큼 실행합니다\n"
 
-#: xargs/xargs.c:1741
+#: xargs/xargs.c:1784
 msgid "  -p, --interactive            prompt before running commands\n"
-msgstr ""
+msgstr "  -p, --interactive            명령 실행 전 확인합니다\n"
 
-#: xargs/xargs.c:1742
+#: xargs/xargs.c:1785
 msgid ""
 "      --process-slot-var=VAR   set environment variable VAR in child "
 "processes\n"
 msgstr ""
+"      --process-slot-var=<변수>   하위 프로세스에서 <변수> 환경 변수를 설정합"
+"니다\n"
 
-#: xargs/xargs.c:1743
+#: xargs/xargs.c:1786
 msgid ""
 "  -r, --no-run-if-empty        if there are no arguments, then do not run "
 "COMMAND;\n"
@@ -1357,103 +1590,347 @@ msgid ""
 "be\n"
 "                                 run at least once\n"
 msgstr ""
+"  -r, --no-run-if-empty        인자 값이 없으면 <명령>을 실행하지 않습니다.\n"
+"                                 이 옵션을 지정하지 않으면, <명령>을 최소한 "
+"한 번\n"
+"                                 을 실행합니다\n"
 
-#: xargs/xargs.c:1746
+#: xargs/xargs.c:1789
 msgid ""
 "  -s, --max-chars=MAX-CHARS    limit length of command line to MAX-CHARS\n"
 msgstr ""
+"  -s, --max-chars=<최대-문자수>    <최대-문자수>로 명령행 길이를 제한합니다\n"
 
-#: xargs/xargs.c:1747
+#: xargs/xargs.c:1790
 msgid "      --show-limits            show limits on command-line length\n"
-msgstr ""
+msgstr "      --show-limits            명령행 길이 제한을 보여줍니다\n"
 
-#: xargs/xargs.c:1748
+#: xargs/xargs.c:1791
 msgid "  -t, --verbose                print commands before executing them\n"
-msgstr ""
+msgstr "  -t, --verbose                명령 실행 전 명령을 출력합니다\n"
 
-#: xargs/xargs.c:1749
+#: xargs/xargs.c:1792
 msgid "  -x, --exit                   exit if the size (see -s) is exceeded\n"
-msgstr ""
+msgstr "  -x, --exit                   크기를 초과(-s 참조)하면 나갑니다\n"
 
-#~ msgid "error in %s: %s"
-#~ msgstr "%s�� ����: %s"
+#, c-format
+#~ msgid ""
+#~ "%s is not the name of an existing group and it does not look like a "
+#~ "numeric group ID because it has the unexpected suffix %s"
+#~ msgstr ""
+#~ "%s은(는) 예기치 못한 접두사 %s가 있어 기존 그룹의 이름일 수 없으며 번호 방"
+#~ "식 그룹 ID로 보이지도 않습니다."
+
+#, c-format
+#~ msgid "%s is not the name of an existing group"
+#~ msgstr "%s은(는) 기존 그룹의 이름이 아닙니다"
+
+#~ msgid "argument to -group is empty, but should be a group name"
+#~ msgstr "-group의 인자 값이 비어있지만, 그룹 이름이 붙어야 합니다"
 
 #~ msgid ""
-#~ "      EXPR1 -o EXPR2 EXPR1 -or EXPR2 EXPR1 , EXPR2\n"
-#~ "options (always true): -daystart -depth -follow --help\n"
-#~ "      -maxdepth LEVELS -mindepth LEVELS -mount -noleaf --version -xdev\n"
-#~ "tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N\n"
+#~ "The -show-control-chars option takes a single argument which must be "
+#~ "'literal' or 'safe'"
 #~ msgstr ""
-#~ "      EXPR1 -o EXPR2 EXPR1 -or EXPR2 EXPR1 , EXPR2\n"
-#~ "�ɼ� (�׻� ��): -daystart -depth -follow --help\n"
-#~ "      -maxdepth LEVELS -mindepth LEVELS -mount -noleaf --version -xdev\n"
-#~ "���� (N�� +N, -N, N�� �� �� ����): -amin N -answer FILE -atime N -cmin N\n"
+#~ "-show-control-chars 옵션에는 'literal' 또는 'safe' 둘 중 하나의 단일 인자"
+#~ "가 들어갑니다"
+
+#, c-format
+#~ msgid "%s is not the name of a known user"
+#~ msgstr "%s은(는) 알려진 사용자의 이름이 아닙니다"
+
+#~ msgid "The argument to -user should not be empty"
+#~ msgstr "-user 의 인자 값이 비어있으면 안됩니다"
+
+#~ msgid "cannot stat current directory"
+#~ msgstr "현재 디렉터리의 상태를 조회할 수 없습니다"
+
+#~ msgid "Cannot read list of mounted devices."
+#~ msgstr "마운트 장치 목록을 읽을 수 없습니다."
+
+#~ msgid "WARNING: file system %s has recently been unmounted."
+#~ msgstr "경고: %s 파일 시스템을 최근 마운트 해제했습니다."
+
+#~ msgid "WARNING: file system %s has recently been mounted."
+#~ msgstr "경고: %s 파일 시스템을 최근 마운트했습니다."
 
 #~ msgid ""
-#~ "actions: -exec COMMAND ; -fprint FILE -fprint0 FILE -fprintf FILE FORMAT\n"
-#~ "      -ok COMMAND ; -print -print0 -printf FORMAT -prune -ls\n"
+#~ "%s%s changed during execution of %s (old device number %ld, new device "
+#~ "number %ld, file system type is %s) [ref %ld]"
 #~ msgstr ""
-#~ "�ൿ: -exec COMMAND ; -fprint FILE -fprint0 FILE -fprintf FILE FORMAT\n"
-#~ "      -ok COMMAND ; -print -print0 -printf FORMAT -prune -ls\n"
-
-#~ msgid "virtual memory exhausted"
-#~ msgstr "���� �޸𸮰� �ٴڳ���"
-
-#~ msgid "GNU find version %s\n"
-#~ msgstr "GNU find ���� %s\n"
-
-#~ msgid "inserting %s\n"
-#~ msgstr "%s�� ������\n"
-
-#~ msgid "    type: %s    %s  "
-#~ msgstr "    ��: %s    %s  "
-
-#~ msgid "cannot return to starting directory"
-#~ msgstr "���� ���丮�� ���ư� �� �����ϴ�"
-
-#~ msgid "wait got pid %d, expected pid %d"
-#~ msgstr "��ٸ��� pid %d�� �޾����� pid %d�� �䱸��"
-
-#~ msgid "%s stopped by signal %d"
-#~ msgstr "%s�� ��ȣ %d�� ���� ������"
-
-#~ msgid "left:\n"
-#~ msgstr "����:\n"
-
-#~ msgid "right:\n"
-#~ msgstr "������:\n"
-
-#~ msgid "Normalized Eval Tree:\n"
-#~ msgstr "����ȭ�� �� Ʈ��:\n"
-
-#~ msgid "GNU xargs version %s\n"
-#~ msgstr "GNU xargs ���� %s\n"
-
-#~ msgid "unmatched %s quote"
-#~ msgstr "��ġ���� �ʴ� %s ����ǥ"
+#~ "%s%s이(가) %s을(를) 실행하는 동안 바뀌었습니다 (구 장치 번호: %ld, 새 장"
+#~ "치 번호: %ld, 파일 시스템 형식: %s) [참조 %ld]"
 
 #~ msgid ""
-#~ "Usage: %s [-0prtx] [-e[eof-str]] [-i[replace-str]] [-l[max-lines]]\n"
-#~ "       [-n max-args] [-s max-chars] [-P max-procs] [--null] [--eof[=eof-"
-#~ "str]]\n"
-#~ "       [--replace[=replace-str]] [--max-lines[=max-lines]] [--"
-#~ "interactive]\n"
-#~ "       [--max-chars=max-chars] [--verbose] [--exit] [--max-procs=max-"
-#~ "procs]\n"
-#~ "       [--max-args=max-args] [--no-run-if-empty] [--version] [--help]\n"
-#~ "       [command [initial-arguments]]\n"
+#~ "%s%s changed during execution of %s (old inode number %<PRIuMAX>, new "
+#~ "inode number %<PRIuMAX>, file system type is %s) [ref %ld]"
 #~ msgstr ""
-#~ "����: %s [-0prtx] [-e[���ϳ�-���ڿ�]] [-i[��ü-���ڿ�]] [-l[�ִ�-��]]\n"
-#~ "       [-n �ִ�-�μ�] [-s �ִ�-����] [-P �ִ�-���μ���] [--null] [--eof[="
-#~ "���ϳ�-���ڿ�]]\n"
-#~ "       [--replace[=��ü-���ڿ�]] [--max-lines[=�ִ�-��]] [--interactive]\n"
-#~ "       [--max-chars=�ִ�-����] [--verbose] [--exit] [--max-procs=�ִ�-����"
-#~ "����]\n"
-#~ "       [--max-args=�ִ�-�μ�] [--no-run-if-empty] [--version] [--help]\n"
-#~ "       [���� [�ʱ�-�μ�]]\n"
+#~ "%s%s이(가) %s을(를) 실행하는 동안 바뀌었습니다 (구 inode 번호: "
+#~ "%<PRIuMAX>, 새 inode 번호: %<PRIuMAX>, 파일 시스템 형식: %s) [ref %ld]"
 
-#~ msgid "GNU locate version %s\n"
-#~ msgstr "GNU locate ���� %s\n"
+#~ msgid "failed to return to parent directory"
+#~ msgstr "상위 디렉터리 복귀 실패"
 
-#~ msgid "Usage: %s most_common_bigrams < list > coded_list\n"
-#~ msgstr "����: %s most_common_bigrams < list > coded_list\n"
+#~ msgid "Failed to safely change directory into %s"
+#~ msgstr "%s 디렉터리로의 안전한 전환 실패"
+
+#~ msgid ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d level higher in the file system hierarchy"
+#~ msgid_plural ""
+#~ "Filesystem loop detected; %s has the same device number and inode as a "
+#~ "directory which is %d levels higher in the file system hierarchy"
+#~ msgstr[0] ""
+#~ "파일 시스템 순환 발견. %s에 동일한 장치번호와 시스템 계층상 %d 단계 상위"
+#~ "에 있는 디렉터리의 동일한 inode 번호가 있습니다"
+
+#~ msgid "warning: not following the symbolic link %s"
+#~ msgstr "경고: %s 심볼릭 링크를 따르지 않습니다"
+
+#~ msgid ""
+#~ "WARNING: Hard link count is wrong for %s (saw only st_nlink=%<PRIuMAX> "
+#~ "but we already saw %<PRIuMAX> subdirectories): this may be a bug in your "
+#~ "file system driver.  Automatically turning on find's -noleaf option.  "
+#~ "Earlier results may have failed to include directories that should have "
+#~ "been searched."
+#~ msgstr ""
+#~ "경고: %s의 하드 링크 계수가 잘못됐습니다(st_nlink=%<PRIuMAX> 값만 확인했지"
+#~ "만 이미 하위 디렉터리 %<PRIuMAX>개도 확인했습니다): 파일 시스템 드라이버 "
+#~ "버그인 것 같습니다.  find 명령의 -noleaf 옵션을 자동으로 켭니다.  앞선 명"
+#~ "령의 결과는 이미 검색한 디렉터리를 넣어 실패했을 수도 있습니다."
+
+#~ msgid ""
+#~ "      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N\n"
+#~ "      -used N -user NAME -xtype [bcdpfls]"
+#~ msgstr ""
+#~ "      -nouser -nogroup -path <경로패턴> -perm [-/]<모드> -regex <정규식패"
+#~ "턴>\n"
+#~ "      -readable -writable -executable\n"
+#~ "      -wholename <이름패턴> -size N[bcwkMG] -true -type [bcdpflsD] -uid "
+#~ "N\n"
+#~ "      -used N -user <이름> -xtype [bcdpfls]"
+
+#~ msgid "      -context CONTEXT\n"
+#~ msgstr "      -context <컨텍스트>\n"
+
+#~ msgid ""
+#~ "warning: Unix filenames usually don't contain slashes (though pathnames "
+#~ "do).  That means that '%s %s' will probably evaluate to false all the "
+#~ "time on this system.  You might find the '-wholename' test more useful, "
+#~ "or perhaps '-samefile'.  Alternatively, if you are using GNU grep, you "
+#~ "could use 'find ... -print0 | grep -FzZ %s'."
+#~ msgstr ""
+#~ "경고: 유닉스 파일 이름에는 슬래시 문자가 (경로를 구분하기 때문에) 들어가"
+#~ "지 않습니다.  '%s %s'은(는) 이 시스템에서 항상 거짓으로 평가합니다.  '-"
+#~ "wholename' 테스트 또는 아마도 '-samefile' 옵션이 좀 더 쓸만할 지도 모릅니"
+#~ "다.  대신, GNU grep을 활용한다면 'find ... -print0 | grep -FzZ %s' 명령을 "
+#~ "활용할 수 있습니다."
+
+#~ msgid "] [path...] [expression]\n"
+#~ msgstr "] [<경로...>] [<표현식>]\n"
+
+#~ msgid "invalid argument %s for %s"
+#~ msgstr "부적절한 %s 인자 값을 %s에 부여했습니다"
+
+#~ msgid "ambiguous argument %s for %s"
+#~ msgstr "모호한 %s 인자 값이 %s에 맞지 않습니다"
+
+#~ msgid "error closing file"
+#~ msgstr "파일 닫기 오류"
+
+#~ msgid "Unknown system error"
+#~ msgstr "알 수 없는 시스템 오류"
+
+#~ msgid "%s: option '%s' is ambiguous; possibilities:"
+#~ msgstr "%s: '%s' 옵션이 모호합니다. 가능한 값:"
+
+#~ msgid "%s: option '--%s' doesn't allow an argument\n"
+#~ msgstr "%s: '--%s' 옵션은 인자 값을 받지 않습니다\n"
+
+#~ msgid "%s: option '%c%s' doesn't allow an argument\n"
+#~ msgstr "%s: '%c%s' 옵션은 인자 값을 받지 않습니다\n"
+
+#~ msgid "%s: option '--%s' requires an argument\n"
+#~ msgstr "%s: '--%s' 옵션은 인자 값이 필요합니다\n"
+
+#~ msgid "%s: unrecognized option '--%s'\n"
+#~ msgstr "%s: 알 수 없는 '--%s' 옵션\n"
+
+#~ msgid "%s: unrecognized option '%c%s'\n"
+#~ msgstr "%s: 인식할 수 없는 옵션 `%c%s'\n"
+
+#~ msgid "%s: invalid option -- '%c'\n"
+#~ msgstr "%s: 잘못된 옵션 -- '%c'\n"
+
+#~ msgid "%s: option requires an argument -- '%c'\n"
+#~ msgstr "%s: 옵션에 인자 값이 필요합니다 -- '%c'\n"
+
+#~ msgid "%s: option '-W %s' is ambiguous\n"
+#~ msgstr "%s: '-W %s' 옵션이 모호합니다\n"
+
+#~ msgid "%s: option '-W %s' doesn't allow an argument\n"
+#~ msgstr "%s: '-W %s' 옵션은 인자 값을 받지 않습니다\n"
+
+#~ msgid "%s: option '-W %s' requires an argument\n"
+#~ msgstr "%s: '-W %s' 옵션에 인자 값이 필요합니다\n"
+
+#~ msgid "unable to record current working directory"
+#~ msgstr "현재 작업 디렉터리를 기록할 수 없습니다"
+
+#~ msgid "failed to return to initial working directory"
+#~ msgstr "초기 작업 디렉터리로의 복귀 실패"
+
+#~ msgid "`"
+#~ msgstr "`"
+
+#~ msgid "'"
+#~ msgstr "'"
+
+#~ msgid "^[yY]"
+#~ msgstr "^[yY]"
+
+#~ msgid "^[nN]"
+#~ msgstr "^[nN]"
+
+#~ msgid "Packaged by %s (%s)\n"
+#~ msgstr "%s(%s)(으)로 패키지 구성함\n"
+
+#~ msgid "Packaged by %s\n"
+#~ msgstr "%s(으)로 패키지 구성함\n"
+
+#~ msgid "(C)"
+#~ msgstr "ⓒ"
+
+#~ msgid ""
+#~ "\n"
+#~ "License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+#~ "html>.\n"
+#~ "This is free software: you are free to change and redistribute it.\n"
+#~ "There is NO WARRANTY, to the extent permitted by law.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "GPLv3+ 라이선스: GNU GPL 버전 3 이상 <http://gnu.org/licenses/gpl.html>.\n"
+#~ "이 프로그램은 자유 소프트웨어입니다: 자유롭게 바꾸고 재배포할 수 있습니"
+#~ "다.\n"
+#~ "법률이 허용하는 모든 범위내의 보증은 없습니다.\n"
+#~ "\n"
+
+#~ msgid "Written by %s.\n"
+#~ msgstr "%s이(가) 작성함.\n"
+
+#~ msgid "Written by %s and %s.\n"
+#~ msgstr "%s, %s이(가) 작성함.\n"
+
+#~ msgid "Written by %s, %s, and %s.\n"
+#~ msgstr "%s, %s, %s이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "and %s.\n"
+#~ msgstr ""
+#~ "%s, %s, %s,\n"
+#~ "%s이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, and %s.\n"
+#~ msgstr ""
+#~ "%s, %s, %s, %s,\n"
+#~ "%s이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, %s, and %s.\n"
+#~ msgstr ""
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, %s이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, %s, %s, and %s.\n"
+#~ msgstr ""
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, %s, %s이(가)\n"
+#~ "작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, %s, %s, %s,\n"
+#~ "and %s.\n"
+#~ msgstr ""
+#~ "%s, %s,%s, %s,\n"
+#~ "%s, %s, %s, %s\n"
+#~ "이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, and %s.\n"
+#~ msgstr ""
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, %s, %s, %s,\n"
+#~ "%s이(가) 작성함.\n"
+
+#~ msgid ""
+#~ "Written by %s, %s, %s,\n"
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, %s, and others.\n"
+#~ msgstr ""
+#~ "%s, %s, %s, %s,\n"
+#~ "%s, %s, %s, %s,\n"
+#~ "%s 등이 작성함.\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to: %s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "버그 보고 주소: %s\n"
+
+#~ msgid "Report %s bugs to: %s\n"
+#~ msgstr "%s 버그 보고 주소: %s\n"
+
+#~ msgid "%s home page: <%s>\n"
+#~ msgstr "%s 홈페이지: <%s>\n"
+
+#~ msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+#~ msgstr "%s 홈페이지: <http://www.gnu.org/software/%s/>\n"
+
+#~ msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
+#~ msgstr "GNU 소프트웨어 활용 일반 도움말: <https://www.gnu.org/gethelp/>\n"
+
+#~ msgid "memory exhausted"
+#~ msgstr "메모리가 바닥남"
+
+#~ msgid "invalid suffix in %s%s argument '%s'"
+#~ msgstr "%s%s의 인자값 '%s'에 부적절한 접두부"
+
+#~ msgid "%s%s argument '%s' too large"
+#~ msgstr "%s%s의 '%s' 인자 값이 너무 큽니다"
+
+#~ msgid ""
+#~ "Usage: %s [--version | --help]\n"
+#~ "or     %s most_common_bigrams < file-list > locate-database\n"
+#~ msgstr ""
+#~ "사용법: %s [--version | --help]\n"
+#~ "또는     %s most_common_bigrams < file-list > locate-database\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <bug-findutils@gnu.org>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<bug-findutils@gnu.org>에 버그를 보고하십시오.\n"
+
+#~ msgid ""
+#~ "%s is an slocate database.  Support for these is new, expect problems for "
+#~ "now."
+#~ msgstr ""
+#~ "%s은(는) slocate 데이터베이스입니다.   새로 지원하며, 지금부터 문제가 있"
+#~ "을 수도 있습니다."
+
+#~ msgid "unable to allocate memory"
+#~ msgstr "메모리를 할당할 수 없습니다"

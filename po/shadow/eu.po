@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2011-11-26 19:42+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-eu@lists.debian.org>\n"
@@ -81,9 +81,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "libcrypt-ek onartzen ez duen kriptografia metodoa? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Inguruneak gainezka egin du\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1591,10 +1588,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h ostalaria] [-f izena]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r ostalaria\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "konfigurazio errorea - ezin da %s balioa analizatu: '%d'"
 
@@ -2302,10 +2295,6 @@ msgstr "%s: ezin da lehenespen fitxategi berria sortu\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: ezin da lehenespen fitxategi berria sortu\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: ezin da lehenespen fitxategi berria sortu\n"
 
 #, c-format
@@ -3101,6 +3090,9 @@ msgstr "%s: ezin da %s leheneratu: %s (zure aldaketak %s(e)n daude)\n"
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: oinarrizko '%s' direktorio baliogabea\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Inguruneak gainezka egin du\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: ezin da NIS bezeroko '%s' erabiltzailea aldatu.\n"
@@ -3120,6 +3112,14 @@ msgstr "%s: oinarrizko '%s' direktorio baliogabea\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: %s taldea NIS talde bat da\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r ostalaria\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: ezin da lehenespen fitxategi berria sortu\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

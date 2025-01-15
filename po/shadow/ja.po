@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow 4.1.5\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2012-05-21 02:52+0900\n"
 "Last-Translator: NAKANO Takeo <nakano@webmasters.gr.jp>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -79,9 +79,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "暗号化手法が libcrypt によってサポートされていない？ (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "環境変数領域のオーバーフロー\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1597,10 +1594,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h ホスト] [-f ユーザ名]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r ホスト\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "設定エラー - %s の値 '%d' をパースできません"
 
@@ -2306,10 +2299,6 @@ msgstr "%s: 新しいデフォルトファイルを作れません\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: 新しいデフォルトファイルを作れません\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: 新しいデフォルトファイルを作れません\n"
 
 #, c-format
@@ -3106,6 +3095,9 @@ msgstr "%s: %s を復旧できませんでした: %s (あなたの変更は %s �
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: %s の tcb ディレクトリが見付かりませんでした\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "環境変数領域のオーバーフロー\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: NIS クライアントではユーザ '%s' を変更できません。\n"
@@ -3125,6 +3117,14 @@ msgstr "%s: %s の tcb ディレクトリが見付かりませんでした\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: グループ %s は NIS のグループです\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r ホスト\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: 新しいデフォルトファイルを作れません\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

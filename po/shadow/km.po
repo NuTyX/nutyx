@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow_po_km\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2006-06-28 10:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -87,9 +87,6 @@ msgstr ""
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr ""
-
-msgid "Environment overflow\n"
-msgstr "​លើស​ចំណុះ​បរិស្ថាន\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1480,10 +1477,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h ម៉ាស៊ីន] [-f ឈ្មោះ]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r ម៉ាស៊ីន​\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr ""
 
@@ -2150,10 +2143,6 @@ msgstr "%s ៖ មិន​អាច​បង្កើត​ឯកសារ​�
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s ៖ មិន​អាច​បង្កើត​ឯកសារ​លំនាំ​ដើម​ថ្មី​បានឡើយ​\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s ៖ មិន​អាច​បង្កើត​ឯកសារ​លំនាំ​ដើម​ថ្មី​បានឡើយ​\n"
 
 #, c-format
@@ -2859,6 +2848,9 @@ msgstr "%s ៖ មិន​អាច​ស្តារ %s ៖ %s (ការប
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s  ៖ ថត​មូលដ្ឋាន​មិន​ត្រឹមត្រូវ​ '%s'\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "​លើស​ចំណុះ​បរិស្ថាន\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s ៖ មិនអាចផ្លាស់​​ប្តូរ​អ្នក​ប្រើបានទេ​ '%s' លើ​ម៉ាស៊ីន​ភ្ញៀវ NIS បានទេ ។\n"
@@ -2878,6 +2870,14 @@ msgstr "%s  ៖ ថត​មូលដ្ឋាន​មិន​ត្រឹ�
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s ៖ ក្រុម​ %s គឺជា​ក្រុម NIS\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r ម៉ាស៊ីន​\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s ៖ មិន​អាច​បង្កើត​ឯកសារ​លំនាំ​ដើម​ថ្មី​បានឡើយ​\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"

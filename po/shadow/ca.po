@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shadow 4.0.18\n"
 "Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2024-03-23 18:35-0500\n"
+"POT-Creation-Date: 2024-06-18 16:40-0500\n"
 "PO-Revision-Date: 2012-01-22 18:25+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -81,9 +81,6 @@ msgstr ": "
 #, c-format
 msgid "crypt method not supported by libcrypt? (%s)\n"
 msgstr "el mètode «crypt» no és compatible amb «libcrypt»? (%s)\n"
-
-msgid "Environment overflow\n"
-msgstr "Desbordament d'entorn\n"
 
 #, c-format
 msgid "You may not change $%s\n"
@@ -1657,10 +1654,6 @@ msgid "       %s [-p] [-h host] [-f name]\n"
 msgstr "       %s [-p] [-h ordinador] [-f nom]\n"
 
 #, c-format
-msgid "       %s [-p] -r host\n"
-msgstr "       %s [-p] -r ordinador\n"
-
-#, c-format
 msgid "configuration error - cannot parse %s value: '%d'"
 msgstr "error de configuració - no es pot analitzar el valor %s:  '%d'"
 
@@ -2380,10 +2373,6 @@ msgstr "%s: no es pot crear un fitxer nou de preferències predeterminades\n"
 #, fuzzy, c-format
 #| msgid "%s: cannot create new defaults file\n"
 msgid "%s: cannot create directory for defaults file\n"
-msgstr "%s: no es pot crear un fitxer nou de preferències predeterminades\n"
-
-#, c-format
-msgid "%s: cannot create new defaults file\n"
 msgstr "%s: no es pot crear un fitxer nou de preferències predeterminades\n"
 
 #, c-format
@@ -3225,6 +3214,9 @@ msgstr "%s: no es pot restaurar %s: %s (els seus canvis estan a %s)\n"
 msgid "%s: failed to find tcb directory for %s\n"
 msgstr "%s: no es pot trobar el directori «tcb» per %s\n"
 
+#~ msgid "Environment overflow\n"
+#~ msgstr "Desbordament d'entorn\n"
+
 #, c-format
 #~ msgid "%s: cannot change user '%s' on NIS client.\n"
 #~ msgstr "%s: no s'ha pogut canviar l'usuari «%s» al client NIS.\n"
@@ -3244,6 +3236,14 @@ msgstr "%s: no es pot trobar el directori «tcb» per %s\n"
 #, c-format
 #~ msgid "%s: group %s is a NIS group\n"
 #~ msgstr "%s: el grup %s no és un grup NIS\n"
+
+#, c-format
+#~ msgid "       %s [-p] -r host\n"
+#~ msgstr "       %s [-p] -r ordinador\n"
+
+#, c-format
+#~ msgid "%s: cannot create new defaults file\n"
+#~ msgstr "%s: no es pot crear un fitxer nou de preferències predeterminades\n"
 
 #, c-format
 #~ msgid "%s: group '%s' is a NIS group.\n"
