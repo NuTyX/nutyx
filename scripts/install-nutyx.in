@@ -774,7 +774,7 @@ if [ $EUID -eq 0 ] ; then
     alias del='cards remove'
     alias get='cards install'
     alias up='cards install -u'
-    alias check='cards diff'
+    alias check='cards sync && cards diff'
     alias sysup='cards upgrade'
     alias upcheck='cards sync && cards upgrade -s'
 else
@@ -782,7 +782,7 @@ else
     alias del='sudo cards remove'
     alias get='sudo cards install'
     alias up='sudo cards install -u'
-    alias check='sudo cards diff'
+    alias check='sudo cards sync && cards diff'
     alias sysup='sudo cards upgrade'
     alias upcheck='sudo cards sync && sudo cards upgrade -s'
 fi
