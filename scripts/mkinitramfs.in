@@ -66,17 +66,21 @@ copy()
   local file
 
   if [ "$2" == "lib" ]; then
-    file=$(PATH=/lib:/lib/systemd:/usr/lib type -p $1)
+    file=$(PATH=/lib:/usr/lib:/usr/lib/systemd type -p $1)
   else
     file=$(type -p $1)
   fi
 
-  if [ -n $file ] ; then
-    cp $file $WDIR/$2
-  else
-    echo "Missing required file: $1 for directory $2"
-    rm -rf $WDIR
-    exit 1
+  if [ "$file" != "" ] ; then
+    if  [ "$(dirname $1)" == "/lib64" ]; then
+        mkdir $WDIR/lib64
+        ln -s ../lib/$(basename $1) \
+        $WDIR/$1
+        cp /lib/$(basename $1) $WDIR/lib
+    else
+        ldd $file | sed "s/\t//" | cut -d " " -f1 >> $unsorted
+        cp $file $WDIR/$file
+    fi
   fi
 }
 
@@ -94,31 +98,17 @@ WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
 unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
 
 # Create base directory structure
-for DIR in bin dev lib run sbin sys proc tmp etc usr
+for DIR in usr/bin usr/sbin usr/share usr/lib/systemd usr/lib/udev/rules.d \
+usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d etc/sysconfig \
+bin dev lib/lsb lib/firmware sbin tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
 done
-for DIR in lsb firmware udev
-do
-   mkdir -p $WDIR/lib/$DIR
-done
-for DIR in bin sbin lib share
-do
-   mkdir -p $WDIR/usr/$DIR
-done
-for DIR in sysconfig modprobe.d udev
-do
-   mkdir -p $WDIR/etc/$DIR
-done
-for DIR in rules.d hwdb.d
-do
-   mkdir -p $WDIR/lib/udev/$DIR
-   mkdir -p $WDIR/etc/udev/$DIR
-done
+
 touch $WDIR/etc/modprobe.d/modprobe.conf
-[ -d /lib64 ] && cp -a /lib64 $WDIR/lib64
 
 KERNEL_VERSION="$(uname -r)"
+
 if [ -z $1 ]; then
 	if [ ! -d /lib/modules/${KERNEL_VERSION} ]; then
 		echo "Error you didn't specify any kernel version !!
@@ -149,7 +139,7 @@ fi
 
 copyFirmwares
 
-sbinfiles="udevd udevadm"
+xfiles="udevadm udevd kmod"
 
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
@@ -160,73 +150,41 @@ if [ -x /sbin/lvm ] || [ -x /usr/sbin/cryptsetup ] || [ -x /sbin/mdadm ]; then
 	fi
 
 fi
-#
+
 # Add mdadm if present
 if [ -x /sbin/mdadm ];then
-	if [ -z $BUSYBOX ];then
-		sbinfiles="$sbinfiles mdadm"
-	else
-		cp /sbin/mdadm $WDIR/sbin/mdadm
-		/bin/bash ldd /sbin/mdadm | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-	fi
-#
+    xfiles="$files mdadm"
+
 # Copy the RAID configuration file if present
    [ -f /etc/mdadm.conf ] && cp /etc/mdadm.conf $WDIR/etc
 fi
-#
+
 # Add lvm if present
 if [ -x /sbin/lvm ]; then
-	if [ -z $BUSYBOX ]; then
-		sbinfiles="$sbinfiles lvm dmsetup"
-	else
-		for I in lvm dmsetup
-		do
-			cp /sbin/$I $WDIR/sbin/$I
-			/bin/bash ldd /sbin/$I | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-		done
-	fi
-	ln -s lvm $WDIR/sbin/lvchange
-	ln -s lvm $WDIR/sbin/lvrename
-	ln -s lvm $WDIR/sbin/lvextend
-	ln -s lvm $WDIR/sbin/lvcreate
-	ln -s lvm $WDIR/sbin/lvdisplay
-	ln -s lvm $WDIR/sbin/lvscan
+    xfiles="$xfiles lvm dmsetup"
+    for f in lvchange lvrename lvextend lvcreate lvdisplay lvscan pvck \
+        pvcreate pvdisplay pvscan vgchange vgcreate vgscan vgrename vgck
+    do
+        ln -s lvm $WDIR/sbin/$f
+    done
 
-	ln -s lvm $WDIR/sbin/pvchange
-	ln -s lvm $WDIR/sbin/pvck
-	ln -s lvm $WDIR/sbin/pvcreate
-	ln -s lvm $WDIR/sbin/pvdisplay
-	ln -s lvm $WDIR/sbin/pvscan
-
-	ln -s lvm $WDIR/sbin/vgchange
-	ln -s lvm $WDIR/sbin/vgcreate
-	ln -s lvm $WDIR/sbin/vgscan
-	ln -s lvm $WDIR/sbin/vgrename
-	ln -s lvm $WDIR/sbin/vgck
-
-	# Conf file(s)
-	cp -a /etc/lvm $WDIR/etc
+    # Conf file(s)
+    cp -a /etc/lvm $WDIR/etc
 fi
-#
+
 # Add cryptsetup if present
 if [ -x /usr/sbin/cryptsetup ]; then
-	if [ -z $BUSYBOX ]; then
-		usrsbinfiles="$usrsbinfiles cryptsetup"
-	else
-		cp /usr/sbin/cryptsetup $WDIR/usr/sbin/cryptsetup
-		/bin/bash ldd /usr/sbin/cryptsetup | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-	fi
-	if [ -f /root/.crypto/keyfile.bin ]; then
-		mkdir -p $WDIR/root/.crypto
-		cp /root/.crypto/keyfile.bin $WDIR/root/.crypto
-	fi
+    xfiles="$xfiles cryptsetup"
+    if [ -f /root/.crypto/keyfile.bin ]; then
+        mkdir -p $WDIR/root/.crypto
+        cp /root/.crypto/keyfile.bin $WDIR/root/.crypto
+    fi
 fi
-
 
 # Install the init-functions
 if [ ! -f /lib/lsb/init-functions ]; then
-	echo "ERROR cannot find /lib/lsb/init-functions file !!!"
-	exit 1
+    echo "ERROR cannot find /lib/lsb/init-functions file !!!"
+    exit 1
 fi
 
 cp /lib/lsb/init-functions $WDIR/lib/lsb/init-functions
@@ -253,6 +211,7 @@ else
 	fi
 	ln -s $BUSYBOX $WDIR/bin/sh
 fi
+
 # terminal stuff
 mkdir -p $WDIR/usr/share/terminfo/l
 cp /usr/share/terminfo/l/linux \
@@ -260,11 +219,11 @@ cp /usr/share/terminfo/l/linux \
 
 # Install the udev configuration files
 [ -f /etc/udev/udev.conf ] && cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
-for file in $(find /lib/udev/rules.d/ -type f) ; do
-	cp $file $WDIR/lib/udev/rules.d
+for file in $(find /usr/lib/udev/rules.d/ -type f) ; do
+	cp $file $WDIR/usr/lib/udev/rules.d
 done
-for file in $(find /lib/udev/hwdb.d/ -type f) ; do
-	cp $file $WDIR/lib/udev/hwdb.d
+for file in $(find /usr/lib/udev/hwdb.d/ -type f) ; do
+	cp $file $WDIR/usr/lib/udev/hwdb.d
 done
 cat > $WDIR/etc/udev/rules.d/55-lfs.rules << "EOF"
 # /etc/udev/rules.d/55-lfs.rules: Rule definitions for LFS.
@@ -290,40 +249,15 @@ EOF
 # Install the init file
 install -m0755 $DATADIR/$INITIN $WDIR/init
 
-if [ -x /bin/kmod ] ; then
-	binfiles="$binfiles kmod"
-fi
-
 # Install basic binaries
-for f in $usrbinfiles; do
-	if [ -z $BUSYBOX ]; then
-		ldd /usr/bin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-		copy $f usr/bin
-	fi
-done
-# Install more binaries
-
-for f in $usrsbinfiles; do
-	ldd /usr/sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-	copy $f usr/sbin
+for f in $xfiles; do
+    copy $f
 done
 
-for f in $binfiles ; do
-	ldd /bin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-	copy $f bin
+for f in lsmod insmod modprobe depmod
+do
+    ln -s kmod $WDIR/bin/$f
 done
-
-for f in $sbinfiles ; do
-	ldd /sbin/$f | sed "s/\t//" | cut -d " " -f1 >> $unsorted
-	copy $f sbin
-done
-
-if [ -x /bin/kmod ] ; then
-	ln -s kmod $WDIR/bin/lsmod
-	ln -s kmod $WDIR/bin/insmod
-	ln -s kmod $WDIR/bin/modprobe
-	ln -s kmod $WDIR/bin/depmod
-fi
 
 # Install libraries
 sort $unsorted | uniq | while read library ; do
@@ -331,14 +265,13 @@ sort $unsorted | uniq | while read library ; do
      [ "$library" == "linux-gate.so.1" ]; then
     continue
   fi
-
   copy $library lib
 done
 if [ -z $BUSYBOX ]; then
-	cp -a /lib/udev $WDIR/lib
+    cp -a /usr/lib/udev $WDIR/usr/lib
 
-	# The Hardware clock setting maybe could be faster done
-	cat > $WDIR/lib/udev/do_start_clock << "EOF"
+    # The Hardware clock setting maybe could be faster done
+    cat > $WDIR/lib/udev/do_start_clock << "EOF"
 #!/bin/sh -e
 . /lib/lsb/init-functions
 do_start_clock
