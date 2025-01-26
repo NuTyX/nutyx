@@ -1,6 +1,6 @@
 #***********************************************************************
 # Written by Thierry Nuttens
-# Copyright Thierry Nuttens 2010 - 2021
+# Copyright Thierry Nuttens 2010 - 2025
 # Installation script for the NuTyX system
 # Based on LFS scripts
 #***********************************************************************
@@ -1030,6 +1030,7 @@ gnome-themes-extra"
 
 [ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
 [ -z "$JWM" ] && JWM="lxdm jwm jwm-miyolinux-theme"
+[ -z "$LXDE" ] && LXDE="lxdm lxde"
 [ -z "$XFCE4" ] && XFCE4="lxdm xfce4 xfce4-extra"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
@@ -1063,12 +1064,13 @@ if [ ! -z $ISO ]; then
 		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
 		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $OPENBOX";;
 		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $JWM";;
+                LXDE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $LXDM";;
 		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
 		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $MATE";;
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, xorg, openbox, \
-jwm, xfce4, mate, gnome, kde6" && exit 1;;
+lxde, jwm, xfce4, mate, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
