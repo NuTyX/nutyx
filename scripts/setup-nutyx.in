@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  Copyright (c) 2014 - 2021 by NuTyX team (http://nutyx.org)
+#  Copyright (c) 2014 - 2025 by NuTyX team (https://nutyx.org)
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -232,7 +232,7 @@ setup_user()
 		[ "$RESULT" == "" ] && RESULT="user"
 		NAME=$RESULT
 		if [ "$NAME" == "root" ]; then
-			rm -d /home
+			rm -d ${USER}
 			setup_password
 			SETUP_CONFIG_USER="no"
 			return
@@ -286,7 +286,7 @@ setup_user()
 				setup_user;;
 			*)
 				SETUP_CONFIG_USER="yes"
-				rm -d /home;;
+				rm -d ${USER} 2>/dev/null;;
 		esac
 	else
 		if [ -d /home/"${NAME}" ];then
@@ -656,7 +656,7 @@ rm -f $TMP/SUFFIX
 setup_language()
 {
 /usr/bin/localedef -i de_CH -f UTF-8 de_CH.UTF8
-/usr/bin/setfont LatGrkCyr-8x16
+/usr/bin/setfont -d LatGrkCyr-8x16
 while [ true ]; do
 dialog   \
 --no-ok --no-cancel \
@@ -2524,6 +2524,7 @@ check_all () {
 			RV=$((RV+4))
 		fi
 	fi
+	rm -d ${USER} 2>/dev/null
 	if [ ! -d ${USER} ]; then
 		SETUP_CONFIG_USER="yes"
 		RV=$((RV+8))
