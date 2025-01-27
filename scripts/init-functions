@@ -25,6 +25,8 @@
 # Setup default values for environment
 umask 022
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+UDEVD=$(which udevd)
+UDEVADM=$(which udevadm)
 
 ## Screen Dimensions
 # Find current screen size
@@ -1091,17 +1093,17 @@ do_start_udev()
 
   # Start the udev daemon to continually watch for, and act on,
   # uevents
-  /sbin/udevd --daemon
+  [ -z $UDEVD ] || $UDEVD --daemon
 
   # Now traverse /sys in order to "coldplug" devices that have
   # already been discovered
-  /sbin/udevadm trigger --action=add    --type=subsystems
-  /sbin/udevadm trigger --action=add    --type=devices
-  /sbin/udevadm trigger --action=change --type=devices
+  $UDEVADM trigger --action=add    --type=subsystems
+  $UDEVADM trigger --action=add    --type=devices
+  $UDEVADM trigger --action=change --type=devices
 
   # Now wait for udevd to process the uevents we triggered
   if ! is_true "$OMIT_UDEV_SETTLE"; then
-     /sbin/udevadm settle
+     $UDEVADM; settle
   fi
 
   # If any LVM based partitions are on the system, ensure they
@@ -1112,8 +1114,8 @@ do_start_udev()
 }
 do_stop_udev()
 {
-  udevadm control --exit
-  udevadm info --cleanup-db
+  $UDEVADM control --exit
+  $UDEVADM info --cleanup-db
 
 }
 ########################################################################
@@ -1350,8 +1352,6 @@ do_start_udev_retry()
 {
   log_info_msg "Retrying failed uevents, if any..."
 
-  # As of udev-186, the --run option is no longer valid
-  #rundir=$(/sbin/udevadm info --run)
   rundir=/run/udev
   # From Debian: "copy the rules generated before / was mounted
   # read-write":
@@ -1368,13 +1368,13 @@ do_start_udev_retry()
   $SEDCMD -e 's/#.*$//' /etc/sysconfig/udev_retry | /bin/grep -v '^$' | \
   while read line ; do
     for subsystem in $line ; do
-      /sbin/udevadm trigger --subsystem-match=$subsystem --action=add
+      $UDEVADM trigger --subsystem-match=$subsystem --action=add
     done
   done
 
   # Now wait for udevd to process the uevents we triggered
   if ! is_true "$OMIT_UDEV_RETRY_SETTLE"; then
-    /sbin/udevadm settle
+    $UDEVADM settle
   fi
 
   evaluate_retval
