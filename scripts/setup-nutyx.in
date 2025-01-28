@@ -1759,7 +1759,7 @@ install_nutyx() {
 	# Kernel and initrd
 	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
 
-
+  [ "$FORMAT" != "ext4" ] && \
 	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
 
@@ -2074,14 +2074,17 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_PART="$(cat $TMP/boot)"
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
+    [ "$FORMAT" != "ext4" ] && \
+    INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
+
 		echo "
 menuentry \"NuTyX SysV Quiet Mode\" {
    linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro quiet verbose=no
-   initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}
+   ${INITRD_LINE}
 }
 menuentry \"NuTyX SysV Verbose Mode \" {
    linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro
-   initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}
+   ${INITRD_LINE}
 }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 	else
 		#
