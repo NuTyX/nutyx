@@ -105,7 +105,7 @@ if [ $(echo $NIC|wc -w) -gt 1 ];then
 				echo "$i" > $TMP/result
 				break
 			fi
-			echo -n \""$i"\"\  \"$(/sbin/udevadm info /sys/class/net/$i|grep ID_MODEL_FROM_DATABASE|cut -d "=" -f2)\" " off "
+			echo -n \""$i"\"\  \"$($UDEVADM info /sys/class/net/$i|grep ID_MODEL_FROM_DATABASE|cut -d "=" -f2)\" " off "
 		done >> $TMP/list
 		if [ -f $TMP/result ]; then
 			break
@@ -306,7 +306,7 @@ IFS="
 "
 [ -z $"WIFI_NETWORK_CARD" ] && WIFI_NETWORK_CARD=$(cat $TMP/result|sed 's/"//g')
 
-DEVTYPE=$(/sbin/udevadm info /sys/class/net/$WIFI_NETWORK_CARD | grep DEVTYPE | cut -d"=" -f2)
+DEVTYPE=$($UDEVADM info /sys/class/net/$WIFI_NETWORK_CARD | grep DEVTYPE | cut -d"=" -f2)
 if [ "$DEVTYPE" = "wlan" ]; then
 	echo -n "--backtitle \" $(gettext "Networks") \" \
 	--title \" $1 \" \
@@ -655,8 +655,9 @@ rm -f $TMP/SUFFIX
 }
 setup_language()
 {
-/usr/bin/localedef -i de_CH -f UTF-8 de_CH.UTF8
-/usr/bin/setfont -d LatGrkCyr-8x16
+$LOCALEDEF -i de_CH -f UTF-8 de_CH.UTF8
+[[ $(screen_size) -gt 120 ]] && SETFONT="$SETFONT -d"
+$SETFONT LatGrkCyr-8x16
 while [ true ]; do
 dialog   \
 --no-ok --no-cancel \
@@ -2615,7 +2616,9 @@ DIALOG_HELP=2
 WPA_TOOL="$(which wpa_passphrase)"
 IWCONFIG="$(which iwconfig)"
 DHCPCD="$(which dhcpcd)"
-
+UDEVADM="$(which udevadm)"
+SETFONT="$(which setfont)"
+LOCALEDEF="$(which localedef)"
 if [ ! -z "$IWCONFIG" ];then
 	WIFI_NETWORK_CARD="$($IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1)"
 fi

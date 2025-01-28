@@ -84,6 +84,23 @@ SEDCMD="sed"
 MODPROBECMD="$(which modprobe)"
 
 ########################################################################
+# Screen Dimensions                                                    #
+# Find current screen size                                             #
+# Return the number of columns                                         #
+########################################################################
+screen_size() {
+   if [ -z "${COLUMNS}" ]; then
+      COLUMNS=$(stty size)
+      COLUMNS=${COLUMNS##* }
+   fi
+
+# When using remote connections, such as a serial port, stty size returns 0
+   if [ "${COLUMNS}" = "0" ]; then
+    COLUMNS=80
+   fi
+echo $COLUMNS
+}
+########################################################################
 # start_daemon()                                                       #
 # Usage: start_daemon [-f] [-n nicelevel] [-p pidfile] pathname [args.]#
 #                                                                      #
