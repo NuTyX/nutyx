@@ -27,7 +27,9 @@ umask 022
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 UDEVD=$(which udevd)
 UDEVADM=$(which udevadm)
-
+if [ -f /usr/sbin/syslogd ]; then
+   SYSLOGDCMD="/usr/sbin/syslogd"
+fi
 ## Screen Dimensions
 # Find current screen size
 if [ -z "${COLUMNS}" ]; then
@@ -79,7 +81,6 @@ WARNING_SUFFIX="${BRACKET}[${WARNING} WARN ${BRACKET}]${NORMAL}"
 BOOTLOG=/run/bootlog
 KILLDELAY=0
 ECHOCMD="echo"
-SYSLOGDCMD="/usr/sbin/syslogd"
 SEDCMD="sed"
 MODPROBECMD="$(which modprobe)"
 
@@ -1450,7 +1451,7 @@ do_start_console()
   # show up and the unicode map of the font will not be
   # used.
 
-  for TTY in `grep '^[^#].*respawn:/sbin/agetty' /etc/inittab |
+  for TTY in `grep '^[^#].*respawn:/usr/sbin/agetty' /etc/inittab |
      grep -o '\btty[[:digit:]]*\b'`
    do
      openvt -f -w -c ${TTY#tty} -- \
@@ -1636,6 +1637,7 @@ do_restart_network()
 ########################################################################
 do_start_sysklogd()
 {
+	[ -z "$SYSLOGDCMD" ] && return
 	log_info_msg "Starting system log daemon..."
 	parms=${SYSKLOGD_PARMS-'-m 0'}
 	start_daemon $SYSLOGDCMD $parms
@@ -1643,6 +1645,7 @@ do_start_sysklogd()
 }
 do_stop_sysklogd()
 {
+    [ -z "$SYSLOGDCMD" ] && return
 	log_info_msg "Stopping system log daemon..."
 	killproc $SYSLOGDCMD
 	evaluate_retval

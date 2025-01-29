@@ -718,6 +718,7 @@ kvm:x:61:
 scanner:x:70:
 netdev:x:86:
 unbound:x:88:
+wheel:x:97:
 users:x:999:
 nogroup:x:65534:
 EOF
@@ -1477,22 +1478,22 @@ EOF
     echo "label live
  menu label ^Live
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet live
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro quiet live
 
 label live-debug
  menu label li^ve-Debug
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso live
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro rootdelay=8 testiso live
 
 label live-toram
  menu label live copied to ^RAM
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet live toram
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro quiet live toram
 
 label live-debug-toram
  menu label live-Debug copied to ^RAM
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso live toram
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro rootdelay=8 testiso live toram
 
 " > isolinux/live.cfg
 
@@ -1501,22 +1502,22 @@ label live-debug-toram
 label install
  menu label ^Install
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro quiet
 
 label install-debug
  menu label install-^Debug
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro rootdelay=8 testiso
 
 label install-toram
  menu label Install copied to ^RAM
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro quiet toram
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro quiet toram
 
 label install-debug-toram
  menu label install-Debug copied to RA^M
  kernel /boot/kernel-${VERSION_KERNEL}
- append initrd=/boot/initrd-${VERSION_KERNEL} vga=788 ro rootdelay=8 testiso toram
+ append initrd=/boot/initrd-${VERSION_KERNEL} ro rootdelay=8 testiso toram
 
 " > isolinux/install.cfg
 

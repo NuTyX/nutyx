@@ -656,8 +656,6 @@ rm -f $TMP/SUFFIX
 setup_language()
 {
 $LOCALEDEF -i de_CH -f UTF-8 de_CH.UTF8
-[[ $(screen_size) -gt 120 ]] && SETFONT="$SETFONT -d"
-$SETFONT LatGrkCyr-8x16
 while [ true ]; do
 dialog   \
 --no-ok --no-cancel \
@@ -1092,15 +1090,15 @@ SETUP_CONFIG_LANGUAGE="no"
 }
 setup_keymap ()
 {
-echo 'FONT=LatGrkCyr-8x16' > \
+  [[ $(screen_size) -gt 159 ]] && FONT="-d $FONT"
+
+  echo "FONT=$FONT" > \
   ${VCONSOLE}
-	cat > ${CONSOLE} << "EOF"
-FONT="LatGrkCyr-8x16"
-UNICODE="1"
-LOGLEVEL=1
-EOF
-	mkdir -p $(dirname ${XORGKB})
-	cat > ${XORGKB} << "EOF"
+  echo "FONT=\"$FONT\"
+UNICODE=\"1\"
+LOGLEVEL=1" > ${CONSOLE}
+  mkdir -p $(dirname ${XORGKB})
+  cat > ${XORGKB} << "EOF"
 Section "InputClass"
   Identifier "system-keyboard"
   MatchIsKeyboard "on"
@@ -2250,10 +2248,15 @@ setup_advanced_initrd() {
 				setup_clock
 				;;
 			"$(gettext "Console")")
+				[ -f $CONSOLE ] || setup_keymap
+				cp /etc/profile /etc/profile_original
+				echo clear >> /etc/profile
 				source /etc/profile
 				/usr/sbin/pwconv
 				/usr/sbin/grpconv
-				sh
+				/usr/sbin/agetty -c --autologin root tty1
+				rm /etc/profile
+				mv /etc/profile_original /etc/profile
 				;;
 			"$(gettext "Erase")")
 				echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION" > /dev/tty2
@@ -2583,6 +2586,10 @@ check_root () {
 }
 main () {
 	TMP="$(mktemp -d)"
+	[ -f $CONSOLE ] && source $CONSOLE
+
+	$SETFONT $FONT
+
 	parse_options "$@"
 	if [ "$SETUP_INITRD" == "yes" ]; then
 		top_loop
@@ -2622,6 +2629,9 @@ DHCPCD="$(which dhcpcd)"
 UDEVADM="$(which udevadm)"
 SETFONT="$(which setfont)"
 LOCALEDEF="$(which localedef)"
+
+FONT="LatGrkCyr-8x16"
+
 if [ ! -z "$IWCONFIG" ];then
 	WIFI_NETWORK_CARD="$($IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1)"
 fi
