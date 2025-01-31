@@ -418,10 +418,6 @@ setup_wireless()
 		--colors \
 		--msgbox "\Zb\Z1$(gettext "Cannot create") $WPA_FILE\Zn" 0 0
 	fi
-	mkdir -p /etc/init/single
-  mkdir -p /etc/init/multi
-  ln -sv /lib/init/services/wpa-supplicant /etc/init/single/wpa-supplicant
-  ln -sv /lib/init/services/wpa-supplicant /etc/init/multi/wpa-supplicant
 
 	SETUP_CONFIG_WIFI="no"
 }
@@ -477,7 +473,27 @@ if [ -z ${NETWORK_CARD} ]; then
 fi
 SYSTEMD_NETWORK_DIR=/etc/systemd/network/
 mkdir -p ${SYSTEMD_NETWORK_DIR}
+mkdir -pv /etc/systemd/system/multi-user.target.wants
+mkdir -pv /etc/systemd/system/sockets.target.wants
+mkdir -pv /etc/systemd/system/network-online.target.wants
+
+if [-f /usr/lib/systemd/system/systemd-networkd.service ]; then
+  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
+  /etc/systemd/system/dbus-org.freedesktop.network1.service
+
+  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
+  /etc/systemd/system/multi-user.target.wants/systemd-networkd.service
+
+  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
+  /etc/systemd/system/sockets.target.wants/systemd-networkd.socket
+
+  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
+  /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+
+fi
+
 retval=""
+
 if [ ! -z "${DHCPCD}" ]; then
   while [ "$retval" == "" ]; do
 	dialog  \
@@ -518,8 +534,8 @@ DHCP=yes
 [DHCP]
 UseDomains=true
 " > ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-	if [ -f /lib/systemd/system/dhcpcd@.service ]; then
-		ln -s /lib/systemd/system/dhcpcd@.service \
+	if [ -f /usr/lib/systemd/system/dhcpcd@.service ]; then
+		ln -s /usr/lib/systemd/system/dhcpcd@.service \
 		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
 	fi
 	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
@@ -626,22 +642,6 @@ fi
 
 [ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
 
-mkdir -p /etc/systemd/system/multi-user.target.wants
-mkdir -p /etc/systemd/system/sockets.target.wants
-mkdir -p /etc/systemd/system/network-online.target.wants
-
-ln -sf /lib/systemd/system/systemd-networkd.service \
-/etc/systemd/system/dbus-org.freedesktop.network1.service
-
-ln -sf /lib/systemd/system/systemd-networkd.service \
-/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
-
-ln -sf /lib/systemd/system/systemd-networkd.service \
-/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
-
-ln -sf /lib/systemd/system/systemd-networkd.service \
-/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
-
 if [ "$SETUP_INITRD" == "yes" ]; then
 	/etc/rc.d/init.d/network start
 fi
@@ -656,6 +656,7 @@ rm -f $TMP/SUFFIX
 setup_language()
 {
 $LOCALEDEF -i de_CH -f UTF-8 de_CH.UTF8
+check_font
 while [ true ]; do
 dialog   \
 --no-ok --no-cancel \
@@ -1090,9 +1091,8 @@ SETUP_CONFIG_LANGUAGE="no"
 }
 setup_keymap ()
 {
-  [[ $(screen_size) -gt 159 ]] && FONT="-d $FONT"
-
-  echo "FONT=$FONT" > \
+  check_font
+  echo "FONT=\"$FONT\"" > \
   ${VCONSOLE}
   echo "FONT=\"$FONT\"
 UNICODE=\"1\"
@@ -2551,6 +2551,7 @@ cleanup () {
 }
 
 top_loop() {
+	check_font
 	if [ "$SETUP_INITRD" = "yes" ]; then
 		SETUP_INSTALL="no"
 		LANG=de_CH.utf-8 setup_language
@@ -2584,12 +2585,19 @@ check_root () {
 		exit 1
 	fi
 }
+check_font() {
+	if [ -f $CONSOLE ];then
+	   source $CONSOLE
+	else
+		if [ "$CHECK_CONFIG_FONT" == "yes" ]; then
+			[[ $(screen_size) -gt 160 ]] && FONT="-d $FONT"
+			CHECK_CONFIG_FONT="no"
+		fi
+	fi
+	$SETFONT $FONT
+}
 main () {
 	TMP="$(mktemp -d)"
-	[ -f $CONSOLE ] && source $CONSOLE
-
-	$SETFONT $FONT
-
 	parse_options "$@"
 	if [ "$SETUP_INITRD" == "yes" ]; then
 		top_loop
@@ -2660,6 +2668,7 @@ SETUP_CONFIG_NETWORK="no"
 SETUP_CONFIG_CLOCK="no"
 SETUP_CONFIG_USER="no"
 SETUP_CONFIG_WIFI="no"
+SETUP_CONFIG_FONT="yes"
 
 CHECK_HD_OK="no"
 CHECK_PART_OK="no"
