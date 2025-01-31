@@ -1121,7 +1121,7 @@ do_start_udev()
 
   # Now wait for udevd to process the uevents we triggered
   if ! is_true "$OMIT_UDEV_SETTLE"; then
-     $UDEVADM; settle
+     $UDEVADM settle
   fi
 
   # If any LVM based partitions are on the system, ensure they
