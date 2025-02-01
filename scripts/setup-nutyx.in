@@ -642,9 +642,6 @@ fi
 
 [ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
 
-if [ "$SETUP_INITRD" == "yes" ]; then
-	/etc/rc.d/init.d/network start
-fi
 SETUP_CONFIG_NETWORK="no"
 rm -f $TMP/IP
 rm -f $TMP/BC
