@@ -473,24 +473,6 @@ if [ -z ${NETWORK_CARD} ]; then
 fi
 SYSTEMD_NETWORK_DIR=/etc/systemd/network/
 mkdir -p ${SYSTEMD_NETWORK_DIR}
-mkdir -pv /etc/systemd/system/multi-user.target.wants
-mkdir -pv /etc/systemd/system/sockets.target.wants
-mkdir -pv /etc/systemd/system/network-online.target.wants
-
-if [-f /usr/lib/systemd/system/systemd-networkd.service ]; then
-  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
-  /etc/systemd/system/dbus-org.freedesktop.network1.service
-
-  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
-  /etc/systemd/system/multi-user.target.wants/systemd-networkd.service
-
-  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
-  /etc/systemd/system/sockets.target.wants/systemd-networkd.socket
-
-  ln -sfv /usr/lib/systemd/system/systemd-networkd.service \
-  /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
-
-fi
 
 retval=""
 
@@ -535,6 +517,7 @@ DHCP=yes
 UseDomains=true
 " > ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
 	if [ -f /usr/lib/systemd/system/dhcpcd@.service ]; then
+		mkdir -pv /etc/systemd/system/multi-user.target.wants
 		ln -s /usr/lib/systemd/system/dhcpcd@.service \
 		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
 	fi

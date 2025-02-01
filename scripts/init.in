@@ -318,7 +318,8 @@ rm /init
 chmod 755 /
 chmod 755 /var
 cd /
-cat > "/usr/share/applications/setup-nutyx.desktop" << "EOF"
+if [ -d /usr/share/applications ]; then
+    cat > "/usr/share/applications/setup-nutyx.desktop" << "EOF"
 [Desktop Entry]
 Version=1.0
 Name=Install NuTyX on your machine
@@ -331,6 +332,7 @@ Categories=System;
 Type=Application
 StartupNotification=true
 EOF
+fi
 mkdir -p /root/bin
 cat > /root/bin/setup-nutyx << "EOF"
 #!/bin/sh
