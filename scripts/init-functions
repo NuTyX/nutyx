@@ -1527,6 +1527,9 @@ NM_PIDFILE="/var/run/NetworkManager.pid"
 
 if [ "${MANAGER}" == "" ]; then
   MANAGER="cli"
+  if [ -f /usr/lib/systemd/systemd-networkd ]; then
+    MANAGER="networkd"
+  fi
   if [ -f /usr/sbin/NetworkManager ]; then
      MANAGER="networkmanager"
   fi
@@ -1560,6 +1563,14 @@ do_start_network()
             echo "the package networkmanager seems not to be install"
             echo "check the ${NETWORKCONFIG_FILE} file"
          fi
+      ;;
+      networkd)
+        log_info_msg "Starting Systemd networkd daemon..."
+        systemctl start systemd-networkd
+        evaluate_retval
+        log_info_msg "Starting Systemd resolved daemon..."
+        systemctl start systemd-resolved
+        evaluate_retval
       ;;
       cli)
          # Start all network interfaces

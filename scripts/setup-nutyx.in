@@ -476,7 +476,8 @@ mkdir -p ${SYSTEMD_NETWORK_DIR}
 
 retval=""
 
-if [ ! -z "${DHCPCD}" ]; then
+if [ ! -z "${DHCPCD}" ] ||
+	[ -f /usr/lib/systemd/systemd-networkd ]; then
   while [ "$retval" == "" ]; do
 	dialog  \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
