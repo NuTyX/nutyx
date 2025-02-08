@@ -626,6 +626,8 @@ fi
 
 [ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
 
+[ -f /usr/lib/systemd/systemd-networkd ] && systemctl restart systemd-networkd
+
 SETUP_CONFIG_NETWORK="no"
 rm -f $TMP/IP
 rm -f $TMP/BC

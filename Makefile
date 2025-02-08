@@ -12,12 +12,24 @@ all:
 	$(MAKE) -C $(DIRMAN) all
 	$(MAKE) -C $(DIRSRC) all
 
+all-sysv:
+	$(MAKE) -C $(DIRSCRIPTS) all-sysv
+	$(MAKE) -C $(DIRMAN) all
+	$(MAKE) -C $(DIRSRC) all
+
+
 install: all
 
 	$(MAKE) -C $(DIRSCRIPTS) install
 	$(MAKE) -C $(DIRMAN) install
 	$(MAKE) -C $(DIRSRC) install
+	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
+	po/*
 
+install-sysv: all-sysv
+	$(MAKE) -C $(DIRSCRIPTS) install-sysv
+	$(MAKE) -C $(DIRMAN) install
+	$(MAKE) -C $(DIRSRC) install
 	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
 	po/*
 

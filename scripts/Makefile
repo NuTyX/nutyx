@@ -21,7 +21,9 @@
 
 include ../Makefile.inc
 
-all: init init-functions ipv4-static ipv4-static-route install-nutyx setup-nutyx genfstab xdm-nutyx flushmem ifup ifdown which mkinitramfs
+all: init init-functions install-nutyx setup-nutyx genfstab flushmem which mkinitramfs
+
+all-sysv: all ipv4-static ipv4-static-route xdm-nutyx ifup ifdown
 
 %: %.in
 	sed -e "s/#VERSION#/$(VERSION)/" $< > $@
@@ -35,19 +37,20 @@ install: all
 	ln -sf            install-nutyx $(SBINDIR)/generate-nutyx
 	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
 	install -D -m0755 genfstab $(SBINDIR)/genfstab
-	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
 	install -D -m0755 flushmem $(SBINDIR)/flushmem
-	install -D -m0755 ifup $(SBINDIR)/ifup
-	install -D -m0755 ifdown  $(SBINDIR)/ifdown
 	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
 	install -D -m0755 which $(BINDIR)/which
 	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
 	install -D -m0644 init	$(SERVICEDIR)/init.in
+
+install-sysv: all-sysv
+	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
+	install -D -m0755 ifup $(SBINDIR)/ifup
+	install -D -m0755 ifdown  $(SBINDIR)/ifdown
 	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
 	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
 	install -D -m0755 rc $(ETCDIR)/init.d/rc
 	install -D -m0755 init_single $(ETCDIR)/init.d/init_single
-
 
 
 clean:
@@ -65,10 +68,13 @@ clean:
 	rm -f ipv4-static-route
 
 create-dirs:
+	install -d -m 755 $(ETCDIR)
 	install -d -m 755 $(SERVICEDIR)
 	install -d -m 755 $(SERVICEDIR)/setup-nutyx
 	install -d -m 755 $(VARDIR)/log
 	install -d -m 700 $(ROOTDIR)
+
+create-dirs-sysv: create-dirs
 	install -d -m 755 $(ETCDIR)/rc.d/init.d
 	install -d -m 755 $(ETCDIR)/rc.d/rc0.d
 	install -d -m 755 $(ETCDIR)/rc.d/rc1.d
@@ -80,26 +86,27 @@ create-dirs:
 	install -d -m 755 $(ETCDIR)/rc.d/rcS.d
 	ln -sf rc.d/init.d $(ETCDIR)/init.d
 
-
 files: create-dirs
 	for FILE in halt network reboot \
 	sendsignals sysklogd random; do \
 	ln -sf ../../../lib/lsb/init-functions \
 		$(ETCDIR)/init.d/$${FILE}; \
 	done
-	ln -sf ../../../sbin/setup-nutyx \
-		$(ETCDIR)/init.d/setup-nutyx
 	for FILE in bootlog btmp lastlog wtmp; do \
 		touch $(VARDIR)/log/$${FILE}; \
 	done
-links: rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
-	ln -sf ../../../sbin/setup-nutyx $(ETCDIR)/rc.d/init.d/setup-nutyx
+
+links: create-dirs
 	ln -sf ../proc/self/mounts $(ETCDIR)/mtab
 	ln -sf ../etc/bashrc $(ROOTDIR)/bashrc
 	ln -sf ../etc/profile.d $(ROOTDIR)/profile.d
 	ln -sf services  $(LIBDIR)/lsb
 	ln -sf /run/lock $(VARDIR)/lock
 	ln -sf /run	 $(VARDIR)/run
+
+rc-links: create-dirs-sysv rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
+	ln -sf ../../../sbin/setup-nutyx $(ETCDIR)/rc.d/init.d/setup-nutyx
+
 
 rcS: files
 	ln -sf ../init.d/init_single ${ETCDIR}/rc.d/rcS.d/S00init_single
@@ -138,6 +145,8 @@ rc6: files
 	ln -sf ../init.d/reboot		${ETCDIR}/rc.d/rc6.d/S99reboot
 
 install: links
+
+install-sysv: rc-links
 
 clean:
 

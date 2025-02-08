@@ -47,8 +47,10 @@ mantxt: man $(MANPAGES:=.txt)
 
 install: all
 	install -D -m0644 nutyx.1 $(MANDIR)/man1/nutyx.1
-	install -D -m0644 ifup.8 $(MANDIR)/man8/ifup.8
 	install -D -m0644 genfstab.8 $(MANDIR)/man8/genfstab.8
+
+install-sysv:
+	install -D -m0644 ifup.8 $(MANDIR)/man8/ifup.8
 
 clean:
 	rm -f $(MANPAGES)
