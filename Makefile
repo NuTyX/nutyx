@@ -28,7 +28,7 @@ install: all
 
 install-sysv: all-sysv
 	$(MAKE) -C $(DIRSCRIPTS) install-sysv
-	$(MAKE) -C $(DIRMAN) install
+	$(MAKE) -C $(DIRMAN) install-sysv
 	$(MAKE) -C $(DIRSRC) install
 	bsdtar -czf $(SERVICEDIR)/setup-nutyx/setup-nutyx.locales.gz \
 	po/*
