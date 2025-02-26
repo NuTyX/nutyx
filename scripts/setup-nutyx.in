@@ -35,7 +35,6 @@ error() {
 	info "${FAILURE}ERROR: ${NORMAL}$1" >&2
 	cleanup
 	exit 1
-
 }
 warning() {
 	info "${WARNING}WARNING: ${NORMAL}$1"
@@ -43,11 +42,10 @@ warning() {
 msgbox () {
 	dialog --msgbox "${1}" 0 0
 }
-is_true()
-{
+is_true() {
  [ "$1" = "1" ] || [ "$1" = "yes" ] || [ "$1" = "true" ]
 }
-_zoneinfo(){
+_zoneinfo() {
 	ln -sf ${1} ${2}
 	$SETUP_LOG "setup-nutyx --config-lang" "ln -sv ${1} ${2}"
 }
@@ -77,7 +75,7 @@ _msgfmt() {
 	$SETUP_LOG "setup-nutyx --config-lang" "variable LANG=${1}.utf-8 saved in ${LOCALE}"
 	rm -rf $TD 
 }
-calc(){
+calc() {
         echo "scale=2;$@"|bc
 }
 #
@@ -132,18 +130,15 @@ if [ $(echo $NIC|wc -w) -gt 1 ];then
 	fi
 fi
 }
-check_group_exist()
-{
+check_group_exist() {
 	(getent group "${1}" > /dev/null) && return 1
 	return 0
 }
-check_user_exist()
-{
+check_user_exist() {
 	(getent passwd "${1}" > /dev/null) && return 1
 	return 0
 }
-check_user_valid()
-{
+check_user_valid() {
 	# Parameters:
 	# $1: user name
 	# $2: user description
@@ -172,8 +167,7 @@ check_user_valid()
 	fi
 	return 0
 }
-setup_password()
-{
+setup_password() {
 	local PASSWORD CONFIRM_PASSWORD RESULT
 
 	PASSWORD=""
@@ -204,8 +198,7 @@ setup_password()
 	echo -e "$PASSWORD\n$CONFIRM_PASSWORD"|passwd "$NAME" 2> /dev/null
 	$SETUP_LOG "setup-nutyx --create-user" "$NAME password changed"
 }
-setup_user()
-{
+setup_user() {
 	
 	/usr/sbin/pwconv
 	/usr/sbin/grpconv
@@ -360,8 +353,7 @@ rm $TMP/result
 rm $TMP/networks
 rm $TMP/passwd
 }
-setup_wireless()
-{
+setup_wireless() {
 	local TITLE WPA_FILE returncode WPA_TOOL ESSID KEY
 	WPA_TOOL="$(which wpa_passphrase)"
 	if [ -z "${WPA_TOOL}" ]; then
@@ -421,8 +413,7 @@ setup_wireless()
 
 	SETUP_CONFIG_WIFI="no"
 }
-setup_net() 
-{
+setup_network() {
 	dialog \
 	--title " $(gettext "Name of your machine") " \
 	--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
@@ -636,8 +627,7 @@ rm -f $TMP/GW
 rm -f $TMP/NM
 rm -f $TMP/SUFFIX
 }
-setup_language()
-{
+setup_language() {
 $LOCALEDEF -i de_CH -f UTF-8 de_CH.UTF8
 check_font
 while [ true ]; do
@@ -1072,8 +1062,7 @@ esac
 [ -f ${LOCALE} ] &&  . ${LOCALE}
 SETUP_CONFIG_LANGUAGE="no"
 }
-setup_keymap ()
-{
+setup_keymap() {
   check_font
   echo "FONT=\"$FONT\"" > \
   ${VCONSOLE}
@@ -1307,7 +1296,6 @@ echo "EndSection" >> ${XORGKB}
 $SETUP_LOG "setup-nutyx --config-keymap" "${XORGKB} adjusted"
 SETUP_CONFIG_KEYBOARD="no"
 }
-
 setup_clock() {
 	local TABDATE GOODDATE
 	HWCLOCK=$(LANG=C.utf-8 hwclock -r)
@@ -2225,7 +2213,7 @@ setup_advanced_initrd() {
 				setup_keymap
 				;;
 			"$(gettext "Network")")
-				setup_net
+				setup_network
 				;;
 			"$(gettext "Clock")")
 				setup_clock
@@ -2455,7 +2443,7 @@ parse_options() {
 					;;
 				-cn|--config-net)
 					check_root
-					setup_net
+					setup_network
 					;;
 				-cw|--config-wireless)
 					check_root
@@ -2489,7 +2477,7 @@ parse_options() {
 		done
 	fi
 }
-check_all () {
+check_all() {
 	local RV
 	RV=0
 	if [ "$SETUP_CONFIG_LANGUAGE" = "no" ]; then
@@ -2527,12 +2515,11 @@ check_all () {
 	fi
 	return $RV
 }
-cleanup () {
+cleanup() {
 	if [ ! -z $TMP ]; then
 		[ -d $TMP ] &&  rm -r $TMP
 	fi
 }
-
 top_loop() {
 	check_font
 	if [ "$SETUP_INITRD" = "yes" ]; then
@@ -2555,14 +2542,14 @@ top_loop() {
 			[ "$SETUP_CONFIG_USER" = "yes" ]; do
 				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
 				[ "$SETUP_CONFIG_KEYBOARD" = "yes" ] && setup_keymap
-				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_net
+				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_network
 				[ "$SETUP_CONFIG_CLOCK" = "yes" ] && setup_clock
 				[ "$SETUP_CONFIG_USER" = "yes" ] && setup_user
 		done
 	fi
 
 }
-check_root () {
+check_root() {
 	if [ $UID -ne 0 ]; then
 		echo 1>&2 "$(gettext "Please run this command as root")"
 		exit 1
@@ -2579,7 +2566,7 @@ check_font() {
 	fi
 	$SETFONT $FONT
 }
-main () {
+main() {
 	TMP="$(mktemp -d)"
 	parse_options "$@"
 	if [ "$SETUP_INITRD" == "yes" ]; then
