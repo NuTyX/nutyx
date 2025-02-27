@@ -40,7 +40,7 @@ warning() {
 	info "${WARNING}WARNING: ${NORMAL}$1"
 }
 msgbox () {
-	dialog --msgbox "${1}" 0 0
+	dialog --msgbox "${1}" 6 50
 }
 is_true() {
  [ "$1" = "1" ] || [ "$1" = "yes" ] || [ "$1" = "true" ]
@@ -76,7 +76,7 @@ _msgfmt() {
 	rm -rf $TD 
 }
 calc() {
-        echo "scale=2;$@"|bc
+		echo "scale=2;$@"|bc
 }
 #
 # Main functions
@@ -184,9 +184,9 @@ setup_password() {
 		--insecure "$@" \
 		--passwordbox "$(gettext "Confirm the new password"):" 8 60 2>&1 1>&3)
 
-    if [ "$PASSWORD" == "" ] || [ "$CONFIRM_PASSWORD" == "" ]; then
+	if [ "$PASSWORD" == "" ] || [ "$CONFIRM_PASSWORD" == "" ]; then
 			dialog --msgbox "$(gettext "Password is empty, please try again")" 5 60
-    else
+	else
 			if [ "$PASSWORD" == "$CONFIRM_PASSWORD" ]; then
 				RESULT="true"
 			else
@@ -413,108 +413,7 @@ setup_wireless() {
 
 	SETUP_CONFIG_WIFI="no"
 }
-setup_network() {
-	dialog \
-	--title " $(gettext "Name of your machine") " \
-	--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
-
-	if [ "$(cat $TMP/NAME)" == "" ]; then
-		interrupt
-	else
-		HOSTNAME=$(tail -n 1 $TMP/NAME)
-		echo $HOSTNAME > /etc/hostname
-	fi
-  hostname $HOSTNAME
-	echo "# Begin /etc/hosts
-127.0.0.1 localhost.localdomain localhost $HOSTNAME
-# End /etc/hosts
-" > /etc/hosts
-
-NETWORK_MANAGER="$(which NetworkManager)"
-[ -z $NETWORK_MANAGER ] && NETWORK_MANAGER="$(which connmand)"
-if [ ! -z $NETWORK_MANAGER ]; then
-  SETUP_CONFIG_NETWORK="no"
-  rm -f $TMP/NAME
-  if [ ! -f /etc/sysconfig/network ]; then
-	cat > /etc/sysconfig/network << "EOF"
-#
-# Network manager (networkmanager/cli/<empty>)
-# If empty it will choose automatically
-MANAGER=''
-#
-# Wait or not for network
-NETWORKWAIT='no'
-#
-# init delay for initialisation of Networkmanager
-LINKDELAY='15'
-#
-# init delay to wait after initialisation of Networkmanager
-NETWORKDELAY='0'
-EOF
-	fi
-  return 0
-fi
-network_card_found
-if [ -z ${NETWORK_CARD} ]; then
-	dialog --no-cancel \
-	--title " $(gettext "No Network Adapter available") " \
-	--msgbox " $(gettext "Please add a Network Adapter") " 0 0
-	SETUP_CONFIG_NETWORK="no"
-	return 0
-fi
-SYSTEMD_NETWORK_DIR=/etc/systemd/network/
-mkdir -p ${SYSTEMD_NETWORK_DIR}
-
-retval=""
-
-if [ ! -z "${DHCPCD}" ] ||
-	[ -f /usr/lib/systemd/systemd-networkd ]; then
-  while [ "$retval" == "" ]; do
-	dialog  \
-	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
-	--radiolist "$(gettext "Configuration mode")" \
-	0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
-	"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
-	retval=$?
-	result=$(cat $TMP/result)
-	case $retval in
-		0)
-			if [ "$result" == "" ]; then
-				retval=""
-			fi;;
-		1|255)
-				exit;;
-    esac
-  done
-fi
-if [ "$(cat $TMP/result)" == "$(gettext "Auto")" ];then
-	cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
-ONBOOT="yes"
-SERVICE="dhcpcd"
-DHCP_START=""
-DHCP_STOP="-k "
-# Mettez PRINTIP="yes" pour que le script affiche l'addresse IP
-PRINTIP="no"
-# Mettez PRINTALL="yes" pour que le script affiche tous le détails
-# de la connection réseau
-PRINTALL="no"
-EOF
-  echo "[Match]
-Name=${NETWORK_CARD}
-
-[Network]
-DHCP=yes
-
-[DHCP]
-UseDomains=true
-" > ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-	if [ -f /usr/lib/systemd/system/dhcpcd@.service ]; then
-		mkdir -pv /etc/systemd/system/multi-user.target.wants
-		ln -s /usr/lib/systemd/system/dhcpcd@.service \
-		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
-	fi
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
-else
+setup_static_net() {
 	dialog \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox " $(gettext "Enter an IP address") : " 10 60 "192.168.1.5" 2> $TMP/IP
@@ -559,27 +458,6 @@ else
 	if [ -n ${GW} ]; then
 		ip route add default via ${GW}
 	fi
-	cat > /etc/sysconfig/ifconfig.${NETWORK_CARD} << "EOF"
-ONBOOT=yes
-SERVICE=ipv4-static
-EOF
-  echo "[Match]
-Name=${NETWORK_CARD}
-
-[Network]" > ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: SERVICE=ipv4-static"
-	echo "IP=${IP}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	echo "Address=${IP}" >> ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-	if [ -n ${GW} ]; then
-		echo "GATEWAY=${GW}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-		echo "Gateway=${GW}" >> ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
-		$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
-	fi
-	echo "PREFIX=${PREFIX}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
-	echo "BROADCAST=${BROADCAST}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"
 	if [ -n "${DNS}" ]; then
 		dialog \
 		--title " $(gettext "DNS Search Suffix") " \
@@ -588,17 +466,53 @@ Name=${NETWORK_CARD}
 		$(gettext "Most of the time it's not need"): " 10 60 2> $TMP/SUFFIX
 		SUFFIX=$(tail -n 1 $TMP/SUFFIX)
 		echo "nameserver ${DNS}" > /etc/resolv.conf
-		echo "DNS=${DNS}" >> ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
 		$SETUP_LOG "setup-nutyx --config-net" "/etc/resolv.conf: nameserver ${DNS}"
 		if [ -n "${SUFFIX}" ]; then
-			echo "Domains=${SUFFIX}" >> ${SYSTEMD_NETWORK_DIR}${NETWORK_CARD}.network
 			echo "search ${SUFFIX}" >> /etc/resolv.conf
 			$SETUP_LOG "setup-nutyx --config-net" "/etc/resolv.conf: search ${SUFFIX}"
 		fi
 	fi
-fi
-if [ ! -f /etc/sysconfig/network ]; then
-	cat > /etc/sysconfig/network << "EOF"
+    rm -f $TMP/IP $TMP/BC $TMP/DNS $TMP/GW $TMP/NM $TMP/SUFFIX
+}
+setup_net() {
+# Hostname specification is common in systemV and systemd
+	dialog \
+	--title " $(gettext "Name of your machine") " \
+	--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
+
+	if [ "$(cat $TMP/NAME)" == "" ]; then
+		interrupt
+	else
+		HOSTNAME=$(tail -n 1 $TMP/NAME)
+		echo $HOSTNAME > /etc/hostname
+	fi
+  hostname $HOSTNAME
+# hosts specification is common in systemV and systemd
+	echo "# Begin /etc/hosts
+127.0.0.1 localhost.localdomain localhost $HOSTNAME
+# End /etc/hosts
+" > /etc/hosts
+	[ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
+	network_card_found
+	if [ -z ${NETWORK_CARD} ]; then
+		dialog --no-cancel \
+		--title " $(gettext "No Network Adapter available") " \
+		--msgbox " $(gettext "Please add a Network Adapter") " 0 0
+		SETUP_CONFIG_NETWORK="no"
+		return 0
+	fi
+    if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
+        if [ -z "$NETMANAGER" ]; then
+            setup_networkd
+        else
+            msgbox "Please configure the network via $(basename ${NETMANAGER})"
+        fi
+    else
+        if [ -z "$NETMANAGER" ]; then 
+            setup_networkv
+        else
+            if [ ! -f $NETWORK ]; then
+                cat > $NETWORK << "EOF"
 #
 # Network manager (networkmanager/cli/<empty>)
 # If empty it will choose automatically
@@ -613,19 +527,124 @@ LINKDELAY='15'
 # init delay to wait after initialisation of Networkmanager
 NETWORKDELAY='0'
 EOF
+            fi
+            msgbox "Please configure the network via $NETWORK"
+        fi
+        SETUP_CONFIG_NETWORK="no"
+        rm -f $TMP/NAME
+    fi
+}
+setup_networkv() {
+retval=""
+if [ ! -z "${DHCPCD}" ]; then
+    while [ "$retval" == "" ]; do
+        dialog  \
+        --title " $(gettext "Configuration of") ${NETWORK_CARD} " \
+        --radiolist "$(gettext "Configuration mode")" \
+        0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
+        "$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
+        retval=$?
+        result=$(cat $TMP/result)
+        case $retval in
+            0)
+                if [ "$result" == "" ]; then
+                    retval=""
+                fi;;
+            1|255)
+                exit;;
+        esac
+    done
 fi
+if [ "$(cat $TMP/result)" != "$(gettext "Auto")" ]; then
+    setup_static_net
+    cat > /etc/sysconfig/ifconfig.${NETWORK_CARD} << "EOF"
+ONBOOT=yes
+SERVICE=ipv4-static
+EOF
+    echo "IP=${IP}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+    if [ -n ${GW} ]; then
+        echo "GATEWAY=${GW}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+        $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
+    fi
+    echo "PREFIX=${PREFIX}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
+    echo "BROADCAST=${BROADCAST}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"fi
+else
+    cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
+ONBOOT="yes"
+SERVICE="dhcpcd"
+DHCP_START=""
+DHCP_STOP="-k "
+# PRINTIP="yes" will printout the IP address
+PRINTIP="no"
+# PRINTALL="yes" will printout all details
+PRINTALL="no"
+EOF
+    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
+fi
+}
+setup_networkd() {
+retval=""
+while [ "$retval" == "" ]; do
+	dialog  \
+	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
+	--radiolist "$(gettext "Configuration mode")" \
+	0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
+	"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
+	retval=$?
+	result=$(cat $TMP/result)
+	case $retval in
+		0)
+			if [ "$result" == "" ]; then
+				retval=""
+			fi;;
+		1|255)
+				exit;;
+	esac
+done
+if [ "$(cat $TMP/result)" == "$(gettext "Auto")" ];then
+    echo "[Match]
+Name=${NETWORK_CARD}
 
-[ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
+[Network]
+DHCP=yes
 
-[ -f /usr/lib/systemd/systemd-networkd ] && systemctl restart systemd-networkd
+[DHCP]
+UseDomains=true
+" > ${NETWORK}
+	if [ -f /usr/lib/systemd/system/dhcpcd@.service ]; then
+		mkdir -pv /etc/systemd/system/multi-user.target.wants
+		ln -sf /usr/lib/systemd/system/dhcpcd@.service \
+		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
+	fi
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
+else
+	setup_static_net
+	echo "[Match]
+Name=${NETWORK_CARD}
+
+[Network]" > ${NETWORK}
+
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to static ${IP} Adress"
+	echo "Address=${IP}" >> ${NETWORK}
+	if [ -n ${GW} ]; then
+		echo "Gateway=${GW}" >> ${NETWORK}
+		$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
+	fi
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"
+	if [ -n "${DNS}" ]; then
+		echo "DNS=${DNS}" >> ${NETWORK}
+		if [ -n "${SUFFIX}" ]; then
+			echo "Domains=${SUFFIX}" >> ${NETWORK}
+		fi
+
+	fi
+fi
+# systemctl restart systemd-networkd
 
 SETUP_CONFIG_NETWORK="no"
-rm -f $TMP/IP
-rm -f $TMP/BC
-rm -f $TMP/DNS
-rm -f $TMP/GW
-rm -f $TMP/NM
-rm -f $TMP/SUFFIX
 }
 setup_language() {
 $LOCALEDEF -i de_CH -f UTF-8 de_CH.UTF8
@@ -865,8 +884,8 @@ case ${REPLY} in
 	_msgfmt en_NZ
 	_zoneinfo ${ZONEINFO}Pacific/Auckland ${LOCALTIME};;
  "Indonesia")
-    _msgfmt en_ID
-    _zoneinfo ${ZONEINFO}Asia/Jakarta ${LOCALTIME};;
+	_msgfmt en_ID
+	_zoneinfo ${ZONEINFO}Asia/Jakarta ${LOCALTIME};;
  "Philippines")
 	_msgfmt en_PH
 	_zoneinfo ${ZONEINFO}Asia/Manila ${LOCALTIME};;
@@ -1063,14 +1082,15 @@ esac
 SETUP_CONFIG_LANGUAGE="no"
 }
 setup_keymap() {
-  check_font
-  echo "FONT=\"$FONT\"" > \
-  ${VCONSOLE}
-  echo "FONT=\"$FONT\"
-UNICODE=\"1\"
+	check_font
+	echo "FONT=\"$FONT\"" > \
+	$CONSOLE
+	if [ "${SETUP_CONFIG_SYSTEMD}" != "yes" ]; then
+		echo "UNICODE=\"1\"
 LOGLEVEL=1" > ${CONSOLE}
-  mkdir -p $(dirname ${XORGKB})
-  cat > ${XORGKB} << "EOF"
+	fi
+	mkdir -p $(dirname ${XORGKB})
+	cat > ${XORGKB} << "EOF"
 Section "InputClass"
   Identifier "system-keyboard"
   MatchIsKeyboard "on"
@@ -1214,9 +1234,7 @@ rm -f $TMP/locale.check
 break
 done
 sed -i "/KEYMAP/d" ${CONSOLE}
-sed -i "/KEYMAP/d" ${VCONSOLE}
-echo "KEYMAP=${REPLY}.map" >> ${CONSOLE}
-echo "KEYMAP=${REPLY}" >> ${VCONSOLE}
+echo "KEYMAP=${REPLY}" >> ${CONSOLE}
 
 $SETUP_LOG "setup-nutyx --config-keymap" "KEYMAP=${REPLY}.map saved in ${CONSOLE}"
 loadkeys ${REPLY}.map > /dev/null 2>&1
@@ -1305,27 +1323,28 @@ $(gettext "so that the summer/winter time is changed automatically" ) " 0 0
 	retval=$?
 	case $retval in
 		0)
-			UTC=1;;
-		1)
-			UTC=0;;
-	esac
-
-	echo "UTC=${UTC}" > $CLOCK
-	echo "0.0 0.0" > $ADJTIME
-
-	[ -r /etc/sysconfig/clock ] && . $CLOCK
-
-	case "${UTC}" in
-		1)
-			echo "1
-REMOTE" >> $ADJTIME
+			UTC=1
 			CLOCKPARAMS="${CLOCKPARAMS} --utc";;
-		0)
-			echo "0
-LOCAL" >> $ADJTIME
+		1)
+			UTC=0
 			CLOCKPARAMS="${CLOCKPARAMS} --localtime";;
 	esac
-	
+
+	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
+		echo "0.0 0 0.0" > $CLOCK
+		case "${UTC}" in
+			1)
+				echo "1
+REMOTE" >> $CLOCK;;
+			0)
+				echo "0
+LOCAL" >> $CLOCK;;
+		esac
+	else
+		echo "UTC=${UTC}" > $CLOCK
+		[ -r $CLOCK ] && . $CLOCK
+	fi
+
 	hwclock --hctosys ${CLOCKPARAMS} >/dev/null
 
 	exec 3>&1
@@ -1680,7 +1699,7 @@ install_nutyx() {
 		[ -d ${2}/$DIR ] && rm -rf ${2}/$DIR &> /dev/tty2
 	done
 
-    echo "1"
+	echo "1"
 
 	/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
 	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
@@ -2043,8 +2062,8 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_PART="$(cat $TMP/boot)"
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
-    [ "$FORMAT" != "ext4" ] && \
-    INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
+	[ "$FORMAT" != "ext4" ] && \
+	INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
 
 		echo "
 menuentry \"NuTyX SysV Quiet Mode\" {
@@ -2397,85 +2416,81 @@ initrd_only() {
 	fi
 }
 parse_options() {
-	if [ $# -lt 1 ]; then
-		initrd_only
-	else
-		while [ "$1" ]; do
-			case "${1}" in
-				start)
-					SETUP_START_SERVICE="yes"
-					;;
-				stop)
-					SETUP_UPGRADE="yes"
-					;;
-				-ok|--check-all)
-					SETUP_CHECKALL="yes"
-					;;
-				-sn|--show-net)
-					echo "show net"
-					;;
-				-sk|--show-keymap)
-					echo "show keyboard"
-					;;
-				-sl|--show-locale)
-					echo "show locale"
-					;;
-				-sc|--show-config)
-					echo "show config"
-					;;
-				-sa|--show-all)
-					echo "show all"
-					;;
-				-cl|--config-lang)
-					check_root
-					setup_language
-					;;
-				-ul|--update-lang)
-					[ -f $LOCALE ] || exit 0
-					source $LOCALE
-					_msgfmt ${LANG%.*}
-					exit 0
-					;;
-				-ck|--config-keymap)
-					check_root
-					unset KEYMAP
-					setup_keymap
-					;;
-				-cn|--config-net)
-					check_root
-					setup_network
-					;;
-				-cw|--config-wireless)
-					check_root
-					setup_wireless
-					;;
-				-cc|--config-clock)
-					check_root
-					setup_clock
-					;;
-				-cu|--create-user)
-					check_root
-					setup_user
-					;;
-				-ca|--config-all)
-					echo "config all"
-					;;
-				-v|--version)
-					echo "$(basename ${COMMAND}) $VERSION"
-					exit 0
-					;;
-				-h|--help)
-					print_help
-					exit 0
-					;;
-				*)
-					echo "$(basename ${COMMAND}): invalid option $1"
-					exit 1
-					;;
-			esac
-			shift
-		done
-	fi
+	while [ "$1" ]; do
+		case "${1}" in
+			start)
+				SETUP_START_SERVICE="yes"
+				;;
+			stop)
+				SETUP_UPGRADE="yes"
+				;;
+			-ok|--check-all)
+				SETUP_CHECKALL="yes"
+				;;
+			-sn|--show-net)
+				echo "show net"
+				;;
+			-sk|--show-keymap)
+				echo "show keyboard"
+				;;
+			-sl|--show-locale)
+				echo "show locale"
+				;;
+			-sc|--show-config)
+				echo "show config"
+				;;
+			-sa|--show-all)
+				echo "show all"
+				;;
+			-cl|--config-lang)
+				check_root
+				setup_language
+				;;
+			-ul|--update-lang)
+				[ -f $LOCALE ] || exit 0
+				source $LOCALE
+				_msgfmt ${LANG%.*}
+				exit 0
+				;;
+			-ck|--config-keymap)
+				check_root
+				unset KEYMAP
+				setup_keymap
+				;;
+			-cn|--config-net)
+				check_root
+				setup_net
+				;;
+			-cw|--config-wireless)
+				check_root
+				setup_wireless
+				;;
+			-cc|--config-clock)
+				check_root
+				setup_clock
+				;;
+			-cu|--create-user)
+				check_root
+				setup_user
+				;;
+			-ca|--config-all)
+				echo "config all"
+				;;
+			-v|--version)
+				echo "$(basename ${COMMAND}) $VERSION"
+				exit 0
+				;;
+			-h|--help)
+				print_help
+				exit 0
+				;;
+			*)
+				echo "$(basename ${COMMAND}): invalid option $1"
+				exit 1
+				;;
+		esac
+		shift
+	done
 }
 check_all() {
 	local RV
@@ -2542,7 +2557,7 @@ top_loop() {
 			[ "$SETUP_CONFIG_USER" = "yes" ]; do
 				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
 				[ "$SETUP_CONFIG_KEYBOARD" = "yes" ] && setup_keymap
-				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_network
+				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_net
 				[ "$SETUP_CONFIG_CLOCK" = "yes" ] && setup_clock
 				[ "$SETUP_CONFIG_USER" = "yes" ] && setup_user
 		done
@@ -2568,11 +2583,14 @@ check_font() {
 }
 main() {
 	TMP="$(mktemp -d)"
-	parse_options "$@"
+	if [ $# -lt 1 ]; then
+		initrd_only
+	else
+		parse_options "$@"
+	fi
 	if [ "$SETUP_INITRD" == "yes" ]; then
 		top_loop
 	fi
-
 	if [ "$SETUP_CHECKALL" == "yes" ]; then
 		check_all
 		exit $?
@@ -2590,7 +2608,6 @@ main() {
 	fi
 	cleanup
 }
-
 #
 # VARIABLES
 readonly COMMAND="$0"
@@ -2607,26 +2624,37 @@ DHCPCD="$(which dhcpcd)"
 UDEVADM="$(which udevadm)"
 SETFONT="$(which setfont)"
 LOCALEDEF="$(which localedef)"
-
-FONT="LatGrkCyr-8x16"
+SYSTEMD="$(which systemd-machine-id-setup)"
+NETMANAGER="$(which NetworkManager)"
+[ -z "$NETMANAGER" ] && NETMANAGER="$(which connmand)"
 
 if [ ! -z "$IWCONFIG" ];then
 	WIFI_NETWORK_CARD="$($IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1)"
 fi
 
+if [ -z "${SYSTEMD}" ];then
+	NETWORK="/etc/sysconfig/network"
+	CLOCK="/etc/sysconfig/clock"
+	CONSOLE="/etc/sysconfig/console"
+	SETUP_CONFIG_SYSTEMD="no"
+else
+	NETWORK="/etc/systemd/network/10-default.network"
+	CLOCK="/etc/adjtime"
+	CONSOLE="/etc/vconsole.conf"
+	SETUP_CONFIG_SYSTEMD="yes"
+fi
+
+FONT="LatGrkCyr-8x16"
+
 SETUP_LOG="setup-nutyx-log"
 CARDS="/etc/cards.conf"
 XORGKB="/etc/X11/xorg.conf.d/00-keyboard.conf"
 WAYLKB="/etc/profile.d/keyboard.sh"
-CONSOLE="/etc/sysconfig/console"
-VCONSOLE="/etc/vconsole.conf"
 LOCALE="/etc/profile.d/i18n.sh"
 LOCALECONF="/etc/locale.conf"
 LOCALTIME="/etc/localtime"
 ZONEINFO="/usr/share/zoneinfo/"
-NETWORK="/etc/hostname"
-CLOCK="/etc/sysconfig/clock"
-ADJTIME="/etc/adjtime"
+
 USER="/home"
 EFIVARS="/sys/firmware/efi/efivars"
 
@@ -2644,8 +2672,6 @@ CHECK_HD_OK="no"
 CHECK_PART_OK="no"
 CHECK_SINGLE_PARTITION="no"
 CHECK_SINGLE_DISK="no"
-
-SETUP_LXDM_CONFFILE="/etc/lxdm/lxdm.conf"
 
 main "$@"
 
