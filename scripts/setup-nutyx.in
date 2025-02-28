@@ -13,13 +13,13 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, 
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
 #  USA.
 #
 #
 
 # gettext initialization
-# 
+#
 export TEXTDOMAIN='setup-nutyx'
 export TEXTDOMAINDIR='/usr/share/locale'
 . gettext.sh
@@ -73,7 +73,7 @@ _msgfmt() {
 	echo "export LANG=${1}.utf-8" > ${LOCALE}
 	echo "LANG=${1}.utf-8" > ${LOCALECONF}
 	$SETUP_LOG "setup-nutyx --config-lang" "variable LANG=${1}.utf-8 saved in ${LOCALE}"
-	rm -rf $TD 
+	rm -rf $TD
 }
 calc() {
 		echo "scale=2;$@"|bc
@@ -199,7 +199,7 @@ setup_password() {
 	$SETUP_LOG "setup-nutyx --create-user" "$NAME password changed"
 }
 setup_user() {
-	
+
 	/usr/sbin/pwconv
 	/usr/sbin/grpconv
 	if [ -d /.home ]; then
@@ -472,7 +472,7 @@ setup_static_net() {
 			$SETUP_LOG "setup-nutyx --config-net" "/etc/resolv.conf: search ${SUFFIX}"
 		fi
 	fi
-    rm -f $TMP/IP $TMP/BC $TMP/DNS $TMP/GW $TMP/NM $TMP/SUFFIX
+	rm -f $TMP/IP $TMP/BC $TMP/DNS $TMP/GW $TMP/NM $TMP/SUFFIX
 }
 setup_net() {
 # Hostname specification is common in systemV and systemd
@@ -501,18 +501,18 @@ setup_net() {
 		SETUP_CONFIG_NETWORK="no"
 		return 0
 	fi
-    if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
-        if [ -z "$NETMANAGER" ]; then
-            setup_networkd
-        else
-            msgbox "Please configure the network via $(basename ${NETMANAGER})"
-        fi
-    else
-        if [ -z "$NETMANAGER" ]; then 
-            setup_networkv
-        else
-            if [ ! -f $NETWORK ]; then
-                cat > $NETWORK << "EOF"
+	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
+		if [ -z "$NETMANAGER" ]; then
+			setup_networkd
+		else
+			msgbox "Please configure the network via $(basename ${NETMANAGER})"
+		fi
+	else
+		if [ -z "$NETMANAGER" ]; then
+			setup_networkv
+		else
+			if [ ! -f $NETWORK ]; then
+				cat > $NETWORK << "EOF"
 #
 # Network manager (networkmanager/cli/<empty>)
 # If empty it will choose automatically
@@ -527,51 +527,51 @@ LINKDELAY='15'
 # init delay to wait after initialisation of Networkmanager
 NETWORKDELAY='0'
 EOF
-            fi
-            msgbox "Please configure the network via $NETWORK"
-        fi
-        SETUP_CONFIG_NETWORK="no"
-        rm -f $TMP/NAME
-    fi
+			fi
+			msgbox "Please configure the network via $NETWORK"
+		fi
+	fi
+	SETUP_CONFIG_NETWORK="no"
+	rm -f $TMP/NAME
 }
 setup_networkv() {
 retval=""
 if [ ! -z "${DHCPCD}" ]; then
-    while [ "$retval" == "" ]; do
-        dialog  \
-        --title " $(gettext "Configuration of") ${NETWORK_CARD} " \
-        --radiolist "$(gettext "Configuration mode")" \
-        0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
-        "$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
-        retval=$?
-        result=$(cat $TMP/result)
-        case $retval in
-            0)
-                if [ "$result" == "" ]; then
-                    retval=""
-                fi;;
-            1|255)
-                exit;;
-        esac
-    done
+	while [ "$retval" == "" ]; do
+		dialog  \
+		--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
+		--radiolist "$(gettext "Configuration mode")" \
+		0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
+		"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
+		retval=$?
+		result=$(cat $TMP/result)
+		case $retval in
+			0)
+				if [ "$result" == "" ]; then
+					retval=""
+				fi;;
+			1|255)
+				exit;;
+		esac
+	done
 fi
 if [ "$(cat $TMP/result)" != "$(gettext "Auto")" ]; then
-    setup_static_net
-    cat > /etc/sysconfig/ifconfig.${NETWORK_CARD} << "EOF"
+	setup_static_net
+	cat > /etc/sysconfig/ifconfig.${NETWORK_CARD} << "EOF"
 ONBOOT=yes
 SERVICE=ipv4-static
 EOF
-    echo "IP=${IP}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-    if [ -n ${GW} ]; then
-        echo "GATEWAY=${GW}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-        $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
-    fi
-    echo "PREFIX=${PREFIX}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
-    echo "BROADCAST=${BROADCAST}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"fi
+	echo "IP=${IP}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+	if [ -n ${GW} ]; then
+		echo "GATEWAY=${GW}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+		$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
+	fi
+	echo "PREFIX=${PREFIX}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
+	echo "BROADCAST=${BROADCAST}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"fi
 else
-    cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
+	cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
 ONBOOT="yes"
 SERVICE="dhcpcd"
 DHCP_START=""
@@ -581,7 +581,7 @@ PRINTIP="no"
 # PRINTALL="yes" will printout all details
 PRINTALL="no"
 EOF
-    $SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
+	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
 fi
 }
 setup_networkd() {
@@ -604,7 +604,7 @@ while [ "$retval" == "" ]; do
 	esac
 done
 if [ "$(cat $TMP/result)" == "$(gettext "Auto")" ];then
-    echo "[Match]
+	echo "[Match]
 Name=${NETWORK_CARD}
 
 [Network]
@@ -1598,7 +1598,7 @@ $(gettext "Have fun") :) \n\n\
 $(gettext "Thank you for installing NuTyX") \
 " 0 0
 
-}	
+}
 setup_partition() {
 	echo "Entering setup_partition()" >> /dev/tty2
 	unset DISK_LIST
@@ -2179,7 +2179,7 @@ setup_reboot() {
 	umount /media/cdrom 2>/dev/null
 	eject /dev/nutyx-cd 2>/dev/null
 	dialog --title "    $(gettext "Reboot the PC")    " \
-	--msgbox "  $(gettext "Press OK to reboot the computer")  " 0 0 
+	--msgbox "  $(gettext "Press OK to reboot the computer")  " 0 0
 	/sbin/reboot -f
 }
 setup_advanced_initrd() {
@@ -2512,7 +2512,7 @@ check_all() {
 		RV=$((RV+2))
 	fi
 	if [ ! -r ${CLOCK} ]; then
-		if [ ! -f /etc/rc.d/init.d/ntpd ]; then
+		if [ -z "$NTPD" ]; then
 			SETUP_CONFIG_CLOCK="yes"
 			RV=$((RV+4))
 		fi
@@ -2626,6 +2626,8 @@ SETFONT="$(which setfont)"
 LOCALEDEF="$(which localedef)"
 SYSTEMD="$(which systemd-machine-id-setup)"
 NETMANAGER="$(which NetworkManager)"
+NTPD="$(which ntpd)"
+
 [ -z "$NETMANAGER" ] && NETMANAGER="$(which connmand)"
 
 if [ ! -z "$IWCONFIG" ];then
