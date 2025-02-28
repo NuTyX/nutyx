@@ -506,6 +506,11 @@ setup_net() {
 			setup_networkd
 		else
 			msgbox "Please configure the network via $(basename ${NETMANAGER})"
+			systemctl disable systemd-networkd
+			systemctl disable systemd-resolved
+			systemctl restart $(basename ${NETMANAGER})
+			systemctl enable $(basename ${NETMANAGER})
+
 		fi
 	else
 		if [ -z "$NETMANAGER" ]; then
@@ -531,6 +536,7 @@ EOF
 			msgbox "Please configure the network via $NETWORK"
 		fi
 	fi
+	touch ${NETWORK}
 	SETUP_CONFIG_NETWORK="no"
 	rm -f $TMP/NAME
 }
@@ -613,11 +619,6 @@ DHCP=yes
 [DHCP]
 UseDomains=true
 " > ${NETWORK}
-	if [ -f /usr/lib/systemd/system/dhcpcd@.service ]; then
-		mkdir -pv /etc/systemd/system/multi-user.target.wants
-		ln -sf /usr/lib/systemd/system/dhcpcd@.service \
-		/etc/systemd/system/multi-user.target.wants/dhcpcd@${NETWORK_CARD}.service
-	fi
 	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
 else
 	setup_static_net
@@ -639,11 +640,12 @@ Name=${NETWORK_CARD}
 		if [ -n "${SUFFIX}" ]; then
 			echo "Domains=${SUFFIX}" >> ${NETWORK}
 		fi
-
 	fi
 fi
-# systemctl restart systemd-networkd
-
+systemctl restart systemd-networkd
+systemctl restart systemd-resolved
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
 SETUP_CONFIG_NETWORK="no"
 }
 setup_language() {
