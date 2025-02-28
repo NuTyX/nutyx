@@ -436,12 +436,13 @@ EOF
 }
 
 generate_mouse() {
-FILE="${LFS}/etc/mouse"
+FILE="${LFS}/etc/sysconfig/mouse"
 [ -f $FILE ] && return
 mkdir -p $OPTION ${LFS}/etc/sysconfig
 cat > $FILE << "EOF"
 MDEVICE="/dev/input/mice"
 PROTOCOL="imps2"
+GPMOPTS=""
 EOF
 }
 generate_inputrc() {
@@ -1249,12 +1250,6 @@ install_configuration_files() {
 	generate_readline_sh
 	generate_umask_sh
 	generate_profile
-	if [ -f ${LFS}/usr/lib/systemd/systemd ]; then
-		generate_modules
-		generate_createfiles
-		generate_mouse
-		generate_udev_retry
-	fi
 	generate_etc_bashrc
 	generate_lsb
 	generate_osr
@@ -1658,6 +1653,12 @@ main() {
 	generate_setupfile
 	setup_chroot
 	enter_chroot
+	if [ ! -f ${LFS}/usr/lib/systemd/systemd ]; then
+		generate_modules
+		generate_createfiles
+		generate_mouse
+		generate_udev_retry
+	fi
 	unmountall
 	if [ ! -z "$ISO" ]; then
 		generate_squashfs
