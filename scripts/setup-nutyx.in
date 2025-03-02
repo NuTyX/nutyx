@@ -2646,6 +2646,10 @@ else
 	CLOCK="/etc/adjtime"
 	CONSOLE="/etc/vconsole.conf"
 	SETUP_CONFIG_SYSTEMD="yes"
+	if [ ! -e /etc/machine.id ]; then
+		systemd-machine-id-setup
+	fi
+	systemctl enable getty@
 fi
 
 FONT="LatGrkCyr-8x16"
