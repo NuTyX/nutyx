@@ -508,7 +508,7 @@ setup_net() {
 			msgbox "Please configure the network via $(basename ${NETMANAGER})"
 			systemctl disable systemd-networkd
 			systemctl disable systemd-resolved
-			systemctl restart $(basename ${NETMANAGER})
+#			systemctl start $(basename ${NETMANAGER})
 			systemctl enable $(basename ${NETMANAGER})
 
 		fi
