@@ -476,23 +476,22 @@ setup_static_net() {
 }
 setup_net() {
 # Hostname specification is common in systemV and systemd
-	dialog \
-	--title " $(gettext "Name of your machine") " \
-	--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
-
-	if [ "$(cat $TMP/NAME)" == "" ]; then
-		interrupt
-	else
-		HOSTNAME=$(tail -n 1 $TMP/NAME)
-		echo $HOSTNAME > /etc/hostname
-	fi
-  hostname $HOSTNAME
+	touch $TMP/NAME
+	while [ "$HOSTNAME" == "" ]; do
+		dialog \
+			--title " $(gettext "Name of your machine") " \
+			--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
+	done
+	HOSTNAME=$(tail -n 1 $TMP/NAME)
+	echo $HOSTNAME > /etc/hostname
+	hostname $HOSTNAME
+	[ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
 # hosts specification is common in systemV and systemd
 	echo "# Begin /etc/hosts
 127.0.0.1 localhost.localdomain localhost $HOSTNAME
 # End /etc/hosts
 " > /etc/hosts
-	[ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
+
 	network_card_found
 	if [ -z ${NETWORK_CARD} ]; then
 		dialog --no-cancel \
@@ -508,6 +507,7 @@ setup_net() {
 			msgbox "Please configure the network via $(basename ${NETMANAGER})"
 			systemctl disable systemd-networkd
 			systemctl disable systemd-resolved
+#TODO Findout why
 #			systemctl start $(basename ${NETMANAGER})
 			systemctl enable $(basename ${NETMANAGER})
 
