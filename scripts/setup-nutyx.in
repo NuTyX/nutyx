@@ -477,12 +477,14 @@ setup_static_net() {
 setup_net() {
 # Hostname specification is common in systemV and systemd
 	touch $TMP/NAME
+	HOSTNAME=""
 	while [ "$HOSTNAME" == "" ]; do
+		HOSTNAME="nutyx"
 		dialog \
 			--title " $(gettext "Name of your machine") " \
 			--inputbox " $(gettext "Enter a name") : " 8 40 "$HOSTNAME" 2> $TMP/NAME
+		HOSTNAME=$(cat $TMP/NAME)
 	done
-	HOSTNAME=$(tail -n 1 $TMP/NAME)
 	echo $HOSTNAME > /etc/hostname
 	hostname $HOSTNAME
 	[ ! -f /etc/hostname ] && echo "nutyx" > /etc/hostname
