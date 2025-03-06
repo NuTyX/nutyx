@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NuTyX Configuration tool\n"
-"PO-Revision-Date: 2014-08-07+2000\n"
-"Last-Translator: mahmutov\n"
-"Language-Team: Turkish\n"
-"Language: tr \n"
+"PO-Revision-Date: 2025-03-06+2000\n"
+"Last-Translator: tnut\n"
+"Language-Team: Russian\n"
+"Language: ru \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,55 +64,58 @@ msgid "Enter the subnet mask"
 msgstr "Enter the subnet mask"
 
 msgid "Enter the gateway address"
-msgstr "Enter the gateway address"
+msgstr "Введите адрес шлюза"
 
 msgid "it is normally the address of your router access point"
-msgstr "it is normally the address of your router access point"
+msgstr "обычно это адрес точки доступа вашего маршрутизатора"
 
 msgid "Enter the DNS address"
-msgstr "Enter the DNS address"
+msgstr "Введите адрес DNS"
 
 msgid "DNS Search Suffix"
-msgstr "DNS Search Suffix"
+msgstr "Суффикс поиска DNS"
 
 msgid "Enter the domain name"
-msgstr "Enter the domain name"
+msgstr "Введите имя домена"
 
 msgid "this is only need if you are in a subdomain"
-msgstr "this is only need if you are in a subdomain"
+msgstr "Это необходимо только в том случае, если вы находитесь на поддомене"
 
 msgid "Most of the time it's not need"
-msgstr "Most of the time it's not need"
+msgstr "Чаще всего в этом нет необходимости"
 
 msgid "Start the service"
-msgstr "Start the service"
+msgstr "Запустите службу"
 
 msgid "Checking the configuration, returning true or false"
-msgstr "Checking the configuration, returning true or false"
+msgstr "Проверяет конфигурацию, возвращая true или false"
 
 msgid "Show the network configuration"
-msgstr "Show the network configuration"
+msgstr "Показать конфигурацию сети"
 
 msgid "Show the keyboard configuration"
-msgstr "Show the keyboard configuration"
+msgstr "Показать конфигурацию клавиатуры"
 
 msgid "Show the date and time settings"
-msgstr "Show the date and time settings"
+msgstr "Отображение настроек даты и времени"
 
 msgid "Show the timezone and time adjustment"
-msgstr "Show the timezone and time adjustment"
+msgstr "Отображение часового пояса и настройка времени"
 
 msgid "Show all configurations"
-msgstr "Show the timezone and time adjustment"
+msgstr "Показать все конфигурации"
 
 msgid "Configure the language"
-msgstr "Configure the language"
+msgstr "Настройте язык"
 
 msgid "Configure the keyboard"
-msgstr "Configure the keyboard"
+msgstr "Настройка клавиатуры"
 
 msgid "Configure the network"
-msgstr "Configure the network"
+msgstr "Настройте сеть"
+
+msgid "Please configure the network via "
+msgstr "Пожалуйста, настройте сеть через "
 
 msgid "Date and time settings"
 msgstr "Date and time settings"
@@ -171,6 +174,42 @@ msgstr "Are you sure, you want to cancel the process ?"
 msgid "You already have a copy of the original MBR, I will not make a backup of it"
 msgstr "You already have a copy of the original MBR, I will not make a backup of it"
 
+msgid "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need"
+msgstr "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need"
+
+msgid "Everything OK, do you want to modify"
+msgstr "Everything OK, do you want to modify"
+
+msgid "Something went wrong probably the file system is not supported"
+msgstr "Something went wrong probably the file system is not supported"
+
+msgid "A new"
+msgstr "A new"
+
+msgid "has been created"
+msgstr "has been created"
+
+msgid "it has been adapted to launch the Maintenance system of NuTyX"
+msgstr "it has been adapted to launch the Maintenance system of NuTyX"
+
+msgid "if you choose"
+msgstr "if you choose"
+
+msgid "an simplify VI editor will allow you to modify it"
+msgstr "an simplify VI editor will allow you to modify it"
+
+msgid "Enter the edit mode"
+msgstr "Enter the edit mode"
+
+msgid "Exit the edit mode"
+msgstr "Exit the edit mode"
+
+msgid "Cancel the modifications and exit VI"
+msgstr "Cancel the modifications and exit VI"
+
+msgid "Save and exit VI"
+msgstr "Save and exit VI"
+
 msgid "Good to know"
 msgstr "Good to know"
 
@@ -226,16 +265,16 @@ msgid "Yes"
 msgstr "Yes"
 
 msgid "Choose the disk you want to use for this operation"
-msgstr "Choose the disk you want to use for this operation"
+msgstr "Выберите диск, который вы хотите использовать для этой операции"
 
 msgid "Choose the partition you want to use for this operation"
-msgstr "Choose the partition you want to use for this operation"
+msgstr "Выберите раздел, который вы хотите использовать для этой операции."
 
 msgid "Available file systems"
-msgstr "Available file systems"
+msgstr "Доступные файловые системы"
 
 msgid "Choose the file system you want to use for the partition"
-msgstr "Choose the file system you want to use for the partition"
+msgstr "Выберите файловую систему, которую вы хотите использовать для раздела"
 
 msgid "High performance journaling file system create by SGI"
 msgstr "High performance journaling file system create by SGI"
@@ -259,22 +298,22 @@ msgid "New promising file system"
 msgstr "New promising file system"
 
 msgid "Launch the format process ?"
-msgstr "Launch the format process ?"
+msgstr "Запустить процесс форматирования?"
 
 msgid "The partition"
-msgstr "The partition"
+msgstr "Раздел диска"
 
 msgid "will be formatted in"
-msgstr "will be formatted in"
+msgstr "будет отформатирован в"
 
 msgid "Are you sure you want to continue ?"
-msgstr "Are you sure you want to continue ?"
+msgstr "Вы уверены, что хотите продолжить?"
 
 msgid "No disk available"
-msgstr "No disk available"
+msgstr "Нет доступного диска"
 
 msgid "Please stop the PC and install a harddisk"
-msgstr "Please stop the PC and install a harddisk"
+msgstr "Пожалуйста, остановите компьютер и установите жесткий диск"
 
 msgid "No partition available"
 msgstr "No partition available"
@@ -427,13 +466,13 @@ msgid "Make sure you reserve the first partition for ESP"
 msgstr "Make sure you reserve the first partition for ESP"
 
 msgid "At partitioning, declare the first partition as EFI System"
-msgstr "At partitioning, declare the first partition as EFI System"
+msgstr "При разбиении объявите первый раздел как EFI System"
 
 msgid "EFI partition not found"
 msgstr "EFI partition not found"
 
 msgid "GPT partition table not found"
-msgstr "GPT partition table not found"
+msgstr "Таблица разделов GPT не найдена"
 
 msgid "This installation won't boot again ..."
 msgstr "Эта установка больше не загружается ..."
