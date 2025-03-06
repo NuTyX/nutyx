@@ -506,7 +506,7 @@ setup_net() {
 		if [ -z "$NETMANAGER" ]; then
 			setup_networkd
 		else
-			msgbox "Please configure the network via $(basename ${NETMANAGER})"
+			msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
 			systemctl disable systemd-networkd
 			systemctl disable systemd-resolved
 #TODO Findout why
@@ -535,7 +535,7 @@ LINKDELAY='15'
 NETWORKDELAY='0'
 EOF
 			fi
-			msgbox "Please configure the network via $NETWORK"
+			msgbox "$(gettext "Please configure the network via ")$NETWORK"
 		fi
 	fi
 	touch ${NETWORK}
