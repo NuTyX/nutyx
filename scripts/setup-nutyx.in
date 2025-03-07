@@ -512,14 +512,10 @@ setup_net() {
 #TODO Findout why
 #			systemctl start $(basename ${NETMANAGER})
 			systemctl enable $(basename ${NETMANAGER})
-
 		fi
 	else
-		if [ -z "$NETMANAGER" ]; then
-			setup_networkv
-		else
-			if [ ! -f $NETWORK ]; then
-				cat > $NETWORK << "EOF"
+		if [ ! -f $NETWORK ]; then
+			cat > $NETWORK << "EOF"
 #
 # Network manager (networkmanager/cli/<empty>)
 # If empty it will choose automatically
@@ -534,8 +530,15 @@ LINKDELAY='15'
 # init delay to wait after initialisation of Networkmanager
 NETWORKDELAY='0'
 EOF
-			fi
+		fi
+		if [ -z "$NETMANAGER" ]; then
+			setup_networkv
+		else
 			msgbox "$(gettext "Please configure the network via ")$NETWORK"
+			[ -r $NETWORK ] && . $NETWORK
+			if [ "${MANAGER}" == "cli" ]; then
+				setup_networkv
+			fi
 		fi
 	fi
 	touch ${NETWORK}
