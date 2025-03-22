@@ -2521,6 +2521,8 @@ check_all() {
 	fi
 	if [ ! -r ${NETWORK} ];then
 		SETUP_CONFIG_NETWORK="yes"
+		[ -f /etc/hostname ] && \
+		SETUP_CONFIG_NETWORK="no"
 		RV=$((RV+2))
 	fi
 	if [ ! -r ${CLOCK} ]; then
