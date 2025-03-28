@@ -90,16 +90,14 @@ copy()
 
 BUSYBOX=$(which busybox)
 CPIO=$(which cpio)
-DATADIR=/lib/services
-INITIN=init.in
 
 # Create temporaries working directories
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
 unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
 
 # Create base directory structure
-for DIR in usr/bin usr/sbin usr/share usr/lib/systemd usr/lib/udev/rules.d \
-usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d etc/sysconfig \
+for DIR in usr/bin usr/sbin usr/share usr/lib/udev/rules.d \
+usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d \
 bin dev lib/lsb lib/firmware sbin tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
@@ -244,10 +242,10 @@ EOF
 
 
 # Clock setting
-[ -f /etc/sysconfig/clock ] && cp /etc/sysconfig/clock $WDIR/etc/sysconfig
-
-# Install the init file
-install -m0755 $DATADIR/$INITIN $WDIR/init
+if [ -f /etc/sysconfig/clock ]; then
+   mkdir $WDIR/etc/sysconfig
+   cp /etc/sysconfig/clock $WDIR/etc/sysconfig
+fi
 
 # Install basic binaries
 for f in $xfiles; do
