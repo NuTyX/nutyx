@@ -5,38 +5,38 @@
 
 copyModules() {
 local MODULES
-MODULES="/lib/modules/$KERNEL_VERSION/kernel/crypto \
-     /lib/modules/$KERNEL_VERSION/kernel/fs         \
-     /lib/modules/$KERNEL_VERSION/kernel/lib        \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/hv \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/scsi    \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/message \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/virtio  \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/md      \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/ata     \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/block   \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/mmc     \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/cdrom   \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/nvme    \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/host    \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/storage \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/core    \
-     /lib/modules/$KERNEL_VERSION/kernel/drivers/usb/common"
+MODULES="${MODULES_DIR}/$KERNEL_VERSION/kernel/crypto \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/fs         \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/lib        \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/hv \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/scsi    \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/message \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/virtio  \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/md      \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/ata     \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/block   \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/mmc     \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/cdrom   \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/nvme    \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/usb/host    \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/usb/storage \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/usb/core    \
+     ${MODULES_DIR}/$KERNEL_VERSION/kernel/drivers/usb/common"
 
 printf "Copying $(find $MODULES -type f | wc -l) modules...\n"
 find $MODULES -type f 2> /dev/null | $CPIO --make-directories -p  $WDIR 2> /dev/null
 
-mkdir -p $WDIR/lib/modules/$KERNEL_VERSION
+mkdir -p $WDIR${MODULES_DIR}/$KERNEL_VERSION
 for i in builtin order
 do
-   cp /lib/modules/$KERNEL_VERSION/modules.$i \
-   $WDIR/lib/modules/$KERNEL_VERSION
+   cp ${MODULES_DIR}/$KERNEL_VERSION/modules.$i \
+   $WDIR${MODULES_DIR}/$KERNEL_VERSION
 done
-touch $WDIR/lib/modules/$KERNEL_VERSION/modules.builtin.modinfo
+touch $WDIR${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo
 
-[ -f /lib/modules/$KERNEL_VERSION/modules.builtin.modinfo ] && \
-   cp /lib/modules/$KERNEL_VERSION/modules.builtin.modinfo \
-   $WDIR/lib/modules/$KERNEL_VERSION
+[ -f ${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo ] && \
+   cp ${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo \
+   $WDIR${MODULES_DIR}/$KERNEL_VERSION
 depmod -b $WDIR $KERNEL_VERSION
 }
 
@@ -106,11 +106,12 @@ done
 touch $WDIR/etc/modprobe.d/modprobe.conf
 
 KERNEL_VERSION="$(uname -r)"
+MODULES_DIR="/usr/lib/modules"
 
 if [ -z $1 ]; then
-	if [ ! -d /lib/modules/${KERNEL_VERSION} ]; then
+	if [ ! -d ${MODULES_DIR}/${KERNEL_VERSION} ]; then
 		echo "Error you didn't specify any kernel version !!
-The /lib/modules/${KERNEL_VERSION} directory not exist !!"
+The ${MODULES_DIR}/${KERNEL_VERSION} directory not exist !!"
 
 	else
 		echo "Warning you didn't specify any kernel version !!
@@ -119,9 +120,9 @@ Will try to make for ${KERNEL_VERSION}. If not,"
 	echo "
 ==> Please choose one from following kernel(s) version(s):
 "
-	ls  /lib/modules
+	ls  ${MODULES_DIR}
 	echo ""
-	[ ! -d /lib/modules/${KERNEL_VERSION} ] && exit 1
+	[ ! -d ${MODULES_DIR}/${KERNEL_VERSION} ] && exit 1
 else
 	KERNEL_VERSION=$1
 fi
@@ -130,8 +131,8 @@ INITRAMFS_FILE=initrd-${KERNEL_VERSION}
 
 printf "Creating $INITRAMFS_FILE... \n"
 
-if [ -n "$KERNEL_VERSION" ] && [ ! -d "/lib/modules/$1" ] ; then
-  echo "No /lib/modules/$1 directory"
+if [ -n "$KERNEL_VERSION" ] && [ ! -d "${MODULES_DIR}/$1" ] ; then
+  echo "No ${MODULES_DIR}/$1 directory"
   exit 1
 fi
 
@@ -240,7 +241,6 @@ KERNEL=="isdnctrl[0-9]*",   GROUP="dialout"
 KERNEL=="dcbri[0-9]*",      GROUP="dialout"
 EOF
 
-
 # Clock setting
 if [ -f /etc/sysconfig/clock ]; then
    mkdir $WDIR/etc/sysconfig
@@ -254,7 +254,7 @@ done
 
 for f in lsmod insmod modprobe depmod
 do
-    ln -s kmod $WDIR/bin/$f
+    ln -s kmod $WDIR/usr/sbin/$f
 done
 
 # Install libraries
