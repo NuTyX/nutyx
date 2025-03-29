@@ -5,6 +5,43 @@
 # Based on LFS scripts
 #***********************************************************************
 
+error() {
+        echo "
+ $1
+"
+        ERREUR="yes"
+        end
+        exit 1
+}
+end() {
+        if [ "$ERREUR" == "yes" ]; then
+                if [ ! -f $TMP/depot ]; then
+                        mountpoint ${LFS}/${DEPOT} > /dev/null && umount ${LFS}/${DEPOT}
+
+                        boot_mesg "Cleaning up temporary files.."
+                        boot_mesg "Please correct and start again"
+                fi
+        fi
+        cd ~
+        unmountall $LFS > /dev/null 2>&1
+        rm -f $LFS/$SETUP_FILE
+        rm -rf $TMP
+}
+echo_ok() {
+        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${SUCCESS}  OK  ${BRACKET}]"
+        ${ECHO} -e "${NORMAL}"
+        boot_mesg_flush
+}
+echo_info() {
+        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${INFO} INFO ${BRACKET}]"
+        ${ECHO} -e "${NORMAL}"
+        boot_mesg_flush
+}
+echo_failure() {
+        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${FAILURE} FAIL ${BRACKET}]"
+        ${ECHO} -e "${NORMAL}"
+        boot_mesg_flush
+}
 #***********************************************************************
 # Function - boot_mesg()
 #
@@ -50,21 +87,6 @@ boot_mesg() {
 boot_mesg_flush() {
         # Reset STRING_LENGTH for next message
         STRING_LENGTH="0"
-}
-echo_ok() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${SUCCESS}  OK  ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
-}
-echo_info() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${INFO} INFO ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
-}
-echo_failure() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${FAILURE} FAIL ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
 }
 #***********************************************************************
 # Function - unmountall
@@ -204,28 +226,6 @@ install_pkg() {
         else
                 error "$PackageFileName not found"
         fi
-}
-error() {
-        echo "
- $1
-"
-        ERREUR="yes"
-        end
-        exit 1
-}
-end() {
-        if [ "$ERREUR" == "yes" ]; then
-                if [ ! -f $TMP/depot ]; then
-                        mountpoint ${LFS}/${DEPOT} > /dev/null && umount ${LFS}/${DEPOT}
-
-                        boot_mesg "Cleaning up temporary files.."
-                        boot_mesg "Please correct and start again"
-                fi
-        fi
-        cd ~
-        unmountall $LFS > /dev/null 2>&1
-        rm -f $LFS/$SETUP_FILE
-        rm -rf $TMP
 }
 #***********************************************************************
 # Function getPackageFileName
@@ -1600,8 +1600,6 @@ grub-mkimage -c iso/grub-early.cfg -o EFI/boot/${GRUB_EFI_IMG} \
         -O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
         search search_fs_file || error "grub-mkimage"
 
-# efiboot.img
-modprobe loop
 
 dd if=/dev/zero of=iso/efiboot.img count=4096
 
@@ -1639,6 +1637,12 @@ main() {
 	TMP=$(mktemp -d)
 	check_tools
 	mkdir -p $LFS
+
+	if [ ! -z "$ISO" ]; then
+	# efiboot.img
+		modprobe loop || \
+		error "You probably need to reboot ! Newer kernel ?"
+	fi
 
 	download_pkgadd
 	mkdir -p ${LFS}/var/lib/pkg/DB
