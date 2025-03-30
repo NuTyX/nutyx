@@ -1026,8 +1026,8 @@ if [ "$KERNEL" != "none"  ]; then
 	CORE="core $KERNEL "
 fi
 
-if [ -d $LFS/lib/modules ]; then
-	VERSION_KERNEL="$(basename $LFS/lib/modules/*)"
+if [ -d $LFS/usr/lib/modules ]; then
+	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
 else
 	VERSION_KERNEL=${KERNEL/*-/}
@@ -1056,7 +1056,7 @@ if [ ! -z $ISO ]; then
 fi
 if [ ! -z "$ISO" ];then
 	DEVEL+="
-mkinitramfs \$(basename /lib/modules/*)
+mkinitramfs \$(basename /usr/lib/modules/*)
 mv boot/initrd-* boot/initrd-${VERSION_KERNEL}"
 	if [ -z $MOUNT ]; then
 		DEVEL+="
@@ -1321,7 +1321,7 @@ parse_options() {
 				check_root
 				setup_chroot
 				echo "rm boot/initrd*
-mkinitramfs \$(basename /lib/modules/*)
+mkinitramfs \$(basename /usr/lib/modules/*)
 mv boot/initrd-* boot/initrd-${VERSION_KERNEL}
 exit 0" > $LFS/$SETUP_FILE
 				chmod 177 $LFS/$SETUP_FILE

@@ -275,6 +275,7 @@ LoadModules() {
  squashfs isofs vfat fat nls_cp437
  do
   if [ "$verbose" == "yes" ]; then
+    echo "$MODPROBE -v $i"
     $MODPROBE -v $i
   else
     $MODPROBE $i

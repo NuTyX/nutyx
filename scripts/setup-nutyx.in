@@ -1879,9 +1879,9 @@ setup_grub() {
 	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE \
 	SPNR OPTIONS TARGET VERSION_KERNEL SYSTEM
 
-	VERSION_KERNEL="$(basename /lib/modules/*)"
+	VERSION_KERNEL="$(basename /usr/lib/modules/kernel*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
-	[ $VERSION_KERNEL == "NuTyX" ] && VERSION_KERNEL="stable"
+	[ $VERSION_KERNEL == "kernel" ] && VERSION_KERNEL="stable"
 
 	GRUB_CONFIG_FILE="grub.cfg"
 	GRUB_CONFIG_DIR=""

@@ -3,7 +3,11 @@
 # written by Alexander E. Patrakov and Jeremy Huntwork.
 # adapted by Thierry Nuttens for NuTyX
 
-copyModules() {
+error() {
+    echo "$1"
+    exit 1
+}
+    copyModules() {
 local MODULES
 MODULES="${MODULES_DIR}/$KERNEL_VERSION/kernel/crypto \
      ${MODULES_DIR}/$KERNEL_VERSION/kernel/fs         \
@@ -90,6 +94,7 @@ copy()
 
 BUSYBOX=$(which busybox)
 CPIO=$(which cpio)
+LSBDIR=/lib/lsb
 
 # Create temporaries working directories
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
@@ -131,10 +136,9 @@ INITRAMFS_FILE=initrd-${KERNEL_VERSION}
 
 printf "Creating $INITRAMFS_FILE... \n"
 
-if [ -n "$KERNEL_VERSION" ] && [ ! -d "${MODULES_DIR}/$1" ] ; then
-  echo "No ${MODULES_DIR}/$1 directory"
-  exit 1
-fi
+[ -n "$KERNEL_VERSION" ] && [ ! -d "${MODULES_DIR}/$1" ] && \
+error "No ${MODULES_DIR}/$1 directory"
+
 
 copyFirmwares
 
@@ -181,12 +185,13 @@ if [ -x /usr/sbin/cryptsetup ]; then
 fi
 
 # Install the init-functions
-if [ ! -f /lib/lsb/init-functions ]; then
-    echo "ERROR cannot find /lib/lsb/init-functions file !!!"
-    exit 1
-fi
+install -m0755 $LSBDIR/init-functions $WDIR$LSBDIR/init-functions || \
+error "ERROR cannot find $LSBDIR/init-functions file !!!"
 
-cp /lib/lsb/init-functions $WDIR/lib/lsb/init-functions
+# Install the init script
+install -m0755 $LSBDIR/init.in $WDIR/init || \
+error "ERROR cannot find $LSBDIR/init.in file !!!"
+
 
 cp /etc/group $WDIR/etc
 cp /etc/passwd $WDIR/etc
@@ -246,7 +251,6 @@ if [ -f /etc/sysconfig/clock ]; then
    mkdir $WDIR/etc/sysconfig
    cp /etc/sysconfig/clock $WDIR/etc/sysconfig
 fi
-
 # Install basic binaries
 for f in $xfiles; do
     copy $f
