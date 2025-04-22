@@ -107,6 +107,7 @@ bin dev lib/lsb lib/firmware sbin tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
 done
+[ -d /usr/lib/systemd ] && mkdir -p $WDIR/usr/lib/systemd
 
 touch $WDIR/etc/modprobe.d/modprobe.conf
 
