@@ -1051,7 +1051,7 @@ if [ ! -z $ISO ]; then
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, \
-			xorg, openbox, lxde, jwm, xfce4, mate, gnome, kde6" && exit 1;;
+xorg, openbox, lxde, jwm, xfce4, mate, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
