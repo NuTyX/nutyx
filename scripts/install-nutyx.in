@@ -1009,8 +1009,6 @@ ttf-croscore ttf-carlito vlc firefox gparted scrot"
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
 gnome-themes-extra"
 
-[ -z "$OPENBOX" ] && OPENBOX="lxdm openbox openbox-jp-theme"
-[ -z "$JWM" ] && JWM="lxdm jwm jwm-miyolinux-theme"
 [ -z "$XFCE4" ] && XFCE4="lightdm xfce4 xfce4-extra"
 [ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
@@ -1042,14 +1040,12 @@ if [ ! -z $ISO ]; then
 		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
 		GUI) CORE+="$STRICT $MINI $BASE $CLI $GUI";;
 		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
-		OPENBOX) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $OPENBOX";;
-		JWM) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $JWM";;
 		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
 		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $MATE";;
 		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, \
-xorg, openbox, jwm, xfce4, mate, gnome, kde6" && exit 1;;
+xorg, xfce4, mate, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1276,9 +1272,6 @@ BASE         : $BASE
 CLI          : $CLI
 GUI          : $GUI
 XORG         : $XORG
-OPENBOX      : $OPENBOX
-JWM          : $JWM
-LXDE         : $LXDE
 XFCE4        : $XFCE4
 MATE         : $MATE
 GNOME        : $GNOME
