@@ -147,7 +147,12 @@ void progress_bar(long long current, long long max, int columns);
 
 #define MAX_LINE 16384
 
-void sigwinch_handler()
+void pre_exit_squashfs()
+{
+}
+
+
+static void sigwinch_handler(int arg)
 {
 	struct winsize winsize;
 
@@ -161,19 +166,19 @@ void sigwinch_handler()
 }
 
 
-void sigalrm_handler()
+static void sigalrm_handler(int arg)
 {
 	rotate = (rotate + 1) % 4;
 }
 
 
-int add_overflow(int a, int b)
+static int add_overflow(int a, int b)
 {
 	return (INT_MAX - a) < b;
 }
 
 
-int shift_overflow(int a, int shift)
+static int shift_overflow(int a, int shift)
 {
 	return (INT_MAX >> shift) < a;
 }
