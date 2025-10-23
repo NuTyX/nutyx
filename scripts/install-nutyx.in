@@ -994,9 +994,18 @@ else
         CODE_NAME="Houaphan"
 fi
 
+[ "$KERNEL" = "NONE" ] && KERNEL="none"
+
+if [ "$KERNEL" != "none"  ]; then
+	if [ ! -z $ISO ]; then
+		[ -z $KERNEL ] && KERNEL=kernel
+	fi
+fi
+
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
 [ -z "$LFS" ] && LFS="/mnt/hd"
 
+[ -z "$CORE" ] && CORE="core"
 [ -z "$STRICT" ] && STRICT="$KERNEL"
 [ -z "$MINI" ] && MINI="dhcpcd"
 [ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
@@ -1010,18 +1019,9 @@ xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
 gnome-themes-extra"
 
 [ -z "$XFCE4" ] && XFCE4="lightdm xfce4 xfce4-extra"
-[ -z "$MATE" ] && MATE="lightdm mate"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
 
-[ "$KERNEL" = "NONE" ] && KERNEL="none"
-
-if [ "$KERNEL" != "none"  ]; then
-	if [ ! -z $ISO ]; then
-		[ -z $KERNEL ] && KERNEL=kernel
-	fi
-	CORE="core $KERNEL "
-fi
 
 if [ -d $LFS/usr/lib/modules ]; then
 	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/*)"
@@ -1034,18 +1034,17 @@ fi
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
 	case ${ISO} in
-		STRICT) CORE+="$STRICT";;
-		MINI) CORE+="$STRICT $MINI";;
-		BASE) CORE+="$STRICT $MINI $BASE";;
-		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
-		GUI) CORE+="$STRICT $MINI $BASE $CLI $GUI";;
-		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
-		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
-		MATE) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $MATE";;
-		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
-		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
+		STRICT) CORE+=" $STRICT";;
+		MINI) CORE+=" $STRICT $MINI";;
+		BASE) CORE+=" $STRICT $MINI $BASE";;
+		CLI) CORE+=" $STRICT $MINI $BASE $CLI";;
+		GUI) CORE+=" $STRICT $MINI $BASE $CLI $GUI";;
+		XORG) CORE+=" $STRICT $MINI $BASE $CLI $GUI $XORG";;
+		XFCE4) CORE+=" $STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
+		GNOME) CORE+=" $STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
+		KDE6) CORE+=" $STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
 		*) echo "Valid ISO names: strict, mini, base, cli, gui, \
-xorg, xfce4, mate, gnome, kde6" && exit 1;;
+xorg, xfce4, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -1273,7 +1272,6 @@ CLI          : $CLI
 GUI          : $GUI
 XORG         : $XORG
 XFCE4        : $XFCE4
-MATE         : $MATE
 GNOME        : $GNOME
 KDE6         : $KDE6
 ISO Filename : $ISO_FILE"
