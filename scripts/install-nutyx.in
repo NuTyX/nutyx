@@ -999,7 +999,11 @@ fi
 if [ "$KERNEL" != "none"  ]; then
 	if [ ! -z $ISO ]; then
 		[ -z $KERNEL ] && KERNEL=kernel
+	else
+	    CORE="core $KERNEL"
 	fi
+else
+    unset KERNEL
 fi
 
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
