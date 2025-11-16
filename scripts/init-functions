@@ -25,8 +25,8 @@
 # Setup default values for environment
 umask 022
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-if [ -f /usr/lib/systemd/systemd-udev ]; then
-   UDEVD="/usr/lib/systemd/systemd-udev"
+if [ -f /usr/lib/systemd/systemd-udevd ]; then
+   UDEVD="/usr/lib/systemd/systemd-udevd"
 else
    UDEVD=$(which udevd)
 fi
