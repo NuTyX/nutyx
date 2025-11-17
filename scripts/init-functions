@@ -25,15 +25,7 @@
 # Setup default values for environment
 umask 022
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-if [ -f /usr/lib/systemd/systemd-udevd ]; then
-   UDEVD="/usr/lib/systemd/systemd-udevd"
-else
-   UDEVD=$(which udevd)
-fi
-UDEVADM=$(which udevadm)
-if [ -f /usr/sbin/syslogd ]; then
-   SYSLOGDCMD="/usr/sbin/syslogd"
-fi
+
 ## Screen Dimensions
 # Find current screen size
 if [ -z "${COLUMNS}" ]; then
@@ -1096,6 +1088,13 @@ do_load_modules()
 
 do_start_udev()
 {
+  if [ -f /usr/lib/systemd/systemd-udevd ]; then
+    UDEVD="/usr/lib/systemd/systemd-udevd"
+  else
+    UDEVD=$(which udevd)
+  fi
+  UDEVADM=$(which udevadm)
+
   log_info_msg "Populating /dev with device nodes... "
   if ! grep -q '[[:space:]]sysfs' /proc/mounts; then
      log_failure_msg2
@@ -1641,6 +1640,9 @@ do_restart_network()
 ########################################################################
 do_start_sysklogd()
 {
+    [ -f /usr/sbin/syslogd ] && \
+        SYSLOGDCMD="/usr/sbin/syslogd"
+
 	[ -z "$SYSLOGDCMD" ] && return
 	log_info_msg "Starting system log daemon..."
 	parms=${SYSKLOGD_PARMS-'-m 0'}
