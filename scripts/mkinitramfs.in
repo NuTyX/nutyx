@@ -200,22 +200,25 @@ cp /etc/passwd $WDIR/etc
 
 # echo and false are a bit wird
 if [ -z $BUSYBOX ];then
-	cp /bin/echo $WDIR/bin/echo
-	cp /bin/false $WDIR/bin/false
+  cp /bin/echo $WDIR/bin/echo
+  cp /bin/false $WDIR/bin/false
 else
-	cp $BUSYBOX $WDIR/$BUSYBOX
-	for LINK in $($BUSYBOX  --list)
-	do
-		[ "$LINK" == "$(basename $BUSYBOX)" ] && continue
-		[ "$LINK" == "init" ] && continue
-		ln -s $BUSYBOX $WDIR/sbin/$LINK
-	done
-	if [ -d /etc/mdev.d ]; then
-		[ -f /etc/mdev.conf ] && \
-		cp /etc/mdev.conf $WDIR/etc
-		cp -a /etc/mdev.d $WDIR/etc/mdev.d
-	fi
-	ln -s $BUSYBOX $WDIR/bin/sh
+  cp $BUSYBOX $WDIR/$BUSYBOX
+  for LINK in $($BUSYBOX  --list)
+  do
+    [ "$LINK" == "$(basename $BUSYBOX)" ] && continue
+    [ "$LINK" == "init" ] && continue
+    [ "$LINK" == "ash" ] && continue
+    [ "$LINK" == "sh" ] && continue
+    [ "$LINK" == "bash" ] && continue
+    ln -s ../$BUSYBOX $WDIR/sbin/$LINK
+ done
+  if [ -d /etc/mdev.d ]; then
+    [ -f /etc/mdev.conf ] && \
+    cp /etc/mdev.conf $WDIR/etc
+    cp -a /etc/mdev.d $WDIR/etc/mdev.d
+  fi
+  ln -s ../$BUSYBOX $WDIR/bin/sh
 fi
 
 # terminal stuff
@@ -260,7 +263,7 @@ done
 
 for f in lsmod insmod modprobe depmod
 do
-    ln -s kmod $WDIR/usr/sbin/$f
+    ln -s ../bin/kmod $WDIR/usr/sbin/$f
 done
 
 # Install libraries
