@@ -718,7 +718,7 @@ man:x:29:29:Man Pages:/dev/null:/bin/false
 games:x:60:60:Games High Score Owner:/var/games:/bin/false
 unbound:x:88:88:Unbound DNS resolver:/var/lib/unbound:/bin/false
 anonymous:x:98:99:Unprivileged User:/dev/null:/bin/false
-nobody:x:99:99:Unprivileged User:/dev/null:/bin/false
+nobody:x:65534:65534:Unprivileged User:/dev/null:/bin/false
 EOF
 }
 generate_fstab() {
