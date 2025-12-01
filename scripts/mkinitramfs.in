@@ -158,7 +158,7 @@ fi
 
 # Add mdadm if present
 if [ -x /sbin/mdadm ];then
-    xfiles="$files mdadm"
+    xfiles+=" mdadm"
 
 # Copy the RAID configuration file if present
    [ -f /etc/mdadm.conf ] && cp /etc/mdadm.conf $WDIR/etc
@@ -166,7 +166,7 @@ fi
 
 # Add lvm if present
 if [ -x /sbin/lvm ]; then
-    xfiles="$xfiles lvm dmsetup"
+    xfiles+=" lvm dmsetup"
     for f in lvchange lvrename lvextend lvcreate lvdisplay lvscan pvck \
         pvcreate pvdisplay pvscan vgchange vgcreate vgscan vgrename vgck
     do
@@ -179,7 +179,7 @@ fi
 
 # Add cryptsetup if present
 if [ -x /usr/sbin/cryptsetup ]; then
-    xfiles="$xfiles cryptsetup"
+    xfiles+=" cryptsetup"
     if [ -f /root/.crypto/keyfile.bin ]; then
         mkdir -p $WDIR/root/.crypto
         cp /root/.crypto/keyfile.bin $WDIR/root/.crypto
