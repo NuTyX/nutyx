@@ -508,7 +508,6 @@ setup_net() {
 		else
 			msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
 			systemctl disable systemd-networkd
-			systemctl disable systemd-resolved
 #TODO Findout why
 #			systemctl start $(basename ${NETMANAGER})
 			systemctl enable $(basename ${NETMANAGER})
@@ -648,9 +647,7 @@ Name=${NETWORK_CARD}
 	fi
 fi
 systemctl restart systemd-networkd
-systemctl restart systemd-resolved
 systemctl enable systemd-networkd
-systemctl enable systemd-resolved
 SETUP_CONFIG_NETWORK="no"
 }
 setup_language() {
