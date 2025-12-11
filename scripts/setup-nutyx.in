@@ -508,8 +508,6 @@ setup_net() {
 		else
 			msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
 			systemctl disable systemd-networkd
-#TODO Findout why
-#			systemctl start $(basename ${NETMANAGER})
 			systemctl enable $(basename ${NETMANAGER})
 		fi
 	else
@@ -646,8 +644,6 @@ Name=${NETWORK_CARD}
 		fi
 	fi
 fi
-systemctl restart systemd-networkd
-systemctl enable systemd-networkd
 SETUP_CONFIG_NETWORK="no"
 }
 setup_language() {
@@ -2658,7 +2654,7 @@ else
 	if [ ! -e /etc/machine.id ]; then
 		systemd-machine-id-setup
 	fi
-	systemctl enable getty@
+	systemctl preset-all
 fi
 
 FONT="LatGrkCyr-8x16"
