@@ -1728,11 +1728,7 @@ install_nutyx() {
 	etc/network \
 	etc/mdadm.conf \
 	etc/vconsole.conf \
-	usr/share/locale \
-	etc/systemd/system/multi-user.target.wants \
-	etc/systemd/system/sockets.target.wants \
-	etc/systemd/system/dbus-org.freedesktop.network1.service \
-	etc/systemd/system/network-online.target.wants
+	usr/share/locale
 
 	do
 		if [ -f /$FILE ] || [ -d /$FILE ] || [ -L /$FILE ];then
