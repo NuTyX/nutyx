@@ -2654,7 +2654,10 @@ else
 	if [ ! -e /etc/machine.id ]; then
 		systemd-machine-id-setup
 	fi
-	systemctl preset-all
+  rm -d /etc/systemd/system 2>/dev/null
+  if [ ! -d /etc/systemd/system ]; then
+    systemctl preset-all
+  fi
 fi
 
 FONT="LatGrkCyr-8x16"
