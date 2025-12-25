@@ -31,28 +31,6 @@ all-sysv: all ipv4-static ipv4-static-route xdm-nutyx ifup ifdown
 
 .PHONY:	install clean distclean dist
 
-install: all
-	install -D -m0755 install-nutyx $(SBINDIR)/install-nutyx
-	ln -sf            install-nutyx $(SBINDIR)/chroot-nutyx
-	ln -sf            install-nutyx $(SBINDIR)/generate-nutyx
-	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
-	install -D -m0755 genfstab $(SBINDIR)/genfstab
-	install -D -m0755 flushmem $(SBINDIR)/flushmem
-	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
-	install -D -m0755 which $(BINDIR)/which
-	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
-	install -D -m0644 init	$(SERVICEDIR)/init.in
-
-install-sysv: all-sysv
-	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
-	install -D -m0755 ifup $(SBINDIR)/ifup
-	install -D -m0755 ifdown  $(SBINDIR)/ifdown
-	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
-	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
-	install -D -m0755 rc $(ETCDIR)/init.d/rc
-	install -D -m0755 init_single $(ETCDIR)/init.d/init_single
-
-
 clean:
 	rm -f install-nutyx
 	rm -f setup-nutyx
@@ -73,6 +51,9 @@ create-dirs:
 	install -d -m 755 $(SERVICEDIR)/setup-nutyx
 	install -d -m 755 $(VARDIR)/log
 	install -d -m 700 $(ROOTDIR)
+
+create-dirs-systemd: links
+	install -d -m 755 $(SYSTEMDSERVICEDIR)
 
 create-dirs-sysv: create-dirs
 	install -d -m 755 $(ETCDIR)/rc.d/init.d
@@ -104,7 +85,7 @@ links: create-dirs
 	ln -sf /run/lock $(VARDIR)/lock
 	ln -sf /run	 $(VARDIR)/run
 
-rc-links: create-dirs-sysv rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
+rc-links: links create-dirs-sysv rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
 	ln -sf ../../../sbin/setup-nutyx $(ETCDIR)/rc.d/init.d/setup-nutyx
 
 
@@ -144,9 +125,32 @@ rc6: files
 	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc6.d/K45random
 	ln -sf ../init.d/reboot		${ETCDIR}/rc.d/rc6.d/S99reboot
 
-install: links
+install-services: all create-dirs-systemd
+	install -D -m0755 setup-nutyx.service.in $(SYSTEMDSERVICEDIR)/setup-nutyx.service
 
-install-sysv: rc-links
+install-common-tools:
+	install -D -m0755 install-nutyx $(SBINDIR)/install-nutyx
+	ln -sf            install-nutyx $(SBINDIR)/chroot-nutyx
+	ln -sf            install-nutyx $(SBINDIR)/generate-nutyx
+	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
+	install -D -m0755 genfstab $(SBINDIR)/genfstab
+	install -D -m0755 flushmem $(SBINDIR)/flushmem
+	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
+	install -D -m0755 which $(BINDIR)/which
+	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
+	install -D -m0644 init	$(SERVICEDIR)/init.in
+
+install: install-services install-common-tools
+
+
+install-sysv: all-sysv rc-links install-common-tools
+	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
+	install -D -m0755 ifup $(SBINDIR)/ifup
+	install -D -m0755 ifdown  $(SBINDIR)/ifdown
+	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
+	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
+	install -D -m0755 rc $(ETCDIR)/init.d/rc
+	install -D -m0755 init_single $(ETCDIR)/init.d/init_single
 
 clean:
 
