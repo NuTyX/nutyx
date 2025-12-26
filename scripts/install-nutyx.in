@@ -1651,6 +1651,8 @@ main() {
 		generate_createfiles
 		generate_mouse
 		generate_udev_retry
+	else
+		rm ${LFS}/etc/resolv.conf
 	fi
 	unmountall
 	if [ ! -z "$ISO" ]; then
