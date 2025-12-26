@@ -503,6 +503,8 @@ setup_net() {
 		return 0
 	fi
 	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
+		systemctl restart systemd-resolved
+		systemctl enable  systemd-resolved
 		if [ -z "$NETMANAGER" ]; then
 			setup_networkd
 		else
@@ -644,6 +646,8 @@ Name=${NETWORK_CARD}
 		fi
 	fi
 fi
+systemctl restart systemd-networkd
+systemctl enable systemd-networkd
 SETUP_CONFIG_NETWORK="no"
 }
 setup_language() {
