@@ -284,7 +284,7 @@ LoadModules() {
  done
 }
 ListModules() {
-  lsmod
+  lsmod | more
   printf "Press <enter> to continue ...\n"
   read a
 }
