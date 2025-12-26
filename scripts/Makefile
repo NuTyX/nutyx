@@ -53,7 +53,7 @@ create-dirs:
 	install -d -m 700 $(ROOTDIR)
 
 create-dirs-systemd: links
-	install -d -m 755 $(SYSTEMDSERVICEDIR)
+	install -d -m 755 $(SYSTEMDSERVICEDIR)/sysinit.target.wants
 
 create-dirs-sysv: create-dirs
 	install -d -m 755 $(ETCDIR)/rc.d/init.d
@@ -126,7 +126,8 @@ rc6: files
 	ln -sf ../init.d/reboot		${ETCDIR}/rc.d/rc6.d/S99reboot
 
 install-services: all create-dirs-systemd
-	install -D -m0755 setup-nutyx.service.in $(SYSTEMDSERVICEDIR)/setup-nutyx.service
+	install -D -m0644 setup-nutyx.service.in $(SYSTEMDSERVICEDIR)/setup-nutyx.service
+	ln -sf         ../setup-nutyx.service    $(SYSTEMDSERVICEDIR)/sysinit.target.wants
 
 install-common-tools:
 	install -D -m0755 install-nutyx $(SBINDIR)/install-nutyx
