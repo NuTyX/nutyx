@@ -155,7 +155,7 @@ LZMA_SUPPORT = 0
 include ../Makefile.inc
 
 INCLUDEDIR = -I.
-INSTALL_DIR = $(DESTDIR)/sbin
+INSTALL_DIR = $(DESTDIR)/$(PREFIX)/sbin
 
 UNSQUASHFS_OBJS = unsquashfs.o unsquash-1.o unsquash-2.o unsquash-3.o \
 	unsquash-4.o unsquash-123.o unsquash-34.o unsquash-1234.o unsquash-12.o \
