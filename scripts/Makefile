@@ -21,7 +21,7 @@
 
 include ../Makefile.inc
 
-all: init init-functions install-nutyx setup-nutyx genfstab flushmem which mkinitramfs
+all: init init-functions install-nutyx setup-nutyx setup-vm genfstab flushmem which mkinitramfs
 
 all-sysv: all ipv4-static ipv4-static-route xdm-nutyx ifup ifdown
 
@@ -34,6 +34,7 @@ all-sysv: all ipv4-static ipv4-static-route xdm-nutyx ifup ifdown
 clean:
 	rm -f install-nutyx
 	rm -f setup-nutyx
+	rm -f setup-vm
 	rm -f genfstab
 	rm -f xdm-nutyx
 	rm -f flushmem
@@ -134,6 +135,7 @@ install-common-tools:
 	ln -sf            install-nutyx $(SBINDIR)/chroot-nutyx
 	ln -sf            install-nutyx $(SBINDIR)/generate-nutyx
 	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
+	install -D -m0755 setup-vm $(BINDIR)/setup-vm
 	install -D -m0755 genfstab $(SBINDIR)/genfstab
 	install -D -m0755 flushmem $(SBINDIR)/flushmem
 	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
