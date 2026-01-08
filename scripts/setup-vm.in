@@ -1,0 +1,742 @@
+#!/usr/bin/env bash
+# gettext initialization
+export TEXTDOMAIN='setup-vm'
+export TEXTDOMAINDIR='/usr/share/locale'
+
+. gettext.sh
+
+throw_error() {
+  $ECHOCMD "${RED}$1,$(gettext "Exit") ... ${NORMAL}"
+  exit 1
+}
+print_warning() {
+  $ECHOCMD "${RED}$(gettext "Warning") ..., $1${NORMAL}"
+}
+print_info() {
+  $ECHOCMD "${YELLOW}${1}${NORMAL}"
+}
+print_success() {
+  $ECHOCMD "${GREEN}${1}${NORMAL}"
+}
+show_help () {
+  echo "usage: $(basename $COMMAND) [options]"
+  echo "options"
+  echo ""
+  echo "   -h, --help      $(gettext "Show this help")"
+  echo "   -v, --version   $(gettext "Show the version")"
+}
+config_vm() {
+  check_configfile
+  check_hdd1_file
+  check_hdd2
+  check_hdd3
+  select_uefi_bios_cli
+  setup_iso_disk_cli
+  setup_sndhw_cli
+  setup_vga_cli
+  setup_display_cli
+  setup_qemu_cli
+}
+setup_number_of_cores() {
+  print_info "$(gettext "How many cores will the VM use ? (by default 2)")"
+  read coresquery
+  if [[ -z $coresquery ]]; then
+		cores=2
+		$ECHOCMD "NUMBER_OF_CORES=$cores" >> ${_FULLPATHNAME}/${_NAME}.var
+		print_success "$(gettext "The number of cores allocated to the VM will be") $cores"
+	else
+		cores=$coresquery
+		$ECHOCMD "NUMBER_OF_CORES=$cores" >> ${_FULLPATHNAME}/${_NAME}.var
+		print_success "$(gettext "The number of cores allocated to the VM will be") $cores"
+  fi
+}
+setup_cpu() {
+  print_info "$(gettext "What kind of CPU ? (host by default, kvm32, kvm64, base)")"
+  read cpuquery
+  [[ -z $cpuquery ]] && cpuquery=host
+  case $cpuquery in
+    host)
+		  cpu=host
+      ;;
+    kvm32)
+		  cpu=kvm32
+      ;;
+    kvm64)
+		  cpu=kvm64
+      ;;
+    base)
+		  cpu=base
+      ;;
+    exit)
+		  exit 1
+	    ;;
+    *)
+		  print_warning "$(gettext "The answer is not correct")"
+		  unset cpuquery
+		  setup_cpu
+	    ;;
+  esac
+  $ECHOCMD "CPU_TYPE=$cpu" >> ${_FULLPATHNAME}/${_NAME}.var
+  if [ "$cpu" == "host" ]; then
+	  print_success "$(gettext "The host CPU will be used")" 
+  else
+    print_success "$(gettext "The CPU used will be") $cpu"
+  fi
+}
+setup_tablet() {
+  print_info "$(gettext "Need the tablet pointer support ? (yes or no (by default))")"
+  read tabletquery
+
+  [[ -z $tabletquery ]] && tabletquery=N
+
+  case $tabletquery in
+    Y|y|yes)
+	    tablet="-device usb-tablet"
+		  $ECHOCMD "TABLET_POINTER=YES" >> ${_FULLPATHNAME}/${_NAME}.var
+	    print_success "$(gettext "The tablet pointer support is activated")"
+      ;;
+    N|n|no)
+		  tablet=""
+		  $ECHOCMD "TABLET_POINTER=NONE" >> ${_FULLPATHNAME}/${_NAME}.var
+		  print_success "$(gettext "The tablet pointer support is not activated")"
+      ;;
+    exit)
+		  exit 1
+      ;;
+    *)
+      print_warning "$(gettext "The answer is not correct")"
+      unset tabletquery
+      setup_tablet
+      ;;
+  esac
+}
+
+setup_soundhw() {
+case $displayquery in
+	vnc|spice)
+		sndhw="NONE"
+	  ;;
+	*)
+		print_info "$(gettext "What type of sound card ? (ac97 by default, hda, sb16, none)")"
+		read sndhwquery
+		[[ -z $sndhwquery ]] && sndhwquery=ac97
+		case $sndhwquery in
+      AC97|ac97)
+				sndhw="ac97"
+			  ;;
+			HDA|hda)
+				sndhw="hda"
+			  ;;
+			SB16|sb16)
+				sndhw="sb16"
+			  ;;
+			NONE|none)
+				sndhw=""
+			  ;;
+			exit)
+				exit 1
+			  ;;
+			*)
+				print_warning "$(gettext "The answer is not correct")"
+				unset sndhwquery
+				setup_soundhw
+			  ;;
+		esac
+	  ;;
+esac
+$ECHOCMD "SOUND_CARD_TYPE=${sndhw}" >> ${_FULLPATHNAME}/${_NAME}.var
+if [ "$sndhw" == "NONE" ]; then
+      print_success "$(gettext "No sound card")"
+else
+  	  print_success "$(gettext "The sound card will be") $sndhwquery"
+fi
+}
+
+setup_vga() {
+print_info "$(gettext "What type of graphics card ? (virtio by default, std, cirrus, qxl)")"
+read vgaquery
+[[ -z $vgaquery ]] && vgaquery=VIRTIO
+  case $vgaquery in
+    virtio|Virtio|VIRTIO)
+      vga=virtio
+		  $ECHOCMD "VGA_HARDWARE_TYPE=$vga" >> ${_FULLPATHNAME}/${_NAME}.var
+		  $ECHOCMD "VGA_MEMORY_SIZE=512M" >> ${_FULLPATHNAME}/${_NAME}.var
+      print_info "$(gettext "Do you want OpenGL support, yes or no (by default)")"
+      read glquery
+      [[ -z $glquery ]] && glquery=N
+        case $glquery in
+          Y|y|O|o|yes)
+            gl="-display sdl,gl=on"
+            $ECHOCMD "GL_ACCELERATION=YES" >> ${_FULLPATHNAME}/${_NAME}.var
+		        print_success "$(gettext "OpenGL acceleration is enabled in the VM")"
+	          ;;
+          N|n|no)
+				    gl=""
+				    $ECHOCMD "GL_ACCELERATION=NO" >> ${_FULLPATHNAME}/${_NAME}.var
+				    print_success "$(gettext "No openGL acceleration of the VM")"
+            ;;
+          *)
+				    print_warning "$(gettext "The answer is not correct")"
+				    unset vgaquery
+		        setup_vga
+			      ;;
+		    esac
+        ;;
+    std)
+      vga=std
+		  $ECHOCMD "VGA_HARDWARE_TYPE=$vga" >> ${_FULLPATHNAME}/${_NAME}.var
+        ;;
+    cirrus)
+      vga=cirrus
+		  $ECHOCMD "VGA_HARDWARE_TYPE=$vga" >> ${_FULLPATHNAME}/${_NAME}.var
+		  $ECHOCMD "VGA_MEMORY_SIZE=8M" >> ${_FULLPATHNAME}/${_NAME}.var
+      ;;
+    qxl)
+      vga=qxl
+		  $ECHOCMD "VGA_HARDWARE_TYPE=$vga" >> ${_FULLPATHNAME}/${_NAME}.var
+		  $ECHOCMD "VGA_MEMORY_SIZE=512M" >> ${_FULLPATHNAME}/${_NAME}.var
+      display="spice"
+		  $ECHOCMD "VGA_DISPLAY_TYPE=$display" >> ${_FULLPATHNAME}/${_NAME}.var
+		  $ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
+      $ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+      print_success "$(gettext "The output of the VM will be in SPICE and CG QXL used")"
+      ;;
+    exit)
+      exit 1
+      ;;
+    *)
+      print_warning "$(gettext "The answer is not correct")"
+      unset vgaquery
+      setup_vga
+      ;;
+esac
+print_success "$(gettext "The graphics card will be") $vga"
+}
+
+setup_display() {
+if [[ -z $display ]]; then
+		print_info "$(gettext "What kind of graphics output ? (spice, vnc, egl-headless or local (default))")"
+		read displayquery
+		[[ -z $displayquery ]] && displayquery=local
+		case $displayquery in
+			local)
+				display="-display gtk"
+				$ECHOCMD "VGA_DISPLAY_TYPE=gtk" >> ${_FULLPATHNAME}/${_NAME}.var
+				print_success "$(gettext "The VM will be displayed on your screen")"
+				print_info "$(gettext "Want a full screen graphics output ? (yes, no (default choice)")"
+				read fullscreenquery
+				[[ -z $fullscreenquery ]] && fullscreenquery=N
+				case $fullscreenquery in
+					YES|yes|y|Y)
+						print_success "$(gettext "The VM will be displayed in full screen mode")"
+						$ECHOCMD "LOCAL_FULLSCREEN=yes" >> ${_FULLPATHNAME}/${_NAME}.var
+					;;
+					NO|no|n|N)
+						print_success "$(gettext "The VM will be displayed standard mode")"
+						$ECHOCMD "LOCAL_FULLSCREEN=no" >> ${_FULLPATHNAME}/${_NAME}.var
+					;;
+					*)
+						print_success "$(gettext "Can't understand, fallback to no full screen")"
+						$ECHOCMD "LOCAL_FULLSCREEN=no" >> ${_FULLPATHNAME}/${_NAME}.var
+					;;
+				esac
+			;;
+        		vnc)
+				if [[ -n "$gl" ]]; then
+						print_warning "$(gettext "OpenGL acceleration is not available in VNC")"
+						sed -e "s/GL_ACCELERATION=YES/GL_ACCELERATION=NO/" -i ${_FULLPATHNAME}/${_NAME}.var
+				fi
+				$ECHOCMD "VGA_DISPLAY_TYPE=vnc" >> ${_FULLPATHNAME}/${_NAME}.var
+				$ECHOCMD "REMOTE_PORT=0:0" >> ${_FULLPATHNAME}/${_NAME}.var
+				$ECHOCMD "VNC_LAYOUT=fr" >> ${_FULLPATHNAME}/${_NAME}.var
+				$ECHOCMD "DISPLAY_OPTS=" >> ${_FULLPATHNAME}/${_NAME}.var
+				print_success "$(gettext "The output of the VM will be in VNC localhost: 0, keyboard in FR layout")"
+			  ;;
+			spice)
+				if [[ -n "$gl" ]]; then
+          print_warning "$(gettext "OpenGL acceleration is not available in Spice")"
+          sed -e "s/GL_ACCELERATION=YES/GL_ACCELERATION=NO/" -i ${_FULLPATHNAME}/${_NAME}.var
+        fi
+				display="-spice port=5900,disable-ticketing"
+				$ECHOCMD "VGA_DISPLAY_TYPE=spice" >> ${_FULLPATHNAME}/${_NAME}.var
+				$ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
+				$ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+				print_success "$(gettext "The output of the VM will be in SPICE, port 5900")"
+			  ;;
+			egl-headless)
+        display="-spice port=5900,disable-ticketing"
+        $ECHOCMD "VGA_DISPLAY_TYPE=egl-headless" >> ${_FULLPATHNAME}/${_NAME}.var
+        $ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
+        $ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+        print_success "$(gettext "The output of the VM will be in SPICE, port 5900, 3D acceleration")"
+        ;;
+			exit)
+				exit 1
+			  ;;
+			*)
+				print_warning "$(gettext "The answer is not correct")"
+				setup_display
+			  ;;
+		esac
+fi
+}
+
+setup_network() {
+ print_info "$(gettext "What type of network card ? (virtio by default, e1000, rtl8139")"
+ read netquery
+ [[ -z $netquery ]] && netquery=VIRTIO
+ case $netquery in
+  virtio|Virtio|VIRTIO)
+    net=virtio-net
+    ;;
+  e1000)
+    net=e1000
+    ;;
+  rtl8139|8139)
+    net=rtl8139
+    ;;
+  exit)
+    exit 1
+    ;;
+  *)
+    print_warning "$(gettext "The answer is not correct")"
+    setup_network
+    ;;
+ esac
+ $ECHOCMD "NETWORK_HARDWARE_TYPE=$net" >> ${_FULLPATHNAME}/${_NAME}.var
+ $ECHOCMD "NETWORK_TYPE=user" >> ${_FULLPATHNAME}/${_NAME}.var
+ print_success "$(gettext "The network will have") $net $(gettext "as a device")"
+}
+
+setup_memory() {
+ print_info "$(gettext "How much memory do you want the VM to have ? (Default 2G, specify the unit M, G, T)")"
+ read memquery
+ [[ -z $memquery ]] && memquery=2G
+ print_success "$(gettext "The VM will use") $memquery $(gettext "from RAM")"
+ $ECHOCMD "SYSTEM_MEMORY_SIZE=$memquery" >> ${_FULLPATHNAME}/${_NAME}.var	
+}
+
+check_distro_setup() {
+  [[ $(which qemu-img) == '' ]] && \
+  throw_error "$(gettext "qemu-img is installed on your system.")"
+
+  [[ $(which qemu-system-x86_64) == '' ]] && \
+  throw_error "$(gettext "qemu-system-x86_64 is not installed on your system.")"
+
+  [[ ! -d ${_VM_FOLDER} ]] && \
+  throw_error "${_VM_FOLDER} $(gettext "is not present, please create it")"
+
+  [[ ! -d ${_FULLISOPATH} ]] && \
+  throw_error "${_FULLISOPATH} $(gettext "does not exist, please create it and put your ISOS there")"
+}
+setup_vm_name() {
+ print_info "$(gettext "What is the name of the virtual machine you want to create or run (Without spaces) ?")"
+ $LSBIN --color=auto ${_VM_FOLDER}
+ read _NAME
+ print_success "$(gettext "The name of the VM will be") ${_NAME}"
+
+ _FULLPATHNAME=${_VM_FOLDER}/${_NAME}
+}
+
+check_config_or_start() {
+ source ${_FULLPATHNAME}/${_NAME}.var 2>&1 > /dev/null
+ if [[ $ALREADY_RUN == yes ]]
+	then
+		start_qemu
+	else
+		setup_disk_size
+		select_bios_or_uefi_vm
+		iffirstdiskquery
+		setup_memory
+		setup_cpu
+		setup_number_of_cores
+		setup_network
+		setup_cdrom
+		setup_vga
+		setup_display
+		setup_soundhw
+		setup_tablet
+		start_qemu
+fi
+}
+
+setup_disk_size() {
+_info "What size disk (30G by default) (M for Megabytes, G for Gigabytes, T for Terabytes without spaces) ?"
+
+read _SIZE
+
+[[ -z ${_SIZE} ]] && _SIZE=30G
+
+_success "The disk size will be ${_SIZE}"
+}
+
+select_bios_or_uefi_vm() {
+ print_info "$(gettext "What type of VM do you want ? BIOS (by default) or UEFI :")"
+ read _TYPE
+ [[ -z ${_TYPE} ]] && _TYPE=BIOS
+ case ${_TYPE} in
+   bios|BIOS)
+     create_vm_bios
+     ;;
+   uefi|UEFI)
+     create_vm_uefi
+     ;;
+   *)
+     print_warning "$(gettext "The answer is not correct")"
+     select_bios_or_uefi_vm
+     ;;
+ esac
+ print_success "$(gettext "The machine will be configured in") ${_TYPE}" 
+}
+create_vm_uefi() {
+ local CREATE_STATE
+
+ _OVMF_CHECK=$(find /usr/share -iname "OVMF_VARS.fd")
+
+ [[ -z ${_OVMF_CHECK} ]] && \
+  throw_error "$(gettext "Please install OVMF or related package to create VM with UEFI")"
+
+ if [[ ! -d ${_FULLPATHNAME} ]];then
+   mkdir -pv ${_FULLPATHNAME}
+   $ECHOCMD "ALREADY_RUN=no" > ${_FULLPATHNAME}/${_NAME}.var
+   $ECHOCMD "MONITOR=stdio" >> ${_FULLPATHNAME}/${_NAME}.var
+   $ECHOCMD "MACHINE_NAME=${_NAME}" >> ${_FULLPATHNAME}/${_NAME}.var
+   $ECHOCMD "BIOS_TYPE_INFO=UEFI" >> ${_FULLPATHNAME}/${_NAME}.var
+ fi
+
+if [[ ! -f ${_FULLPATHNAME}/${_NAME}.qcow2 ]]
+        then
+                if [[ $VERBOSE == yes ]]
+                        then
+                                ${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
+                                CREATE_STATE=$?
+                        else
+                                ${_QEMU_IMG_BIN} create -q -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
+                                CREATE_STATE=$?
+                fi
+
+                if [[ $CREATE_STATE -eq 0 ]]
+                        then
+                                _success "${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}"
+                                $ECHOCMD "HDD1_NAME=${_FULLPATHNAME}/${_NAME}.qcow2" >> ${_FULLPATHNAME}/${_NAME}.var
+                                $ECHOCMD "HDD1_SIZE_INFO=${_SIZE}" >> ${_FULLPATHNAME}/${_NAME}.var
+                                $ECHOCMD "OVMF_VAR_DISK_INFO=${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd" >> ${_FULLPATHNAME}/${_NAME}.var
+                                if [[ $VERBOSE == yes ]]
+                                        then
+                                                cp -v $EFIVARS ${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd
+                                        else
+                                                cp $EFIVARS ${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd
+                                fi
+                        else
+                                _error "The command ${_QEMU_IMG_BIN} did not execute correctly"
+                fi
+        else
+                _error "VM disk exists, no creation"
+fi
+}
+
+create_vm_bios() {
+
+if [[ ! -d ${_FULLPATHNAME} ]];then
+  mkdir -pv ${_FULLPATHNAME}
+  $ECHOCMD "ALREADY_RUN=no" > ${_FULLPATHNAME}/${_NAME}.var
+  $ECHOCMD "MONITOR=stdio" >> ${_FULLPATHNAME}/${_NAME}.var
+  $ECHOCMD "MACHINE_NAME=${_NAME}" >> ${_FULLPATHNAME}/${_NAME}.var
+  $ECHOCMD "BIOS_TYPE_INFO=BIOS" >> ${_FULLPATHNAME}/${_NAME}.var
+else
+  throw_error "$(gettext "VM folder exists")"
+fi
+
+if [[ ! -f ${_FULLPATHNAME}/${_NAME}.qcow2 ]]; then
+  ${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
+  CREATE_STATE=$?
+  if [[ $CREATE_STATE -eq 0 ]]; then
+    print_success "${_QEMU_IMG_BIN} $(gettext "create -f qcow2") ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}"
+    $ECHOCMD "HDD1_NAME=${_FULLPATHNAME}/${_NAME}.qcow2" >> ${_FULLPATHNAME}/${_NAME}.var
+    $ECHOCMD "HDD1_SIZE_INFO=${_SIZE}" >> ${_FULLPATHNAME}/${_NAME}.var
+    $ECHOCMD "OVMF_VAR_DISK_INFO=NONE" >> ${_FULLPATHNAME}/${_NAME}.var
+  else
+    throw__error "$(gettext "The command") ${_QEMU_IMG_BIN} $(gettext "did not execute correctly")"
+  fi
+else
+  throw_error "$(gettext "VM disk exists, no creation")"
+fi
+}
+check_if_first_disk() {
+  local TYPE
+  print_info "$(gettext "What interface for the disc 1 ? IDE (by default), virtio or NVMe")"
+  read _IF_QUERY
+  [[ -z ${_IF_QUERY} ]] && _IF_QUERY=ide
+  case ${_IF_QUERY} in
+    ide|IDE)
+      TYPE="IDE"
+      ;;
+    virtio|VIRTIO)
+      TYPE="VIRTIO"
+      ;;
+    nvme|NVME)
+      TYPE="NVME"
+      ;;
+    exit)
+      exit 1
+      ;;
+    *)
+      print_warning "$(gettext "The answer is not correct")"
+      check_if_first_disk
+      ;;
+  esac
+  $ECHOCMD "HDD1_CONTROLLER_TYPE=${_IF_QUERY}" >> ${_FULLPATHNAME}/${_NAME}.var
+  print_success "$(gettext "The disk interface will be") $TYPE"
+}
+check_cdrom() {
+  $LSBIN ${_FULLISOPATH}/ --color=auto
+  print_info "$(gettext "Do you want to use an ISO? (nothing if no ISO)")"
+  read cdrom
+  if [[ ! -z $cdrom ]]; then
+    if [[ -f ${_FULLISOPATH}/$cdrom ]]; then
+      iso="${_FULLISOPATH}/$cdrom"
+		  print_success "$(gettext "ISO file iso / $ cdrom will be used")"
+    else
+		  print_warning "$(gettext "ISO file does not exist")"
+		  unset cdrom
+		  check_cdrom
+		fi
+	else
+    iso="NONE"
+	  print_success "$(gettext "No CD-Rom")"
+fi
+$ECHOCMD "ISO_FILE=$iso" >> ${_FULLPATHNAME}/${_NAME}.var
+}
+
+start_qemu() {
+  source ${_FULLPATHNAME}/${_NAME}.var
+  start_vm ${_NAME}
+  [[ $ALREADY_RUN == no ]] && \
+  sed -e "/ALREADY_RUN/s/no/yes/" -i ${_FULLPATHNAME}/${_NAME}.var
+}
+
+start_vm() {
+vmname_query
+cdromfolder_check
+configorstart
+}
+
+parse_arguments() {
+while [ "$1" ]; do
+  case $1 in
+    -h|--help)
+      show_help
+      exit 0
+      ;;
+    -v|--version)
+      echo "$(basename ${COMMAND}) $VERSION"
+      exit 0
+      ;;
+    -c|--config)
+      config_vm
+      ;;
+  esac
+  shift
+done
+if [[ $# -lt 1 ]]; then
+		_NAME=${_FULLPATHNAME##*/}
+		print_warning "$(gettext "The only argument is missing\n\
+What is the VM you want to start ?")"
+		read _NAME
+		_FULLPATHNAME=${_VM_FOLDER}/${_NAME}
+fi
+}
+
+check_configfile() {
+  [[ ! -f ${_FULLPATHNAME}/${_NAME}.var ]] && \
+  throw_error "${_FULLPATHNAME}/${_NAME}.var \
+$(gettext "VM configuration file does not exist, please pass --config  argument to create it")"
+
+  source ${_FULLPATHNAME}/${_NAME}.var
+  print_success "$(gettext "The disk $HDD1_NAME will be used for the VM\n\
+The VM will boot in $BIOS_TYPE_INFO\n\
+The iso image $ISO_FILE is attached to the VM")"
+}
+
+check_hdd1_file() {
+[[ ! -f $HDD1_NAME ]] &&  \
+ throw_error "$(gettext "The VM hard disk does not exist, please pass --config to create it")"
+}
+
+check_hdd2() {
+if [[ -n $HDD2_NAME ]]
+	then
+		ADD_HDD2="-drive file=${HDD2_NAME},if=${HDD2_CONTROLLER_TYPE,,}"
+		[[ ! -f $HDD2_NAME ]] &&  \
+    throw_error "$(gettext "The second hard disk of the VM does not exist")"
+fi
+}
+
+check_hdd3() {
+if [[ -n $HDD3_NAME ]]; then
+		ADD_HDD3="-drive file=${HDD3_NAME},if=${HDD3_CONTROLLER_TYPE,,}"
+		[[ ! -f $HDD3_NAME ]] &&  \
+    throw_error "$(gettext "The third hard disk of the VM does not exist")"
+fi
+}
+
+select_uefi_bios_cli() {
+case $BIOS_TYPE_INFO in
+	uefi|UEFI)
+		_UEFI_CODE_CMDLINE="-drive if=pflash,format=raw,readonly=on,file=/usr/share/ovmf/x64/OVMF_CODE.fd"
+                _UEFI_VAR_CMDLINE="-drive if=pflash,format=raw,file=$OVMF_VAR_DISK_INFO"
+	;;
+	*)
+		_UEFI_CMDLINE=""
+	;;
+esac
+}
+
+setup_iso_disk_cli() {
+case $ISO_FILE in
+        no|NO|none|NONE|'')
+                _ISO_CMDLINE=""
+        ;;
+        *)
+                _ISO_CMDLINE="-drive file=$ISO_FILE,media=cdrom,if=ide"
+        ;;
+esac
+}
+
+setup_sndhw_cli() {
+  case $SOUND_CARD_TYPE in
+    none|NONE|no)
+      _SNDHW_CMDLINE=""
+      ;;
+    ac97)
+      _SNDHW_CMDLINE="-device AC97"
+      ;;
+    *)
+      _SNDHW_CMDLINE="-device $SOUND_CARD_TYPE"
+      ;;
+  esac
+}
+
+setup_vga_cli() {
+case $VGA_HARDWARE_TYPE in
+        virtio|Virtio|VIRTIO)
+                _VGA_CMDLINE="-device virtio-vga,max_hostmem=$(( ${VGA_MEMORY_SIZE/[A-Z]*/} * 1024 * 1024 ))"
+        ;;
+        qxl|Qxl|QXL)
+                _VGA_CMDLINE="-device qxl-vga,vgamem_mb=${VGA_MEMORY_SIZE/[A-Z]*/}"
+        ;;
+        cirrus|Cirrus|CIRRUS)
+                _VGA_CMDLINE="-device cirrus-vga,vgamem_mb=${VGA_MEMORY_SIZE/[A-Z]*/}"
+        ;;
+        *)
+                _VGA_CMDLINE="-vga $VGA_HARDWARE_TYPE"
+	;;
+esac
+}
+
+setup_display_cli() {
+case $VGA_DISPLAY_TYPE in
+  vnc|VNC)
+          _DISPLAY_CMDLINE="-$VGA_DISPLAY_TYPE $REMOTE_PORT -k $VNC_LAYOUT $DISPLAY_OPTS"
+  ;;
+  spice)
+          _DISPLAY_CMDLINE="-$VGA_DISPLAY_TYPE port=$REMOTE_PORT,$DISPLAY_OPTS -audio spice,id=1"
+  ;;
+	gtk)
+		if [[ $LOCAL_FULLSCREEN == yes ]]; then
+			_DISPLAY_CMDLINE="-display $VGA_DISPLAY_TYPE -full-screen -audio pa,id=1"
+		else
+			_DISPLAY_CMDLINE="-display $VGA_DISPLAY_TYPE -audio pa,id=1"
+		fi
+	;;
+	egl-headless)
+		_DISPLAY_CMDLINE="-display $VGA_DISPLAY_TYPE -spice port=$REMOTE_PORT,$DISPLAY_OPTS -audio spice,id=1"
+	;;
+	*)
+		_DISPLAY_CMDLINE="-display $VGA_DISPLAY_TYPE"
+	;;
+esac
+}
+
+
+setup_qemu_cli() {
+
+print_info "$(gettext "Command line summary :")"
+
+cat << EOF
+
+-M q35 -m $SYSTEM_MEMORY_SIZE -cpu $CPU_TYPE -smp cores=$NUMBER_OF_CORES
+-device $NETWORK_HARDWARE_TYPE,netdev=net0 -netdev $NETWORK_TYPE,id=net0
+-device virtio-balloon
+${_UEFI_CODE_CMDLINE}
+${_UEFI_VAR_CMDLINE}
+-drive file=$HDD1_NAME,if=$HDD1_CONTROLLER_TYPE
+$HDD1_CONTROLLER_EXTRA
+${ADD_HDD2}
+${ADD_HDD3}
+${_ISO_CMDLINE}
+-boot menu=on
+${_VGA_CMDLINE}
+${_SNDHW_CMDLINE}
+-nodefaults
+${_DISPLAY_CMDLINE}
+-usb
+-object rng-random,id=rng0
+-device virtio-rng,id=rng0
+-monitor $MONITOR
+
+EOF
+
+$QEMU_BIN -enable-kvm -M q35 -m $SYSTEM_MEMORY_SIZE -cpu $CPU_TYPE -smp cores=$NUMBER_OF_CORES \
+          -device $NETWORK_HARDWARE_TYPE,netdev=net0 -netdev $NETWORK_TYPE,id=net0 \
+          -device virtio-balloon \
+          ${_UEFI_CODE_CMDLINE} ${_UEFI_VAR_CMDLINE} \
+          -drive file=${HDD1_NAME},if=${HDD1_CONTROLLER_TYPE,,} \
+          $HDD1_CONTROLLER_EXTRA \
+          ${ADD_HDD2} \
+          ${ADD_HDD3} \
+          ${_ISO_CMDLINE} \
+          -boot menu=on  \
+          ${_VGA_CMDLINE} \
+          ${_SNDHW_CMDLINE} \
+          -nodefaults \
+          ${_DISPLAY_CMDLINE} \
+          -usb \
+          -object rng-random,id=rng0 \
+          -device virtio-rng,id=rng0 \
+          -monitor $MONITOR
+}
+main() {
+check_distro_setup
+parse_arguments "$@"
+check_configfile
+check_hdd1_file
+check_hdd2
+check_hdd3
+select_uefi_bios_cli
+setup_iso_disk_cli
+setup_sndhw_cli
+setup_vga_cli
+setup_display_cli
+setup_qemu_cli
+}
+
+# VARIABLES
+readonly COMMAND="$0"
+readonly VERSION="#VERSION#"
+readonly RED='\033[31m'
+readonly NORMAL='\033[0m'
+readonly YELLOW='\033[33m'
+readonly GREEN='\033[32m'
+QEMU_BIN=$(which qemu-system-x86_64)
+ECHOBIN=$(which echo)
+ECHOCMD="$ECHOBIN -e"
+LSBIN=$(which ls)
+_NAME=$1
+_VM_FOLDER=$HOME/VM-qemu
+_FULLISOPATH=${_VM_FOLDER}/iso
+EFIVARS=/usr/share/ovmf/x64/OVMF_VARS.fd
+
+main "$@"
+
+# vim:set ts=2 :
