@@ -23,7 +23,8 @@ show_help () {
   echo "usage: $(basename $COMMAND) [options]"
   echo "options"
   echo ""
-  echo "   -c, --config    $(gettext "Config a virual machine")"
+  echo "   -V, --verbose   $(gettext "Verbose mode")"
+  echo "   -c, --config    $(gettext "Config a virtual machine")"
   echo "   -h, --help      $(gettext "Show this help")"
   echo "   -v, --version   $(gettext "Show the version")"
 }
@@ -127,8 +128,11 @@ setup_tablet() {
 }
 setup_soundhw() {
 case $displayquery in
-  vnc|spice)
-    sndhw="NONE"
+  vnc)
+    sndhw=""
+    ;;
+  spice)
+    sndhw="ac97"
     ;;
   *)
     print_info "$(gettext "What type of sound card ? \
@@ -146,7 +150,7 @@ case $displayquery in
         sndhw="sb16"
         ;;
       NONE|none)
-        sndhw=""
+        sndhw="NONE"
         ;;
       exit)
         exit 1
@@ -188,7 +192,7 @@ setup_vga() {
         N|n|no)
           gl=""
           $ECHOCMD "GL_ACCELERATION=NO" >> ${_FULLPATHNAME}/${_NAME}.var
-          print_success "$(gettext "No openGL acceleration of the VM")"
+          print_success "$(gettext "No OpenGL acceleration of the VM")"
           ;;
         *)
           print_warning "$(gettext "The answer is not correct")"
@@ -213,7 +217,7 @@ setup_vga() {
       display="spice"
       $ECHOCMD "VGA_DISPLAY_TYPE=$display" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
-      $ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+      $ECHOCMD "DISPLAY_OPTS=disable-ticketing=on" >> ${_FULLPATHNAME}/${_NAME}.var
       print_success "$(gettext "The output of the VM will be in SPICE and CG QXL used")"
       ;;
     exit)
@@ -271,17 +275,17 @@ setup_display() {
           print_warning "$(gettext "OpenGL acceleration is not available in Spice")"
           sed -e "s/GL_ACCELERATION=YES/GL_ACCELERATION=NO/" -i ${_FULLPATHNAME}/${_NAME}.var
         fi
-        display="-spice port=5900,disable-ticketing"
+        display="-spice port=5900,disable-ticketing=on"
         $ECHOCMD "VGA_DISPLAY_TYPE=spice" >> ${_FULLPATHNAME}/${_NAME}.var
         $ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
-        $ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+        $ECHOCMD "DISPLAY_OPTS=disable-ticketing=on" >> ${_FULLPATHNAME}/${_NAME}.var
         print_success "$(gettext "The output of the VM will be in SPICE, port 5900")"
         ;;
       egl-headless)
-        display="-spice port=5900,disable-ticketing"
+        display="-spice port=5900,disable-ticketing=on"
         $ECHOCMD "VGA_DISPLAY_TYPE=egl-headless" >> ${_FULLPATHNAME}/${_NAME}.var
         $ECHOCMD "REMOTE_PORT=5900" >> ${_FULLPATHNAME}/${_NAME}.var
-        $ECHOCMD "DISPLAY_OPTS=disable-ticketing" >> ${_FULLPATHNAME}/${_NAME}.var
+        $ECHOCMD "DISPLAY_OPTS=disable-ticketing=on" >> ${_FULLPATHNAME}/${_NAME}.var
         print_success "$(gettext "The output of the VM will be in SPICE, port 5900, 3D acceleration")"
         ;;
       exit)
@@ -296,7 +300,7 @@ setup_display() {
 }
 setup_network() {
   print_info "$(gettext "What type of network card ? \
-(virtio by default, e1000, rtl8139")"
+(virtio by default, e1000, rtl8139)")"
   read netquery
   [[ -z $netquery ]] && netquery=VIRTIO
   case $netquery in
@@ -334,7 +338,7 @@ setup_memory() {
 check_distro_setup() {
   _QEMU_IMG_BIN=$(which qemu-img)
   [[ ${_QEMU_IMG_BIN} == '' ]] && \
-  throw_error "$(gettext "qemu-img is installed on your system.")"
+  throw_error "$(gettext "qemu-img is not installed on your system.")"
 
   [[ $(which qemu-system-x86_64) == '' ]] && \
   throw_error "$(gettext "qemu-system-x86_64 is not installed on your system.")"
@@ -401,33 +405,30 @@ select_bios_or_uefi_vm() {
   print_success "$(gettext "The machine will be configured in") ${_TYPE}"
 }
 create_vm_uefi() {
-  local CREATE_STATE
+  local CREATE_STATE VERB
   _OVMF_CHECK=$(find /usr/share -iname "OVMF_VARS.fd")
   [[ -z ${_OVMF_CHECK} ]] && \
    throw_error "$(gettext "Please install OVMF or related package to create VM with UEFI")"
-  mkdir -pv ${_FULLPATHNAME}
+  [[ $VERBOSE == yes ]] && VERB="-v"
+  mkdir -p $VERB ${_FULLPATHNAME}
   $ECHOCMD "ALREADY_RUN=no" > ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "MONITOR=stdio" >> ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "MACHINE_NAME=${_NAME}" >> ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "BIOS_TYPE_INFO=UEFI" >> ${_FULLPATHNAME}/${_NAME}.var
+  VERB=""
   if [[ ! -f ${_FULLPATHNAME}/${_NAME}.qcow2 ]]; then
-    if [[ $VERBOSE == yes ]]; then
-      ${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
-      CREATE_STATE=$?
-    else
-      ${_QEMU_IMG_BIN} create -q -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
-      CREATE_STATE=$?
-    fi
+    [[ $VERBOSE == yes ]] || VERB="-q"
+    ${_QEMU_IMG_BIN} create $VERB -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
+    CREATE_STATE=$?
+    VERB=""
     if [[ $CREATE_STATE -eq 0 ]]; then
+      [[ $VERBOSE == yes ]] && \
       print_success "${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}"
       $ECHOCMD "HDD1_NAME=${_FULLPATHNAME}/${_NAME}.qcow2" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "HDD1_SIZE_INFO=${_SIZE}" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "OVMF_VAR_DISK_INFO=${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd" >> ${_FULLPATHNAME}/${_NAME}.var
-      if [[ $VERBOSE == yes ]]; then
-        cp -v $EFIVARS ${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd
-      else
-        cp $EFIVARS ${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd
-      fi
+      [[ $VERBOSE == yes ]] && VERB="-v"
+      cp $VERB $EFIVARS ${_FULLPATHNAME}/OVMF_VARS_${_NAME}.fd
     else
       throw_error "$(gettext "The command") ${_QEMU_IMG_BIN} $(gettext "did not execute correctly")"
     fi
@@ -436,17 +437,21 @@ create_vm_uefi() {
   fi
 }
 create_vm_bios() {
-  mkdir -pv ${_FULLPATHNAME}
+  local VERB
+  [[ $VERBOSE == yes ]] && VERB="-v"
+  mkdir -p $VERB ${_FULLPATHNAME}
   $ECHOCMD "ALREADY_RUN=no" > ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "MONITOR=stdio" >> ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "MACHINE_NAME=${_NAME}" >> ${_FULLPATHNAME}/${_NAME}.var
   $ECHOCMD "BIOS_TYPE_INFO=BIOS" >> ${_FULLPATHNAME}/${_NAME}.var
-
   if [[ ! -f ${_FULLPATHNAME}/${_NAME}.qcow2 ]]; then
-    ${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
+    [[ $VERBOSE == yes ]] || VERB="-q"
+    ${_QEMU_IMG_BIN} create $VERB -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}
     CREATE_STATE=$?
+    VERB=""
     if [[ $CREATE_STATE -eq 0 ]]; then
-      print_success "${_QEMU_IMG_BIN} $(gettext "create -f qcow2") ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}"
+      [[ $VERBOSE == yes ]] && \
+      print_success "${_QEMU_IMG_BIN} create -f qcow2 ${_FULLPATHNAME}/${_NAME}.qcow2 ${_SIZE}"
       $ECHOCMD "HDD1_NAME=${_FULLPATHNAME}/${_NAME}.qcow2" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "HDD1_SIZE_INFO=${_SIZE}" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "OVMF_VAR_DISK_INFO=NONE" >> ${_FULLPATHNAME}/${_NAME}.var
@@ -526,22 +531,30 @@ while [ "$1" ]; do
       echo "$(basename ${COMMAND}) $VERSION"
       exit 0
       ;;
+    -V|--verbose)
+      VERBOSE="yes"
+      shift
+      ;;
     -c|--config)
       shift
       [[ -z $1 ]] && throw_error "$(gettext "No name specified")"
       _NAME=$1
       _FULLPATHNAME=${_VM_FOLDER}/${_NAME}
-      config_vm
+      CONFIG_MODE="yes"
+      shift
+      ;;
+    -*)
+      throw_error "$(basename $0) $1: $(gettext "invalid option")"
       ;;
     *)
       break
       ;;
   esac
 done
+[[ $CONFIG_MODE == "yes" ]] && config_vm
 if [[ $# -lt 1 ]]; then
   ls --color=auto ${_VM_FOLDER}
-  print_warning "$(gettext "The only argument is missing\n\
-What is the VM you want to start ?")"
+  print_warning "$(gettext "The only argument is missing, what is the VM you want to start ?")"
   read _NAME
   _FULLPATHNAME=${_VM_FOLDER}/${_NAME}
 else
@@ -555,9 +568,10 @@ check_configfile() {
 $(gettext "VM configuration file does not exist, please pass --config  argument to create it")"
 
   source ${_FULLPATHNAME}/${_NAME}.var
-  print_success "$(gettext "The disk $HDD1_NAME will be used for the VM\n\
-The VM will boot in $BIOS_TYPE_INFO\n\
-The iso image $ISO_FILE is attached to the VM")"
+  print_success "$(gettext "The disk") $HDD1_NAME \
+$(gettext "will be used for the VM,\n\
+the VM will boot in") $BIOS_TYPE_INFO\n\
+$(gettext "The iso image") $ISO_FILE $(gettext "is attached to the VM")"
 }
 check_hdd1_file() {
   [[ ! -f $HDD1_NAME ]] &&  \
@@ -592,14 +606,14 @@ esac
 }
 
 setup_iso_disk_cli() {
-case $ISO_FILE in
-        no|NO|none|NONE|'')
-                _ISO_CMDLINE=""
-        ;;
-        *)
-                _ISO_CMDLINE="-drive file=$ISO_FILE,media=cdrom,if=ide"
-        ;;
-esac
+  case $ISO_FILE in
+    no|NO|none|NONE|'')
+      _ISO_CMDLINE=""
+      ;;
+    *)
+      _ISO_CMDLINE="-drive file=$ISO_FILE,media=cdrom,if=ide"
+      ;;
+  esac
 }
 
 setup_sndhw_cli() {

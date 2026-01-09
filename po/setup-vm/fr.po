@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NuTyX VM Configuration tool\n"
+"PO-Revision-Date: 2014-08-07+2000\n"
+"Last-Translator: tnut <tnut at NuTyX dot org>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Show this help"
+msgstr "Montrer cette aide"
+
+msgid "Show the version"
+msgstr "Montrer la version"
+
+msgid "The iso image"
+msgstr "L'image iso"
+
+msgid "is attached to the VM"
+msgstr "est attachée à la VM"
+
+msgid "The VM hard disk"
+msgstr "Le disque dur VM"
+
+msgid "does not exist, please pass --config to create it"
+msgstr "n'existe pas, veuillez passer --config pour le créer"
+
+msgid "The second hard disk of the VM does not exist"
+msgstr "Le deuxième disque dur de la VM n'existe pas"
+
+msgid "The third hard disk of the VM does not exist"
+msgstr "Le troisième disque dur de la VM n'existe pas"
+
+msgid "Command line summary:"
+msgstr "Résumé de la ligne de commande:"
+
+msgid "Config a virtual machine"
+msgstr "Configurer une machine virtuelle"
+
+msgid "will be used for the VM,\n\
+the VM will boot in"
+msgstr "sera utilisé pour la VM,\n\
+la VM bootera dessus"
+
+msgid "The disk"
+msgstr "Le disque"
+
+msgid "How many cores will the VM use ? (by default 2)"
+msgstr "Combien de coeurs pour la VM (2 par défaut)"
+
+msgid "The number of cores allocated to the VM will be"
+msgstr "Le nombre de coeurs alloué pour la VM sera"
+
+msgid "Need the tablet pointer support ? (yes or no (by default))"
+msgstr "Besoin du support pour le stylet d'une tablette ? (yes ou no (par défaut))"
+
+msgid "The tablet pointer support is activated"
+msgstr "Le support pour un stylet de tablette est activé"
+
+msgid "The tablet pointer support is not activated"
+msgstr "Le support pur un stylet de tableete n'est pas activé"
+
+msgid "What kind of CPU ? (host by default, kvm32, kvm64, base)"
+msgstr "Quelle type de CPU? (host par défaut, kvm32, kvm64, base)"
+
+msgid "What type of sound card ? (ac97 by default, hda, sb16, none)"
+msgstr "Quel type de carte son ? (ac97 par défaut, hda, sb16, none)"
+
+msgid "No sound card"
+msgstr "Aucune carte son"
+
+msgid "The sound card will be"
+msgstr "La carte son sera"
+
+msgid "What type of graphics card ? (virtio by default, std, cirrus, qxl)"
+msgstr "Quel type de carte graphique ? (virtio par défaut, std, cirrus, qxl)"
+
+msgid "Do you want OpenGL support, yes or no (by default)"
+msgstr "Souhaitez-vous le support OpenGL, yes ou no (par défaut)"
+
+msgid "OpenGL acceleration is enabled in the VM"
+msgstr "L'accélération OpenGL est activée dans la VM"
+
+msgid "No OpenGL acceleration of the VM"
+msgstr "Aucune accélération OpenGL dans la VM"
+
+msgid "The output of the VM will be in SPICE and CG QXL used"
+msgstr "La sortie de la VM sera utilisée en mode SPICE et CG QXL"
+
+msgid "The graphics card will be"
+msgstr "La carte graphique sera"
+
+msgid "What kind of graphics output ? (spice, vnc, egl-headless or local (default))"
+msgstr "Quelle sorte de sortie graphique ? (spice, vnc, egl-headless ou local (défaut))"
+
+msgid "The VM will be displayed on your screen"
+msgstr "La VM s'affichera sur votre écran"
+
+msgid "Want a full screen graphics output ? (yes, no (default choice)"
+msgstr "Souhaitez-vous une sortie graphique plein écran ? (yes, no (choix par défaut))"
+
+msgid "The VM will be displayed in full screen mode"
+msgstr "La VM s'affichera en mode plein écran"
+
+msgid "The VM will be displayed standard mode"
+msgstr "La VM s'affichera en mode standard"
+
+msgid "Can't understand, fallback to no full screen"
+msgstr "Pas compris, retour en mode non plein écran"
+
+msgid "OpenGL acceleration is not available in VNC"
+msgstr "L'accélération OpenGL n'est pas disponible dans une VNC"
+
+msgid "The output of the VM will be in VNC localhost: 0, keyboard in FR layout"
+msgstr "La sortie de la VM sera en VNC localhost: 0, clavier au format FR"
+
+msgid "OpenGL acceleration is not available in Spice"
+msgstr "L'accélération OpenGL n'est pas disponiblee en mode Spice"
+
+msgid "The output of the VM will be in SPICE, port 5900"
+msgstr "La sortie de la VM sera en mode SPICE, port 5900"
+
+msgid "The output of the VM will be in SPICE, port 5900, 3D acceleration"
+msgstr "La sortie de la VM sera en mode SPICE, port 5900, accélération 3D"
+
+msgid "What type of network card ? (virtio by default, e1000, rtl8139)"
+msgstr "Quel type de carte réseau ? (virtio par défaut, e1000, rtl8139)"
+
+msgid "The network will have"
+msgstr "Le réseau utilisera"
+
+msgid "as a device"
+msgstr "comme pilote"
+
+msgid "How much memory do you want the VM to have ? (Default 2G, specify the unit M, G, T)"
+msgstr "Combien de mémoire souhaitez-vous utiliser pour la VM ? (défaut 2G, spécifiez l'unité M, G, T)"
+
+msgid "The VM will use"
+msgstr "La VM utilisera"
+
+msgid "from RAM"
+msgstr "de la RAM"
+
+msgid "qemu-img is not installed on your system."
+msgstr "qemu-img n'est pas installé sur votre système."
+
+msgid "qemu-system-x86_64 is not installed on your system."
+msgstr "qemu-system-x86_64 n'est pas installé sur votre système."
+
+msgid "is not present, please create it"
+msgstr "n'est pas présent, veuillez le créer"
+
+msgid "does not exist, please create it and put your ISOS there"
+msgstr "n'existe pas, veuillez le créer et placez-y vos ISOS"
+
+msgid "What is the name of the virtual machine you want to create or run (Without spaces) ?"
+msgstr "Quel est le nom de la machine virtuelle que vous souhaitez créer ou lancer (Sans espaces) ?"
+
+msgid "The name of the VM will be"
+msgstr "Le nom de la VM sera"
+
+msgid "What size disk (30G by default) (M for Megabytes, G for Gigabytes, T for Terabytes without spaces) ?"
+msgstr "Quelle est la taille du disque (30G par défaut) (M pour Megaoctets, G pour Gigaoctets, T pour Teraoctets sans espaces) ?"
+
+msgid "The disk size will be"
+msgstr "Le disque aura une taile de"
+
+msgid "What type of VM do you want ? BIOS (by default) or UEFI :"
+msgstr "Quel type de Machine virtuelle souhaitez-vous ? BIOS (par défaut) ou UEFI"
+
+msgid "The machine will be configured in"
+msgstr "La machine sera configurée en mode"
+
+msgid "Please install OVMF or related package to create VM with UEFI"
+msgstr "Veuillez installer OVMF ou paquets en relation pour créer une VM en mode UEFI"
+
+msgid "The command"
+msgstr "La commande"
+
+msgid "did not execute correctly"
+msgstr "ne s'est pas exécutée correctement"
+
+msgid "VM disk exists, no creation"
+msgstr "Disques VM existent, pas de création"
+
+msgid "Verbose mode"
+msgstr "Mode bavard"
+
+msgid "What interface for the disc 1 ? IDE (by default), virtio or NVMe"
+msgstr "Quelle interface pour le disque 1 ? IDE (par défaut), virtio ou NVMe"
+
+msgid "The disk interface will be"
+msgstr "L'interface disque sera"
+
+msgid "Do you want to use an ISO? (nothing if no ISO)"
+msgstr "Souhaitez utiliser une ISO? (rien si pas d'ISO)"
+
+msgid "ISO file iso / $ cdrom will be used"
+msgstr "ISO Fichier iso / $ cdrom sera utilisé"
+
+msgid "ISO file does not exist"
+msgstr "Le fichier ISO n'existe pas"
+
+msgid "No CD-Rom"
+msgstr "Pas de CD-Rom"
+
+msgid "Warning"
+msgstr "Attention"
+
+msgid "Exit"
+msgstr "Sortie"
+
+msgid "No name specified"
+msgstr "Aucun nom spécifié"
+
+msgid "The only argument is missing, what is the VM you want to start ?"
+msgstr "Le seul argument manque, quel VM souhaitez-vous démarrer ?"
+
+msgid "VM configuration file does not exist, please pass --config  argument to create it"
+msgstr "Le Fichier de configuration n'existe pas, veuillez passer --config en argument pour le créer"
