@@ -1705,7 +1705,7 @@ install_nutyx() {
 
 	echo "1"
 
-	/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
+	/usr/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
 	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
 
 	chmod -v 750 ${2}/root &> /dev/tty3
@@ -2185,7 +2185,7 @@ setup_reboot() {
 	eject /dev/nutyx-cd 2>/dev/null
 	dialog --title "    $(gettext "Reboot the PC")    " \
 	--msgbox "  $(gettext "Press OK to reboot the computer")  " 0 0
-	/sbin/reboot -f
+	/usr/sbin/reboot -f
 }
 setup_advanced_initrd() {
 		dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \

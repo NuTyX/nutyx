@@ -23,7 +23,7 @@
 
 # Default Quota in percent for rootfs
 ROOTFS_QUOTA=50
-SETUP_INIT_FILE="/sbin/setup-nutyx"
+SETUP_INIT_FILE="/usr/sbin/setup-nutyx"
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH
 MODPROBE=$(which modprobe)
@@ -342,7 +342,7 @@ cat > /root/bin/setup-nutyx << "EOF"
 #!/bin/sh
 #
 rm -f /etc/sysconfig/console
-/sbin/setup-nutyx
+/usr/sbin/setup-nutyx
 EOF
 chmod 755 /root/bin/setup-nutyx
 [ "$verbose" == "no" ] || printf "exec \"%s\" \"%s\" > /dev/null 2>&1 ...\n" "$init" "$@"
