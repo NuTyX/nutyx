@@ -2654,6 +2654,7 @@ else
 	if [ ! -e /etc/machine.id ]; then
 		systemd-machine-id-setup
 	fi
+	systemctl enable getty@
 fi
 
 FONT="LatGrkCyr-8x16"
