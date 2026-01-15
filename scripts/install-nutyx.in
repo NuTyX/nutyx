@@ -1029,12 +1029,12 @@ gnome-themes-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
 
 if [ -d $LFS/usr/lib/modules ]; then
-	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/*)"
+	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/kernel*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
 else
 	VERSION_KERNEL=${KERNEL/*-/}
-	[ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
 fi
+[ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
 
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}

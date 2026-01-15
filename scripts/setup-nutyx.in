@@ -20,11 +20,11 @@
 
 # gettext initialization
 #
-PATH=/usr/bin:/usr/sbin:/bin:/sbin
 export TEXTDOMAIN='setup-nutyx'
 export TEXTDOMAINDIR='/usr/share/locale'
 . gettext.sh
 . /lib/lsb/init-functions
+PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 #
 # Basics functions
@@ -647,7 +647,6 @@ Name=${NETWORK_CARD}
 		fi
 	fi
 fi
-systemctl restart systemd-networkd
 systemctl enable systemd-networkd
 SETUP_CONFIG_NETWORK="no"
 }
@@ -2350,6 +2349,7 @@ $(gettext "Are you sure you want to continue ?")" 7 60
 check_swap() {
 	unset SWAP_LIST
 	SWAP_LIST="$(LANGUAGE=C fdisk -l -o device,type|grep swap|cut -d " " -f1)"
+	echo "SWAP_LIST: ${SWAP_LIST} (${LINENO})" > /dev/tty2
 	if [ -z "${SWAP_LIST}" ];then
 		dialog --title "   Hmmmm   " \
 	--msgbox "    $(gettext "Swap partition not found")" 6 60
