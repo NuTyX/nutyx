@@ -17,7 +17,7 @@ Before=systemd-networkd.service shutdown.target
 Type=oneshot
 Environment=HOME=/root
 WorkingDirectory=-/root
-ExecStart=-/sbin/setup-nutyx start
+ExecStart=-/usr/sbin/setup-nutyx start
 StandardInput=tty-force
 StandardOutput=inherit
 StandardError=inherit
