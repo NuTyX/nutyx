@@ -632,7 +632,7 @@ pathappend () {
 [ "$SHELL" == "/bin/bash" ] &&  export -f pathremove pathprepend pathappend
 
 # Set the initial path
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 if [ $EUID -eq 0 ] ; then
                 unset HISTFILE
