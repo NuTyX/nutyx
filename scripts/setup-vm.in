@@ -30,7 +30,7 @@ show_help () {
 }
 config_vm() {
   mkdir -p ${_FULLPATHNAME}
-  rm -f FULLPATHNAME}/${_NAME}.var
+  rm -f ${_FULLPATHNAME}/${_NAME}.var
   setup_disk_size
   select_bios_or_uefi_vm
   check_if_first_disk
@@ -569,8 +569,7 @@ $(gettext "VM configuration file does not exist, please pass --config  argument 
 
   source ${_FULLPATHNAME}/${_NAME}.var
   print_success "$(gettext "The disk") $HDD1_NAME \
-$(gettext "will be used for the VM,\n\
-the VM will boot in") $BIOS_TYPE_INFO\n\
+$(gettext "will be used for the VM, the VM will boot in") $BIOS_TYPE_INFO\n\
 $(gettext "The iso image") $ISO_FILE $(gettext "is attached to the VM")"
 }
 check_hdd1_file() {
@@ -671,7 +670,7 @@ esac
 
 setup_qemu_cli() {
 
-print_info "$(gettext "Command line summary :")"
+print_info "$(gettext "Command line summary:")"
 
 cat << EOF
 
