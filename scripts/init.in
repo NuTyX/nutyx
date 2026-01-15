@@ -20,13 +20,14 @@
 # This code is base on the documented init.in script file from BLFS
 # http://www.linuxfromscratch.org/blfs/view/svn/postlfs/initramfs.html
 #
+PATH="/usr/bin:/usr/sbin:/bin:/sbin"
 
 # Default Quota in percent for rootfs
 ROOTFS_QUOTA=50
-SETUP_INIT_FILE="/usr/sbin/setup-nutyx"
-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH
+
 MODPROBE=$(which modprobe)
+MDADM=$(which mdadm)
+LVM=$(which lvm)
 
 problem()
 {
@@ -342,8 +343,8 @@ cat > /root/bin/setup-nutyx << "EOF"
 #!/bin/sh
 #
 rm -f /etc/sysconfig/console
-/usr/sbin/setup-nutyx
 EOF
+echo "${SETUP_INIT_FILE}" >> /root/bin/setup-nutyx
 chmod 755 /root/bin/setup-nutyx
 [ "$verbose" == "no" ] || printf "exec \"%s\" \"%s\" > /dev/null 2>&1 ...\n" "$init" "$@"
 [ "$verbose" == "no" ] || sleep 5
@@ -413,6 +414,7 @@ if [ -z $root ]; then
 	do_resize_rootfs
 	do_mount_in_ram
 	echo "0" > /proc/sys/vm/swappiness
+	SETUP_INIT_FILE=$(which setup-nutyx)
 	#
 	# If still not find the setup-nutyx file then it's time to giveup
 	#
