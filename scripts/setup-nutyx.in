@@ -20,6 +20,7 @@
 
 # gettext initialization
 #
+PATH=/usr/bin:/usr/sbin:/bin:/sbin
 export TEXTDOMAIN='setup-nutyx'
 export TEXTDOMAINDIR='/usr/share/locale'
 . gettext.sh
@@ -200,8 +201,8 @@ setup_password() {
 }
 setup_user() {
 
-	/usr/sbin/pwconv
-	/usr/sbin/grpconv
+	pwconv
+	grpconv
 	if [ -d /.home ]; then
 		mv /.home /home
 	else
@@ -266,9 +267,9 @@ setup_user() {
 	unset RESULT
 
 	if [ -d /home/"${NAME}" ];then
-		RESULT="$(/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -M "${NAME}" 2>&1)"
+		RESULT="$(useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -M "${NAME}" 2>&1)"
 	else
-		RESULT="$(/usr/sbin/useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -m "${NAME}" 2>&1)"
+		RESULT="$(useradd -c "${DESCRIPTION}" -G "$USER_GROUPS" -m "${NAME}" 2>&1)"
 	fi
 	if [ ! -z "$RESULT" ]; then
 		dialog --msgbox "$RESULT" 6 120
@@ -1705,7 +1706,7 @@ install_nutyx() {
 
 	echo "1"
 
-	/usr/sbin/unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
+	unsquash-nutyx -q -f -d ${2} NuTyX.squashfs) |
 	dialog --title " $(gettext "Install NuTyX") " --gauge "$(gettext "Please wait") ..." 6 50
 
 	chmod -v 750 ${2}/root &> /dev/tty3
@@ -2035,9 +2036,9 @@ EOF
 	fi
 	# Writing of NEW MBR
 	BOOT_FS="$(print_file_system $PARTITION)"
-	LANG=C /sbin/grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} ${DISK} > ${GRUB_LOG_FILE} 2>&1
+	LANG=C grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} ${DISK} > ${GRUB_LOG_FILE} 2>&1
 	if ! (grep finished ${GRUB_LOG_FILE} > /dev/null); then
-		echo "/sbin/grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} [$(echo $DISK)]" >> ${GRUB_LOG_FILE}
+		echo "grub-install --recheck --force $TARGET --boot-directory=$TMP/boot_partition/${GRUB_DESTINATION_DIR} [$(echo $DISK)]" >> ${GRUB_LOG_FILE}
 		mount >> ${GRUB_LOG_FILE}
 		echo "DISK=${DISK}
 GRUB_DESTINATION_DIR=${GRUB_DESTINATION_DIR}
@@ -2126,21 +2127,6 @@ echo "#menuentry  \"Harddisk number 2 and partition number 3 verbose mode\" {
 #   set root=(hd1,3)
 #   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/systemd-init root=/dev/sdb3 ro
 #}
-#
-# The same one with RuNyX (Experimental):
-#
-#menuentry  \"Harddisk number 2 and partition number 3\" {
-#   set root=(hd1,3)
-#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/runit-init root=/dev/sdb3 ro quiet verbose=no
-#}
-#
-# An other one with initrd and rootdelay (to use with USB stick for ex)
-#
-#menuentry  \"Harddisk number 2 and partition number 1 with initrd\" {
-#   set root=(hd1,1)
-#   linux /boot/kernel-${VERSION_KERNEL} init=/sbin/runit-init root=/dev/sdb1 ro rootdelay=5
-#   initrd /boot/initrd-${VERSION_KERNEL}
-#}
 #" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
 		if [ ! -f $TMP/boot_partition/${GRUB_DESTINATION_DIR}initrd ]; then
 			cp /media/cdrom/boot/initrd \
@@ -2185,7 +2171,7 @@ setup_reboot() {
 	eject /dev/nutyx-cd 2>/dev/null
 	dialog --title "    $(gettext "Reboot the PC")    " \
 	--msgbox "  $(gettext "Press OK to reboot the computer")  " 0 0
-	/usr/sbin/reboot -f
+	reboot -f
 }
 setup_advanced_initrd() {
 		dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
@@ -2247,9 +2233,9 @@ setup_advanced_initrd() {
 				cp /etc/profile /etc/profile_original
 				echo clear >> /etc/profile
 				source /etc/profile
-				/usr/sbin/pwconv
-				/usr/sbin/grpconv
-				/usr/sbin/agetty -c --autologin root tty1
+				pwconv
+				grpconv
+				agetty -c --autologin root tty1
 				rm /etc/profile
 				mv /etc/profile_original /etc/profile
 				;;
@@ -2375,7 +2361,7 @@ do
 	$SETUP_LOG "setup-nutyx" "swap partition $i added in /etc/fstab"
 	echo "$i swap     swap       pri=1             0     0" >> /etc/fstab
 	[ $(print_file_system $i) == "swap" ] || mkswap $i 2>1 > /dev/null
-	/usr/sbin/swapon -v  $i &> /dev/tty2
+	swapon -v  $i &> /dev/tty2
 
 done
 }
