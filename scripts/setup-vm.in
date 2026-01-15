@@ -721,8 +721,8 @@ $QEMU_BIN -enable-kvm \
   -monitor $MONITOR
 }
 main() {
-check_distro_setup
 parse_arguments "$@"
+check_distro_setup
 check_configfile
 check_hdd1_file
 check_hdd2
