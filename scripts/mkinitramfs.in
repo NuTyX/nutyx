@@ -209,17 +209,14 @@ else
   do
     [ "$LINK" == "$(basename $BUSYBOX)" ] && continue
     [ "$LINK" == "init" ] && continue
-    [ "$LINK" == "ash" ] && continue
-    [ "$LINK" == "sh" ] && continue
     [ "$LINK" == "bash" ] && continue
-    ln -s ../$BUSYBOX $WDIR/sbin/$LINK
+    ln -s $BUSYBOX $WDIR/bin/$LINK
  done
   if [ -d /etc/mdev.d ]; then
     [ -f /etc/mdev.conf ] && \
     cp /etc/mdev.conf $WDIR/etc
     cp -a /etc/mdev.d $WDIR/etc/mdev.d
   fi
-  ln -s ../$BUSYBOX $WDIR/bin/sh
 fi
 
 # terminal stuff
