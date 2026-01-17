@@ -96,6 +96,11 @@ copy()
 
 BUSYBOX=$(which busybox)
 CPIO=$(which cpio)
+MDADM=$(which madm)
+LVM=$(which lvm)
+CRYPTSETUP=$(which cryptsetup)
+ECHO=$(which echo)
+FALSE=$(which false)
 LSBDIR=/lib/lsb
 
 # Create temporaries working directories
@@ -149,16 +154,14 @@ xfiles="udevadm udevd kmod"
 
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
-if [ -x /sbin/lvm ] || [ -x /usr/sbin/cryptsetup ] || [ -x /sbin/mdadm ]; then
-	if ! [ -x /bin/bash ]; then
-		echo "bash needs to be installed !!!"
-		exit 1
-	fi
+if [ -x $LVM ] || [ -x $CRYPTSETUP ] || [ -x $MDADM ]; then
+	! [ -x /bin/bash ] &&
+    error "bash needs to be installed !!!"
 
 fi
 
 # Add mdadm if present
-if [ -x /sbin/mdadm ];then
+if [ -x $MDADM ];then
     xfiles+=" mdadm"
 
 # Copy the RAID configuration file if present
@@ -166,12 +169,12 @@ if [ -x /sbin/mdadm ];then
 fi
 
 # Add lvm if present
-if [ -x /sbin/lvm ]; then
+if [ -x $LVM ]; then
     xfiles+=" lvm dmsetup"
     for f in lvchange lvrename lvextend lvcreate lvdisplay lvscan pvck \
         pvcreate pvdisplay pvscan vgchange vgcreate vgscan vgrename vgck
     do
-        ln -s lvm $WDIR/sbin/$f
+        ln -s lvm $WDIR/$(dirnanme $LVM)/$f
     done
 
     # Conf file(s)
@@ -179,7 +182,7 @@ if [ -x /sbin/lvm ]; then
 fi
 
 # Add cryptsetup if present
-if [ -x /usr/sbin/cryptsetup ]; then
+if [ -x $CRYPTSETUP ]; then
     xfiles+=" cryptsetup"
     if [ -f /root/.crypto/keyfile.bin ]; then
         mkdir -p $WDIR/root/.crypto
@@ -201,8 +204,8 @@ cp /etc/passwd $WDIR/etc
 
 # echo and false are a bit wird
 if [ -z $BUSYBOX ];then
-  cp /bin/echo $WDIR/bin/echo
-  cp /bin/false $WDIR/bin/false
+  cp $ECHO $WDIR/$ECHO
+  cp $FALSE $WDIR/$FALSE
 else
   cp $BUSYBOX $WDIR/$BUSYBOX
   for LINK in $($BUSYBOX  --list)
