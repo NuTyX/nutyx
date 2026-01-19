@@ -1,25 +1,9 @@
 #!/bin/sh
-########################################################################
-#                                                                      #
-# Begin /lib/services/init-funtions                                    #
-#                                                                      #
-# Description : Run Level Control Functions                            #
-#                                                                      #
-# Authors     : Gerard Beekmans - gerard@linuxfromscratch.org          #
-#             : DJ Lucas - dj@linuxfromscratch.org                     #
-# Update      : Bruce Dubbs - bdubbs@linuxfromscratch.org              #
-#             : Thierry Nuttens - tnut@nutyx.org                       #
-#               Remove kernel log daemon (now intergrated into syslogd #
-# Version     : LFS 7.0                                                #
-#             : NuTyX saravane                                         #
-#             : NuTyX houaphan                                         #
-# Notes       : With code based on Matthias Benkmann's simpleinit-msb  #
-#               http://winterdrache.de/linux/newboot/index.html        #
-#                                                                      #
-#               The file should be located in /lib/lsb, means          #
-#               a symbolic link to service folder is done              #
-#                                                                      #
-########################################################################
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
+#             : DJ Lucas - dj@linuxfromscratch.org
+#             : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#             : Thierry Nuttens - tnut@nutyx.org
 
 ## Environmental setup
 # Setup default values for environment
