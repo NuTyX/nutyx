@@ -11,7 +11,8 @@ Documentation=man:nutyx(1)
 Documentation=man:genfstab(8)
 Documentation=man:ifup(8)
 DefaultDependencies=no
-Before=systemd-networkd.service shutdown.target
+After=systemd-tmpfiles-setup.service
+Before=sysinit.target shutdown.target
 
 [Service]
 Type=oneshot
