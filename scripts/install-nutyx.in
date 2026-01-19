@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
-
-#***********************************************************************
-# Written by Thierry Nuttens
-# Copyright Thierry Nuttens 2010 - 2025
-# Installation script for the NuTyX system
-# Based on LFS scripts
-#***********************************************************************
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Copyright Thierry Nuttens 2010 - 2026
 
 error() {
         echo "
@@ -129,7 +124,7 @@ mountpoint ${LFS}/sys > /dev/null && umount -R ${LFS}/sys
 setup_chroot() {
 local OPTION
 [ -z $QUIET ] && OPTION="--verbose"
-cp /etc/resolv.conf ${LFS}/etc/resolv.conf
+
 mountpoint ${LFS}/dev > /dev/null || mount --bind /dev ${LFS}/dev
 mountpoint ${LFS}/dev/pts > /dev/null || mount -t devpts devpts ${LFS}/dev/pts
 mountpoint ${LFS}/proc > /dev/null || mount -t proc proc ${LFS}/proc
@@ -1300,6 +1295,7 @@ parse_options() {
 		case ${INSTALL_COMMAND} in
 			"chroot-nutyx")
 				check_root
+				install_resolv_conf
 				setup_chroot
 				mount_depot
 				enter_chroot
@@ -1340,6 +1336,7 @@ exit 0" > $LFS/$SETUP_FILE
 				exit 0;;
 			-ec|--enter-chroot)
 				check_root
+				install_resolv_conf
 				setup_chroot
 				mount_depot
 				enter_chroot
