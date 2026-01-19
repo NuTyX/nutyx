@@ -1,30 +1,6 @@
 #!/bin/sh
-#
-#  Copyright (c) 2014 - 2025 by NuTyX team (https://nutyx.org)
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
-#  USA.
-#
-#
-
-# gettext initialization
-#
-export TEXTDOMAIN='setup-nutyx'
-export TEXTDOMAINDIR='/usr/share/locale'
-. gettext.sh
-. /lib/lsb/init-functions
-PATH=/usr/bin:/usr/sbin:/bin:/sbin
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Copyright (c) 2014 - 2026 by NuTyX team (https://nutyx.org)
 
 #
 # Basics functions
@@ -495,18 +471,18 @@ setup_net() {
 # End /etc/hosts
 " > /etc/hosts
 
-	network_card_found
-	if [ -z ${NETWORK_CARD} ]; then
-		dialog --no-cancel \
-		--title " $(gettext "No Network Adapter available") " \
-		--msgbox " $(gettext "Please add a Network Adapter") " 0 0
-		SETUP_CONFIG_NETWORK="no"
-		return 0
-	fi
 	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
 		systemctl restart systemd-resolved
 		systemctl enable  systemd-resolved
 		if [ -z "$NETMANAGER" ]; then
+			network_card_found
+			if [ -z ${NETWORK_CARD} ]; then
+				dialog --no-cancel \
+				--title " $(gettext "No Network Adapter available") " \
+				--msgbox " $(gettext "Please add a Network Adapter") " 0 0
+				SETUP_CONFIG_NETWORK="no"
+				return 0
+			fi
 			setup_networkd
 		else
 			msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
@@ -537,6 +513,14 @@ EOF
 			msgbox "$(gettext "Please configure the network via ")$NETWORK"
 			[ -r $NETWORK ] && . $NETWORK
 			if [ "${MANAGER}" == "cli" ]; then
+				network_card_found
+				if [ -z ${NETWORK_CARD} ]; then
+					dialog --no-cancel \
+					--title " $(gettext "No Network Adapter available") " \
+					--msgbox " $(gettext "Please add a Network Adapter") " 0 0
+					SETUP_CONFIG_NETWORK="no"
+					return 0
+				fi
 				setup_networkv
 			fi
 		fi
@@ -648,6 +632,7 @@ Name=${NETWORK_CARD}
 	fi
 fi
 systemctl enable systemd-networkd
+systemctl restart systemd-networkd
 SETUP_CONFIG_NETWORK="no"
 }
 setup_language() {
@@ -2369,7 +2354,7 @@ config_all() {
 	echo "config the system"
 }
 print_help() {
-	echo "usage: $(basename $COMMAND) [options]"
+	echo "usage: $COMMAND [options]"
 	echo "options"
 	echo ""
 	echo "   start,                 $(gettext "Start the service")"
@@ -2468,7 +2453,7 @@ parse_options() {
 				echo "config all"
 				;;
 			-v|--version)
-				echo "$(basename ${COMMAND}) $VERSION"
+				echo "$COMMAND $VERSION"
 				exit 0
 				;;
 			-h|--help)
@@ -2476,7 +2461,7 @@ parse_options() {
 				exit 0
 				;;
 			*)
-				echo "$(basename ${COMMAND}): invalid option $1"
+				echo "$COMMAND: invalid option $1"
 				exit 1
 				;;
 		esac
@@ -2533,6 +2518,7 @@ top_loop() {
 	if [ "$SETUP_INITRD" = "yes" ]; then
 		SETUP_INSTALL="no"
 		LANG=de_CH.utf-8 setup_language
+		. /etc/profile.d/i18n.sh
 		if [ ! -d /media/cdrom/boot ]; then
 			dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
 				--msgbox "    $(gettext "You can remove the ISO media now.")" 6 60
@@ -2540,6 +2526,7 @@ top_loop() {
 		check_available_disk
 		while [ "$SETUP_INSTALL" = "no" ];do
 				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
+				. /etc/profile.d/i18n.sh
 				[ "$SETUP_INSTALL" = "no" ] && setup_initrd
 		done
 	else
@@ -2548,7 +2535,10 @@ top_loop() {
 			[ "$SETUP_CONFIG_NETWORK" = "yes" ] ||
 			[ "$SETUP_CONFIG_CLOCK" = "yes" ] ||
 			[ "$SETUP_CONFIG_USER" = "yes" ]; do
-				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
+				if [ "$SETUP_CONFIG_LANGUAGE" = "yes" ]; then
+					LANG=de_CH.utf-8 setup_language
+					. /etc/profile.d/i18n.sh
+				fi
 				[ "$SETUP_CONFIG_KEYBOARD" = "yes" ] && setup_keymap
 				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_net
 				[ "$SETUP_CONFIG_CLOCK" = "yes" ] && setup_clock
@@ -2603,9 +2593,15 @@ main() {
 }
 #
 # VARIABLES
-readonly COMMAND="$0"
+readonly COMMAND="$(basename $0)"
 readonly SETUP_ARCH="$(uname -m)"
 readonly VERSION="#VERSION#"
+readonly TEXTDOMAINDIR="/usr/share/locale"
+
+. /lib/lsb/init-functions
+PATH=/usr/bin:/usr/sbin:/bin:/sbin
+export TEXTDOMAIN=$COMMAND
+. gettext.sh
 
 DIALOG_OK=0
 DIALOG_CANCEL=1
