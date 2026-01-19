@@ -1,31 +1,26 @@
 #!/bin/sh
-########################################################################
-# Begin xdm-nutyx
-#
+# SPDX-License-Identifier: LGPL-2.1-or-later
 # Description : Start a Display Manager
 #
 # Author      : Pierre Labastie - pierre.labastie@neuf.fr
 #             : Thierry Nuttens - tnut@nutyx.org
 #
 # Version     : NuTyX #VERSION#
-#
-########################################################################
 
 # This script is supposed to be run directly from
 # inittab, with something like:
 # dm:5:respawn:/usr/sbin/xdm-nutyx
 
-# If no xdm config file exist, let's make a default one with lxdm
+# If no xdm config file exist, let's make a default one with lightdm
 
 if [ ! -f /etc/sysconfig/xdm ];then
    mkdir -p /etc/sysconfig
    cat > /etc/sysconfig/xdm << "EOF"
 # Which display manager to use (full path):
 # DISPLAY_MANAGER=/usr/sbin/gdm
-DISPLAY_MANAGER=/usr/sbin/lxdm
 # DISPLAY_MANAGER=/usr/sbin/xdm
 # DISPLAY_MANAGER="/usr/bin/slim -d"
-# DISPLAY_MANAGER=/usr/bin/lightdm
+DISPLAY_MANAGER=/usr/bin/lightdm
 # DISPLAY_MANAGER=/usr/bin/sddm
 # DISPLAY_MANAGER="/usr/dt/bin/dtlogin -daemon"
 
