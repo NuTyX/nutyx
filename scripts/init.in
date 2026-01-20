@@ -1,25 +1,8 @@
 #!/bin/sh
-#
-#  Copyright (c) 2014 - 2025 by NuTyX team (https://nutyx.org)
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
-#  USA.
-#
-#
-# This code is base on the documented init.in script file from BLFS
-# http://www.linuxfromscratch.org/blfs/view/svn/postlfs/initramfs.html
-#
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
+#             : Thierry Nuttens - tnut@nutyx.org
+
 PATH="/usr/bin:/usr/sbin:/bin:/sbin"
 
 # Default Quota in percent for rootfs
@@ -293,19 +276,19 @@ do_start_lvm() {
 if [ -f /etc/mdadm.conf ]; then
 
   [ "$verbose" == "no" ] || printf "mdadm -As...\n"
-  /sbin/mdadm -As
+  $MDADM -As
 
   [ "$verbose" == "no" ] || printf "mdadm --auto-detect...\n"
-  /sbin/mdadm --auto-detect
+  $MDADM --auto-detect
 fi
 
 ### First we activate lvm if possible
-  if [ -f /sbin/lvm ]; then
-    [ "$verbose" == "no" ] || printf "/sbin/lvm vgchange --ignorelockingfailure -ay\n"
-    /sbin/lvm vgchange --ignorelockingfailure -ay
+  if [ -f $LVM ]; then
+    [ "$verbose" == "no" ] || printf "$LVM vgchange --ignorelockingfailure -ay\n"
+    $LVM vgchange --ignorelockingfailure -ay
     if [ $? = 0 ]; then
-       [ "$verbose" == "no" ] || printf "/sbin/lvm vgscan --ignorelockingfailure --mknodes\n"
-       /sbin/lvm vgscan --ignorelockingfailure --mknodes
+       [ "$verbose" == "no" ] || printf "$LVM vgscan --ignorelockingfailure --mknodes\n"
+       $LVM vgscan --ignorelockingfailure --mknodes
     fi
   fi
 }
