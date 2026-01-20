@@ -1074,8 +1074,8 @@ SETUP_FILE="/tmp/setup"
 ISO_FILE="NuTyX_${ARCH}-$VERSION-${VERSION_NUTYX}-$ISO.iso"
 }
 config() {
-[ -f /etc/$(basename $INSTALL_COMMAND).conf ] && \
-        source /etc/$(basename $INSTALL_COMMAND).conf
+[ -f /etc/${COMMAND}.conf ] && \
+        source /etc/${COMMAND}.conf
 
 HOST_ARCH=$(uname -m)
 [ -z "$ARCH" ] && ARCH=$(uname -m)
@@ -1278,7 +1278,7 @@ ISO Filename : $ISO_FILE"
 }
 print_help() {
 	echo "
-usage: $(basename ${INSTALL_COMMAND}) [options]
+usage: $COMMAND [options]
 options
 
   -ec,  --enter-chroot    will enter in the chroot if exist
@@ -1289,17 +1289,21 @@ options
 "
 
 }
-
+chroot_nutyx() {
+	check_root
+	install_resolv_conf
+	setup_chroot
+	mount_depot
+	enter_chroot
+	[ -f ${LFS}/usr/lib/systemd/systemd ] && \
+	rm ${LFS}/etc/resolv.conf
+	unmountall
+}
 parse_options() {
-	while [ "${INSTALL_COMMAND}" ];do
-		case ${INSTALL_COMMAND} in
+	while [ "$COMMAND" ];do
+		case $COMMAND in
 			"chroot-nutyx")
-				check_root
-				install_resolv_conf
-				setup_chroot
-				mount_depot
-				enter_chroot
-				unmountall
+				chroot_nutyx
 				exit 0;;
 			"generate-nutyx")
 				check_variables  "$@"
@@ -1335,12 +1339,7 @@ exit 0" > $LFS/$SETUP_FILE
 				show_variables
 				exit 0;;
 			-ec|--enter-chroot)
-				check_root
-				install_resolv_conf
-				setup_chroot
-				mount_depot
-				enter_chroot
-				unmountall
+				chroot_nutyx
 				exit 0;;
 			-ic|--install-config)
 				check_root
@@ -1350,7 +1349,7 @@ exit 0" > $LFS/$SETUP_FILE
 				install_configuration_files
 				exit 0;;
 			-v|--version)
-				echo "$(basename $INSTALL_COMMAND) $VERSION_NUTYX-$RELEASE"
+				echo "$COMMAND $VERSION_NUTYX-$RELEASE"
 				exit 0;;
 			/*)
 				boot_mesg "
@@ -1358,7 +1357,7 @@ exit 0" > $LFS/$SETUP_FILE
 "
 				exit 1;;
 			*)
-				echo "$(basename $0): invalid option $1"
+				echo "$COMMAND: invalid option $1"
 				exit 1 ;;
 		esac
 		shift
@@ -1663,5 +1662,5 @@ main() {
 readonly BASE_COLLECTION=base
 readonly VERSION_NUTYX=#VERSION#
 readonly RELEASE=1
-INSTALL_COMMAND="$(basename $0)"
+COMMAND="$(basename $0)"
 main "$@"
