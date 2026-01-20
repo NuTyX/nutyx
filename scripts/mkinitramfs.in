@@ -174,7 +174,7 @@ if [ -x $LVM ]; then
     for f in lvchange lvrename lvextend lvcreate lvdisplay lvscan pvck \
         pvcreate pvdisplay pvscan vgchange vgcreate vgscan vgrename vgck
     do
-        ln -s lvm $WDIR/$(dirnanme $LVM)/$f
+        ln -s lvm $WDIR/$(dirname $LVM)/$f
     done
 
     # Conf file(s)
