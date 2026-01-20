@@ -1067,7 +1067,6 @@ case ${REPLY} in
 	_msgfmt vi_VN
 	_zoneinfo ${ZONEINFO}Asia/Ho_Chi_Minh ${LOCALTIME};;
 esac
-[ -f ${LOCALE} ] &&  . ${LOCALE}
 SETUP_CONFIG_LANGUAGE="no"
 }
 setup_keymap() {
@@ -2424,7 +2423,7 @@ parse_options() {
 				;;
 			-ul|--update-lang)
 				[ -f $LOCALE ] || exit 0
-				source $LOCALE
+				. $LOCALE
 				_msgfmt ${LANG%.*}
 				exit 0
 				;;
@@ -2515,37 +2514,28 @@ cleanup() {
 }
 top_loop() {
 	check_font
+	[ ! -f ${LOCALE} ] && \
+		LANG=de_CH.utf-8 setup_language
+	[ -f ${LOCALE} ] &&  . ${LOCALE}
 	if [ "$SETUP_INITRD" = "yes" ]; then
 		SETUP_INSTALL="no"
-		LANG=de_CH.utf-8 setup_language
-		. /etc/profile.d/i18n.sh
 		if [ ! -d /media/cdrom/boot ]; then
 			dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
 				--msgbox "    $(gettext "You can remove the ISO media now.")" 6 60
 		fi
 		check_available_disk
-		while [ "$SETUP_INSTALL" = "no" ];do
-				[ "$SETUP_CONFIG_LANGUAGE" = "yes" ] && LANG=de_CH.utf-8 setup_language
-				. /etc/profile.d/i18n.sh
-				[ "$SETUP_INSTALL" = "no" ] && setup_initrd
-		done
+		[ "$SETUP_INSTALL" = "no" ] && setup_initrd
 	else
-		while [ "$SETUP_CONFIG_LANGUAGE" = "yes" ] ||
-			[ "$SETUP_CONFIG_KEYBOARD" = "yes" ] ||
+		while [ "$SETUP_CONFIG_KEYBOARD" = "yes" ] ||
 			[ "$SETUP_CONFIG_NETWORK" = "yes" ] ||
 			[ "$SETUP_CONFIG_CLOCK" = "yes" ] ||
 			[ "$SETUP_CONFIG_USER" = "yes" ]; do
-				if [ "$SETUP_CONFIG_LANGUAGE" = "yes" ]; then
-					LANG=de_CH.utf-8 setup_language
-					. /etc/profile.d/i18n.sh
-				fi
 				[ "$SETUP_CONFIG_KEYBOARD" = "yes" ] && setup_keymap
 				[ "$SETUP_CONFIG_NETWORK" = "yes" ] && setup_net
 				[ "$SETUP_CONFIG_CLOCK" = "yes" ] && setup_clock
 				[ "$SETUP_CONFIG_USER" = "yes" ] && setup_user
 		done
 	fi
-
 }
 check_root() {
 	if [ $UID -ne 0 ]; then
@@ -2655,7 +2645,7 @@ EFIVARS="/sys/firmware/efi/efivars"
 
 SETUP_INITRD="no"
 SETUP_INSTALL="no"
-SETUP_CONFIG_LANGUAGE="no"
+SETUP_CONFIG_LANGUAGE="yes"
 SETUP_CONFIG_KEYBOARD="no"
 SETUP_CONFIG_NETWORK="no"
 SETUP_CONFIG_CLOCK="no"
