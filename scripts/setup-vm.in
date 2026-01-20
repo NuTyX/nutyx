@@ -23,7 +23,7 @@ print_success() {
   $ECHOCMD "${GREEN}${1}${NORMAL}"
 }
 show_help () {
-  echo "usage: $(basename $COMMAND) [options]"
+  echo "usage: $COMMAND [options]"
   echo "options"
   echo ""
   echo "   -V, --verbose   $(gettext "Verbose mode")"
@@ -531,7 +531,7 @@ while [ "$1" ]; do
       exit 0
       ;;
     -v|--version)
-      echo "$(basename ${COMMAND}) $VERSION"
+      echo "$COMMAND $VERSION"
       exit 0
       ;;
     -V|--verbose)
@@ -739,7 +739,7 @@ setup_qemu_cli
 }
 
 # VARIABLES
-readonly COMMAND="$0"
+readonly COMMAND="$(basename $0)"
 readonly VERSION="#VERSION#"
 readonly RED='\033[31m'
 readonly NORMAL='\033[0m'
