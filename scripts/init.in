@@ -292,6 +292,21 @@ fi
     fi
   fi
 }
+do_start_udev() {
+  if [ -f /usr/lib/systemd/systemd-udevd ]; then
+    UDEVD="/usr/lib/systemd/systemd-udevd"
+  else
+    UDEVD=$(which udevd)
+  fi
+  UDEVADM=$(which udevadm)
+
+  ${UDEVD} --daemon --resolve-names=never
+  $UDEVADM trigger
+  $UDEVADM settle
+}
+do_stop_udev() {
+  killall -w ${UDEVD##*/}
+}
 do_start_live() {
 
 if [ -d /etc/rc.d ]; then
@@ -352,11 +367,10 @@ fromdev=/dev/sdb1
 fromiso=
 ISOLABEL="nutyxcd"
 
-. /lib/lsb/init-functions
-
-do_mount_virtualfs
-
-printf "\n"
+mount -n -t devtmpfs devtmpfs /dev
+mount -n -t proc     proc     /proc
+mount -n -t sysfs    sysfs    /sys
+mount -n -t tmpfs    tmpfs    /run
 
 read -r cmdline < /proc/cmdline
 
@@ -415,9 +429,6 @@ if [ -z $root ]; then
 	[ "$verbose" == "no" ] || printf "Start udev...\n"
 	do_start_udev
 
-	[ "$verbose" == "no" ] || printf "Start sysklogd ...\n"
-	do_start_sysklogd
-
 	[ "$verbose" == "no" ]  && clear
 
 	MainLoop
@@ -426,10 +437,6 @@ if [ -z $root ]; then
 	[ "$verbose" == "no" ] || printf "Stop udev ...\n"
 	do_stop_udev
 
-
-	[ "$verbose" == "no" ] || printf "Stop sysklogd ...\n"
-	do_stop_sysklogd
-
 	cd /
 
 	for DIR in usr lib
@@ -437,7 +444,6 @@ if [ -z $root ]; then
 		[ "$verbose" == "no" ] || printf "umount /%s ...\n" $DIR
 		umount /$DIR > /dev/null 2>&1
 	done
-
 else
 	[ "$verbose" == "no" ] || printf "Start udev...\n"
 	do_start_udev
