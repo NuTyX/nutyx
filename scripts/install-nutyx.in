@@ -819,54 +819,7 @@ EOF
 cp $OPTION $FILE \
 ${LFS}/root
 }
-generate_gtkrc() {
 
-FILE="${LFS}/etc/skel/.gtkrc-2.0"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/skel
-cat > $FILE << "EOF"
-gtk-theme-name="Adwaita"
-gtk-icon-theme-name="Adwaita"
-gtk-font-name="DejaVu Sans 10"
-gtk-cursor-theme-name="DMZ-Black"
-gtk-cursor-theme-size=0
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle="hintslight"
-gtk-xft-rgba="rgb"
-EOF
-}
-
-generate_settings_ini(){
-FILE="${LFS}/etc/skel/.config/gtk-3.0/settings.ini"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/skel/.config/gtk-3.0
-
-cat > $FILE << "EOF"
-[Settings]
-gtk-theme-name=Adwaita
-gtk-icon-theme-name=Adwaita
-gtk-font-name=DejaVu Sans 10
-gtk-cursor-theme-name=DMZ-Black
-gtk-cursor-theme-size=0
-gtk-toolbar-style=GTK_TOOLBAR_BOTH
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=0
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle=hintslight
-gtk-xft-rgba=rgb
-EOF
-}
 generate_cards_conf() {
 FILE="$LFS/etc/cards.conf"
 [ -f $FILE ] && return
@@ -1233,8 +1186,6 @@ install_configuration_files() {
 	generate_group
 	generate_bash_profile
 	generate_bashrc
-	generate_gtkrc
-	generate_settings_ini
 	generate_hosts
 	generate_inputrc
 	generate_shells
