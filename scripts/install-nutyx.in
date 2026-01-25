@@ -694,8 +694,18 @@ mail:x:34:
 games:x:60:
 kvm:x:61:
 scanner:x:70:
+systemd-journal-gateway:x:73:
+systemd-journal-remote:x:74:
+systemd-journal-upload:x:75:
+systemd-network:x:76:
+systemd-resolve:x:77:
+systemd-timesync:x:78:
+systemd-coredump:x:79:
+uuidd:x:80:
+systemd-oom:x:81:
 netdev:x:86:
 unbound:x:88:
+wheel:x:97:
 users:x:999:
 nogroup:x:65534:
 EOF
@@ -713,6 +723,15 @@ atd:x:17:17:add daemon:/dev/null:/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/dev/null:/bin/false
 man:x:29:29:Man Pages:/dev/null:/bin/false
 games:x:60:60:Games High Score Owner:/var/games:/bin/false
+systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/usr/bin/false
+systemd-journal-remote:x:74:74:systemd Journal Remote:/:/usr/bin/false
+systemd-journal-upload:x:75:75:systemd Journal Upload:/:/usr/bin/false
+systemd-network:x:76:76:systemd Network Management:/:/usr/bin/false
+systemd-resolve:x:77:77:systemd Resolver:/:/usr/bin/false
+systemd-timesync:x:78:78:systemd Time Synchronization:/:/usr/bin/false
+systemd-coredump:x:79:79:systemd Core Dumper:/:/usr/bin/false
+uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
+systemd-oom:x:81:81:systemd Out Of Memory Daemon:/:/usr/bin/false
 unbound:x:88:88:Unbound DNS resolver:/var/lib/unbound:/bin/false
 anonymous:x:98:99:Unprivileged User:/dev/null:/bin/false
 nobody:x:65534:65534:Unprivileged User:/dev/null:/bin/false
