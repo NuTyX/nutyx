@@ -48,8 +48,7 @@ clean:
 
 create-dirs:
 	install -d -m 755 $(ETCDIR)
-	install -d -m 755 $(SERVICEDIR)
-	install -d -m 755 $(SERVICEDIR)/setup-nutyx
+	install -d -m 755 $(SHAREDIR)
 	install -d -m 755 $(VARDIR)/log
 	install -d -m 700 $(ROOTDIR)
 
@@ -82,7 +81,6 @@ links: create-dirs
 	ln -sf ../proc/self/mounts $(ETCDIR)/mtab
 	ln -sf ../etc/bashrc $(ROOTDIR)/bashrc
 	ln -sf ../etc/profile.d $(ROOTDIR)/profile.d
-	ln -sf services  $(LIBDIR)/lsb
 	ln -sf /run/lock $(VARDIR)/lock
 	ln -sf /run	 $(VARDIR)/run
 
@@ -140,8 +138,7 @@ install-common-tools:
 	install -D -m0755 flushmem $(SBINDIR)/flushmem
 	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
 	install -D -m0755 which $(BINDIR)/which
-	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
-	install -D -m0644 init	$(SERVICEDIR)/init.in
+	install -D -m0644 init	$(SHAREDIR)/init.in
 
 install: install-services install-common-tools
 
@@ -150,6 +147,7 @@ install-sysv: all-sysv rc-links install-common-tools
 	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
 	install -D -m0755 ifup $(SBINDIR)/ifup
 	install -D -m0755 ifdown  $(SBINDIR)/ifdown
+	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
 	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
 	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
 	install -D -m0755 rc $(ETCDIR)/init.d/rc

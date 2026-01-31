@@ -73,8 +73,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
    else
-       log_info_msg "Mounting root file system ${root} in read-only mode..."
-       evaluate_retval
+       printf "Mounting root file system ${root} in read-only mode...\n"
    fi
    if [ -n "$overlayroot" ]; then
      overlaydevice=$overlayroot;         # /dev/mapper/<vg>/<lv>
@@ -84,8 +83,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
      else
-       log_info_msg "Mounting overlay upper file system ${overlayroot}..."
-       evaluate_retval
+       printf "Mounting overlay upper file system ${overlayroot}...\n"
      fi
      mkdir -p /mnt/OVL/upper
      mkdir -p /mnt/OVL/work
@@ -95,8 +93,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
      else
-       log_info_msg "Mounting overlay root filesystem..."
-       evaluate_retval
+       printf "Mounting overlay root filesystem...\n"
      fi
    fi
 }
@@ -241,6 +238,15 @@ do_resize_rootfs() {
 	mount -o remount,size=${ROOTFS_QUOTA}%,noatime tmpfs
 	mount -o remount,size=${ROOTFS_QUOTA}%,noatime devtmpfs
 }
+print_file_system() {
+  local TYPE
+  eval $(blkid  ${1}|cut -d ":" -f2 2> /dev/null)
+  if [ "$TYPE" == "" ]; then
+    echo "no"
+  else
+    echo $TYPE
+  fi
+}
 MainLoop(){
    while [ ! -f /root/boot ];
    do
@@ -300,12 +306,17 @@ do_start_udev() {
   fi
   UDEVADM=$(which udevadm)
 
-  ${UDEVD} --daemon --resolve-names=never
-  $UDEVADM trigger
-  $UDEVADM settle
+  ${UDEVD} --daemon
+
+  # Now traverse /sys in order to "coldplug" devices that have
+  # already been discovered
+  $UDEVADM trigger --action=add    --type=subsystems
+  $UDEVADM trigger --action=add    --type=devices
+  $UDEVADM trigger --action=change --type=devices
 }
 do_stop_udev() {
-  killall -w ${UDEVD##*/}
+  $UDEVADM control --exit
+  $UDEVADM info --cleanup-db
 }
 do_start_live() {
 
@@ -340,7 +351,6 @@ mkdir -p /root/bin
 cat > /root/bin/setup-nutyx << "EOF"
 #!/bin/sh
 #
-rm -f /etc/sysconfig/console
 EOF
 echo "${SETUP_INIT_FILE}" >> /root/bin/setup-nutyx
 chmod 755 /root/bin/setup-nutyx

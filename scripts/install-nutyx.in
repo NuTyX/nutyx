@@ -687,6 +687,7 @@ adm:x:16:
 atd:x:17:
 messagebus:x:18:
 lpadmin:x:19:
+systemd-journal:x:23:
 input:x:24:
 man:x:29
 wheel:x:30:root
@@ -705,7 +706,6 @@ uuidd:x:80:
 systemd-oom:x:81:
 netdev:x:86:
 unbound:x:88:
-wheel:x:97:
 users:x:999:
 nogroup:x:65534:
 EOF
@@ -733,7 +733,6 @@ systemd-coredump:x:79:79:systemd Core Dumper:/:/usr/bin/false
 uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
 systemd-oom:x:81:81:systemd Out Of Memory Daemon:/:/usr/bin/false
 unbound:x:88:88:Unbound DNS resolver:/var/lib/unbound:/bin/false
-anonymous:x:98:99:Unprivileged User:/dev/null:/bin/false
 nobody:x:65534:65534:Unprivileged User:/dev/null:/bin/false
 EOF
 }

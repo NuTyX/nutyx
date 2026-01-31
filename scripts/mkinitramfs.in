@@ -101,7 +101,7 @@ LVM=$(which lvm)
 CRYPTSETUP=$(which cryptsetup)
 ECHO=$(which echo)
 FALSE=$(which false)
-LSBDIR=/lib/lsb
+SHAREDIR=/usr/share/nutyx
 
 # Create temporaries working directories
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
@@ -155,7 +155,7 @@ xfiles="udevadm udevd kmod"
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
 if [ -x $LVM ] || [ -x $CRYPTSETUP ] || [ -x $MDADM ]; then
-	! [ -x /bin/bash ] &&
+	! [ -x /usr/bin/bash ] &&
     error "bash needs to be installed !!!"
 
 fi
@@ -190,13 +190,9 @@ if [ -x $CRYPTSETUP ]; then
     fi
 fi
 
-# Install the init-functions
-install -m0755 $LSBDIR/init-functions $WDIR$LSBDIR/init-functions || \
-error "ERROR cannot find $LSBDIR/init-functions file !!!"
-
 # Install the init script
-install -m0755 $LSBDIR/init.in $WDIR/init || \
-error "ERROR cannot find $LSBDIR/init.in file !!!"
+install -m0755 ${SHAREDIR}/init.in $WDIR/init || \
+error "ERROR cannot find ${SHAREDIR}/init.in file !!!"
 
 
 cp /etc/group $WDIR/etc
