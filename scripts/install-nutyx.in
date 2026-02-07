@@ -919,7 +919,7 @@ unset CR
 
 [ -z "$URL" ] && URL="http://localhost"
 
-[ -z "$VERSION" ] && VERSION="rolling"
+[ -z "$VERSION" ] && VERSION="systemd"
 if [ "$VERSION" == "development" ]; then
         CODE_NAME="$(date +%Y%m%d)"
 else
@@ -942,19 +942,17 @@ fi
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
 [ -z "$LFS" ] && LFS="/mnt/hd"
 
-[ -z "$STRICT" ] && STRICT="$KERNEL"
-[ -z "$MINI" ] && MINI="dhcpcd"
+[ -z "$MINI" ] && MINI="$KERNEL"
 [ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
 wireless-tools wpa-supplicant"
-[ -z "$CLI" ] && CLI="gpm make-ca ntp xdg-user-dirs \
-sound-theme-freedesktop nano neofetch"
+[ -z "$CLI" ] && CLI="gpm make-ca xdg-user-dirs \
+sound-theme-freedesktop nano"
 [ -z "$GUI" ] && GUI="gvfs network-manager-applet \
 vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
-xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap \
-gnome-themes-extra"
+xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap"
 
-[ -z "$XFCE4" ] && XFCE4="lightdm xfce4 xfce4-extra"
+[ -z "$XFCE4" ] && XFCE4="galculator lightdm xfce4 xfce4-extra"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
 
@@ -969,16 +967,15 @@ fi
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
 	case ${ISO} in
-		STRICT) CORE+="$STRICT";;
-		MINI) CORE+="$STRICT $MINI";;
-		BASE) CORE+="$STRICT $MINI $BASE";;
-		CLI) CORE+="$STRICT $MINI $BASE $CLI";;
-		GUI) CORE+="$STRICT $MINI $BASE $CLI $GUI";;
-		XORG) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG";;
-		XFCE4) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $XFCE4";;
-		GNOME) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $GNOME";;
-		KDE6) CORE+="$STRICT $MINI $BASE $CLI $GUI $XORG $KDE6";;
-		*) echo "Valid ISO names: strict, mini, base, cli, gui, \
+		MINI) CORE+="$MINI";;
+		BASE) CORE+="$MINI $BASE";;
+		CLI) CORE+="$MINI $BASE $CLI";;
+		GUI) CORE+="$MINI $BASE $CLI $GUI";;
+		XORG) CORE+="$MINI $BASE $CLI $GUI $XORG";;
+		XFCE4) CORE+="$MINI $BASE $CLI $GUI $XORG $XFCE4";;
+		GNOME) CORE+="$MINI $BASE $CLI $GUI $XORG $GNOME";;
+		KDE6) CORE+="$MINI $BASE $CLI $GUI $XORG $KDE6";;
+		*) echo "Valid ISO names: mini, base, cli, gui, \
 xorg, xfce4, gnome, kde6" && exit 1;;
 	esac
 fi
@@ -1198,8 +1195,7 @@ CHROOT       : $CHROOT
 CORE         : $CORE
 DEVEL        : $DEVEL
 ISO          : $ISO"
-[ -z "$ISO" ] || echo "STRICT       : $STRICT
-MINI         : $MINI
+[ -z "$ISO" ] || echo "MINI         : $MINI
 BASE         : $BASE
 CLI          : $CLI
 GUI          : $GUI
