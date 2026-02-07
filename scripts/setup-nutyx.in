@@ -492,7 +492,6 @@ setup_net() {
 
 	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
 		systemctl restart systemd-resolved
-		systemctl enable  systemd-resolved
 		if [ -z "$NETMANAGER" ]; then
 			network_card_found
 			if [ -z ${NETWORK_CARD} ]; then
@@ -2648,7 +2647,6 @@ else
 	if [ ! -e /etc/machine.id ]; then
 		systemd-machine-id-setup
 	fi
-	systemctl enable getty@
 fi
 
 FONT="LatGrkCyr-8x16"
