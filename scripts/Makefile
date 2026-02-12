@@ -79,10 +79,9 @@ files: create-dirs
 
 links: create-dirs
 	ln -sf ../proc/self/mounts $(ETCDIR)/mtab
-	ln -sf ../etc/bashrc $(ROOTDIR)/bashrc
-	ln -sf ../etc/profile.d $(ROOTDIR)/profile.d
-	ln -sf /run/lock $(VARDIR)/lock
-	ln -sf /run	 $(VARDIR)/run
+	ln -sf ../run/lock         $(VARDIR)/lock
+	ln -sf ../run              $(VARDIR)/run
+
 
 rc-links: links create-dirs-sysv rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
 	ln -sf ../../../sbin/setup-nutyx $(ETCDIR)/rc.d/init.d/setup-nutyx
