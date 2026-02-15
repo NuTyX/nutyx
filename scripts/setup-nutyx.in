@@ -2065,13 +2065,13 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_PART="$(cat $TMP/boot)"
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
-	[ "$FORMAT" != "ext4" ] && \
-	INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
-	if [ -z "${SYSTEMD}" ];then
-		SYSTEM="SysV"
-	else
-		SYSTEM="systemd"
-	fi
+		[ "${NuTyX_FS}" != "ext4" ] && \
+		INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
+		if [ -z "${SYSTEMD}" ];then
+			SYSTEM="SysV"
+		else
+			SYSTEM="systemd"
+		fi
 		echo "
 menuentry \"NuTyX $SYSTEM Quiet Mode\" {
    linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro quiet verbose=no
