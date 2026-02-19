@@ -73,7 +73,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
    else
-       printf "Mounting root file system ${root} in read-only mode...\n"
+       printf "Mounting root file system ${root} ...\n"
    fi
    if [ -n "$overlayroot" ]; then
      overlaydevice=$overlayroot;         # /dev/mapper/<vg>/<lv>
@@ -364,7 +364,7 @@ exec "$init" "$@" > /dev/null 2>&1
 # **********
 printf "Starting initrd : "
 
-init=/sbin/init
+init=/usr/bin/init
 overlayroot=
 root=
 rootdelay=

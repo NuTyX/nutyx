@@ -72,9 +72,9 @@ copy()
   local file
 
   if [ "$2" == "lib" ]; then
-    file=$(PATH=/lib:/usr/lib:/usr/lib/systemd type -p $1)
+    file=$(PATH=/lib:/usr/lib:/$SYSTEMDDIR type -p $1)
   else
-    file=$(type -p $1)
+    file=$(PATH=/usr/sbin:/usr/bin:/$SYSTEMDDIR type -p $1)
   fi
 
   if [ "$file" != "" ] ; then
@@ -95,6 +95,7 @@ copy()
 ### Start Here
 
 BUSYBOX=$(which busybox)
+[ -z $BUSYBOX ] && error "busybox needs to be installed !!!"
 CPIO=$(which cpio)
 MDADM=$(which madm)
 LVM=$(which lvm)
@@ -102,19 +103,26 @@ CRYPTSETUP=$(which cryptsetup)
 ECHO=$(which echo)
 FALSE=$(which false)
 SHAREDIR=/usr/share/nutyx
-
+SYSTEMDDIR=usr/lib/systemd
 # Create temporaries working directories
 WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
 unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
 
 # Create base directory structure
-for DIR in usr/bin usr/sbin usr/share usr/lib/udev/rules.d \
-usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d \
-bin dev lib/lsb lib/firmware sbin tmp run sys proc
+for DIR in $SYSTEMDDIR usr/bin usr/sbin usr/share usr/lib/udev/rules.d \
+usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d lib/firmware bin \
+dev tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
 done
-[ -d /usr/lib/systemd ] && mkdir -p $WDIR/usr/lib/systemd
+
+cp $BUSYBOX $WDIR/$BUSYBOX
+for LINK in $($BUSYBOX  --list)
+do
+  [ "$LINK" == "$(basename $BUSYBOX)" ] && continue
+  [ "$LINK" == "init" ] && continue
+  ln -s $BUSYBOX $WDIR/bin/$LINK
+done
 
 touch $WDIR/etc/modprobe.d/modprobe.conf
 
@@ -150,6 +158,7 @@ error "No ${MODULES_DIR}/$1 directory"
 
 copyFirmwares
 
+systemdfiles="systemd-udevd"
 xfiles="udevadm udevd kmod"
 
 ##  Optional files and locations need bash
@@ -198,30 +207,11 @@ error "ERROR cannot find ${SHAREDIR}/init.in file !!!"
 cp /etc/group $WDIR/etc
 cp /etc/passwd $WDIR/etc
 
-# echo and false are a bit wird
-if [ -z $BUSYBOX ];then
-  cp $ECHO $WDIR/$ECHO
-  cp $FALSE $WDIR/$FALSE
-else
-  cp $BUSYBOX $WDIR/$BUSYBOX
-  for LINK in $($BUSYBOX  --list)
-  do
-    [ "$LINK" == "$(basename $BUSYBOX)" ] && continue
-    [ "$LINK" == "init" ] && continue
-    [ "$LINK" == "bash" ] && continue
-    ln -s $BUSYBOX $WDIR/bin/$LINK
- done
-  if [ -d /etc/mdev.d ]; then
-    [ -f /etc/mdev.conf ] && \
-    cp /etc/mdev.conf $WDIR/etc
-    cp -a /etc/mdev.d $WDIR/etc/mdev.d
-  fi
+if [ -d /etc/mdev.d ]; then
+  [ -f /etc/mdev.conf ] && \
+  cp /etc/mdev.conf $WDIR/etc
+  cp -a /etc/mdev.d $WDIR/etc/mdev.d
 fi
-
-# terminal stuff
-mkdir -p $WDIR/usr/share/terminfo/l
-cp /usr/share/terminfo/l/linux \
- $WDIR/usr/share/terminfo/l/
 
 # Install the udev configuration files
 [ -f /etc/udev/udev.conf ] && cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
@@ -231,30 +221,10 @@ done
 for file in $(find /usr/lib/udev/hwdb.d/ -type f) ; do
 	cp $file $WDIR/usr/lib/udev/hwdb.d
 done
-cat > $WDIR/etc/udev/rules.d/55-lfs.rules << "EOF"
-# /etc/udev/rules.d/55-lfs.rules: Rule definitions for LFS.
 
-# Core kernel devices
 
-# This causes the system clock to be set as soon as /dev/rtc becomes available.
-SUBSYSTEM=="rtc", ACTION=="add", MODE="0644", RUN="do_start_clock"
-KERNEL=="rtc", ACTION=="add", MODE="0644", RUN="do_start_clock"
-
-# Comms devices
-
-KERNEL=="ippp[0-9]*",       GROUP="dialout"
-KERNEL=="isdn[0-9]*",       GROUP="dialout"
-KERNEL=="isdnctrl[0-9]*",   GROUP="dialout"
-KERNEL=="dcbri[0-9]*",      GROUP="dialout"
-EOF
-
-# Clock setting
-if [ -f /etc/sysconfig/clock ]; then
-   mkdir $WDIR/etc/sysconfig
-   cp /etc/sysconfig/clock $WDIR/etc/sysconfig
-fi
 # Install basic binaries
-for f in $xfiles; do
+for f in $xfiles $systemdfiles; do
     copy $f
 done
 
@@ -271,17 +241,8 @@ sort $unsorted | uniq | while read library ; do
   fi
   copy $library lib
 done
-if [ -z $BUSYBOX ]; then
-    cp -a /usr/lib/udev $WDIR/usr/lib
 
-    # The Hardware clock setting maybe could be faster done
-    cat > $WDIR/lib/udev/do_start_clock << "EOF"
-#!/bin/sh -e
-. /lib/lsb/init-functions
-do_start_clock
-EOF
-	chmod 755 $WDIR/lib/udev/do_start_clock
-fi
+cp -a /usr/lib/udev $WDIR/usr/lib
 
 ###  Install requested $KERNEL_VERSION kernel modules
 [ -z ${KERNEL_VERSION} ] || copyModules

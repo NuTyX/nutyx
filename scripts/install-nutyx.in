@@ -309,113 +309,6 @@ fi
 # End /etc/bashrc
 EOF
 }
-generate_udev_retry() {
-FILE="${LFS}/etc/sysconfig/udev_retry"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/sysconfig
-
-cat > $FILE << "EOF"
-########################################################################
-# Begin /etc/sysconfig/udev_retry
-#
-# Description : udev_retry script configuration
-#
-# Authors     :
-#
-# Version     : 00.00
-#
-#
-#       Each subsystem that may need to be re-triggered after mountfs
-#       runs should be listed in this file.  Probable subsystems to be
-#       listed here are rtc (due to /var/lib/hwclock/adjtime) and sound
-#       (due to both /var/lib/alsa/asound.state and /usr/sbin/alsactl).
-#       Entries are whitespace-separated.
-########################################################################
-
-rtc
-
-# End /etc/sysconfig/udev_retry
-EOF
-}
-generate_createfiles() {
-FILE="${LFS}/etc/sysconfig/createfiles"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/sysconfig
-
-cat > $FILE << "EOF"
-########################################################################
-# Begin /etc/sysconfig/createfiles
-#
-# Description : Createfiles script config file
-#
-# Authors     :
-#
-# Version     : 00.00
-#
-# Notes       : The syntax of this file is as follows:
-#ge             if type is equal to "file" or "dir"
-#               <filename> <type> <permissions> <user> <group>
-#               if type is equal to "dev"
-#               <filename> <type> <permissions> <user> <group> <devtype>
-#             <major> <minor>
-#
-#               <filename> is the name of the file which is to be created
-#               <type> is either file, dir, or dev.
-#                       file creates a new file
-#                       dir creates a new directory
-#                       dev creates a new device
-#               <devtype> is either block, char or pipe
-#                       block creates a block device
-#                       char creates a character deivce
-#                       pipe creates a pipe, this will ignore the <major> and
-#           <minor> fields
-#               <major> and <minor> are the major and minor numbers used for
-#     the device.
-########################################################################
-/dev/net      dir 755  root root
-/dev/net/tun  dev 666  root root char 10 200
-/tmp          dir 1777 root root
-# End /etc/sysconfig/createfiles
-EOF
-}
-generate_modules() {
-FILE="${LFS}/etc/sysconfig/modules"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/sysconfig
-
-
-cat > $FILE << "EOF"
-########################################################################
-# Begin /etc/sysconfig/modules
-#
-# Description : Module auto-loading configuration
-#
-# Authors     :
-#
-# Version     : 00.00
-#
-# Notes       : The syntax of this file is as follows:
-#               <module> [<arg1> <arg2> ...]
-#
-# Each module should be on its own line, and any options that you want
-# passed to the module should follow it.  The line deliminator is either
-# a space or a tab.
-########################################################################
-
-# End /etc/sysconfig/modules
-EOF
-}
-
-generate_mouse() {
-FILE="${LFS}/etc/sysconfig/mouse"
-[ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/sysconfig
-cat > $FILE << "EOF"
-MDEVICE="/dev/input/mice"
-PROTOCOL="imps2"
-GPMOPTS=""
-EOF
-}
 generate_inputrc() {
 FILE="${LFS}/etc/inputrc"
 [ -f $FILE ] && return
@@ -601,10 +494,16 @@ pathappend () {
 [ "$SHELL" == "/bin/bash" ] &&  export -f pathremove pathprepend pathappend
 
 # Set the initial path
-export PATH=/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=/usr/bin
 
 if [ $EUID -eq 0 ] ; then
-                unset HISTFILE
+	pathappend /usr/sbin
+	unset HISTFILE
+
+fi
+
+if [ ! -L /bin ]; then
+        pathappend /bin
 fi
 
 # Setup some environment variables.
@@ -1571,14 +1470,7 @@ main() {
 	generate_setupfile
 	setup_chroot
 	enter_chroot
-	if [ ! -f ${LFS}/usr/lib/systemd/systemd ]; then
-		generate_modules
-		generate_createfiles
-		generate_mouse
-		generate_udev_retry
-	else
-		rm ${LFS}/etc/resolv.conf
-	fi
+	rm ${LFS}/etc/resolv.conf
 	unmountall
 	if [ ! -z "$ISO" ]; then
 		generate_squashfs
@@ -1592,4 +1484,5 @@ readonly BASE_COLLECTION=base
 readonly VERSION_NUTYX=#VERSION#
 readonly RELEASE=1
 COMMAND="$(basename $0)"
+PATH=/usr/sbin:/usr/bin:/bin
 main "$@"

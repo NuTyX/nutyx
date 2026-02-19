@@ -459,7 +459,7 @@ create_vm_bios() {
       $ECHOCMD "HDD1_SIZE_INFO=${_SIZE}" >> ${_FULLPATHNAME}/${_NAME}.var
       $ECHOCMD "OVMF_VAR_DISK_INFO=NONE" >> ${_FULLPATHNAME}/${_NAME}.var
     else
-      throw__error "$(gettext "The command") ${_QEMU_IMG_BIN} $(gettext "did not execute correctly")"
+      throw_error "$(gettext "The command") ${_QEMU_IMG_BIN} $(gettext "did not execute correctly")"
     fi
   else
     throw_error "$(gettext "VM disk exists, no creation")"
@@ -724,8 +724,8 @@ $QEMU_BIN -enable-kvm \
   -monitor $MONITOR
 }
 main() {
-parse_arguments "$@"
 check_distro_setup
+parse_arguments "$@"
 check_configfile
 check_hdd1_file
 check_hdd2

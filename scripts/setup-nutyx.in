@@ -1721,8 +1721,6 @@ install_nutyx() {
 	fi
 
 	for FILE in etc/profile.d/i18n.sh \
-	etc/sysconfig/network \
-	etc/sysconfig/clock \
 	etc/hostname \
 	etc/hosts \
 	etc/locale.conf \
@@ -1749,9 +1747,11 @@ install_nutyx() {
 	# Kernel and initrd
 	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
 
-  [ "$FORMAT" != "ext4" ] && \
+	[ "$FORMAT" != "ext4" ] && \
 	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
+	systemd-detect-virt --quiet && \
+	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
 	if  [ -f ${1}/boot/grub/splash.png ]; then
 		mkdir -pv ${2}/boot/grub/ &> /dev/tty3
