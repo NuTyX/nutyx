@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/sh
 # SPDX-License-Identifier: LGPL-2.1-or-later
 # Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
 #             : Thierry Nuttens - tnut@nutyx.org
 
-PATH="/usr/bin:/usr/sbin:/bin:/sbin"
+PATH="/usr/bin:/usr/sbin"
 
 # Default Quota in percent for rootfs
 ROOTFS_QUOTA=50
@@ -320,13 +320,6 @@ do_stop_udev() {
 }
 do_start_live() {
 
-if [ -d /etc/rc.d ]; then
-#  get read of some sysV services
-   for i in do_stop_mountfs
-   do
-      sed -i "/${i}/d" /etc/rc.d/init.d/init_single
-   done
-fi
 touch /fastboot
 rm /init
 chmod 755 /
@@ -364,7 +357,7 @@ exec "$init" "$@" > /dev/null 2>&1
 # **********
 printf "Starting initrd : "
 
-init=/usr/bin/init
+init=/usr/lib/systemd/systemd
 overlayroot=
 root=
 rootdelay=
