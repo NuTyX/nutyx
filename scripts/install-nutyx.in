@@ -135,11 +135,15 @@ mountpoint ${LFS}/dev/shm > /dev/null || mount -t tmpfs tmpfs ${LFS}/dev/shm
 if [ -h ${LFS}/dev/shm ]; then
    mkdir -p ${LFS}/$(readlink ${LFS}/dev/shm)
 fi
-if [ ! -L ${LFS}/bin/sh ];then
-  ln -s $OPTION busybox ${LFS}/bin/bash
-  ln -s $OPTION bash ${LFS}/bin/sh
-fi
-[ -d /sys/firmware/efi/efivars ] && \
+
+BUSYBOX="/usr/bin/busybox"
+[ -f ${LFS}/bin/busybox ] && BUSYBOX="/bin/busybox"
+
+for link in $(${LFS}$BUSYBOX --list); do
+  [ "$link" == "sh" ] && continue
+  ln -s $OPTION ..$BUSYBOX ${LFS}/bin/$link
+done
+
 mount -t efivarfs efivarfs ${LFS}/sys/firmware/efi/efivars
 }
 enter_chroot() {
