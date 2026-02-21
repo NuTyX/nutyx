@@ -4,7 +4,7 @@
 #                  Thierry Nuttens for NuTyX
 
 error() {
-    echo "$1"
+    printf "$1"
     exit 1
 }
 copyModules() {
@@ -43,6 +43,10 @@ touch $WDIR${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo
 [ -f ${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo ] && \
    cp ${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo \
    $WDIR${MODULES_DIR}/$KERNEL_VERSION
+
+find $WDIR${MODULES_DIR}/$KERNEL_VERSION/kernel -type f \
+-exec zstd -d {} >/dev/null 2>&1 \;
+
 depmod -b $WDIR $KERNEL_VERSION
 }
 
@@ -93,15 +97,13 @@ copy()
 #
 ##
 ### Start Here
-
-BUSYBOX=$(which busybox)
+PATH=/usr/bin:/usr/sbin
+BUSYBOX=$(PATH=/usr/sbin:/usr/bin:/bin type -p busybox)
 [ -z $BUSYBOX ] && error "busybox needs to be installed !!!"
 CPIO=$(which cpio)
 MDADM=$(which madm)
 LVM=$(which lvm)
 CRYPTSETUP=$(which cryptsetup)
-ECHO=$(which echo)
-FALSE=$(which false)
 SHAREDIR=/usr/share/nutyx
 SYSTEMDDIR=usr/lib/systemd
 # Create temporaries working directories
@@ -110,18 +112,18 @@ unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
 
 # Create base directory structure
 for DIR in $SYSTEMDDIR usr/bin usr/sbin usr/share usr/lib/udev/rules.d \
-usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d lib/firmware bin \
+usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d lib/firmware \
 dev tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
 done
 
-cp $BUSYBOX $WDIR/$BUSYBOX
+cp $BUSYBOX $WDIR/usr/bin/
 for LINK in $($BUSYBOX  --list)
 do
   [ "$LINK" == "$(basename $BUSYBOX)" ] && continue
   [ "$LINK" == "init" ] && continue
-  ln -s $BUSYBOX $WDIR/bin/$LINK
+  ln -s busybox $WDIR/usr/bin/$LINK
 done
 
 touch $WDIR/etc/modprobe.d/modprobe.conf
@@ -131,18 +133,18 @@ MODULES_DIR="/usr/lib/modules"
 
 if [ -z $1 ]; then
 	if [ ! -d ${MODULES_DIR}/${KERNEL_VERSION} ]; then
-		echo "Error you didn't specify any kernel version !!
+		printf "Error you didn't specify any kernel version !!
 The ${MODULES_DIR}/${KERNEL_VERSION} directory not exist !!"
 
 	else
-		echo "Warning you didn't specify any kernel version !!
+		printf "Warning you didn't specify any kernel version !!
 Will try to make for ${KERNEL_VERSION}. If not,"
 	fi
-	echo "
+	printf "
 ==> Please choose one from following kernel(s) version(s):
 "
 	ls  ${MODULES_DIR}
-	echo ""
+	printf ""
 	[ ! -d ${MODULES_DIR}/${KERNEL_VERSION} ] && exit 1
 else
 	KERNEL_VERSION=$1
@@ -159,7 +161,7 @@ error "No ${MODULES_DIR}/$1 directory"
 copyFirmwares
 
 systemdfiles="systemd-udevd"
-xfiles="udevadm udevd kmod"
+xfiles="udevadm udevd"
 
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
@@ -228,11 +230,6 @@ for f in $xfiles $systemdfiles; do
     copy $f
 done
 
-for f in lsmod insmod modprobe depmod
-do
-    ln -s ../bin/kmod $WDIR/usr/sbin/$f
-done
-
 # Install libraries
 sort $unsorted | uniq | while read library ; do
   if [ "$library" == "linux-vdso.so.1" ] ||
@@ -249,7 +246,7 @@ cp -a /usr/lib/udev $WDIR/usr/lib
 
 rm -f /boot/$INITRAMFS_FILE
 
-( cd $WDIR ; find . | $CPIO -o -H newc --quiet | gzip -9 ) > $INITRAMFS_FILE
+( cd $WDIR ; find . | $CPIO -o -H newc --quiet | zstd -17 ) > $INITRAMFS_FILE
 
 
 # Remove the temporary direc
