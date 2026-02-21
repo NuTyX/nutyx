@@ -45,7 +45,7 @@ touch $WDIR${MODULES_DIR}/$KERNEL_VERSION/modules.builtin.modinfo
    $WDIR${MODULES_DIR}/$KERNEL_VERSION
 
 find $WDIR${MODULES_DIR}/$KERNEL_VERSION/kernel -type f \
--exec zstd -d {} >/dev/null 2>&1 \;
+-exec unzstd --rm {} >/dev/null 2>&1 \;
 
 depmod -b $WDIR $KERNEL_VERSION
 }
