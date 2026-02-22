@@ -1747,10 +1747,6 @@ install_nutyx() {
 	# Kernel and initrd
 	cp -av ${1}/boot/kernel* ${2}/boot/ &> /dev/tty3
 
-	[ "$FORMAT" != "ext4" ] && \
-	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
-
-	systemd-detect-virt --quiet && \
 	cp -av ${1}/boot/initrd* ${2}/boot/ &> /dev/tty3
 
 	if  [ -f ${1}/boot/grub/splash.png ]; then
@@ -2065,7 +2061,6 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		NuTyX_PART="$(cat $TMP/boot)"
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
-		[ "${NuTyX_FS}" != "ext4" ] && \
 		INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
 		if [ -z "${SYSTEMD}" ];then
 			SYSTEM="SysV"
