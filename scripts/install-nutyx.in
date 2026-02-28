@@ -378,8 +378,8 @@ FILE="${LFS}/etc/shells"
 mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 # Begin /etc/shells
-/bin/sh
-/bin/bash
+/usr/bin/sh
+/usr/bin/bash
 EOF
 }
 generate_umask_sh() {
@@ -498,16 +498,17 @@ pathappend () {
 [ "$SHELL" == "/bin/bash" ] &&  export -f pathremove pathprepend pathappend
 
 # Set the initial path
-export PATH=/usr/bin
-
+PATH=/usr/bin
+for dir in /urs/sbin /bin sbin
+do
+   if [ -d $dir ]; then
+     pathappend $dir  PATH
+   fi
+done
+export PATH
 if [ $EUID -eq 0 ] ; then
-	pathappend /usr/sbin
 	unset HISTFILE
 
-fi
-
-if [ ! -L /bin ]; then
-        pathappend /bin
 fi
 
 # Setup some environment variables.
@@ -582,14 +583,14 @@ FILE="${LFS}/etc/passwd"
 [ -f $FILE ] && return
 [ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
-root::0:0:root:/root:/bin/bash
-bin:x:1:1:bin:/dev/null:/bin/false
-daemon:x:6:6:Daemon User:/dev/null:/bin/false
-lp:x:9:9:Print Service User:/dev/null:/bin/false
-atd:x:17:17:add daemon:/dev/null:/bin/false
-messagebus:x:18:18:D-Bus Message Daemon User:/dev/null:/bin/false
-man:x:29:29:Man Pages:/dev/null:/bin/false
-games:x:60:60:Games High Score Owner:/var/games:/bin/false
+root::0:0:root:/root:/usr/bin/bash
+bin:x:1:1:bin:/dev/null:/usr/bin/false
+daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
+lp:x:9:9:Print Service User:/dev/null:/usr/bin/false
+atd:x:17:17:add daemon:/dev/null:/usr/bin/false
+messagebus:x:18:18:D-Bus Message Daemon User:/dev/null:/usr/bin/false
+man:x:29:29:Man Pages:/dev/null:/usr/bin/false
+games:x:60:60:Games High Score Owner:/var/games:/usr/bin/false
 systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/usr/bin/false
 systemd-journal-remote:x:74:74:systemd Journal Remote:/:/usr/bin/false
 systemd-journal-upload:x:75:75:systemd Journal Upload:/:/usr/bin/false
@@ -599,8 +600,8 @@ systemd-timesync:x:78:78:systemd Time Synchronization:/:/usr/bin/false
 systemd-coredump:x:79:79:systemd Core Dumper:/:/usr/bin/false
 uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
 systemd-oom:x:81:81:systemd Out Of Memory Daemon:/:/usr/bin/false
-unbound:x:88:88:Unbound DNS resolver:/var/lib/unbound:/bin/false
-nobody:x:65534:65534:Unprivileged User:/dev/null:/bin/false
+unbound:x:88:88:Unbound DNS resolver:/var/lib/unbound:/usr/bin/false
+nobody:x:65534:65534:Unprivileged User:/dev/null:/usr/bin/false
 EOF
 }
 generate_fstab() {
