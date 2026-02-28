@@ -136,14 +136,6 @@ if [ -h ${LFS}/dev/shm ]; then
    mkdir -p ${LFS}/$(readlink ${LFS}/dev/shm)
 fi
 
-BUSYBOX="/usr/bin/busybox"
-[ -f ${LFS}/bin/busybox ] && BUSYBOX="/bin/busybox"
-
-for link in $(${LFS}$BUSYBOX --list); do
-  [ "$link" == "sh" ] && continue
-  ln -s $OPTION ..$BUSYBOX ${LFS}/bin/$link
-done
-
 mount -t efivarfs efivarfs ${LFS}/sys/firmware/efi/efivars
 }
 enter_chroot() {
@@ -499,7 +491,7 @@ pathappend () {
 
 # Set the initial path
 PATH=/usr/bin
-for dir in /urs/sbin /bin sbin
+for dir in /usr/sbin /bin sbin
 do
    if [ -d $dir ]; then
      pathappend $dir  PATH
@@ -821,7 +813,7 @@ fi
 	CHROOT="$CR util-linux"
 unset CR
 
-[ -z "$URL" ] && URL="http://localhost"
+[ -z "$URL" ] && URL="https://download.nutyx.org"
 
 [ -z "$VERSION" ] && VERSION="systemd"
 if [ "$VERSION" == "development" ]; then
