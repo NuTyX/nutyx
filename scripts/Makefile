@@ -128,14 +128,14 @@ install-services: all create-dirs-systemd
 	ln -sf         ../setup-nutyx.service    $(SYSTEMDSERVICEDIR)/sysinit.target.wants
 
 install-common-tools:
-	install -D -m0755 install-nutyx $(SBINDIR)/install-nutyx
-	ln -sf            install-nutyx $(SBINDIR)/chroot-nutyx
-	ln -sf            install-nutyx $(SBINDIR)/generate-nutyx
-	install -D -m0755 setup-nutyx $(SBINDIR)/setup-nutyx
+	install -D -m0755 install-nutyx $(BINDIR)/install-nutyx
+	ln -sf            install-nutyx $(BINDIR)/chroot-nutyx
+	ln -sf            install-nutyx $(BINDIR)/generate-nutyx
+	install -D -m0755 setup-nutyx $(BINDIR)/setup-nutyx
 	install -D -m0755 setup-vm $(BINDIR)/setup-vm
-	install -D -m0755 genfstab $(SBINDIR)/genfstab
-	install -D -m0755 flushmem $(SBINDIR)/flushmem
-	install -D -m0755 mkinitramfs $(SBINDIR)/mkinitramfs
+	install -D -m0755 genfstab $(BINDIR)/genfstab
+	install -D -m0755 flushmem $(BINDIR)/flushmem
+	install -D -m0755 mkinitramfs $(BINDIR)/mkinitramfs
 	install -D -m0755 which $(BINDIR)/which
 	install -D -m0644 init	$(SHAREDIR)/init.in
 
