@@ -491,7 +491,7 @@ pathappend () {
 
 # Set the initial path
 PATH=/usr/bin
-for dir in /usr/sbin /bin sbin
+for dir in /usr/sbin /bin /sbin
 do
    if [ -d $dir ]; then
      pathappend $dir  PATH
@@ -748,10 +748,50 @@ VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
 ln -sf $OPTION ../usr/lib/os-release ${LFS}/etc/os-release
 }
 
+generate_resolv_conf() {
+FILE="${LFS}/etc/resolv.conf"
+[ -f $FILE ] && return
+cat > $FILE << "EOF"
+# cloudflare-dns.com
+nameserver 1.1.1.1
 
-install_resolv_conf() {
-[ -f /etc/resolv.conf ] && cp /etc/resolv.conf ${LFS}/etc
+# dns.google
+nameserver 8.8.8.8
+
+# dns.quad9.net
+nameserver 9.9.9.9
+
+# cloudflare-dns.com
+nameserver 1.0.0.1
+
+# dns.google
+nameserver 8.8.4.4
+
+# dns.quad9.net
+nameserver 149.112.112.112
+
+# cloudflare-dns.com
+nameserver 2606:4700:4700::1111
+
+# dns.google
+nameserver 2001:4860:4860::8888
+
+# dns.quad9.net
+nameserver 2620:fe::fe
+
+# cloudflare-dns.com
+nameserver 2606:4700:4700::1001
+
+# dns.google
+2001:4860:4860::8844
+
+# dns.quad9.net
+2620:fe::9
+
+EOF
+
 }
+
 successfull_installation () {
 echo "
 ****************************************************
@@ -1070,6 +1110,7 @@ install_configuration_files() {
 	generate_umask_sh
 	generate_profile
 	generate_etc_bashrc
+	generate_resolv_conf
 	generate_lsb
 	generate_osr
 	generate_nutyx_version
@@ -1116,12 +1157,11 @@ options
 }
 chroot_nutyx() {
 	check_root
-	install_resolv_conf
+	[ -f ${LFS}/etc/resolv.conf ] || generate_resolv_conf
 	setup_chroot
 	mount_depot
 	enter_chroot
 	[ -f ${LFS}/usr/lib/systemd/systemd ] && \
-	rm ${LFS}/etc/resolv.conf
 	unmountall
 }
 parse_options() {
@@ -1463,11 +1503,9 @@ main() {
 	create_locale_link
 	make_directories
 	install_configuration_files
-	install_resolv_conf
 	generate_setupfile
 	setup_chroot
 	enter_chroot
-	rm ${LFS}/etc/resolv.conf
 	unmountall
 	if [ ! -z "$ISO" ]; then
 		generate_squashfs
@@ -1483,3 +1521,20 @@ readonly RELEASE=1
 COMMAND="$(basename $0)"
 PATH=/usr/sbin:/usr/bin:/bin
 main "$@"
+setup_default_resolved() {
+cat "# cloudflare-dns.com
+nameserver 1.1.1.1
+
+# dns.google
+nameserver 8.8.8.8
+
+# dns.quad9.net
+nameserver 9.9.9.9
+
+# cloudflare-dns.com
+nameserver 1.0.0.1
+
+# dns.google
+nameserver 8.8.4.4" > ${LFS}/etc/resolv.conf
+
+}
