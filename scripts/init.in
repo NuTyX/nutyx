@@ -261,7 +261,7 @@ MainLoop(){
 LoadModules() {
  for i in dm-mod md-mod ehci-pci overlay \
  xhci-pci xhci-hcd ehci-hcd nls_iso8859_1 \
- uhci-hcd uas sr_mod usb-storage loop \
+ uhci-hcd uas sr_mod usb-storage loop nvme \
  squashfs isofs vfat fat nls_cp437 mmc_core \
  mmc_block rtsx_pci rtsx_pci_sdmmc
  do
