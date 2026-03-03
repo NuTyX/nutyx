@@ -157,11 +157,10 @@ printf "Creating $INITRAMFS_FILE... \n"
 [ -n "$KERNEL_VERSION" ] && [ ! -d "${MODULES_DIR}/$1" ] && \
 error "No ${MODULES_DIR}/$1 directory"
 
-
 copyFirmwares
 
 systemdfiles="systemd-udevd"
-xfiles="udevadm udevd"
+xfiles="udevadm udevd kmod"
 
 ##  Optional files and locations need bash
 ##   so that ldd can find librairies
@@ -209,12 +208,6 @@ error "ERROR cannot find ${SHAREDIR}/init.in file !!!"
 cp /etc/group $WDIR/etc
 cp /etc/passwd $WDIR/etc
 
-if [ -d /etc/mdev.d ]; then
-  [ -f /etc/mdev.conf ] && \
-  cp /etc/mdev.conf $WDIR/etc
-  cp -a /etc/mdev.d $WDIR/etc/mdev.d
-fi
-
 # Install the udev configuration files
 [ -f /etc/udev/udev.conf ] && cp /etc/udev/udev.conf $WDIR/etc/udev/udev.conf
 for file in $(find /usr/lib/udev/rules.d/ -type f) ; do
@@ -238,9 +231,9 @@ sort $unsorted | uniq | while read library ; do
   fi
   copy $library lib
 done
-
-cp -a /usr/lib/udev $WDIR/usr/lib
-
+for file in udev libkmod*; do
+  cp -a /usr/lib/$file $WDIR/usr/lib
+done
 ###  Install requested $KERNEL_VERSION kernel modules
 [ -z ${KERNEL_VERSION} ] || copyModules
 
