@@ -111,9 +111,9 @@ WDIR=$(mktemp -d /tmp/initrd-work.XXXXXXXXXX)
 unsorted=$(mktemp /tmp/unsorted.XXXXXXXXXX)
 
 # Create base directory structure
-for DIR in $SYSTEMDDIR usr/bin usr/sbin usr/share usr/lib/udev/rules.d \
-usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d lib/firmware \
-dev tmp run sys proc
+for DIR in $SYSTEMDDIR usr/bin usr/lib/udev/rules.d  \
+usr/lib/udev/hwdb.d etc/modprobe.d /etc/udev/rules.d \
+lib/firmware dev tmp run sys proc
 do
    mkdir -p $WDIR/$DIR
 done
