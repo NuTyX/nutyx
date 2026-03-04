@@ -18,7 +18,7 @@ Before=sysinit.target shutdown.target
 Type=oneshot
 Environment=HOME=/root
 WorkingDirectory=-/root
-ExecStart=-/usr/sbin/setup-nutyx start
+ExecStart=-/usr/bin/setup-nutyx start
 StandardInput=tty-force
 StandardOutput=inherit
 StandardError=inherit
