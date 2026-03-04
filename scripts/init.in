@@ -3,7 +3,7 @@
 # Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
 #             : Thierry Nuttens - tnut@nutyx.org
 
-PATH="/usr/bin:/usr/sbin"
+PATH="/usr/bin"
 
 # Default Quota in percent for rootfs
 ROOTFS_QUOTA=50
@@ -251,27 +251,13 @@ MainLoop(){
    while [ ! -f /root/boot ];
    do
 	if [ "$verbose" == "yes" ]; then
+		sleep 5
 		ListModules
 		printf "Launch ${SETUP_INIT_FILE} ...\n"
 	fi
 	${SETUP_INIT_FILE} || problem
    done
    clear
-}
-LoadModules() {
- for i in dm-mod md-mod ehci-pci overlay \
- xhci-pci xhci-hcd ehci-hcd nls_iso8859_1 \
- uhci-hcd uas sr_mod usb-storage loop nvme \
- squashfs isofs vfat fat nls_cp437 mmc_core \
- mmc_block rtsx_pci rtsx_pci_sdmmc
- do
-  if [ "$verbose" == "yes" ]; then
-    echo "$MODPROBE -v $i"
-    $MODPROBE -v $i
-  else
-    $MODPROBE $i
-  fi
- done
 }
 ListModules() {
   lsmod | more
@@ -347,8 +333,13 @@ cat > /root/bin/setup-nutyx << "EOF"
 EOF
 echo "${SETUP_INIT_FILE}" >> /root/bin/setup-nutyx
 chmod 755 /root/bin/setup-nutyx
+
+[ "$verbose" == "no" ] || printf "Stop udev ...\n"
+do_stop_udev
+
 [ "$verbose" == "no" ] || printf "exec \"%s\" \"%s\" > /dev/null 2>&1 ...\n" "$init" "$@"
 [ "$verbose" == "no" ] || sleep 5
+
 exec "$init" "$@" > /dev/null 2>&1
 
 }
@@ -401,18 +392,24 @@ done
 # [ -z $root ] && echo "This is an ISO/Maintenance else it is an initrd
 # live mode is only possible in ISO mode (or maintenance )
 # Sleep after load of the modules
-
-[ "$verbose" == "no" ] || printf "Loading kernel Modules ...\n"
-LoadModules
+[ "$verbose" == "no" ] || printf "Start udev...\n"
+do_start_udev
 if [ -n "$rootdelay" ]; then
 	[ "$verbose" == "no" ] || printf "Wait  %s second(s) ...\n" $rootdelay
 	sleep "$rootdelay"
 fi
 if [ -z $root ]; then
+	if [ "$verbose" == "yes" ]; then
+		VERB="-v"
+		echo "$MODPROBE $VERB isofs"
+	fi
+	$MODPROBE $VERB isofs
 	mkdir -p /mnt/hd
 	find_media
 	do_resize_rootfs
 	do_mount_in_ram
+	[ "$verbose" == "no" ] || printf "Stop udev ...\n"
+	do_stop_udev
 	echo "0" > /proc/sys/vm/swappiness
 	SETUP_INIT_FILE=$(which setup-nutyx)
 	#
@@ -422,6 +419,7 @@ if [ -z $root ]; then
 		no_mount
 		sh
 	fi
+
 	if [ "$verbose" == "yes" ]; then
 
 		printf "${SETUP_INIT_FILE} exist ...\n"
@@ -429,11 +427,10 @@ if [ -z $root ]; then
 		sleep 5
 	fi
 	[ "$live" == "yes" ] && do_start_live
-	[ "$verbose" == "no" ] || printf "Start udev...\n"
-	do_start_udev
 
 	[ "$verbose" == "no" ]  && clear
-
+	[ "$verbose" == "no" ] || printf "Start udev...\n"
+	do_start_udev
 	MainLoop
 	root=$(cat /root/boot)
 
@@ -448,9 +445,6 @@ if [ -z $root ]; then
 		umount /$DIR > /dev/null 2>&1
 	done
 else
-	[ "$verbose" == "no" ] || printf "Start udev...\n"
-	do_start_udev
-
 	[ "$verbose" == "no" ] || printf "Start lvm ...\n"
 	do_start_lvm
 fi
