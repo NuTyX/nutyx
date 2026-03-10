@@ -53,6 +53,16 @@ if [ ! -z "$croot" ]; then
 fi
 
    while [ ! -b "$device" ] ; do
+       i = 0
+       printf "still searching device $device for 5 seconds max "
+       while [ $i -lt 51 ]; do
+            printf "."
+            sleep 0.1
+            i=$((i + 1))
+            [ -b "$device" ] && break
+       done
+       printf "\n"
+       [ -b "$device" ] && break
        no_device $device
        problem
    done
@@ -73,7 +83,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
    else
-       printf "Mounting root file system ${root} ...\n"
+       printf "Mounting root file system ${root}\n"
    fi
    if [ -n "$overlayroot" ]; then
      overlaydevice=$overlayroot;         # /dev/mapper/<vg>/<lv>
@@ -83,7 +93,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
      else
-       printf "Mounting overlay upper file system ${overlayroot}...\n"
+       printf "Mounting overlay upper file system ${overlayroot}\n"
      fi
      mkdir -p /mnt/OVL/upper
      mkdir -p /mnt/OVL/work
@@ -93,7 +103,7 @@ fi
        cat /proc/partitions
        while true ; do sleep 10000 ; done
      else
-       printf "Mounting overlay root filesystem...\n"
+       printf "Mounting overlay root filesystem\n"
      fi
    fi
 }
