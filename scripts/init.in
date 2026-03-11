@@ -53,7 +53,7 @@ if [ ! -z "$croot" ]; then
 fi
 
    while [ ! -b "$device" ] ; do
-       i = 0
+       i=0
        printf "still searching device $device for 5 seconds max "
        while [ $i -lt 51 ]; do
             printf "."
