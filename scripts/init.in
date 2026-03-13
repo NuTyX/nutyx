@@ -23,6 +23,7 @@ no_device()
    printf "The device %s, which is supposed to contain the\n" $1
    printf "root file system, does not exist.\n"
    printf "Please fix this problem and exit this shell.\n\n"
+   sh
 }
 
 no_mount()
@@ -33,6 +34,8 @@ no_mount()
    printf "Or maybe filesystem type autodetection went wrong, in which case\n"
    printf "you should add the rootfstype=... parameter to the kernel command line.\n\n"
    printf "Available partitions:\n"
+   cat /proc/partitions
+   sh
 }
 
 do_mount_root()
@@ -64,7 +67,6 @@ fi
        printf "\n"
        [ -b "$device" ] && break
        no_device $device
-       problem
    done
    if  [ "$rootfstype" == "auto" ]; then
 	   rootfstype=$(print_file_system $device)
@@ -80,8 +82,6 @@ fi
    mount -n -t $rootfstype -o $rootflags $device $mountpoint
    if [ $? -gt 0 ]; then
        no_mount $device
-       cat /proc/partitions
-       while true ; do sleep 10000 ; done
    else
        printf "Mounting root file system ${root}\n"
    fi
@@ -90,8 +90,6 @@ fi
      mkdir -p /mnt/OVL
      if ! mount -n "$overlaydevice" /mnt/OVL; then
        no_mount $overlaydevice
-       cat /proc/partitions
-       while true ; do sleep 10000 ; done
      else
        printf "Mounting overlay upper file system ${overlayroot}\n"
      fi
@@ -100,8 +98,6 @@ fi
      mount -n -t overlay -o lowerdir=$mountpoint,upperdir=/mnt/OVL/upper,workdir=/mnt/OVL/work overlayrootfs /.root 
      if [ $? -gt 0 ]; then
        no_mount "overlayrootfs"
-       cat /proc/partitions
-       while true ; do sleep 10000 ; done
      else
        printf "Mounting overlay root filesystem\n"
      fi
