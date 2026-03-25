@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # SPDX-License-Identifier: LGPL-2.1-or-later
 # Copyright (c) 2014 - 2026 by NuTyX team (https://nutyx.org)
 
@@ -2605,7 +2605,8 @@ readonly SETUP_ARCH="$(uname -m)"
 readonly VERSION="#VERSION#"
 readonly TEXTDOMAINDIR="/usr/share/locale"
 
-PATH=/usr/bin:/usr/sbin:/bin:/sbin
+PATH=/usr/bin
+
 export TEXTDOMAIN=$COMMAND
 . gettext.sh
 
