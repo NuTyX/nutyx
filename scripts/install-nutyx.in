@@ -487,7 +487,7 @@ pathappend () {
                 export $PATHVARIABLE="${!PATHVARIABLE:+${!PATHVARIABLE}:}$1"
 }
 
-[ "$SHELL" == "/bin/bash" ] &&  export -f pathremove pathprepend pathappend
+[ "$SHELL" == "/usr/bin/bash" ] &&  export -f pathremove pathprepend pathappend
 
 # Set the initial path
 PATH=/usr/bin
@@ -1071,10 +1071,10 @@ download_pkgadd() {
 	fi
 }
 generate_setupfile() {
-if [ "$SHELL" == "/bin/bash" ]; then
-	SHELL=/bin/ash
-	if [ -f $LFS/bin/bash ]; then
-		SHELL=/bin/bash
+if [ "$SHELL" == "/usr/bin/bash" ]; then
+	SHELL=/usr/bin/ash
+	if [ -f $LFS/usr/bin/bash ]; then
+		SHELL=/usr/bin/bash
 	fi
 fi
 if [[ -z "$CORE" && -z "$DEVEL" ]];then
