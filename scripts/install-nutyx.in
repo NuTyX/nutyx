@@ -34,11 +34,6 @@ echo_info() {
         ${ECHO} -e "${NORMAL}"
         boot_mesg_flush
 }
-echo_failure() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${FAILURE} FAIL ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
-}
 #***********************************************************************
 # Function - boot_mesg()
 #
@@ -49,8 +44,6 @@ echo_failure() {
 #
 # Outputs:      Standard Output
 #
-# Dependencies: - sed for parsing strings.
-#               - grep for counting string length.
 #
 # Todo:
 #***********************************************************************
@@ -1015,10 +1008,8 @@ fi
 check_arch() {
 if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ] \
 	&& [ "$ARCH" != "aarch64" ]; then
-	boot_mesg "
+	error "
  >>> This arch ($ARCH) is not supported"
-	echo_failure
-	exit 1
 fi
 }
 
@@ -1521,20 +1512,3 @@ readonly RELEASE=1
 COMMAND="$(basename $0)"
 PATH=/usr/sbin:/usr/bin:/bin
 main "$@"
-setup_default_resolved() {
-cat "# cloudflare-dns.com
-nameserver 1.1.1.1
-
-# dns.google
-nameserver 8.8.8.8
-
-# dns.quad9.net
-nameserver 9.9.9.9
-
-# cloudflare-dns.com
-nameserver 1.0.0.1
-
-# dns.google
-nameserver 8.8.4.4" > ${LFS}/etc/resolv.conf
-
-}
