@@ -21,9 +21,7 @@
 
 include ../Makefile.inc
 
-all: init init-functions install-nutyx setup-nutyx setup-vm genfstab flushmem which mkinitramfs
-
-all-sysv: all ipv4-static ipv4-static-route xdm-nutyx ifup ifdown
+all: init install-nutyx setup-nutyx setup-vm genfstab flushmem which mkinitramfs
 
 %: %.in
 	sed -e "s/#VERSION#/$(VERSION)/" $< > $@
@@ -36,15 +34,10 @@ clean:
 	rm -f setup-nutyx
 	rm -f setup-vm
 	rm -f genfstab
-	rm -f xdm-nutyx
 	rm -f flushmem
-	rm -f ifup
-	rm -f ifdown
 	rm -f which
 	rm -f mkinitramfs
 	rm -f init
-	rm -f ipv4-static
-	rm -f ipv4-static-route
 
 create-dirs:
 	install -d -m 755 $(ETCDIR)
@@ -55,73 +48,10 @@ create-dirs:
 create-dirs-systemd: links
 	install -d -m 755 $(SYSTEMDSERVICEDIR)/sysinit.target.wants
 
-create-dirs-sysv: create-dirs
-	install -d -m 755 $(ETCDIR)/rc.d/init.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc0.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc1.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc2.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc3.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc4.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc5.d
-	install -d -m 755 $(ETCDIR)/rc.d/rc6.d
-	install -d -m 755 $(ETCDIR)/rc.d/rcS.d
-	ln -sf rc.d/init.d $(ETCDIR)/init.d
-
-files: create-dirs
-	for FILE in halt network reboot \
-	sendsignals sysklogd random; do \
-	ln -sf ../../../lib/lsb/init-functions \
-		$(ETCDIR)/init.d/$${FILE}; \
-	done
-	for FILE in bootlog btmp lastlog wtmp; do \
-		touch $(VARDIR)/log/$${FILE}; \
-	done
-
 links: create-dirs
 	ln -sf ../proc/self/mounts $(ETCDIR)/mtab
 	ln -sf ../run/lock         $(VARDIR)/lock
 	ln -sf ../run              $(VARDIR)/run
-
-
-rc-links: links create-dirs-sysv rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6
-	ln -sf ../../../sbin/setup-nutyx $(ETCDIR)/rc.d/init.d/setup-nutyx
-
-
-rcS: files
-	ln -sf ../init.d/init_single ${ETCDIR}/rc.d/rcS.d/S00init_single
-
-rc0: files
-	ln -sf ../init.d/sendsignals	${ETCDIR}/rc.d/rc0.d/S60sendsignals
-	ln -sf ../init.d/init_single	${ETCDIR}/rc.d/rc0.d/K98init_single
-	ln -sf ../init.d/halt		${ETCDIR}/rc.d/rc0.d/S99halt
-	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc0.d/K45random
-
-rc1: files
-	ln -sf ../init.d/network	${ETCDIR}/rc.d/rc1.d/K80network
-	ln -sf ../init.d/sysklogd	${ETCDIR}/rc.d/rc1.d/K90sysklogd
-	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc1.d/S25random
-
-rc2: files
-	ln -sf ../init.d/network        ${ETCDIR}/rc.d/rc2.d/K80network
-	ln -sf ../init.d/random         ${ETCDIR}/rc.d/rc2.d/S25random
-
-rc3: files
-	ln -sf ../init.d/network        ${ETCDIR}/rc.d/rc3.d/S20network
-	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc3.d/S25random
-
-rc4: files
-	ln -sf ../init.d/network        ${ETCDIR}/rc.d/rc4.d/S20network
-	ln -sf ../init.d/random         ${ETCDIR}/rc.d/rc4.d/S25random
-
-rc5: files
-	ln -sf ../init.d/network        ${ETCDIR}/rc.d/rc5.d/S20network
-	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc5.d/S25random
-
-rc6: files
-	ln -sf ../init.d/sendsignals 	${ETCDIR}/rc.d/rc6.d/S60sendsignals
-	ln -sf ../init.d/init_single	${ETCDIR}/rc.d/rc6.d/K98init_single
-	ln -sf ../init.d/random		${ETCDIR}/rc.d/rc6.d/K45random
-	ln -sf ../init.d/reboot		${ETCDIR}/rc.d/rc6.d/S99reboot
 
 install-services: all create-dirs-systemd
 	install -D -m0644 setup-nutyx.service.in $(SYSTEMDSERVICEDIR)/setup-nutyx.service
@@ -141,16 +71,6 @@ install-common-tools:
 
 install: install-services install-common-tools
 
-
-install-sysv: all-sysv rc-links install-common-tools
-	install -D -m0755 xdm-nutyx $(USRSBINDIR)/xdm-nutyx
-	install -D -m0755 ifup $(SBINDIR)/ifup
-	install -D -m0755 ifdown  $(SBINDIR)/ifdown
-	install -D -m0755 init-functions $(SERVICEDIR)/init-functions
-	install -D -m0755 ipv4-static $(SERVICEDIR)/ipv4-static
-	install -D -m0755 ipv4-static-route $(SERVICEDIR)/ipv4-static-route
-	install -D -m0755 rc $(ETCDIR)/init.d/rc
-	install -D -m0755 init_single $(ETCDIR)/init.d/init_single
 
 clean:
 
