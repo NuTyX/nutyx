@@ -17,7 +17,6 @@ problem()
    printf "Encountered a problem!\n\nDropping you to a shell.\n\n"
    sh
 }
-
 no_device()
 {
    printf "The device %s, which is supposed to contain the\n" $1
@@ -25,7 +24,6 @@ no_device()
    printf "Please fix this problem and exit this shell.\n\n"
    sh
 }
-
 no_mount()
 {
    printf "Could not mount device %s\n" $1
@@ -37,7 +35,6 @@ no_mount()
    cat /proc/partitions
    sh
 }
-
 do_mount_root()
 {
    [ -n "$rootflags" ] && rootflags="$rootflags,"
@@ -69,7 +66,7 @@ fi
        no_device $device
    done
    if  [ "$rootfstype" == "auto" ]; then
-	   rootfstype=$(print_file_system $device)
+       rootfstype=$(print_file_system $device)
    fi
    if [ "$rootfstype" == "no" ]; then
        no_mount $device
@@ -103,7 +100,6 @@ fi
      fi
    fi
 }
-
 do_mount_in_ram()
 {
 	# squasfs files are in /media/cdrom/boot on the initrd
@@ -272,7 +268,6 @@ ListModules() {
 }
 do_start_lvm() {
 if [ -f /etc/mdadm.conf ]; then
-
   [ "$verbose" == "no" ] || printf "mdadm -As...\n"
   $MDADM -As
 
@@ -291,6 +286,7 @@ fi
   fi
 }
 do_start_udev() {
+  [ "$verbose" == "no" ] || printf "Start udev ...\n"
   if [ -f /usr/lib/systemd/systemd-udevd ]; then
     UDEVD="/usr/lib/systemd/systemd-udevd"
   else
@@ -307,11 +303,11 @@ do_start_udev() {
   $UDEVADM trigger --action=change --type=devices
 }
 do_stop_udev() {
+  [ "$verbose" == "no" ] || printf "Stop udev ...\n"
   $UDEVADM control --exit
   $UDEVADM info --cleanup-db
 }
 do_start_live() {
-
 touch /fastboot
 rm /init
 chmod 755 /
@@ -339,20 +335,15 @@ cat > /root/bin/setup-nutyx << "EOF"
 EOF
 echo "${SETUP_INIT_FILE}" >> /root/bin/setup-nutyx
 chmod 755 /root/bin/setup-nutyx
-
-[ "$verbose" == "no" ] || printf "Stop udev ...\n"
 do_stop_udev
-
 [ "$verbose" == "no" ] || printf "exec \"%s\" \"%s\" > /dev/null 2>&1 ...\n" "$init" "$@"
 [ "$verbose" == "no" ] || sleep 5
-
 exec "$init" "$@" > /dev/null 2>&1
-
 }
 # **********
 # Begin here
 # **********
-printf "Starting initrd : "
+printf "Starting initrd ... \n"
 
 init=/usr/lib/systemd/systemd
 overlayroot=
@@ -398,7 +389,6 @@ done
 # [ -z $root ] && echo "This is an ISO/Maintenance else it is an initrd
 # live mode is only possible in ISO mode (or maintenance )
 # Sleep after load of the modules
-[ "$verbose" == "no" ] || printf "Start udev...\n"
 do_start_udev
 if [ -n "$rootdelay" ]; then
 	[ "$verbose" == "no" ] || printf "Wait  %s second(s) ...\n" $rootdelay
@@ -414,7 +404,6 @@ if [ -z $root ]; then
 	find_media
 	do_resize_rootfs
 	do_mount_in_ram
-	[ "$verbose" == "no" ] || printf "Stop udev ...\n"
 	do_stop_udev
 	echo "0" > /proc/sys/vm/swappiness
 	SETUP_INIT_FILE=$(which setup-nutyx)
@@ -425,9 +414,7 @@ if [ -z $root ]; then
 		no_mount
 		sh
 	fi
-
 	if [ "$verbose" == "yes" ]; then
-
 		printf "${SETUP_INIT_FILE} exist ...\n"
 		ls -lt ${SETUP_INIT_FILE}
 		sleep 5
@@ -435,16 +422,10 @@ if [ -z $root ]; then
 	[ "$live" == "yes" ] && do_start_live
 
 	[ "$verbose" == "no" ]  && clear
-	[ "$verbose" == "no" ] || printf "Start udev...\n"
 	do_start_udev
 	MainLoop
 	root=$(cat /root/boot)
-
-	[ "$verbose" == "no" ] || printf "Stop udev ...\n"
-	do_stop_udev
-
 	cd /
-
 	for DIR in usr lib
 	do
 		[ "$verbose" == "no" ] || printf "umount /%s ...\n" $DIR
@@ -454,14 +435,10 @@ else
 	[ "$verbose" == "no" ] || printf "Start lvm ...\n"
 	do_start_lvm
 fi
-
 mkdir /.root
 do_mount_root
-
 if [ ! -z $root ]; then
-  [ "$verbose" == "no" ] || printf "Stop udev ...\n"
   do_stop_udev
 fi
-
 cd /.root
 exec switch_root /.root "$init" "$@" > /dev/null 2>&1
