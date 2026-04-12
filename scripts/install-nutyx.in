@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: LGPL-2.1-or-later
 # Copyright Thierry Nuttens 2010 - 2026
-
 error() {
-        echo "
+        $ECHO "
  $1
 "
         ERREUR="yes"
@@ -11,85 +10,19 @@ error() {
         exit 1
 }
 end() {
-        if [ "$ERREUR" == "yes" ]; then
-                if [ ! -f $TMP/depot ]; then
-                        mountpoint ${LFS}/${DEPOT} > /dev/null && umount ${LFS}/${DEPOT}
-
-                        boot_mesg "Cleaning up temporary files.."
-                        boot_mesg "Please correct and start again"
-                fi
+    if [ "$ERREUR" == "yes" ]; then
+        if [ ! -f $TMP/depot ]; then
+            mountpoint ${LFS}/${DEPOT} > /dev/null && umount ${LFS}${DEPOT}
+            $ECHO "Please correct and start again"
+            exit
         fi
-        cd ~
-        unmountall $LFS > /dev/null 2>&1
-        rm -f $LFS/$SETUP_FILE
-        rm -rf $TMP
+    fi
+    cd ~
+    $ECHO "Cleaning up temporary files.. "
+    unmountall $LFS > /dev/null 2>&1
+    rm -f $LFS/$SETUP_FILE
+    rm -rf $TMP
 }
-echo_ok() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${SUCCESS}  OK  ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
-}
-echo_info() {
-        ${ECHO} -n -e "${CURS_UP}${SET_COL}${BRACKET}[${INFO} INFO ${BRACKET}]"
-        ${ECHO} -e "${NORMAL}"
-        boot_mesg_flush
-}
-#***********************************************************************
-# Function - boot_mesg()
-#
-# Purpose:      Sending information from bootup scripts to the console
-#
-# Inputs:       $1 is the message
-#               $2 is the colorcode for the console
-#
-# Outputs:      Standard Output
-#
-#
-# Todo:
-#***********************************************************************
-boot_mesg() {
-        local ECHOPARM=""
-
-        while true
-        do
-        case "${1}" in
-                -n)
-                ECHOPARM=" -n "
-                shift 1
-                ;;
-                -*)
-                echo "Unknown Option: ${1}"
-                return 1
-                ;;
-                *)
-                break
-                ;;
-        esac
-        done
-
-        ## Figure out the length of what is to be printed to be used
-        ## for warning messages.
-        STRING_LENGTH=$((${#1} + 1))
-
-        # Print the message to the screen
-        ${ECHO} ${ECHOPARM} -e "${2}${1}"
-}
-boot_mesg_flush() {
-        # Reset STRING_LENGTH for next message
-        STRING_LENGTH="0"
-}
-#***********************************************************************
-# Function - unmountall
-#
-# Purpose: unmount all the mounted disks and partitions
-#
-# Inputs:        $1 the full path of the Distro
-#
-# Outputs: Standard Output
-#
-# Dependencies: chroot
-#
-#***********************************************************************
 unmountall() {
 if [ -d "$DEPOT_CD/depot" ]; then
         umount ${LFS}/${DEPOT}
@@ -102,18 +35,6 @@ mountpoint ${LFS}/dev > /dev/null && umount -R ${LFS}/dev
 mountpoint ${LFS}/proc > /dev/null && umount ${LFS}/proc
 mountpoint ${LFS}/sys > /dev/null && umount -R ${LFS}/sys
 }
-#***********************************************************************
-# Function - setup_chroot
-#
-# Purpose: Enter the NuTyX Distribution
-#
-# Inputs:       $1 the full path of the Distro
-#
-# Outputs: Standard Output
-#
-# Dependencies: chroot
-#
-#***********************************************************************
 setup_chroot() {
 local OPTION
 [ -z $QUIET ] && OPTION="--verbose"
@@ -137,7 +58,7 @@ if [ -f $LFS/$SETUP_FILE ]; then
 else
         CHROOT_SHELL="$SHELL -l"
 fi
-[ -z $QUIET ] && echo "
+[ -z $QUIET ] && $ECHO "
 ******************************
 Chroot path: $LFS
 ******************************"
@@ -149,57 +70,28 @@ PS1='\u:\w\$ ' \
 $LINUX_ARCH \
 ${CHROOT_SHELL}
 }
-#***********************************************************************
-# Function - download_pkg()
-#
-# Purpose:      Download the selected package
-#
-# Inputs:       $1 is the package
-#
-# Dependencies: - curl
-#
-# Todo:
-#***********************************************************************
 download_pkg() {
         local CURL_OPTION
-        getPackageFileName ${1}
+        getFullPathPackageFileName ${1}
         if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
                 if [ -z $QUIET ]; then
-                boot_mesg "Downloading $1..."
-                echo_info
-                CURL_OPTION+="-LC - -# --create-dirs"
+                    $ECHO "Downloading $1..."
+                    CURL_OPTION+="-LC - -# --create-dirs"
                 else
-                CURL_OPTION="-LC - -s --create-dirs"
+                    CURL_OPTION="-LC - -s --create-dirs"
                 fi
-
                 curl ${CURL_OPTION} ${DEPOT_BASE}/$PackageFileName \
                         -o $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName || \
                         error "Cannot download ${DEPOT_BASE}/$PackageFileName ..., check URL"
-
                 chmod -R 755 $LFS/$DEPOT
-                [ -z $QUIET ] && echo_ok
         fi
 }
-#***********************************************************************
-# Function - install_pkg()
-#
-# Purpose     : Install the selected package
-#
-# Inputs      : $1 is the package
-#               $2 is the group
-#                       $3 Option to install, normally nothing except for grub
-# Outputs     : Standard Output
-#
-# Dependencies: boot_mesg
-#               pkgadd
-#***********************************************************************
 install_pkg() {
         local OPTION
-        getPackageFileName ${1}
+        getFullPathPackageFileName ${1}
         if $TMP/$(dirname $PKGADD)/pkginfo -r $LFS -i| grep "^$1 " \
                 > /dev/null; then
-                boot_mesg "$1 is already install on $LFS..."
-                echo_info
+                $ECHO "$1 is already install on $LFS..."
         fi
         if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
                 # Installing the package
@@ -208,24 +100,11 @@ install_pkg() {
                 $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
                         || error "Cannot install $PackageFileName"
                 rm -f $LFS/.{PRE,POST,README}
-                [ -z $QUIET ] && echo_ok
         else
                 error "$PackageFileName not found"
         fi
 }
-#***********************************************************************
-# Function getPackageFileName
-#
-# Purpose: Get the fullname of the package
-#               directory
-# Inputs: $1 is the package name
-#
-# Dependencies: - curl
-#
-# Output: PackageFileName=cpio.cards-2.15-1.xz
-#
-#***********************************************************************
-getPackageFileName() {
+getFullPathPackageFileName() {
 	local name REPO
 	REPO=".REPO"
 	if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$REPO ]; then
@@ -301,7 +180,6 @@ EOF
 generate_inputrc() {
 FILE="${LFS}/etc/inputrc"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
@@ -346,21 +224,16 @@ set bell-style none
 # End /etc/inputrc
 EOF
 }
-
 generate_hosts() {
 FILE="${LFS}/etc/hosts"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc
-
 cat > $FILE << "EOF"
 127.0.0.1 localhost.localdomain localhost
 EOF
 }
-
 generate_shells() {
 FILE="${LFS}/etc/shells"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 # Begin /etc/shells
 /usr/bin/sh
@@ -370,8 +243,6 @@ EOF
 generate_umask_sh() {
 FILE="${LFS}/etc/profile.d/umask.sh"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/profile.d
-
 cat > $FILE << "EOF"
 # By default we want the umask to get set.
 if [ "$(id -gn)" = "$(id -un)" -a $EUID -gt 99 ] ; then
@@ -384,8 +255,6 @@ EOF
 generate_readline_sh() {
 FILE="${LFS}/etc/profile.d/readline.sh"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/profile.d
-
 cat > $FILE << "EOF"
 # Setup the INPUTRC environment variable.
 if [ -z "$INPUTRC" -a ! -f "$HOME/.inputrc" ] ; then
@@ -394,11 +263,9 @@ fi
 export INPUTRC
 EOF
 }
-
 generate_extrapaths_sh() {
 FILE="${LFS}/etc/profile.d/extrapaths.sh"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/profile.d
 cat > $FILE << "EOF"
 if [ -d /usr/local/lib/pkgconfig ] ; then
 	pathappend /usr/local/lib/pkgconfig PKG_CONFIG_PATH
@@ -419,10 +286,8 @@ fi
 EOF
 }
 generate_dircolors_sh() {
-
 FILE="${LFS}/etc/profile.d/dircolors.sh"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/profile.d
 cat > $FILE << "EOF"
 # Setup for /bin/ls to support color, the alias is in /etc/bashrc.
 if [ -f "/etc/dircolors" ] ; then
@@ -435,11 +300,9 @@ fi
 alias ls='ls --color=auto'
 EOF
 }
-
 generate_profile() {
 FILE="${LFS}/etc/profile"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 # Begin /etc/profile
 # Written for Beyond Linux From Scratch
@@ -518,7 +381,6 @@ EOF
 }
 generate_group() {
 FILE="${LFS}/etc/group"
-mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 root:x:0:
 bin:x:1:daemon
@@ -566,7 +428,6 @@ EOF
 generate_passwd() {
 FILE="${LFS}/etc/passwd"
 [ -f $FILE ] && return
-[ ! -d ${LFS}/etc ] && mkdir -p $OPTION ${LFS}/etc
 cat > $FILE << "EOF"
 root::0:0:root:/root:/usr/bin/bash
 bin:x:1:1:bin:/dev/null:/usr/bin/false
@@ -601,12 +462,9 @@ cat > $FILE << "EOF"
 # 192.168.254.254:/home/thierry /home/thierry nfs rw,vers=3,_netdev,rsize=8192,wsize=8192 0 0
 EOF
 }
-
 generate_bashrc() {
 FILE="${LFS}/etc/skel/.bashrc"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc/skel
-
 cat > $FILE << "EOF"
 # Personal aliases and functions.
 
@@ -651,11 +509,9 @@ install -dv -m0750 ${LFS}/root
 cp $OPTION $FILE \
 ${LFS}/root
 }
-
 generate_bash_profile() {
 FILE="${LFS}/etc/skel/.bash_profile"
 [ -f $FILE ] && return
-[ ! -d ${LFS}/etc/skel ] && mkdir -p $OPTION ${LFS}/etc/skel
 cat > $FILE << "EOF"
 # Personal environment variables and startup programs.
 
@@ -690,13 +546,10 @@ EOF
 cp $OPTION $FILE \
 ${LFS}/root
 }
-
 generate_cards_conf() {
 FILE="$LFS/etc/cards.conf"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/etc
-
-[ "$DEPOT" == "$MOUNT" ] || echo "
+[ "$DEPOT" == "$MOUNT" ] || $ECHO "
 # Default server URL
 url ${URL}
 #
@@ -719,28 +572,25 @@ collection base
 generate_nutyx_version() {
 FILE="${LFS}/var/lib/pkg/nutyx-version"
 [ -f $FILE ] && return
-mkdir -p $OPTION ${LFS}/var/lib/pkg
-echo "name ${CODE_NAME}
+$ECHO "name ${CODE_NAME}
 depot /var/lib/pkg/depot
 version $VERSION" > $FILE
 }
 generate_lsb() {
-echo "DISTRIB_ID=\"NuTyX\"
+$ECHO "DISTRIB_ID=\"NuTyX\"
 DISTRIB_DESCRIPTION=\"NuTyX GNU/Linux\"
 DISTRIB_CODENAME=\"${CODE_NAME}\"
 DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
-mkdir -p $OPTION ${LFS}/usr/lib
-echo "NAME=\"NuTyX\"
+$ECHO "NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
 ID=nutyx
 PRETTY_NAME=\"NuTyX GNU/Linux\"
 VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
 ln -sf $OPTION ../usr/lib/os-release ${LFS}/etc/os-release
 }
-
 generate_resolv_conf() {
 FILE="${LFS}/etc/resolv.conf"
 [ -f $FILE ] && return
@@ -782,11 +632,9 @@ nameserver 2606:4700:4700::1001
 2620:fe::9
 
 EOF
-
 }
-
 successfull_installation () {
-echo "
+$ECHO "
 ****************************************************
           Installation of NuTyX $VERSION installed
           in $LFS sucessfully
@@ -819,11 +667,10 @@ do
         [ ! -f /usr/lib/syslinux/$FILE ] && \
         error "syslinux not properly installed"
 done
-
 }
 check_root() {
 if [ "$UID" -ne 0 ]; then
-        echo "
+        $ECHO "
 You are not root, cannot continue...
 "
         exit 1
@@ -835,29 +682,23 @@ CR="nutyx busybox gcc bzip2 glibc \
 zlib lz4 xz zstd libarchive openssl \
 ncurses readline bash \
 libunistring libidn2 libpsl curl cards"
-
 if [ -z "$CHROOT" ]; then
 	CHROOT="$CR"
 else
 	CHROOT="$CR $CHROOT"
 fi
-
 [ "$ARCH" = "i686" -a "$HOST_ARCH" = "x86_64" ] && \
 	CHROOT="$CR util-linux"
 unset CR
-
 [ -z "$URL" ] && URL="https://download.nutyx.org"
-
 [ -z "$VERSION" ] && VERSION="systemd"
 if [ "$VERSION" == "development" ]; then
         CODE_NAME="$(date +%Y%m%d)"
 else
         CODE_NAME="Paksong"
 fi
-
 [ -z "$KERNEL" ] && KERNEL="kernel"
 [ "$KERNEL" == "NONE" ] && KERNEL="none"
-
 if [ "$KERNEL" == "none"  ];then
    unset KERNEL
 else
@@ -867,10 +708,8 @@ else
       CORE="core "
    fi
 fi
-
 [ -z "$DEPOT" ] && DEPOT="/var/lib/pkg/depot"
 [ -z "$LFS" ] && LFS="/mnt/hd"
-
 [ -z "$MINI" ] && MINI="$KERNEL"
 [ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
 wireless-tools wpa-supplicant"
@@ -880,11 +719,9 @@ sound-theme-freedesktop nano"
 vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap"
-
 [ -z "$XFCE4" ] && XFCE4="galculator lightdm xfce4 xfce4-extra"
 [ -z "$GNOME" ] && GNOME="gnome gnome-extra"
 [ -z "$KDE6" ] && KDE6="kde6"
-
 if [ -d $LFS/usr/lib/modules ]; then
 	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/kernel*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
@@ -892,7 +729,6 @@ else
 	VERSION_KERNEL=${KERNEL/*-/}
 fi
 [ "$VERSION_KERNEL" == "kernel" ] && VERSION_KERNEL="stable"
-
 if [ ! -z $ISO ]; then
 	ISO=${ISO^^}
 	case ${ISO} in
@@ -904,7 +740,7 @@ if [ ! -z $ISO ]; then
 		XFCE4) CORE+="$MINI $BASE $CLI $GUI $XORG $XFCE4";;
 		GNOME) CORE+="$MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$MINI $BASE $CLI $GUI $XORG $KDE6";;
-		*) echo "Valid ISO names: mini, base, cli, gui, \
+		*) $ECHO "Valid ISO names: mini, base, cli, gui, \
 xorg, xfce4, gnome, kde6" && exit 1;;
 	esac
 fi
@@ -922,15 +758,12 @@ umount $DEPOT"
 	DEVEL+="
 	exit 0"
 fi
-
 HOMEPAGE="${URL}"                           ## https://download.nutyx.org
 INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/rolling
 DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/rolling
 DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/rolling/base
-
 LOCAL_DEPOT_PACKAGES="$DEPOT/${BASE_COLLECTION}"
 DEPOT_CD="/media/cdrom"
-
 SETUP_FILE="/tmp/setup"
 ISO_FILE="NuTyX_${ARCH}-${VERSION_NUTYX}-$ISO.iso"
 }
@@ -946,23 +779,6 @@ HOST_ARCH=$(uname -m)
 # Number of seconds between STOPSIG and FALLBACK when stopping processes
 KILLDELAY="3"
 
-## Screen Dimensions
-# Find current screen size
-
-if [ -z "${COLUMNS}" ]; then
-	COLUMNS=$(stty size)
-	COLUMNS=${COLUMNS##* }
-fi
-
-# When using remote connections, such as a serial port, stty size returns 0
-if [ "${COLUMNS}" = "0" ]; then
-	COLUMNS=80
-fi
-
-## Measurements for positioning result messages
-COL=$((${COLUMNS} - 8))
-WCOL=$((${COL} - 2))
-
 ## Provide an echo that supports -e and -n
 # If formatting is needed, $ECHO should be used
 case "$(echo -e -n test)" in
@@ -973,27 +789,6 @@ case "$(echo -e -n test)" in
 		ECHO=echo
 		;;
 esac
-
-## Set Cursor Position Commands, used via $ECHO
-SET_COL="\\033[${COL}G"      # at the $COL char
-SET_WCOL="\\033[${WCOL}G"    # at the $WCOL char
-CURS_UP="\\033[1A\\033[0G"   # Up one line, at the 0'th char
-
-## Set color commands, used via $ECHO
-# Please consult man console_codes for more information
-# under the "ECMA-48 Set Graphics Rendition" section
-#
-# Warning: when switching from a 8bit to a 9bit font,
-# the linux console will reinterpret the bold (1;) to
-# the top 256 glyphs of the 9bit font.  This does
-# not affect framebuffer consoles
-NORMAL="\\033[0;39m"         # Standard console grey
-SUCCESS="\\033[1;32m"        # Success is green
-WARNING="\\033[1;33m"        # Warnings are yellow
-FAILURE="\\033[1;31m"        # Failures are red
-INFO="\\033[1;36m"           # Information is light cyan
-BRACKET="\\033[1;34m"        # Brackets are blue
-STRING_LENGTH="0"            # the length of the current message
 }
 mount_depot() {
 if [ ! -z $MOUNT ]; then
@@ -1006,13 +801,11 @@ if [ ! -z $MOUNT ]; then
 fi
 }
 check_arch() {
-if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ] \
-	&& [ "$ARCH" != "aarch64" ]; then
+if [ "$ARCH" != "x86_64" ]; then
 	error "
  >>> This arch ($ARCH) is not supported"
 fi
 }
-
 create_locale_link() {
 local OPTION
 [ -z $QUIET ] && OPTION="--verbose"
@@ -1023,7 +816,7 @@ if [ -d ${LFS}/usr/lib/locale ]; then
 fi
 }
 make_directories() {
-mkdir -p ${LFS}/{dev,sys,proc,run,tmp,srv,mnt}
+mkdir -p ${LFS}/{dev,sys,proc,run,tmp,srv,mnt,etc}
 mkdir -p ${LFS}/var/tmp
 mkdir -p ${LFS}/usr/{,local/}lib
 
@@ -1043,21 +836,17 @@ download_pkgadd() {
 		ln -s $TMP/$(dirname $PKGADD)/pkgadd  $TMP/$(dirname $PKGADD)/pkginfo
 	else
 		PKGADD="/bin/pkgadd"
-
-		getPackageFileName cards
-
+		getFullPathPackageFileName cards
 		if [ ! -f $TMP/$PKGADD ]; then
 			cd $TMP
 			PackageFileName=""
-			getPackageFileName cards
+			getFullPathPackageFileName cards
 			[ "$PackageFileName" == "" ] && \
 				error "variable 'PackageFileName' is not set"
-
 			download_pkg cards
-			echo "Extraction of cards ..."
+			$ECHO "Extraction of cards ..."
 			bsdtar -xf $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName} || \
 				error "Cannot extract $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName}"
-			echo_ok
 		fi
 	fi
 }
@@ -1069,15 +858,15 @@ if [ "$SHELL" == "/usr/bin/bash" ]; then
 	fi
 fi
 if [[ -z "$CORE" && -z "$DEVEL" ]];then
-	echo "exit" > $LFS/$SETUP_FILE
+	$ECHO "exit" > $LFS/$SETUP_FILE
 else
-	echo "source /etc/profile" > \
+	$ECHO "source /etc/profile" > \
 		$LFS/$SETUP_FILE
-	[ -z $MOUNT ] && echo "cards sync" >> \
+	[ -z $MOUNT ] && $ECHO "cards sync" >> \
 		$LFS/$SETUP_FILE
-	[ -z "$CORE" ] || echo "cards install --nolog $CORE" >> \
+	[ -z "$CORE" ] || $ECHO "cards install --nolog $CORE" >> \
 		$LFS/$SETUP_FILE
-	echo "$DEVEL
+	$ECHO "$DEVEL
 which genfstab > /dev/null && genfstab >> /etc/fstab
 exit" >> $LFS/$SETUP_FILE
 fi
@@ -1086,6 +875,10 @@ chmod 177 $LFS/$SETUP_FILE
 install_configuration_files() {
 	local FILE OPTION
 	[ -z $QUIET ] && OPTION="--verbose"
+	mkdir -p $OPTION ${LFS}/etc/profile.d
+	mkdir -p $OPTION ${LFS}/etc/skel
+	mkdir -p $OPTION ${LFS}/var/lib/pkg
+	mkdir -p $OPTION ${LFS}/usr/lib
 	generate_cards_conf
 	generate_fstab
 	generate_passwd
@@ -1107,7 +900,7 @@ install_configuration_files() {
 	generate_nutyx_version
 }
 show_variables() {
-echo "
+$ECHO "
 List of variables:
 
 LFS          : $LFS
@@ -1123,7 +916,7 @@ CHROOT       : $CHROOT
 CORE         : $CORE
 DEVEL        : $DEVEL
 ISO          : $ISO"
-[ -z "$ISO" ] || echo "MINI         : $MINI
+[ -z "$ISO" ] || $ECHO "MINI         : $MINI
 BASE         : $BASE
 CLI          : $CLI
 GUI          : $GUI
@@ -1134,7 +927,7 @@ KDE6         : $KDE6
 ISO Filename : $ISO_FILE"
 }
 print_help() {
-	echo "
+	$ECHO "
 usage: $COMMAND [options]
 options
 
@@ -1159,13 +952,14 @@ parse_options() {
 	while [ "$COMMAND" ];do
 		case $COMMAND in
 			"chroot-nutyx")
+				check_root
 				chroot_nutyx
 				exit 0;;
 			"generate-nutyx")
 				check_variables  "$@"
 				check_root
 				setup_chroot
-				echo "rm boot/initrd*
+				$ECHO "rm boot/initrd*
 mkinitramfs \$(basename /usr/lib/modules/*)
 mv boot/initrd-* boot/initrd-${VERSION_KERNEL}
 exit 0" > $LFS/$SETUP_FILE
@@ -1205,16 +999,10 @@ exit 0" > $LFS/$SETUP_FILE
 				install_configuration_files
 				exit 0;;
 			-v|--version)
-				echo "$COMMAND $VERSION_NUTYX-$RELEASE"
+				$ECHO "$COMMAND $VERSION_NUTYX-$RELEASE"
 				exit 0;;
-			/*)
-				boot_mesg "
- >>> Do not use arguments anymore ...
-"
-				exit 1;;
 			*)
-				echo "$COMMAND: invalid option $1"
-				exit 1 ;;
+				error "$COMMAND: invalid option $1" ;;
 		esac
 		shift
 	done
@@ -1235,7 +1023,6 @@ local FILE MD5SUM LABEL GRUB_EFI_ARCH GRUB_EFI_IMG ISODIR \
 SCRIPTDIR
 
 LABEL="nutyxcd"
-
 [ "$(uname -m)" == "x86_64" ] &&  GRUB_EFI_ARCH="x86_64"
 [ "$(uname -m)" == "i686" ] &&  GRUB_EFI_ARCH="i386"
 [ "$(uname -m)" == "x86_64" ] && GRUB_EFI_IMG="bootx64.efi"
@@ -1243,21 +1030,16 @@ LABEL="nutyxcd"
 
 ISODIR=$LFS/ISO
 mkdir -p $ISODIR/{iso,isolinux}
-
 SCRIPTDIR=$(pwd -P)
-
 cd $LFS
-
 cp -va boot ISO/
-
 cd ${ISODIR} || error "cd ${ISODIR}"
-
 for FILE in libutil.c32 libcom32.c32 ldlinux.c32 vesamenu.c32 isolinux.bin
 do
         cp /usr/lib/syslinux/$FILE isolinux/
 done
 
-        echo "
+        $ECHO "
 menu hshift 7
 menu width 80
 
@@ -1292,7 +1074,7 @@ menu tabmsgrow 18
 menu tabmsg Press ENTER to boot or TAB to edit a menu entry
 
 EOF
-        echo "label live
+        $ECHO "label live
  menu label ^Live
  kernel /boot/kernel-${VERSION_KERNEL}
  append initrd=/boot/initrd-${VERSION_KERNEL} ro quiet live
@@ -1314,8 +1096,7 @@ label live-debug-toram
 
 " > isolinux/live.cfg
 
-
-        echo "default install
+        $ECHO "default install
 label install
  menu label ^Install
  kernel /boot/kernel-${VERSION_KERNEL}
@@ -1359,14 +1140,14 @@ mkdir -p {iso/EFI,boot/grub/{fonts,${GRUB_EFI_ARCH}-efi}}
 [ -f /usr/share/grub/splash.png ] && \
 	cp /usr/share/grub/splash.png boot/grub/splash.png
 
-echo "set prefix=/boot/grub" > iso/grub-early.cfg
+$ECHO "set prefix=/boot/grub" > iso/grub-early.cfg
 
 cp -a /usr/lib/grub/${GRUB_EFI_ARCH}-efi/*.mod \
 	/usr/lib/grub/${GRUB_EFI_ARCH}-efi/*.lst \
 	boot/grub/${GRUB_EFI_ARCH}-efi
 
 
-echo "set default=0
+$ECHO "set default=0
 set timeout=99
 
 # set debug=all
@@ -1429,32 +1210,24 @@ menuentry \"$VERSION_NUTYX $ISO (UEFI) debug live copied to RAM\" {
         initrd /boot/initrd-${VERSION_KERNEL}
 }" > boot/grub/grub.cfg
 
-
 for FILE in kernel-stable initrd-stable
 do
         [ -f isolinux/$FILE ] && mv -v isolinux/$FILE boot/
 done
 
 mkdir -p iso/efiboot EFI/boot
-
 grub-mkimage -c iso/grub-early.cfg -o EFI/boot/${GRUB_EFI_IMG} \
         -O ${GRUB_EFI_ARCH}-efi -p "" iso9660 normal \
         search search_fs_file || error "grub-mkimage"
 
-
 dd if=/dev/zero of=iso/efiboot.img count=4096
-
 mkdosfs -n "NUTYXEFI" iso/efiboot.img || error "mkdosfs"
-
 mount -o loop iso/efiboot.img iso/efiboot || error "mount efiboot.img"
-
 mkdir -p iso/efiboot/EFI/boot
 cp       EFI/boot/${GRUB_EFI_IMG} iso/efiboot/EFI/boot
-
 umount iso/efiboot
 
 # Iso generation
-
 xorriso -as mkisofs -R -l -J -o ${LFS}/${ISO_FILE} \
 -A NUTYX \
 -b isolinux/isolinux.bin \
@@ -1474,23 +1247,19 @@ main() {
 	mount_depot
 	[ -z $QUIET ] && show_variables
 	check_root
-
 	TMP=$(mktemp -d)
 	check_tools
 	mkdir -p $LFS
-
 	if [ ! -z "$ISO" ]; then
 	# efiboot.img
 		modprobe loop || \
 		error "You probably need to reboot ! Newer kernel ?"
 	fi
-
 	download_pkgadd
 	mkdir -p ${LFS}/var/lib/pkg/DB
 	touch ${LFS}/var/lib/pkg/DB/.files
 	touch ${LFS}/var/lib/pkg/DB/.meta
 	install_chroot
-
 	create_locale_link
 	make_directories
 	install_configuration_files
