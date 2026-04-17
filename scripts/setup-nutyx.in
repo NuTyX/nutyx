@@ -8,6 +8,15 @@
 info() {
 	echo -e  " ====> $1"
 }
+fatal() {
+	echo "screen_color = (CYAN,RED,ON)
+title_color = (RED,WHITE,ON)
+dialog_color = (RED,WHITE,OFF)" > dialog.rc
+	DIALOGRC=dialog.rc dialog --title "    $(gettext "ERROR configuration")    " \
+	--ok-label "$(gettext "Reboot")" \
+	--msgbox "$(gettext "Error"):  ${1} \n\n$(gettext "Please try again")  "  0 0
+	reboot -f
+}
 error() {
 	info "${FAILURE}ERROR: ${NORMAL}$1" >&2
 	cleanup
@@ -412,7 +421,7 @@ setup_wireless() {
 setup_static_net() {
 	dialog \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
-	--inputbox " $(gettext "Enter an IP address") : " 10 60 "192.168.1.5" 2> $TMP/IP
+	--inputbox " $(gettext "Enter an IP address") : " 8 60 "192.168.1.5" 2> $TMP/IP
 
 	if [ "$(cat $TMP/IP)" == "" ]; then
 		interrupt
@@ -422,7 +431,7 @@ setup_static_net() {
 	BC_TEMP=$(echo $IP|cut -d . -f 1).$(echo $IP|cut -d . -f 2).$(echo $IP|cut -d . -f 3).255
 	dialog --title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox " $(gettext "Enter a broadcast address"),\
-	$(gettext "in most cases the current value can be used"): " 10 60 ${BC_TEMP} 2> $TMP/BC
+	$(gettext "in most cases the current value can be used"): " 9 60 ${BC_TEMP} 2> $TMP/BC
 	if [ "$(cat $TMP/BC)" == "" ]; then
 		interrupt
 	else
@@ -431,7 +440,7 @@ setup_static_net() {
 	dialog \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox "$(gettext "Enter the subnet mask"),\
-	$(gettext "in most cases the current value can be used"): " 10 60 "255.255.255.0" 2> $TMP/NM
+	$(gettext "in most cases the current value can be used"): " 9 60 "255.255.255.0" 2> $TMP/NM
 	if [ "$(cat $TMP/NM)" == "" ]; then
 		interrupt
 	else
@@ -441,12 +450,12 @@ setup_static_net() {
 	dialog \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox "$(gettext "Enter the gateway address"),\
-	$(gettext "it is normally the address of your router access point"): " 10 60 ${GW_TEMP} 2> $TMP/GW
+	$(gettext "it is normally the address of your router access point"): " 9 60 ${GW_TEMP} 2> $TMP/GW
 	GW=$(tail -n 1 $TMP/GW)
 	dialog \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--inputbox "$(gettext "Enter the DNS address"),\
-	$(gettext "it is normally the address of your router access point"): " 10 60 ${GW} 2> $TMP/DNS
+	$(gettext "it is normally the address of your router access point"): " 9 60 ${GW} 2> $TMP/DNS
 	DNS=$(tail -n 1 $TMP/DNS)
 
 	ifconfig ${NETWORK_CARD} ${IP} broadcast ${BROADCAST} netmask ${PREFIX}
@@ -490,112 +499,25 @@ setup_net() {
 # End /etc/hosts
 " > /etc/hosts
 
-	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
-		systemctl restart systemd-resolved
-		if [ -z "$NETMANAGER" ]; then
-			network_card_found
-			if [ -z ${NETWORK_CARD} ]; then
-				dialog --no-cancel \
-				--title " $(gettext "No Network Adapter available") " \
-				--msgbox " $(gettext "Please add a Network Adapter") " 0 0
-				SETUP_CONFIG_NETWORK="no"
-				return 0
-			fi
-			setup_networkd
-		else
-			msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
-			systemctl disable systemd-networkd
-			systemctl enable $(basename ${NETMANAGER})
+	systemctl restart systemd-resolved
+	if [ -z "$NETMANAGER" ]; then
+		network_card_found
+		if [ -z ${NETWORK_CARD} ]; then
+			dialog --no-cancel \
+			--title " $(gettext "No Network Adapter available") " \
+			--msgbox " $(gettext "Please add a Network Adapter") " 0 0
+			SETUP_CONFIG_NETWORK="no"
+			return 0
 		fi
+		setup_networkd
 	else
-		if [ ! -f $NETWORK ]; then
-			cat > $NETWORK << "EOF"
-#
-# Network manager (networkmanager/cli/<empty>)
-# If empty it will choose automatically
-MANAGER=''
-#
-# Wait or not for network
-NETWORKWAIT='no'
-#
-# init delay for initialisation of Networkmanager
-LINKDELAY='15'
-#
-# init delay to wait after initialisation of Networkmanager
-NETWORKDELAY='0'
-EOF
-		fi
-		if [ -z "$NETMANAGER" ]; then
-			setup_networkv
-		else
-			msgbox "$(gettext "Please configure the network via ")$NETWORK"
-			[ -r $NETWORK ] && . $NETWORK
-			if [ "${MANAGER}" == "cli" ]; then
-				network_card_found
-				if [ -z ${NETWORK_CARD} ]; then
-					dialog --no-cancel \
-					--title " $(gettext "No Network Adapter available") " \
-					--msgbox " $(gettext "Please add a Network Adapter") " 0 0
-					SETUP_CONFIG_NETWORK="no"
-					return 0
-				fi
-				setup_networkv
-			fi
-		fi
+		msgbox "$(gettext "Please configure the network via ")$(basename ${NETMANAGER})"
+		systemctl disable systemd-networkd
+		systemctl enable $(basename ${NETMANAGER})
 	fi
 	touch ${NETWORK}
 	SETUP_CONFIG_NETWORK="no"
 	rm -f $TMP/NAME
-}
-setup_networkv() {
-retval=""
-if [ ! -z "${DHCPCD}" ]; then
-	while [ "$retval" == "" ]; do
-		dialog  \
-		--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
-		--radiolist "$(gettext "Configuration mode")" \
-		0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
-		"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
-		retval=$?
-		result=$(cat $TMP/result)
-		case $retval in
-			0)
-				if [ "$result" == "" ]; then
-					retval=""
-				fi;;
-			1|255)
-				exit;;
-		esac
-	done
-fi
-if [ "$(cat $TMP/result)" != "$(gettext "Auto")" ]; then
-	setup_static_net
-	cat > /etc/sysconfig/ifconfig.${NETWORK_CARD} << "EOF"
-ONBOOT=yes
-SERVICE=ipv4-static
-EOF
-	echo "IP=${IP}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	if [ -n ${GW} ]; then
-		echo "GATEWAY=${GW}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-		$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: GATEWAY=${GW}"
-	fi
-	echo "PREFIX=${PREFIX}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: PREFIX=${PREFIX}"
-	echo "BROADCAST=${BROADCAST}" >> /etc/sysconfig/ifconfig.${NETWORK_CARD}
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD: BROADCAST=${BROADCAST}"fi
-else
-	cat > /etc/sysconfig/ifconfig.$NETWORK_CARD << "EOF"
-ONBOOT="yes"
-SERVICE="dhcpcd"
-DHCP_START=""
-DHCP_STOP="-k "
-# PRINTIP="yes" will printout the IP address
-PRINTIP="no"
-# PRINTALL="yes" will printout all details
-PRINTALL="no"
-EOF
-	$SETUP_LOG "setup-nutyx --config-net" "$NETWORK_CARD set to Auto DHCP"
-fi
 }
 setup_networkd() {
 retval=""
@@ -603,7 +525,7 @@ while [ "$retval" == "" ]; do
 	dialog  \
 	--title " $(gettext "Configuration of") ${NETWORK_CARD} " \
 	--radiolist "$(gettext "Configuration mode")" \
-	0 0 0 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
+	0 0 2 "$(gettext "Auto")" "$(gettext "IP address automatically set from DHCP server")" "on" \
 	"$(gettext "Man")" "$(gettext "Manually specify parameters")" "off" 2> $TMP/result
 	retval=$?
 	result=$(cat $TMP/result)
@@ -659,7 +581,8 @@ check_font
 while [ true ]; do
 dialog   \
 --no-ok --no-cancel \
---title "" --menu "" 0 0 0 \
+--ok-label "$(gettext "Continue")" \
+--title " Country / Language " --menu "" 0 0 0 \
 "United Arab Emirates" "Arabic" \
 "Algeria" "Arabic" \
 "Egypt" "Arabic" \
@@ -1091,10 +1014,6 @@ setup_keymap() {
 	check_font
 	echo "FONT=\"$FONT\"" > \
 	$CONSOLE
-	if [ "${SETUP_CONFIG_SYSTEMD}" != "yes" ]; then
-		echo "UNICODE=\"1\"
-LOGLEVEL=1" > ${CONSOLE}
-	fi
 	mkdir -p $(dirname ${XORGKB})
 	cat > ${XORGKB} << "EOF"
 Section "InputClass"
@@ -1336,20 +1255,15 @@ $(gettext "so that the summer/winter time is changed automatically" ) " 0 0
 			CLOCKPARAMS="${CLOCKPARAMS} --localtime";;
 	esac
 
-	if [ "${SETUP_CONFIG_SYSTEMD}" == "yes" ]; then
-		echo "0.0 0 0.0" > $CLOCK
-		case "${UTC}" in
-			1)
-				echo "1
+	echo "0.0 0 0.0" > $CLOCK
+	case "${UTC}" in
+		1)
+			echo "1
 REMOTE" >> $CLOCK;;
-			0)
-				echo "0
+		0)
+			echo "0
 LOCAL" >> $CLOCK;;
-		esac
-	else
-		echo "UTC=${UTC}" > $CLOCK
-		[ -r $CLOCK ] && . $CLOCK
-	fi
+	esac
 
 	hwclock --hctosys ${CLOCKPARAMS} >/dev/null
 
@@ -1410,7 +1324,7 @@ select_disk() {
 				retval=""
 			fi;;
 		1|255)
-			break;;
+			setup_initrd;;
 	esac
 	DISK=$(cat $TMP/disk|sed 's/"//g'|sed 's/ //g')
 	DISK=$(echo $DISK|sed  "s/ //")
@@ -1437,7 +1351,7 @@ select_partition() {
 					retval=""
 				fi;;
 			1|255)
-				break;;
+				setup_initrd;;
 		esac
 	done
 	PARTITION=$(cat $TMP/part|sed 's/"//g'|sed 's/ //g')
@@ -1579,10 +1493,8 @@ setup_help() {
 	--colors --msgbox \
 "$(gettext "This is a very basic tool, do not expect too much"). \
 $(gettext "It will ask you on which partition you want to install NuTyX"). \
-$(gettext "If not yet created/formatted, it will prompt you to do so").\n\
-\n\n$(gettext "NuTyX goes on") \
-\Zu\Zb\Z1$(gettext "only ONE partition")\Zn\n\n\
-$(gettext "ONE exception, GRUB can be part of it, installed on a separate partition or not installed at all"). \n\n\
+$(gettext "If not yet created/formatted, it will prompt you to do so").\n\n\
+
 $(gettext "Have fun") :) \n\n\
 $(gettext "Thank you for installing NuTyX") \
 " 0 0
@@ -1593,10 +1505,7 @@ setup_help_efi() {
 	--colors --msgbox \
 "$(gettext "This is a very basic tool, do not expect too much"). \
 $(gettext "It will ask you on which partition you want to install NuTyX"). \
-$(gettext "If not yet created/formatted, it will prompt you to do so").\n\
-\n$(gettext "NuTyX goes on") \
-\Zu\Zb\Z1$(gettext "only ONE partition")\Zn\n\n\
-$(gettext "ONE exception, GRUB can be part of it, installed on a separate partition or not installed at all"). \n\n\
+$(gettext "If not yet created/formatted, it will prompt you to do so").\n\n\
 $(gettext "Make sure you reserve the first partition for ESP"): \n\n\
 $(gettext "To do so"): \
 $(gettext "At partitioning, declare the first partition as EFI System") \n\n\
@@ -1620,7 +1529,7 @@ setup_partition() {
 		[ "$DISK" == "no" ] && return
 	fi
 	dialog --title " $(gettext "Choose your favorite tool") " \
-	--menu "$(gettext "Partitioning of the disk"): $result" 15 55 2 \
+	--menu "$(gettext "Partitioning of the disk"): $result" 0 0 2 \
 	"cfdisk" "$(gettext "Basic partitioning tool")" \
 	"fdisk" "$(gettext "Advanced partitioning tool")" 2>$TMP/choix
 	retval=$?
@@ -1645,10 +1554,10 @@ setup_format() {
 	retval=""
 
 	[ "$CHECK_PART_OK" == "no" ] && check_available_partition
-	[ "$CHECK_PART_OK" == "no" ] && return
+	[ "$CHECK_PART_OK" == "no" ] && fatal "$(gettext "No partition found")"
+	[ "$PARTITION" == "no" ] && fatal "$(gettext "No partition found")"
 	if [ -z "$PARTITION" ]; then
 		select_partition "$(gettext "Format a partition")"
-		[ "$PARTITION" == "no" ] && return
 	fi
 
 	FS="ext4"
@@ -1659,13 +1568,13 @@ setup_format() {
 	retval=$?
 	case $retval in
 		0)
-			mkfs.ext4 -F $PARTITION > /dev/tty2 || error "mkfs.ext4 $PARTITION"
-			$SETUP_LOG "setup-nutyx" "mkfs.ext4 -F $PARTITION"
+			mkfs.$FS -F $PARTITION > /dev/tty2 || error "mkfs.$FS $PARTITION"
+			$SETUP_LOG "setup-nutyx" "mkfs.$FS -F $PARTITION"
 			;;
 		1|255)
-			break;;
+			setup_initrd;;
 	esac
-	FORMAT="$(print_file_system $PARTITION)"
+	FORMAT=$FS
 }
 erase_nutyx() {
 	local DIR REAL
@@ -1687,6 +1596,18 @@ erase_nutyx() {
 	done) |
   dialog --title "$(gettext "Erase") NuTyX" --gauge "$(gettext "Please wait") ..." 6 50
   $SETUP_LOG "setup-nutyx" "Erase NuTyX on ${PARTITION} done"
+}
+setup_is_ready() {
+	dialog --title " $(gettext "Launch the installation process ?") " \
+		--colors --yesno "$(gettext "Everything is setup for installation")\n\n
+		$(gettext "Are you sure you want to continue ?")" 7 60
+	retval=$?
+	case $retval in
+		0)
+			return;;
+		1|255)
+			setup_initrd;;
+	esac
 }
 install_nutyx() {
 	local DIR REAL FILE VERSNAME EXT
@@ -1775,17 +1696,17 @@ setup_erase() {
 	retval=""
 
 	[ "$CHECK_HD_OK" == "yes" ] || check_available_disk
-	[ "$CHECK_HD_OK" == "yes" ] || return
+	[ "$CHECK_HD_OK" == "yes" ] || fatal "$(gettext "No disk found")"
 
 	[ "$CHECK_PART_OK" == "no" ] && check_available_partition
-	[ "$CHECK_PART_OK" == "no" ] && return
+	[ "$CHECK_PART_OK" == "no" ] && fatal "$(gettext "No partition found")"
 
 	echo "PARTITION=$PARTITION (1706)" > /dev/tty2
 	echo "CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})" > /dev/tty2
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Erase") NuTyX"
-		[ "$PARTITION" == "no" ] && return
+		[ "$PARTITION" == "no" ] && fatal "$(gettext "No partition found")"
 	fi
 	echo "PARTITION=$PARTITION (1713)" > /dev/tty2
 	SETUP_INSTALL="no"
@@ -1803,7 +1724,7 @@ setup_install() {
 	echo "Entering setup_install()" > /dev/tty2
 
 	[ "$CHECK_HD_OK" == "yes" ] || check_available_disk
-	[ "$CHECK_HD_OK" == "yes" ] || return
+	[ "$CHECK_HD_OK" == "yes" ] || fatal "$(gettext "No disk found")"
 
 	local MF retval
 	retval=""
@@ -1811,11 +1732,10 @@ setup_install() {
 	echo "PARTITION=$PARTITION (${LINENO})
 CHECK_SINGLE_PARTITION=$CHECK_SINGLE_PARTITION (${LINENO})
 CHECK_PART_OK=$CHECK_PART_OK (${LINENO})
-CHECK_HD_OK=$CHECK_HD_OK (${LINENO})
-PARTITION=$PARTITION (${LINENO})" > /dev/tty2
+CHECK_HD_OK=$CHECK_HD_OK (${LINENO})" > /dev/tty2
 
 	[ "$CHECK_PART_OK" == "no" ] && check_available_partition
-	[ "$CHECK_PART_OK" == "no" ] && return
+	[ "$CHECK_PART_OK" == "no" ] && fatal "$(gettext "No partition found")"
 
 	[ "$CHECK_SINGLE_PARTITION" == "no" ] && unset PARTITION
 
@@ -1826,12 +1746,14 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	if [ -z $PARTITION ]; then
 		select_partition "$(gettext "Install NuTyX")"
 		[ "$PARTITION" == "no" ] && setup_format
-		[ "$PARTITION" == "no" ] && return
+		[ "$PARTITION" == "no" ] && fatal "$(gettext "No partition found")"
 	fi
 
-	echo "PARTITION=$PARTITION (1806)" > /dev/tty2
+	echo "PARTITION=$PARTITION (${LINENO})" > /dev/tty2
 
 	if [ "$CHECK_PART_OK" == "new" ]; then
+		setup_is_ready
+		CHECK_SINGLE_PARTITION="no"
 		mkfs.ext4 -F $PARTITION > /dev/tty2 || error "mkfs.ext4 $PARTITION"
 		$SETUP_LOG "setup-nutyx" "mkfs.ext4 -F $PARTITION"
 		if [ -d "$EFIVARS" ]; then
@@ -1846,13 +1768,18 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 		return
 	fi
 
-	[ "$FORMAT" == "no" ] && setup_format
-	[ "$FORMAT" == "no" ] && return
+	if [ "$FORMAT" == "no" ]; then
+		setup_format
+		CHECK_SINGLE_PARTITION="no"
+	fi
+	[ "$FORMAT" == "no" ] && fatal "$(gettext "The partition") $PARTITION $(gettext "need to be formatted")"
+
+	[ "$CHECK_SINGLE_PARTITION" == "yes" ] && setup_is_ready
 
 	SETUP_INSTALL="no"
 	MF=/mnt/hd
 	mkdir -p $MF
-	mount $PARTITION $MF || error "$(gettext "mounting") $PARTITION"
+	mount $PARTITION $MF || fatal "$(gettext "mounting") $PARTITION"
 	if [ -d /media/cdrom/boot ]; then
 		# Installing from ISO
 		install_nutyx "/media/cdrom/" "$MF"
@@ -1868,7 +1795,7 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 }
 setup_grub() {
 	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE \
-	SPNR OPTIONS TARGET VERSION_KERNEL SYSTEM
+	SPNR OPTIONS TARGET VERSION_KERNEL
 
 	VERSION_KERNEL="$(basename /usr/lib/modules/kernel*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
@@ -1960,7 +1887,7 @@ setup_grub() {
 				1|255)
 					dialog --title "   Oups !!!  " \
 					--msgbox "    $(gettext "This installation won't boot again ...")" 6 60
-					return 0
+					fatal "$(gettext "No boot system installed")"
 					;;
 			esac
 			# If not a new table of partition AND
@@ -2052,7 +1979,7 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		[ -d "$EFIVARS" ] && umount "$EFI_SYS_PART"
 		umount $TMP/boot_partition
 		umount /mnt/hd 2>/dev/null
-		error "Sorry, I cannot install GRUB" # die now
+		fatal "$(gettext "Cannot install GRUB")" 
 	fi
 	if [ -f $TMP/boot ]; then
 		#
@@ -2062,17 +1989,12 @@ PATH=$PATH" >> ${GRUB_LOG_FILE}
 		BOOT_FS="$(print_file_system $PARTITION)"
 		NuTyX_FS="$(print_file_system $NuTyX_PART)"
 		INITRD_LINE="initrd /${GRUB_DESTINATION_DIR}initrd-${VERSION_KERNEL}"
-		if [ -z "${SYSTEMD}" ];then
-			SYSTEM="SysV"
-		else
-			SYSTEM="systemd"
-		fi
 		echo "
-menuentry \"NuTyX $SYSTEM Quiet Mode\" {
+menuentry \"NuTyX Quiet Mode\" {
    linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro quiet verbose=no
    ${INITRD_LINE}
 }
-menuentry \"NuTyX $SYSTEM Verbose Mode \" {
+menuentry \"NuTyX Verbose Mode \" {
    linux /${GRUB_DESTINATION_DIR}kernel-${VERSION_KERNEL} root=${NuTyX_PART} ro
    ${INITRD_LINE}
 }" >> ${GRUB_CONFIG_DIR}/${GRUB_CONFIG_FILE}
@@ -2171,7 +2093,7 @@ setup_reboot() {
 }
 setup_advanced_initrd() {
 		dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
-		--colors --menu "    $(gettext "Advanced Menu")   "  0 0 0 \
+		--colors --menu "    $(gettext "Advanced Menu")   "  0 0 11 \
 		"$(gettext "Help")" "$(gettext "How to do it") ? " \
 		"$(gettext "Keyboard")" "$(gettext "Configure the keyboard") ($(gettext "optional"))" \
 		"$(gettext "Partitioning")" "$(gettext "Create all your partitions") ($(gettext "optional"))" \
@@ -2257,7 +2179,7 @@ setup_advanced_initrd() {
 }
 setup_initrd() {
 	dialog --title "   $(gettext "Welcome to the NuTyX installer")   " \
-	--colors --menu "    $(gettext "Main Menu")   "  0 0 0 \
+	--colors --menu "    $(gettext "Main Menu")   "  0 0 3 \
 	"$(gettext "Help")" "$(gettext "How to do it") ? " \
 	"$(gettext "Install")" "$(gettext "Install NuTyX")" \
 	"$(gettext "Advanced")" "$(gettext "Advanced Menu")" \
@@ -2620,7 +2542,7 @@ DHCPCD="$(which dhcpcd)"
 UDEVADM="$(which udevadm)"
 SETFONT="$(which setfont)"
 LOCALEDEF="$(which localedef)"
-SYSTEMD="$(which systemd-machine-id-setup)"
+SYSTEMD_MACHINE_ID_SETUP="$(which systemd-machine-id-setup)"
 NETMANAGER="$(which NetworkManager)"
 NTPD="$(which ntpd)"
 
@@ -2630,19 +2552,12 @@ if [ ! -z "$IWCONFIG" ];then
 	WIFI_NETWORK_CARD="$($IWCONFIG 2>&1|grep IEEE|cut -d " " -f1|tail -1)"
 fi
 
-if [ -z "${SYSTEMD}" ];then
-	NETWORK="/etc/sysconfig/network"
-	CLOCK="/etc/sysconfig/clock"
-	CONSOLE="/etc/sysconfig/console"
-	SETUP_CONFIG_SYSTEMD="no"
-else
-	NETWORK="/etc/systemd/network/10-default.network"
-	CLOCK="/etc/adjtime"
-	CONSOLE="/etc/vconsole.conf"
-	SETUP_CONFIG_SYSTEMD="yes"
-	if [ ! -e /etc/machine.id ]; then
-		systemd-machine-id-setup
-	fi
+NETWORK="/etc/systemd/network/10-default.network"
+CLOCK="/etc/adjtime"
+CONSOLE="/etc/vconsole.conf"
+
+if [ ! -e /etc/machine.id ]; then
+	${SYSTEMD_MACHINE_ID_SETUP}
 fi
 
 FONT="LatGrkCyr-8x16"

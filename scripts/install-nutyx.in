@@ -584,7 +584,8 @@ DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
-$ECHO "NAME=\"NuTyX\"
+$ECHO "URL_HOME=\"https://www.nutyx.org\"
+NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
 ID=nutyx
 PRETTY_NAME=\"NuTyX GNU/Linux\"
@@ -714,7 +715,7 @@ fi
 [ -z "$BASE" ] && BASE="mdadm efibootmgr linux-firmware lvm2 \
 wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm make-ca xdg-user-dirs \
-sound-theme-freedesktop nano"
+sound-theme-freedesktop nano fastfetch"
 [ -z "$GUI" ] && GUI="gvfs network-manager-applet \
 vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
