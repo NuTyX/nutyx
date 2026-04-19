@@ -252,11 +252,6 @@ print_file_system() {
 MainLoop(){
    while [ ! -f /root/boot ];
    do
-	if [ "$verbose" == "yes" ]; then
-		sleep 5
-		ListModules
-		printf "Launch ${SETUP_INIT_FILE} ...\n"
-	fi
 	${SETUP_INIT_FILE} || problem
    done
    clear
@@ -423,6 +418,11 @@ if [ -z $root ]; then
 
 	[ "$verbose" == "no" ]  && clear
 	do_start_udev
+	if [ "$verbose" == "yes" ]; then
+	    sleep 5
+	    ListModules
+	    printf "Launch ${SETUP_INIT_FILE} ...\n"
+	fi
 	MainLoop
 	root=$(cat /root/boot)
 	cd /

@@ -720,8 +720,8 @@ sound-theme-freedesktop nano fastfetch"
 vlc firefox gparted scrot"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap"
-[ -z "$XFCE4" ] && XFCE4="galculator lightdm xfce4 xfce4-extra"
-[ -z "$GNOME" ] && GNOME="gnome gnome-extra"
+[ -z "$XFCE4" ] && XFCE4="galculator lightdm xfce4"
+[ -z "$GNOME" ] && GNOME="gnome"
 [ -z "$KDE6" ] && KDE6="kde6"
 if [ -d $LFS/usr/lib/modules ]; then
 	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/kernel*)"

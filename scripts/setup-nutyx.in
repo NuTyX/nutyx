@@ -9,7 +9,8 @@ info() {
 	echo -e  " ====> $1"
 }
 fatal() {
-	echo "screen_color = (CYAN,RED,ON)
+		umount_all
+		echo "screen_color = (CYAN,RED,ON)
 title_color = (RED,WHITE,ON)
 dialog_color = (RED,WHITE,OFF)" > dialog.rc
 	DIALOGRC=dialog.rc dialog --title "    $(gettext "ERROR configuration")    " \
@@ -65,6 +66,17 @@ interrupt() {
 dialog --title " $(gettext "ERROR configuration") " \
 	--msgbox " \n $(gettext "Please try again") " 7 32
 exit 1
+}
+umount_all() {
+	cd /
+	if [ -d /media/cdrom/${SETUP_ARCH} ]; then
+	 umount /media/cdrom > /dev/null 2>&1
+	fi
+	for i in /mnt/*; do
+		umount -f $i > /dev/null 2>&1
+	done
+	umount /media/cdrom 2>/dev/null
+	eject /dev/nutyx-cd 2>/dev/null
 }
 screen_size() {
    if [ -z "${COLUMNS}" ]; then
@@ -1599,14 +1611,16 @@ erase_nutyx() {
 }
 setup_is_ready() {
 	dialog --title " $(gettext "Launch the installation process ?") " \
-		--colors --yesno "$(gettext "Everything is setup for installation")\n\n
-		$(gettext "Are you sure you want to continue ?")" 7 60
+		--colors --yesno "$(gettext "Everything is setup for installation"):\n\n \
+$(gettext "NuTyX will be installed on") \Zu\Zb\Z3$PARTITION\Zn\n\n \
+$(gettext "Are you sure you want to continue ?")" 9 0
 	retval=$?
 	case $retval in
 		0)
+			SETUP_CONFIG_OK="yes"
 			return;;
 		1|255)
-			setup_initrd;;
+			return;;
 	esac
 }
 install_nutyx() {
@@ -1753,11 +1767,12 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 
 	if [ "$CHECK_PART_OK" == "new" ]; then
 		setup_is_ready
+		[ ${SETUP_CONFIG_OK} == "no" ] && return
 		CHECK_SINGLE_PARTITION="no"
 		mkfs.ext4 -F $PARTITION > /dev/tty2 || error "mkfs.ext4 $PARTITION"
 		$SETUP_LOG "setup-nutyx" "mkfs.ext4 -F $PARTITION"
 		if [ -d "$EFIVARS" ]; then
-			mkfs.vfat  $EFI_SYS_PART > /dev/tty2 || error "mkfs.vfat $EFI_SYS_PART"
+			mkfs.vfat  $EFI_SYS_PART > /dev/tty2 || fatal "mkfs.vfat $EFI_SYS_PART"
 			$SETUP_LOG "setup-nutyx" "mkfs.vfat $EFI_SYS_PART"
 		fi
 	fi
@@ -1774,7 +1789,10 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	fi
 	[ "$FORMAT" == "no" ] && fatal "$(gettext "The partition") $PARTITION $(gettext "need to be formatted")"
 
-	[ "$CHECK_SINGLE_PARTITION" == "yes" ] && setup_is_ready
+	if [ "$CHECK_SINGLE_PARTITION" == "yes" ];then
+		setup_is_ready
+		[ ${SETUP_CONFIG_OK} == "no" ] && return
+	fi
 
 	SETUP_INSTALL="no"
 	MF=/mnt/hd
@@ -1792,6 +1810,8 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
 	echo "$PARTITION" > $TMP/boot
+
+	setup_grub
 }
 setup_grub() {
 	local GRUB_CONFIG_FILE GRUB_CONFIG_DIR GRUB_DESTINATION_DIR GRUB_LOG_FILE \
@@ -1846,12 +1866,10 @@ setup_grub() {
 			echo "EFI_SYS_PART=$EFI_SYS_PART (${LINENO})" > /dev/tty2
 			echo "$EFI_SYS_PART FORMAT=$FORMAT (${LINENO})" > /dev/tty2
 			if [ "$FORMAT" != "vfat" ];then
-				dialog --title "   Oups !!!  " \
-				--msgbox "    $(gettext "Partition ESP not formatted ...")" 6 60
-				return 0
+				fatal "$(gettext "Partition ESP not formatted ...")"
 			fi
 			dialog --title "   $(gettext "Configuration of the boot of the computer") (GRUB)   " \
-			--colors --radiolist  "$(gettext "Configure the boot of the PC") ? "  0 0 0 \
+			--colors --radiolist  "$(gettext "Configure the boot of the PC") ? "  0 0 3 \
 			"$(gettext "x86_64-efi")" "$(gettext "GRUB EFI 64 bits")" "on" \
 			"$(gettext "i386-efi")" "$(gettext "GRUB EFI 32 bits")"  "off" \
 			"$(gettext "skip")" "$(gettext "No GRUB")" "off" \
@@ -1902,10 +1920,10 @@ setup_grub() {
 	if [ -d "$EFIVARS" ]; then
 			OPTIONS=$(cat /proc/cmdline|sed "s@BOOT_IMAGE=/boot/kernel\ @@")
 			SPNR=$(echo $PARTITION|sed "s@^/dev/[a-z]*@@")
-			mountpoint /sys/firmware/efi/efivars > /dev/tty2 || mount -t efivarfs efivarfs /sys/firmware/efi/efivars || error "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
-			mkdir -p $TMP/boot_partition/boot/efi || error "mkdir -p $TMP/boot_partition/boot/efi"
-			mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || error "mount $EFI_SYS_PART"
-			mkdir -p $TMP/boot_partition/boot/efi/EFI/ || error "mkdir -p $TMP/boot_partition/boot/efi/EFI"
+			mountpoint /sys/firmware/efi/efivars > /dev/tty2 || mount -t efivarfs efivarfs /sys/firmware/efi/efivars || fatal "mount -t efivarfs efivarfs /sys/firmware/efi/efivars"
+			mkdir -p $TMP/boot_partition/boot/efi || fatal "mkdir -p $TMP/boot_partition/boot/efi"
+			mount "$EFI_SYS_PART" $TMP/boot_partition/boot/efi || fatal "mount $EFI_SYS_PART"
+			mkdir -p $TMP/boot_partition/boot/efi/EFI/ || fatal "mkdir -p $TMP/boot_partition/boot/efi/EFI"
 			rm -f $TMP/boot_partition/boot/efi/EFI/BOOT/$SPNR/* 2>/dev/null
 	fi
 
@@ -1925,7 +1943,7 @@ setup_grub() {
 			if [ -f $TMP/MBR ]; then
 				cp $TMP/MBR $GRUB_CONFIG_DIR/MBR.original
 				dialog --title " $(gettext "Good to know") " \
-				--msgbox " $(gettext "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need") " 10 60
+				--msgbox " $(gettext "A copy of the original MBR is saved in the folder /boot/grub of your NuTyX. It will then be possible to restore it if need") " 0 0
 			fi
 		fi
 	fi
@@ -2078,16 +2096,9 @@ $(gettext "an simplify VI editor will allow you to modify it").\n\n \
 	esac
 }
 setup_reboot() {
-	cd /
-	if [ -d /media/cdrom/${SETUP_ARCH} ]; then
-	 umount /media/cdrom > /dev/null 2>&1
-	fi
-	for i in /mnt/*; do
-		umount -f $i > /dev/null 2>&1
-	done
-	umount /media/cdrom 2>/dev/null
-	eject /dev/nutyx-cd 2>/dev/null
+	umount_all
 	dialog --title "    $(gettext "Reboot the PC")    " \
+	--ok-label "$(gettext "Reboot")" \
 	--msgbox "  $(gettext "Press OK to reboot the computer")  " 0 0
 	reboot -f
 }
@@ -2201,7 +2212,6 @@ setup_initrd() {
 				;;
 			"$(gettext "Install")")
 				setup_install
-				setup_grub
 				;;
 		esac
 		;;
@@ -2428,12 +2438,6 @@ check_all() {
 			RV=$((RV+2))
 		fi
 	fi
-	if [ ! -r ${CLOCK} ]; then
-		if [ -z "$NTPD" ]; then
-			SETUP_CONFIG_CLOCK="yes"
-			RV=$((RV+4))
-		fi
-	fi
 	rm -d ${USER} 2>/dev/null
 	if [ ! -d ${USER} ]; then
 		SETUP_CONFIG_USER="yes"
@@ -2583,6 +2587,7 @@ SETUP_CONFIG_CLOCK="no"
 SETUP_CONFIG_USER="no"
 SETUP_CONFIG_WIFI="no"
 SETUP_CONFIG_FONT="yes"
+SETUP_CONFIG_OK="no"
 
 CHECK_HD_OK="no"
 CHECK_PART_OK="no"
