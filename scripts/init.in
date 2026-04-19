@@ -308,29 +308,6 @@ rm /init
 chmod 755 /
 chmod 755 /var
 cd /
-if [ -d /usr/share/applications ]; then
-    cat > "/usr/share/applications/setup-nutyx.desktop" << "EOF"
-[Desktop Entry]
-Version=1.0
-Name=Install NuTyX on your machine
-Comment=Install NuTyX on your machine
-GenericName=Setup NuTyX
-Exec=sudo /root/bin/setup-nutyx
-Terminal=true
-Icon=package-x-generic
-Categories=System;
-Type=Application
-StartupNotification=true
-EOF
-fi
-mkdir -p /root/bin
-cat > /root/bin/setup-nutyx << "EOF"
-#!/bin/sh
-#
-EOF
-echo "${SETUP_INIT_FILE}" >> /root/bin/setup-nutyx
-chmod 755 /root/bin/setup-nutyx
-do_stop_udev
 [ "$verbose" == "no" ] || printf "exec \"%s\" \"%s\" > /dev/null 2>&1 ...\n" "$init" "$@"
 [ "$verbose" == "no" ] || sleep 5
 exec "$init" "$@" > /dev/null 2>&1
