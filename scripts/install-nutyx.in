@@ -746,9 +746,6 @@ xorg, xfce4, gnome, kde6" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
-	DEVEL+="
-mkinitramfs \$(basename /usr/lib/modules/*)
-mv boot/initrd-* boot/initrd-${VERSION_KERNEL}"
 	if [ -z $MOUNT ]; then
 		DEVEL+="
 cards purge"
