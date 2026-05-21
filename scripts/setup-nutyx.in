@@ -1584,7 +1584,8 @@ setup_format() {
 			$SETUP_LOG "setup-nutyx" "mkfs.$FS -F $PARTITION"
 			;;
 		1|255)
-			setup_initrd;;
+			FORMAT="no"
+			return;;
 	esac
 	FORMAT=$FS
 }
@@ -1629,7 +1630,8 @@ install_nutyx() {
 	touch /var/log/install.log
 
 	[ -d "$EFIVARS" ] && setup_esp
-
+	[ $FORMAT == "no" ] && return
+	FORMAT="$(print_file_system $PARTITION)"
 	cd ${1}/boot
 	if [ -d ${2}/home ];then
 		mv ${2}/{home,.home}
@@ -1806,6 +1808,7 @@ CHECK_PART_OK=$CHECK_PART_OK (${LINENO})" > /dev/tty2
 		# TODO the initrd has to be rebuild at configuration time
 		install_nutyx "/" "$MF"
 	fi
+	[ $FORMAT == "no" ] && return
 	umount $PARTITION
 	SETUP_INSTALL="yes"
 	echo "$PARTITION" > /root/boot
@@ -2225,7 +2228,6 @@ setup_initrd() {
 
 }
 check_esp() {
-	local FORMAT
 	unset EFI_SYS_PART
 	for i in $DISK_LIST
 	do
@@ -2248,7 +2250,6 @@ check_esp() {
 	fi
 }
 setup_esp() {
-	local FORMAT
 	check_esp
 	echo "EFI_SYS_PART: $EFI_SYS_PART (${LINENO})" > /dev/tty2
 	if [ ! -z $EFI_SYS_PART ]; then
@@ -2261,11 +2262,13 @@ $(gettext "Are you sure you want to continue ?")" 7 60
 			retval2=$?
 			case $retval2 in
 				0)
-					mkfs.vfat $EFI_SYS_PART
-					$SETUP_LOG "setup-nutyx" "EFI partition $EFI_SYS_PART formatted in vfat"
+					echo "mkfs.vfat $EFI_SYS_PART (${LINENO})" > /dev/tty2
+					mkfs.vfat $EFI_SYS_PART > /dev/tty2 || fatal "mkfs.vfat $EFI_SYS_PART"
+					$SETUP_LOG "setup-nutyx" "mkfs.vfat $EFI_SYS_PART"
 					;;
 				1|255)
-					break;;
+					FORMAT="no"
+					return;;
 			esac
 		fi
 		FORMAT="$(print_file_system $EFI_SYS_PART)"
@@ -2531,7 +2534,7 @@ readonly SETUP_ARCH="$(uname -m)"
 readonly VERSION="#VERSION#"
 readonly TEXTDOMAINDIR="/usr/share/locale"
 
-PATH=/usr/bin
+PATH=/usr/bin:/bin
 
 export TEXTDOMAIN=$COMMAND
 . gettext.sh
