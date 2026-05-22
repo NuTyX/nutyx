@@ -584,10 +584,12 @@ DISTRIB_RELEASE=\"$VERSION\"
 LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
 }
 generate_osr() {
-$ECHO "URL_HOME=\"https://www.nutyx.org\"
+$ECHO "HOME_URL=\"https://www.nutyx.org\"
 NAME=\"NuTyX\"
 VERSION=\"$VERSION\"
+VERSION_ID=\"${VERSION_NUTYX}\"
 ID=nutyx
+LOGO=nutyx.png
 PRETTY_NAME=\"NuTyX GNU/Linux\"
 VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
 ln -sf $OPTION ../usr/lib/os-release ${LFS}/etc/os-release
