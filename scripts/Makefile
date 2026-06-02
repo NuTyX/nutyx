@@ -21,7 +21,7 @@
 
 include ../Makefile.inc
 
-all: init install-nutyx setup-nutyx setup-vm genfstab flushmem which mkinitramfs
+all: init install-nutyx setup-nutyx setup-vm genfstab flushmem mkinitramfs
 
 %: %.in
 	sed -e "s/#VERSION#/$(VERSION)/" $< > $@
@@ -35,7 +35,6 @@ clean:
 	rm -f setup-vm
 	rm -f genfstab
 	rm -f flushmem
-	rm -f which
 	rm -f mkinitramfs
 	rm -f init
 
@@ -66,7 +65,6 @@ install-common-tools:
 	install -D -m0755 genfstab $(BINDIR)/genfstab
 	install -D -m0755 flushmem $(BINDIR)/flushmem
 	install -D -m0755 mkinitramfs $(BINDIR)/mkinitramfs
-	install -D -m0755 which $(BINDIR)/which
 	install -D -m0644 init	$(SHAREDIR)/init.in
 
 install: install-services install-common-tools

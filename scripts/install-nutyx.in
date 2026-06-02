@@ -1257,8 +1257,6 @@ main() {
 	fi
 	download_pkgadd
 	mkdir -p ${LFS}/var/lib/pkg/DB
-	touch ${LFS}/var/lib/pkg/DB/.files
-	touch ${LFS}/var/lib/pkg/DB/.meta
 	install_chroot
 	create_locale_link
 	make_directories
