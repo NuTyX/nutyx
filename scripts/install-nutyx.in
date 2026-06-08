@@ -1193,7 +1193,7 @@ menuentry \"$VERSION_NUTYX $ISO (UEFI) debug copied to RAM\" {
         linux /boot/kernel-${VERSION_KERNEL} ro testiso rootdelay=8 toram
         initrd /boot/initrd-${VERSION_KERNEL}
 }
-menuentry \"$VERSION_NUTYX $ISO (UEFI) installable live\" {
+menuentry \"$VERSION_NUTYX $ISO (UEFI) live\" {
         linux /boot/kernel-${VERSION_KERNEL} ro quiet rootdelay=5 live
         initrd /boot/initrd-${VERSION_KERNEL}
 }
@@ -1201,7 +1201,7 @@ menuentry \"$VERSION_NUTYX $ISO (UEFI) debug live\" {
         linux /boot/kernel-${VERSION_KERNEL} ro testiso rootdelay=8 live
         initrd /boot/initrd-${VERSION_KERNEL}
 }
-menuentry \"$VERSION_NUTYX $ISO (UEFI) installable live copied to RAM\" {
+menuentry \"$VERSION_NUTYX $ISO (UEFI) live copied to RAM\" {
         linux /boot/kernel-${VERSION_KERNEL} ro quiet rootdelay=5 live toram
         initrd /boot/initrd-${VERSION_KERNEL}
 }
