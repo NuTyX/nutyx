@@ -835,7 +835,7 @@ download_pkgadd() {
 		cp  $PKGADD $TMP/$(dirname $PKGADD)/
 		ln -s $TMP/$(dirname $PKGADD)/pkgadd  $TMP/$(dirname $PKGADD)/pkginfo
 	else
-		PKGADD="/bin/pkgadd"
+		PKGADD="/usr/bin/pkgadd"
 		getFullPathPackageFileName cards
 		if [ ! -f $TMP/$PKGADD ]; then
 			cd $TMP
@@ -845,8 +845,8 @@ download_pkgadd() {
 				error "variable 'PackageFileName' is not set"
 			download_pkg cards
 			$ECHO "Extraction of cards ..."
-			bsdtar -xf $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName} || \
-				error "Cannot extract $LFS/$DEPOT/${BASE_COLLECTION}/cards/${PackageFileName}"
+			bsdtar -xf $LFS/$DEPOT/${BASE_COLLECTION}/${PackageFileName} || \
+				error "Cannot extract $LFS/$DEPOT/${BASE_COLLECTION}/${PackageFileName}"
 		fi
 	fi
 }
