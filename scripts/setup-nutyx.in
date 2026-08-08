@@ -38,7 +38,7 @@ _msgfmt() {
 	TD=$(mktemp -d)
 	L=$(echo ${1}|cut -d "_" -f1)
 	C=$(echo ${1}|cut -d "_" -f2)
-	grep "group ${L}" ${CARDS} > /dev/null || echo "group ${L}" >> ${CARDS}
+	grep "locale ${L}" ${CARDS} > /dev/null || echo "locale ${L}" >> ${CARDS}
 	localedef -i ${1} -f UTF-8 ${1}.UTF-8
 	if [ -f /usr/share/nutyx/setup-nutyx.locales.gz ];then
 		bsdtar -xf /usr/share/nutyx/setup-nutyx.locales.gz \
