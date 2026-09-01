@@ -28,8 +28,10 @@ if [ -d "$DEPOT_CD/depot" ]; then
         umount ${LFS}/${DEPOT}
         umount $(cat /tmp/depot)
 fi
-[ ! -z $MOUNT ] && umount ${LFS}/${DEPOT}
-
+if [ ! -z $MOUNT ]; then
+  umount ${LFS}/${DEPOT}
+  sed -i "/^depot /d" ${LFS}/etc/cards.conf
+fi
 mountpoint ${LFS}/run > /dev/null && umount ${LFS}/run
 mountpoint ${LFS}/dev > /dev/null && umount -R ${LFS}/dev
 mountpoint ${LFS}/proc > /dev/null && umount ${LFS}/proc
@@ -568,6 +570,8 @@ collection cli
 ## Chroot system without reboot possibilities for a chroot
 collection base
 #" >> $FILE
+[ -z $MOUNT ] ||
+  echo "depot $DEPOT/$VERSION" >> $FILE
 }
 generate_nutyx_version() {
 FILE="${LFS}/var/lib/pkg/nutyx-version"
@@ -796,7 +800,7 @@ if [ ! -z $MOUNT ]; then
 	[ -d $MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} ] \
 		|| error "$MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} not exist"
 
-	mount --bind $MOUNT/$ARCH/$VERSION  $LFS/$DEPOT \
+	mount --bind $MOUNT/$ARCH $LFS/$DEPOT \
 		|| error "cannot mount $MOUNT on $LFS/$DEPOT"
 fi
 }
