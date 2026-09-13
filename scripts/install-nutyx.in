@@ -555,14 +555,18 @@ FILE="$LFS/etc/cards.conf"
 # Default server URL
 url ${URL}
 #
-## For all the graphical applications and desktops
-collection gui-extra
+## Binaries Packages not compiled by NuTyX
+# This repository needs to be manually activated if you
+# want to install any those packages.
+# collection ncbu
 #
-## For a minimal graphical interface
+## For a kernel to be installed
+collection kernels
+#
+## For a full graphical interface including
+# KDE6 or GNOME or XFCE4
 collection gui
 #
-## For all the console applications
-collection cli-extra
 #
 ## For a minimal console interface
 collection cli
