@@ -551,20 +551,34 @@ ${LFS}/root
 generate_cards_conf() {
 FILE="$LFS/etc/cards.conf"
 [ -f $FILE ] && return
-[ "$DEPOT" == "$MOUNT" ] || $ECHO "
+if [ "$DEPOT" != "$MOUNT" ]; then $ECHO "
 # Default server URL
 url ${URL}
 #
 ## Binaries Packages not compiled by NuTyX
-# This repository needs to be manually activated if you
-# want to install any those packages.
-# collection ncbu
-#
+# This repository is needed if you want
+# to install any of those packages.
+collection ncbu
+#" >> $FILE
+if [ "$ISO" == "COSMIC" ]; then
+ $ECHO "# Cosmic desktop
+collection cosmic" >> $FILE
+fi
+if [ "$ISO" == "XFCE4" ]; then
+ $ECHO "# Xfce desktop
+collection xfce" >> $FILE
+fi
+if [ "$ISO" == "GNOME" ]; then
+ $ECHO "# gnome desktop
+collection gnome" >> $FILE
+fi
+$
+$ECHO "#
 ## For a kernel to be installed
 collection kernels
 #
-## For a full graphical interface including
-# KDE6 or GNOME or XFCE4
+## For a full graphical interface
+#
 collection gui
 #
 #
@@ -574,6 +588,7 @@ collection cli
 ## Chroot system without reboot possibilities for a chroot
 collection base
 #" >> $FILE
+fi
 [ -z $MOUNT ] ||
   echo "depot $DEPOT/$VERSION" >> $FILE
 }
@@ -727,12 +742,13 @@ wireless-tools wpa-supplicant"
 [ -z "$CLI" ] && CLI="gpm make-ca xdg-user-dirs \
 sound-theme-freedesktop nano fastfetch"
 [ -z "$GUI" ] && GUI="gvfs network-manager-applet \
-vlc firefox gparted scrot"
+vlc firefox gparted scrot telegram-desktop"
 [ -z "$XORG" ] && XORG="xorg xorg-xf86-input-synaptics \
 xorg-xf86-input-wacom xorg-xrandr xorg-setxkbmap"
 [ -z "$XFCE4" ] && XFCE4="galculator lightdm xfce4"
 [ -z "$GNOME" ] && GNOME="gnome"
 [ -z "$KDE6" ] && KDE6="kde6"
+[ -z "$COSMIC" ] && COSMIC="cosmic"
 if [ -d $LFS/usr/lib/modules ]; then
 	VERSION_KERNEL="$(basename $LFS/usr/lib/modules/kernel*)"
 	VERSION_KERNEL=${VERSION_KERNEL/*-/}
@@ -751,8 +767,10 @@ if [ ! -z $ISO ]; then
 		XFCE4) CORE+="$MINI $BASE $CLI $GUI $XORG $XFCE4";;
 		GNOME) CORE+="$MINI $BASE $CLI $GUI $XORG $GNOME";;
 		KDE6) CORE+="$MINI $BASE $CLI $GUI $XORG $KDE6";;
+		COSMIC) CORE+="$MINI $BASE $CLI $GUI $XORG $COSMIC";;
+
 		*) $ECHO "Valid ISO names: mini, base, cli, gui, \
-xorg, xfce4, gnome, kde6" && exit 1;;
+xorg, xfce4, gnome, kde6, cosmic" && exit 1;;
 	esac
 fi
 if [ ! -z "$ISO" ];then
@@ -767,9 +785,9 @@ umount $DEPOT"
 	exit 0"
 fi
 HOMEPAGE="${URL}"                           ## https://download.nutyx.org
-INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/rolling
-DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/rolling
-DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/rolling/base
+INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/systemd
+DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/systemd
+DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/systemd/base
 LOCAL_DEPOT_PACKAGES="$DEPOT/${BASE_COLLECTION}"
 DEPOT_CD="/media/cdrom"
 SETUP_FILE="/tmp/setup"
@@ -932,6 +950,7 @@ XORG         : $XORG
 XFCE4        : $XFCE4
 GNOME        : $GNOME
 KDE6         : $KDE6
+COSMIC       : $COSMIC
 ISO Filename : $ISO_FILE"
 }
 print_help() {
