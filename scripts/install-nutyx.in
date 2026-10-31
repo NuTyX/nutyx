@@ -560,6 +560,10 @@ url ${URL}
 # to install any of those packages.
 collection ncbu
 #" >> $FILE
+if [ "$ISO" == "KDE6" ]; then
+ $ECHO "# KDE desktop
+collection kde" >> $FILE
+fi
 if [ "$ISO" == "COSMIC" ]; then
  $ECHO "# Cosmic desktop
 collection cosmic" >> $FILE
@@ -574,19 +578,15 @@ collection gnome" >> $FILE
 fi
 $
 $ECHO "#
-## For a kernel to be installed
-collection kernels
-#
-## For a full graphical interface
+## For a graphical user interface system
 #
 collection gui
 #
-#
-## For a minimal console interface
+# For a command line interface system
 collection cli
 #
-## Chroot system without reboot possibilities for a chroot
-collection base
+## For a kernel to be installed
+collection kernels
 #" >> $FILE
 fi
 [ -z $MOUNT ] ||
@@ -787,7 +787,7 @@ fi
 HOMEPAGE="${URL}"                           ## https://download.nutyx.org
 INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/systemd
 DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/systemd
-DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/systemd/base
+DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/systemd/cli
 LOCAL_DEPOT_PACKAGES="$DEPOT/${BASE_COLLECTION}"
 DEPOT_CD="/media/cdrom"
 SETUP_FILE="/tmp/setup"
@@ -1300,7 +1300,7 @@ main() {
 	fi
 	end
 }
-readonly BASE_COLLECTION=base
+readonly BASE_COLLECTION=cli
 readonly VERSION_NUTYX=#VERSION#
 readonly RELEASE=1
 COMMAND="$(basename $0)"
