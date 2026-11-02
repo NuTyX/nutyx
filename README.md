@@ -51,18 +51,9 @@ Sous NuTyX, une collection de paquets / de ports correspond à un ensemble de pa
 
 Par défaut, il y a 3 collections:
 
-- base qui comprend l'ensemble des paquets /ports  qui constituent un système minimal utilisable avec tous les
-outils de développement nécessaire.
-
 - cli comprend tout les paquets / ports nécessaires au bon fonctionnement d'un système en ligne de commande.
 
 - gui comprend tout les paquets / ports nécessaires au bon fonctionnement d'une interface graphique minimaliste.
 
-Ces trois collections fondamentales, dépendent l'une de l'autre dans le sens:
-
-gui -> cli -> base
-
-Sous NuTyX, on parle de "scénario" pour expliquer le choix d'utilisation de cette dernière. On peut très bien
-n'utiliser que les binaires proposés dans les trois collections mentionnées ci-dessus, n'utiliser que la collection de
-base et ses propres recettes, ou un mélange.
+La collection gui dépendent de cli.
 
