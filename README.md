@@ -49,11 +49,11 @@ de l'installation du binaire.
 
 Sous NuTyX, une collection de paquets / de ports correspond à un ensemble de paquets ou de ports interdépendants.
 
-Par défaut, il y a 3 collections:
+Par défaut, il y a 2 collections:
 
 - cli comprend tout les paquets / ports nécessaires au bon fonctionnement d'un système en ligne de commande.
 
 - gui comprend tout les paquets / ports nécessaires au bon fonctionnement d'une interface graphique minimaliste.
 
-La collection gui dépendent de cli.
+La collection gui dépent de cli.
 
