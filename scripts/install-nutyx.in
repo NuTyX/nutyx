@@ -578,12 +578,7 @@ collection gnome" >> $FILE
 fi
 $
 $ECHO "#
-## For a graphical user interface system
-#
-collection gui
-#
-# For a command line interface system
-collection cli
+collection nlos
 #
 ## For a kernel to be installed
 collection kernels
@@ -1300,7 +1295,7 @@ main() {
 	fi
 	end
 }
-readonly BASE_COLLECTION=cli
+readonly BASE_COLLECTION=nlos
 readonly VERSION_NUTYX=#VERSION#
 readonly RELEASE=1
 COMMAND="$(basename $0)"
