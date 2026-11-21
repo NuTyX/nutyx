@@ -576,9 +576,13 @@ if [ "$ISO" == "GNOME" ]; then
  $ECHO "# gnome desktop
 collection gnome" >> $FILE
 fi
-$
+
 $ECHO "#
-collection nlos
+# For a minimal operating system
+# with applications
+#
+collection apps
+collection os
 #
 ## For a kernel to be installed
 collection kernels
