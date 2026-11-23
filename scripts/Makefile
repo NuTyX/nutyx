@@ -21,7 +21,7 @@
 
 include ../Makefile.inc
 
-all: init install-nutyx setup-nutyx setup-vm genfstab flushmem mkinitramfs
+all: init install-nutyx setup-nutyx setup-vm genfstab flushmem mkinitramfs os-release
 
 %: %.in
 	sed -e "s/#VERSION#/$(VERSION)/" $< > $@
@@ -37,6 +37,7 @@ clean:
 	rm -f flushmem
 	rm -f mkinitramfs
 	rm -f init
+	rm -f os-release
 
 create-dirs:
 	install -d -m 755 $(ETCDIR)
@@ -68,6 +69,8 @@ install-common-tools:
 	install -D -m0644 init	$(SHAREDIR)/init.in
 
 install: install-services install-common-tools
+	install -D -m0644 os-release $(USRLIBDIR)/os-release
+	ln -sf ../usr/lib/os-release $(ETCDIR)/os-release
 
 
 clean:
