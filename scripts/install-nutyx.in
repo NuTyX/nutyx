@@ -75,16 +75,16 @@ ${CHROOT_SHELL}
 download_pkg() {
         local CURL_OPTION
         getFullPathPackageFileName ${1}
-        if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
+        if [ ! -f $LFS/$DEPOT/${DEPOT_OS}/$PackageFileName ]; then
                 if [ -z $QUIET ]; then
                     $ECHO "Downloading $1..."
                     CURL_OPTION+="-LC - -# --create-dirs"
                 else
                     CURL_OPTION="-LC - -s --create-dirs"
                 fi
-                curl ${CURL_OPTION} ${DEPOT_BASE}/$PackageFileName \
-                        -o $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName || \
-                        error "Cannot download ${DEPOT_BASE}/$PackageFileName ..., check URL"
+                curl ${CURL_OPTION} ${REMOTE_DEPOT_OS}/$PackageFileName \
+                        -o $LFS/$DEPOT/${DEPOT_OS}/$PackageFileName || \
+                        error "Cannot download ${DEPOT_OS}/$PackageFileName ..., check URL"
                 chmod -R 755 $LFS/$DEPOT
         fi
 }
@@ -95,11 +95,11 @@ install_pkg() {
                 > /dev/null; then
                 $ECHO "$1 is already install on $LFS..."
         fi
-        if [ -f $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName ]; then
+        if [ -f $LFS/$DEPOT/${DEPOT_OS}/$PackageFileName ]; then
                 # Installing the package
                 [ -z $QUIET ] && OPTION="-p"
                 $TMP/$PKGADD $OPTION -r  $LFS -i \
-                $LFS/$DEPOT/${BASE_COLLECTION}/$PackageFileName \
+                $LFS/$DEPOT/${DEPOT_OS}/$PackageFileName \
                         || error "Cannot install $PackageFileName"
                 rm -f $LFS/.{PRE,POST,README}
         else
@@ -109,16 +109,16 @@ install_pkg() {
 getFullPathPackageFileName() {
 	local name REPO
 	REPO=".REPO"
-	if [ ! -f $LFS/$DEPOT/${BASE_COLLECTION}/$REPO ]; then
+	if [ ! -f $LFS/$DEPOT/${DEPOT_OS}/$REPO ]; then
 		curl -LC - -sS --create-dirs \
-		${DEPOT_BASE}/$REPO -o \
-		$LFS/$DEPOT/${BASE_COLLECTION}/$REPO || \
-			error "Cannot download ${DEPOT_BASE}/$REPO ..., check URL"
+		${REMOTE_DEPOT_OS}/$REPO -o \
+		$LFS/$DEPOT/${DEPOT_OS}/$REPO || \
+			error "Cannot download ${REMOTE_DEPOT_OS}/$REPO ..., check URL"
 		chmod -R 755 $LFS/$DEPOT
 	fi
-	[ $(wc -l $LFS/$DEPOT/${BASE_COLLECTION}/$REPO|cut -d " " -f1) -eq 0 ] &&
-		error "${DEPOT_BASE}/${1} not reacheable.."
-	name=$(grep @$1.cards-  $LFS/$DEPOT/${BASE_COLLECTION}/$REPO)
+	[ $(wc -l $LFS/$DEPOT/${DEPOT_OS}/$REPO|cut -d " " -f1) -eq 0 ] &&
+		error "${DEPOT_OS}/${1} not reacheable.."
+	name=$(grep @$1.cards-  $LFS/$DEPOT/${DEPOT_OS}/$REPO)
 	PackageFileName="${name#@*}"
 }
 install_chroot() {
@@ -582,39 +582,14 @@ $ECHO "#
 # with applications
 #
 collection apps
-collection os
+collection ${DEPOT_OS}
 #
 ## For a kernel to be installed
 collection kernels
 #" >> $FILE
 fi
 [ -z $MOUNT ] ||
-  echo "depot $DEPOT/$VERSION" >> $FILE
-}
-generate_nutyx_version() {
-FILE="${LFS}/var/lib/pkg/nutyx-version"
-[ -f $FILE ] && return
-$ECHO "name ${CODE_NAME}
-depot /var/lib/pkg/depot
-version $VERSION" > $FILE
-}
-generate_lsb() {
-$ECHO "DISTRIB_ID=\"NuTyX\"
-DISTRIB_DESCRIPTION=\"NuTyX GNU/Linux\"
-DISTRIB_CODENAME=\"${CODE_NAME}\"
-DISTRIB_RELEASE=\"$VERSION\"
-LSB_VERSION=\"1.4-1\"" > ${LFS}/etc/lsb-release
-}
-generate_osr() {
-$ECHO "HOME_URL=\"https://www.nutyx.org\"
-NAME=\"NuTyX\"
-VERSION=\"$VERSION\"
-VERSION_ID=\"${VERSION_NUTYX}\"
-ID=nutyx
-LOGO=nutyx
-PRETTY_NAME=\"NuTyX GNU/Linux\"
-VERSION_CODENAME=\"${CODE_NAME}\"" > ${LFS}/usr/lib/os-release
-ln -sf $OPTION ../usr/lib/os-release ${LFS}/etc/os-release
+  echo "depot $DEPOT" >> $FILE
 }
 generate_resolv_conf() {
 FILE="${LFS}/etc/resolv.conf"
@@ -661,7 +636,7 @@ EOF
 successfull_installation () {
 $ECHO "
 ****************************************************
-          Installation of NuTyX $VERSION installed
+          Installation of NuTyX ${VERSION_NUTYX} installed
           in $LFS sucessfully
 ****************************************************
 
@@ -716,7 +691,8 @@ fi
 	CHROOT="$CR util-linux"
 unset CR
 [ -z "$URL" ] && URL="https://download.nutyx.org"
-[ -z "$VERSION" ] && VERSION="systemd"
+[ -z "$VERSION" ] || DEPOT_OS+="-$VERSION"
+
 if [ "$VERSION" == "development" ]; then
         CODE_NAME="$(date +%Y%m%d)"
 else
@@ -783,11 +759,12 @@ umount $DEPOT"
 	DEVEL+="
 	exit 0"
 fi
-HOMEPAGE="${URL}"                           ## https://download.nutyx.org
-INSTALL_BASE="$ARCH/$VERSION"               ## x86_64/systemd
-DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}"      ## https://download.nutyx.org/x86_64/systemd
-DEPOT_BASE="$DEPOT_ROOT/${BASE_COLLECTION}" ## https://download.nutyx.org/x86_64/systemd/cli
-LOCAL_DEPOT_PACKAGES="$DEPOT/${BASE_COLLECTION}"
+HOMEPAGE="${URL}"                             ## https://download.nutyx.org
+INSTALL_BASE="${OS_NAME}/$ARCH/"              ## nutyx/x86_64/
+MOUNT_DEPOT_OS="${INSTALL_BASE}/${DEPOT_OS}"  ## nutyx/x86_64/os/
+REMOTE_DEPOT_ROOT="$HOMEPAGE/${INSTALL_BASE}" ## https://download.nutyx.org/nutyx/x86_64
+REMOTE_DEPOT_OS="${REMOTE_DEPOT_ROOT}/${DEPOT_OS}"     ## https://download.nutyx.org/nutyx/x86_64/os
+LOCAL_DEPOT_OS_PACKAGES="$DEPOT/${DEPOT_OS}"  ## /var/lib/pkg/depot/os
 DEPOT_CD="/media/cdrom"
 SETUP_FILE="/tmp/setup"
 ISO_FILE="NuTyX_${ARCH}-${VERSION_NUTYX}-$ISO.iso"
@@ -816,14 +793,13 @@ case "$(echo -e -n test)" in
 esac
 }
 mount_depot() {
-if [ ! -z $MOUNT ]; then
-	mkdir -p $LFS/$DEPOT
-	[ -d $MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} ] \
-		|| error "$MOUNT/$ARCH/$VERSION/${BASE_COLLECTION} not exist"
+[ -z $MOUNT ] && return
+mkdir -p $LFS/$DEPOT
+[ -d $MOUNT/${INSTALL_BASE} ] \
+    || error "$MOUNT/${INSTALL_BASE} not exist"
 
-	mount --bind $MOUNT/$ARCH $LFS/$DEPOT \
-		|| error "cannot mount $MOUNT on $LFS/$DEPOT"
-fi
+mount --bind $MOUNT/${INSTALL_BASE} $LFS/$DEPOT \
+    || error "cannot mount $MOUNT on $LFS/$DEPOT"
 }
 check_arch() {
 if [ "$ARCH" != "x86_64" ]; then
@@ -870,8 +846,8 @@ download_pkgadd() {
 				error "variable 'PackageFileName' is not set"
 			download_pkg cards
 			$ECHO "Extraction of cards ..."
-			bsdtar -xf $LFS/$DEPOT/${BASE_COLLECTION}/${PackageFileName} || \
-				error "Cannot extract $LFS/$DEPOT/${BASE_COLLECTION}/${PackageFileName}"
+			bsdtar -xf $LFS/$DEPOT/${DEPOT_OS}/${PackageFileName} || \
+				error "Cannot extract $LFS/$DEPOT/${DEPOT_OS}/${PackageFileName}"
 		fi
 	fi
 }
@@ -920,9 +896,6 @@ install_configuration_files() {
 	generate_profile
 	generate_etc_bashrc
 	generate_resolv_conf
-	generate_lsb
-	generate_osr
-	generate_nutyx_version
 }
 show_variables() {
 $ECHO "
@@ -1299,9 +1272,10 @@ main() {
 	fi
 	end
 }
-readonly BASE_COLLECTION=os
 readonly VERSION_NUTYX=#VERSION#
+readonly OS_NAME=nutyx
 readonly RELEASE=1
 COMMAND="$(basename $0)"
+DEPOT_OS=os
 PATH=/usr/sbin:/usr/bin:/bin
 main "$@"
