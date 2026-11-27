@@ -582,7 +582,6 @@ $ECHO "#
 # with applications
 #
 collection apps
-collection ${DEPOT_OS}
 #
 ## For a kernel to be installed
 collection kernels
@@ -693,11 +692,6 @@ unset CR
 [ -z "$URL" ] && URL="https://download.nutyx.org"
 [ -z "$VERSION" ] || DEPOT_OS+="-$VERSION"
 
-if [ "$VERSION" == "development" ]; then
-        CODE_NAME="$(date +%Y%m%d)"
-else
-        CODE_NAME="Paksong"
-fi
 [ -z "$KERNEL" ] && KERNEL="kernel"
 [ "$KERNEL" == "NONE" ] && KERNEL="none"
 if [ "$KERNEL" == "none"  ];then
